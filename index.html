@@ -1106,7 +1106,13 @@ aiguillage: `
 <div class="def-block">
   <div class="def-term">Chapitres</div>
   <div class="def-text">Chap. 1 : Généralités - Contrôles | Chap. 2 : Signaux | Chap. 3 : Appareils de voie | Chap. 4 : Enclenchements électriques | Chap. 5 : Relations avec les PN voisins
-Annexes : 1 Schéma signalisation · 2 Tableau des mouvements · 3 Enclenchements poste à poste · 4 Encl. aiguilles · 5 Encl. d'approche · 6 Annulation des transits · 7 Points de manœuvre · 8 Petit matériel</div>
+Annexes : 1 Schéma signalisation · <strong>2 Tableau des mouvements</strong> · 3 Enclenchements poste à poste · 4 Encl. aiguilles · 5 Encl. d'approche · 6 Annulation des transits · 7 Points de manœuvre · 8 Petit matériel</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">Tableau des mouvements — Annexe 2 de la Consigne Rose</div>
+  <div class="def-text">Le tableau des mouvements recense l'ensemble des itinéraires possibles dans la zone d'action d'un poste : pour chaque mouvement, il indique quels leviers manœuvrer, dans quel ordre, et les conditions à réunir (aiguilles à positionner, signaux à ouvrir).
+Il est utilisé par l'aiguilleur pour <strong>préparer ses manœuvres de leviers et d'aiguilles</strong> avant d'exécuter un itinéraire. C'est le document de référence pratique de l'aiguilleur au quotidien.</div>
 </div>
 
 <h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Dispositifs d'Attention</h3>
@@ -2027,42 +2033,39 @@ const QUIZ = [
  opts:['Les poser sur les rails pendant le travail','Les laisser à l\'intérieur de la zone dangereuse : ils pourraient être atteints ou projetés par une circulation','Les déplacer pendant qu\'une circulation passe','Les utiliser avec les deux mains'],
  ans:1, exp:'Il est interdit de laisser, à l\'intérieur de la zone dangereuse, des outils ou des matériaux qui pourraient être atteints ou projetés par une circulation ou déplacés par effet de souffle.'},
 // ── EPI EXHAUSTIF ──
-{theme:'epi', q:'La largeur minimale d\'un emplacement de garage est de :',
+{theme:'epi', q:'Quelle est la définition officielle des EPI ?',
+ opts:['Équipements standardisés distribués par l\'établissement à chaque prise de service','Dispositifs ou moyens visés à l\'article R4311-8 du code du travail visant à protéger un travailleur contre un ou plusieurs risques susceptibles de menacer sa sécurité ou sa santé','Tenues réglementaires portées uniquement sur les voies principales','Équipements collectifs disponibles dans les postes d\'aiguillage'],
+ ans:1, exp:'Définition officielle : dispositifs ou moyens visés à l\'article R4311-8 du code du travail visant à protéger un travailleur contre un ou plusieurs risques susceptibles de menacer sa sécurité ou sa santé.'},
+{theme:'epi', q:'Dans les 9 familles d\'EPI, quelle est la famille numéro 3 ?',
+ opts:['Protection des yeux','Protection du corps','Ouïe — PICB (Protecteurs Individuels Contre le Bruit)','Protection respiratoire'],
+ ans:2, exp:'Famille n°3 = Ouïe = PICB : Protecteurs Individuels Contre le Bruit. Ordre exact : 1.Signalisation visuelle (THV) 2.Tête et visage 3.Ouïe (PICB) 4.Yeux 5.Respiratoire 6.Mains 7.Corps 8.Pieds 9.Chutes de hauteur.'},
+{theme:'epi', q:'La largeur minimale d\'un emplacement de garage (EG) est de :',
  opts:['0,50 m','1,00 m','0,70 m','0,90 m'],
- ans:2, exp:'La largeur minimale d\'un emplacement de garage (EG) est de 0,70 m.'},
-{theme:'epi', q:'Quelle est la distance minimale à respecter par rapport au rail pour un véhicule automoteur sur piste carrossable ?',
- opts:['2,00 m du bord de la piste','1,50 m du bord extérieur du rail','1,00 m de l\'axe de la voie','3,00 m du bord de la piste'],
- ans:1, exp:'OP485 Art.111 : le conducteur doit rester à une distance d\'au moins 1,50 m du rail.'},
-{theme:'epi', q:'De nuit, qu\'est-il interdit pour un véhicule automoteur circulant sur une piste ?',
- opts:['De circuler à plus de 30 km/h','D\'utiliser les feux de croisement','D\'utiliser les feux de route (plein phares)','De transporter plus d\'une personne'],
- ans:2, exp:'OP485 Art.111 : de nuit, l\'utilisation des FEUX DE ROUTE (plein phares) est INTERDITE pour les véhicules automoteurs.'},
-{theme:'epi', q:'Un véhicule automoteur de 3 t, 2 m de large et 3,50 m de haut nécessite-t-il une autorisation spéciale ?',
- opts:['Oui, toujours pour circuler dans les emprises','Non, aucun seuil n\'est dépassé (2,50 m / 4,00 m / 12 t)','Oui, car la hauteur dépasse 3,00 m','Oui, car il fait partie des engins motorisés'],
- ans:1, exp:'Seuils OP485 : largeur > 2,50 m, hauteur > 4,00 m, poids > 12 tonnes. 3 t / 2 m / 3,50 m → aucun seuil dépassé → pas d\'autorisation spéciale.'},
+ ans:2, exp:'La largeur minimale d\'un EG est de 0,70 m. C\'est le minimum pour qu\'un agent avec son matériel puisse se garer hors de toute zone dangereuse.'},
 {theme:'epi', q:'Les obstacles fixes sur les pistes et itinéraires sont peints en :',
  opts:['Rouge pour signaler le danger','Jaune pour être visibles de loin','Orange comme les EPI','Blanc'],
  ans:3, exp:'Les obstacles fixes sur les pistes et itinéraires sont peints en BLANC.'},
-{theme:'epi', q:'Quand peut-on atteler une remorque à une bicyclette en emprise ferroviaire ?',
- opts:['Jamais, c\'est toujours interdit','Avec l\'accord du chef d\'établissement sur n\'importe quelle piste','Sur les pistes/itinéraires cyclables ou carrossables dont le bord intérieur est à au moins 2,00 m du rail voisin','Uniquement sur voies de service'],
- ans:2, exp:'Art. 8.2 : interdit SAUF sur les pistes et itinéraires cyclables ou carrossables dont le bord intérieur se trouve à au moins 2,00 m du rail voisin.'},
-{theme:'epi', q:'Sur une ligne à V entre 160 et 220 km/h, pour circuler à bicyclette, quelles conditions doivent être réunies ?',
- opts:['Autorisation du régulateur + présence d\'agent sécurité','Sens inverse de circulation + délai de visibilité > 10 secondes + garage possible à au moins 2,00 m du rail','Vitesse max 10 km/h + autorisation chef d\'établissement','Interdit dans tous les cas sur ces lignes'],
- ans:1, exp:'Art. 8.5 RRA20068 : sens inverse + délai visibilité > 10 s + garage possible à ≥ 2,00 m du rail.'},
+{theme:'epi', q:'Un emplacement de garage peut prendre plusieurs formes. Laquelle de ces propositions N\'EST PAS un EG ?',
+ opts:['Une niche ou un refuge d\'ouvrage d\'art','Un accotement situé hors ZD','Une voie interdite à la circulation non parcourue par des trains de travaux','Un passage à niveau gardé'],
+ ans:3, exp:'Un EG peut être : piste aménagée, accotement hors ZD, voie interdite à la circulation, niche, refuge d\'ouvrage d\'art, ou entrevoie large repérée par pancartage. Un PN gardé n\'est pas un EG.'},
 {theme:'epi', q:'Qu\'est-ce que la THV et quand son port est-il obligatoire ?',
- opts:['Tenue de Haute Vigilance ; obligatoire en zone de travaux','Tenue Haute Visibilité ; obligatoire dès qu\'un agent pénètre dans les emprises ferroviaires','Tenue Homologuée de Voie ; obligatoire uniquement de nuit','Tenue de Haute Visibilité ; obligatoire seulement sur voie principale'],
- ans:1, exp:'THV = Tenue Haute Visibilité (famille EPI n°1). Obligatoire dès qu\'un agent pénètre dans les emprises ferroviaires.'},
-{theme:'epi', q:'Parmi ces situations, laquelle est AUTORISÉE à bicyclette en emprise ferroviaire ?',
- opts:['Traverser une voie sans itinéraire carrossable','Se déplacer par temps de neige','Circuler sur une piste carrossable désignée à la consigne locale','Se déplacer à deux personnes sur la même bicyclette'],
- ans:2, exp:'La circulation sur piste carrossable désignée est AUTORISÉE. Les interdictions sont : traversée sans itinéraire carrossable, visibilité réduite, 2 personnes, remorque hors conditions, ouvrages d\'art sans piste aménagée.'},
+ opts:['Tenue de Haute Vigilance ; obligatoire en zone de travaux uniquement','Tenue Haute Visibilité ; obligatoire dès qu\'un agent pénètre dans les emprises ferroviaires','Tenue Homologuée de Voie ; obligatoire uniquement de nuit','Tenue de Haute Visibilité ; obligatoire seulement sur voie principale'],
+ ans:1, exp:'THV = Tenue Haute Visibilité (famille EPI n°1 : signalisation visuelle). Obligatoire dès qu\'un agent pénètre dans les emprises ferroviaires.'},
 {theme:'epi', q:'Le port des EPI est soumis à la responsabilité de :',
- opts:['L\'agent lui-même exclusivement','Le médecin du travail','Le responsable sécurité de l\'établissement','Le supérieur hiérarchique de l\'agent'],
- ans:3, exp:'Le port des EPI est soumis à la responsabilité du SUPÉRIEUR HIÉRARCHIQUE. L\'utilisation est subordonnée à une formation adéquate.'},
-{theme:'epi', q:'Un agent doit immobiliser son véhicule automoteur à l\'approche d\'une circulation, SAUF si :',
- opts:['Il circule dans le sens inverse de la circulation','Il a l\'accord radio de l\'aiguilleur','Le bord de la piste se trouve à plus de 2,00 m du rail le plus voisin','La circulation passe à moins de 60 km/h'],
- ans:2, exp:'OP485 Art.111 : l\'immobilisation s\'impose SAUF si le bord de la piste est à plus de 2,00 m du rail le plus voisin.'},
+ opts:['L\'agent lui-même exclusivement','Le médecin du travail de l\'établissement','Le responsable sécurité de proximité','Le supérieur hiérarchique de l\'agent'],
+ ans:3, exp:'Le port des EPI est soumis à la responsabilité du SUPÉRIEUR HIÉRARCHIQUE. L\'agent doit aussi s\'assurer du bon état de ses EPI avant et après utilisation.'},
 {theme:'epi', q:'Selon l\'art. 6.2 RRA20000, un agent peut accéder aux emprises ferroviaires uniquement s\'il est :',
- opts:['Porteur d\'une carte professionnelle SNCF valide','Habilité à une TES, ou autorisé selon le document d\'application, ou accompagné par un agent habilité TES ou autorisé','Muni de l\'ensemble de ses EPI','Expressément autorisé par le chef de gare'],
- ans:1, exp:'Art. 6.2 RRA20000 : un agent peut se déplacer en emprise s\'il est : habilité à une TES, ou autorisé selon les dispositions du document d\'application, ou accompagné par un agent habilité TES ou autorisé.'},
+ opts:['Porteur d\'une carte professionnelle SNCF en cours de validité','Habilité à une TES, ou autorisé selon le document d\'application, ou accompagné par un agent habilité TES ou autorisé','Muni de l\'ensemble de ses EPI et équipements réglementaires','Expressément autorisé par le chef de gare pour la journée'],
+ ans:1, exp:'Art. 6.2 RRA20000 : un agent peut se déplacer en emprise ferroviaire s\'il est habilité à une TES, ou autorisé selon les dispositions du document d\'application, ou accompagné par un agent habilité TES ou autorisé.'},
+{theme:'epi', q:'Les pistes et les itinéraires : quelle est la différence ?',
+ opts:['Les pistes sont réservées aux véhicules, les itinéraires aux piétons','Les pistes longent les voies principales ; les itinéraires existent en dehors des voies principales (gares, triages, dépôts, ateliers)','Les pistes sont en pleine voie ; les itinéraires sont en gare uniquement','Il n\'y a pas de différence fonctionnelle, ce sont deux noms pour la même chose'],
+ ans:1, exp:'Pistes : longent les voies principales en pleine voie ou dans les gares. Itinéraires : existent en dehors des voies principales dans les gares, triages, dépôts ou ateliers. Les obstacles fixes y sont peints en blanc.'},
+{theme:'epi', q:'De nuit, qu\'est-il interdit pour un véhicule automoteur circulant sur une piste ?',
+ opts:['De circuler à plus de 30 km/h','D\'utiliser les feux de croisement (feux de position)','D\'utiliser les feux de route (plein phares)','De transporter plus d\'une personne'],
+ ans:2, exp:'OP485 Art.111 : de nuit, l\'utilisation des FEUX DE ROUTE (plein phares) est INTERDITE pour ne pas éblouir les conducteurs de train. Seuls les feux de croisement sont autorisés.'},
+{theme:'epi', q:'Un agent souhaite accéder aux emprises pour récupérer un outil oublié. Il n\'est habilité à aucune TES et n\'est pas dans le document d\'application. Quelle est la seule option valide ?',
+ opts:['Y accéder rapidement si personne ne le voit','Y accéder avec l\'accord oral de son chef d\'équipe','Être accompagné par un agent habilité TES ou autorisé','Attendre le lendemain pendant une interdiction de circulation'],
+ ans:2, exp:'Seule option valide : être accompagné par un agent habilité TES ou autorisé. L\'accord oral du chef ou la carte professionnelle ne suffisent pas.'},
 // ── ZD EXHAUSTIF ──
 {theme:'zd', q:'Que doit faire un agent AVANT d\'engager la ZD (liste complète) ?',
  opts:['Regarder dans les deux sens et traverser rapidement','Contacter l\'aiguilleur pour vérification','Marquer l\'arrêt · Regarder · S\'assurer de la DMVC · Redoubler de prudence si intempéries · Sur double voie : sens opposé aux circulations','Attendre le passage de toute circulation visible avant d\'engager'],
@@ -2164,9 +2167,9 @@ const QUIZ = [
 {theme:'zd', q:'L\'engagement transversal de la ZD sur une plateforme à 4 voies principales nécessite un délai de visibilité d\'au moins :',
  opts:['10 secondes','15 secondes','20 secondes','5 secondes'],
  ans:1, exp:'Art. 6.2.1.1 : engagement transversal sur voies principales : 10 sec (1-2 voies) · 15 sec (3-4 voies) · 20 sec (5-6 voies).'},
-{theme:'zd', q:'Pour une plateforme à 6 voies principales, si l\'agent doit toutes les traverser, que doit-il prévoir ?',
- opts:['Traverser en une seule fois avec le délai de 20 secondes','Il ne peut pas traverser sans une interdiction de circulation','Disposer d\'un emplacement de garage intermédiaire après avoir traversé au plus 6 voies','Demander un DATZD pour chaque voie séparément'],
- ans:2, exp:'Pour les plateformes de plus de 6 voies, l\'agent doit disposer d\'un emplacement de garage INTERMÉDIAIRE après avoir traversé au plus 6 voies.'},
+{theme:'zd', q:'Pour une plateforme à 6 voies principales, quel délai de visibilité minimum faut-il pour traverser ?',
+ opts:['10 secondes — comme pour 1 ou 2 voies','15 secondes — comme pour 3 ou 4 voies','20 secondes — applicable pour 5 ou 6 voies','Un EG intermédiaire est obligatoire dès 6 voies'],
+ ans:2, exp:'Art. 6.2.1.1 : 10 sec (1-2 voies) · 15 sec (3-4 voies) · 20 sec (5-6 voies). C\'est seulement pour les plateformes de PLUS DE 6 voies qu\'un EG intermédiaire est obligatoire après avoir traversé au plus 6 voies.'},
 {theme:'zd', q:'La DMVC est requise avant d\'engager la ZD uniquement :',
  opts:['Sur toutes les voies sans exception','En dehors des chemins publics et des itinéraires','Uniquement sur les voies principales','Uniquement de nuit ou par mauvais temps'],
  ans:1, exp:'La DMVC est requise avant d\'engager la ZD EN DEHORS DES CHEMINS PUBLICS ET DES ITINÉRAIRES. Sur un chemin public ou itinéraire balisé, les règles sont différentes.'},
@@ -2462,8 +2465,9 @@ function renderHome(c) {
         <span class="tag yellow">EIC (...)</span> Déclinaison locale
       </span>
     </div>
-    <div class="rule-box" style="margin:0">
-      <strong>4. Article 1 DC3858 — Liste des IS d'un poste à leviers individuels</strong> (voir ci-dessous)
+    <div class="rule-box" style="margin:0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
+      <span><strong>4. Article 1 DC3858 — Liste des IS d'un poste à leviers individuels</strong> (voir ci-dessous et dans la fiche)</span>
+      <button onclick="currentTheme='aiguillage';document.querySelectorAll('.theme-item').forEach(el=>el.classList.remove('active'));document.getElementById('tnav-aiguillage')?.classList.add('active');showView('fiches')" class="btn btn-sm btn-accent" style="white-space:nowrap">Voir la fiche →</button>
     </div>
   </div>
 </div>
@@ -2475,12 +2479,12 @@ function renderHome(c) {
 
   <div class="def-block important" style="margin-bottom:10px">
     <div class="def-term">Agent-circulation</div>
-    <div class="def-text">Agent, chargé d'assurer le service de la circulation des trains, habilité à la TES « Assurer la circulation des trains ferroviaire », telle que définie à l'arrêté du 7 mai 2015 relatif aux tâches essentielles pour la sécurité ferroviaire autres que la conduite de trains, pris en application des articles 6 et 26 du décret n° 2006-1279 du 19 octobre 2006 modifié relatif à la sécurité des circulations ferroviaires et à l'interopérabilité du système ferroviaire.</div>
+    <div class="def-text">Agent, chargé d'assurer le service de la circulation des trains, habilité à la TES « Assurer la circulation des trains ferroviaire ».</div>
   </div>
 
   <div class="def-block important" style="margin-bottom:10px">
     <div class="def-term">Aiguilleur</div>
-    <div class="def-text">Agent, chargé de la manœuvre des signaux et les autres installations de gestion des circulations « Manœuvrer les signaux et les autres installations de gestion des circulations », telle que définie à l'arrêté du 7 mai 2015 relatif aux tâches essentielles pour la sécurité ferroviaire autres que la conduite de trains, pris en application des articles 6 et 26 du décret n° 2006-1279 du 19 octobre 2006 modifié et à l'interopérabilité du système ferroviaire.</div>
+    <div class="def-text">Agent, chargé de la manœuvre des signaux et les autres installations de gestion des circulations, habilité à la TES « Manœuvrer les signaux et les autres installations de gestion des circulations ».</div>
   </div>
 
   <div class="def-block" style="margin-bottom:0">
@@ -2556,7 +2560,7 @@ function renderHome(c) {
   <table>
     <thead><tr><th>Situation</th><th>Terminologie</th></tr></thead>
     <tbody>
-      <tr><td>Transmettre la parole à l'autre interlocuteur</td><td><strong style="color:var(--accent)">À vous</strong></td></tr>
+      <tr><td>Transmettre la parole à l'autre interlocuteur</td><td><strong style="color:var(--accent)">À toi</strong></td></tr>
       <tr><td>Confirmer que le message transmis a été reçu</td><td><strong style="color:var(--green)">Reçu</strong></td></tr>
       <tr><td>Faire répéter en cas de mauvaise réception ou compréhension</td><td><strong style="color:var(--accent)">Répétez</strong></td></tr>
       <tr><td>Faire savoir si le message collationné est conforme au message émis</td><td><strong style="color:var(--green)">Correct</strong></td></tr>
@@ -2564,11 +2568,9 @@ function renderHome(c) {
       <tr><td>Faire attendre l'interlocuteur lors d'une interruption temporaire (connexion maintenue)</td><td><strong style="color:var(--accent)">Attendez</strong></td></tr>
       <tr><td>Faire savoir que la communication pourrait être interrompue mais reprise ultérieurement</td><td><strong style="color:var(--accent)">Je rappelle</strong></td></tr>
       <tr><td>Indiquer que le message est terminé</td><td><strong style="color:var(--green)">Terminé</strong></td></tr>
-      <tr><td>Indiquer une situation d'urgence</td><td><strong style="color:var(--red)">Mayday, mayday, mayday</strong> ⚠️</td></tr>
     </tbody>
   </table>
   </div>
-  <div style="font-size:11px;color:var(--text3);margin-top:8px">⚠️ «Mayday» ne peut pas être utilisé si une fonction d'appel d'urgence est disponible dans le train (ex. GSM-R).</div>
 </div>
 
 <!-- 2.5 ALPHABET PHONÉTIQUE -->
@@ -2796,11 +2798,23 @@ function buildQuestion() {
   const pct = Math.round((quizIdx / quizItems.length) * 100);
   const letters = ['A','B','C','D'];
   const thName = currentTheme ? THEMES.find(t=>t.id===currentTheme)?.short : 'Tous les thèmes';
-  // Shuffle options display (keep track of mapping)
   const indices = [0,1,2,3].slice(0, q.opts.length);
   const shuffled = [...indices].sort(() => Math.random() - 0.5);
   const displayOpts = shuffled.map(i => q.opts[i]);
   const correctDisplayIdx = shuffled.indexOf(q.ans);
+  const isMulti = q.multi || false;
+
+  const optsHtml = isMulti
+    ? displayOpts.map((o,i) => `
+      <label class="quiz-opt" id="opt-${i}" style="cursor:pointer;gap:12px" for="chk-${i}">
+        <input type="checkbox" id="chk-${i}" data-idx="${i}" style="width:18px;height:18px;flex-shrink:0;accent-color:var(--accent);cursor:pointer">
+        <span style="font-size:13px;line-height:1.5">${o}</span>
+      </label>`).join('')
+    : displayOpts.map((o,i) => `
+      <div class="quiz-opt" id="opt-${i}" onclick="answerSingle(${i}, ${correctDisplayIdx})">
+        <span class="opt-letter">${letters[i]}</span>
+        <span>${o}</span>
+      </div>`).join('');
 
   c.innerHTML = `
 <div style="display:flex;align-items:center;gap:8px;margin-bottom:20px;flex-wrap:wrap">
@@ -2813,15 +2827,12 @@ function buildQuestion() {
 </div>
 
 <div class="card" id="quiz-card">
-  <div class="quiz-q-label">Question ${quizIdx+1} sur ${quizItems.length}${q.multi?' · <span style="color:var(--accent)">Plusieurs bonnes réponses possibles</span>':''}</div>
+  <div class="quiz-q-label">Question ${quizIdx+1} sur ${quizItems.length}${isMulti?' · <span style="color:var(--accent);font-weight:500">☑ Plusieurs réponses possibles — cochez toutes les bonnes</span>':''}</div>
   <div class="quiz-question">${q.q}</div>
-  <div class="quiz-opts" id="quiz-opts">
-    ${displayOpts.map((o,i) => `
-      <div class="quiz-opt" id="opt-${i}" onclick="answerQuiz(${i}, ${correctDisplayIdx}, ${JSON.stringify(q.multi||false)})">
-        <span class="opt-letter">${letters[i]}</span>
-        <span>${o}</span>
-      </div>`).join('')}
+  <div class="quiz-opts" id="quiz-opts" style="${isMulti?'gap:10px':''}">
+    ${optsHtml}
   </div>
+  ${isMulti ? `<button class="btn btn-accent" style="margin-top:14px" onclick="answerMulti(${correctDisplayIdx})">Valider mes réponses</button>` : ''}
   <div class="quiz-expl" id="quiz-expl">${q.exp}</div>
   <div id="quiz-next-wrap" style="display:none;margin-top:16px">
     <button class="btn btn-accent" onclick="quizNext()" style="width:100%;justify-content:center;padding:12px">
@@ -2831,8 +2842,7 @@ function buildQuestion() {
 </div>`;
 }
 
-function answerQuiz(i, correctIdx, isMulti) {
-  // Already answered?
+function answerSingle(i, correctIdx) {
   if (document.getElementById('opt-0')?.classList.contains('disabled')) return;
   document.querySelectorAll('.quiz-opt').forEach(el => { el.classList.add('disabled'); el.onclick = null; });
   document.getElementById('opt-' + correctIdx)?.classList.add('correct');
@@ -2840,8 +2850,29 @@ function answerQuiz(i, correctIdx, isMulti) {
   else quizScore++;
   document.getElementById('quiz-expl')?.classList.add('shown');
   document.getElementById('quiz-next-wrap').style.display = '';
-  // Scroll explanation into view
   setTimeout(() => document.getElementById('quiz-expl')?.scrollIntoView({behavior:'smooth', block:'nearest'}), 100);
+}
+
+function answerMulti(correctIdx) {
+  const checked = [...document.querySelectorAll('#quiz-opts input[type=checkbox]:checked')].map(el => parseInt(el.dataset.idx));
+  document.querySelectorAll('.quiz-opt').forEach(el => { el.style.cursor='default'; });
+  document.querySelectorAll('#quiz-opts input').forEach(el => { el.disabled = true; });
+  document.querySelectorAll('#quiz-opts label').forEach(el => { el.onclick = null; });
+  document.getElementById('opt-' + correctIdx)?.classList.add('correct');
+  const isCorrect = checked.length === 1 && checked[0] === correctIdx;
+  if (!isCorrect) {
+    checked.forEach(idx => { if (idx !== correctIdx) document.getElementById('opt-' + idx)?.classList.add('wrong'); });
+  } else {
+    quizScore++;
+  }
+  document.querySelector('[onclick^="answerMulti"]')?.remove();
+  document.getElementById('quiz-expl')?.classList.add('shown');
+  document.getElementById('quiz-next-wrap').style.display = '';
+  setTimeout(() => document.getElementById('quiz-expl')?.scrollIntoView({behavior:'smooth', block:'nearest'}), 100);
+}
+
+function answerQuiz(i, correctIdx, isMulti) {
+  answerSingle(i, correctIdx);
 }
 
 function quizNext() {
