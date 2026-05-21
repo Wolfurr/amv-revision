@@ -681,7 +681,7 @@ h2.theme-heading:first-child { margin-top: 0; }
   <div class="topbar">
     <button class="burger" onclick="toggleSidebar()">☰</button>
     <div class="topbar-title" id="topbar-txt">AMV / <span>Accueil</span></div>
-    <div id="topbar-right"></div>
+    <div id="topbar-right" style="font-family:var(--mono);font-size:11px;color:var(--text3)">v2.1 — 21 mai 2026</div>
   </div>
 
   <div class="content" id="main-content"></div>
@@ -909,6 +909,16 @@ NOTA : Sur certaines voies désignées à la consigne des particularités locale
 circulation: `
 <h2 class="theme-heading">Circulation des trains</h2>
 <div class="theme-ref">AMV101 · AMV104 · AMV108 · AMV160 · DC1505 · DC1510 · OP0528 · OP843</div>
+
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Définitions — Lignes et voies <span class="tag yellow">PS9 p.195 · À connaître par cœur</span></h3>
+<div class="def-block important">
+  <div class="def-term">Voie principale (VP)</div>
+  <div class="def-text">Voie, identifiée comme telle par la documentation d'exploitation, affectée au départ ou à l'arrivée des trains transportant des voyageurs ou à la circulation des trains.</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">Voie de service (VS)</div>
+  <div class="def-text">Voie autre que voie principale.</div>
+</div>
 
 <h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Modes de circulation</h3>
 <div class="def-block important">
@@ -1151,6 +1161,42 @@ signaux: `
   Implantés à demeure généralement à gauche (sauf Alsace à droite).
 </div>
 
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">À quoi servent les signaux ?</h3>
+<ul class="numbered-list">
+  <li><span class="num">1.</span>Arrêter et retenir les trains</li>
+  <li><span class="num">2.</span>Limiter la vitesse des trains</li>
+  <li><span class="num">3.</span>Transmettre des indications ou des ordres divers</li>
+  <li><span class="num">4.</span>Transmettre des ordres propres à la traction électrique</li>
+</ul>
+
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Types de signaux</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>Critère</th><th>Types</th></tr></thead>
+  <tbody>
+    <tr><td>Durée</td><td>Permanents / Temporaires</td></tr>
+    <tr><td>Mobilité</td><td>Mobiles / Fixes</td></tr>
+    <tr><td>Technologie</td><td>Lumineux / Mécaniques</td></tr>
+    <tr><td>Visibilité</td><td>À visibilité normale / Réduite / Annulés</td></tr>
+    <tr><td>Implantation</td><td>À gauche (sauf Alsace : droite)</td></tr>
+  </tbody>
+</table></div>
+
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Signaux permanents lumineux</h3>
+<div class="def-block">
+  <div class="def-term">Panneaux</div>
+  <div class="def-text">Circulaires ou oblongs · Un ou plusieurs feux de couleur · Fixes ou clignotants</div>
+</div>
+<div class="def-block">
+  <div class="def-term">Tableaux</div>
+  <div class="def-text">Lumineux ou réflétorisés (ex : TIV, tableaux de vitesse)</div>
+</div>
+
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Signaux permanents mécaniques</h3>
+<div class="rule-box">
+  <strong>Position de fermeture :</strong> perpendiculaires aux voies<br>
+  <strong>Position d'ouverture :</strong> parallèlement aux voies
+</div>
+
 <h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Distances minimales de visibilité</h3>
 <div class="table-wrap"><table>
   <thead><tr><th>Vitesse</th><th>Distance</th></tr></thead>
@@ -1168,15 +1214,20 @@ signaux: `
     <tr><td>A</td><td>Signaux d'arrêt</td><td>Carré · Carré violet · Sémaphore · SAM · Disque · Guidon d'arrêt <span class="tag yellow">2C2SDG</span></td></tr>
     <tr><td>B</td><td>Annonce d'arrêt</td><td>Avertissement · Feu rouge clignotant · Feu jaune clignotant · Feu vert clignotant · Bande jaune horizontale</td></tr>
     <tr><td>C</td><td>Limitation de vitesse</td><td>TIV fixe · TIV mobile (>60 km/h)</td></tr>
-    <tr><td>D</td><td>Signaux d'ouverture</td><td>Feu vert (VP) · Feu blanc (VS) · Feu blanc clignotant</td></tr>
+    <tr><td>D</td><td>Signaux d'ouverture</td><td>Feu vert · Feu blanc · Feu blanc clignotant</td></tr>
     <tr><td>E</td><td>Signaux divers</td><td>Chevron · Indicateurs de direction · Tableau Garage · Baisser/Remonter panto · Couper/Remettre courant</td></tr>
   </tbody>
 </table></div>
 
-<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Famille A — Détail des signaux d'arrêt (2C2SDG)</h3>
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Famille A — Signaux d'arrêt (mémo : 2C2SDG)</h3>
+<div class="rule-box">
+  Les signaux d'arrêt commandent l'arrêt du train <strong>avant</strong> le signal pour :<br>
+  • Protéger un itinéraire, une aiguille, un passage à niveau<br>
+  • Assurer l'espacement des trains
+</div>
 <div class="def-block important">
   <div class="def-term">Carré</div>
-  <div class="def-text">Rôle principal : protéger les aiguilles. Aussi : protéger le stationnement · assurer le cantonnement · protéger les obstacles · arrêter les trains. Arrête ET retient.</div>
+  <div class="def-text">Rôle principal : protéger les aiguilles. Aussi : protéger le stationnement · assurer le cantonnement · protéger les obstacles · arrêter les trains. <strong>Arrête ET retient.</strong></div>
 </div>
 <div class="def-block">
   <div class="def-term">Carré Violet</div>
@@ -1188,7 +1239,7 @@ signaux: `
 </div>
 <div class="def-block">
   <div class="def-term">SAM — Signal d'Arrêt à Main</div>
-  <div class="def-text">Commande l'arrêt immédiat. De jour : drapeau rouge déployé ou jalon d'arrêt à damier. De nuit : feu rouge d'une lanterne ou jalon d'arrêt. Sert à repérer un point que le conducteur ne doit pas dépasser et à protéger un chantier ou obstacle inopiné.</div>
+  <div class="def-text">Commande l'arrêt immédiat. De jour : drapeau rouge déployé ou jalon d'arrêt à damier. De nuit : feu rouge d'une lanterne ou jalon d'arrêt. Protège un chantier ou obstacle inopiné.</div>
 </div>
 <div class="def-block">
   <div class="def-term">Disque</div>
@@ -1197,6 +1248,28 @@ signaux: `
 <div class="def-block">
   <div class="def-term">Guidon d'arrêt</div>
   <div class="def-text">Protection d'un point particulier (ex : PN).</div>
+</div>
+
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Famille B — Signaux d'annonce d'arrêt</h3>
+<div class="rule-box">
+  Ils indiquent que le <strong>signal d'arrêt suivant est fermé</strong> et commandent au conducteur d'être en mesure de s'arrêter avant.
+</div>
+<div class="table-wrap"><table>
+  <thead><tr><th>Signal</th><th>Rôle / Particularité</th></tr></thead>
+  <tbody>
+    <tr><td>Avertissement (feu jaune fixe)</td><td>Annonce principal d'un signal d'arrêt</td></tr>
+    <tr><td>Feu rouge clignotant</td><td>Annonce courte distance — franchissable SANS arrêt</td></tr>
+    <tr><td>Feu jaune clignotant</td><td>Annonce signal d'arrêt — marche à vue</td></tr>
+    <tr><td>Feu vert clignotant</td><td>Annonce ralentissement</td></tr>
+    <tr><td>Bande lumineuse jaune horizontale</td><td>Informe le conducteur qu'il va entrer sur une voie à quai courte ou raccourcie</td></tr>
+  </tbody>
+</table></div>
+
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Famille D — Signaux présentés à l'ouverture</h3>
+<div class="rule-box">
+  Ils donnent l'autorisation au conducteur de franchir le signal :<br>
+  • <strong>Feu vert</strong> → franchissement sans restriction (voie principale)<br>
+  • <strong>Feu blanc</strong> et <strong>feu blanc clignotant</strong> → franchissement avec restrictions (voie de service)
 </div>
 `,
 
@@ -2292,6 +2365,14 @@ const DICTEES = [
  ref:'AMV804 OP487',
  texte:'Travail de maintenance légère d\'une aiguille qui consiste à nettoyer et graisser les parties mobiles de l\'appareil de voie.',
  mots_cles:['maintenance légère','aiguille','nettoyer et graisser','parties mobiles','appareil de voie']},
+{theme:'circulation', titre:'Voie principale (VP)',
+ ref:'PS9 p.195',
+ texte:'Voie, identifiée comme telle par la documentation d\'exploitation, affectée au départ ou à l\'arrivée des trains transportant des voyageurs ou à la circulation des trains.',
+ mots_cles:['identifiée comme telle','documentation d\'exploitation','départ ou à l\'arrivée','trains transportant des voyageurs','circulation des trains']},
+{theme:'circulation', titre:'Voie de service (VS)',
+ ref:'PS9 p.195',
+ texte:'Voie autre que voie principale.',
+ mots_cles:['voie autre que voie principale']},
 ];
 
 // ═══════════════════════════════════════════════
@@ -2444,12 +2525,13 @@ function renderHome(c) {
     <span style="font-size:18px">⚠️</span>
     <div class="card-title" style="color:var(--accent);font-size:12px">QUASIMENT SÛRS DE TOMBER À L'EXAMEN — selon les formateurs</div>
   </div>
+  <div style="font-size:12px;color:var(--text3);margin-bottom:12px">Gares de St-Saturnin ou AMV Ville · Simulateur <strong style="color:var(--accent)">GESSIE</strong> disponible pour s'entraîner</div>
   <div style="display:flex;flex-direction:column;gap:8px">
     <div class="rule-box" style="margin:0">
       <strong>1. Définition Zone dangereuse (ZD)</strong> — à restituer mot pour mot
     </div>
     <div class="rule-box" style="margin:0">
-      <strong>2. FAMASS</strong> — méthode de traitement d'un obstacle/danger : Fermez · Alertez · Mesures supplémentaires · Assurez · puis Autocontrôle
+      <strong>2. FAMASS</strong> — Fermez · Alertez · Mesures supplémentaires · Assurez · Autocontrôle
     </div>
     <div class="rule-box" style="margin:0">
       <strong>3. Sigles à connaître</strong><br>
@@ -2466,8 +2548,41 @@ function renderHome(c) {
       </span>
     </div>
     <div class="rule-box" style="margin:0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
-      <span><strong>4. Article 1 DC3858 — Liste des IS d'un poste à leviers individuels</strong> (voir ci-dessous et dans la fiche)</span>
+      <span><strong>4. Article 1 DC3858 — Liste des IS d'un poste à leviers individuels</strong> (13 familles, à connaître par cœur)</span>
       <button onclick="currentTheme='aiguillage';document.querySelectorAll('.theme-item').forEach(el=>el.classList.remove('active'));document.getElementById('tnav-aiguillage')?.classList.add('active');showView('fiches')" class="btn btn-sm btn-accent" style="white-space:nowrap">Voir la fiche →</button>
+    </div>
+    <div class="rule-box" style="margin:0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
+      <span><strong>5. Appareils de voie à connaître</strong> — Aiguilles · Verrous · Dérailleurs (taquets dérailleur)</span>
+      <button onclick="currentTheme='aiguillage';document.querySelectorAll('.theme-item').forEach(el=>el.classList.remove('active'));document.getElementById('tnav-aiguillage')?.classList.add('active');showView('fiches')" class="btn btn-sm" style="white-space:nowrap">Voir la fiche →</button>
+    </div>
+    <div class="rule-box" style="margin:0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
+      <span><strong>6. Définitions Voie principale et Voie de service</strong> (PS9 p.195) — mot pour mot</span>
+      <button onclick="currentTheme='circulation';document.querySelectorAll('.theme-item').forEach(el=>el.classList.remove('active'));document.getElementById('tnav-circulation')?.classList.add('active');showView('fiches')" class="btn btn-sm" style="white-space:nowrap">Voir la fiche →</button>
+    </div>
+    <div class="rule-box" style="margin:0">
+      <strong>7. Familles d'IS à reconnaître sur photos</strong> — savoir identifier :<br>
+      <span style="font-size:12px;color:var(--text2);line-height:2">
+        <span class="tag">Aiguilles</span>
+        <span class="tag">Verrous</span>
+        <span class="tag">Taquets / dérailleurs</span>
+        <span class="tag">Circuits de voie</span>
+        <span class="tag">Compteurs d'essieux</span>
+        <span class="tag">Pédales</span>
+        <span class="tag">Crocodiles / balises</span>
+        <span class="tag">Pétards / détonateurs</span>
+        <span class="tag">KVB / DAAT</span>
+        <span class="tag">Signaux lumineux</span>
+        <span class="tag">PN à SAL</span>
+        <span class="tag">Détecteurs d'obstacles</span>
+      </span>
+    </div>
+    <div class="rule-box" style="margin:0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
+      <span><strong>8. Pistes et itinéraires</strong> — définitions + où les trouver (en gare et dans les postes d'aiguillage)</span>
+      <button onclick="currentTheme='epi';document.querySelectorAll('.theme-item').forEach(el=>el.classList.remove('active'));document.getElementById('tnav-epi')?.classList.add('active');showView('fiches')" class="btn btn-sm" style="white-space:nowrap">Voir la fiche →</button>
+    </div>
+    <div class="rule-box" style="margin:0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
+      <span><strong>9. Les 5 familles de signaux</strong> — A (arrêt) · B (annonce) · C (vitesse) · D (ouverture) · E (divers)</span>
+      <button onclick="currentTheme='signaux';document.querySelectorAll('.theme-item').forEach(el=>el.classList.remove('active'));document.getElementById('tnav-signaux')?.classList.add('active');showView('fiches')" class="btn btn-sm" style="white-space:nowrap">Voir la fiche →</button>
     </div>
   </div>
 </div>
@@ -2944,8 +3059,19 @@ function buildDictee() {
     Écris la définition exacte mot pour mot ↓
   </div>
   <div id="dictee-mots-cles" style="margin-bottom:12px">
-    <div style="font-size:11px;font-family:var(--mono);color:var(--text3);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:6px">Mots-clés à inclure</div>
-    ${d.mots_cles.map(m=>`<span class="kw-tag" id="kw-${slugify(m)}">${m}</span>`).join('')}
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+      <div style="font-size:11px;font-family:var(--mono);color:var(--text3);letter-spacing:0.08em;text-transform:uppercase">Mots-clés à inclure</div>
+      <label style="display:flex;align-items:center;gap:6px;cursor:pointer;font-size:12px;color:var(--text3);user-select:none">
+        <input type="checkbox" id="kw-toggle" onchange="toggleKeywords()" style="accent-color:var(--accent);cursor:pointer">
+        Révéler les mots-clés
+      </label>
+    </div>
+    <div id="kw-container" style="display:none">
+      ${d.mots_cles.map(m=>`<span class="kw-tag" id="kw-${slugify(m)}">${m}</span>`).join('')}
+    </div>
+    <div id="kw-hidden" style="font-size:12px;color:var(--text3);font-style:italic">
+      ☐ Coche la case ci-dessus pour révéler les mots-clés si tu bloques
+    </div>
   </div>
 
   <textarea class="dictee-textarea" id="dictee-input" placeholder="Écris la définition ici..." oninput="checkKeywords()" spellcheck="false"></textarea>
@@ -2976,6 +3102,12 @@ function normalize(s) {
     .replace(/['']/g,"'")
     .replace(/[^a-z0-9'\- ]/g,' ')
     .replace(/\s+/g,' ').trim();
+}
+
+function toggleKeywords() {
+  const show = document.getElementById('kw-toggle')?.checked;
+  document.getElementById('kw-container').style.display = show ? '' : 'none';
+  document.getElementById('kw-hidden').style.display = show ? 'none' : '';
 }
 
 function checkKeywords() {
