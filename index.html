@@ -681,7 +681,7 @@ h2.theme-heading:first-child { margin-top: 0; }
   <div class="topbar">
     <button class="burger" onclick="toggleSidebar()">☰</button>
     <div class="topbar-title" id="topbar-txt">AMV / <span>Accueil</span></div>
-    <div id="topbar-right" style="font-family:var(--mono);font-size:11px;color:var(--text3)">v2.2 — 21 mai 2026</div>
+    <div id="topbar-right" style="font-family:var(--mono);font-size:11px;color:var(--text3)">v2.4 — 21 mai 2026</div>
   </div>
 
   <div class="content" id="main-content"></div>
@@ -702,6 +702,7 @@ const THEMES = [
   { id:'aiguillage',code:'AMV200–216', title:'Aiguillage & Appareils de voie', short:'Aiguillage' },
   { id:'signaux',   code:'AMV207',     title:'Signaux ferroviaires', short:'Signaux' },
   { id:'encl',      code:'AMV210–211', title:'Enclenchements', short:'Enclenchements' },
+  { id:'is',        code:'AMV200/AMV250/AMV310', title:'Installations de Sécurité (IS)', short:'IS' },
   { id:'traction',  code:'AMV600–601', title:'Traction électrique', short:'Traction élec.' },
   { id:'travaux',   code:'AMV300–310', title:'Travaux sur les voies & IS', short:'Travaux' },
   { id:'epi',       code:'AMV801',     title:'EPI & Déplacements', short:'EPI' },
@@ -998,6 +999,12 @@ circulation: `
   </tbody>
 </table></div>
 
+<div class="rule-box" style="margin-bottom:12px">
+  <strong>Différence ONJ / EC :</strong><br><br>
+  <strong>ONJ (Ordre Normal Journalier)</strong> = document <em>prévisionnel</em>. Il liste <strong>à l'avance</strong> tous les trains qui doivent passer au poste dans la journée, avec leurs horaires théoriques. L'aiguilleur le consulte pour savoir ce qu'il doit attendre.<br><br>
+  <strong>EC (État de Circulation)</strong> = document <em>constat</em>. L'aiguilleur y note <strong>au fur et à mesure</strong> l'heure réelle de passage de chaque train. C'est le compte-rendu de ce qui s'est réellement passé — il permet de savoir quel est le dernier train reçu et le dernier expédié.
+</div>
+
 <div class="def-block">
   <div class="def-term">Types d'arrêts (OP843)</div>
   <div class="def-text">• Normaux réguliers : toujours respectés
@@ -1081,10 +1088,6 @@ aiguillage: `
 <div class="def-block important">
   <div class="def-term">Aiguille</div>
   <div class="def-text">Sert à diriger et à protéger. Elle peut être empruntée par la pointe ou le talon. On parle à partir de la pointe vers le talon, elle indique la direction droite ou gauche.</div>
-</div>
-<div class="rule-box" style="margin-bottom:10px">
-  <strong>🐭 Technique de la souris — savoir dans quelle direction pointe l'aiguille :</strong><br>
-  Après la manœuvre, observe la lame appliquée et la lame décollée. Le léger espace visible est du côté de la lame décollée — c'est la direction vers laquelle l'aiguille n'envoie PAS. Si une petite souris peut se faufiler dans l'espace à droite, c'est que la lame droite est décollée → l'aiguille dirige vers la gauche. Et inversement : un espace à gauche → direction à droite.
 </div>
 <div class="def-block important">
   <div class="def-term">Aiguilles conjuguées</div>
@@ -1366,6 +1369,109 @@ Libération : libération de la zone (blanc)</div>
 Agit sur : Levier du signal de protection (position −)
 Mise en action : ZAP présumée occupée (rouge) ET signal commandé à l'ouverture (levier en −)
 Libération : ZAP libre (blanc) OU fermeture automatique du signal après passage d'une circulation</div>
+</div>
+`,
+
+is: `
+<h2 class="theme-heading">Installations de Sécurité (IS)</h2>
+<div class="theme-ref">AMV200 · AMV250 · AMV310 · DC3858 · Consigne Rose</div>
+
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">AMV200 — Définition & Liste des 15 familles <span class="tag red">À connaître par cœur</span></h3>
+<div class="def-block important">
+  <div class="def-term">Définition des IS (Article 1 DC3858)</div>
+  <div class="def-text">Les installations de sécurité comprennent tout système (composé ou non avec des éléments techniquement de sécurité) nécessaire pour assurer la sécurité des circulations et dont le dérangement entraîne l'application de dispositions réglementaires.</div>
+</div>
+
+<div class="table-wrap"><table>
+  <thead><tr><th>N°</th><th>Famille IS</th><th>Rôle principal</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><strong>Dispositifs de signalisation</strong><br><span style="font-size:11px;color:var(--text3)">signaux + organes mécaniques de commande</span></td><td>Protéger les AdV · Espacer les circulations · Avertir de la fermeture · Imposer une vitesse</td></tr>
+    <tr><td>2</td><td><strong>Appareils de voie</strong><br><span style="font-size:11px;color:var(--text3)">organes mécaniques + partie électrique</span></td><td>Aiguille (diriger/protéger) · Verrou (passage en pointe > 40 km/h) · Taquet (protéger contre dérives)</td></tr>
+    <tr><td>3</td><td><strong>Organes de commande</strong><br><span style="font-size:11px;color:var(--text3)">leviers, manettes</span></td><td>Permettre la manœuvre des IS — position Normale ou Renversée</td></tr>
+    <tr><td>4</td><td><strong>Enclenchements mécaniques</strong></td><td>Éviter les conséquences dangereuses d'une manœuvre IS contraire à la réglementation</td></tr>
+    <tr><td>5</td><td><strong>Enclenchements électriques</strong></td><td>ZI · CIP · ZP · EAP — contrôle automatique des conditions de sécurité</td></tr>
+    <tr><td>6</td><td><strong>Composants sur le terrain</strong><br><span style="font-size:11px;color:var(--text3)">circuits de voie, pédales, compteurs d'essieux</span></td><td>Détecter l'occupation/libération d'une partie de voie · Déclencher pictogrammes lumineux (TVP)</td></tr>
+    <tr><td>7</td><td><strong>Dispositifs de contrôle</strong></td><td>Renseigner l'aiguilleur sur la position et l'état des IS · Guider son action en normal et en dérangement</td></tr>
+    <tr><td>8</td><td><strong>Dispositifs de répétition des signaux</strong><br><span style="font-size:11px;color:var(--text3)">crocodiles, balises</span></td><td>Répéter dans la cabine de conduite une indication présentée par un signal — pallier un défaut de vigilance</td></tr>
+    <tr><td>9</td><td><strong>Appuis acoustiques des signaux</strong><br><span style="font-size:11px;color:var(--text3)">pétards, détonateurs</span></td><td>Alerter le conducteur par explosion lors du franchissement d'un signal</td></tr>
+    <tr><td>10</td><td><strong>Installations de PN à SAL</strong></td><td>Obtenir l'arrêt de la circulation routière pour le passage des trains</td></tr>
+    <tr><td>11</td><td><strong>Détecteurs d'obstacles</strong></td><td>Arrêter ou ralentir les circulations en cas d'obstruction probable de la voie</td></tr>
+    <tr><td>12</td><td><strong>Dispositifs de contrôle de vitesse et d'arrêt automatique</strong><br><span style="font-size:11px;color:var(--text3)">KVB, DAAT</span></td><td>Déclencher l'arrêt automatique si action inappropriée du conducteur ou erreur de l'AC vis-à-vis de la sécurité</td></tr>
+    <tr><td>13</td><td><strong>Installations de block</strong></td><td>Assurer l'espacement des trains</td></tr>
+    <tr><td>14</td><td><strong>Dispositifs d'annonce aux PN gardés</strong></td><td>Prévenir le garde-barrière de l'approche d'un train</td></tr>
+    <tr><td>15</td><td><strong>Installations de PN à SAL voisins de gare</strong></td><td>Assurer la sécurité des PN proches d'une gare</td></tr>
+  </tbody>
+</table></div>
+
+<h3 style="font-size:15px;font-weight:500;margin:24px 0 10px;color:var(--text2)">Pétards et détonateurs — rôle détaillé</h3>
+<div class="def-block">
+  <div class="def-term">Pétard / Détonateur</div>
+  <div class="def-text">Lorsqu'un conducteur franchit un carré fermé suite à dérangement, l'explosion d'un pétard ou détonateur lui commande l'arrêt absolu.<br>
+  Si le conducteur perçoit l'explosion au franchissement d'un signal <strong>ouvert</strong>, il considère le carré comme fermé.</div>
+</div>
+
+<h3 style="font-size:15px;font-weight:500;margin:24px 0 10px;color:var(--text2)">AMV250 — Dérangements des IS (DC3858 + Consigne Rose + CDIS)</h3>
+<div class="def-block important">
+  <div class="def-term">Méthode RITA — traitement d'un dérangement IS</div>
+  <div class="def-text"><strong>R</strong> — Risque immédiat ? → Prendre des mesures de sécurité : ARRÊTER ET RETENIR la circulation
+<strong>I</strong> — Identifier la nature du dérangement et ses conséquences :
+  • Problème levier aiguille → manœuvrer à blanc (envers + endroit avec PRR Rapide)
+  • Problème dispositif de contrôle → Art 105 consigne rose (peut-on changer l'ampoule ?)
+  • Si toujours pas résolu → Art 205.3 DC3858 : aller vérifier sur le terrain (avec EPI, schéma pistes/itinéraires, prévenir régulateur, fermer le poste)
+<strong>T</strong> — Traiter le dérangement : DC3858 Chap. 4 (fait en vert = Aiguilleur)
+<strong>A</strong> — Aviser verbalement l'AC, le COGC + Annoter le CDIS pour l'AMI</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">3 types de dérangements signaux</div>
+  <div class="def-text">• <strong>Raté de fermeture</strong> : le signal n'obéit pas à une commande de fermeture → reste ouvert
+• <strong>Raté d'ouverture</strong> : le signal n'obéit pas à une commande d'ouverture → reste fermé
+• <strong>Extinction</strong> : le signal est éteint en position de fermeture ET d'ouverture</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">3C2D — Franchissement d'un carré fermé sur dérangement</div>
+  <div class="def-text"><strong>C</strong>onditions d'ouverture : Annexe 2 consigne rose partie 2 ou 3
+<strong>C</strong>arré commandé à l'ouverture : itinéraire formé — levier signal en − = ouvert
+<strong>C</strong>hoix du bulletin de franchissement : CBA si BA (BAL ou BAPR) — Type de Block Annexe 1 ou C
+<strong>D</strong>irection indiquée au conducteur : indication verbale par radio « tu seras dirigé vers... »
+<strong>D</strong>étonateur : annoter le suivi des appuis acoustiques (1 train = 1 cartouche) + aviser AMI + prévenir le conducteur</div>
+</div>
+
+<h3 style="font-size:15px;font-weight:500;margin:24px 0 10px;color:var(--text2)">CDIS — Carnet de dérangements des IS</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>Colonne(s)</th><th>Contenu</th></tr></thead>
+  <tbody>
+    <tr><td>Col 1&2</td><td>Date + Heure du début = Constat du dérangement</td></tr>
+    <tr><td>Col 3</td><td>Nature du dérangement (ex : Aig 13 absence de contrôle pour la direction de droite)</td></tr>
+    <tr><td>Col 4</td><td>L'heure à laquelle on a avisé l'AMI</td></tr>
+    <tr><td>Col 5&6</td><td>Fonction normale rétablie après intervention AMI OU reprise normale avant intervention AMI (seule)</td></tr>
+    <tr><td>Col 7&8</td><td>L'AMI vient annoter lui-même le carnet AU poste OU avis donné par dépêche au CED par AMI</td></tr>
+    <tr><td>Col 9</td><td>Soit 1ère catégorie soit N° DATIS</td></tr>
+  </tbody>
+</table></div>
+
+<h3 style="font-size:15px;font-weight:500;margin:24px 0 10px;color:var(--text2)">AMV310 — Travaux sur les IS (IN1582)</h3>
+<div class="def-block">
+  <div class="def-term">Article 101 — Conditions générales</div>
+  <div class="def-text">Il s'agit d'une IS, quel que soit son lieu d'implantation (gare, pleine voie), qui est manœuvrée directement ou indirectement, et/ou contrôlée par un AC ou Aiguilleur.</div>
+</div>
+<div class="def-block">
+  <div class="def-term">Article 102 — 4 catégories de travaux</div>
+  <div class="def-text">• <strong>1ère catégorie</strong> : Travaux de petit entretien
+• <strong>2ème catégorie</strong> : Travaux de relève de dérangement
+• <strong>3ème catégorie</strong> : Travaux de grand entretien
+• <strong>4ème catégorie</strong> : Travaux d'établissement, de modification ou de suppression</div>
+</div>
+
+<h3 style="font-size:15px;font-weight:500;margin:24px 0 10px;color:var(--text2)">Code couleur DC3858 (Consigne Rose)</h3>
+<div class="rule-box">
+  🟢 <strong>Vert</strong> = Opération pouvant être effectuée par un Aiguilleur<br>
+  🟡 <strong>Jaune</strong> = Opération devant être effectuée par un Agent-circulation<br>
+  ⬜ <strong>Gris</strong> = Opération pouvant être effectuée par un opérateur habilité<br>
+  🟠 <strong>Orange</strong> = Aboutissement d'une opération<br>
+  🔵 <strong>Bleu</strong> = Opérations liées au fonctionnement des installations<br>
+  🔴 <strong>Rouge</strong> = Situation constatée ou particularité des installations
 </div>
 `,
 
@@ -2007,9 +2113,9 @@ const QUIZ = [
 {theme:'aiguillage', q:'Quelles sont les 4 conditions pour ouvrir un signal de protection (Art.203.2) ?',
  opts:['Voie libre / Signal d\'annonce fermé / Itinéraire tracé / Régulateur avisé','Appareils de voie convenablement disposés + aiguilles collent / Croisements dégagés / Protection du parcours assurée / Partie de voie libre','CdM présent / Bulletin de freinage remis / Aiguilles verrouillées / Temps moral respecté','DA apposés / DR retirés / DSA sur leviers / Contrôle voies obtenu'],
  ans:1, exp:'Art 203.2 : 1.Appareils convenablement disposés ET aiguilles collent 2.Croisements des AdV dégagés 3.Protection du parcours assurée 4.Partie de voie intéressée libre.'},
-{theme:'aiguillage', q:'Le temps moral est nécessaire quand :',
- opts:['Toujours, avant toute manœuvre d\'aiguille','Sauf si la fermeture du signal a été réalisée automatiquement ou effectuée immédiatement derrière une circulation','Uniquement la nuit','Uniquement sur lignes à BAL'],
- ans:1, exp:'Le temps moral est nécessaire SAUF si la fermeture du signal a été réalisée automatiquement OU effectuée immédiatement derrière une circulation.'},
+{theme:'aiguillage', q:'Dans quel cas peut-on se DISPENSER du temps moral après la fermeture d\'un signal de protection ?',
+ opts:['Jamais — le temps moral est toujours obligatoire quelle que soit la situation','Si la fermeture du signal a été réalisée automatiquement au passage d\'une circulation OU effectuée immédiatement derrière une circulation qui vient de passer','Si l\'aiguilleur a obtenu l\'accord verbal du régulateur','Si le signal est de type BAL uniquement'],
+ ans:1, exp:'Le temps moral n\'est PAS nécessaire dans deux cas : 1) la fermeture a été réalisée automatiquement au passage d\'un train 2) la fermeture a été effectuée immédiatement derrière une circulation. Dans tous les autres cas, il est obligatoire.'},
 {theme:'aiguillage', q:'Que fait le taquet dérailleur ?',
  opts:['Il bloque les dérivées en position haute','Il fait dérailler intentionnellement les véhicules en dérive pour les protéger','Il fait ralentir les véhicules','Il verrouille l\'aiguille en position imposée'],
  ans:1, exp:'Taquet dérailleur : fait dérailler intentionnellement les véhicules en dérive pour éviter qu\'ils ne pénètrent sur une voie protégée. Taquet classique = bloque. Taquet enrayeur = ralentit.'},
@@ -2105,9 +2211,9 @@ const QUIZ = [
 {theme:'epi', q:'Quelle est la vitesse maximale pour un véhicule automoteur sur une piste carrossable ?',
  opts:['20 km/h','30 km/h','40 km/h','60 km/h'],
  ans:2, exp:'OP485 Art.111 : un véhicule automoteur sur piste carrossable ne doit pas dépasser 40 km/h. Il doit rester à au moins 1,50 m du rail.'},
-{theme:'epi', q:'La largeur minimale d\'un emplacement de garage (EG) est de :',
- opts:['0,50 m','0,70 m','1,00 m','1,25 m'],
- ans:1, exp:'La largeur minimale d\'un emplacement de garage est de 0,70 m. C\'est le minimum pour que les agents avec leur matériel puissent se garer hors de toute zone dangereuse.'},
+{theme:'epi', q:'Combien de formes différentes peut prendre un emplacement de garage ?',
+ opts:['Une seule : une piste balisée','Deux : niche ou piste','Plusieurs : piste, accotement, niche, refuge d\'ouvrage d\'art, voie non circulée, entrevoie repérée par pancartage','Il n\'existe pas de définition formelle des types d\'EG'],
+ ans:2, exp:'Un EG peut prendre plusieurs formes : piste aménagée, accotement hors ZD, niche, refuge d\'ouvrage d\'art, voie interdite à la circulation non parcourue par trains de travaux, entrevoie large repérée par pancartage.'},
 {theme:'epi', q:'Les obstacles fixes sur les pistes et itinéraires sont peints en :',
  opts:['Rouge','Jaune','Blanc','Orange'],
  ans:2, exp:'Les obstacles fixes sur les pistes et itinéraires sont peints en BLANC.'},
@@ -2181,9 +2287,6 @@ const QUIZ = [
 {theme:'epi', q:'La largeur minimale d\'un emplacement de garage (EG) est de :',
  opts:['0,50 m','1,00 m','0,70 m','0,90 m'],
  ans:2, exp:'La largeur minimale d\'un EG est de 0,70 m. C\'est le minimum pour qu\'un agent avec son matériel puisse se garer hors de toute zone dangereuse.'},
-{theme:'epi', q:'Les obstacles fixes sur les pistes et itinéraires sont peints en :',
- opts:['Rouge pour signaler le danger','Jaune pour être visibles de loin','Orange comme les EPI','Blanc'],
- ans:3, exp:'Les obstacles fixes sur les pistes et itinéraires sont peints en BLANC.'},
 {theme:'epi', q:'Un emplacement de garage peut prendre plusieurs formes. Laquelle de ces propositions N\'EST PAS un EG ?',
  opts:['Une niche ou un refuge d\'ouvrage d\'art','Un accotement situé hors ZD','Une voie interdite à la circulation non parcourue par des trains de travaux','Un passage à niveau gardé'],
  ans:3, exp:'Un EG peut être : piste aménagée, accotement hors ZD, voie interdite à la circulation, niche, refuge d\'ouvrage d\'art, ou entrevoie large repérée par pancartage. Un PN gardé n\'est pas un EG.'},
@@ -2202,9 +2305,21 @@ const QUIZ = [
 {theme:'epi', q:'De nuit, qu\'est-il interdit pour un véhicule automoteur circulant sur une piste ?',
  opts:['De circuler à plus de 30 km/h','D\'utiliser les feux de croisement (feux de position)','D\'utiliser les feux de route (plein phares)','De transporter plus d\'une personne'],
  ans:2, exp:'OP485 Art.111 : de nuit, l\'utilisation des FEUX DE ROUTE (plein phares) est INTERDITE pour ne pas éblouir les conducteurs de train. Seuls les feux de croisement sont autorisés.'},
-{theme:'epi', q:'Un agent souhaite accéder aux emprises pour récupérer un outil oublié. Il n\'est habilité à aucune TES et n\'est pas dans le document d\'application. Quelle est la seule option valide ?',
- opts:['Y accéder rapidement si personne ne le voit','Y accéder avec l\'accord oral de son chef d\'équipe','Être accompagné par un agent habilité TES ou autorisé','Attendre le lendemain pendant une interdiction de circulation'],
- ans:2, exp:'Seule option valide : être accompagné par un agent habilité TES ou autorisé. L\'accord oral du chef ou la carte professionnelle ne suffisent pas.'},
+{theme:'epi', q:'Un agent non habilité TES, non dans le document d\'application, souhaite entrer en emprise ferroviaire. Quelle est la seule option valide ?',
+ opts:['Y accéder rapidement avec l\'accord oral de son chef','Contacter le régulateur pour obtenir une autorisation temporaire','Être accompagné par un agent habilité TES ou autorisé selon le document d\'application','Attendre une interdiction de circulation officielle'],
+ ans:2, exp:'Art. 6.2 RRA20000 : seule option valide = être accompagné par un agent habilité TES ou autorisé. L\'accord oral du chef ou la carte professionnelle ne suffisent pas.'},
+{theme:'epi', q:'À quelle vitesse maximale peut circuler une bicyclette en emprise ferroviaire ?',
+ opts:['10 km/h','15 km/h','20 km/h','30 km/h'],
+ ans:2, exp:'Art. 8.2 RRA20068 : la vitesse maximale pour une bicyclette ou cyclomoteur en emprise ferroviaire est de 20 km/h.'},
+{theme:'epi', q:'Sur une ligne parcourue à V entre 160 km/h et 220 km/h, à quelles CONDITIONS CUMULATIVES une bicyclette peut-elle circuler sur piste cyclable ?',
+ opts:['Autorisation écrite du chef + présence d\'un agent sécurité + vitesse < 10 km/h','Sens inverse des circulations de la voie voisine + délai de visibilité > 10 secondes + garage possible à au moins 2,00 m du rail','Uniquement si la piste est physiquement séparée de la voie par une barrière rigide + accord régulateur','Sens de circulation normal + casque homologué + éclairage fonctionnel'],
+ ans:1, exp:'Art. 8.5 RRA20068 : les 3 conditions cumulatives sont : 1. déplacement dans le sens INVERSE du sens normal de circulation de la voie voisine 2. délai de visibilité > 10 secondes 3. garage possible à au moins 2,00 m du rail le plus proche.'},
+{theme:'epi', q:'Pour un véhicule automoteur, quelle est la vitesse maximale sur piste carrossable ?',
+ opts:['20 km/h','30 km/h','40 km/h','60 km/h'],
+ ans:2, exp:'OP485 Art.111 : vitesse maximale = 40 km/h sur piste carrossable pour un véhicule automoteur.'},
+{theme:'epi', q:'Une autorisation spéciale du chef d\'établissement est nécessaire pour un véhicule automoteur dont :',
+ opts:['La largeur dépasse 3,00 m OU la hauteur dépasse 5,00 m OU le poids dépasse 15 tonnes','La largeur dépasse 2,50 m OU la hauteur dépasse 4,00 m OU le poids dépasse 12 tonnes','La largeur dépasse 2,00 m OU le poids dépasse 10 tonnes','Tout véhicule de plus de 2 tonnes nécessite une autorisation'],
+ ans:1, exp:'OP485 : autorisation spéciale nécessaire si largeur > 2,50 m OU hauteur > 4,00 m OU poids > 12 tonnes. Les trois seuils sont indépendants, un seul suffit à déclencher l\'obligation.'},
 // ── ZD EXHAUSTIF ──
 {theme:'zd', q:'Que doit faire un agent AVANT d\'engager la ZD (liste complète) ?',
  opts:['Regarder dans les deux sens et traverser rapidement','Contacter l\'aiguilleur pour vérification','Marquer l\'arrêt · Regarder · S\'assurer de la DMVC · Redoubler de prudence si intempéries · Sur double voie : sens opposé aux circulations','Attendre le passage de toute circulation visible avant d\'engager'],
@@ -2249,31 +2364,7 @@ const QUIZ = [
  opts:['Autorisé si l\'agent dispose de la DMVC complète','Toléré pour les appels de service urgents','Autorisé uniquement sur voies de service','INTERDIT sans exception'],
  ans:3, exp:'L\'USAGE DE DISTRACTEURS D\'ATTENTION EST INTERDIT pendant la traversée des voies. C\'est une règle absolue inscrite dans le RRA20068.'},
 
-// ── EPI EXHAUSTIF ──
-{theme:'epi', q:'Quelle est la définition officielle des EPI ?',
- opts:['Équipements réglementaires obligatoires imposés par la direction de l\'établissement selon le code ferroviaire','Dispositifs ou moyens visés à l\'article R4311-8 du code du travail visant à protéger un travailleur contre un ou plusieurs risques susceptibles de menacer sa sécurité ou sa santé','Tenues standardisées portées par tout agent circulant sur le RFN','Équipements collectifs mis à disposition dans les postes d\'aiguillage pour les interventions'],
- ans:1, exp:'Définition officielle EPI : dispositifs ou moyens visés à l\'article R4311-8 du code du travail visant à protéger un travailleur contre un ou plusieurs risques susceptibles de menacer sa sécurité ou sa santé.'},
-{theme:'epi', q:'Qui est responsable du port des EPI par les agents ?',
- opts:['L\'agent lui-même, individuellement et sans contrôle','Le supérieur hiérarchique est responsable du port des EPI','Le médecin du travail uniquement','Le chef de gare en personne'],
- ans:1, exp:'Le port des EPI est soumis à la responsabilité du supérieur hiérarchique. L\'agent doit également assurer le bon état des EPI avant et après utilisation.'},
-{theme:'epi', q:'Qu\'est-ce qu\'une THV ?',
- opts:['Tâche Hautement Vérifiée : procédure de contrôle avant départ','Tenue Haute Visibilité : EPI de la famille signalisation visuelle, obligatoire en emprises ferroviaires','Tableau des Horaires Validés : document journalier du poste','Transmission Hertzienne de Voie : système radio sol-train'],
- ans:1, exp:'THV = Tenue Haute Visibilité. C\'est l\'EPI de la famille n°1 : signalisation visuelle de l\'utilisateur. Son port est obligatoire dès qu\'un agent pénètre dans les emprises ferroviaires.'},
-{theme:'epi', q:'Dans la liste des 9 familles EPI, quelle famille occupe la position numéro 7 ?',
- opts:['Protection des pieds','Protection des mains','Protection du corps','Protection respiratoire'],
- ans:2, exp:'Ordre exact : 1.Signalisation visuelle (THV) · 2.Tête et visage · 3.Ouïe (PICB) · 4.Yeux · 5.Respiratoire · 6.Mains · 7.Corps · 8.Pieds · 9.Chutes de hauteur. Position 7 = Corps.'},
-{theme:'epi', q:'Un agent souhaite accéder aux emprises ferroviaires pour récupérer un outil. Il n\'est habilité à aucune TES. Que peut-il faire ?',
- opts:['Entrer rapidement si personne ne le voit','Y accéder avec l\'accord oral de son chef, même sans TES ni accompagnateur','Y accéder uniquement s\'il est accompagné par un agent habilité TES ou autorisé','Y accéder librement car ce n\'est pas une tâche de sécurité'],
- ans:2, exp:'RRA20000 Art. 6.2 : un agent peut se déplacer en emprise ferroviaire seulement s\'il est habilité TES, ou autorisé selon le document d\'application, ou accompagné par un agent habilité TES ou autorisé.'},
-{theme:'epi', q:'Les pistes longent les voies principales. Les itinéraires, eux, existent :',
- opts:['En pleine voie uniquement, entre deux gares','En dehors des voies principales dans les gares, triages, dépôts ou les ateliers','Sur les quais voyageurs pour guider les agents','Uniquement dans les tunnels et ouvrages d\'art'],
- ans:1, exp:'Pistes : longent les voies principales en pleine voie ou dans les gares. Itinéraires : existent en dehors des voies principales dans les gares, triages, dépôts ou les ateliers. Les obstacles fixes sont peints en blanc.'},
-{theme:'epi', q:'Pour les véhicules automoteurs sur piste carrossable, à quelle distance minimale du rail doivent-ils rester ?',
- opts:['0,70 m du rail','1,00 m du rail','1,50 m du rail','2,00 m du rail'],
- ans:2, exp:'OP485 Art.111 : le conducteur de véhicule automoteur doit rester en dehors des voies, à une distance d\'au moins 1,50 m du rail.'},
-{theme:'epi', q:'[MULTI] Quelles situations nécessitent une autorisation spéciale du chef d\'établissement pour un véhicule automoteur ? (plusieurs réponses)',
- opts:['Largeur supérieure à 2,50 m ET hauteur supérieure à 4,00 m ET poids supérieur à 12 tonnes','Largeur > 2,50 m uniquement','Poids > 8 tonnes uniquement','Hauteur > 3 m uniquement'],
- multi:true, ans:0, exp:'OP485 : autorisation spéciale du chef d\'établissement si largeur > 2,50 m OU hauteur > 4,00 m OU poids > 12 tonnes. Les trois critères déclenchent séparément la nécessité d\'une autorisation.'},
+// ── ZD EXHAUSTIF ──
 {theme:'epi', q:'Sur voie à V > 160 km/h (jusqu\'à 220 km/h), un agent à bicyclette peut circuler sur piste cyclable uniquement si :',
  opts:['Il porte un casque homologué et roule à moins de 10 km/h','Il effectue son déplacement dans le sens inverse du sens normal de circulation, le délai de visibilité > 10 secondes, et le garage est possible à au moins 2,00 m du rail','Il est accompagné par un agent sécurité personnel','Uniquement si la piste est séparée de la voie par une clôture rigide'],
  ans:1, exp:'Art. 8.5 RRA20068 : déplacement dans le sens inverse du sens normal de circulation de la voie voisine + délai de visibilité > 10 secondes + garage possible à au moins 2,00 m du rail le plus proche.'},
@@ -2541,7 +2632,7 @@ function showView(v) {
   setNavActive(v);
   closeSidebar();
   const c = document.getElementById('main-content');
-  document.getElementById('topbar-right').innerHTML = '<span style="font-family:var(--mono);font-size:11px;color:var(--text3)">v2.2 — 21 mai 2026</span>';
+  document.getElementById('topbar-right').innerHTML = '<span style="font-family:var(--mono);font-size:11px;color:var(--text3)">v2.4 — 21 mai 2026</span>';
   if (v === 'home') { setTopbar('AMV / <span>Accueil</span>'); renderHome(c); }
   else if (v === 'fiches') { setTopbar('AMV / <span>Fiches de cours</span>'); renderFiches(c); }
   else if (v === 'flash') { setTopbar('AMV / <span>Flashcards</span>'); renderFlash(c); }
@@ -2866,7 +2957,6 @@ document.addEventListener('click', e => {
 // ═══════════════════════════════════════════════
 function renderFiches(c) {
   c = c || document.getElementById('main-content');
-  const filtered = currentTheme ? THEMES.filter(t => t.id === currentTheme) : THEMES;
   if (currentTheme) {
     const t = THEMES.find(x => x.id === currentTheme);
     c.innerHTML = `
@@ -2879,7 +2969,14 @@ function renderFiches(c) {
   } else {
     c.innerHTML = `
       <div class="section-heading">Fiches de cours</div>
-      <div class="section-sub">Sélectionne un thème pour accéder à la fiche détaillée</div>
+      <div class="section-sub">Recherche un mot-clé ou sélectionne un thème</div>
+      <div style="position:relative;margin-bottom:20px">
+        <input id="fiche-search" type="text" placeholder="🔍  Rechercher dans les fiches : cantonnement, ZI, RITA, carré, DATZD..."
+          oninput="searchFiches(this.value)"
+          style="width:100%;padding:10px 14px;background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius);color:var(--text);font-family:var(--sans);font-size:14px;outline:none;"
+          onfocus="this.style.borderColor='var(--accent2)'" onblur="this.style.borderColor='var(--border2)'">
+        <div id="fiche-search-results" style="display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg2);border:1px solid var(--border2);border-radius:0 0 var(--radius) var(--radius);z-index:200;max-height:280px;overflow-y:auto;box-shadow:0 8px 24px rgba(0,0,0,0.4)"></div>
+      </div>
       <div class="fiche-grid">
         ${THEMES.map(t => `
           <div class="fiche-card" onclick="currentTheme='${t.id}'; document.querySelectorAll('.theme-item').forEach(el=>el.classList.remove('active')); document.getElementById('tnav-${t.id}')?.classList.add('active'); renderFiches()">
@@ -2889,6 +2986,40 @@ function renderFiches(c) {
           </div>`).join('')}
       </div>`;
   }
+}
+
+function searchFiches(val) {
+  const res = document.getElementById('fiche-search-results');
+  if (!res) return;
+  const q = val.trim().toLowerCase();
+  if (q.length < 2) { res.style.display = 'none'; return; }
+  const matches = [];
+  THEMES.forEach(t => {
+    const content = (FICHES[t.id] || '').replace(/<[^>]+>/g, ' ').toLowerCase();
+    if (content.includes(q)) {
+      // Find snippet around match
+      const idx = content.indexOf(q);
+      const start = Math.max(0, idx - 40);
+      const end = Math.min(content.length, idx + 80);
+      let snippet = content.slice(start, end).replace(/\s+/g,' ').trim();
+      const hi = snippet.toLowerCase().indexOf(q);
+      if (hi >= 0) snippet = snippet.slice(0,hi) + '<strong style="color:var(--accent)">' + snippet.slice(hi, hi+q.length) + '</strong>' + snippet.slice(hi+q.length);
+      matches.push({ t, snippet: '...' + snippet + '...' });
+    }
+  });
+  if (!matches.length) {
+    res.style.display = '';
+    res.innerHTML = '<div style="padding:12px 16px;font-size:13px;color:var(--text3)">Aucun résultat trouvé</div>';
+    return;
+  }
+  res.style.display = '';
+  res.innerHTML = matches.map(m => `
+    <div onclick="currentTheme='${m.t.id}';document.querySelectorAll('.theme-item').forEach(el=>el.classList.remove('active'));document.getElementById('tnav-${m.t.id}')?.classList.add('active');renderFiches();document.getElementById('fiche-search-results').style.display='none'"
+      style="padding:10px 16px;cursor:pointer;border-bottom:1px solid var(--border);transition:background 0.1s"
+      onmouseover="this.style.background='var(--bg3)'" onmouseout="this.style.background=''">
+      <div style="font-size:13px;font-weight:500;color:var(--text);margin-bottom:2px">${m.t.title} <span class="tag" style="font-size:10px">${m.t.code}</span></div>
+      <div style="font-size:12px;color:var(--text3);line-height:1.5">${m.snippet}</div>
+    </div>`).join('');
 }
 
 // ═══════════════════════════════════════════════
