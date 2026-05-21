@@ -311,7 +311,7 @@ h2.theme-heading:first-child { margin-top: 0; }
   <div class="topbar">
     <button class="burger" onclick="toggleSidebar()">☰</button>
     <div class="topbar-title" id="topbar-txt">AMV / <span>Accueil</span></div>
-    <div id="topbar-right" style="font-family:var(--mono);font-size:11px;color:var(--text3)">v3.2 — 21 mai 2026</div>
+    <div id="topbar-right" style="font-family:var(--mono);font-size:11px;color:var(--text3)">v3.4 — 21 mai 2026</div>
   </div>
 
   <div class="content" id="main-content"></div>
@@ -332,7 +332,7 @@ const THEMES = [
   { id:'aiguillage',code:'AMV200–216', title:'Aiguillage & Appareils de voie', short:'Aiguillage' },
   { id:'signaux',   code:'AMV207',     title:'Signaux ferroviaires', short:'Signaux' },
   { id:'encl',      code:'AMV210–211', title:'Enclenchements', short:'Enclenchements' },
-  { id:'is',        code:'AMV200/AMV250/AMV310', title:'Installations de Sécurité (IS)', short:'IS' },
+  { id:'install-sec',        code:'AMV200/AMV250/AMV310', title:'Installations de Sécurité (IS)', short:'Install. Sécurité (IS)' },
   { id:'traction',  code:'AMV600–601', title:'Traction électrique', short:'Traction élec.' },
   { id:'travaux',   code:'AMV300–310', title:'Travaux sur les voies & IS', short:'Travaux' },
   { id:'epi',       code:'AMV801',     title:'EPI & Déplacements', short:'EPI' },
@@ -1002,7 +1002,7 @@ Libération : ZAP libre (blanc) OU fermeture automatique du signal après passag
 </div>
 `,
 
-is: `
+'install-sec': `
 <h2 class="theme-heading">Installations de Sécurité (IS)</h2>
 <div class="theme-ref">AMV200 · AMV250 · AMV310 · DC3858 · Consigne Rose</div>
 
@@ -2178,6 +2178,19 @@ let quizScore = 0;
 // INIT
 // ═══════════════════════════════════════════════
 function init() {
+  // Clean up stale theme ids from localStorage (e.g. old 'is' id renamed to 'install-sec')
+  try {
+    const saved = localStorage.getItem('themeOrder');
+    if (saved) {
+      const validIds = THEMES.map(t => t.id);
+      const order = JSON.parse(saved).filter(id => validIds.includes(id));
+      // If any theme is missing from saved order, reset completely
+      if (validIds.some(id => !order.includes(id))) {
+        localStorage.removeItem('themeOrder');
+      }
+    }
+  } catch(e) { localStorage.removeItem('themeOrder'); }
+
   buildThemeNav();
   buildSearchIndex();
   showView('home');
@@ -2327,7 +2340,7 @@ function showView(v) {
   setNavActive(v);
   closeSidebar();
   const c = document.getElementById('main-content');
-  document.getElementById('topbar-right').innerHTML = '<span style="font-family:var(--mono);font-size:11px;color:var(--text3)">v3.2 — 21 mai 2026</span>';
+  document.getElementById('topbar-right').innerHTML = '<span style="font-family:var(--mono);font-size:11px;color:var(--text3)">v3.4 — 21 mai 2026</span>';
   if (v === 'home') { setTopbar('AMV / <span>Accueil</span>'); renderHome(c); }
   else if (v === 'fiches') { setTopbar('AMV / <span>Fiches de cours</span>'); renderFiches(c); }
   else if (v === 'flash') { setTopbar('AMV / <span>Flashcards</span>'); renderFlash(c); }
