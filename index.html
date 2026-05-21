@@ -681,7 +681,7 @@ h2.theme-heading:first-child { margin-top: 0; }
   <div class="topbar">
     <button class="burger" onclick="toggleSidebar()">☰</button>
     <div class="topbar-title" id="topbar-txt">AMV / <span>Accueil</span></div>
-    <div id="topbar-right" style="font-family:var(--mono);font-size:11px;color:var(--text3)">v2.1 — 21 mai 2026</div>
+    <div id="topbar-right" style="font-family:var(--mono);font-size:11px;color:var(--text3)">v2.2 — 21 mai 2026</div>
   </div>
 
   <div class="content" id="main-content"></div>
@@ -740,7 +740,7 @@ risques: `
 
 <h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">AMV009 — Communication de sécurité</h3>
 <div class="def-block">
-  <div class="def-term">Moyens de communication (P129 du PS9)</div>
+  <div class="def-term">Moyens de communication</div>
   <div class="def-text">De vive voix · Exprès · Haut-parleur · Téléphonie (voies / mobile) · Radio (RST-STD, RST-TD, GSM-R, radio manœuvre) · Documents écrits · Interphonie · Télécopie · Transmission numérique (terminaux mobiles, tablettes, e-mails) · Avertisseurs sonores</div>
 </div>
 <div class="def-block important">
@@ -750,9 +750,17 @@ risques: `
 3. La transmission des informations (nature de l'appel)
 4. La finalisation (clôture de la transmission)</div>
 </div>
-<div class="def-block">
-  <div class="def-term">Codes radios</div>
-  <div class="def-text">À VOUS · REÇU · MAL REÇU · CORRECT · ERREUR · ATTENDEZ · RÉPÉTER · JE RÉPÈTE · TERMINÉ</div>
+<div class="def-block important">
+  <div class="def-term">Les 9 codes radios à retenir <span class="tag yellow">9 à connaître</span></div>
+  <div class="def-text">1. À VOUS
+2. REÇU
+3. MAL REÇU
+4. CORRECT
+5. ERREUR
+6. ATTENDEZ
+7. RÉPÉTER
+8. JE RÉPÈTE
+9. TERMINÉ</div>
 </div>
 <div class="rule-box">
   <strong>Communications formalisées :</strong> Communication prédéterminée dont les termes et la forme sont fixés par la documentation réglementaire. À RESPECTER OBLIGATOIREMENT.<br><br>
@@ -954,16 +962,6 @@ circulation: `
   <div class="def-text">Système à block manuel avec garde à chaque poste relié par téléphone. Signaux normalement FERMÉS permettant d'arrêter et de retenir les trains. Pour franchir le sémaphore : Formulaire S (canton libre) / Formulaire MV (pas d'assurance) / Ordre écrit.</div>
 </div>
 
-<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Définitions officielles des acteurs (OP823)</h3>
-<div class="def-block important">
-  <div class="def-term">Agent de circulation (AC)</div>
-  <div class="def-text">Agent chargé d'assurer le service de la circulation des trains, habilité à la TES « Assurer le service de la circulation ferroviaire ».</div>
-</div>
-<div class="def-block important">
-  <div class="def-term">Aiguilleur</div>
-  <div class="def-text">Agent chargé de la manœuvre des signaux ou des appareils de voie, habilité à la TES « Manœuvrer les signaux et les autres installations de gestion des circulations ».</div>
-</div>
-
 <h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Programme H.00 — AMV005</h3>
 <div class="rule-box">
   Programme H : 00 = <strong>départ à la seconde</strong> : c'est le point névralgique de la gestion des circulations. Tout retard au départ se répercute sur l'ensemble du plan de transport.
@@ -1084,20 +1082,20 @@ aiguillage: `
   <div class="def-term">Aiguille</div>
   <div class="def-text">Sert à diriger et à protéger. Elle peut être empruntée par la pointe ou le talon. On parle à partir de la pointe vers le talon, elle indique la direction droite ou gauche.</div>
 </div>
+<div class="rule-box" style="margin-bottom:10px">
+  <strong>🐭 Technique de la souris — savoir dans quelle direction pointe l'aiguille :</strong><br>
+  Après la manœuvre, observe la lame appliquée et la lame décollée. Le léger espace visible est du côté de la lame décollée — c'est la direction vers laquelle l'aiguille n'envoie PAS. Si une petite souris peut se faufiler dans l'espace à droite, c'est que la lame droite est décollée → l'aiguille dirige vers la gauche. Et inversement : un espace à gauche → direction à droite.
+</div>
 <div class="def-block important">
   <div class="def-term">Aiguilles conjuguées</div>
   <div class="def-text">Lorsqu'un levier contrôle deux aiguilles en même temps, ces aiguilles sont appelées des aiguilles conjuguées.</div>
 </div>
 <div class="def-block important">
-  <div class="def-term">Règle fondamentale de manipulation — "Je manœuvre, je contrôle"</div>
-  <div class="def-text">À chaque manipulation d'un levier ou d'une aiguille, l'aiguilleur doit impérativement contrôler l'obéissance de l'installation après la manœuvre. C'est la règle absolue : <strong>JE MANŒUVRE → JE CONTRÔLE.</strong></div>
+  <div class="def-term">Règle fondamentale — "Je manœuvre, je contrôle"</div>
+  <div class="def-text">À chaque manipulation d'un levier ou d'une aiguille, l'aiguilleur doit impérativement contrôler l'obéissance de l'installation après la manœuvre. Règle absolue : <strong>JE MANŒUVRE → JE CONTRÔLE.</strong></div>
 </div>
 <div class="def-block">
-  <div class="def-term">Levier immobilisé</div>
-  <div class="def-text">Lorsqu'un problème survient sur une installation de sécurité empêchant la manœuvre d'un levier, on dit que le levier est <strong>immobilisé</strong>. Appliquer alors la méthode RITA.</div>
-</div>
-<div class="def-block">
-  <div class="def-term">Levier</div>
+  <div class="def-term">Levier (organe de commande)</div>
   <div class="def-text">Organe de commande mécanique : position + = normale / position − = renversée. Si la position est imposée : on doit la remettre dans cette position imposée.</div>
 </div>
 <div class="def-block">
@@ -1106,7 +1104,29 @@ aiguillage: `
 </div>
 <div class="def-block">
   <div class="def-term">Taquet</div>
-  <div class="def-text">Dispositif assurant la protection d'une partie de voie contre toute dérive. Position « haute » = en action / « basse » = pas en action. 3 types : Taquet (bloque dérive) · Taquet dérailleur (fait dérailler) · Taquet enrayeur (fait ralentir).</div>
+  <div class="def-text">Dispositif assurant la protection d'une partie de voie contre toute dérive. Position « haute » = en action / « basse » = pas en action. 3 types : Taquet (bloque dérive) · Taquet dérailleur (fait dérailler intentionnellement) · Taquet enrayeur (fait ralentir).</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">Talonner une aiguille</div>
+  <div class="def-text">C'est emprunter une aiguille du côté de son talon alors qu'elle n'assure pas la continuité de la voie.</div>
+</div>
+
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Familles d'appareils de voie</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>Famille</th><th>Rôle</th><th>Détails</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Aiguilles simples</strong></td><td>Diriger et protéger</td><td>Pointe : lame mobile / Talon : côté fixe. Peut être empruntée pointe ou talon.</td></tr>
+    <tr><td><strong>Traversées jonctions simples (TJS)</strong></td><td>Relier deux voies parallèles</td><td>Combinaison d'une traversée droite et d'une aiguille</td></tr>
+    <tr><td><strong>Traversées jonctions doubles (TJD)</strong></td><td>Relier deux voies dans les deux sens</td><td>Combinaison de 2 aiguilles et 1 traversée — permet 4 mouvements</td></tr>
+    <tr><td><strong>Traversées simples (TS)</strong></td><td>Croiser deux voies</td><td>Pas d'aiguille — croisement fixe</td></tr>
+    <tr><td><strong>Taquets</strong></td><td>Protéger contre les dérives</td><td>Dérailleur (fait dérailler) / Enrayeur (fait ralentir) / Classique (bloque)</td></tr>
+  </tbody>
+</table></div>
+
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">En cas de problème — Levier immobilisé</h3>
+<div class="def-block">
+  <div class="def-term">Levier immobilisé</div>
+  <div class="def-text">Lorsqu'un problème survient sur une installation de sécurité empêchant la manœuvre d'un levier, on dit que le levier est <strong>immobilisé</strong>. Appliquer alors la méthode RITA (Risque immédiat → Identifier → Traiter → Aviser/Annoter).</div>
 </div>
 
 <h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">AMV204 — Consigne Rose (DC3858)</h3>
@@ -1271,6 +1291,33 @@ signaux: `
   • <strong>Feu vert</strong> → franchissement sans restriction (voie principale)<br>
   • <strong>Feu blanc</strong> et <strong>feu blanc clignotant</strong> → franchissement avec restrictions (voie de service)
 </div>
+
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Famille C — Signaux de limitation de vitesse</h3>
+<div class="def-block">
+  <div class="def-term">TIV fixe — Tableau Indicateur de Vitesse fixe</div>
+  <div class="def-text">Annonce une limitation de vitesse permanente sur une section de voie. Il est implanté en amont du point où la limitation s'applique. La vitesse indiquée (ex : 30, 60, 80...) est en km/h.</div>
+</div>
+<div class="def-block">
+  <div class="def-term">TIV mobile (R) — Tableau Indicateur de Vitesse mobile</div>
+  <div class="def-text">Annonce une limitation de vitesse temporaire. Utilisé pour V > 60 km/h. Il peut être lumineux (carré jaune avec chiffre) ou réflétorisé. Son activation est commandée depuis un poste.</div>
+</div>
+<div class="rule-box">
+  <strong>Implantation :</strong> le TIV est placé à distance suffisante pour que le conducteur puisse réduire sa vitesse avant le point à protéger.
+</div>
+
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Famille E — Signaux divers</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>Signal</th><th>Rôle</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Chevron</strong></td><td>Repère de freinage ou d'arrêt — indique au conducteur où commencer le freinage</td></tr>
+    <tr><td><strong>Indicateurs de direction</strong></td><td>Indiquent la voie sur laquelle le train est dirigé (ex : lettre ou numéro)</td></tr>
+    <tr><td><strong>Tableau Garage (Z)</strong></td><td>Limite d'un mouvement en gare — le train ne doit pas dépasser ce signal</td></tr>
+    <tr><td><strong>Baisser pantographe</strong></td><td>Le conducteur doit baisser le(s) pantographe(s) avant de franchir le signal</td></tr>
+    <tr><td><strong>Remonter pantographe</strong></td><td>Le conducteur peut remonter le(s) pantographe(s) après avoir franchi le signal</td></tr>
+    <tr><td><strong>Couper le courant (traction)</strong></td><td>Le conducteur doit couper la traction avant de franchir le signal</td></tr>
+    <tr><td><strong>Remettre le courant</strong></td><td>Le conducteur peut remettre la traction après avoir franchi le signal</td></tr>
+  </tbody>
+</table></div>
 `,
 
 encl: `
@@ -1458,16 +1505,26 @@ epi: `
 </div>
 <div class="def-block important">
   <div class="def-term">Emplacement de garage (EG) — Art. 6.2</div>
-  <div class="def-text">Lieu où les agents avec matériel ou outillage peuvent se garer en dehors de toute zone dangereuse lors du passage d'une circulation. Largeur minimale : 0,70 m.</div>
+  <div class="def-text">Lieu où les agents avec matériel ou outillage peuvent se garer en dehors de toute zone dangereuse lors du passage d'une circulation. Largeur minimale : <strong>0,70 m</strong>.</div>
+</div>
+<div class="def-block">
+  <div class="def-term">Formes possibles d'un emplacement de garage</div>
+  <div class="def-text">• Piste aménagée le long des voies permettant aux agents de se déplacer
+• Accotement situé hors ZD
+• <strong>Niche</strong> (creusée dans un mur, tunnel, ouvrage d'art)
+• <strong>Refuge d'ouvrage d'art</strong> (pont, viaduc, tunnel)
+• Voie interdite à la circulation et non parcourue par des trains de travaux
+• Entrevoie large, repérée sur le terrain par un pancartage</div>
 </div>
 <div class="def-block important">
   <div class="def-term">Pistes et itinéraires (Art. 6.4.2)</div>
-  <div class="def-text">Aménagements créés pour longer ou traverser les voies. Destinés au déplacement du personnel et de son outillage. Les pistes longent les voies principales en pleine voie ou dans les gares. Les itinéraires existent en dehors des voies principales dans les gares, triages, dépôts ou les ateliers. Obstacles fixes peints en blanc.</div>
+  <div class="def-text">Aménagements créés pour longer ou traverser les voies. Destinés au déplacement du personnel et de son outillage. Les pistes longent les voies principales en pleine voie ou dans les gares. Les itinéraires existent en dehors des voies principales dans les gares, triages, dépôts ou les ateliers. Obstacles fixes peints en blanc.
+<strong>Où les trouver :</strong> les schémas des pistes et itinéraires sont affichés aux principaux accès des sites (en gare et dans les postes d'aiguillage). La consigne des particularités locales y fait aussi référence.</div>
 </div>
 
-<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">OP485 Art.111 — Véhicules automoteurs</h3>
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Art. 111 OP485 — Règles pour les véhicules automoteurs</h3>
 <div class="def-block important">
-  <div class="def-term">Règles d'utilisation des véhicules automoteurs sur pistes carrossables</div>
+  <div class="def-term">Règles d'utilisation sur pistes carrossables</div>
   <div class="def-text">Le conducteur doit :
 • Rester en dehors des voies, à une distance d'au moins <strong>1,50 m du rail</strong>
 • Respecter la signalisation routière
@@ -1479,10 +1536,19 @@ epi: `
 <div class="rule-box">
   Autorisation spéciale du chef d'établissement si : largeur > 2,50 m · hauteur > 4,00 m · poids > 12 tonnes.
 </div>
+
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Art. 8.2 RRA20068 — Règles pour les bicyclettes et cyclomoteurs</h3>
 <div class="rule-box">
   <strong>Vitesse max :</strong> 20 km/h<br>
-  <strong>Mettre pied à terre</strong> si circulation sur voie contiguë<br>
-  <strong>Interdit :</strong> traverser les voies (sauf itinéraire carrossable) · dans les tunnels/ponts (sauf piste aménagée) · par temps de visibilité réduite · à 2 personnes · atteler une remorque (sauf ≥ 2 m du rail) · de nuit (éviter, éclairage obligatoire si nécessaire)
+  <strong>Mettre pied à terre</strong> obligatoirement si circulation sur voie contiguë<br><br>
+  <strong>INTERDIT :</strong><br>
+  • Traverser les voies sauf sur itinéraire carrossable<br>
+  • Circuler dans les tunnels et sur les ponts (sauf piste aménagée)<br>
+  • Par temps de visibilité réduite<br>
+  • À 2 personnes sur le même vélo<br>
+  • Atteler une remorque (sauf sur piste/itinéraire dont le bord intérieur est à ≥ 2,00 m du rail)<br>
+  • Transporter des objets encombrants susceptibles d'engager la ZD ou de déséquilibrer<br><br>
+  <strong>De nuit :</strong> à éviter — éclairage en état de fonctionnement obligatoire si nécessaire
 </div>
 `,
 
@@ -1502,7 +1568,7 @@ zd: `
     <tr><td>Hors LGV</td><td>V ≤ 40 km/h</td><td>1,25 m (1,50 m en courbe)</td></tr>
     <tr><td>Hors LGV</td><td>40 < V ≤ 160 km/h</td><td>1,50 m</td></tr>
     <tr><td>Hors LGV</td><td>V > 160 km/h</td><td>2,00 m</td></tr>
-    <tr><td>LGV</td><td>V ≤ 300 km/h</td><td>2,00 m</td></tr>
+    <tr><td>LGV</td><td>V ≤ 300 km/h</td><td>2,00 m <span style="color:var(--text3);font-size:12px">(reste 2,00 m grâce à l'aérodynamisme des trains TGV conçus pour minimiser l'effet de souffle)</span></td></tr>
     <tr><td>LGV</td><td>V > 300 km/h</td><td>2,30 m</td></tr>
   </tbody>
 </table></div>
@@ -2475,7 +2541,7 @@ function showView(v) {
   setNavActive(v);
   closeSidebar();
   const c = document.getElementById('main-content');
-  document.getElementById('topbar-right').innerHTML = '<span style="font-family:var(--mono);font-size:11px;color:var(--text3)">v2.1 — 21 mai 2026</span>';
+  document.getElementById('topbar-right').innerHTML = '<span style="font-family:var(--mono);font-size:11px;color:var(--text3)">v2.2 — 21 mai 2026</span>';
   if (v === 'home') { setTopbar('AMV / <span>Accueil</span>'); renderHome(c); }
   else if (v === 'fiches') { setTopbar('AMV / <span>Fiches de cours</span>'); renderFiches(c); }
   else if (v === 'flash') { setTopbar('AMV / <span>Flashcards</span>'); renderFlash(c); }
