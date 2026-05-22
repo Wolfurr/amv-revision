@@ -311,7 +311,7 @@ h2.theme-heading:first-child { margin-top: 0; }
   <div class="topbar">
     <button class="burger" onclick="toggleSidebar()">☰</button>
     <div class="topbar-title" id="topbar-txt">AMV / <span>Accueil</span></div>
-    <div id="topbar-right" style="font-family:var(--mono);font-size:11px;color:var(--text3)">v3.4 — 21 mai 2026</div>
+    <div id="topbar-right" style="font-family:var(--mono);font-size:11px;color:var(--text3)">v3.5 — 22 mai 2026</div>
   </div>
 
   <div class="content" id="main-content"></div>
@@ -324,21 +324,21 @@ h2.theme-heading:first-child { margin-top: 0; }
 // ═══════════════════════════════════════════════
 
 const THEMES = [
-  { id:'risques',   code:'AMV005/009', title:'Risques ferroviaires & Communication', short:'Risques & Comm.' },
-  { id:'formation', code:'AMV901–910', title:'Formation des trains', short:'Formation' },
-  { id:'manœuvre',  code:'AMV905',     title:'Manœuvres', short:'Manœuvres' },
-  { id:'circulation',code:'AMV101–160',title:'Circulation des trains', short:'Circulation' },
-  { id:'incidents', code:'AMV109–113', title:'Incidents de circulation', short:'Incidents' },
-  { id:'aiguillage',code:'AMV200–216', title:'Aiguillage & Appareils de voie', short:'Aiguillage' },
-  { id:'signaux',   code:'AMV207',     title:'Signaux ferroviaires', short:'Signaux' },
-  { id:'encl',      code:'AMV210–211', title:'Enclenchements', short:'Enclenchements' },
-  { id:'install-sec',        code:'AMV200/AMV250/AMV310', title:'Installations de Sécurité (IS)', short:'Install. Sécurité (IS)' },
-  { id:'traction',  code:'AMV600–601', title:'Traction électrique', short:'Traction élec.' },
-  { id:'travaux',   code:'AMV300–310', title:'Travaux sur les voies & IS', short:'Travaux' },
-  { id:'epi',       code:'AMV801',     title:'EPI & Déplacements', short:'EPI' },
-  { id:'zd',        code:'RRA20068',   title:'Zone dangereuse', short:'Zone dangereuse' },
-  { id:'elect',     code:'AMV803',     title:'Risques traction électrique', short:'Risques élec.' },
-  { id:'graissage', code:'AMV804',     title:'Graissage des aiguilles', short:'Graissage' },
+  { id:'epi',         code:'AMV801',        title:'EPI & Déplacements',                 short:'EPI' },
+  { id:'zd',          code:'RRA20068',       title:'Zone dangereuse',                    short:'Zone dangereuse' },
+  { id:'aiguillage',  code:'AMV200–216',     title:'Aiguillage & Appareils de voie',     short:'Aiguillage' },
+  { id:'risques',     code:'AMV005/009',     title:'Risques ferroviaires & Communication',short:'Risques & Comm.' },
+  { id:'install-sec', code:'AMV200/AMV250/AMV310', title:'Installations de Sécurité (IS)', short:'Install. Sécurité (IS)' },
+  { id:'signaux',     code:'AMV207',         title:'Signaux ferroviaires',               short:'Signaux' },
+  { id:'circulation', code:'AMV101–160',     title:'Circulation des trains',             short:'Circulation' },
+  { id:'incidents',   code:'AMV109–113',     title:'Incidents de circulation',           short:'Incidents' },
+  { id:'encl',        code:'AMV210–211',     title:'Enclenchements',                     short:'Enclenchements' },
+  { id:'traction',    code:'AMV600–601',     title:'Traction électrique',                short:'Traction élec.' },
+  { id:'travaux',     code:'AMV300–310',     title:'Travaux sur les voies & IS',         short:'Travaux' },
+  { id:'elect',       code:'AMV803',         title:'Risques traction électrique',        short:'Risques élec.' },
+  { id:'graissage',   code:'AMV804',         title:'Graissage des aiguilles',            short:'Graissage' },
+  { id:'formation',   code:'AMV901–910',     title:'Formation des trains',               short:'Formation' },
+  { id:'manœuvre',    code:'AMV905',         title:'Manœuvres',                          short:'Manœuvres' },
 ];
 
 // ── FICHES DE COURS ──
@@ -944,7 +944,7 @@ signaux: `
   <tbody>
     <tr><td><strong>Chevron</strong></td><td>Repère de freinage ou d'arrêt — indique au conducteur où commencer le freinage</td></tr>
     <tr><td><strong>Indicateurs de direction</strong></td><td>Indiquent la voie sur laquelle le train est dirigé (ex : lettre ou numéro)</td></tr>
-    <tr><td><strong>Tableau Garage (Z)</strong></td><td>Limite d'un mouvement en gare — le train ne doit pas dépasser ce signal</td></tr>
+    <tr><td><strong>Tableau Garage</strong></td><td>Limite d'un mouvement en gare — le train ne doit pas dépasser ce signal. Implanté en bout de voie ou à l'entrée d'une zone protégée.</td></tr>
     <tr><td><strong>Baisser pantographe</strong></td><td>Le conducteur doit baisser le(s) pantographe(s) avant de franchir le signal</td></tr>
     <tr><td><strong>Remonter pantographe</strong></td><td>Le conducteur peut remonter le(s) pantographe(s) après avoir franchi le signal</td></tr>
     <tr><td><strong>Couper le courant (traction)</strong></td><td>Le conducteur doit couper la traction avant de franchir le signal</td></tr>
@@ -1315,7 +1315,7 @@ zd: `
   2. Regarder attentivement dans la ou les directions d'où peut survenir une circulation<br>
   3. S'assurer de disposer de la <strong>DMVC</strong><br>
   4. Redoubler de prudence en cas d'intempéries ou zone bruyante<br>
-  5. Se déplacer dans le sens opposé au sens normal des circulations (double voie)
+  5. Lorsqu'il doit se déplacer sur la voie, sur une ligne à double voie ou à voies multiples, marcher dans le sens opposé au sens normal des circulations.
 </div>
 
 <h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Traversée des voies</h3>
@@ -1336,7 +1336,7 @@ zd: `
 
 <div class="def-block important">
   <div class="def-term">DMVC — Distance Minimale de Visibilité Compatible</div>
-  <div class="def-text">Distance minimale de visibilité dont doit disposer un agent avant d'engager la ZD en dehors des chemins publics et des itinéraires. Sans cette distance : choisir un autre endroit ou demander l'interdiction de circulation ou la mise en place d'un dispositif d'annonce.</div>
+  <div class="def-text">Distance minimale de visibilité dont doit disposer un agent avant d'engager la ZD en dehors des chemins publics et des itinéraires. Sans cette distance : choisir un autre endroit ou demander l'interdiction de circulation ou la mise en place d'un dispositif d'annonce (ex : agent sécurité avec trompe réglementaire, DATZD, DAELZD).</div>
 </div>
 <div class="def-block important">
   <div class="def-term">DATZD — Dispositif d'Autorisation de Traverser la Zone Dangereuse</div>
@@ -2178,14 +2178,13 @@ let quizScore = 0;
 // INIT
 // ═══════════════════════════════════════════════
 function init() {
-  // Clean up stale theme ids from localStorage (e.g. old 'is' id renamed to 'install-sec')
+  // v3.5 — reset theme order to match new chronological learning order
   try {
     const saved = localStorage.getItem('themeOrder');
     if (saved) {
       const validIds = THEMES.map(t => t.id);
       const order = JSON.parse(saved).filter(id => validIds.includes(id));
-      // If any theme is missing from saved order, reset completely
-      if (validIds.some(id => !order.includes(id))) {
+      if (validIds.some(id => !order.includes(id)) || order[0] !== validIds[0]) {
         localStorage.removeItem('themeOrder');
       }
     }
@@ -2340,7 +2339,7 @@ function showView(v) {
   setNavActive(v);
   closeSidebar();
   const c = document.getElementById('main-content');
-  document.getElementById('topbar-right').innerHTML = '<span style="font-family:var(--mono);font-size:11px;color:var(--text3)">v3.4 — 21 mai 2026</span>';
+  document.getElementById('topbar-right').innerHTML = '<span style="font-family:var(--mono);font-size:11px;color:var(--text3)">v3.5 — 22 mai 2026</span>';
   if (v === 'home') { setTopbar('AMV / <span>Accueil</span>'); renderHome(c); }
   else if (v === 'fiches') { setTopbar('AMV / <span>Fiches de cours</span>'); renderFiches(c); }
   else if (v === 'flash') { setTopbar('AMV / <span>Flashcards</span>'); renderFlash(c); }
