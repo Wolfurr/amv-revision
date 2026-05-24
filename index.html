@@ -242,7 +242,6 @@ h2.theme-heading:first-child { margin-top: 0; }
 .score-pill.bad { background: var(--red-bg); color: var(--red); border: 1px solid rgba(248,113,113,0.2); }
 .kw-tag { display: inline-block; padding: 2px 8px; margin: 2px 3px; border-radius: 4px; font-size: 12px; background: rgba(240,192,64,0.08); color: #e87080; border: 1px solid rgba(240,192,64,0.15); }
 .kw-tag.found { background: var(--green-bg); color: var(--green); border-color: rgba(74,222,128,0.2); }
-.kw-tag.almost { background: rgba(230,140,20,0.12); color: #e8a020; border-color: rgba(230,140,20,0.3); }
 .kw-tag.missing { background: var(--red-bg); color: var(--red); border-color: rgba(248,113,113,0.2); }
 
 /* ── MOBILE ── */
@@ -312,7 +311,7 @@ h2.theme-heading:first-child { margin-top: 0; }
   <div class="topbar">
     <button class="burger" onclick="toggleSidebar()">☰</button>
     <div class="topbar-title" id="topbar-txt">AMV / <span>Accueil</span></div>
-    <div id="topbar-right" style="font-family:var(--mono);font-size:11px;color:var(--text3)">v3.6 — 22 mai 2026</div>
+    <div id="topbar-right" style="font-family:var(--mono);font-size:11px;color:var(--text3)">v3.5 — 22 mai 2026</div>
   </div>
 
   <div class="content" id="main-content"></div>
@@ -2097,74 +2096,6 @@ const QUIZ = [
 {theme:'incidents', q:'Sur un quai franchi par des trains à V ≥ 150 km/h, quelle est la bande de sécurité minimum ?',
  opts:['1,00 m de bord de quai','1,80 m sauf si moins de 1 m de quai','2,50 m (bande de couleur jaune), sauf si moins de 1 m de quai : 1,80 m si V < 160 km/h','3,00 m obligatoire quelle que soit la largeur'],
  ans:2, exp:'AMV108 : pour les points d\'arrêt franchis à V ≥ 150 km/h : bande de couleur jaune d\'une distance mini de 2,50 m. Exception : si moins de 1 m de quai → 1,80 m si train < 160 km/h.'},
-
-// ── IS ──
-{theme:'install-sec', q:'Combien y a-t-il de familles d\'installations de sécurité selon l\'Article 1 DC3858 ?',
- opts:['9 familles','11 familles','13 familles','15 familles'],
- ans:3, exp:'L\'Article 1 DC3858 liste 15 familles d\'IS : dispositifs de signalisation, appareils de voie, organes de commande, enclenchements mécaniques, enclenchements électriques, composants terrain, dispositifs de contrôle, répétition signaux, appuis acoustiques, PN à SAL, détecteurs obstacles, KVB/DAAT, block, annonce PN gardés, PN à SAL voisins de gare.'},
-{theme:'install-sec', q:'Quelle est la définition officielle des installations de sécurité (IS) ?',
- opts:['Tous les appareils de voie et signaux gérés depuis un poste d\'aiguillage','Tout système nécessaire pour assurer la sécurité des circulations et dont le dérangement entraîne l\'application de dispositions réglementaires','Les enclenchements mécaniques et électriques uniquement','Les circuits de voie, pédales et compteurs d\'essieux installés sur le terrain'],
- ans:1, exp:'Article 1 DC3858 : Les IS comprennent tout système (composé ou non avec des éléments techniquement de sécurité) nécessaire pour assurer la sécurité des circulations et dont le dérangement entraîne l\'application de dispositions réglementaires.'},
-{theme:'install-sec', q:'Que signifie l\'acronyme 3C2D dans le traitement d\'un dérangement ?',
- opts:['3 Contrôles + 2 Documents à remplir','Conditions d\'ouverture · Carré commandé · Choix bulletin franchissement · Direction indiquée · Détonateur','3 Codes de sécurité + 2 Demandes de protection','Consultation + Contrôle + Confirmation + Délégation + Détonateur'],
- ans:1, exp:'3C2D = Conditions d\'ouverture · Carré commandé à l\'ouverture · Choix du bulletin de franchissement (CBA) · Direction indiquée au conducteur · Détonateur (annoter suivi appuis acoustiques + aviser AMI + prévenir conducteur).'},
-{theme:'install-sec', q:'Quelle méthode globale applique l\'aiguilleur face à un dérangement IS ?',
- opts:['FAMASS','RITA','3C2D','ARTA'],
- ans:1, exp:'RITA : R = Risque immédiat (arrêter et retenir) / I = Identifier la nature du dérangement / T = Traiter selon DC3858 Chap.4 / A = Aviser AC/COGC + Annoter CDIS pour l\'AMI.'},
-{theme:'install-sec', q:'Le CDIS sert à :',
- opts:['Commander les IS depuis le poste central','Consigner les dérangements des IS et leur traitement (carnet de dérangements des installations de sécurité)','Contrôler les IS avant ouverture d\'un signal','Calculer la distance d\'arrêt imposée par les IS'],
- ans:1, exp:'CDIS = Carnet de Dérangements des Installations de Sécurité. Il est complété par l\'aiguilleur (colonnes 1 à 4) et par l\'AMI (colonnes 5 à 9). Il trace chaque dérangement : date/heure, nature, avis AMI, rétablissement.'},
-{theme:'install-sec', q:'Dans le code couleur DC3858, la couleur VERTE indique :',
- opts:['Une situation d\'urgence ou danger','Une opération pouvant être effectuée par un Aiguilleur','Une opération devant être effectuée par un Agent-circulation','Une particularité locale des installations'],
- ans:1, exp:'Code DC3858 : Vert = Aiguilleur · Jaune = Agent-circulation · Gris = Opérateur habilité · Orange = Aboutissement d\'opération · Bleu = Fonctionnement IS · Rouge = Situation constatée ou particularité.'},
-{theme:'install-sec', q:'Quelles sont les 3 types de dérangements de signaux ?',
- opts:['Extinction / Raté de fermeture / Raté d\'ouverture','Signal fermé / Signal ouvert / Signal clignotant','Dérangement CIP / Dérangement ZI / Dérangement EAP','Panne mécanique / Panne électrique / Panne de communication'],
- ans:0, exp:'Les 3 types de dérangements de signaux : 1. Raté de fermeture (signal reste ouvert alors qu\'on veut le fermer) 2. Raté d\'ouverture (signal reste fermé alors qu\'on veut l\'ouvrir) 3. Extinction (signal éteint en fermeture ET en ouverture).'},
-{theme:'install-sec', q:'Les composants installés sur le terrain (famille n°6 des IS) comprennent :',
- opts:['Uniquement les pédales et les circuits de voie','Circuits de voie, compteurs d\'essieux, pédales — autres que ceux utilisés uniquement pour le confort des voyageurs','Les signaux lumineux et mécaniques','Les KVB et dispositifs d\'arrêt automatique'],
- ans:1, exp:'Famille n°6 : composants installés sur le terrain = circuits de voie, compteurs d\'essieux, pédales... Exclus : ceux utilisés uniquement pour le confort des voyageurs.'},
-{theme:'install-sec', q:'Les appuis acoustiques des signaux (famille n°9) sont :',
- opts:['Les haut-parleurs des gares pour les annonces voyageurs','Les pétards et détonateurs — ils explosent au passage d\'un train pour alerter le conducteur','Les sonneries des passages à niveau','Les klaxons des engins moteurs'],
- ans:1, exp:'Appuis acoustiques = pétards et détonateurs. Quand un conducteur franchit un carré fermé suite à dérangement, l\'explosion lui commande l\'arrêt absolu. S\'il perçoit l\'explosion sous un signal ouvert, il doit considérer que le carré est fermé.'},
-{theme:'install-sec', q:'Les 4 catégories de travaux IS (AMV310) sont :',
- opts:['Urgence / Programmé / Exceptionnel / Expérimental','Petit entretien / Relève de dérangement / Grand entretien / Établissement, modification ou suppression','Journalier / Hebdomadaire / Mensuel / Annuel','Mécanique / Électrique / Électronique / Pneumatique'],
- ans:1, exp:'4 catégories AMV310 : 1ère = Petit entretien · 2ème = Relève de dérangement · 3ème = Grand entretien · 4ème = Établissement, modification ou suppression.'},
-
-// ── RISQUES comm. ──
-{theme:'risques', q:'Quels sont les 7 principes de communication verbale (2.3.1) dans le bon ordre ?',
- opts:['S\'identifier / Se localiser / Volonté de se comprendre / Laisser parler / Collationner / Clore / Prendre attachement','S\'identifier / Transmettre / Collationner / Clore / Confirmer / Archiver / Signer','Appeler / Identifier / Localiser / Transmettre / Répéter / Corriger / Clore','S\'identifier / Collationner / Transmettre / Laisser parler / Clore / Prendre attachement / Se localiser'],
- ans:0, exp:'Les 7 principes dans l\'ordre : 1.S\'identifier 2.Se localiser 3.Volonté de se comprendre 4.Laisser parler 5.Collationner 6.Clore la communication 7.Prendre attachement.'},
-{theme:'risques', q:'Que signifie "Collationner" dans les principes de communication verbale ?',
- opts:['Clore la communication par le terme TERMINÉ','Demander à l\'interlocuteur de se taire et d\'écouter','Faire répéter, à l\'issue de la transmission complète, la totalité de la communication et comparer à celle émise','Enregistrer la communication dans le CED'],
- ans:2, exp:'Collationner = faire répéter à l\'issue de la transmission COMPLÈTE la totalité de la communication et comparer à celle émise. C\'est le principe n°5.'},
-{theme:'risques', q:'Quel terme utilise-t-on pour indiquer que le message est terminé ?',
- opts:['À toi','Reçu','Correct','Terminé'],
- ans:3, exp:'"Terminé" est le terme de clôture d\'une communication. "À toi" = transmettre la parole. "Reçu" = confirmer réception. "Correct" = confirmer que le message collationné est conforme.'},
-{theme:'risques', q:'Quel terme utilise-t-on quand le message collationné n\'est PAS conforme au message émis ?',
- opts:['Incorrect','Répétez','Erreur (+ je répète)','Mal reçu'],
- ans:2, exp:'"Erreur (+ je répète)" : terme permettant de faire savoir que le message collationné n\'est pas conforme au message émis. On l\'accompagne de "je répète" pour retransmettre le message correct.'},
-
-// ── AIGUILLAGE ──
-{theme:'aiguillage', q:'Quelle est la règle fondamentale après chaque manœuvre d\'un levier ou d\'une aiguille ?',
- opts:['Attendre 30 secondes avant la manœuvre suivante','Je manœuvre, je contrôle — vérifier l\'obéissance de l\'installation','Aviser l\'agent de circulation avant toute manipulation','Remplir le CED après chaque manœuvre'],
- ans:1, exp:'"Je manœuvre, je contrôle" : règle absolue. À chaque manipulation d\'un levier ou d\'une aiguille, l\'aiguilleur doit impérativement contrôler l\'obéissance de l\'installation après la manœuvre.'},
-{theme:'aiguillage', q:'Quand dit-on que deux aiguilles sont "conjuguées" ?',
- opts:['Quand elles sont situées sur la même voie principale','Quand un seul levier contrôle deux aiguilles en même temps','Quand elles sont verrouillées dans la même position','Quand elles protègent le même itinéraire'],
- ans:1, exp:'Aiguilles conjuguées : lorsqu\'un levier contrôle deux aiguilles en même temps, ces aiguilles sont appelées des aiguilles conjuguées.'},
-{theme:'aiguillage', q:'Dans quel cas peut-on se dispenser du temps moral ?',
- opts:['Jamais — il est toujours obligatoire','Si la fermeture a été réalisée automatiquement au passage d\'une circulation OU effectuée immédiatement derrière une circulation','Si l\'AC donne son accord verbal','Si le signal est de type sémaphore BAL'],
- ans:1, exp:'Le temps moral n\'est pas nécessaire si : la fermeture du signal a été réalisée AUTOMATIQUEMENT au passage d\'un train, OU effectuée IMMÉDIATEMENT derrière une circulation. Dans tous les autres cas, il est obligatoire.'},
-
-// ── SIGNAUX ──
-{theme:'signaux', q:'En position de FERMETURE, un signal mécanique est positionné :',
- opts:['Parallèlement aux voies','Perpendiculairement aux voies','En oblique à 45°','Il n\'y a pas de position physique distinctive'],
- ans:1, exp:'Signaux mécaniques : position de fermeture = perpendiculaires aux voies. Position d\'ouverture = parallèlement aux voies.'},
-{theme:'signaux', q:'Le feu vert d\'ouverture (famille D) signifie :',
- opts:['Franchissement avec restrictions — voie de service','Franchissement sans restriction — voie principale','Annonce d\'un signal d\'arrêt en aval','Limitation de vitesse à 60 km/h'],
- ans:1, exp:'Famille D : Feu vert = franchissement SANS restriction (voie principale). Feu blanc et feu blanc clignotant = franchissement AVEC restrictions (voie de service).'},
-{theme:'signaux', q:'La bande lumineuse jaune horizontale (famille B) informe le conducteur que :',
- opts:['Il doit s\'arrêter avant le prochain signal','Un signal d\'arrêt est fermé devant lui','Il va entrer sur une voie à quai courte ou raccourcie','Il doit ralentir à 30 km/h'],
- ans:2, exp:'Bande lumineuse jaune horizontale (famille B) : indique au conducteur qu\'il va entrer sur une voie à quai courte ou raccourcie. Utilisée en complément de l\'avertissement dans certaines gares.'},
 ];
 
 // ── DICTÉES (définitions à apprendre mot pour mot) ──
@@ -2229,54 +2160,6 @@ const DICTEES = [
  ref:'PS9 p.195',
  texte:'Voie autre que voie principale.',
  mots_cles:['voie autre que voie principale']},
-{theme:'install-sec', titre:'Définition des Installations de Sécurité (IS)',
- ref:'Article 1 DC3858',
- texte:'Les installations de sécurité comprennent tout système (composé ou non avec des éléments techniquement de sécurité) nécessaire pour assurer la sécurité des circulations et dont le dérangement entraîne l\'application de dispositions réglementaires.',
- mots_cles:['tout système','éléments techniquement de sécurité','assurer la sécurité des circulations','dérangement','application de dispositions réglementaires']},
-{theme:'install-sec', titre:'3C2D — Franchissement carré fermé sur dérangement',
- ref:'DC3858 AMV250',
- texte:'Conditions d\'ouverture · Carré commandé à l\'ouverture · Choix du bulletin de franchissement · Direction indiquée au conducteur · Détonateur',
- mots_cles:['Conditions d\'ouverture','Carré commandé à l\'ouverture','Choix du bulletin de franchissement','Direction indiquée au conducteur','Détonateur']},
-{theme:'aiguillage', titre:'Temps moral',
- ref:'AMV206 DC3858',
- texte:'Délai que doit respecter l\'aiguilleur après la fermeture d\'un signal de protection pour s\'assurer qu\'aucune circulation, même ayant franchi fermé le signal d\'avertissement correspondant, ne se trouve engagée entre ce signal d\'avertissement et le signal d\'arrêt.',
- mots_cles:['délai','aiguilleur','fermeture d\'un signal de protection','aucune circulation','franchi fermé le signal d\'avertissement','engagée entre ce signal d\'avertissement et le signal d\'arrêt']},
-{theme:'aiguillage', titre:'Talonner une aiguille',
- ref:'AMV203',
- texte:'C\'est emprunter une aiguille du côté de son talon alors qu\'elle n\'assure pas la continuité de la voie.',
- mots_cles:['emprunter une aiguille','côté de son talon','n\'assure pas la continuité de la voie']},
-{theme:'signaux', titre:'Définition générale des signaux ferroviaires — usages',
- ref:'AMV207',
- texte:'Les signaux sont utilisés pour : arrêter et retenir les trains, limiter la vitesse des trains, transmettre des indications ou des ordres divers, transmettre des ordres propres à la traction électrique.',
- mots_cles:['arrêter et retenir les trains','limiter la vitesse','indications ou des ordres divers','ordres propres à la traction électrique']},
-{theme:'incidents', titre:'Obstacle',
- ref:'DC1503',
- texte:'Événement inopiné et identifié, visible ou non, qui fait obstruction à la circulation des trains.',
- mots_cles:['événement inopiné et identifié','visible ou non','fait obstruction','circulation des trains']},
-{theme:'incidents', titre:'Danger',
- ref:'DC1503',
- texte:'Événement inopiné et identifié survenant dans les emprises ferroviaires et présentant un risque pour les circulations et les personnes.',
- mots_cles:['événement inopiné et identifié','emprises ferroviaires','risque pour les circulations et les personnes']},
-{theme:'incidents', titre:'Présomption de danger',
- ref:'DC1503',
- texte:'Probabilité de l\'existence d\'un événement inopiné survenant dans les emprises ferroviaires et présentant un risque pour les circulations et les personnes.',
- mots_cles:['probabilité de l\'existence','événement inopiné','emprises ferroviaires','risque pour les circulations et les personnes']},
-{theme:'incidents', titre:'Entrave',
- ref:'DC1503',
- texte:'Action délibérée d\'une ou plusieurs personnes revendicatives présentes dans la zone dangereuse, y restant et ayant l\'intention d\'empêcher la circulation des trains.',
- mots_cles:['action délibérée','personnes revendicatives','zone dangereuse','y restant','empêcher la circulation des trains']},
-{theme:'risques', titre:'Les 4 étapes de communication de sécurité',
- ref:'OP0542',
- texte:'1. L\'identification · 2. L\'appel d\'instruction, si nécessaire · 3. La transmission des informations · 4. La finalisation',
- mots_cles:['identification','appel d\'instruction','transmission des informations','finalisation']},
-{theme:'circulation', titre:'Marche en manœuvre',
- ref:'AMV160',
- texte:'Mode de circulation imposant au conducteur de s\'avancer avec prudence et de se tenir prêt à obéir aux signaux qu\'il pourrait rencontrer ou qui pourraient lui être faits, sans dépasser la vitesse de 30 km/h.',
- mots_cles:['mode de circulation','s\'avancer avec prudence','obéir aux signaux','30 km/h']},
-{theme:'circulation', titre:'Cantonnement',
- ref:'AMV160',
- texte:'Système d\'espacement des trains de même sens destiné à éviter les rattrapages et consistant à fractionner la ligne en plusieurs cantons dont l\'entrée est protégée par un signal d\'arrêt.',
- mots_cles:['système d\'espacement','trains de même sens','éviter les rattrapages','fractionner la ligne','cantons','entrée est protégée','signal d\'arrêt']},
 ];
 
 // ═══════════════════════════════════════════════
@@ -2456,7 +2339,7 @@ function showView(v) {
   setNavActive(v);
   closeSidebar();
   const c = document.getElementById('main-content');
-  document.getElementById('topbar-right').innerHTML = '<span style="font-family:var(--mono);font-size:11px;color:var(--text3)">v3.6 — 22 mai 2026</span>';
+  document.getElementById('topbar-right').innerHTML = '<span style="font-family:var(--mono);font-size:11px;color:var(--text3)">v3.5 — 22 mai 2026</span>';
   if (v === 'home') { setTopbar('AMV / <span>Accueil</span>'); renderHome(c); }
   else if (v === 'fiches') { setTopbar('AMV / <span>Fiches de cours</span>'); renderFiches(c); }
   else if (v === 'flash') { setTopbar('AMV / <span>Flashcards</span>'); renderFlash(c); }
@@ -2511,12 +2394,8 @@ function renderHome(c) {
     <div class="rule-box" style="margin:0">
       <strong>1. Définition Zone dangereuse (ZD)</strong> — à restituer mot pour mot
     </div>
-    <div class="rule-box" style="margin:0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
-      <div>
-        <strong>2. FAMASS</strong> — Fermez · Alertez · Mesures supplémentaires · Assurez · Autocontrôle<br>
-        <span style="font-size:12px;color:var(--text3)">→ Thème : <em>Incidents de circulation</em> (procédure générale)</span>
-      </div>
-      <button onclick="currentTheme='incidents';document.querySelectorAll('.theme-item').forEach(el=>el.classList.remove('active'));document.getElementById('tnav-incidents')?.classList.add('active');showView('fiches')" class="btn btn-sm" style="white-space:nowrap">Voir la fiche →</button>
+    <div class="rule-box" style="margin:0">
+      <strong>2. FAMASS</strong> — Fermez · Alertez · Mesures supplémentaires · Assurez · Autocontrôle
     </div>
     <div class="rule-box" style="margin:0">
       <strong>3. Sigles à connaître</strong><br>
@@ -3075,29 +2954,31 @@ function buildDictee() {
 </div>
 
 <div class="card">
-  <div style="margin-bottom:18px">
-    <div style="font-family:var(--mono);font-size:10px;color:var(--text3);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:8px">Définition à restituer mot pour mot</div>
-    <div style="font-size:22px;font-weight:700;color:var(--accent);letter-spacing:-0.01em;line-height:1.2;margin-bottom:6px">${d.titre}</div>
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap">
+    <div class="card-title" style="flex:1">${d.titre}</div>
     <span class="tag yellow">${d.ref}</span>
   </div>
 
-  <div id="dictee-mots-cles" style="margin-bottom:14px">
+  <div style="font-size:13px;color:var(--text3);margin-bottom:10px">
+    Écris la définition exacte mot pour mot ↓
+  </div>
+  <div id="dictee-mots-cles" style="margin-bottom:12px">
     <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
-      <div style="font-size:11px;font-family:var(--mono);color:var(--text3);letter-spacing:0.08em;text-transform:uppercase">Mots-clés</div>
+      <div style="font-size:11px;font-family:var(--mono);color:var(--text3);letter-spacing:0.08em;text-transform:uppercase">Mots-clés à inclure</div>
       <label style="display:flex;align-items:center;gap:6px;cursor:pointer;font-size:12px;color:var(--text3);user-select:none">
         <input type="checkbox" id="kw-toggle" onchange="toggleKeywords()" style="accent-color:var(--accent);cursor:pointer">
-        Révéler si tu bloques
+        Révéler les mots-clés
       </label>
     </div>
     <div id="kw-container" style="display:none">
       ${d.mots_cles.map(m=>`<span class="kw-tag" id="kw-${slugify(m)}">${m}</span>`).join('')}
     </div>
     <div id="kw-hidden" style="font-size:12px;color:var(--text3);font-style:italic">
-      ☐ Coche pour révéler les mots-clés
+      ☐ Coche la case ci-dessus pour révéler les mots-clés si tu bloques
     </div>
   </div>
 
-  <textarea class="dictee-textarea" id="dictee-input" placeholder="Écris la définition complète ici..." oninput="checkKeywords()" spellcheck="false"></textarea>
+  <textarea class="dictee-textarea" id="dictee-input" placeholder="Écris la définition ici..." oninput="checkKeywords()" spellcheck="false"></textarea>
 
   <div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap">
     <button class="btn btn-accent" onclick="corrigerDictee()">Corriger</button>
@@ -3152,38 +3033,22 @@ function corrigerDictee() {
   const inputEl = document.getElementById('dictee-input');
   if (inputEl) inputEl.disabled = true;
 
+  // Score basé sur les mots-clés trouvés
   const normInput = normalize(userText);
   let found = 0;
-  let almostFound = 0; // mots-clés quasi présents
   const missing = [];
-  const almost = [];
-
   d.mots_cles.forEach(m => {
-    const normM = normalize(m);
-    if (normInput.includes(normM)) {
+    if (normInput.includes(normalize(m))) {
       found++;
       const el = document.getElementById('kw-' + slugify(m));
       if (el) el.className = 'kw-tag found';
     } else {
-      // Check if "almost" — at least 60% of significant words from the keyword are present
-      const kwWords = normM.split(' ').filter(w => w.length > 2);
-      const presentCount = kwWords.filter(w => normInput.includes(w)).length;
-      const ratio = kwWords.length ? presentCount / kwWords.length : 0;
-      if (ratio >= 0.6 && kwWords.length >= 2) {
-        almostFound++;
-        almost.push(m);
-        const el = document.getElementById('kw-' + slugify(m));
-        if (el) el.className = 'kw-tag almost';
-      } else {
-        missing.push(m);
-        const el = document.getElementById('kw-' + slugify(m));
-        if (el) el.className = 'kw-tag missing';
-      }
+      missing.push(m);
+      const el = document.getElementById('kw-' + slugify(m));
+      if (el) el.className = 'kw-tag missing';
     }
   });
-
-  const total = d.mots_cles.length;
-  const pct = Math.round(((found + almostFound * 0.5) / total) * 100);
+  const pct = Math.round((found / d.mots_cles.length) * 100);
   if (pct >= 80) dicteeScore++;
 
   const corrDiv = document.getElementById('dictee-correction');
@@ -3192,23 +3057,14 @@ function corrigerDictee() {
   const refEl = document.getElementById('ref-display');
   if (refEl) refEl.textContent = d.texte;
 
-  let cls, label;
-  if (found === total) { cls = 'good'; label = '✓ Parfait !'; }
-  else if (pct >= 80) { cls = 'good'; label = 'Très bien'; }
-  else if (pct >= 50 || almostFound > 0) { cls = 'ok'; label = 'Presque — quelques mots manquent'; }
-  else { cls = 'bad'; label = 'À retravailler'; }
-
+  const cls = pct >= 80 ? 'good' : pct >= 50 ? 'ok' : 'bad';
   const scoreEl = document.getElementById('score-display');
-  if (scoreEl) scoreEl.innerHTML = `<span class="score-pill ${cls}">${found}/${total} mots-clés exacts · ${pct}% — ${label}</span>`;
+  if (scoreEl) scoreEl.innerHTML = `<span class="score-pill ${cls}">${found}/${d.mots_cles.length} mots-clés · ${pct}%</span>`;
 
   const missEl = document.getElementById('missing-display');
-  if (missEl) {
-    let html = '';
-    if (almost.length) html += `<div style="font-size:12px;color:#e8a020;margin-bottom:4px;margin-top:8px">🟠 Presque juste (vérifier le mot exact) :</div>` +
-      almost.map(m=>`<span class="kw-tag almost">${m}</span>`).join('');
-    if (missing.length) html += `<div style="font-size:12px;color:var(--text3);margin-bottom:4px;margin-top:8px">🔴 Manquants :</div>` +
+  if (missEl && missing.length) {
+    missEl.innerHTML = `<div style="font-size:12px;color:var(--text3);margin-bottom:6px">Mots-clés manquants :</div>` +
       missing.map(m=>`<span class="kw-tag missing">${m}</span>`).join('');
-    missEl.innerHTML = html;
   }
 }
 
