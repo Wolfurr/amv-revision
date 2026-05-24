@@ -312,7 +312,7 @@ h2.theme-heading:first-child { margin-top: 0; }
   <div class="topbar">
     <button class="burger" onclick="toggleSidebar()">☰</button>
     <div class="topbar-title" id="topbar-txt">AMV / <span>Accueil</span></div>
-    <div id="topbar-right" style="font-family:var(--mono);font-size:11px;color:var(--text3)">v3.7 — 24 mai 2026</div>
+    <div id="topbar-right" style="font-family:var(--mono);font-size:11px;color:var(--text3)">v3.9 — 24 mai 2026</div>
   </div>
 
   <div class="content" id="main-content"></div>
@@ -376,23 +376,35 @@ risques: `
   <div class="def-text">De vive voix · Exprès · Haut-parleur · Téléphonie (voies / mobile) · Radio (RST-STD, RST-TD, GSM-R, radio manœuvre) · Documents écrits · Interphonie · Télécopie · Transmission numérique (terminaux mobiles, tablettes, e-mails) · Avertisseurs sonores</div>
 </div>
 <div class="def-block important">
-  <div class="def-term">4 étapes d'une bonne communication (OP0542)</div>
+  <div class="def-term">4 étapes d'une communication de sécurité (OP0542) <span class="tag yellow" style="margin-left:6px">À l'examen</span></div>
   <div class="def-text">1. L'identification
 2. L'appel d'instruction, si nécessaire (utilisation d'un formulaire)
 3. La transmission des informations (nature de l'appel)
-4. La finalisation (clôture de la transmission)</div>
+4. La finalisation (clôture de la transmission)
+
+⚡ En cas d'urgence : sauter l'étape 1, passer directement à l'étape 2.
+⚠️ Ne pas oublier de <strong>collationner</strong> à l'issue de la transmission (principe n°5 des règles de communication verbale).</div>
+</div>
+<div class="rule-box" style="border-left-color:var(--text3)">
+  <strong>⚠️ À ne pas confondre :</strong><br>
+  • Les <strong>4 étapes</strong> (OP0542) = le déroulement d'un appel de sécurité<br>
+  • Les <strong>7 principes</strong> (2.3.1) = les règles de bonne communication verbale (S'identifier, Se localiser, Volonté de se comprendre, Laisser parler, Collationner, Clore, Prendre attachement)<br>
+  Ces deux listes coexistent et se complètent — les 7 principes s'appliquent DANS les 4 étapes.
 </div>
 <div class="def-block important">
-  <div class="def-term">Les 9 codes radios à retenir <span class="tag yellow">9 à connaître</span></div>
-  <div class="def-text">1. À VOUS
-2. REÇU
-3. MAL REÇU
-4. CORRECT
-5. ERREUR
-6. ATTENDEZ
-7. RÉPÉTER
-8. JE RÉPÈTE
-9. TERMINÉ</div>
+  <div class="def-term">Les 9 codes radios <span class="tag yellow">9 à connaître</span></div>
+  <div class="def-text">1. À TOI — transmettre la parole
+2. REÇU — message bien reçu
+3. MAL REÇU — mauvaise réception
+4. CORRECT — message collationné conforme
+5. ERREUR — message collationné non conforme
+6. JE RÉPÈTE — on répète le message (utilisé après ERREUR ou sur demande)
+7. ATTENDEZ — interruption temporaire, connexion maintenue
+8. RÉPÉTER — demander à l'interlocuteur de répéter
+9. TERMINÉ — fin de communication</div>
+</div>
+<div class="rule-box" style="margin-bottom:6px">
+  <strong>Note :</strong> Dans la terminologie 2.4 (classeur Circulation), on trouve aussi <strong>«Je rappelle»</strong> (communication qui sera reprise ultérieurement) et <strong>«À toi»</strong> (version alternative de «À vous» pour certains postes). Les 9 codes ci-dessus sont ceux à connaître pour l'examen.
 </div>
 <div class="rule-box">
   <strong>Communications formalisées :</strong> Communication prédéterminée dont les termes et la forme sont fixés par la documentation réglementaire. À RESPECTER OBLIGATOIREMENT.<br><br>
@@ -1643,7 +1655,7 @@ const FLASHCARDS = [
 {theme:'risques', tag:'AMV009', q:'Quelles sont les 4 étapes d\'une bonne communication de sécurité ?',
  a:'1. L\'identification\n2. L\'appel d\'instruction, si nécessaire (formulaire)\n3. La transmission des informations (nature de l\'appel)\n4. La finalisation (clôture de la transmission)'},
 {theme:'risques', tag:'AMV009', q:'Citez les codes radios ferroviaires.',
- a:'À VOUS – REÇU – MAL REÇU – CORRECT – ERREUR – ATTENDEZ – RÉPÉTER – JE RÉPÈTE – TERMINÉ'},
+ a:'À TOI – REÇU – MAL REÇU – CORRECT – ERREUR – ATTENDEZ – RÉPÉTER – JE RÉPÈTE – TERMINÉ'},
 {theme:'risques', tag:'AMV009', q:'Quelle est la différence entre communication formalisée et non formalisée ?',
  a:'Formalisée : communication prédéterminée dont les termes et la forme sont fixés par la documentation réglementaire. À RESPECTER OBLIGATOIREMENT.\nNon formalisée : déterminée par l\'opérateur.'},
 // FORMATION
@@ -1770,8 +1782,8 @@ const QUIZ = [
  opts:['Un document d\'horaires des trains','Un registre rempli manuellement retraçant tous les événements de la journée, servant d\'élément de traçabilité','Un formulaire de demande de protection','Un tableau de cantonnement'],
  ans:1, exp:'Le CED est un registre que l\'agent remplit manuellement, retraçant tous les événements de la journée (dépêches, dérangements, communications...). Il sert d\'élément de traçabilité pour les remises et prises de postes.'},
 {theme:'risques', q:'Parmi ces codes radio, lequel n\'existe PAS ?',
- opts:['À VOUS','CORRECT','COMPRIS','RÉPÉTER'],
- ans:2, exp:'Les codes radios sont : À VOUS – REÇU – MAL REÇU – CORRECT – ERREUR – ATTENDEZ – RÉPÉTER – JE RÉPÈTE – TERMINÉ. "COMPRIS" n\'en fait pas partie.'},
+ opts:['À TOI','CORRECT','COMPRIS','RÉPÉTER'],
+ ans:2, exp:'Les codes radios sont : À TOI – REÇU – MAL REÇU – CORRECT – ERREUR – ATTENDEZ – RÉPÉTER – JE RÉPÈTE – TERMINÉ. "COMPRIS" n\'en fait pas partie.'},
 {theme:'risques', q:'Quelle est la différence entre communication formalisée et non formalisée ?',
  opts:['La formalisée est orale, la non-formalisée est écrite','La formalisée est prédéterminée et à respecter obligatoirement, la non-formalisée est déterminée par l\'opérateur','La formalisée est par radio, la non-formalisée est de vive voix','Il n\'y a pas de différence'],
  ans:1, exp:'Formalisée : communication prédéterminée dont les termes et la forme sont fixés par la documentation réglementaire. À RESPECTER OBLIGATOIREMENT. Non formalisée : déterminée par l\'opérateur.'},
@@ -2597,7 +2609,7 @@ function showView(v) {
   setNavActive(v);
   closeSidebar();
   const c = document.getElementById('main-content');
-  document.getElementById('topbar-right').innerHTML = '<span style="font-family:var(--mono);font-size:11px;color:var(--text3)">v3.7 — 24 mai 2026</span>';
+  document.getElementById('topbar-right').innerHTML = '<span style="font-family:var(--mono);font-size:11px;color:var(--text3)">v3.9 — 24 mai 2026</span>';
   if (v === 'home') { setTopbar('AMV / <span>Accueil</span>'); renderHome(c); }
   else if (v === 'fiches') { setTopbar('AMV / <span>Fiches de cours</span>'); renderFiches(c); }
   else if (v === 'flash') { setTopbar('AMV / <span>Flashcards</span>'); renderFlash(c); }
@@ -2714,9 +2726,9 @@ function renderHome(c) {
       <strong>11. Les 3 types de communication</strong> — Verbale · Non-verbale · Écrite (logo feuille+crayon = prendre attachement obligatoire)
     </div>
     <div class="rule-box" style="margin:0">
-      <strong>12. Les 4 étapes de communication de sécurité</strong><br>
+      <strong>12. Les 4 étapes de communication de sécurité (OP0542)</strong><br>
       1. Identification · 2. Appel d'instruction (si nécessaire) · 3. Transmission des informations · 4. Finalisation<br>
-      <span style="font-size:12px;color:var(--text3)">⚡ En cas d'urgence : sauter l'étape 1, aller directement à l'étape 2</span>
+      <span style="font-size:12px;color:var(--text3)">⚡ En cas d'urgence : sauter l'étape 1, aller directement à l'étape 2 · Ne pas oublier de <strong>collationner</strong> à l'issue de la transmission</span>
     </div>
     <div class="rule-box" style="margin:0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
       <div>
@@ -2784,6 +2796,8 @@ function renderHome(c) {
       ['11','Les dispositifs de contrôle de vitesse et d\'arrêt automatique des trains','KVB, DAAT...'],
       ['12','Les installations de block',''],
       ['13','Les dispositifs d\'annonce aux PN gardés',''],
+      ['14','Les installations de PN à SAL voisins de gare','signalisation automatique lumineuse à proximité des gares'],
+      ['15','Les organes de commande','leviers, manettes — permettent la manœuvre des IS'],
     ].map(([n,titre,detail]) => `
     <li style="display:flex;gap:10px;padding:7px 12px;background:var(--bg3);border-radius:var(--radius);border-left:2px solid var(--accent2)">
       <span style="font-family:var(--mono);font-size:11px;color:var(--accent);min-width:22px;padding-top:1px">${n}.</span>
