@@ -312,7 +312,7 @@ h2.theme-heading:first-child { margin-top: 0; }
   <div class="topbar">
     <button class="burger" onclick="toggleSidebar()">☰</button>
     <div class="topbar-title" id="topbar-txt">AMV / <span>Accueil</span></div>
-    <div id="topbar-right" style="font-family:var(--mono);font-size:11px;color:var(--text3)">v3.9 — 24 mai 2026</div>
+    <div id="topbar-right" style="font-family:var(--mono);font-size:11px;color:var(--text3)">v4.2 — 25 mai 2026</div>
   </div>
 
   <div class="content" id="main-content"></div>
@@ -332,6 +332,7 @@ const THEMES = [
   { id:'install-sec', code:'AMV200/AMV250/AMV310', title:'Installations de Sécurité (IS)', short:'Install. Sécurité (IS)' },
   { id:'signaux',     code:'AMV207',         title:'Signaux ferroviaires',               short:'Signaux' },
   { id:'circulation', code:'AMV101–160',     title:'Circulation des trains & Cantonnement', short:'Circulation' },
+  { id:'cantonnement',code:'AMV160',          title:'Cantonnement',                          short:'Cantonnement' },
   { id:'incidents',   code:'AMV109–113',     title:'Incidents de circulation',           short:'Incidents' },
   { id:'encl',        code:'AMV210–211',     title:'Enclenchements',                     short:'Enclenchements' },
   { id:'traction',    code:'AMV600–601',     title:'Traction électrique',                short:'Traction élec.' },
@@ -387,9 +388,8 @@ risques: `
 </div>
 <div class="rule-box" style="border-left-color:var(--text3)">
   <strong>⚠️ À ne pas confondre :</strong><br>
-  • Les <strong>4 étapes</strong> (OP0542) = le déroulement d'un appel de sécurité<br>
-  • Les <strong>7 principes</strong> (2.3.1) = les règles de bonne communication verbale (S'identifier, Se localiser, Volonté de se comprendre, Laisser parler, Collationner, Clore, Prendre attachement)<br>
-  Ces deux listes coexistent et se complètent — les 7 principes s'appliquent DANS les 4 étapes.
+  Les <strong>4 étapes OP0542</strong> = le déroulement d'un appel de sécurité. C'est ce qu'il faut connaître.<br>
+  Ne pas oublier de <strong>collationner</strong> à l'issue de la transmission.
 </div>
 <div class="def-block important">
   <div class="def-term">Les 9 codes radios <span class="tag yellow">9 à connaître</span></div>
@@ -798,6 +798,113 @@ circulation: `
 • Automoteur [x] : sur signe d'un agent / voyageur
 • Prescrits : sur ordre du SGC
 • Accidentels : obstacle, avarie, signal d'urgence</div>
+</div>
+`,
+
+cantonnement: `
+<h2 class="theme-heading">Cantonnement</h2>
+<div class="theme-ref">AMV160 · DC1551 BAL · DC1552 BAPR · OP O599 ARRET</div>
+
+<div class="def-block important">
+  <div class="def-term">Cantonnement <span class="tag yellow" style="margin-left:6px">⚠ À l'examen</span></div>
+  <div class="def-text">Système d'espacement des trains de même sens destiné à éviter les rattrapages et consistant à fractionner la ligne en plusieurs cantons dont l'entrée est protégée par un signal d'arrêt.</div>
+</div>
+<div class="rule-box">
+  <strong>Principe fondamental :</strong> <strong>1 train par canton</strong> — particulièrement vrai en BM.<br>
+  <strong>En BAL ou BAPR : le sémaphore ARRÊTE mais ne RETIENT PAS.</strong><br>
+  <strong>En BM : le sémaphore ARRÊTE et RETIENT.</strong>
+</div>
+
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Types de cantonnement</h3>
+<div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);padding:20px;margin-bottom:12px;overflow-x:auto">
+  <div style="display:flex;gap:20px;min-width:500px">
+    <div style="flex:1;border:2px solid var(--accent);border-radius:8px;padding:14px;background:rgba(240,192,64,0.05)">
+      <div style="text-align:center;font-weight:700;color:var(--accent);font-size:14px;margin-bottom:12px">BLOCK MANUEL (BM)</div>
+      <div style="display:flex;gap:8px">
+        <div style="flex:1;background:var(--bg4);border-radius:6px;padding:10px;text-align:center;border:1px solid var(--border2)">
+          <div style="font-size:11px;font-weight:600;color:var(--text);margin-bottom:4px">Cantonnement Téléphonique</div>
+          <div style="font-size:11px;color:var(--text3)">Garde à chaque poste · communication téléphonique</div>
+        </div>
+        <div style="flex:1;background:var(--bg4);border-radius:6px;padding:10px;text-align:center;border:1px solid var(--border2)">
+          <div style="font-size:11px;font-weight:600;color:var(--text);margin-bottom:4px">Block par Appareils</div>
+          <div style="font-size:11px;color:var(--text3)">Appareils de block mécaniques ou électriques</div>
+        </div>
+      </div>
+      <div style="margin-top:10px;font-size:11px;color:var(--text3);text-align:center">Signaux normalement <strong style="color:var(--red)">FERMÉS</strong> · Arrête ET retient</div>
+    </div>
+    <div style="flex:1;border:2px solid var(--blue);border-radius:8px;padding:14px;background:rgba(96,165,250,0.05)">
+      <div style="text-align:center;font-weight:700;color:var(--blue);font-size:14px;margin-bottom:12px">BLOCK AUTOMATIQUE</div>
+      <div style="display:flex;gap:8px">
+        <div style="flex:1;background:var(--bg4);border-radius:6px;padding:10px;text-align:center;border:1px solid var(--border2)">
+          <div style="font-size:11px;font-weight:600;color:var(--text);margin-bottom:4px">BAL</div>
+          <div style="font-size:11px;color:var(--text3)">≈ max 3 km · lumineux</div>
+        </div>
+        <div style="flex:1;background:var(--bg4);border-radius:6px;padding:10px;text-align:center;border:1px solid var(--border2)">
+          <div style="font-size:11px;font-weight:600;color:var(--text);margin-bottom:4px">BAPR</div>
+          <div style="font-size:11px;color:var(--text3)">6 à 15 km · contrainte</div>
+        </div>
+      </div>
+      <div style="margin-top:10px;font-size:11px;color:var(--text3);text-align:center">Signaux automatiques · Arrête mais <strong style="color:var(--accent)">NE RETIENT PAS</strong></div>
+    </div>
+  </div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">BAL — Block Automatique Lumineux (≈ 2800 m)</div>
+  <div class="def-text">Sémaphore <strong>permissif</strong> : après arrêt, le conducteur peut le franchir de lui-même en marche à vue. Arrête mais NE RETIENT PAS.</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">BAPR — Block Automatique à Permissivité Restreinte (6 à 15 km)</div>
+  <div class="def-text">Sémaphore <strong>non permissif</strong> : le conducteur doit se faire reconnaître et obtenir l'accord verbal de l'aiguilleur. Si impossible : attendre 15 min puis VM sur tout le canton. Arrête mais NE RETIENT PAS.</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">BM — Block Manuel / Cantonnement Téléphonique</div>
+  <div class="def-text">Signaux normalement <strong>FERMÉS</strong>. Arrête ET RETIENT.<br>Pour franchir : Formulaire S (canton libre) / Formulaire MV (pas d'assurance) / Ordre verbal du CdM.</div>
+</div>
+
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Franchissement sémaphore BM — Formulaire S vs Formulaire MV</h3>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px">
+  <div style="background:var(--green-bg);border:1px solid var(--green);border-radius:var(--radius2);padding:14px">
+    <div style="font-size:14px;font-weight:700;color:var(--green);margin-bottom:8px">Formulaire S</div>
+    <div style="font-size:12px;color:var(--text2);line-height:1.6">Délivré par le garde lorsqu'il a l'<strong style="color:var(--text)">assurance que le canton est libre</strong>.<br>Le conducteur peut circuler normalement dans le canton.</div>
+  </div>
+  <div style="background:rgba(240,192,64,0.05);border:1px solid var(--accent);border-radius:var(--radius2);padding:14px">
+    <div style="font-size:14px;font-weight:700;color:var(--accent);margin-bottom:8px">Formulaire MV</div>
+    <div style="font-size:12px;color:var(--text2);line-height:1.6">Délivré par le garde <strong style="color:var(--text)">dans le cas contraire</strong> — il n'a pas l'assurance.<br>Le conducteur doit rester en <strong style="color:var(--accent)">marche à vue jusqu'à la fin du canton</strong>.</div>
+  </div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term" style="color:var(--accent)">PRR — Point de Reconnaissance et de Remise en marche <span class="tag yellow" style="margin-left:6px">⚠ À connaître</span></div>
+  <div class="def-text">Emplacement précis en amont d'un signal où le conducteur doit s'arrêter pour se faire reconnaître avant de demander l'autorisation de franchir le signal fermé.</div>
+</div>
+
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Comment reconnaître BAL / BAPR / BM sur le terrain</h3>
+<div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);padding:16px;margin-bottom:12px">
+  <div style="font-size:12px;color:var(--text2);margin-bottom:12px">Présence de la plaque <strong style="color:var(--text)">Nf</strong> → observer l'œilleton → si allumé, consulter la plaque de cantonnement :</div>
+  <div style="display:flex;flex-direction:column;gap:6px">
+    <div style="display:flex;align-items:center;gap:10px;padding:8px 12px;background:var(--bg4);border-radius:6px">
+      <div style="font-size:12px;color:var(--text3);min-width:180px">Absence de plaque de cantonnement</div>
+      <div style="font-size:13px;font-weight:600;color:var(--blue)">→ Sémaphore de <strong>BAL</strong></div>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px;padding:8px 12px;background:var(--bg4);border-radius:6px">
+      <div style="font-size:12px;color:var(--text3);min-width:180px">Plaque <strong style="color:var(--text)">PR</strong> ou <strong style="color:var(--text)">PR vers...</strong></div>
+      <div style="font-size:13px;font-weight:600;color:var(--blue)">→ Sémaphore de <strong>BAPR</strong></div>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px;padding:8px 12px;background:var(--bg4);border-radius:6px">
+      <div style="font-size:12px;color:var(--text3);min-width:180px">Plaque <strong style="color:var(--text)">BM</strong> ou <strong style="color:var(--text)">BM vers...</strong></div>
+      <div style="font-size:13px;font-weight:600;color:var(--accent)">→ Sémaphore de <strong>BM</strong></div>
+    </div>
+  </div>
+</div>
+
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">FA — Fermeture Automatique</h3>
+<div class="def-block">
+  <div class="def-term">Fermeture Automatique (FA)</div>
+  <div class="def-text">Ferme automatiquement le signal après le passage d'un train.<br>
+• <strong>FA annulable</strong> : l'aiguilleur peut désactiver la FA — laisser passer plusieurs trains à la suite. Cas des lignes classiques.<br>
+• <strong>FA non annulable</strong> : le signal se referme systématiquement après chaque passage (lignes croisées, pas de bouton de désactivation).<br>
+FA <strong>en service</strong> = actionnée · FA <strong>pas en service</strong> = non actionnée.</div>
 </div>
 `,
 
@@ -2609,7 +2716,7 @@ function showView(v) {
   setNavActive(v);
   closeSidebar();
   const c = document.getElementById('main-content');
-  document.getElementById('topbar-right').innerHTML = '<span style="font-family:var(--mono);font-size:11px;color:var(--text3)">v3.9 — 24 mai 2026</span>';
+  document.getElementById('topbar-right').innerHTML = '<span style="font-family:var(--mono);font-size:11px;color:var(--text3)">v4.2 — 25 mai 2026</span>';
   if (v === 'home') { setTopbar('AMV / <span>Accueil</span>'); renderHome(c); }
   else if (v === 'fiches') { setTopbar('AMV / <span>Fiches de cours</span>'); renderFiches(c); }
   else if (v === 'flash') { setTopbar('AMV / <span>Flashcards</span>'); renderFlash(c); }
@@ -2730,13 +2837,45 @@ function renderHome(c) {
       1. Identification · 2. Appel d'instruction (si nécessaire) · 3. Transmission des informations · 4. Finalisation<br>
       <span style="font-size:12px;color:var(--text3)">⚡ En cas d'urgence : sauter l'étape 1, aller directement à l'étape 2 · Ne pas oublier de <strong>collationner</strong> à l'issue de la transmission</span>
     </div>
-    <div class="rule-box" style="margin:0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
-      <div>
-        <strong>13. Composition de la Consigne Rose (DC3858)</strong> — 5 chapitres + 8 annexes<br>
-        <span style="font-size:12px;color:var(--text2)">Chap. 1 Généralités · 2 Signaux · 3 Appareils de voie · 4 Enclenchements élec. · 5 Relations PN voisins<br>
-        Annexe 1 : Schéma signalisation · <strong>Annexe 2 : Tableau des mouvements</strong> · 3–8 : enclenchements, transits, points manœuvre, petit matériel</span>
+    <div class="card" style="margin:0;border-color:rgba(240,192,64,0.2);background:rgba(240,192,64,0.03);padding:16px">
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:14px">
+        <strong style="color:var(--text)">13. Consigne Rose (DC3858) — 5 chapitres + 8 annexes</strong>
+        <button onclick="currentTheme='aiguillage';document.querySelectorAll('.theme-item').forEach(el=>el.classList.remove('active'));document.getElementById('tnav-aiguillage')?.classList.add('active');showView('fiches')" class="btn btn-sm" style="white-space:nowrap">Voir la fiche →</button>
       </div>
-      <button onclick="currentTheme='aiguillage';document.querySelectorAll('.theme-item').forEach(el=>el.classList.remove('active'));document.getElementById('tnav-aiguillage')?.classList.add('active');showView('fiches')" class="btn btn-sm" style="white-space:nowrap">Voir la fiche →</button>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:10px">
+        ${[
+          ['1','Généralités & Contrôles','Principes d\'utilisation du poste'],
+          ['2','Signaux','Fonctionnement et conditions d\'ouverture'],
+          ['3','Appareils de voie','Aiguilles, verrous, taquets'],
+          ['4','Enclenchements électriques','ZI · CIP · ZP · EAP'],
+          ['5','Relations avec les PN voisins','Coordination avec les PN proches'],
+        ].map(([n,titre,detail]) => `
+        <div style="display:flex;gap:8px;padding:8px 10px;background:var(--bg3);border-radius:6px;border-left:2px solid var(--accent)">
+          <span style="font-family:var(--mono);font-size:13px;font-weight:700;color:var(--accent);flex-shrink:0">CH${n}</span>
+          <div>
+            <div style="font-size:12px;font-weight:600;color:var(--text)">${titre}</div>
+            <div style="font-size:11px;color:var(--text3)">${detail}</div>
+          </div>
+        </div>`).join('')}
+      </div>
+      <div style="font-size:10px;font-family:var(--mono);color:var(--text3);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px">Annexes</div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:4px">
+        ${[
+          ['A1','Schéma\nsignalisation','var(--text2)'],
+          ['A2','Tableau des\nmouvements ⭐','var(--accent)'],
+          ['A3','Encl. poste\nà poste','var(--text3)'],
+          ['A4','Encl.\naiguilles','var(--text3)'],
+          ['A5','Encl.\nd\'approche','var(--text3)'],
+          ['A6','Annulation\ndes transits','var(--text3)'],
+          ['A7','Points de\nmanœuvre','var(--text3)'],
+          ['A8','Petit\nmatériel','var(--text3)'],
+        ].map(([n,titre,col]) => `
+        <div style="padding:6px 8px;background:var(--bg3);border-radius:5px;text-align:center;border:1px solid ${col === 'var(--accent)' ? 'rgba(240,192,64,0.3)' : 'var(--border)'}">
+          <div style="font-family:var(--mono);font-size:10px;color:${col};font-weight:700;margin-bottom:2px">${n}</div>
+          <div style="font-size:10px;color:var(--text3);white-space:pre-line;line-height:1.3">${titre}</div>
+        </div>`).join('')}
+      </div>
+      <div style="font-size:11px;color:var(--text3);margin-top:8px">⭐ Annexe 2 = Tableau des mouvements — référence clé de l'aiguilleur au quotidien</div>
     </div>
     <div class="rule-box" style="margin:0">
       <strong>14. Savoir identifier BAL ou BAPR sur le terrain</strong> — via la plaque de cantonnement sur le mât du signal :<br>
@@ -2744,6 +2883,14 @@ function renderHome(c) {
     </div>
     <div class="rule-box" style="margin:0">
       <strong>15. Renseignements techniques</strong> — <span style="color:var(--text3);font-style:italic">Définition à compléter après le cours de mardi</span>
+    </div>
+    <div class="rule-box" style="margin:0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
+      <div>
+        <strong>16. Définition du Cantonnement</strong> <span class="tag yellow" style="margin-left:4px">À l'examen</span><br>
+        <span style="font-size:12px;color:var(--text2);display:block;margin-top:4px;padding:6px 10px;background:rgba(0,0,0,0.2);border-radius:4px;font-style:italic">"Système d'espacement des trains de même sens destiné à éviter les rattrapages et consistant à fractionner la ligne en plusieurs cantons dont l'entrée est protégée par un signal d'arrêt."</span>
+        <span style="font-size:11px;color:var(--text3)">1 train par canton (BM) · BAL/BAPR : arrête mais NE RETIENT PAS · BM : arrête ET RETIENT</span>
+      </div>
+      <button onclick="currentTheme='cantonnement';document.querySelectorAll('.theme-item').forEach(el=>el.classList.remove('active'));document.getElementById('tnav-cantonnement')?.classList.add('active');showView('fiches')" class="btn btn-sm" style="white-space:nowrap">Voir la fiche →</button>
     </div>
     <div class="rule-box" style="margin:0">
       <strong>💡 Astuce numéros pairs/impairs</strong><br>
@@ -2783,25 +2930,25 @@ function renderHome(c) {
   </div>
   <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:6px">
     ${[
-      ['1','Les dispositifs de signalisation','signaux et organes mécaniques de commande'],
-      ['2','Les appareils de voie','leurs organes mécaniques de commande et la partie électrique de la commande'],
-      ['3','Les enclenchements mécaniques',''],
-      ['4','Les enclenchements électriques',''],
-      ['5','Les composants installés sur le terrain','circuits de voie, compteurs d\'essieux, pédales... (autres que ceux utilisés uniquement pour le confort des voyageurs)'],
-      ['6','Les dispositifs de contrôle',''],
-      ['7','Les dispositifs de répétition des signaux','crocodiles, balises...'],
-      ['8','Les appuis acoustiques des signaux','pétards, détonateurs...'],
-      ['9','Les installations de PN à SAL','signalisation automatique lumineuse — voisins de gare'],
-      ['10','Les détecteurs d\'obstacles',''],
-      ['11','Les dispositifs de contrôle de vitesse et d\'arrêt automatique des trains','KVB, DAAT...'],
-      ['12','Les installations de block',''],
-      ['13','Les dispositifs d\'annonce aux PN gardés',''],
-      ['14','Les installations de PN à SAL voisins de gare','signalisation automatique lumineuse à proximité des gares'],
-      ['15','Les organes de commande','leviers, manettes — permettent la manœuvre des IS'],
-    ].map(([n,titre,detail]) => `
+      ['1','Les dispositifs de signalisation','signaux + organes mécaniques de commande','Protéger les AdV · Espacer les circulations · Avertir de la fermeture · Imposer une vitesse'],
+      ['2','Les appareils de voie','organes mécaniques + partie électrique','Aiguille (diriger/protéger) · Verrou (passage en pointe > 40 km/h) · Taquet (protéger contre dérives)'],
+      ['3','Les organes de commande','leviers, manettes','Permettre la manœuvre des IS — position Normale ou Renversée'],
+      ['4','Les enclenchements mécaniques','','Éviter les conséquences dangereuses d\'une manœuvre IS contraire à la réglementation'],
+      ['5','Les enclenchements électriques','','ZI · CIP · ZP · EAP — contrôle automatique des conditions de sécurité'],
+      ['6','Les composants sur le terrain','circuits de voie, pédales, compteurs d\'essieux','Détecter l\'occupation/libération d\'une partie de voie · Déclencher pictogrammes lumineux (TVP)'],
+      ['7','Les dispositifs de contrôle','','Renseigner l\'aiguilleur sur la position et l\'état des IS · Guider son action en normal et en dérangement'],
+      ['8','Les dispositifs de répétition des signaux','crocodiles, balises','Répéter dans la cabine de conduite une indication présentée par un signal — pallier un défaut de vigilance'],
+      ['9','Les appuis acoustiques des signaux','pétards, détonateurs','Alerter le conducteur par explosion lors du franchissement d\'un signal'],
+      ['10','Les installations de PN à SAL','','Obtenir l\'arrêt de la circulation routière pour le passage des trains'],
+      ['11','Les détecteurs d\'obstacles','','Arrêter ou ralentir les circulations en cas d\'obstruction probable de la voie'],
+      ['12','Les dispositifs de contrôle de vitesse et d\'arrêt automatique','KVB, DAAT','Déclencher l\'arrêt automatique si action inappropriée du conducteur ou erreur de l\'AC vis-à-vis de la sécurité'],
+      ['13','Les installations de block','','Assurer l\'espacement des trains'],
+      ['14','Les dispositifs d\'annonce aux PN gardés','','Prévenir le garde-barrière de l\'approche d\'un train'],
+      ['15','Les installations de PN à SAL voisins de gare','','Assurer la sécurité des PN proches d\'une gare'],
+    ].map(([n,titre,sous,detail]) => `
     <li style="display:flex;gap:10px;padding:7px 12px;background:var(--bg3);border-radius:var(--radius);border-left:2px solid var(--accent2)">
       <span style="font-family:var(--mono);font-size:11px;color:var(--accent);min-width:22px;padding-top:1px">${n}.</span>
-      <span style="font-size:13px;color:var(--text)">${titre}${detail ? `<span style="color:var(--text3)"> — ${detail}</span>` : ''}</span>
+      <span style="font-size:13px;color:var(--text)"><strong>${titre}</strong>${sous ? `<span style="color:var(--text3);font-weight:400"> — ${sous}</span>` : ''}${detail ? `<br><span style="font-size:12px;color:var(--text3)">${detail}</span>` : ''}</span>
     </li>`).join('')}
   </ul>
   <div style="font-size:12px;color:var(--text3);margin-top:10px;font-style:italic">
@@ -2809,21 +2956,18 @@ function renderHome(c) {
   </div>
 </div>
 
-<!-- RÈGLES DE COMMUNICATION 2.3.1 -->
+<!-- RÈGLES DE COMMUNICATION -->
 <div class="card" style="margin-bottom:16px">
-  <div class="card-title" style="margin-bottom:14px">📡 Règles de communication — 2.3.1 Principes à respecter lors des communications verbales</div>
+  <div class="card-title" style="margin-bottom:14px">📡 Les 4 étapes de communication de sécurité (OP0542)</div>
   <div style="display:flex;flex-direction:column;gap:6px">
     ${[
-      ['S\'identifier','Permet de s\'assurer qu\'il s\'agit du bon interlocuteur et qu\'il est prêt à recevoir la communication'],
-      ['Se localiser','Poste, voie, km, PN, signal, etc.'],
-      ['Volonté de se comprendre','Éviter les termes imprécis, les vocabulaires spécifiques ou locaux. Ne pas hésiter à questionner, à faire répéter, à reformuler'],
-      ['Laisser parler','Attendre sans l\'interrompre que l\'interlocuteur ait fini de parler'],
-      ['Collationner','Faire répéter, à l\'issue de la transmission complète, la totalité de la communication et comparer à celle émise'],
-      ['Clore la communication','Par le terme « terminé » lorsqu\'elle est achevée'],
-      ['Prendre attachement','Tous les renseignements pouvant être utiles ultérieurement (CED, formulaires, etc.)'],
-    ].map(([titre,detail],i) => `
+      ['1','Identification','S\'assurer qu\'on parle au bon interlocuteur'],
+      ['2','Appel d\'instruction','Si nécessaire — utilisation d\'un formulaire'],
+      ['3','Transmission des informations','Nature de l\'appel, contenu du message'],
+      ['4','Finalisation','Clôture de la transmission'],
+    ].map(([n,titre,detail]) => `
     <div style="display:flex;gap:10px;padding:8px 12px;background:var(--bg3);border-radius:var(--radius);align-items:flex-start">
-      <span style="font-family:var(--mono);font-size:11px;color:var(--accent);min-width:20px;padding-top:2px">${i+1}.</span>
+      <span style="font-family:var(--mono);font-size:13px;font-weight:700;color:var(--accent);min-width:22px;padding-top:1px">${n}.</span>
       <div>
         <div style="font-size:13px;font-weight:500;color:var(--text);margin-bottom:2px">${titre}</div>
         <div style="font-size:12px;color:var(--text3)">${detail}</div>
@@ -2831,27 +2975,28 @@ function renderHome(c) {
     </div>`).join('')}
   </div>
   <div class="rule-box" style="margin-top:12px;margin-bottom:0">
-    <strong>⚡ En cas d'urgence :</strong> sauter l'étape 1 (identification) et passer directement à l'étape 2 (transmission).<br>
-    <strong>🔁 Répéter 2 fois</strong> les communications importantes.<br>
+    <strong>⚡ En cas d'urgence :</strong> sauter l'étape 1, passer directement à l'étape 2.<br>
+    <strong>🔁 Collationner</strong> — à la fin de la transmission, faire répéter la totalité du message et comparer.<br>
     <strong>✍️ Communication écrite</strong> (logo feuille + crayon) → prendre un attachement obligatoire.
   </div>
 </div>
 
 <!-- 2.4 TERMINOLOGIE -->
 <div class="card" style="margin-bottom:16px">
-  <div class="card-title" style="margin-bottom:14px">💬 Terminologie 2.4 — Codes de communication</div>
+  <div class="card-title" style="margin-bottom:14px">💬 Les 9 codes de communication</div>
   <div style="overflow-x:auto">
   <table>
-    <thead><tr><th>Situation</th><th>Terminologie</th></tr></thead>
+    <thead><tr><th>#</th><th>Situation</th><th>Code</th></tr></thead>
     <tbody>
-      <tr><td>Transmettre la parole à l'autre interlocuteur</td><td><strong style="color:var(--accent)">À toi</strong></td></tr>
-      <tr><td>Confirmer que le message transmis a été reçu</td><td><strong style="color:var(--green)">Reçu</strong></td></tr>
-      <tr><td>Faire répéter en cas de mauvaise réception ou compréhension</td><td><strong style="color:var(--accent)">Répétez</strong></td></tr>
-      <tr><td>Faire savoir si le message collationné est conforme au message émis</td><td><strong style="color:var(--green)">Correct</strong></td></tr>
-      <tr><td>Faire savoir que le message collationné n'est pas conforme au message émis</td><td><strong style="color:var(--red)">Erreur (+ je répète)</strong></td></tr>
-      <tr><td>Faire attendre l'interlocuteur lors d'une interruption temporaire (connexion maintenue)</td><td><strong style="color:var(--accent)">Attendez</strong></td></tr>
-      <tr><td>Faire savoir que la communication pourrait être interrompue mais reprise ultérieurement</td><td><strong style="color:var(--accent)">Je rappelle</strong></td></tr>
-      <tr><td>Indiquer que le message est terminé</td><td><strong style="color:var(--green)">Terminé</strong></td></tr>
+      <tr><td>1</td><td>Transmettre la parole à l'autre interlocuteur</td><td><strong style="color:var(--accent)">À toi</strong></td></tr>
+      <tr><td>2</td><td>Confirmer que le message transmis a été reçu</td><td><strong style="color:var(--green)">Reçu</strong></td></tr>
+      <tr><td>3</td><td>Faire répéter en cas de mauvaise réception</td><td><strong style="color:var(--accent)">Mal reçu</strong></td></tr>
+      <tr><td>4</td><td>Le message collationné est conforme au message émis</td><td><strong style="color:var(--green)">Correct</strong></td></tr>
+      <tr><td>5</td><td>Le message collationné n'est PAS conforme au message émis</td><td><strong style="color:var(--red)">Erreur</strong></td></tr>
+      <tr><td>6</td><td>Répéter le message (après Erreur ou sur demande)</td><td><strong style="color:var(--accent)">Je répète</strong></td></tr>
+      <tr><td>7</td><td>Faire attendre — interruption temporaire, connexion maintenue</td><td><strong style="color:var(--accent)">Attendez</strong></td></tr>
+      <tr><td>8</td><td>Demander à l'interlocuteur de répéter</td><td><strong style="color:var(--accent)">Répétez</strong></td></tr>
+      <tr><td>9</td><td>Indiquer que le message est terminé</td><td><strong style="color:var(--green)">Terminé</strong></td></tr>
     </tbody>
   </table>
   </div>
@@ -2888,6 +3033,85 @@ function renderHome(c) {
       <tr><td><span class="tag">S6A n°15</span></td><td>Ancienne numérotation = Installations de sécurité (DC3858)</td></tr>
     </tbody>
   </table>
+  </div>
+</div>
+
+<!-- PRÉPARATION MARDI — AMV101 + AMV109 -->
+<div class="card" style="border-color:rgba(96,165,250,0.3);background:rgba(96,165,250,0.04);margin-bottom:16px">
+  <div style="display:flex;align-items:center;gap:8px;margin-bottom:16px;flex-wrap:wrap">
+    <span style="font-size:18px">📖</span>
+    <div>
+      <div class="card-title" style="color:var(--blue)">PRÉPARATION MARDI — AMV101 + AMV109</div>
+      <div style="font-size:12px;color:var(--text3)">Organiser le mouvement · Incidents de circulation — test de positionnement mercredi</div>
+    </div>
+  </div>
+
+  <div style="font-size:13px;font-weight:600;color:var(--blue);margin-bottom:10px;font-family:var(--mono);letter-spacing:0.06em">AMV101 — ORGANISER LE MOUVEMENT</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px">
+    ${[
+      ['Sillon','Capacité d\'infrastructure requise pour faire circuler un train donné d\'un point à un autre à un moment donné'],
+      ['N° de train','Permet de caractériser : parcours + sens de circulation + type. Pair = vers Paris / Impair = vers les provinces'],
+      ['TST','Tableau de Succession des Trains — liste et horaires de tous les trains réguliers et facultatifs par ordre chronologique'],
+      ['ONJ','Ordre Normal Journalier — prévisionnel : ce qui DOIT passer (papier ou OLERON)'],
+      ['EC','État de Circulation — constat : l\'agent note l\'heure RÉELLE de passage. Permet de connaître le dernier reçu et le dernier expédié'],
+      ['Train MI','Train à Marche Indéterminée : horaire approximatif, pas d\'ordre normal de circulation, ni croisements ni garages'],
+      ['ART / AGT','Avis Régional/Général Train — modifications d\'horaires, suppressions ou ajouts envoyés par le régulateur'],
+      ['SNST','Système Normalisé de Suivi des Trains — informe les exploitants de l\'identité et de la position de chaque circulation'],
+    ].map(([titre,def]) => `
+    <div style="background:var(--bg3);border-radius:6px;padding:8px 10px;border-left:2px solid var(--blue)">
+      <div style="font-size:12px;font-weight:600;color:var(--text);margin-bottom:2px">${titre}</div>
+      <div style="font-size:11px;color:var(--text3);line-height:1.5">${def}</div>
+    </div>`).join('')}
+  </div>
+
+  <div class="rule-box" style="margin-bottom:14px;border-left-color:var(--blue)">
+    <strong>Renseignements techniques</strong> : document contenant les caractéristiques d'exploitation d'une ligne. Document A subdivisé en 5 paragraphes (caractéristiques générales, distances/IS/cantonnement, vitesses/traction, pentes/freinage, prescriptions diverses).
+  </div>
+
+  <div style="font-size:13px;font-weight:600;color:var(--red);margin-bottom:10px;font-family:var(--mono);letter-spacing:0.06em">AMV109 — INCIDENTS DE CIRCULATION (DC1503)</div>
+  
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:12px">
+    <div style="background:var(--red-bg);border:1px solid var(--red);border-radius:6px;padding:10px">
+      <div style="font-size:12px;font-weight:700;color:var(--red);margin-bottom:4px">OBSTACLE</div>
+      <div style="font-size:11px;color:var(--text3)">Événement inopiné et identifié, visible ou non, qui <strong style="color:var(--text)">fait obstruction</strong> à la circulation. Risque grave de déraillement.</div>
+    </div>
+    <div style="background:rgba(230,140,20,0.1);border:1px solid #e8a020;border-radius:6px;padding:10px">
+      <div style="font-size:12px;font-weight:700;color:#e8a020;margin-bottom:4px">DANGER</div>
+      <div style="font-size:11px;color:var(--text3)">Événement inopiné dans les emprises. <strong style="color:var(--text)">Ne fait pas obstruction</strong> mais nécessite des mesures particulières.</div>
+    </div>
+    <div style="background:var(--blue-bg);border:1px solid var(--blue);border-radius:6px;padding:10px">
+      <div style="font-size:12px;font-weight:700;color:var(--blue);margin-bottom:4px">PRÉSOMPTION</div>
+      <div style="font-size:11px;color:var(--text3)"><strong style="color:var(--text)">Probabilité</strong> de l'existence d'un événement. Nécessite un supplément d'information.</div>
+    </div>
+  </div>
+
+  <div style="font-size:12px;font-weight:600;color:var(--text);margin-bottom:8px">FAMASS — à appliquer en cas d'obstacle, danger ou présomption :</div>
+  <div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:12px">
+    ${[
+      ['F','Fermez','les signaux d\'arrêt convenables','var(--red)'],
+      ['A','Alertez','d\'urgence les postes ou gares susceptibles d\'expédier des circulations','#e8a020'],
+      ['M','Mesures','supplémentaires pour arrêter les circulations (EC ou ZAP selon position)','var(--blue)'],
+      ['A','Assurez','la circulation arrêtée/retenue + ordre de ne pas remettre en marche','var(--green)'],
+      ['S','→ Auto','contrôle à la fin !','var(--accent)'],
+    ].map(([lettre,mot,detail,col]) => `
+    <div style="flex:1;min-width:100px;background:var(--bg3);border-radius:6px;padding:8px 10px;border-top:3px solid ${col}">
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:3px">
+        <span style="font-family:var(--mono);font-size:18px;font-weight:700;color:${col}">${lettre}</span>
+        <span style="font-size:12px;font-weight:600;color:var(--text)">${mot}</span>
+      </div>
+      <div style="font-size:11px;color:var(--text3);line-height:1.4">${detail}</div>
+    </div>`).join('')}
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+    <div style="background:var(--bg3);border-radius:6px;padding:10px;border-left:2px solid var(--text3)">
+      <div style="font-size:12px;font-weight:600;color:var(--text);margin-bottom:4px">Comment avoir connaissance d'un événement</div>
+      <div style="font-size:11px;color:var(--text3);line-height:1.6">• Présence de l'obstacle ou du danger<br>• Réception d'un avis (tél/radio)<br>• Alarme dispositif IS<br>• Perception SAR / SAL / torche allumée<br>• Personne avec bras élevés agitant un objet</div>
+    </div>
+    <div style="background:var(--bg3);border-radius:6px;padding:10px;border-left:2px solid var(--accent)">
+      <div style="font-size:12px;font-weight:600;color:var(--text);margin-bottom:4px">Code couleur DC1503</div>
+      <div style="font-size:11px;color:var(--text3);line-height:1.7">🔵 Bleu = actions AC<br>🟡 Jaune = dépêches, formulaires, ordres écrits<br>🌸 Rose = Avertissement<br>🟢 Vert = Reprise circulation normale</div>
+    </div>
   </div>
 </div>
 
