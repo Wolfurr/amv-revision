@@ -85,6 +85,24 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); min-
 
 .theme-nav { padding: 6px 0; flex: 1; overflow-y: auto; }
 .theme-nav-hint { font-size: 9px; color: var(--text3); padding: 2px 16px 6px; font-family: var(--mono); letter-spacing: 0.08em; }
+.theme-separator {
+  display: flex; align-items: center; gap: 8px;
+  padding: 5px 12px; cursor: grab; touch-action: none;
+  user-select: none; -webkit-tap-highlight-color: transparent;
+}
+.theme-separator-line {
+  flex: 1; height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+  box-shadow: 0 0 6px rgba(240,192,64,0.4);
+}
+.theme-separator-label {
+  font-size: 9px; font-family: var(--mono); color: var(--accent);
+  letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap;
+  flex-shrink: 0;
+}
+.theme-separator.dragging { opacity: 0.4; }
+.theme-separator.drag-over { background: rgba(240,192,64,0.15); border-radius: 4px; }
 .theme-item {
   display: flex; align-items: center; gap: 8px;
   padding: 7px 12px; cursor: pointer; font-size: 12px;
@@ -312,7 +330,7 @@ h2.theme-heading:first-child { margin-top: 0; }
   <div class="topbar">
     <button class="burger" onclick="toggleSidebar()">☰</button>
     <div class="topbar-title" id="topbar-txt">AMV / <span>Accueil</span></div>
-    <div id="topbar-right" style="font-family:var(--mono);font-size:11px;color:var(--text3)">v4.2 — 25 mai 2026</div>
+    <div id="topbar-right" style="font-family:var(--mono);font-size:11px;color:var(--text3)">v4.4 — 25 mai 2026</div>
   </div>
 
   <div class="content" id="main-content"></div>
@@ -1344,8 +1362,10 @@ Libération : ZAP libre (blanc) OU fermeture automatique du signal après passag
 
 <h3 style="font-size:15px;font-weight:500;margin:24px 0 10px;color:var(--text2)">AMV310 — Travaux sur les IS (IN1582)</h3>
 <div class="def-block">
-  <div class="def-term">Article 101 — Conditions générales</div>
-  <div class="def-text">Il s'agit d'une IS, quel que soit son lieu d'implantation (gare, pleine voie), qui est manœuvrée directement ou indirectement, et/ou contrôlée par un AC ou Aiguilleur.</div>
+  <div class="def-term">Article 101 — Champ d'application</div>
+  <div class="def-text">L'AMV310 s'applique à toute IS qui est manœuvrée directement ou indirectement, et/ou contrôlée par un AC ou un Aiguilleur — quel que soit son lieu d'implantation (gare ou pleine voie).
+  
+En clair : dès qu'une IS est sous la responsabilité d'un agent de circulation ou d'un aiguilleur (même à distance), les règles de travaux AMV310 s'appliquent.</div>
 </div>
 <div class="def-block">
   <div class="def-term">Article 102 — 4 catégories de travaux</div>
@@ -2559,9 +2579,9 @@ function init() {
   try {
     const saved = localStorage.getItem('themeOrder');
     if (saved) {
-      const validIds = THEMES.map(t => t.id);
+      const validIds = [...THEMES.map(t => t.id), '__sep__'];
       const order = JSON.parse(saved).filter(id => validIds.includes(id));
-      if (validIds.some(id => !order.includes(id)) || order[0] !== validIds[0]) {
+      if (THEMES.some(t => !order.includes(t.id)) || order[0] !== THEMES[0].id) {
         localStorage.removeItem('themeOrder');
       }
     }
@@ -2580,10 +2600,23 @@ function buildThemeNav() {
     order = saved ? JSON.parse(saved) : THEMES.map(t => t.id);
   } catch(e) { order = THEMES.map(t => t.id); }
   THEMES.forEach(t => { if (!order.includes(t.id)) order.push(t.id); });
-  order = order.filter(id => THEMES.find(t => t.id === id));
+  // Ensure separator exists in order
+  if (!order.includes('__sep__')) order.push('__sep__');
+  order = order.filter(id => id === '__sep__' || THEMES.find(t => t.id === id));
 
-  nav.innerHTML = '<div class="theme-nav-hint">⠿ Maintenir pour réordonner</div>' +
+  nav.innerHTML = '<div class="theme-nav-hint">⠿ Maintenir pour réordonner · Trait jaune = niveau actuel</div>' +
     order.map(id => {
+      if (id === '__sep__') {
+        return `<div class="theme-separator" id="tnav-__sep__" data-id="__sep__"
+          draggable="true"
+          ondragstart="dragStart(event,'__sep__')"
+          ondragover="dragOver(event)"
+          ondrop="dragDrop(event,'__sep__')"
+          ondragend="dragEnd(event)">
+          <span class="theme-separator-label">⠿ Vu jusqu'ici</span>
+          <div class="theme-separator-line"></div>
+        </div>`;
+      }
       const t = THEMES.find(x => x.id === id);
       if (!t) return '';
       return `<div class="theme-item" id="tnav-${t.id}" data-id="${t.id}"
@@ -2616,7 +2649,7 @@ function dragStart(e, id) {
   setTimeout(() => e.currentTarget.classList.add('dragging'), 0);
 }
 function dragOver(e) { e.preventDefault(); e.dataTransfer.dropEffect = 'move'; }
-function dragEnd(e) { e.currentTarget.classList.remove('dragging'); document.querySelectorAll('.theme-item').forEach(el=>el.classList.remove('drag-over')); }
+function dragEnd(e) { e.currentTarget.classList.remove('dragging'); document.querySelectorAll('.theme-item, .theme-separator').forEach(el=>el.classList.remove('drag-over')); }
 function dragDrop(e, targetId) {
   e.stopPropagation(); e.preventDefault();
   document.querySelectorAll('.theme-item').forEach(el=>el.classList.remove('drag-over'));
@@ -2628,21 +2661,23 @@ function dragDrop(e, targetId) {
 let touchDragId = null, touchClone = null, lastTouchTarget = null;
 
 function setupTouchDrag() {
-  const items = document.querySelectorAll('.theme-item');
+  const items = document.querySelectorAll('.theme-item, .theme-separator');
   items.forEach(item => {
-    // Remove old listeners by cloning
     const newItem = item.cloneNode(true);
     item.parentNode.replaceChild(newItem, item);
   });
 
-  document.querySelectorAll('.theme-item').forEach(item => {
+  document.querySelectorAll('.theme-item, .theme-separator').forEach(item => {
+    const isSep = item.classList.contains('theme-separator');
+
     item.addEventListener('touchstart', e => {
-      if (!e.target.closest('.theme-handle')) return;
+      // For theme-item: only drag from handle. For separator: drag from anywhere
+      if (!isSep && !e.target.closest('.theme-handle')) return;
       e.preventDefault();
       touchDragId = item.dataset.id;
       item.classList.add('dragging');
       touchClone = item.cloneNode(true);
-      touchClone.style.cssText = `position:fixed;opacity:0.8;pointer-events:none;z-index:999;width:${item.offsetWidth}px;padding:8px 12px;background:var(--bg4);border-radius:6px;box-shadow:0 4px 20px rgba(0,0,0,0.6);font-size:12px;color:var(--text);display:flex;align-items:center;gap:8px;`;
+      touchClone.style.cssText = `position:fixed;opacity:0.8;pointer-events:none;z-index:999;width:${item.offsetWidth}px;padding:${isSep?'5px 12px':'8px 12px'};background:var(--bg4);border-radius:6px;box-shadow:0 4px 20px rgba(0,0,0,0.6);font-size:12px;color:var(--text);display:flex;align-items:center;gap:8px;`;
       document.body.appendChild(touchClone);
     }, {passive: false});
 
@@ -2655,8 +2690,8 @@ function setupTouchDrag() {
         touchClone.style.top = (touch.clientY - 20) + 'px';
       }
       const el = document.elementFromPoint(touch.clientX, touch.clientY);
-      const targetItem = el?.closest('.theme-item[data-id]');
-      document.querySelectorAll('.theme-item').forEach(i => i.classList.remove('drag-over'));
+      const targetItem = el?.closest('.theme-item[data-id], .theme-separator[data-id]');
+      document.querySelectorAll('.theme-item, .theme-separator').forEach(i => i.classList.remove('drag-over'));
       if (targetItem && targetItem.dataset.id && targetItem.dataset.id !== touchDragId) {
         targetItem.classList.add('drag-over');
         lastTouchTarget = targetItem.dataset.id;
@@ -2666,7 +2701,7 @@ function setupTouchDrag() {
     item.addEventListener('touchend', () => {
       if (!touchDragId) return;
       if (touchClone) { touchClone.remove(); touchClone = null; }
-      document.querySelectorAll('.theme-item').forEach(i => { i.classList.remove('dragging'); i.classList.remove('drag-over'); });
+      document.querySelectorAll('.theme-item, .theme-separator').forEach(i => { i.classList.remove('dragging'); i.classList.remove('drag-over'); });
       if (lastTouchTarget && lastTouchTarget !== touchDragId) saveNewOrder(touchDragId, lastTouchTarget);
       touchDragId = null; lastTouchTarget = null;
     });
@@ -2679,6 +2714,7 @@ function saveNewOrder(fromId, toId) {
     const saved = localStorage.getItem('themeOrder');
     order = saved ? JSON.parse(saved) : THEMES.map(t => t.id);
   } catch(e) { order = THEMES.map(t => t.id); }
+  if (!order.includes('__sep__')) order.push('__sep__');
   const fromIdx = order.indexOf(fromId);
   const toIdx = order.indexOf(toId);
   if (fromIdx < 0 || toIdx < 0) return;
@@ -2716,7 +2752,7 @@ function showView(v) {
   setNavActive(v);
   closeSidebar();
   const c = document.getElementById('main-content');
-  document.getElementById('topbar-right').innerHTML = '<span style="font-family:var(--mono);font-size:11px;color:var(--text3)">v4.2 — 25 mai 2026</span>';
+  document.getElementById('topbar-right').innerHTML = '<span style="font-family:var(--mono);font-size:11px;color:var(--text3)">v4.4 — 25 mai 2026</span>';
   if (v === 'home') { setTopbar('AMV / <span>Accueil</span>'); renderHome(c); }
   else if (v === 'fiches') { setTopbar('AMV / <span>Fiches de cours</span>'); renderFiches(c); }
   else if (v === 'flash') { setTopbar('AMV / <span>Flashcards</span>'); renderFlash(c); }
