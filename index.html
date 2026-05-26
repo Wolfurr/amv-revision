@@ -330,7 +330,7 @@ h2.theme-heading:first-child { margin-top: 0; }
   <div class="topbar">
     <button class="burger" onclick="toggleSidebar()">☰</button>
     <div class="topbar-title" id="topbar-txt">AMV / <span>Accueil</span></div>
-    <div id="topbar-right" style="font-family:var(--mono);font-size:11px;color:var(--text3)">v4.4 — 25 mai 2026</div>
+    <div id="topbar-right" style="font-family:var(--mono);font-size:11px;color:var(--text3)">v4.6 — 26 mai 2026</div>
   </div>
 
   <div class="content" id="main-content"></div>
@@ -599,12 +599,73 @@ circulation: `
   <div class="def-term">Marche en manœuvre</div>
   <div class="def-text">Mode de circulation imposant au conducteur de s'avancer avec prudence et de se tenir prêt à obéir aux signaux qu'il pourrait rencontrer ou qui pourraient lui être faits, sans dépasser la vitesse de 30 km/h.</div>
 </div>
-<div class="def-block">
-  <div class="def-term">Marche prudente</div>
-  <div class="def-text">Mode de circulation imposant au conducteur de franchir une partie de voie délimitée en réduisant sa vitesse compte tenu du motif qui lui a été indiqué.</div>
+<div class="def-block important">
+  <div class="def-term">Marche prudente <span class="tag yellow" style="margin-left:6px">Par cœur</span></div>
+  <div class="def-text">Mode de circulation imposant au conducteur de franchir une partie de voie délimitée en réduisant sa vitesse compte tenu du motif qui lui a été indiqué. Avec restrictions — parfois moins rapide que la marche à vue.</div>
 </div>
 
-<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">AMV160 — Cantonnement</h3>
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">AMV101 — Organiser le mouvement</h3>
+
+<div class="def-block important">
+  <div class="def-term">Sillon <span class="tag yellow" style="margin-left:6px">Par cœur</span></div>
+  <div class="def-text">Capacité d'infrastructure requise pour faire circuler un train donné d'un point à un autre à un moment donné.</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">Ordre normal (ou théorique)</div>
+  <div class="def-text">Horaires prévus de passage des trains. Déterminé par le TST et l'ONJ.</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">Ordre réel</div>
+  <div class="def-text">Horaires auxquels les trains sont réellement passés. L'ordre réel peut différer de l'ordre normal par : le retard ou l'avance de certains trains (entraînant garage ou dépassement), ou la mise en marche de trains à marche indéterminée (MI).</div>
+</div>
+
+<div class="table-wrap"><table>
+  <thead><tr><th>Document</th><th>Type</th><th>Définition</th></tr></thead>
+  <tbody>
+    <tr><td><strong>TST</strong></td><td>Ordre normal</td><td>Tableau de Succession des Trains — liste et horaires de tous les trains réguliers et facultatifs, par ordre chronologique. Établi à chaque nouveau service.</td></tr>
+    <tr><td><strong>ONJ</strong></td><td>Ordre normal</td><td>Ordre Normal Journalier — tableau de tous les passages de trains pour une journée à un poste donné. Format papier ou informatique (OLERON).</td></tr>
+    <tr><td><strong>EC</strong></td><td>Ordre réel</td><td>État de Circulation — relevé où l'agent note l'heure exacte de passage réel des trains. Permet de connaître le dernier train reçu et le dernier expédié.</td></tr>
+  </tbody>
+</table></div>
+
+<div class="def-block">
+  <div class="def-term">CLE — Consigne Locale d'Exploitation</div>
+  <div class="def-text">Remplace les anciens renseignements techniques, devenus obsolètes. La CLE regroupe toutes les informations d'exploitation propres à une ligne ou à un secteur. Elle intègre notamment le Document A avec ses 5 paragraphes.</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">Renseignements techniques — Document A <span class="tag yellow" style="margin-left:6px">5 § par cœur</span></div>
+  <div class="def-text">§ 1 : Caractéristiques générales d'exploitation
+§ 2 : Distances, Installations, Cantonnement
+§ 3 : Vitesses limitées, conditions particulières de traction
+§ 4 : Pentes et rampes caractéristiques, freinage de fortes pentes, charge à l'essieu, masse des trains
+§ 5 : Prescriptions diverses (PN, sécurité personnel, communications de sécurité...)</div>
+</div>
+
+<div class="def-block">
+  <div class="def-term">OCAR — Ordre de Circulation À Restrictions</div>
+  <div class="def-text">Formulaire transmis au conducteur pour lui prescrire des restrictions de circulation particulières sur un itinéraire donné (marche prudente, limitation de vitesse, pantographes baissés...). À savoir ce que c'est — pas à apprendre par cœur.</div>
+</div>
+
+<div class="def-block">
+  <div class="def-term">PFR — Point Facilement Repérable</div>
+  <div class="def-text">Point géographique précis et identifiable sur une ligne, mentionné dans la consigne locale. Utilisé pour localiser et transmettre des informations lors d'un incident. Un PN ne peut pas être un PFR.</div>
+</div>
+
+<div class="rule-box">
+  <strong>PK à connaître pour l'examen :</strong><br>
+  <strong>AMV Ville</strong> = PK 100,600 · <strong>St-Saturnin</strong> = PK 139,000
+</div>
+
+<div class="def-block">
+  <div class="def-term">Article 101 — Service de la circulation (p98)</div>
+  <div class="def-text">Le service de la circulation comprend l'ensemble des opérations permettant d'assurer la sécurité et d'organiser le mouvement des trains, des évolutions et des manœuvres. Il est assuré par l'Agent de circulation (AC) et les aiguilleurs, sous la supervision du régulateur sur les lignes régulées.<br><br>
+  <strong>Gare temporaire</strong> : gare ouverte provisoirement pour les besoins du service (à connaître mais pas par cœur).<br>
+  <strong>Établissement PL (Pleine Ligne)</strong> : établissement sans voies de service, situé en pleine voie (à connaître mais pas par cœur).</div>
+</div>
+
+
 <div class="def-block important">
   <div class="def-term">Cantonnement</div>
   <div class="def-text">Système d'espacement des trains de même sens destiné à éviter les rattrapages et consistant à fractionner la ligne en plusieurs cantons dont l'entrée est protégée par un signal d'arrêt.</div>
@@ -692,7 +753,7 @@ circulation: `
 </div>
 
 <div class="def-block important">
-  <div class="def-term" style="color:var(--accent)">PRR — Point de Reconnaissance et de Reconnaissance <span class="tag yellow" style="margin-left:6px">⚠ À connaître</span></div>
+  <div class="def-term" style="color:var(--accent)">PRR — Point de Reconnaissance et de Remise en marche <span class="tag yellow" style="margin-left:6px">⚠ À connaître</span></div>
   <div class="def-text">Emplacement précis en amont d'un signal où le conducteur doit s'arrêter pour se faire reconnaître avant de demander l'autorisation de franchir le signal fermé. Sur les signaux BM : le PRR est matérialisé par un panneau spécifique.</div>
 </div>
 
@@ -943,22 +1004,75 @@ incidents: `
   <div class="def-text">Probabilité de l'existence d'un événement inopiné survenant dans les emprises ferroviaires et présentant un risque pour les circulations et les personnes. Elle nécessite d'obtenir un supplément d'information afin de confirmer l'existence du danger et d'identifier sa nature.</div>
 </div>
 
-<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Procédure générale d'incidents</h3>
-<ul class="numbered-list">
-  <li><span class="num">1.</span>Collecter les infos : Nature + Localisation (Point KM) + Heure</li>
-  <li><span class="num">2.</span>Appliquer le FAMASS</li>
-  <li><span class="num">3.</span>AUTOCONTRÔLE (fiche 2.2 DC1503)</li>
-  <li><span class="num">4.</span>Mettre les DR sur les leviers grâce à la consigne de protection</li>
-  <li><span class="num">5.</span>Phase rédactionnelle : noter sur CED les avis, signaux fermés et maintenus</li>
-  <li><span class="num">6.</span>Poursuivre la fiche procédure</li>
-</ul>
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">FAMAS — Fiche 2.2 DC1503 <span class="tag red" style="margin-left:6px">À apprendre par cœur</span></h3>
+<div class="rule-box" style="border-left-color:var(--red);margin-bottom:8px">
+  <strong>⚠️ À ne pas ouvrir en poste</strong> — c'est une procédure d'urgence à connaître par cœur.<br>
+  <strong>→ Après le FAMAS : autocontrôle (rebouclage)</strong> — reprendre la fiche 2.2 depuis le début pour vérifier qu'aucune étape n'a été oubliée.
+</div>
+
+<div style="display:flex;flex-direction:column;gap:6px;margin-bottom:12px">
+  <div style="background:var(--red-bg);border:1px solid var(--red);border-radius:6px;padding:10px 14px">
+    <div style="display:flex;gap:10px;align-items:flex-start">
+      <span style="font-family:var(--mono);font-size:18px;font-weight:700;color:var(--red);flex-shrink:0">F</span>
+      <div>
+        <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px">Fermez d'urgence les signaux d'arrêt convenables</div>
+        <div style="font-size:12px;color:var(--text3)">ou activez la protection globale pour les postes équipés.<br>
+        <strong style="color:var(--text2)">Technique :</strong> pb sur voie 1 → fermer les carrés <strong>impairs</strong> · pb sur voie 2 → fermer les carrés <strong>pairs</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:rgba(230,140,20,0.1);border:1px solid #e8a020;border-radius:6px;padding:10px 14px">
+    <div style="display:flex;gap:10px;align-items:flex-start">
+      <span style="font-family:var(--mono);font-size:18px;font-weight:700;color:#e8a020;flex-shrink:0">A</span>
+      <div>
+        <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px">Alertez d'urgence verbalement</div>
+        <div style="font-size:12px;color:var(--text3)">Tout poste ou gare susceptible d'expédier des circulations vers l'obstacle ou le danger.</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:var(--blue-bg);border:1px solid var(--blue);border-radius:6px;padding:10px 14px">
+    <div style="display:flex;gap:10px;align-items:flex-start">
+      <span style="font-family:var(--mono);font-size:18px;font-weight:700;color:var(--blue);flex-shrink:0">M</span>
+      <div>
+        <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px">Mesures supplémentaires — provoquer l'arrêt par un des 7 moyens suivants :</div>
+        <div style="font-size:12px;color:var(--text3);line-height:1.7">
+          1. Utilisation de la Radio sol-trains en phonie (en précisant le lieu et la nature du danger) ou du téléphone GSM-GFU<br>
+          2. Demande au COGC d'arrêter le train<br>
+          3. Présentation d'un signal d'arrêt à main<br>
+          4. Allumage d'une torche<br>
+          5. Demande à tout agent susceptible de l'arrêter (garde de PN, agent de desserte...)<br>
+          6. Ordre de coupure d'urgence (sur ligne électrifiée)<br>
+          7. En dernier recours, demande via le COGC de procéder à un appel d'urgence de l'agent d'accompagnement
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:var(--green-bg);border:1px solid var(--green);border-radius:6px;padding:10px 14px">
+    <div style="display:flex;gap:10px;align-items:flex-start">
+      <span style="font-family:var(--mono);font-size:18px;font-weight:700;color:var(--green);flex-shrink:0">A</span>
+      <div>
+        <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px">Assurez-vous que la circulation la plus proche a été arrêtée et <u>retenue</u></div>
+        <div style="font-size:12px;color:var(--text3)">Sur chaque voie intéressée — par l'ordre verbal donné au conducteur de ne pas se remettre en marche jusqu'à nouvel avis, ou par un signal d'arrêt à main.</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:rgba(240,192,64,0.08);border:1px solid var(--accent);border-radius:6px;padding:10px 14px">
+    <div style="display:flex;gap:10px;align-items:flex-start">
+      <span style="font-family:var(--mono);font-size:18px;font-weight:700;color:var(--accent);flex-shrink:0">S</span>
+      <div>
+        <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px">→ Autocontrôle (rebouclage)</div>
+        <div style="font-size:12px;color:var(--text3)">Vous avez l'assurance que la protection est réalisée.<br>Reprendre la fiche 2.2 depuis le début pour vérifier qu'aucune étape n'a été oubliée.<br>Puis lancer les avis et prendre en attachements.</div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="rule-box">
-  <strong>Code couleur des fiches DC1503 :</strong><br>
-  🔵 Bleu : actions à réaliser par AC<br>
-  🟡 Jaune : textes de dépêches, formulaires, ordres écrits<br>
-  🌸 Rose : Avertissement<br>
-  🟢 Vert : Reprise de la circulation normale
+  <strong>Note :</strong> Lorsque des mesures de protection sont assurées à la suite de l'avis d'un conducteur, l'AC doit lui confirmer verbalement la mise en œuvre effective de cette protection.
 </div>
 
 <h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Bestiaux (AMV111)</h3>
@@ -2389,7 +2503,7 @@ const QUIZ = [
  opts:['3 Contrôles + 2 Documents à remplir','Conditions d\'ouverture · Carré commandé · Choix bulletin franchissement · Direction indiquée · Détonateur','3 Codes de sécurité + 2 Demandes de protection','Consultation + Contrôle + Confirmation + Délégation + Détonateur'],
  ans:1, exp:'3C2D = Conditions d\'ouverture · Carré commandé à l\'ouverture · Choix du bulletin de franchissement (CBA) · Direction indiquée au conducteur · Détonateur (annoter suivi appuis acoustiques + aviser AMI + prévenir conducteur).'},
 {theme:'install-sec', q:'Quelle méthode globale applique l\'aiguilleur face à un dérangement IS ?',
- opts:['FAMASS','RITA','3C2D','ARTA'],
+ opts:['FAMAS','RITA','3C2D','ARTA'],
  ans:1, exp:'RITA : R = Risque immédiat (arrêter et retenir) / I = Identifier la nature du dérangement / T = Traiter selon DC3858 Chap.4 / A = Aviser AC/COGC + Annoter CDIS pour l\'AMI.'},
 {theme:'install-sec', q:'Le CDIS sert à :',
  opts:['Commander les IS depuis le poste central','Consigner les dérangements des IS et leur traitement (carnet de dérangements des installations de sécurité)','Contrôler les IS avant ouverture d\'un signal','Calculer la distance d\'arrêt imposée par les IS'],
@@ -2509,6 +2623,22 @@ const DICTEES = [
  ref:'PS9 p.195',
  texte:'Voie autre que voie principale.',
  mots_cles:['voie autre que voie principale']},
+{theme:'circulation', titre:'Sillon',
+ ref:'AMV101 OP0528',
+ texte:'Capacité d\'infrastructure requise pour faire circuler un train donné d\'un point à un autre à un moment donné.',
+ mots_cles:['capacité d\'infrastructure requise','train donné','d\'un point à un autre','à un moment donné']},
+{theme:'circulation', titre:'Ordre normal (ou théorique)',
+ ref:'AMV101',
+ texte:'Horaires prévus de passage des trains.',
+ mots_cles:['horaires prévus','passage des trains']},
+{theme:'circulation', titre:'Ordre réel',
+ ref:'AMV101',
+ texte:'Horaires auxquels les trains sont réellement passés.',
+ mots_cles:['horaires auxquels','trains','réellement passés']},
+{theme:'incidents', titre:'FAMAS — définition complète',
+ ref:'Fiche 2.2 DC1503',
+ texte:'F : Fermez d\'urgence les signaux d\'arrêt convenables, ou activez la protection globale pour les postes équipés. A : Alertez d\'urgence verbalement tout poste ou gare susceptible d\'expédier des circulations vers l\'obstacle ou le danger. M : Mesures supplémentaires pour provoquer l\'arrêt des circulations. A : Assurez-vous que la circulation la plus proche a été arrêtée et retenue. S : → Autocontrôle.',
+ mots_cles:['Fermez d\'urgence','signaux d\'arrêt convenables','Alertez d\'urgence verbalement','susceptible d\'expédier des circulations','Mesures supplémentaires','arrêtée et retenue','Autocontrôle']},
 {theme:'install-sec', titre:'Définition des Installations de Sécurité (IS)',
  ref:'Article 1 DC3858',
  texte:'Les installations de sécurité comprennent tout système (composé ou non avec des éléments techniquement de sécurité) nécessaire pour assurer la sécurité des circulations et dont le dérangement entraîne l\'application de dispositions réglementaires.',
@@ -2752,7 +2882,7 @@ function showView(v) {
   setNavActive(v);
   closeSidebar();
   const c = document.getElementById('main-content');
-  document.getElementById('topbar-right').innerHTML = '<span style="font-family:var(--mono);font-size:11px;color:var(--text3)">v4.4 — 25 mai 2026</span>';
+  document.getElementById('topbar-right').innerHTML = '<span style="font-family:var(--mono);font-size:11px;color:var(--text3)">v4.6 — 26 mai 2026</span>';
   if (v === 'home') { setTopbar('AMV / <span>Accueil</span>'); renderHome(c); }
   else if (v === 'fiches') { setTopbar('AMV / <span>Fiches de cours</span>'); renderFiches(c); }
   else if (v === 'flash') { setTopbar('AMV / <span>Flashcards</span>'); renderFlash(c); }
@@ -2814,7 +2944,7 @@ function renderHome(c) {
     </div>
     <div class="rule-box" style="margin:0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
       <div>
-        <strong>2. FAMASS</strong> — Fermez · Alertez · Mesures supplémentaires · Assurez · Autocontrôle<br>
+        <strong>2. FAMAS</strong> — Fermez · Alertez · Mesures supplémentaires · Assurez · Autocontrôle<br>
         <span style="font-size:12px;color:var(--text3)">→ Thème : <em>Incidents de circulation</em> (procédure générale)</span>
       </div>
       <button onclick="currentTheme='incidents';document.querySelectorAll('.theme-item').forEach(el=>el.classList.remove('active'));document.getElementById('tnav-incidents')?.classList.add('active');showView('fiches')" class="btn btn-sm" style="white-space:nowrap">Voir la fiche →</button>
@@ -3121,7 +3251,7 @@ function renderHome(c) {
     </div>
   </div>
 
-  <div style="font-size:12px;font-weight:600;color:var(--text);margin-bottom:8px">FAMASS — à appliquer en cas d'obstacle, danger ou présomption :</div>
+  <div style="font-size:12px;font-weight:600;color:var(--text);margin-bottom:8px">FAMAS — à appliquer en cas d'obstacle, danger ou présomption :</div>
   <div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:12px">
     ${[
       ['F','Fermez','les signaux d\'arrêt convenables','var(--red)'],
