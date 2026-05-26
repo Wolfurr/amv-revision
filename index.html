@@ -330,7 +330,7 @@ h2.theme-heading:first-child { margin-top: 0; }
   <div class="topbar">
     <button class="burger" onclick="toggleSidebar()">☰</button>
     <div class="topbar-title" id="topbar-txt">AMV / <span>Accueil</span></div>
-    <div id="topbar-right" style="font-family:var(--mono);font-size:11px;color:var(--text3)">v4.6 — 26 mai 2026</div>
+    <div id="topbar-right" style="font-family:var(--mono);font-size:11px;color:var(--text3)">v4.7 — 26 mai 2026</div>
   </div>
 
   <div class="content" id="main-content"></div>
@@ -1013,7 +1013,7 @@ incidents: `
 <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:12px">
   <div style="background:var(--red-bg);border:1px solid var(--red);border-radius:6px;padding:10px 14px">
     <div style="display:flex;gap:10px;align-items:flex-start">
-      <span style="font-family:var(--mono);font-size:18px;font-weight:700;color:var(--red);flex-shrink:0">F</span>
+      <span style="font-family:var(--mono);font-size:22px;font-weight:700;color:var(--red);flex-shrink:0;min-width:28px">F</span>
       <div>
         <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px">Fermez d'urgence les signaux d'arrêt convenables</div>
         <div style="font-size:12px;color:var(--text3)">ou activez la protection globale pour les postes équipés.<br>
@@ -1024,7 +1024,7 @@ incidents: `
 
   <div style="background:rgba(230,140,20,0.1);border:1px solid #e8a020;border-radius:6px;padding:10px 14px">
     <div style="display:flex;gap:10px;align-items:flex-start">
-      <span style="font-family:var(--mono);font-size:18px;font-weight:700;color:#e8a020;flex-shrink:0">A</span>
+      <span style="font-family:var(--mono);font-size:22px;font-weight:700;color:#e8a020;flex-shrink:0;min-width:28px">A</span>
       <div>
         <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px">Alertez d'urgence verbalement</div>
         <div style="font-size:12px;color:var(--text3)">Tout poste ou gare susceptible d'expédier des circulations vers l'obstacle ou le danger.</div>
@@ -1034,17 +1034,17 @@ incidents: `
 
   <div style="background:var(--blue-bg);border:1px solid var(--blue);border-radius:6px;padding:10px 14px">
     <div style="display:flex;gap:10px;align-items:flex-start">
-      <span style="font-family:var(--mono);font-size:18px;font-weight:700;color:var(--blue);flex-shrink:0">M</span>
+      <span style="font-family:var(--mono);font-size:22px;font-weight:700;color:var(--blue);flex-shrink:0;min-width:28px">M</span>
       <div>
         <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px">Mesures supplémentaires — provoquer l'arrêt par un des 7 moyens suivants :</div>
         <div style="font-size:12px;color:var(--text3);line-height:1.7">
-          1. Utilisation de la Radio sol-trains en phonie (en précisant le lieu et la nature du danger) ou du téléphone GSM-GFU<br>
+          1. Radio sol-trains en phonie (lieu + nature du danger) ou téléphone GSM-GFU<br>
           2. Demande au COGC d'arrêter le train<br>
           3. Présentation d'un signal d'arrêt à main<br>
           4. Allumage d'une torche<br>
           5. Demande à tout agent susceptible de l'arrêter (garde de PN, agent de desserte...)<br>
           6. Ordre de coupure d'urgence (sur ligne électrifiée)<br>
-          7. En dernier recours, demande via le COGC de procéder à un appel d'urgence de l'agent d'accompagnement
+          7. En dernier recours : demande via le COGC d'un appel d'urgence de l'agent d'accompagnement
         </div>
       </div>
     </div>
@@ -1052,24 +1052,23 @@ incidents: `
 
   <div style="background:var(--green-bg);border:1px solid var(--green);border-radius:6px;padding:10px 14px">
     <div style="display:flex;gap:10px;align-items:flex-start">
-      <span style="font-family:var(--mono);font-size:18px;font-weight:700;color:var(--green);flex-shrink:0">A</span>
+      <span style="font-family:var(--mono);font-size:22px;font-weight:700;color:var(--green);flex-shrink:0;min-width:28px">AS</span>
       <div>
-        <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px">Assurez-vous que la circulation la plus proche a été arrêtée et <u>retenue</u></div>
+        <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px">ASsurez-vous que la circulation la plus proche a été arrêtée et <u>retenue</u></div>
         <div style="font-size:12px;color:var(--text3)">Sur chaque voie intéressée — par l'ordre verbal donné au conducteur de ne pas se remettre en marche jusqu'à nouvel avis, ou par un signal d'arrêt à main.</div>
       </div>
     </div>
   </div>
+</div>
 
-  <div style="background:rgba(240,192,64,0.08);border:1px solid var(--accent);border-radius:6px;padding:10px 14px">
-    <div style="display:flex;gap:10px;align-items:flex-start">
-      <span style="font-family:var(--mono);font-size:18px;font-weight:700;color:var(--accent);flex-shrink:0">S</span>
-      <div>
-        <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px">→ Autocontrôle (rebouclage)</div>
-        <div style="font-size:12px;color:var(--text3)">Vous avez l'assurance que la protection est réalisée.<br>Reprendre la fiche 2.2 depuis le début pour vérifier qu'aucune étape n'a été oubliée.<br>Puis lancer les avis et prendre en attachements.</div>
-      </div>
-    </div>
+<div style="display:flex;align-items:center;gap:10px;padding:10px 14px;border:1px dashed var(--accent);border-radius:6px;margin-bottom:12px;background:rgba(240,192,64,0.04)">
+  <span style="font-size:20px">↓</span>
+  <div>
+    <div style="font-size:13px;font-weight:600;color:var(--accent)">Autocontrôle (rebouclage) — après le FAMAS</div>
+    <div style="font-size:12px;color:var(--text3)">Reprendre la fiche 2.2 depuis le début pour vérifier qu'aucune étape n'a été oubliée. Puis lancer les avis et prendre en attachements.</div>
   </div>
 </div>
+
 
 <div class="rule-box">
   <strong>Note :</strong> Lorsque des mesures de protection sont assurées à la suite de l'avis d'un conducteur, l'AC doit lui confirmer verbalement la mise en œuvre effective de cette protection.
@@ -2637,8 +2636,8 @@ const DICTEES = [
  mots_cles:['horaires auxquels','trains','réellement passés']},
 {theme:'incidents', titre:'FAMAS — définition complète',
  ref:'Fiche 2.2 DC1503',
- texte:'F : Fermez d\'urgence les signaux d\'arrêt convenables, ou activez la protection globale pour les postes équipés. A : Alertez d\'urgence verbalement tout poste ou gare susceptible d\'expédier des circulations vers l\'obstacle ou le danger. M : Mesures supplémentaires pour provoquer l\'arrêt des circulations. A : Assurez-vous que la circulation la plus proche a été arrêtée et retenue. S : → Autocontrôle.',
- mots_cles:['Fermez d\'urgence','signaux d\'arrêt convenables','Alertez d\'urgence verbalement','susceptible d\'expédier des circulations','Mesures supplémentaires','arrêtée et retenue','Autocontrôle']},
+ texte:'F : Fermez d\'urgence les signaux d\'arrêt convenables, ou activez la protection globale pour les postes équipés. A : Alertez d\'urgence verbalement tout poste ou gare susceptible d\'expédier des circulations vers l\'obstacle ou le danger. M : Mesures supplémentaires pour provoquer l\'arrêt des circulations. AS : ASsurez-vous que la circulation la plus proche a été arrêtée et retenue.',
+ mots_cles:['Fermez d\'urgence','signaux d\'arrêt convenables','Alertez d\'urgence verbalement','susceptible d\'expédier des circulations','Mesures supplémentaires','arrêtée et retenue','arrêtée et retenue']},
 {theme:'install-sec', titre:'Définition des Installations de Sécurité (IS)',
  ref:'Article 1 DC3858',
  texte:'Les installations de sécurité comprennent tout système (composé ou non avec des éléments techniquement de sécurité) nécessaire pour assurer la sécurité des circulations et dont le dérangement entraîne l\'application de dispositions réglementaires.',
@@ -2882,7 +2881,7 @@ function showView(v) {
   setNavActive(v);
   closeSidebar();
   const c = document.getElementById('main-content');
-  document.getElementById('topbar-right').innerHTML = '<span style="font-family:var(--mono);font-size:11px;color:var(--text3)">v4.6 — 26 mai 2026</span>';
+  document.getElementById('topbar-right').innerHTML = '<span style="font-family:var(--mono);font-size:11px;color:var(--text3)">v4.7 — 26 mai 2026</span>';
   if (v === 'home') { setTopbar('AMV / <span>Accueil</span>'); renderHome(c); }
   else if (v === 'fiches') { setTopbar('AMV / <span>Fiches de cours</span>'); renderFiches(c); }
   else if (v === 'flash') { setTopbar('AMV / <span>Flashcards</span>'); renderFlash(c); }
@@ -2944,7 +2943,7 @@ function renderHome(c) {
     </div>
     <div class="rule-box" style="margin:0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
       <div>
-        <strong>2. FAMAS</strong> — Fermez · Alertez · Mesures supplémentaires · Assurez · Autocontrôle<br>
+        <strong>2. FAMAS</strong> — Fermez · Alertez · Mesures supplémentaires · ASsurez-vous → Autocontrôle<br>
         <span style="font-size:12px;color:var(--text3)">→ Thème : <em>Incidents de circulation</em> (procédure générale)</span>
       </div>
       <button onclick="currentTheme='incidents';document.querySelectorAll('.theme-item').forEach(el=>el.classList.remove('active'));document.getElementById('tnav-incidents')?.classList.add('active');showView('fiches')" class="btn btn-sm" style="white-space:nowrap">Voir la fiche →</button>
@@ -3257,7 +3256,7 @@ function renderHome(c) {
       ['F','Fermez','les signaux d\'arrêt convenables','var(--red)'],
       ['A','Alertez','d\'urgence les postes ou gares susceptibles d\'expédier des circulations','#e8a020'],
       ['M','Mesures','supplémentaires pour arrêter les circulations (EC ou ZAP selon position)','var(--blue)'],
-      ['A','Assurez','la circulation arrêtée/retenue + ordre de ne pas remettre en marche','var(--green)'],
+      ['AS','ASsurez-vous','la circulation la plus proche arrêtée et retenue · ordre verbal ou SAM','var(--green)'],
       ['S','→ Auto','contrôle à la fin !','var(--accent)'],
     ].map(([lettre,mot,detail,col]) => `
     <div style="flex:1;min-width:100px;background:var(--bg3);border-radius:6px;padding:8px 10px;border-top:3px solid ${col}">
