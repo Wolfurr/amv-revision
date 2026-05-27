@@ -330,7 +330,7 @@ h2.theme-heading:first-child { margin-top: 0; }
   <div class="topbar">
     <button class="burger" onclick="toggleSidebar()">☰</button>
     <div class="topbar-title" id="topbar-txt">AMV / <span>Accueil</span></div>
-    <div id="topbar-right" style="font-family:var(--mono);font-size:11px;color:var(--text3)">v4.7 — 26 mai 2026</div>
+    <div id="topbar-right" style="font-family:var(--mono);font-size:11px;color:var(--text3)">v4.8 — 27 mai 2026</div>
   </div>
 
   <div class="content" id="main-content"></div>
@@ -448,10 +448,42 @@ formation: `
   <div class="def-text">Ensemble formé par un ou plusieurs véhicules de transports ferroviaires pour effectuer un service de transport ferroviaire de voyageurs ou de marchandises dans le cadre du droit d'accès.</div>
 </div>
 
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Le marquage du matériel — L'identité du véhicule <span class="tag yellow" style="margin-left:6px">À l'examen</span></h3>
+<div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);padding:16px;margin-bottom:12px">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+    ${[
+      ['Numéro du wagon','12 chiffres — identifiant unique du véhicule'],
+      ['Tare du wagon','Masse du wagon vide (ex: 23 730 kg)'],
+      ['Superficie du plancher','Surface utile de chargement (ex: 50,5 m²)'],
+      ['Longueur utilisable','Longueur intérieure disponible (ex: 18,5 m)'],
+      ['Longueur du wagon','Longueur totale (ex: 20,09 m)'],
+      ['Porte-étiquette d\'acheminement','Emplacement de l\'étiquette de destination'],
+      ['Marquage littéral','Type/code du wagon (ex: Rils)'],
+      ['Étiquettes de réforme','🔴 Rouge = interdit de circuler · ⬜ Blanc = restrictions'],
+    ].map(([k,v]) => `
+    <div style="padding:7px 10px;background:var(--bg4);border-radius:5px;border-left:2px solid var(--border2)">
+      <div style="font-size:12px;font-weight:600;color:var(--text);margin-bottom:2px">${k}</div>
+      <div style="font-size:11px;color:var(--text3)">${v}</div>
+    </div>`).join('')}
+  </div>
+</div>
+
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Le cartouche de chargement</h3>
+<div class="def-block">
+  <div class="def-term">Catégories de ligne (A, B, C, D) × Vitesse (S / SS)</div>
+  <div class="def-text">Le cartouche indique la masse maximale de chargement autorisée en fonction de la catégorie de ligne empruntée et de la vitesse du véhicule.<br><br>
+  <strong>S = 100 km/h · SS = 120 km/h</strong><br>
+  Catégories A → B → C → D (D = charge croissante)<br><br>
+  <strong>Charge D :</strong> la majorité des lignes du RFN autorise les véhicules dont la charge par essieu est supérieure à 20 tonnes sans dépasser 22,5 tonnes.</div>
+</div>
+
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">AMV903 — RAT (Reconnaissance à l'Aptitude au Transport) <span class="tag yellow" style="margin-left:6px">Par cœur</span></h3>
 <div class="def-block important">
-  <div class="def-term">Étiquettes de réforme</div>
-  <div class="def-text">🔴 Rouge = interdiction de circuler
-⬜ Blanc = Restrictions ou reports des mesures</div>
+  <div class="def-term">Définition de la RAT</div>
+  <div class="def-text">Opération de sécurité qui s'applique aux véhicules remorqués affectés au transport de marchandises et leur chargement, avant leur manœuvre. Elle consiste à vérifier la conformité des véhicules, s'assurer que l'acheminement peut supporter sans dommage et sans risque la durée et les exigences du transport jusqu'à sa destination.</div>
+</div>
+<div class="rule-box">
+  La RAT est effectuée depuis le sol, à proximité, debout et des deux côtés du wagon (essai visuel uniquement — méthode OMO de cheminement visuel).
 </div>
 
 <h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Ordre d'attelage</h3>
@@ -474,13 +506,32 @@ formation: `
   <li><span class="num">06</span>Mettre les organes en position de repos sur leurs supports</li>
 </ul>
 
-<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">AMV903 — RAT (Reconnaissance à l'Aptitude au Transport)</h3>
-<div class="def-block important">
-  <div class="def-term">Définition de la RAT</div>
-  <div class="def-text">Opération de sécurité qui s'applique aux véhicules remorqués affectés au transport de marchandises et leur chargement, avant leur manœuvre. Elle consiste à vérifier la conformité des véhicules, s'assurer que l'acheminement peut supporter sans dommage et sans risque la durée et les exigences du transport jusqu'à sa destination.</div>
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Les 4 types d'essais de frein (Article 401) <span class="tag yellow" style="margin-left:6px">Bien connaître les différences</span></h3>
+<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:12px">
+  <div style="background:var(--bg3);border-radius:6px;padding:10px 14px;border-left:3px solid var(--green)">
+    <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:3px">Essai complet</div>
+    <div style="font-size:12px;color:var(--text3)">Vérification du serrage de <strong style="color:var(--text)">tous les véhicules freinés</strong>, de la continuité de la Conduite Générale et du desserrage de l'ensemble des véhicules.</div>
+  </div>
+  <div style="background:var(--bg3);border-radius:6px;padding:10px 14px;border-left:3px solid var(--blue)">
+    <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:3px">Essai partiel</div>
+    <div style="font-size:12px;color:var(--text3)">Vérification du serrage et du desserrage des <strong style="color:var(--text)">véhicules ajoutés ainsi que du dernier</strong> (pour s'assurer de la continuité de la Conduite Générale).</div>
+  </div>
+  <div style="background:var(--bg3);border-radius:6px;padding:10px 14px;border-left:3px solid var(--accent)">
+    <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:3px">Essai de continuité</div>
+    <div style="font-size:12px;color:var(--text3)">Vérification du serrage et du desserrage du <strong style="color:var(--text)">dernier véhicule freiné</strong>, de la continuité de la Conduite Générale.</div>
+  </div>
+  <div style="background:var(--bg3);border-radius:6px;padding:10px 14px;border-left:3px solid #e8a020">
+    <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:3px">Essai de raccordement</div>
+    <div style="font-size:12px;color:var(--text3)">Vérification du bon rétablissement de la continuité de la CG en vérifiant le serrage et desserrage du <strong style="color:var(--text)">véhicule situé en arrière du point de raccordement</strong>.</div>
+  </div>
 </div>
+
 <div class="rule-box">
-  La RAT est effectuée depuis le sol, à proximité, debout et des deux côtés du wagon (essai visuel uniquement — méthode OMO de cheminement visuel).
+  <strong>Mémo essais :</strong><br>
+  Complet = <strong>TOUS</strong> les véhicules<br>
+  Partiel = véhicules <strong>ajoutés</strong> + le dernier<br>
+  Continuité = <strong>dernier</strong> véhicule seulement<br>
+  Raccordement = véhicule <strong>derrière le point de raccordement</strong>
 </div>
 
 <h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">AMV904 — Signalisation des trains</h3>
@@ -1155,8 +1206,14 @@ aiguillage: `
 </div>
 
 <h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">AMV204 — Consigne Rose (DC3858)</h3>
+<div class="def-block important">
+  <div class="def-term">Objet de la Consigne Rose (CG S6A n°15)</div>
+  <div class="def-text">La présente consigne a pour objet de <strong>décrire les installations de sécurité du Poste 1 type mécanique AMVILLE</strong>, d'indiquer les règles d'utilisation et les particularités de fonctionnement des installations de sécurité de ce poste dans la mesure où elles ne sont pas fixées par la CG S6A n°15 (DC3858).
+  
+⚠️ La Consigne Rose est donc directement liée aux <strong>Installations de Sécurité (IS)</strong> — elle en décrit le fonctionnement, les règles d'utilisation et les particularités propres à chaque poste.</div>
+</div>
 <div class="rule-box">
-  La consigne rose a pour but de décrire les installations de sécurité, d'indiquer les règles d'utilisation et les particularités de fonctionnement des installations de sécurité et de préciser les vérifications à effectuer en cas de dérangement.
+  La consigne rose a pour but de décrire les IS, d'indiquer les règles d'utilisation et les particularités de fonctionnement des IS, et de préciser les vérifications à effectuer en cas de dérangement.
 </div>
 <div class="def-block">
   <div class="def-term">Chapitres</div>
@@ -2881,7 +2938,7 @@ function showView(v) {
   setNavActive(v);
   closeSidebar();
   const c = document.getElementById('main-content');
-  document.getElementById('topbar-right').innerHTML = '<span style="font-family:var(--mono);font-size:11px;color:var(--text3)">v4.7 — 26 mai 2026</span>';
+  document.getElementById('topbar-right').innerHTML = '<span style="font-family:var(--mono);font-size:11px;color:var(--text3)">v4.8 — 27 mai 2026</span>';
   if (v === 'home') { setTopbar('AMV / <span>Accueil</span>'); renderHome(c); }
   else if (v === 'fiches') { setTopbar('AMV / <span>Fiches de cours</span>'); renderFiches(c); }
   else if (v === 'flash') { setTopbar('AMV / <span>Flashcards</span>'); renderFlash(c); }
@@ -2899,6 +2956,44 @@ function renderHome(c) {
   c.innerHTML = `
 <div class="section-heading">Bienvenue 👋</div>
 <div class="section-sub">Application de révision AMV — SECUFER · Sécurité ferroviaire · ${THEMES.length} thèmes</div>
+
+<!-- SCHÉMA STRUCTURE EXAMEN AMV -->
+<div class="card" style="border-color:rgba(96,165,250,0.35);background:rgba(96,165,250,0.04);margin-bottom:16px">
+  <div class="card-title" style="color:var(--blue);margin-bottom:14px">🎓 STRUCTURE DE L'EXAMEN AMV</div>
+  <div style="display:flex;justify-content:center;margin-bottom:8px">
+    <div style="text-align:center;padding:8px 24px;background:var(--blue-bg);border:2px solid var(--blue);border-radius:8px;font-weight:700;color:var(--blue);font-size:14px">Pour l'AMV</div>
+  </div>
+  <div style="display:flex;justify-content:center;gap:40px;margin-bottom:12px">
+    <!-- Branche Écrite -->
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+      <div style="width:2px;height:20px;background:var(--border2)"></div>
+      <div style="padding:6px 20px;background:var(--bg3);border:1px solid var(--border2);border-radius:6px;font-weight:600;color:var(--text);font-size:13px">✍️ Écrite</div>
+      <div style="display:flex;gap:8px;margin-top:4px">
+        <div style="padding:5px 10px;background:var(--bg4);border-radius:5px;font-size:11px;color:var(--text3);text-align:center">PS9<br><span style="color:var(--text2);font-size:10px">Sécurité personnel</span></div>
+        <div style="padding:5px 10px;background:var(--bg4);border-radius:5px;font-size:11px;color:var(--text3);text-align:center">Formation<br><span style="color:var(--text2);font-size:10px">des trains</span></div>
+      </div>
+    </div>
+    <!-- Branche Orale -->
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+      <div style="width:2px;height:20px;background:var(--border2)"></div>
+      <div style="padding:6px 20px;background:var(--bg3);border:1px solid var(--border2);border-radius:6px;font-weight:600;color:var(--text);font-size:13px">🗣️ Orale</div>
+      <div style="display:flex;gap:8px;margin-top:4px">
+        <div style="padding:5px 10px;background:var(--bg4);border-radius:5px;font-size:11px;color:var(--text3);text-align:center">Aiguillage</div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
+          <div style="padding:5px 10px;background:var(--bg4);border-radius:5px;font-size:11px;color:var(--text3);text-align:center">Circulation</div>
+          <div style="width:2px;height:14px;background:var(--border2)"></div>
+          <div style="padding:5px 10px;background:var(--bg4);border-radius:5px;font-size:11px;color:var(--text3);text-align:center">Mise en situation</div>
+          <div style="width:2px;height:14px;background:var(--border2)"></div>
+          <div style="padding:6px 12px;background:var(--red-bg);border:1px solid var(--red);border-radius:5px;font-size:11px;color:var(--red);font-weight:600;text-align:center">Incident de circulation</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="rule-box" style="margin-bottom:0;border-left-color:var(--blue)">
+    <strong>ExpertQuizz (QCM sur ordi) :</strong> Formation des trains + PS9<br>
+    <strong>Points clés pour l'exam :</strong> IS · Cantonnement (BM/BAPR) · Plaques de signalisation (repérage, identification, cantonnement)
+  </div>
+</div>
 
 <!-- BARRE DE RECHERCHE -->
 <div style="margin-bottom:20px;position:relative">
