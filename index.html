@@ -330,7 +330,7 @@ h2.theme-heading:first-child { margin-top: 0; }
   <div class="topbar">
     <button class="burger" onclick="toggleSidebar()">☰</button>
     <div class="topbar-title" id="topbar-txt">AMV / <span>Accueil</span></div>
-    <div id="topbar-right" style="font-family:var(--mono);font-size:11px;color:var(--text3)">v4.8 — 27 mai 2026</div>
+    <div id="topbar-right" style="font-family:var(--mono);font-size:11px;color:var(--text3)">v4.9 — 28 mai 2026</div>
   </div>
 
   <div class="content" id="main-content"></div>
@@ -401,7 +401,7 @@ risques: `
 3. La transmission des informations (nature de l'appel)
 4. La finalisation (clôture de la transmission)
 
-⚡ En cas d'urgence : sauter l'étape 1, passer directement à l'étape 2.
+⚡ En cas d'urgence : sauter les étapes 1 ET 2, passer directement à l'étape 3 (transmission).
 ⚠️ Ne pas oublier de <strong>collationner</strong> à l'issue de la transmission (principe n°5 des règles de communication verbale).</div>
 </div>
 <div class="rule-box" style="border-left-color:var(--text3)">
@@ -537,11 +537,14 @@ formation: `
 <h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">AMV904 — Signalisation des trains</h3>
 <div class="def-block">
   <div class="def-term">Signalisation d'avant</div>
-  <div class="def-text">3 feux blancs en triangle OU 2 feux blancs sur ligne horizontale. Rôle : repérer l'extrémité du train et son sens de marche. L'allumage incombe au conducteur.</div>
+  <div class="def-text">Au départ : <strong>3 feux blancs obligatoires</strong> (triangle ou 2 horizontaux + 1 central). L'allumage incombe au conducteur.<br>
+  <span style="color:#e8a020">Si seulement 2 feux blancs horizontaux : acceptable en circulation mais <strong>réparation obligatoire à la prochaine gare</strong>.</span></div>
 </div>
 <div class="def-block">
   <div class="def-term">Signalisation d'arrière</div>
-  <div class="def-text">2 signaux électriques fixes (feux rouges) ou 2 signaux amovibles (feux rouges) la nuit ou si visibilité < 100 m. Rôle : repérer l'extrémité, le sens et assurer que le train est complet.</div>
+  <div class="def-text">Au départ : <strong>2 feux rouges obligatoires</strong>. Rôle : repérer l'extrémité, le sens de marche et s'assurer que le train est complet.<br>
+  <span style="color:#e8a020">Si seulement 1 feu rouge : acceptable en circulation mais <strong>réparation obligatoire à la prochaine gare</strong>. Permet quand même de savoir que c'est la queue et qu'il n'y a pas de dérive.</span><br>
+  <span style="color:var(--red)">⚠️ Aucun feu rouge ni lanterne ni plaque réfléchissante → <strong>pas de certitude que le train est complet</strong>.</span></div>
 </div>
 `,
 
@@ -1089,12 +1092,12 @@ incidents: `
       <div>
         <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px">Mesures supplémentaires — provoquer l'arrêt par un des 7 moyens suivants :</div>
         <div style="font-size:12px;color:var(--text3);line-height:1.7">
-          1. Radio sol-trains en phonie (lieu + nature du danger) ou téléphone GSM-GFU<br>
-          2. Demande au COGC d'arrêter le train<br>
-          3. Présentation d'un signal d'arrêt à main<br>
-          4. Allumage d'une torche<br>
-          5. Demande à tout agent susceptible de l'arrêter (garde de PN, agent de desserte...)<br>
-          6. Ordre de coupure d'urgence (sur ligne électrifiée)<br>
+          <div style="background:rgba(240,192,64,0.08);border-left:2px solid var(--accent);padding:4px 8px;border-radius:4px;margin-bottom:4px;color:var(--text2)">⭐ <strong>1. Radio sol-trains GSM-R en phonie</strong> (lieu + nature du danger) ou téléphone GSM-GFU</div>
+          <div style="background:rgba(240,192,64,0.08);border-left:2px solid var(--accent);padding:4px 8px;border-radius:4px;margin-bottom:4px;color:var(--text2)">⭐ <strong>2. Demande au COGC</strong> d'arrêter le train</div>
+          <div style="background:rgba(240,192,64,0.08);border-left:2px solid var(--accent);padding:4px 8px;border-radius:4px;margin-bottom:8px;color:var(--text2)">⭐ <strong>3. Ordre de coupure d'urgence</strong> (sur ligne électrifiée)</div>
+          4. Présentation d'un signal d'arrêt à main<br>
+          5. Allumage d'une torche<br>
+          6. Demande à tout agent susceptible de l'arrêter (garde de PN, agent de desserte...)<br>
           7. En dernier recours : demande via le COGC d'un appel d'urgence de l'agent d'accompagnement
         </div>
       </div>
@@ -1199,7 +1202,60 @@ aiguillage: `
   </tbody>
 </table></div>
 
-<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">En cas de problème — Levier immobilisé</h3>
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Types d'aiguilles — Talonnable / Renversable</h3>
+<div class="def-block important">
+  <div class="def-term">Aiguille talonnable <span style="color:var(--text3);font-weight:400">≠</span> Talonner une aiguille</div>
+  <div class="def-text"><strong>⚠️ Nuance importante :</strong><br>
+• <strong>Aiguille talonnable</strong> : aiguille conçue pour pouvoir être empruntée par le talon sans dommage (construction spéciale).<br>
+• <strong>Talonner une aiguille</strong> : acte de passer sur le talon d'une aiguille alors qu'elle n'était pas dans la bonne position → le train <strong>détruit l'aiguille</strong>. C'est un incident grave.</div>
+</div>
+<div class="table-wrap"><table>
+  <thead><tr><th>Type</th><th>Description</th><th>Levier</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Talonnable Renversable (TR)</strong></td><td>Peut être empruntée dans tous les sens — la position n'a pas d'importance pour la sécurité</td><td>Levier Saxby — commande à pied d'œuvre ≤ 7 m</td></tr>
+    <tr><td><strong>Talonnable Non Renversable (TNR)</strong></td><td>Talonnable mais avec un ressort — l'aiguille se remet automatiquement en position normale après chaque passage</td><td>Levier à crans</td></tr>
+    <tr><td><strong>Non talonnable (avec verrou)</strong></td><td>Si une aiguille a un verrou, elle est <strong>forcément non talonnable</strong></td><td>Levier V (TRX) ou levier indépendant</td></tr>
+  </tbody>
+</table></div>
+
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Verrous — Dépendant / Indépendant</h3>
+<div class="def-block important">
+  <div class="def-term">Verrou dépendant</div>
+  <div class="def-text">Un seul levier commande à la fois l'aiguille ET le verrou. Sur les schémas : <strong>VD</strong> = verrouillé à droite · <strong>VG</strong> = verrouillé à gauche.</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">Verrou indépendant</div>
+  <div class="def-text">Deux leviers séparés : un pour l'aiguille, un pour le verrou. Le <strong>VCC (Verrou Carter Coussinet)</strong> est un type de verrou indépendant — culture générale à connaître.</div>
+</div>
+<div class="rule-box">
+  Verrou <strong>lancé</strong> = en action · Verrou <strong>retiré</strong> = pas en action<br>
+  Si une aiguille a un verrou → elle est <strong>forcément non talonnable</strong>
+</div>
+
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Taquets — 3 types</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>Type</th><th>Rôle</th><th>Position haute / basse</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Taquet d'arrêt</strong></td><td>Arrête le véhicule</td><td>Haute = activé · Basse = désactivé</td></tr>
+    <tr><td><strong>Taquet dérailleur</strong></td><td>Fait dérailler intentionnellement le véhicule pour protéger une voie</td><td>Haute = activé · Basse = désactivé</td></tr>
+    <tr><td><strong>Taquet enrayeur</strong></td><td>Ralentit le véhicule jusqu'à l'arrêt</td><td>Haute = activé · Basse = désactivé</td></tr>
+  </tbody>
+</table></div>
+
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Contrôles des appareils de voie</h3>
+<div class="def-block">
+  <div class="def-term">3 types de contrôles</div>
+  <div class="def-text">• <strong>Contrôle d'entrebaillement</strong> : en cours de manœuvre — vérifie que l'aiguille n'est pas en position intermédiaire pendant la manœuvre<br>
+• <strong>Contrôle de position mécanique</strong> : vérifie la position physique de l'aiguille sur le terrain<br>
+• <strong>Contrôle de position lumineuse</strong> : sur le TCO (Tableau de Contrôle Optique) — indique visuellement la position des aiguilles au poste</div>
+</div>
+
+<div class="def-block">
+  <div class="def-term">ACPP — à compléter</div>
+  <div class="def-text"><span style="color:var(--text3);font-style:italic">Définition à fournir par le formateur — notion importante mentionnée en cours d'aiguillage.</span></div>
+</div>
+
+
 <div class="def-block">
   <div class="def-term">Levier immobilisé</div>
   <div class="def-text">Lorsqu'un problème survient sur une installation de sécurité empêchant la manœuvre d'un levier, on dit que le levier est <strong>immobilisé</strong>. Appliquer alors la méthode RITA (Risque immédiat → Identifier → Traiter → Aviser/Annoter).</div>
@@ -1216,9 +1272,34 @@ aiguillage: `
   La consigne rose a pour but de décrire les IS, d'indiquer les règles d'utilisation et les particularités de fonctionnement des IS, et de préciser les vérifications à effectuer en cas de dérangement.
 </div>
 <div class="def-block">
-  <div class="def-term">Chapitres</div>
-  <div class="def-text">Chap. 1 : Généralités - Contrôles | Chap. 2 : Signaux | Chap. 3 : Appareils de voie | Chap. 4 : Enclenchements électriques | Chap. 5 : Relations avec les PN voisins
-Annexes : 1 Schéma signalisation · <strong>2 Tableau des mouvements</strong> · 3 Enclenchements poste à poste · 4 Encl. aiguilles · 5 Encl. d'approche · 6 Annulation des transits · 7 Points de manœuvre · 8 Petit matériel</div>
+  <div class="def-term">5 Chapitres — à connaître <span class="tag yellow" style="margin-left:6px">Surtout les 5 noms</span></div>
+  <div class="def-text">Chap. 1 : Généralités — Contrôles
+Chap. 2 : Signaux
+Chap. 3 : Appareils de voie
+Chap. 4 : Enclenchements électriques
+Chap. 5 : Relations du poste avec les PN voisins</div>
+</div>
+
+<div class="def-block">
+  <div class="def-term">Annexes — <span style="color:var(--accent)">retenir surtout les 6 premières</span> · 7 ou 8 selon le type de poste</div>
+  <div class="def-text">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:6px">
+  ${[
+    ['A1','Schéma de signalisation','⭐','var(--accent)'],
+    ['A2','Tableau des mouvements — Conditions d\'ouverture des signaux carrés','⭐⭐','var(--accent)'],
+    ['A3','Enclenchements de poste à poste <em style="color:var(--text3)">(parfois "Réservée")</em>','','var(--text2)'],
+    ['A4','Enclenchements des appareils de voie','','var(--text2)'],
+    ['A5','Enclenchements d\'approche et de parcours','','var(--text2)'],
+    ['A6','Tableau des dispositifs d\'annulation de transit','','var(--text2)'],
+    ['A7','Réservée <em style="color:var(--text3)">(toujours)</em>','','var(--text3)'],
+    ['A8','Consigne d\'Établissement relative à l\'inventaire du petit matériel <em style="color:var(--text3)">(uniquement version 8 annexes)</em>','','var(--text3)'],
+  ].map(([n,titre,star,col]) => `<div style="padding:6px 8px;background:var(--bg3);border-radius:5px;${star?'border-left:2px solid var(--accent)':''}">
+    <span style="font-family:var(--mono);font-size:10px;color:${col};font-weight:700">${n}</span>
+    <span style="font-size:11px;color:${col === 'var(--text3)' ? 'var(--text3)' : 'var(--text2)'}"> — ${titre}</span>
+    ${star ? `<span style="color:var(--accent)">${star}</span>` : ''}
+  </div>`).join('')}
+</div>
+  </div>
 </div>
 
 <div class="def-block important">
@@ -2938,7 +3019,7 @@ function showView(v) {
   setNavActive(v);
   closeSidebar();
   const c = document.getElementById('main-content');
-  document.getElementById('topbar-right').innerHTML = '<span style="font-family:var(--mono);font-size:11px;color:var(--text3)">v4.8 — 27 mai 2026</span>';
+  document.getElementById('topbar-right').innerHTML = '<span style="font-family:var(--mono);font-size:11px;color:var(--text3)">v4.9 — 28 mai 2026</span>';
   if (v === 'home') { setTopbar('AMV / <span>Accueil</span>'); renderHome(c); }
   else if (v === 'fiches') { setTopbar('AMV / <span>Fiches de cours</span>'); renderFiches(c); }
   else if (v === 'flash') { setTopbar('AMV / <span>Flashcards</span>'); renderFlash(c); }
@@ -2955,429 +3036,155 @@ function renderHome(c) {
   const qc = QUIZ.length;
   c.innerHTML = `
 <div class="section-heading">Bienvenue 👋</div>
-<div class="section-sub">Application de révision AMV — SECUFER · Sécurité ferroviaire · ${THEMES.length} thèmes</div>
+<div class="section-sub">Application de révision AMV — SECUFER · v4.10 — 28 mai 2026 · ${THEMES.length} thèmes</div>
 
-<!-- SCHÉMA STRUCTURE EXAMEN AMV -->
-<div class="card" style="border-color:rgba(96,165,250,0.35);background:rgba(96,165,250,0.04);margin-bottom:16px">
-  <div class="card-title" style="color:var(--blue);margin-bottom:14px">🎓 STRUCTURE DE L'EXAMEN AMV</div>
-  <div style="display:flex;justify-content:center;margin-bottom:8px">
-    <div style="text-align:center;padding:8px 24px;background:var(--blue-bg);border:2px solid var(--blue);border-radius:8px;font-weight:700;color:var(--blue);font-size:14px">Pour l'AMV</div>
-  </div>
-  <div style="display:flex;justify-content:center;gap:40px;margin-bottom:12px">
-    <!-- Branche Écrite -->
+<!-- SCHEMA EXAMEN AMV -->
+<div class="card" style="border-color:rgba(96,165,250,0.3);background:rgba(96,165,250,0.04);margin-bottom:16px">
+  <div class="card-title" style="color:var(--blue);margin-bottom:12px">🎓 STRUCTURE DE L'EXAMEN AMV</div>
+  <div style="display:flex;justify-content:center;gap:32px;flex-wrap:wrap">
     <div style="display:flex;flex-direction:column;align-items:center;gap:6px">
-      <div style="width:2px;height:20px;background:var(--border2)"></div>
-      <div style="padding:6px 20px;background:var(--bg3);border:1px solid var(--border2);border-radius:6px;font-weight:600;color:var(--text);font-size:13px">✍️ Écrite</div>
-      <div style="display:flex;gap:8px;margin-top:4px">
-        <div style="padding:5px 10px;background:var(--bg4);border-radius:5px;font-size:11px;color:var(--text3);text-align:center">PS9<br><span style="color:var(--text2);font-size:10px">Sécurité personnel</span></div>
-        <div style="padding:5px 10px;background:var(--bg4);border-radius:5px;font-size:11px;color:var(--text3);text-align:center">Formation<br><span style="color:var(--text2);font-size:10px">des trains</span></div>
+      <div style="padding:6px 18px;background:var(--blue-bg);border:2px solid var(--blue);border-radius:6px;font-weight:700;color:var(--blue);font-size:13px">✍️ Écrite (ExpertQuizz)</div>
+      <div style="display:flex;gap:8px">
+        <div style="padding:5px 10px;background:var(--bg4);border-radius:5px;font-size:11px;color:var(--text3);text-align:center">PS9</div>
+        <div style="padding:5px 10px;background:var(--bg4);border-radius:5px;font-size:11px;color:var(--text3);text-align:center">Formation trains</div>
       </div>
     </div>
-    <!-- Branche Orale -->
     <div style="display:flex;flex-direction:column;align-items:center;gap:6px">
-      <div style="width:2px;height:20px;background:var(--border2)"></div>
-      <div style="padding:6px 20px;background:var(--bg3);border:1px solid var(--border2);border-radius:6px;font-weight:600;color:var(--text);font-size:13px">🗣️ Orale</div>
-      <div style="display:flex;gap:8px;margin-top:4px">
-        <div style="padding:5px 10px;background:var(--bg4);border-radius:5px;font-size:11px;color:var(--text3);text-align:center">Aiguillage</div>
-        <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
-          <div style="padding:5px 10px;background:var(--bg4);border-radius:5px;font-size:11px;color:var(--text3);text-align:center">Circulation</div>
-          <div style="width:2px;height:14px;background:var(--border2)"></div>
-          <div style="padding:5px 10px;background:var(--bg4);border-radius:5px;font-size:11px;color:var(--text3);text-align:center">Mise en situation</div>
-          <div style="width:2px;height:14px;background:var(--border2)"></div>
-          <div style="padding:6px 12px;background:var(--red-bg);border:1px solid var(--red);border-radius:5px;font-size:11px;color:var(--red);font-weight:600;text-align:center">Incident de circulation</div>
+      <div style="padding:6px 18px;background:var(--bg3);border:2px solid var(--border2);border-radius:6px;font-weight:700;color:var(--text);font-size:13px">🗣️ Orale</div>
+      <div style="display:flex;gap:8px;align-items:flex-start">
+        <div style="padding:5px 10px;background:var(--bg4);border-radius:5px;font-size:11px;color:var(--text3)">Aiguillage</div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px">
+          <div style="padding:5px 10px;background:var(--bg4);border-radius:5px;font-size:11px;color:var(--text3)">Circulation</div>
+          <div style="font-size:10px;color:var(--text3)">↓</div>
+          <div style="padding:5px 10px;background:var(--bg4);border-radius:5px;font-size:11px;color:var(--text3)">Mise en situation</div>
+          <div style="font-size:10px;color:var(--text3)">↓</div>
+          <div style="padding:5px 10px;background:var(--red-bg);border:1px solid var(--red);border-radius:5px;font-size:11px;color:var(--red);font-weight:600">Incident de circulation</div>
         </div>
       </div>
     </div>
   </div>
-  <div class="rule-box" style="margin-bottom:0;border-left-color:var(--blue)">
-    <strong>ExpertQuizz (QCM sur ordi) :</strong> Formation des trains + PS9<br>
-    <strong>Points clés pour l'exam :</strong> IS · Cantonnement (BM/BAPR) · Plaques de signalisation (repérage, identification, cantonnement)
-  </div>
+  <div style="font-size:11px;color:var(--text3);margin-top:10px;text-align:center">ExpertQuizz : IS · Cantonnement (BM/BAPR) · Plaques de signalisation</div>
 </div>
 
 <!-- BARRE DE RECHERCHE -->
 <div style="margin-bottom:20px;position:relative">
-  <input id="search-input" type="text" placeholder="🔍  Rechercher : DATZD, ZD, EPI, cantonnement, aiguilles conjuguées..."
+  <input id="search-input" type="text" placeholder="🔍  Rechercher dans toute l'appli : FAMAS, ZD, BAL, RITA..."
     oninput="doSearch(this.value)"
     style="width:100%;padding:12px 16px;background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius);color:var(--text);font-family:var(--sans);font-size:14px;outline:none;"
-    onfocus="this.style.borderColor='var(--accent2)'" onblur="this.style.borderColor='var(--border2)'">
+    onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border2)'">
   <div id="search-results" style="display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg2);border:1px solid var(--border2);border-radius:0 0 var(--radius) var(--radius);z-index:200;max-height:320px;overflow-y:auto;box-shadow:0 8px 24px rgba(0,0,0,0.4)"></div>
 </div>
 
-<!-- STATS -->
-<div class="stat-grid">
+<!-- STATS + MODES -->
+<div class="stat-grid" style="margin-bottom:12px">
   <div class="stat-card"><div class="stat-num">${THEMES.length}</div><div class="stat-label">Thèmes</div></div>
   <div class="stat-card"><div class="stat-num">${tc}</div><div class="stat-label">Flashcards</div></div>
-  <div class="stat-card"><div class="stat-num">${qc}</div><div class="stat-label">Questions quiz</div></div>
+  <div class="stat-card"><div class="stat-num">${qc}</div><div class="stat-label">Quiz</div></div>
   <div class="stat-card"><div class="stat-num">${DICTEES.length}</div><div class="stat-label">Dictées</div></div>
 </div>
-
-<!-- MODES -->
-<div class="mode-grid">
-  <div class="mode-card" onclick="showView('fiches')"><div class="mode-icon">◧</div><div class="mode-title">Fiches de cours</div><div class="mode-desc">Définitions officielles, règles et procédures par thème</div></div>
-  <div class="mode-card" onclick="showView('flash')"><div class="mode-icon">⟳</div><div class="mode-title">Flashcards</div><div class="mode-desc">${tc} cartes recto/verso — cliquer pour révéler</div></div>
-  <div class="mode-card" onclick="showView('quiz')"><div class="mode-icon">✦</div><div class="mode-title">Quiz QCM</div><div class="mode-desc">${qc} questions avec correction détaillée</div></div>
-  <div class="mode-card" onclick="showView('dictee')"><div class="mode-icon">✎</div><div class="mode-title">Dictée</div><div class="mode-desc">${DICTEES.length} définitions mot pour mot</div></div>
+<div class="mode-grid" style="margin-bottom:24px">
+  <div class="mode-card" onclick="showView('fiches')"><div class="mode-icon">◧</div><div class="mode-title">Fiches de cours</div><div class="mode-desc">Toutes les définitions et règles par thème</div></div>
+  <div class="mode-card" onclick="showView('flash')"><div class="mode-icon">⟳</div><div class="mode-title">Flashcards</div><div class="mode-desc">${tc} cartes recto/verso</div></div>
+  <div class="mode-card" onclick="showView('quiz')"><div class="mode-icon">✦</div><div class="mode-title">Quiz QCM</div><div class="mode-desc">${qc} questions</div></div>
+  <div class="mode-card" onclick="showView('dictee')"><div class="mode-icon">✎</div><div class="mode-title">Dictées</div><div class="mode-desc">${DICTEES.length} définitions</div></div>
 </div>
 
-<!-- À TOMBER À L'EXAM -->
-<div class="card" style="border-color:rgba(240,192,64,0.4);background:rgba(240,192,64,0.04);margin-bottom:16px">
+<!-- A TOMBER A L'EXAM -->
+<div class="card" style="border-color:rgba(240,192,64,0.3);background:rgba(240,192,64,0.03);margin-bottom:16px">
   <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px">
     <span style="font-size:18px">⚠️</span>
-    <div class="card-title" style="color:var(--accent);font-size:12px">QUASIMENT SÛRS DE TOMBER À L'EXAMEN DE MERCREDI — selon les formateurs</div>
+    <div class="card-title" style="color:var(--accent)">SÛRS DE TOMBER À L'EXAMEN — selon les formateurs</div>
   </div>
-  <div style="font-size:12px;color:var(--text3);margin-bottom:12px">Gares de St-Saturnin ou AMV Ville · Simulateur <strong style="color:var(--accent)">GESSIE</strong> disponible pour s'entraîner</div>
-  <div style="display:flex;flex-direction:column;gap:8px">
-    <div class="rule-box" style="margin:0">
-      <strong>1. Définition Zone dangereuse (ZD)</strong> — à restituer mot pour mot
-    </div>
-    <div class="rule-box" style="margin:0">
-      <strong>1bis. Définition Emplacement de Garage (EG)</strong> — à restituer mot pour mot<br>
-      <span style="font-size:12px;color:var(--text2);display:block;margin-top:4px;padding:6px 10px;background:rgba(0,0,0,0.2);border-radius:4px;font-style:italic">"Un emplacement de garage est un lieu où les agents avec le matériel ou l'outillage, peuvent se garer en dehors de toute zone dangereuse, lors du passage d'une circulation."</span>
-      <span style="font-size:11px;color:var(--text3)">Largeur minimale : 0,70 m</span>
-    </div>
-    <div class="rule-box" style="margin:0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
-      <div>
-        <strong>2. FAMAS</strong> — Fermez · Alertez · Mesures supplémentaires · ASsurez-vous → Autocontrôle<br>
-        <span style="font-size:12px;color:var(--text3)">→ Thème : <em>Incidents de circulation</em> (procédure générale)</span>
-      </div>
-      <button onclick="currentTheme='incidents';document.querySelectorAll('.theme-item').forEach(el=>el.classList.remove('active'));document.getElementById('tnav-incidents')?.classList.add('active');showView('fiches')" class="btn btn-sm" style="white-space:nowrap">Voir la fiche →</button>
-    </div>
-    <div class="rule-box" style="margin:0">
-      <strong>3. Sigles à connaître</strong><br>
-      <span style="font-family:var(--mono);font-size:12px;line-height:2">
-        <span class="tag yellow">DC</span> Direction Circulation &nbsp;
-        <span class="tag yellow">FR</span> FRET &nbsp;
-        <span class="tag yellow">VO</span> Voyageur &nbsp;
-        <span class="tag yellow">GG</span> Gare &nbsp;
-        <span class="tag yellow">DSF</span> Sûreté &nbsp;
-        <span class="tag yellow">MT</span> Maintenance et Travaux &nbsp;
-        <span class="tag yellow">TT</span> Traction &nbsp;
-        <span class="tag yellow">OP</span> Opposable &nbsp;
-        <span class="tag yellow">EIC (...)</span> Déclinaison locale
-      </span>
-    </div>
-    <div class="rule-box" style="margin:0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
-      <span><strong>4. Article 1 DC3858 — Liste des IS d'un poste à leviers individuels</strong> (15 familles, à connaître par cœur)</span>
-      <button onclick="currentTheme='install-sec';document.querySelectorAll('.theme-item').forEach(el=>el.classList.remove('active'));document.getElementById('tnav-install-sec')?.classList.add('active');showView('fiches')" class="btn btn-sm btn-accent" style="white-space:nowrap">Voir la fiche →</button>
-    </div>
-    <div class="rule-box" style="margin:0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
-      <span><strong>5. Appareils de voie à connaître</strong> — Aiguilles · Verrous · Dérailleurs (taquets dérailleur)</span>
-      <button onclick="currentTheme='aiguillage';document.querySelectorAll('.theme-item').forEach(el=>el.classList.remove('active'));document.getElementById('tnav-aiguillage')?.classList.add('active');showView('fiches')" class="btn btn-sm" style="white-space:nowrap">Voir la fiche →</button>
-    </div>
-    <div class="rule-box" style="margin:0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
-      <span><strong>6. Définitions Voie principale et Voie de service</strong> (PS9 p.195) — mot pour mot</span>
-      <button onclick="currentTheme='circulation';document.querySelectorAll('.theme-item').forEach(el=>el.classList.remove('active'));document.getElementById('tnav-circulation')?.classList.add('active');showView('fiches')" class="btn btn-sm" style="white-space:nowrap">Voir la fiche →</button>
-    </div>
-    <div class="rule-box" style="margin:0">
-      <strong>7. Familles d'IS à reconnaître sur photos</strong> — savoir identifier :<br>
-      <span style="font-size:12px;color:var(--text2);line-height:2">
-        <span class="tag">Aiguilles</span> <span class="tag">Verrous</span> <span class="tag">Taquets / dérailleurs</span>
-        <span class="tag">Circuits de voie</span> <span class="tag">Compteurs d'essieux</span> <span class="tag">Pédales</span>
-        <span class="tag">Crocodiles / balises</span> <span class="tag">Pétards / détonateurs</span> <span class="tag">KVB / DAAT</span>
-        <span class="tag">Signaux lumineux</span> <span class="tag">PN à SAL</span> <span class="tag">Détecteurs d'obstacles</span>
-      </span>
-    </div>
-    <div class="rule-box" style="margin:0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
-      <span><strong>8. Pistes et itinéraires</strong> — définitions + où les trouver (en gare et dans les postes d'aiguillage)</span>
-      <button onclick="currentTheme='epi';document.querySelectorAll('.theme-item').forEach(el=>el.classList.remove('active'));document.getElementById('tnav-epi')?.classList.add('active');showView('fiches')" class="btn btn-sm" style="white-space:nowrap">Voir la fiche →</button>
-    </div>
-    <div class="rule-box" style="margin:0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
-      <span><strong>9. Les 5 familles de signaux</strong> — A (arrêt) · B (annonce) · C (vitesse) · D (ouverture) · E (divers)</span>
-      <button onclick="currentTheme='signaux';document.querySelectorAll('.theme-item').forEach(el=>el.classList.remove('active'));document.getElementById('tnav-signaux')?.classList.add('active');showView('fiches')" class="btn btn-sm" style="white-space:nowrap">Voir la fiche →</button>
-    </div>
-    <div class="rule-box" style="margin:0">
-      <strong>10. Les 5 risques ferroviaires</strong> — Collision avec obstacle · Prise en écharpe · Nez à nez · Déraillement par excès de vitesse · Rattrapage
-    </div>
-    <div class="rule-box" style="margin:0">
-      <strong>11. Les 3 types de communication</strong> — Verbale · Non-verbale · Écrite (logo feuille+crayon = prendre attachement obligatoire)
-    </div>
-    <div class="rule-box" style="margin:0">
-      <strong>12. Les 4 étapes de communication de sécurité (OP0542)</strong><br>
-      1. Identification · 2. Appel d'instruction (si nécessaire) · 3. Transmission des informations · 4. Finalisation<br>
-      <span style="font-size:12px;color:var(--text3)">⚡ En cas d'urgence : sauter l'étape 1, aller directement à l'étape 2 · Ne pas oublier de <strong>collationner</strong> à l'issue de la transmission</span>
-    </div>
-    <div class="card" style="margin:0;border-color:rgba(240,192,64,0.2);background:rgba(240,192,64,0.03);padding:16px">
-      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:14px">
-        <strong style="color:var(--text)">13. Consigne Rose (DC3858) — 5 chapitres + 8 annexes</strong>
-        <button onclick="currentTheme='aiguillage';document.querySelectorAll('.theme-item').forEach(el=>el.classList.remove('active'));document.getElementById('tnav-aiguillage')?.classList.add('active');showView('fiches')" class="btn btn-sm" style="white-space:nowrap">Voir la fiche →</button>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:10px">
-        ${[
-          ['1','Généralités & Contrôles','Principes d\'utilisation du poste'],
-          ['2','Signaux','Fonctionnement et conditions d\'ouverture'],
-          ['3','Appareils de voie','Aiguilles, verrous, taquets'],
-          ['4','Enclenchements électriques','ZI · CIP · ZP · EAP'],
-          ['5','Relations avec les PN voisins','Coordination avec les PN proches'],
-        ].map(([n,titre,detail]) => `
-        <div style="display:flex;gap:8px;padding:8px 10px;background:var(--bg3);border-radius:6px;border-left:2px solid var(--accent)">
-          <span style="font-family:var(--mono);font-size:13px;font-weight:700;color:var(--accent);flex-shrink:0">CH${n}</span>
-          <div>
-            <div style="font-size:12px;font-weight:600;color:var(--text)">${titre}</div>
-            <div style="font-size:11px;color:var(--text3)">${detail}</div>
-          </div>
-        </div>`).join('')}
-      </div>
-      <div style="font-size:10px;font-family:var(--mono);color:var(--text3);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px">Annexes</div>
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:4px">
-        ${[
-          ['A1','Schéma\nsignalisation','var(--text2)'],
-          ['A2','Tableau des\nmouvements ⭐','var(--accent)'],
-          ['A3','Encl. poste\nà poste','var(--text3)'],
-          ['A4','Encl.\naiguilles','var(--text3)'],
-          ['A5','Encl.\nd\'approche','var(--text3)'],
-          ['A6','Annulation\ndes transits','var(--text3)'],
-          ['A7','Points de\nmanœuvre','var(--text3)'],
-          ['A8','Petit\nmatériel','var(--text3)'],
-        ].map(([n,titre,col]) => `
-        <div style="padding:6px 8px;background:var(--bg3);border-radius:5px;text-align:center;border:1px solid ${col === 'var(--accent)' ? 'rgba(240,192,64,0.3)' : 'var(--border)'}">
-          <div style="font-family:var(--mono);font-size:10px;color:${col};font-weight:700;margin-bottom:2px">${n}</div>
-          <div style="font-size:10px;color:var(--text3);white-space:pre-line;line-height:1.3">${titre}</div>
-        </div>`).join('')}
-      </div>
-      <div style="font-size:11px;color:var(--text3);margin-top:8px">⭐ Annexe 2 = Tableau des mouvements — référence clé de l'aiguilleur au quotidien</div>
-    </div>
-    <div class="rule-box" style="margin:0">
-      <strong>14. Savoir identifier BAL ou BAPR sur le terrain</strong> — via la plaque de cantonnement sur le mât du signal :<br>
-      <span style="font-size:12px;color:var(--text2)">Pas de plaque = BAL · Plaque "PR" ou "PR vers..." = BAPR · Plaque "BM" ou "BM vers..." = Block Manuel</span>
-    </div>
-    <div class="rule-box" style="margin:0">
-      <strong>15. Renseignements techniques</strong> — <span style="color:var(--text3);font-style:italic">Définition à compléter après le cours de mardi</span>
-    </div>
-    <div class="rule-box" style="margin:0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
-      <div>
-        <strong>16. Définition du Cantonnement</strong> <span class="tag yellow" style="margin-left:4px">À l'examen</span><br>
-        <span style="font-size:12px;color:var(--text2);display:block;margin-top:4px;padding:6px 10px;background:rgba(0,0,0,0.2);border-radius:4px;font-style:italic">"Système d'espacement des trains de même sens destiné à éviter les rattrapages et consistant à fractionner la ligne en plusieurs cantons dont l'entrée est protégée par un signal d'arrêt."</span>
-        <span style="font-size:11px;color:var(--text3)">1 train par canton (BM) · BAL/BAPR : arrête mais NE RETIENT PAS · BM : arrête ET RETIENT</span>
-      </div>
-      <button onclick="currentTheme='cantonnement';document.querySelectorAll('.theme-item').forEach(el=>el.classList.remove('active'));document.getElementById('tnav-cantonnement')?.classList.add('active');showView('fiches')" class="btn btn-sm" style="white-space:nowrap">Voir la fiche →</button>
-    </div>
-    <div class="rule-box" style="margin:0">
-      <strong>💡 Astuce numéros pairs/impairs</strong><br>
-      <strong>Pairs</strong> (0, 2, 4...) → direction <strong>VERS PARIS</strong><br>
-      <strong>Impairs</strong> (1, 3, 5...) → direction <strong>VERS les provinces</strong><br>
-      <span style="font-size:12px;color:var(--text3)">Valable pour les n° de trains, signaux, PK, voies...</span>
-    </div>
+  <div style="display:flex;flex-direction:column;gap:6px">
+    ${[
+      ['1','Définition Zone dangereuse (ZD)','zd','Par cœur'],
+      ['2','Définition Emplacement de Garage (EG)','epi','Par cœur'],
+      ['3','FAMAS — 4 étapes + autocontrôle','incidents','Par cœur'],
+      ['4','Obstacle · Danger · Présomption de danger','incidents','Par cœur'],
+      ['5','Sillon · Ordre normal (ONJ) / Ordre réel (EC)','circulation','Par cœur'],
+      ['6','5 § du Document A (renseignements techniques)','circulation','Par cœur'],
+      ['7','Les 3 marches : manœuvre / à vue / prudente','circulation','Par cœur'],
+      ['8','Article 1 DC3858 — 15 familles IS','install-sec','Par cœur'],
+      ['9','Cantonnement + identifier BAL/BAPR/BM sur terrain','cantonnement','Par cœur'],
+      ['10','Consigne Rose — 5 chapitres + 6 premières annexes','aiguillage','À savoir'],
+      ['11','5 familles de signaux (A/B/C/D/E)','signaux','À savoir'],
+      ['12','3 types de communication + 4 étapes (OP0542)','risques','À savoir'],
+      ['13','Les 9 codes radios','risques','À savoir'],
+      ['14','VP / VS — définitions exactes','circulation','Par cœur'],
+      ['15','RAT — définition et utilité','formation','Par cœur'],
+      ['16','4 essais de frein — bien différencier','formation','Bien différencier'],
+      ['17','Définition Cantonnement','cantonnement','Par cœur'],
+    ].map(([n,titre,theme,tag]) => `
+    <div style="display:flex;align-items:center;gap:10px;padding:7px 12px;background:var(--bg3);border-radius:var(--radius);flex-wrap:wrap">
+      <span style="font-family:var(--mono);font-size:11px;color:var(--accent);min-width:24px">${n}.</span>
+      <span style="font-size:13px;color:var(--text);flex:1">${titre}</span>
+      <span class="tag" style="font-size:10px">${tag}</span>
+      <button class="btn btn-sm" style="padding:3px 10px;font-size:11px;white-space:nowrap" onclick="selectTheme('${theme}')">Fiche →</button>
+    </div>`).join('')}
   </div>
 </div>
 
-<!-- DÉFINITIONS OFFICIELLES AC + AIGUILLEUR -->
+<!-- DEFS OFFICIELLES + SIGLES + CODES -->
 <div class="card" style="margin-bottom:16px">
-  <div class="card-title" style="margin-bottom:14px">📋 Définitions officielles — Agents effectuant des tâches de sécurité</div>
-  <div style="font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:0.1em;margin-bottom:8px">SOURCE : Classeur Référentiels PS9/CG · OP823</div>
-
-  <div class="def-block important" style="margin-bottom:10px">
+  <div class="card-title" style="margin-bottom:12px">📋 Définitions officielles + Programme H:00</div>
+  <div class="def-block important" style="margin-bottom:8px">
     <div class="def-term">Agent-circulation</div>
     <div class="def-text">Agent, chargé d'assurer le service de la circulation des trains, habilité à la TES « Assurer la circulation des trains ferroviaire ».</div>
   </div>
-
-  <div class="def-block important" style="margin-bottom:10px">
+  <div class="def-block important" style="margin-bottom:8px">
     <div class="def-term">Aiguilleur</div>
     <div class="def-text">Agent, chargé de la manœuvre des signaux et les autres installations de gestion des circulations, habilité à la TES « Manœuvrer les signaux et les autres installations de gestion des circulations ».</div>
   </div>
-
   <div class="def-block" style="margin-bottom:0">
     <div class="def-term">Programme H : 00</div>
-    <div class="def-text"><strong style="color:var(--accent)">Départ à la seconde</strong> — c'est le point névralgique de l'organisation ferroviaire SNCF. Chaque train doit partir à l'heure exacte prévue, à la seconde près, pour maintenir la fluidité de toute la circulation.</div>
+    <div class="def-text"><strong style="color:var(--accent)">Départ à la seconde</strong> — point névralgique de l'organisation SNCF.</div>
   </div>
 </div>
 
-<!-- ARTICLE 1 DC3858 — IS D'UN POSTE À LEVIERS INDIVIDUELS -->
 <div class="card" style="margin-bottom:16px">
-  <div class="card-title" style="margin-bottom:14px">📌 Article 1 DC3858 — Installations de sécurité d'un poste à leviers individuels <span class="tag red" style="margin-left:6px">À CONNAÎTRE PAR CŒUR</span></div>
-  <div style="font-size:13px;color:var(--text2);line-height:1.7;margin-bottom:12px">
-    Les installations de sécurité comprennent tout système (composé ou non avec des éléments techniquement de sécurité) nécessaire pour assurer la sécurité des circulations et dont le dérangement entraîne l'application de dispositions réglementaires. Elles comprennent essentiellement :
+  <div class="card-title" style="margin-bottom:10px">📎 Sigles SNCF · Astuce pairs/impairs · 9 codes radios</div>
+  <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px">
+    ${[['DC','Circulation'],['FR','FRET'],['VO','Voyageur'],['GG','Gare'],['DSF','Sûreté'],['MT','Maint. Travaux'],['TT','Traction'],['OP','Opposable'],['EIC','Déclinaison locale']].map(([s,d]) => `
+    <div style="padding:3px 8px;background:var(--bg3);border-radius:4px;font-size:12px"><span style="color:var(--accent);font-weight:600;font-family:var(--mono)">${s}</span> <span style="color:var(--text3)">${d}</span></div>`).join('')}
   </div>
-  <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:6px">
-    ${[
-      ['1','Les dispositifs de signalisation','signaux + organes mécaniques de commande','Protéger les AdV · Espacer les circulations · Avertir de la fermeture · Imposer une vitesse'],
-      ['2','Les appareils de voie','organes mécaniques + partie électrique','Aiguille (diriger/protéger) · Verrou (passage en pointe > 40 km/h) · Taquet (protéger contre dérives)'],
-      ['3','Les organes de commande','leviers, manettes','Permettre la manœuvre des IS — position Normale ou Renversée'],
-      ['4','Les enclenchements mécaniques','','Éviter les conséquences dangereuses d\'une manœuvre IS contraire à la réglementation'],
-      ['5','Les enclenchements électriques','','ZI · CIP · ZP · EAP — contrôle automatique des conditions de sécurité'],
-      ['6','Les composants sur le terrain','circuits de voie, pédales, compteurs d\'essieux','Détecter l\'occupation/libération d\'une partie de voie · Déclencher pictogrammes lumineux (TVP)'],
-      ['7','Les dispositifs de contrôle','','Renseigner l\'aiguilleur sur la position et l\'état des IS · Guider son action en normal et en dérangement'],
-      ['8','Les dispositifs de répétition des signaux','crocodiles, balises','Répéter dans la cabine de conduite une indication présentée par un signal — pallier un défaut de vigilance'],
-      ['9','Les appuis acoustiques des signaux','pétards, détonateurs','Alerter le conducteur par explosion lors du franchissement d\'un signal'],
-      ['10','Les installations de PN à SAL','','Obtenir l\'arrêt de la circulation routière pour le passage des trains'],
-      ['11','Les détecteurs d\'obstacles','','Arrêter ou ralentir les circulations en cas d\'obstruction probable de la voie'],
-      ['12','Les dispositifs de contrôle de vitesse et d\'arrêt automatique','KVB, DAAT','Déclencher l\'arrêt automatique si action inappropriée du conducteur ou erreur de l\'AC vis-à-vis de la sécurité'],
-      ['13','Les installations de block','','Assurer l\'espacement des trains'],
-      ['14','Les dispositifs d\'annonce aux PN gardés','','Prévenir le garde-barrière de l\'approche d\'un train'],
-      ['15','Les installations de PN à SAL voisins de gare','','Assurer la sécurité des PN proches d\'une gare'],
-    ].map(([n,titre,sous,detail]) => `
-    <li style="display:flex;gap:10px;padding:7px 12px;background:var(--bg3);border-radius:var(--radius);border-left:2px solid var(--accent2)">
-      <span style="font-family:var(--mono);font-size:11px;color:var(--accent);min-width:22px;padding-top:1px">${n}.</span>
-      <span style="font-size:13px;color:var(--text)"><strong>${titre}</strong>${sous ? `<span style="color:var(--text3);font-weight:400"> — ${sous}</span>` : ''}${detail ? `<br><span style="font-size:12px;color:var(--text3)">${detail}</span>` : ''}</span>
-    </li>`).join('')}
-  </ul>
-  <div style="font-size:12px;color:var(--text3);margin-top:10px;font-style:italic">
-    Code couleur DC3858 : Vert = Aiguilleur · Jaune = Agent-circulation · Gris = Opérateur habilité · Orange = Aboutissement · Bleu = Fonctionnement IS · Rouge = Situation constatée
+  <div style="font-size:12px;color:var(--text2);margin-bottom:10px;padding:6px 10px;background:var(--bg3);border-radius:5px">
+    <strong>Pairs → Paris</strong> · <strong>Impairs → Provinces</strong> <span style="color:var(--text3)">(trains, signaux, PK, voies...)</span>
   </div>
-</div>
-
-<!-- RÈGLES DE COMMUNICATION -->
-<div class="card" style="margin-bottom:16px">
-  <div class="card-title" style="margin-bottom:14px">📡 Les 4 étapes de communication de sécurité (OP0542)</div>
-  <div style="display:flex;flex-direction:column;gap:6px">
-    ${[
-      ['1','Identification','S\'assurer qu\'on parle au bon interlocuteur'],
-      ['2','Appel d\'instruction','Si nécessaire — utilisation d\'un formulaire'],
-      ['3','Transmission des informations','Nature de l\'appel, contenu du message'],
-      ['4','Finalisation','Clôture de la transmission'],
-    ].map(([n,titre,detail]) => `
-    <div style="display:flex;gap:10px;padding:8px 12px;background:var(--bg3);border-radius:var(--radius);align-items:flex-start">
-      <span style="font-family:var(--mono);font-size:13px;font-weight:700;color:var(--accent);min-width:22px;padding-top:1px">${n}.</span>
-      <div>
-        <div style="font-size:13px;font-weight:500;color:var(--text);margin-bottom:2px">${titre}</div>
-        <div style="font-size:12px;color:var(--text3)">${detail}</div>
-      </div>
-    </div>`).join('')}
-  </div>
-  <div class="rule-box" style="margin-top:12px;margin-bottom:0">
-    <strong>⚡ En cas d'urgence :</strong> sauter l'étape 1, passer directement à l'étape 2.<br>
-    <strong>🔁 Collationner</strong> — à la fin de la transmission, faire répéter la totalité du message et comparer.<br>
-    <strong>✍️ Communication écrite</strong> (logo feuille + crayon) → prendre un attachement obligatoire.
-  </div>
-</div>
-
-<!-- 2.4 TERMINOLOGIE -->
-<div class="card" style="margin-bottom:16px">
-  <div class="card-title" style="margin-bottom:14px">💬 Les 9 codes de communication</div>
-  <div style="overflow-x:auto">
-  <table>
-    <thead><tr><th>#</th><th>Situation</th><th>Code</th></tr></thead>
-    <tbody>
-      <tr><td>1</td><td>Transmettre la parole à l'autre interlocuteur</td><td><strong style="color:var(--accent)">À toi</strong></td></tr>
-      <tr><td>2</td><td>Confirmer que le message transmis a été reçu</td><td><strong style="color:var(--green)">Reçu</strong></td></tr>
-      <tr><td>3</td><td>Faire répéter en cas de mauvaise réception</td><td><strong style="color:var(--accent)">Mal reçu</strong></td></tr>
-      <tr><td>4</td><td>Le message collationné est conforme au message émis</td><td><strong style="color:var(--green)">Correct</strong></td></tr>
-      <tr><td>5</td><td>Le message collationné n'est PAS conforme au message émis</td><td><strong style="color:var(--red)">Erreur</strong></td></tr>
-      <tr><td>6</td><td>Répéter le message (après Erreur ou sur demande)</td><td><strong style="color:var(--accent)">Je répète</strong></td></tr>
-      <tr><td>7</td><td>Faire attendre — interruption temporaire, connexion maintenue</td><td><strong style="color:var(--accent)">Attendez</strong></td></tr>
-      <tr><td>8</td><td>Demander à l'interlocuteur de répéter</td><td><strong style="color:var(--accent)">Répétez</strong></td></tr>
-      <tr><td>9</td><td>Indiquer que le message est terminé</td><td><strong style="color:var(--green)">Terminé</strong></td></tr>
-    </tbody>
-  </table>
-  </div>
-</div>
-
-<!-- 2.5 ALPHABET PHONÉTIQUE -->
-<div class="card" style="margin-bottom:16px">
-  <div class="card-title" style="margin-bottom:12px">🔤 2.5 Code d'épellation — Alphabet phonétique international <span class="tag" style="margin-left:6px;font-size:10px">Utile · non obligatoire exam</span></div>
-  <div style="display:flex;flex-wrap:wrap;gap:6px">
-    ${[['A','Alpha'],['B','Bravo'],['C','Charlie'],['D','Delta'],['E','Echo'],['F','Foxtrot'],['G','Golf'],['H','Hotel'],['I','India'],['J','Juliet'],['K','Kilo'],['L','Lima'],['M','Mike'],['N','November'],['O','Oscar'],['P','Papa'],['Q','Quebec'],['R','Romeo'],['S','Sierra'],['T','Tango'],['U','Uniform'],['V','Victor'],['W','Whisky'],['X','X-ray'],['Y','Yankee'],['Z','Zoulou']].map(([l,w])=>`
-    <div style="display:flex;flex-direction:column;align-items:center;padding:6px 10px;background:var(--bg3);border-radius:var(--radius);min-width:68px;border:1px solid var(--border)">
-      <span style="font-family:var(--mono);font-size:14px;font-weight:600;color:var(--accent)">${l}</span>
-      <span style="font-size:11px;color:var(--text2);margin-top:2px">${w}</span>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:4px">
+    ${[['1','À toi'],['2','Reçu'],['3','Mal reçu'],['4','Correct'],['5','Erreur'],['6','Je répète'],['7','Attendez'],['8','Répétez'],['9','Terminé']].map(([n,c]) => `
+    <div style="padding:5px 8px;background:var(--bg3);border-radius:5px;display:flex;gap:6px;align-items:center">
+      <span style="font-family:var(--mono);font-size:11px;color:var(--accent)">${n}.</span>
+      <span style="font-size:12px;color:var(--text)">${c}</span>
     </div>`).join('')}
   </div>
 </div>
 
-<!-- SIGLES RÉGLEMENTATION -->
-<div class="card" style="margin-bottom:16px">
-  <div class="card-title" style="margin-bottom:12px">📎 Sigles réglementation SNCF à connaître</div>
-  <div style="overflow-x:auto">
-  <table>
-    <thead><tr><th>Sigle</th><th>Signification</th></tr></thead>
-    <tbody>
-      <tr><td><span class="tag yellow">DC</span></td><td>Direction Circulation</td></tr>
-      <tr><td><span class="tag yellow">FR</span></td><td>FRET</td></tr>
-      <tr><td><span class="tag yellow">VO</span></td><td>Voyageur</td></tr>
-      <tr><td><span class="tag yellow">GG</span></td><td>Gare</td></tr>
-      <tr><td><span class="tag yellow">DSF</span></td><td>Sûreté</td></tr>
-      <tr><td><span class="tag yellow">MT</span></td><td>Maintenance et Travaux</td></tr>
-      <tr><td><span class="tag yellow">TT</span></td><td>Traction</td></tr>
-      <tr><td><span class="tag yellow">OP</span></td><td>Opposable (règlement applicable obligatoirement)</td></tr>
-      <tr><td><span class="tag yellow">EIC (...)</span></td><td>Déclinaison locale (ex : EIC PSL FR 3100 = CLE)</td></tr>
-      <tr><td><span class="tag">S6A n°15</span></td><td>Ancienne numérotation = Installations de sécurité (DC3858)</td></tr>
-    </tbody>
-  </table>
+<!-- CONSIGNE ROSE COMPACT -->
+<div class="card" style="border-color:rgba(240,192,64,0.2);background:rgba(240,192,64,0.02);margin-bottom:16px">
+  <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:10px">
+    <div class="card-title">📌 Consigne Rose (DC3858) — 5 chapitres + 6 premières annexes à retenir</div>
+    <button onclick="currentTheme='aiguillage';document.querySelectorAll('.theme-item').forEach(el=>el.classList.remove('active'));document.getElementById('tnav-aiguillage')?.classList.add('active');showView('fiches')" class="btn btn-sm">Fiche →</button>
   </div>
-</div>
-
-<!-- PRÉPARATION MARDI — AMV101 + AMV109 -->
-<div class="card" style="border-color:rgba(96,165,250,0.3);background:rgba(96,165,250,0.04);margin-bottom:16px">
-  <div style="display:flex;align-items:center;gap:8px;margin-bottom:16px;flex-wrap:wrap">
-    <span style="font-size:18px">📖</span>
-    <div>
-      <div class="card-title" style="color:var(--blue)">PRÉPARATION MARDI — AMV101 + AMV109</div>
-      <div style="font-size:12px;color:var(--text3)">Organiser le mouvement · Incidents de circulation — test de positionnement mercredi</div>
-    </div>
-  </div>
-
-  <div style="font-size:13px;font-weight:600;color:var(--blue);margin-bottom:10px;font-family:var(--mono);letter-spacing:0.06em">AMV101 — ORGANISER LE MOUVEMENT</div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px">
-    ${[
-      ['Sillon','Capacité d\'infrastructure requise pour faire circuler un train donné d\'un point à un autre à un moment donné'],
-      ['N° de train','Permet de caractériser : parcours + sens de circulation + type. Pair = vers Paris / Impair = vers les provinces'],
-      ['TST','Tableau de Succession des Trains — liste et horaires de tous les trains réguliers et facultatifs par ordre chronologique'],
-      ['ONJ','Ordre Normal Journalier — prévisionnel : ce qui DOIT passer (papier ou OLERON)'],
-      ['EC','État de Circulation — constat : l\'agent note l\'heure RÉELLE de passage. Permet de connaître le dernier reçu et le dernier expédié'],
-      ['Train MI','Train à Marche Indéterminée : horaire approximatif, pas d\'ordre normal de circulation, ni croisements ni garages'],
-      ['ART / AGT','Avis Régional/Général Train — modifications d\'horaires, suppressions ou ajouts envoyés par le régulateur'],
-      ['SNST','Système Normalisé de Suivi des Trains — informe les exploitants de l\'identité et de la position de chaque circulation'],
-    ].map(([titre,def]) => `
-    <div style="background:var(--bg3);border-radius:6px;padding:8px 10px;border-left:2px solid var(--blue)">
-      <div style="font-size:12px;font-weight:600;color:var(--text);margin-bottom:2px">${titre}</div>
-      <div style="font-size:11px;color:var(--text3);line-height:1.5">${def}</div>
+  <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:4px;margin-bottom:6px">
+    ${[['CH1','Généralités'],['CH2','Signaux'],['CH3','AdV'],['CH4','Encl. élec.'],['CH5','PN voisins']].map(([n,t]) => `
+    <div style="padding:5px;background:var(--bg3);border-radius:5px;border-left:2px solid var(--accent);text-align:center">
+      <div style="font-family:var(--mono);font-size:10px;color:var(--accent);font-weight:700">${n}</div>
+      <div style="font-size:10px;color:var(--text3);margin-top:1px">${t}</div>
     </div>`).join('')}
   </div>
-
-  <div class="rule-box" style="margin-bottom:14px;border-left-color:var(--blue)">
-    <strong>Renseignements techniques</strong> : document contenant les caractéristiques d'exploitation d'une ligne. Document A subdivisé en 5 paragraphes (caractéristiques générales, distances/IS/cantonnement, vitesses/traction, pentes/freinage, prescriptions diverses).
-  </div>
-
-  <div style="font-size:13px;font-weight:600;color:var(--red);margin-bottom:10px;font-family:var(--mono);letter-spacing:0.06em">AMV109 — INCIDENTS DE CIRCULATION (DC1503)</div>
-  
-  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:12px">
-    <div style="background:var(--red-bg);border:1px solid var(--red);border-radius:6px;padding:10px">
-      <div style="font-size:12px;font-weight:700;color:var(--red);margin-bottom:4px">OBSTACLE</div>
-      <div style="font-size:11px;color:var(--text3)">Événement inopiné et identifié, visible ou non, qui <strong style="color:var(--text)">fait obstruction</strong> à la circulation. Risque grave de déraillement.</div>
-    </div>
-    <div style="background:rgba(230,140,20,0.1);border:1px solid #e8a020;border-radius:6px;padding:10px">
-      <div style="font-size:12px;font-weight:700;color:#e8a020;margin-bottom:4px">DANGER</div>
-      <div style="font-size:11px;color:var(--text3)">Événement inopiné dans les emprises. <strong style="color:var(--text)">Ne fait pas obstruction</strong> mais nécessite des mesures particulières.</div>
-    </div>
-    <div style="background:var(--blue-bg);border:1px solid var(--blue);border-radius:6px;padding:10px">
-      <div style="font-size:12px;font-weight:700;color:var(--blue);margin-bottom:4px">PRÉSOMPTION</div>
-      <div style="font-size:11px;color:var(--text3)"><strong style="color:var(--text)">Probabilité</strong> de l'existence d'un événement. Nécessite un supplément d'information.</div>
-    </div>
-  </div>
-
-  <div style="font-size:12px;font-weight:600;color:var(--text);margin-bottom:8px">FAMAS — à appliquer en cas d'obstacle, danger ou présomption :</div>
-  <div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:12px">
-    ${[
-      ['F','Fermez','les signaux d\'arrêt convenables','var(--red)'],
-      ['A','Alertez','d\'urgence les postes ou gares susceptibles d\'expédier des circulations','#e8a020'],
-      ['M','Mesures','supplémentaires pour arrêter les circulations (EC ou ZAP selon position)','var(--blue)'],
-      ['AS','ASsurez-vous','la circulation la plus proche arrêtée et retenue · ordre verbal ou SAM','var(--green)'],
-      ['S','→ Auto','contrôle à la fin !','var(--accent)'],
-    ].map(([lettre,mot,detail,col]) => `
-    <div style="flex:1;min-width:100px;background:var(--bg3);border-radius:6px;padding:8px 10px;border-top:3px solid ${col}">
-      <div style="display:flex;align-items:center;gap:6px;margin-bottom:3px">
-        <span style="font-family:var(--mono);font-size:18px;font-weight:700;color:${col}">${lettre}</span>
-        <span style="font-size:12px;font-weight:600;color:var(--text)">${mot}</span>
-      </div>
-      <div style="font-size:11px;color:var(--text3);line-height:1.4">${detail}</div>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:4px">
+    ${[['A1','Schéma signalisation',true],['A2','Tableau mouvements ⭐⭐',true],['A3','Encl. poste/poste*',false],['A4','Encl. AdV',false],['A5','Encl. approche',false],['A6','Annulation transits',false],['A7','Réservée',false],['A8','Petit matériel (v.8)',false]].map(([n,t,imp]) => `
+    <div style="padding:5px;background:var(--bg3);border-radius:5px;border:1px solid ${imp ? 'rgba(240,192,64,0.3)' : 'var(--border)'}">
+      <div style="font-family:var(--mono);font-size:10px;color:${imp ? 'var(--accent)' : 'var(--text3)'};font-weight:700">${n}</div>
+      <div style="font-size:10px;color:var(--text3);line-height:1.3;margin-top:1px">${t}</div>
     </div>`).join('')}
   </div>
-
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
-    <div style="background:var(--bg3);border-radius:6px;padding:10px;border-left:2px solid var(--text3)">
-      <div style="font-size:12px;font-weight:600;color:var(--text);margin-bottom:4px">Comment avoir connaissance d'un événement</div>
-      <div style="font-size:11px;color:var(--text3);line-height:1.6">• Présence de l'obstacle ou du danger<br>• Réception d'un avis (tél/radio)<br>• Alarme dispositif IS<br>• Perception SAR / SAL / torche allumée<br>• Personne avec bras élevés agitant un objet</div>
-    </div>
-    <div style="background:var(--bg3);border-radius:6px;padding:10px;border-left:2px solid var(--accent)">
-      <div style="font-size:12px;font-weight:600;color:var(--text);margin-bottom:4px">Code couleur DC1503</div>
-      <div style="font-size:11px;color:var(--text3);line-height:1.7">🔵 Bleu = actions AC<br>🟡 Jaune = dépêches, formulaires, ordres écrits<br>🌸 Rose = Avertissement<br>🟢 Vert = Reprise circulation normale</div>
-    </div>
-  </div>
+  <div style="font-size:11px;color:var(--text3);margin-top:5px">* A3 = Réservée en version 7 annexes (AMV Ville)</div>
 </div>
 
 <div class="card" style="background:var(--bg3);border-color:var(--border2)">
   <div class="card-title" style="margin-bottom:8px">💡 Astuces</div>
-  <p style="font-size:13px;color:var(--text2);line-height:1.7">• Glisse les thèmes dans le menu gauche pour les réordonner selon ton programme.<br>• La barre de recherche trouve n'importe quel mot-clé dans tout le contenu.<br>• L'app fonctionne <strong style="color:var(--accent)">hors connexion</strong> — enregistre le fichier HTML sur ton appareil.</p>
+  <p style="font-size:13px;color:var(--text2);line-height:1.7">• Trait jaune dans le menu = niveau actuel — glisse-le pour marquer ta progression.<br>• Barre de recherche = n'importe quel mot-clé dans tout le contenu.<br>• L'app fonctionne <strong style="color:var(--accent)">hors connexion</strong> — enregistre le fichier HTML sur ton appareil.</p>
 </div>`;
 }
 
