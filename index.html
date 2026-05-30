@@ -537,14 +537,24 @@ formation: `
 <h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">AMV904 — Signalisation des trains</h3>
 <div class="def-block">
   <div class="def-term">Signalisation d'avant</div>
-  <div class="def-text">Au départ : <strong>3 feux blancs obligatoires</strong> (triangle ou 2 horizontaux + 1 central). L'allumage incombe au conducteur.<br>
+  <div class="def-text">Au départ : <strong>3 feux blancs obligatoires</strong>. L'allumage incombe au conducteur.<br>
   <span style="color:#e8a020">Si seulement 2 feux blancs horizontaux : acceptable en circulation mais <strong>réparation obligatoire à la prochaine gare</strong>.</span></div>
 </div>
 <div class="def-block">
-  <div class="def-term">Signalisation d'arrière</div>
-  <div class="def-text">Au départ : <strong>2 feux rouges obligatoires</strong>. Rôle : repérer l'extrémité, le sens de marche et s'assurer que le train est complet.<br>
-  <span style="color:#e8a020">Si seulement 1 feu rouge : acceptable en circulation mais <strong>réparation obligatoire à la prochaine gare</strong>. Permet quand même de savoir que c'est la queue et qu'il n'y a pas de dérive.</span><br>
-  <span style="color:var(--red)">⚠️ Aucun feu rouge ni lanterne ni plaque réfléchissante → <strong>pas de certitude que le train est complet</strong>.</span></div>
+  <div class="def-term">Signalisation d'arrière — Constitution par type de train</div>
+  <div class="def-text">La présence de signalisation d'arrière sur le dernier véhicule permet de donner l'assurance que le train est complet.</div>
+</div>
+<div class="table-wrap"><table>
+  <thead><tr><th>Type de train</th><th>Signalisation d'arrière (jour, faible visibilité &lt;100m, nuit)</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Voyageurs</strong></td><td>2 signaux électriques incorporés (2 feux rouges fixes) OU 2 lanternes amovibles (2 feux rouges fixes)</td></tr>
+    <tr><td><strong>Messagerie · Machine HLP · Train de machines</strong></td><td>2 signaux électriques incorporés OU 2 lanternes amovibles OU 2 plaques réfléchissantes</td></tr>
+    <tr><td><strong>Marchandises</strong></td><td>2 lanternes amovibles (2 feux rouges fixes) OU 2 plaques réfléchissantes</td></tr>
+  </tbody>
+</table></div>
+<div class="rule-box">
+  <span style="color:#e8a020">1 seul feu rouge : acceptable en circulation mais <strong>réparation obligatoire à la prochaine gare</strong>. Permet quand même d'assurer que c'est la queue du train.</span><br>
+  <span style="color:var(--red)">⚠️ Aucun feu rouge ni lanterne ni plaque réfléchissante → <strong>pas de certitude que le train est complet</strong>.</span>
 </div>
 `,
 
@@ -922,15 +932,68 @@ circulation: `
   <strong>EC (État de Circulation)</strong> = document <em>constat</em>. L'aiguilleur y note <strong>au fur et à mesure</strong> l'heure réelle de passage de chaque train. C'est le compte-rendu de ce qui s'est réellement passé — il permet de savoir quel est le dernier train reçu et le dernier expédié.
 </div>
 
-<div class="def-block">
-  <div class="def-term">Types d'arrêts (OP843)</div>
-  <div class="def-text">• Normaux réguliers : toujours respectés
-• Normaux facultatifs : si besoins circulation / service
-• Service [s] : conducteur s'arrête de lui-même
-• Circulation [c] : s'arrête si signal fermé
-• Automoteur [x] : sur signe d'un agent / voyageur
-• Prescrits : sur ordre du SGC
-• Accidentels : obstacle, avarie, signal d'urgence</div>
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">2.1.4 — Types d'arrêts des trains <span class="tag yellow" style="margin-left:6px">À connaître</span></h3>
+
+<div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);padding:16px;margin-bottom:12px">
+
+  <div style="font-size:12px;font-weight:600;color:var(--text);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.06em;font-family:var(--mono)">Arrêts NORMAUX — prévus dans les documents horaires</div>
+  <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:14px">
+
+    <div style="padding:8px 12px;background:var(--bg4);border-radius:6px;border-left:3px solid var(--green)">
+      <div style="font-size:12px;font-weight:600;color:var(--text);margin-bottom:2px">Réguliers <span style="color:var(--text3);font-weight:400">(dont Service <span class="tag" style="font-size:10px">S</span>)</span></div>
+      <div style="font-size:11px;color:var(--text3)">Toujours respectés (sauf si supprimés). Les arrêts réguliers imposés pour les seuls besoins du service sont dits "arrêts de service" — repérés par la lettre <strong style="color:var(--text)">S</strong> dans l'horaire.</div>
+      <div style="font-size:11px;color:var(--text2);margin-top:4px">▶ Remise en marche : le conducteur doit obtenir une <strong>autorisation de mouvement</strong></div>
+    </div>
+
+    <div style="padding:8px 12px;background:var(--bg4);border-radius:6px;border-left:3px solid var(--accent)">
+      <div style="font-size:12px;font-weight:600;color:var(--text);margin-bottom:4px">Facultatifs — respectés <em>uniquement si les besoins de la circulation ou de l'ExF le nécessitent</em></div>
+      <div style="display:flex;flex-direction:column;gap:4px">
+        <div style="font-size:11px;color:var(--text3);padding:4px 8px;background:var(--bg3);border-radius:4px">
+          <span class="tag yellow" style="font-size:10px">C</span> <strong style="color:var(--text)">Circulation</strong> — L'aiguilleur prend les mesures pour arrêter et retenir le train en fermant les signaux. Le conducteur n'observe l'arrêt [C] que si le signal lui est confirmé par fermeture ou s'il lui est imposé.
+        </div>
+        <div style="font-size:11px;color:var(--text3);padding:4px 8px;background:var(--bg3);border-radius:4px">
+          <span class="tag yellow" style="font-size:10px">S</span> <strong style="color:var(--text)">Service</strong> — Le conducteur est avisé de la nécessité de s'arrêter par radio sol-train par exemple, même si les signaux sont ouverts.
+        </div>
+        <div style="font-size:11px;color:var(--text3);padding:4px 8px;background:var(--bg3);border-radius:4px">
+          <span class="tag" style="font-size:10px">X</span> <strong style="color:var(--text)">Automoteur</strong> — Sur signe d'un agent de l'établissement ou d'un voyageur s'il y a des voyageurs à prendre, ou sur ordre de l'agent d'accompagnement si voyageurs à laisser descendre.
+        </div>
+      </div>
+      <div style="font-size:11px;color:var(--text2);margin-top:6px">▶ Remise en marche : le conducteur doit obtenir une <strong>autorisation de mouvement</strong></div>
+    </div>
+  </div>
+
+  <div style="font-size:12px;font-weight:600;color:var(--text);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.06em;font-family:var(--mono)">Autres arrêts</div>
+  <div style="display:flex;flex-direction:column;gap:6px">
+    <div style="padding:8px 12px;background:var(--bg4);border-radius:6px;border-left:3px solid var(--blue)">
+      <div style="font-size:12px;font-weight:600;color:var(--text);margin-bottom:2px">Par les signaux d'un poste</div>
+      <div style="font-size:11px;color:var(--text3)">Imposés par la signalisation. Le conducteur se conforme à la signalisation présentée ou aux prescriptions du SGC.</div>
+    </div>
+    <div style="padding:8px 12px;background:var(--bg4);border-radius:6px;border-left:3px solid var(--blue)">
+      <div style="font-size:12px;font-weight:600;color:var(--text);margin-bottom:2px">Prescrits</div>
+      <div style="font-size:11px;color:var(--text3)">Ordonnés par le SGC ou l'ExF — donnés au conducteur par écrit, téléphone ou radio. En établissement : autorisation de mouvement requise. En pleine voie : le conducteur repart de lui-même si rien ne s'y oppose.</div>
+    </div>
+    <div style="padding:8px 12px;background:var(--bg4);border-radius:6px;border-left:3px solid var(--red)">
+      <div style="font-size:12px;font-weight:600;color:var(--text);margin-bottom:2px">Accidentels</div>
+      <div style="font-size:11px;color:var(--text3)">Arrêts autres que normaux, prescrits ou par signaux d'un poste. Ex : arrêt à la suite d'un incident, ou en pleine voie par un signal d'arrêt à main.</div>
+      <div style="font-size:11px;color:var(--text2);margin-top:4px">▶ Remise en marche : le conducteur repart de lui-même, <strong>si rien ne s'y oppose et si le conducteur n'a rien touché dans son train</strong>, en appliquant les dispositions réglementaires correspondantes.</div>
+    </div>
+  </div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">SLD — Signal Lumineux de Départ <span class="tag yellow" style="margin-left:6px">À connaître</span></div>
+  <div class="def-text">Feu blanc et vert — signal spécifique pour les reprises d'arrêts en gare. Autorise le conducteur à procéder au départ. Spécifique aux lignes équipées.</div>
+</div>
+
+<div class="rule-box">
+  <strong>Règle générale — remises en marche :</strong><br>
+  Quasiment toutes les remises en marche se font avec l'<strong>autorisation de l'AC ou de l'aiguilleur</strong> au conducteur.<br>
+  Exception : l'arrêt accidentel — si le conducteur n'a rien touché dans son train, il peut repartir de lui-même après son arrêt, si rien ne s'y oppose.
+</div>
+
+<div class="rule-box">
+  <strong>FAMAS — uniquement pour les signaux :</strong><br>
+  Lors d'un incident, on ne ferme que les <strong>signaux</strong> (pas les aiguilles). Les <strong>DR</strong> (Dispositifs de Retenue) ne se mettent que sur les leviers de <strong>signaux</strong>, pas sur les leviers d'aiguilles.
 </div>
 `,
 
@@ -1639,16 +1702,129 @@ En clair : dès qu'une IS est sous la responsabilité d'un agent de circulation 
 
 traction: `
 <h2 class="theme-heading">Traction électrique</h2>
-<div class="theme-ref">AMV600 · AMV601 · DC8043 · Consigne Bleue · RRG0474 · OP847</div>
+<div class="theme-ref">AMV600 · AMV601 · DC8043 · Consigne Bleue · RRG0474 · OP847 · SECUFER</div>
 
-<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">AMV600 — Présentation</h3>
-<div class="def-block">
-  <div class="def-term">Organisation de la caténaire</div>
-  <div class="def-text">La caténaire est découpée en : Secteur → Sous-Secteur → Sections élémentaires (S.él)</div>
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Définitions clés — Traction électrique</h3>
+<div class="def-block important">
+  <div class="def-term">RSS — Régulateur Sous-Stations</div>
+  <div class="def-text">Agent chargé, à partir d'un central sous-stations, de l'exploitation des installations de traction électrique de sa zone d'action. Repéré par des <strong>flèches rouges</strong> sur les poteaux caténaires (= téléphone d'alarme TA).</div>
 </div>
 <div class="def-block important">
-  <div class="def-term">Section élémentaire (S.él)</div>
-  <div class="def-text">Plus petit élément de caténaire pouvant être isolé des éléments encadrants par un ou plusieurs appareils d'interruption.</div>
+  <div class="def-term">Section Élémentaire (SEL)</div>
+  <div class="def-text">Plus petit élément de caténaire pouvant être isolé des éléments encadrants par un ou plusieurs appareils d'interruption. Découpe le réseau électrique sur les schémas et dans la réalité.</div>
+</div>
+<div class="def-block">
+  <div class="def-term">Secteur</div>
+  <div class="def-text">Ensemble des installations alimentées normalement par un ou plusieurs disjoncteurs.</div>
+</div>
+<div class="def-block">
+  <div class="def-term">Section commutable</div>
+  <div class="def-text">Partie de caténaire pouvant être alimentée sous des tensions différentes.</div>
+</div>
+<div class="def-block">
+  <div class="def-term">Section de séparation</div>
+  <div class="def-text">Partie de caténaire comportant, à chaque extrémité, un sectionnement destiné à éviter le pontage par les pantographes des caténaires situées de part et d'autre.</div>
+</div>
+<div class="def-block">
+  <div class="def-term">Sectionneur</div>
+  <div class="def-text">Appareil d'interruption destiné à ouvrir et fermer volontairement un circuit. Les sectionneurs ne peuvent être ouverts qu'à vide (absence de tout captage d'énergie par pantographe ou installation annexe). Certains peuvent s'ouvrir automatiquement.</div>
+</div>
+
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">DISC — 4 types d'appareils d'interruption <span class="tag yellow" style="margin-left:6px">3 premiers à connaître</span></h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>Lettre</th><th>Appareil</th><th>À connaître</th></tr></thead>
+  <tbody>
+    <tr><td><strong style="color:var(--accent)">D</strong></td><td>Disjoncteur</td><td><span class="tag green">✓ À connaître</span></td></tr>
+    <tr><td><strong style="color:var(--accent)">I</strong></td><td>Interrupteur</td><td><span class="tag green">✓ À connaître</span></td></tr>
+    <tr><td><strong style="color:var(--accent)">S</strong></td><td>Sectionneur</td><td><span class="tag green">✓ À connaître</span></td></tr>
+    <tr><td>C</td><td>Commutateur</td><td><span class="tag">Culture G</span></td></tr>
+  </tbody>
+</table></div>
+<div class="rule-box">
+  <strong>Tous les appareils d'interruption sont sous cadenas.</strong><br>
+  Passage du pantographe rendu possible par : le <strong>sectionnement à lame d'air</strong> et l'<strong>isolateur de section</strong>.<br>
+  <strong>Caténaires primaires</strong> (trait épais, 1-2 chiffres) = comme les VP → gérés par le <strong>RSS</strong><br>
+  <strong>Caténaires secondaires</strong> (trait fin, +2 chiffres) = comme les VS → gérés par l'<strong>agent E</strong>
+</div>
+
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Documents obligatoires — Incidents électriques</h3>
+<div class="rule-box" style="border-left-color:var(--blue)">
+  En cas d'incident électrique, deux documents sont <strong>obligatoires</strong> à ouvrir :<br>
+  • <strong>Consigne Bleue</strong> — décrit les installations de traction électrique du poste<br>
+  • <strong>DC8043</strong> — procédures de protection C et de traitement des incidents
+</div>
+
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">DSA et dispositifs d'attention</h3>
+<div class="def-block important">
+  <div class="def-term">DSA — Dispositif Spécial d'Attention</div>
+  <div class="def-text">Dispositif placé sur un levier pour attirer l'attention de l'aiguilleur sur une situation particulière nécessitant une vérification avant manœuvre. Utilisé notamment lors de la Protection C.</div>
+</div>
+<div class="def-block">
+  <div class="def-term">DATZD — Dispositif d'Annonce de la Traversée de Zone Dangereuse</div>
+  <div class="def-text">Dispositif permettant d'informer automatiquement les agents de l'approche d'un train lorsqu'ils se trouvent en zone dangereuse.</div>
+</div>
+<div class="def-block">
+  <div class="def-term">DAELZD — Dispositif d'Alarme Électronique de Libération de la Zone Dangereuse</div>
+  <div class="def-text">Variante du DATZD avec alerte électronique.</div>
+</div>
+
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">SECUFER — Règles de sécurité électrique</h3>
+
+<div class="def-block important">
+  <div class="def-term">4.1 — Prescriptions communes à toutes les installations électriques</div>
+  <div class="def-text">Tout conducteur électrique nu ou isolé et toute installation électrique doivent être considérés comme étant sous tension, sauf assurance du contraire.<br>
+  En présence d'un conducteur nu ou isolé tombé à terre (ou affaissé), il faut observer les prescriptions suivantes : s'écarter sans précipitation du conducteur, prendre des mesures vis-à-vis des circulations, empêcher d'autres personnes de s'approcher, aviser rapidement le responsable de l'installation, aviser ou faire aviser rapidement le responsable de la coupure.</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">4.6 — Interdictions (3 familles)</div>
+  <div class="def-text"><strong>Relatives aux comportements :</strong> interdit d'approcher les supports avec phénomènes anormaux (grésillements, étincelles), de pénétrer dans les locaux électriques, d'intervenir sur une installation électrique, de monter aux poteaux sans autorisation, d'entreprendre des travaux en cas d'orage, de laisser circuler des engins à proximité sans respecter les distances.<br><br>
+  <strong>Relatives aux éléments (Feu et Eau) :</strong><br>
+  → Feu : interdit d'allumer du feu au voisinage de lignes électriques aériennes, de s'approcher d'un foyer d'incendie au voisinage de lignes électriques aériennes tant qu'elles n'ont pas été mises hors tension.<br>
+  → Eau : interdit de diriger des lances à jet sur les installations électriques, de jeter de l'eau ou linges mouillés sur des appareils électriques, d'utiliser des extincteurs ou lances non autorisés sur courant électrique.<br><br>
+  <strong>Relatives aux objets manipulés :</strong> interdit de projeter des objets métalliques sur des installations électriques, d'utiliser des objets métalliques (mètres, règles, échelles) au voisinage de conducteurs nus ou pièces nues sous tension.</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">2.1 — Hauteur des fils de contact et repérage <span class="tag yellow" style="margin-left:6px">Panneau à connaître</span></div>
+  <div class="def-text">Les fils de contact des caténaires sont placés en général à une hauteur <strong>supérieure ou égale à 5 mètres</strong> par rapport au plan de roulement.<br>
+  Cette hauteur peut être réduite à moins de 5 m au droit de certains ouvrages d'art — ces zones sont repérées par une bande <strong style="color:#3B82F6">BLEUE</strong> avec liserés blancs (BLANC / BLEU / BLANC).<br>
+  Dans les tunnels et souterrains : considérer le fil comme étant à hauteur inférieure à 5 m même sans repérage.</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">2.2 — Zones d'environnement au voisinage des conducteurs nus</div>
+  <div class="def-text">Zone 0 : à l'intérieur des emprises ferroviaires — accessible à tous les agents<br>
+  Zone 1 : accessible aux agents avertis des risques électriques et formés aux prescriptions<br>
+  Zone 2 : accessible aux agents habilités "caténaire C0" ou sous surveillance d'un agent C0<br>
+  Zone 3 : accessible uniquement aux agents de la spécialité "caténaire"<br><br>
+  Distance depuis le conducteur nu : Zone 3 = 0 à 1m · Zone 2 = 1 à 2m · Zone 1 = 2 à 3m · Zone 0 = >3m</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">3.1 — Accouplement / désaccouplement de la ligne de train</div>
+  <div class="def-text">Toute opération sur la ligne de train n'est autorisée que si cette dernière est <strong>privée de tension</strong> et que l'agent a obtenu l'assurance de cette coupure.<br>
+  L'assurance est obtenue : soit en recevant directement les clés de chauffage, soit en recevant l'information de l'agent responsable, soit en avisant et en recevant confirmation du mécanicien.</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">Coupure d'urgence (Chapitre IV SECUFER)</div>
+  <div class="def-text">La coupure d'urgence, c'est-à-dire la suppression d'alimentation par les moyens les plus rapides, permet d'écarter le danger ou de réduire le risque d'accident, notamment dans les cas ci-après : sauvegarde de personne en danger, lutte contre l'incendie au voisinage de la caténaire, obstacle en contact avec une installation sous tension risquant d'entrer en contact avec la caténaire.<br><br>
+  Tout agent qui constate ou est avisé d'une coupure d'urgence ordonne verbalement ou fait généralement le circuit d'alarme. Les téléphones d'alarme (flèches rouges sur les poteaux caténaires) indiquent la direction du téléphone le plus proche.</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">PAS — Protéger · Alerter · Secourir</div>
+  <div class="def-text">En cas d'accident électrique, il faut :<br>
+  <strong>Protéger</strong> : dégager l'accidenté, c'est-à-dire le soustraire au contact de tout conducteur ou pièce sous tension. Toute intervention imprudente risque d'accidenter le sauveteur.<br>
+  <strong>Alerter</strong> : mettre en œuvre d'urgence la réanimation.<br>
+  <strong>Secourir</strong> : faire prévenir les secours spécialisés.</div>
+</div>
+
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">AMV600 — Organisation de la caténaire</h3>
+<div class="def-block">
+  <div class="def-term">Organisation de la caténaire</div>
+  <div class="def-text">La caténaire est découpée en : Secteur → Sous-Secteur → Sections élémentaires (SEL)</div>
 </div>
 <div class="def-block">
   <div class="def-term">Consigne Bleue — Rôle</div>
@@ -1673,23 +1849,6 @@ traction: `
   <li><span class="num">6</span>Vérifier absence de circulation électrique entre aiguille et 1er isolateur</li>
   <li><span class="num">7</span>AUTOCONTRÔLE : ferme et rouvre</li>
   <li><span class="num">8</span>Aviser Agent E "Protection C assurée dans la S.él XXX" → RDTE col. 7&8</li>
-</ul>
-
-<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Manœuvre d'un sectionneur (Fiche 32)</h3>
-<ul class="numbered-list">
-  <li><span class="num">1</span>Noter ordre Agent E → RDTE col. 1 à 4</li>
-  <li><span class="num">2</span>Localiser le sectionneur → Consigne Bleue Art. 5</li>
-  <li><span class="num">3</span>Noter le N° sectionneur (post-it), prévenir régulateur et AC, fermer le poste</li>
-  <li><span class="num">4</span>Prendre EPI (gants, casque, gilet orange, chaussures de sécurité) + clé N°X + écriteau</li>
-  <li><span class="num">5</span>Identifier sectionneur sur schéma ITE & schéma des pistes et itinéraires</li>
-  <li><span class="num">6</span>Sur place : vérifier position actuelle du couteau (doit être fermé). L'ordre est-il réalisable ?</li>
-  <li><span class="num">7</span>Équiper EPI (dont gants) + monter sur caillebotis</li>
-  <li><span class="num">8</span>Retirer cadenas + goupille</li>
-  <li><span class="num">9</span>Manœuvrer le levier d'un geste franc et rapide + remettre goupille</li>
-  <li><span class="num">10</span>Vérifier nouvelle position : obéissance = ouverture du couteau</li>
-  <li><span class="num">11</span>Insérer écriteau « Condamné, défense de manœuvrer » + cadenas</li>
-  <li><span class="num">12</span>AUTOCONTRÔLE</li>
-  <li><span class="num">13</span>Retourner au poste + Aviser Agent E → RDTE "sectionneur XXX ouvert et condamné"</li>
 </ul>
 `,
 
@@ -3036,7 +3195,7 @@ function renderHome(c) {
   const qc = QUIZ.length;
   c.innerHTML = `
 <div class="section-heading">Bienvenue 👋</div>
-<div class="section-sub">Application de révision AMV — SECUFER · v4.10 — 28 mai 2026 · ${THEMES.length} thèmes</div>
+<div class="section-sub">Application de révision AMV — SECUFER · v4.11 — 28 mai 2026 · ${THEMES.length} thèmes</div>
 
 <!-- SCHEMA EXAMEN AMV -->
 <div class="card" style="border-color:rgba(96,165,250,0.3);background:rgba(96,165,250,0.04);margin-bottom:16px">
@@ -3114,6 +3273,8 @@ function renderHome(c) {
       ['15','RAT — définition et utilité','formation','Par cœur'],
       ['16','4 essais de frein — bien différencier','formation','Bien différencier'],
       ['17','Définition Cantonnement','cantonnement','Par cœur'],
+      ['18','PRR — Point de Reconnaissance et de Remise en marche','cantonnement','Par cœur'],
+      ['19','ACPP — définition à confirmer par formateur','aiguillage','À connaître'],
     ].map(([n,titre,theme,tag]) => `
     <div style="display:flex;align-items:center;gap:10px;padding:7px 12px;background:var(--bg3);border-radius:var(--radius);flex-wrap:wrap">
       <span style="font-family:var(--mono);font-size:11px;color:var(--accent);min-width:24px">${n}.</span>
