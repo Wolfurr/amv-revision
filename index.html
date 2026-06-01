@@ -1253,15 +1253,13 @@ aiguillage: `
   <div class="def-text">C'est emprunter une aiguille du côté de son talon alors qu'elle n'assure pas la continuité de la voie.</div>
 </div>
 
-<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Familles d'appareils de voie</h3>
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Les 3 familles d'appareils de voie</h3>
 <div class="table-wrap"><table>
   <thead><tr><th>Famille</th><th>Rôle</th><th>Détails</th></tr></thead>
   <tbody>
-    <tr><td><strong>Aiguilles simples</strong></td><td>Diriger et protéger</td><td>Pointe : lame mobile / Talon : côté fixe. Peut être empruntée pointe ou talon.</td></tr>
-    <tr><td><strong>Traversées jonctions simples (TJS)</strong></td><td>Relier deux voies parallèles</td><td>Combinaison d'une traversée droite et d'une aiguille</td></tr>
-    <tr><td><strong>Traversées jonctions doubles (TJD)</strong></td><td>Relier deux voies dans les deux sens</td><td>Combinaison de 2 aiguilles et 1 traversée — permet 4 mouvements</td></tr>
-    <tr><td><strong>Traversées simples (TS)</strong></td><td>Croiser deux voies</td><td>Pas d'aiguille — croisement fixe</td></tr>
-    <tr><td><strong>Taquets</strong></td><td>Protéger contre les dérives</td><td>Dérailleur (fait dérailler) / Enrayeur (fait ralentir) / Classique (bloque)</td></tr>
+    <tr><td><strong>Aiguilles</strong></td><td>Diriger et protéger</td><td>Pointe : lame mobile / Talon : côté fixe. Peut être empruntée pointe ou talon.</td></tr>
+    <tr><td><strong>Taquets</strong></td><td>Protéger contre les dérives</td><td>Taquet d'arrêt (bloque) / Taquet dérailleur (fait dérailler) / Taquet enrayeur (fait ralentir)</td></tr>
+    <tr><td><strong>Verrous</strong></td><td>Permettre le passage en pointe à plus de 40 km/h</td><td>Dépendant (lié à l'aiguille) ou Indépendant (levier séparé). Lancé = en action / Retiré = pas en action.</td></tr>
   </tbody>
 </table></div>
 
@@ -1313,15 +1311,19 @@ aiguillage: `
 • <strong>Contrôle de position lumineuse</strong> : sur le TCO (Tableau de Contrôle Optique) — indique visuellement la position des aiguilles au poste</div>
 </div>
 
-<div class="def-block">
-  <div class="def-term">ACPP — à compléter</div>
-  <div class="def-text"><span style="color:var(--text3);font-style:italic">Définition à fournir par le formateur — notion importante mentionnée en cours d'aiguillage.</span></div>
+<div class="def-block important">
+  <div class="def-term">ACPP — 4 conditions avant l'ouverture d'un signal <span class="tag yellow" style="margin-left:6px">À connaître</span></div>
+  <div class="def-text">Avant d'ouvrir un signal de protection, l'aiguilleur doit vérifier les 4 conditions ACPP :<br><br>
+  <strong style="color:var(--accent)">A</strong> — <strong>Appareil(s) de Voie convenablement Disposé(s)</strong><br>
+  <strong style="color:var(--accent)">C</strong> — <strong>Croisement(s) Dégagé(s)</strong><br>
+  <strong style="color:var(--accent)">P</strong> — <strong>Protection du Parcours Assurée</strong><br>
+  <strong style="color:var(--accent)">P</strong> — <strong>Partie(s) de Voie à Parcourir Libre</strong></div>
 </div>
 
 
 <div class="def-block">
   <div class="def-term">Levier immobilisé</div>
-  <div class="def-text">Lorsqu'un problème survient sur une installation de sécurité empêchant la manœuvre d'un levier, on dit que le levier est <strong>immobilisé</strong>. Appliquer alors la méthode RITA (Risque immédiat → Identifier → Traiter → Aviser/Annoter).</div>
+  <div class="def-text">Lorsqu'un problème survient sur une installation de sécurité empêchant la manœuvre d'un levier, on dit que le levier est <strong>immobilisé</strong>.</div>
 </div>
 
 <h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">AMV204 — Consigne Rose (DC3858)</h3>
@@ -1634,16 +1636,6 @@ Libération : ZAP libre (blanc) OU fermeture automatique du signal après passag
 </div>
 
 <h3 style="font-size:15px;font-weight:500;margin:24px 0 10px;color:var(--text2)">AMV250 — Dérangements des IS (DC3858 + Consigne Rose + CDIS)</h3>
-<div class="def-block important">
-  <div class="def-term">Méthode RITA — traitement d'un dérangement IS</div>
-  <div class="def-text"><strong>R</strong> — Risque immédiat ? → Prendre des mesures de sécurité : ARRÊTER ET RETENIR la circulation
-<strong>I</strong> — Identifier la nature du dérangement et ses conséquences :
-  • Problème levier aiguille → manœuvrer à blanc (envers + endroit avec PRR Rapide)
-  • Problème dispositif de contrôle → Art 105 consigne rose (peut-on changer l'ampoule ?)
-  • Si toujours pas résolu → Art 205.3 DC3858 : aller vérifier sur le terrain (avec EPI, schéma pistes/itinéraires, prévenir régulateur, fermer le poste)
-<strong>T</strong> — Traiter le dérangement : DC3858 Chap. 4 (fait en vert = Aiguilleur)
-<strong>A</strong> — Aviser verbalement l'AC, le COGC + Annoter le CDIS pour l'AMI</div>
-</div>
 
 <div class="def-block important">
   <div class="def-term">3 types de dérangements signaux</div>
@@ -1751,74 +1743,8 @@ traction: `
 <div class="rule-box" style="border-left-color:var(--blue)">
   En cas d'incident électrique, deux documents sont <strong>obligatoires</strong> à ouvrir :<br>
   • <strong>Consigne Bleue</strong> — décrit les installations de traction électrique du poste<br>
-  • <strong>DC8043</strong> — procédures de protection C et de traitement des incidents
-</div>
-
-<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">DSA et dispositifs d'attention</h3>
-<div class="def-block important">
-  <div class="def-term">DSA — Dispositif Spécial d'Attention</div>
-  <div class="def-text">Dispositif placé sur un levier pour attirer l'attention de l'aiguilleur sur une situation particulière nécessitant une vérification avant manœuvre. Utilisé notamment lors de la Protection C.</div>
-</div>
-<div class="def-block">
-  <div class="def-term">DATZD — Dispositif d'Annonce de la Traversée de Zone Dangereuse</div>
-  <div class="def-text">Dispositif permettant d'informer automatiquement les agents de l'approche d'un train lorsqu'ils se trouvent en zone dangereuse.</div>
-</div>
-<div class="def-block">
-  <div class="def-term">DAELZD — Dispositif d'Alarme Électronique de Libération de la Zone Dangereuse</div>
-  <div class="def-text">Variante du DATZD avec alerte électronique.</div>
-</div>
-
-<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">SECUFER — Règles de sécurité électrique</h3>
-
-<div class="def-block important">
-  <div class="def-term">4.1 — Prescriptions communes à toutes les installations électriques</div>
-  <div class="def-text">Tout conducteur électrique nu ou isolé et toute installation électrique doivent être considérés comme étant sous tension, sauf assurance du contraire.<br>
-  En présence d'un conducteur nu ou isolé tombé à terre (ou affaissé), il faut observer les prescriptions suivantes : s'écarter sans précipitation du conducteur, prendre des mesures vis-à-vis des circulations, empêcher d'autres personnes de s'approcher, aviser rapidement le responsable de l'installation, aviser ou faire aviser rapidement le responsable de la coupure.</div>
-</div>
-
-<div class="def-block important">
-  <div class="def-term">4.6 — Interdictions (3 familles)</div>
-  <div class="def-text"><strong>Relatives aux comportements :</strong> interdit d'approcher les supports avec phénomènes anormaux (grésillements, étincelles), de pénétrer dans les locaux électriques, d'intervenir sur une installation électrique, de monter aux poteaux sans autorisation, d'entreprendre des travaux en cas d'orage, de laisser circuler des engins à proximité sans respecter les distances.<br><br>
-  <strong>Relatives aux éléments (Feu et Eau) :</strong><br>
-  → Feu : interdit d'allumer du feu au voisinage de lignes électriques aériennes, de s'approcher d'un foyer d'incendie au voisinage de lignes électriques aériennes tant qu'elles n'ont pas été mises hors tension.<br>
-  → Eau : interdit de diriger des lances à jet sur les installations électriques, de jeter de l'eau ou linges mouillés sur des appareils électriques, d'utiliser des extincteurs ou lances non autorisés sur courant électrique.<br><br>
-  <strong>Relatives aux objets manipulés :</strong> interdit de projeter des objets métalliques sur des installations électriques, d'utiliser des objets métalliques (mètres, règles, échelles) au voisinage de conducteurs nus ou pièces nues sous tension.</div>
-</div>
-
-<div class="def-block important">
-  <div class="def-term">2.1 — Hauteur des fils de contact et repérage <span class="tag yellow" style="margin-left:6px">Panneau à connaître</span></div>
-  <div class="def-text">Les fils de contact des caténaires sont placés en général à une hauteur <strong>supérieure ou égale à 5 mètres</strong> par rapport au plan de roulement.<br>
-  Cette hauteur peut être réduite à moins de 5 m au droit de certains ouvrages d'art — ces zones sont repérées par une bande <strong style="color:#3B82F6">BLEUE</strong> avec liserés blancs (BLANC / BLEU / BLANC).<br>
-  Dans les tunnels et souterrains : considérer le fil comme étant à hauteur inférieure à 5 m même sans repérage.</div>
-</div>
-
-<div class="def-block important">
-  <div class="def-term">2.2 — Zones d'environnement au voisinage des conducteurs nus</div>
-  <div class="def-text">Zone 0 : à l'intérieur des emprises ferroviaires — accessible à tous les agents<br>
-  Zone 1 : accessible aux agents avertis des risques électriques et formés aux prescriptions<br>
-  Zone 2 : accessible aux agents habilités "caténaire C0" ou sous surveillance d'un agent C0<br>
-  Zone 3 : accessible uniquement aux agents de la spécialité "caténaire"<br><br>
-  Distance depuis le conducteur nu : Zone 3 = 0 à 1m · Zone 2 = 1 à 2m · Zone 1 = 2 à 3m · Zone 0 = >3m</div>
-</div>
-
-<div class="def-block important">
-  <div class="def-term">3.1 — Accouplement / désaccouplement de la ligne de train</div>
-  <div class="def-text">Toute opération sur la ligne de train n'est autorisée que si cette dernière est <strong>privée de tension</strong> et que l'agent a obtenu l'assurance de cette coupure.<br>
-  L'assurance est obtenue : soit en recevant directement les clés de chauffage, soit en recevant l'information de l'agent responsable, soit en avisant et en recevant confirmation du mécanicien.</div>
-</div>
-
-<div class="def-block important">
-  <div class="def-term">Coupure d'urgence (Chapitre IV SECUFER)</div>
-  <div class="def-text">La coupure d'urgence, c'est-à-dire la suppression d'alimentation par les moyens les plus rapides, permet d'écarter le danger ou de réduire le risque d'accident, notamment dans les cas ci-après : sauvegarde de personne en danger, lutte contre l'incendie au voisinage de la caténaire, obstacle en contact avec une installation sous tension risquant d'entrer en contact avec la caténaire.<br><br>
-  Tout agent qui constate ou est avisé d'une coupure d'urgence ordonne verbalement ou fait généralement le circuit d'alarme. Les téléphones d'alarme (flèches rouges sur les poteaux caténaires) indiquent la direction du téléphone le plus proche.</div>
-</div>
-
-<div class="def-block important">
-  <div class="def-term">PAS — Protéger · Alerter · Secourir</div>
-  <div class="def-text">En cas d'accident électrique, il faut :<br>
-  <strong>Protéger</strong> : dégager l'accidenté, c'est-à-dire le soustraire au contact de tout conducteur ou pièce sous tension. Toute intervention imprudente risque d'accidenter le sauveteur.<br>
-  <strong>Alerter</strong> : mettre en œuvre d'urgence la réanimation.<br>
-  <strong>Secourir</strong> : faire prévenir les secours spécialisés.</div>
+  • <strong>DC8043</strong> — procédures de protection C et de traitement des incidents<br><br>
+  <span style="color:var(--text3)">Les règles de sécurité SECUFER (4.1, 4.6, 2.1, 2.2, 3.1, coupure d'urgence, PAS) sont dans le thème <strong>Risques traction électrique</strong>.</span>
 </div>
 
 <h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">AMV600 — Organisation de la caténaire</h3>
@@ -1875,15 +1801,6 @@ travaux: `
 </div>
 <div class="rule-box">
   <strong>Entente préalable :</strong> Concertation entre RPTx et AC, au minimum 30 minutes avant le début de la planche-travaux.
-</div>
-
-<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">AMV250 — Dérangements IS (DC3858 + Consigne Rose + CDIS)</h3>
-<div class="def-block important">
-  <div class="def-term">Méthode globale RITA</div>
-  <div class="def-text">Risque immédiat ? → Prendre mesures de sécurité (arrêter et retenir)
-Identifier la nature du dérangement et ses conséquences
-Traiter le dérangement (DC3858 Chap. 4)
-Aviser AC, COGC et annoter le CDIS pour l'AMI</div>
 </div>
 
 <h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">AMV216 — Catégories A/B/C (OP565)</h3>
@@ -2063,31 +1980,112 @@ zd: `
 `,
 
 elect: `
-<h2 class="theme-heading">Risques traction électrique</h2>
-<div class="theme-ref">AMV803 · OP491</div>
+<h2 class="theme-heading">Risques traction électrique — SECUFER</h2>
+<div class="theme-ref">AMV803 · OP491 · SECUFER PS9/CG</div>
+
+<div class="rule-box" style="border-left-color:var(--red)">
+  <strong>⚠️ Principe général Art. 4.1 :</strong> Tout conducteur électrique nu ou isolé et toute installation électrique doivent être considérés comme étant <strong>sous tension</strong>, sauf assurance du contraire.
+</div>
+
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">4.6 — Les 3 familles d'interdictions <span class="tag yellow" style="margin-left:6px">Par cœur</span></h3>
+
+<div class="def-block important">
+  <div class="def-term">1. Interdictions relatives aux COMPORTEMENTS</div>
+  <div class="def-text">Il est interdit :<br>
+• D'approcher des supports ou ouvrages sur lesquels se produisent des <strong>phénomènes anormaux</strong> (grésillements, étincelles...)<br>
+• De pénétrer dans les locaux ou enceintes électriques d'un établissement (sous-station, poste de transformation...) — sauf agents autorisés<br>
+• D'intervenir sur toute installation électrique, machine, appareil — d'enlever ou déplacer tout dispositif mettant hors d'atteinte les installations électriques ou interdisant la manœuvre des appareils de coupure<br>
+• De monter aux poteaux supportant les conducteurs, à moins d'être autorisé<br>
+• D'entreprendre ou poursuivre des travaux en cas d'orage (apparition d'éclairs, tonnerre)<br>
+• De laisser circuler des engins (terrassement, levage...) à proximité des ouvrages électriques sans respecter les distances de voisinage</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">2. Interdictions relatives aux ÉLÉMENTS (Feu et Eau)</div>
+  <div class="def-text"><strong>🔥 FEU — il est interdit :</strong><br>
+• D'allumer du feu au voisinage immédiat de lignes électriques aériennes ou, sur ou à proximité des caniveaux et chambres de tirage<br>
+• De s'approcher d'un foyer d'incendie situé au voisinage immédiat de lignes électriques aériennes tant que celles-ci n'ont pas été mises hors tension (risque d'amorçage)<br><br>
+<strong>💧 EAU — il est interdit :</strong><br>
+• De diriger sur les installations ou appareils électriques, ou d'utiliser à leur proximité, des lances à jet (bâton ou non)<br>
+• De jeter de l'eau ou des linges mouillés sur des installations ou appareils électriques<br>
+• D'utiliser des extincteurs ou des lances non autorisés sur courant électrique pour combattre un incendie<br>
+• D'uriner sur les installations électriques et leurs supports (caténaire, troisième rail, rails, boîtes de raccordements...)</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">3. Interdictions relatives aux OBJETS MANIPULÉS</div>
+  <div class="def-text">Il est interdit :<br>
+• De projeter des objets, notamment métalliques, sur des installations ou équipements électriques<br>
+• D'utiliser des objets métalliques (mètres, décamètres, règles et échelles) au voisinage d'installations électriques comportant des conducteurs nus ou des pièces nues sous tension</div>
+</div>
+
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">2.1 — Hauteur des fils de contact et repérage <span class="tag yellow" style="margin-left:6px">Panneau à connaître</span></h3>
+<div class="def-block important">
+  <div class="def-term">Hauteur minimale des fils de contact</div>
+  <div class="def-text">Les fils de contact des caténaires sont placés en général à une hauteur <strong>supérieure ou égale à 5 mètres</strong> par rapport au plan de roulement.<br><br>
+  Cette hauteur peut être réduite à moins de 5 m au droit de certains ouvrages d'art — ces zones sont repérées sur ou au droit des supports par une <strong style="color:#3B82F6">bande BLEUE avec liserés BLANCS</strong> :<br>
+  <div style="display:flex;flex-direction:column;width:120px;margin:8px 0;border:1px solid var(--border);border-radius:4px;overflow:hidden;font-size:12px;text-align:center">
+    <div style="background:rgba(255,255,255,0.15);padding:3px;color:var(--text)">BLANC</div>
+    <div style="background:#2563EB;padding:3px;color:white;font-weight:600">BLEU</div>
+    <div style="background:rgba(255,255,255,0.15);padding:3px;color:var(--text)">BLANC</div>
+  </div>
+  Dans les tunnels, souterrains, tranchées couvertes : fil de contact à considérer comme inférieur à 5 m même en l'absence de repérage.</div>
+</div>
+
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">2.2 — Zones d'environnement au voisinage des conducteurs nus</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>Zone</th><th>Distance</th><th>Accès</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Zone 0</strong></td><td>> 3 m</td><td>Accessible à tous les agents des emprises ferroviaires</td></tr>
+    <tr><td><strong>Zone 1</strong></td><td>2 à 3 m</td><td>Agents avertis des risques électriques et formés aux prescriptions de sécurité</td></tr>
+    <tr><td><strong>Zone 2</strong></td><td>1 à 2 m</td><td>Agents habilités "caténaire C0" ou sous surveillance d'un agent habilité C0</td></tr>
+    <tr><td><strong>Zone 3</strong></td><td>0 à 1 m</td><td>Agents de la spécialité "caténaire" uniquement</td></tr>
+  </tbody>
+</table></div>
+
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">3.1 — Accouplement / désaccouplement de la ligne de train</h3>
+<div class="def-block important">
+  <div class="def-term">Règle fondamentale</div>
+  <div class="def-text">Toute opération sur la ligne de train n'est autorisée que si cette dernière est <strong>privée de tension</strong> et que l'agent concerné en a obtenu l'assurance.<br><br>
+L'assurance est obtenue : soit en recevant directement les clés de chauffage, soit en recevant l'information de l'agent responsable, soit en avisant et recevant confirmation du mécanicien.</div>
+</div>
+
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Coupure d'urgence (Chapitre IV SECUFER)</h3>
+<div class="def-block important">
+  <div class="def-term">Coupure d'urgence</div>
+  <div class="def-text">Suppression d'alimentation par les moyens les plus rapides pour écarter le danger ou réduire le risque d'accident, notamment dans les cas :<br>
+• Sauvegarde d'une personne en danger<br>
+• Lutte contre l'incendie au voisinage de la caténaire<br>
+• Obstacle en contact avec une installation sous tension risquant d'entrer en contact avec la caténaire<br><br>
+Tout agent qui constate ou est avisé d'une coupure d'urgence fait généralement le <strong>circuit d'alarme</strong>. Les <strong>flèches rouges sur les poteaux caténaires</strong> indiquent la direction du téléphone d'alarme (TA) le plus proche → contacter le RSS.</div>
+</div>
+
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">PAS — En cas d'accident électrique <span class="tag yellow" style="margin-left:6px">Par cœur</span></h3>
+<div style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap">
+  <div style="flex:1;min-width:140px;background:var(--red-bg);border:1px solid var(--red);border-radius:6px;padding:10px;text-align:center">
+    <div style="font-family:var(--mono);font-size:20px;font-weight:700;color:var(--red);margin-bottom:4px">P</div>
+    <div style="font-size:12px;font-weight:600;color:var(--text);margin-bottom:3px">Protéger</div>
+    <div style="font-size:11px;color:var(--text3)">Dégager l'accidenté — le soustraire au contact de tout conducteur ou pièce sous tension. Toute intervention imprudente risque d'accidenter le sauveteur.</div>
+  </div>
+  <div style="flex:1;min-width:140px;background:rgba(230,140,20,0.1);border:1px solid #e8a020;border-radius:6px;padding:10px;text-align:center">
+    <div style="font-family:var(--mono);font-size:20px;font-weight:700;color:#e8a020;margin-bottom:4px">A</div>
+    <div style="font-size:12px;font-weight:600;color:var(--text);margin-bottom:3px">Alerter</div>
+    <div style="font-size:11px;color:var(--text3)">Faire prévenir les secours spécialisés.</div>
+  </div>
+  <div style="flex:1;min-width:140px;background:var(--green-bg);border:1px solid var(--green);border-radius:6px;padding:10px;text-align:center">
+    <div style="font-family:var(--mono);font-size:20px;font-weight:700;color:var(--green);margin-bottom:4px">S</div>
+    <div style="font-size:12px;font-weight:600;color:var(--text);margin-bottom:3px">Secourir</div>
+    <div style="font-size:11px;color:var(--text3)">Mettre en œuvre d'urgence la réanimation.</div>
+  </div>
+</div>
 
 <h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Installations concernées (Art. 2)</h3>
 <div class="def-block">
-  <div class="def-text">• Installations de traction électrique (caténaires, appareils d'interruption, feeders, circuit de retour, 3ème rail...)
-• Installations de chauffage électrique et de conditionnement des trains (ligne de train)
-• Équipements électriques du matériel roulant (compartiments moteurs, organes de liaison entre véhicules)
-• Installations de signalisation et de télécommunication (circuits extérieurs, armoires, guérites...)
+  <div class="def-text">• Installations de traction électrique (caténaires, appareils d'interruption, feeders, circuit de retour, 3ème rail...)<br>
+• Installations de chauffage électrique et de conditionnement des trains (ligne de train)<br>
+• Équipements électriques du matériel roulant (compartiments moteurs, organes de liaison entre véhicules)<br>
+• Installations de signalisation et de télécommunication (circuits extérieurs, armoires, guérites...)<br>
 • Ouvrages électriques (lignes et câbles HT entre sous-station et poste de traction)</div>
-</div>
-
-<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">3 familles d'interdictions (Art. 4.6)</h3>
-<div class="def-block important">
-  <div class="def-term">COMPORTEMENT</div>
-  <div class="def-text">Interdit d'approcher des supports anormaux · Pénétrer dans les locaux électriques · Intervenir sur toute installation électrique · Monter aux poteaux supportant des conducteurs · Entreprendre des travaux si orage · Laisser circuler des engins sans protection près des ouvrages électriques</div>
-</div>
-<div class="def-block important">
-  <div class="def-term">ÉLÉMENTS (Feu & Eau)</div>
-  <div class="def-text">Feu : Interdit d'allumer du feu au voisinage immédiat de lignes électriques aériennes · de s'approcher d'un foyer d'incendie (risque d'amorçage)
-Eau : Interdit de diriger des lances à jet sur les installations électriques · de jeter de l'eau pour lutter contre un incendie · d'uriner sur les installations ou leurs supports</div>
-</div>
-<div class="def-block important">
-  <div class="def-term">OBJETS MANIPULÉS</div>
-  <div class="def-text">Interdit de projeter des objets métalliques sur des installations électriques · d'utiliser des objets métalliques au voisinage d'installations comportant des conducteurs nus ou des pièces nues sous tension</div>
 </div>
 
 <h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Dangers du courant électrique</h3>
@@ -2097,32 +2095,9 @@ Eau : Interdit de diriger des lances à jet sur les installations électriques �
     <tr><td>Électrocution</td><td><span class="tag red">MORT</span></td></tr>
     <tr><td>Électrisation</td><td><span class="tag yellow">Blessure</span></td></tr>
     <tr><td>Perte d'équilibre</td><td>Chutes graves</td></tr>
-    <tr><td>Amorçage</td><td>Arc électrique</td></tr>
+    <tr><td>Amorçage</td><td>Arc électrique — peut se produire sans contact direct</td></tr>
   </tbody>
 </table></div>
-
-<div class="def-block important">
-  <div class="def-term">Coupure d'urgence</div>
-  <div class="def-text">Permet de mettre hors tension la caténaire par les moyens les plus rapides. Annoncer 2 fois :
-« COUPURE D'URGENCE – COUPURE D'URGENCE – Lieu – Motif et Identité »
-Cas d'utilisation : sauvetage d'une personne en danger · lutte contre incendie au voisinage caténaire · obstacle en contact avec caténaire · personnes/matériel risquant contact avec installation sous tension</div>
-</div>
-<div class="rule-box">
-  <strong>Principe général (Art. 4.1) :</strong> Tout conducteur nu ou isolé et toute installation électrique doivent être considérés comme étant sous tension, sauf assurance du contraire.
-</div>
-
-<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">En cas d'accident électrique (Annexe 5 OP491)</h3>
-<div class="rule-box">
-  1. <strong>PROTÉGER</strong> : dégager l'accidenté, le soustraire au contact de tout conducteur ou pièce sous tension<br>
-  2. <strong>SECOURIR</strong> : mettre en œuvre d'urgence la réanimation<br>
-  3. <strong>ALERTER</strong> : faire prévenir les secours spécialisés
-</div>
-
-<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Ligne de train</h3>
-<div class="def-block important">
-  <div class="def-term">Ligne de train</div>
-  <div class="def-text">Conduite d'alimentation en énergie électrique assurant le chauffage, éclairage ou le conditionnement des trains. Tension : 1500 volts. Comprend : câblots · boîtes de repos · coupleurs · canalisations électriques fixées sur les véhicules.</div>
-</div>
 `,
 
 graissage: `
@@ -2264,8 +2239,6 @@ const FLASHCARDS = [
 // TRAVAUX
 {theme:'travaux', tag:'AMV216', q:'Définir les catégories A, B et C.',
  a:'A : circulations légères → déshuntages brefs et intermittents (autorail, thermique, bi-mode, locotracteurs)\nB : véhicule à empattement long → déshuntage temporaire (porte-char)\nC : non-shunteuse → déshuntages prolongés. Ne peut pas circuler de façon autonome sur ligne équipée de CV. Doit être encadrée.'},
-{theme:'travaux', tag:'AMV250', q:'Quelle est la méthode RITA de traitement d\'un dérangement IS ?',
- a:'R : Risque immédiat ? → Arrêter et retenir\nI : Identifier la nature du dérangement et ses conséquences\nT : Traiter le dérangement (DC3858 Chap. 4)\nA : Aviser AC/COGC + Annoter CDIS pour l\'AMI'},
 // EPI
 {theme:'epi', tag:'AMV801', q:'Citez les 9 familles d\'EPI.',
  a:'1. Signalisation visuelle (THV)\n2. Tête et visage\n3. Ouïe (PICB : Protecteurs Individuels Contre le Bruit)\n4. Yeux\n5. Respiratoire\n6. Mains\n7. Corps\n8. Pieds\n9. Chutes de hauteur'},
@@ -2507,9 +2480,6 @@ const QUIZ = [
 {theme:'travaux', q:'Quelle est la catégorie d\'une circulation comportant un porte-char (empattement long) ?',
  opts:['Catégorie A','Catégorie B','Catégorie C','Aucune catégorie particulière'],
  ans:1, exp:'Catégorie B : circulation comportant au moins un véhicule à empattement long et pouvant provoquer un déshuntage temporaire au passage de ce véhicule sur un circuit de voie court (ex : porte-char).'},
-{theme:'travaux', q:'Quelle est la méthode RITA de traitement d\'un dérangement IS ?',
- opts:['Réception / Identification / Test / Archivage','Risque immédiat → Identifier → Traiter → Aviser/Annoter CDIS','Repérage / Isolation / Test / Annonce','Rapport / Incident / Traitement / Alerte'],
- ans:1, exp:'RITA : R = Risque immédiat (arrêter et retenir) / I = Identifier la nature et les conséquences / T = Traiter (DC3858 Chap.4) / A = Aviser AC/COGC + Annoter CDIS pour l\'AMI.'},
 {theme:'travaux', q:'L\'entente préalable entre RPTx et AC doit avoir lieu au minimum :',
  opts:['1 heure avant','30 minutes avant le début de la planche-travaux','15 minutes avant','À l\'heure de début des travaux'],
  ans:1, exp:'L\'entente préalable constitue la concertation entre le RPTx et l\'AC. Elle intervient en principe au minimum 30 minutes avant l\'heure théorique de début de la planche-travaux.'},
@@ -2798,9 +2768,6 @@ const QUIZ = [
 {theme:'install-sec', q:'Que signifie l\'acronyme 3C2D dans le traitement d\'un dérangement ?',
  opts:['3 Contrôles + 2 Documents à remplir','Conditions d\'ouverture · Carré commandé · Choix bulletin franchissement · Direction indiquée · Détonateur','3 Codes de sécurité + 2 Demandes de protection','Consultation + Contrôle + Confirmation + Délégation + Détonateur'],
  ans:1, exp:'3C2D = Conditions d\'ouverture · Carré commandé à l\'ouverture · Choix du bulletin de franchissement (CBA) · Direction indiquée au conducteur · Détonateur (annoter suivi appuis acoustiques + aviser AMI + prévenir conducteur).'},
-{theme:'install-sec', q:'Quelle méthode globale applique l\'aiguilleur face à un dérangement IS ?',
- opts:['FAMAS','RITA','3C2D','ARTA'],
- ans:1, exp:'RITA : R = Risque immédiat (arrêter et retenir) / I = Identifier la nature du dérangement / T = Traiter selon DC3858 Chap.4 / A = Aviser AC/COGC + Annoter CDIS pour l\'AMI.'},
 {theme:'install-sec', q:'Le CDIS sert à :',
  opts:['Commander les IS depuis le poste central','Consigner les dérangements des IS et leur traitement (carnet de dérangements des installations de sécurité)','Contrôler les IS avant ouverture d\'un signal','Calculer la distance d\'arrêt imposée par les IS'],
  ans:1, exp:'CDIS = Carnet de Dérangements des Installations de Sécurité. Il est complété par l\'aiguilleur (colonnes 1 à 4) et par l\'AMI (colonnes 5 à 9). Il trace chaque dérangement : date/heure, nature, avis AMI, rétablissement.'},
@@ -3178,7 +3145,9 @@ function showView(v) {
   setNavActive(v);
   closeSidebar();
   const c = document.getElementById('main-content');
-  document.getElementById('topbar-right').innerHTML = '<span style="font-family:var(--mono);font-size:11px;color:var(--text3)">v4.9 — 28 mai 2026</span>';
+  c.scrollTop = 0;
+  window.scrollTo(0,0);
+  document.getElementById('topbar-right').innerHTML = '<span style="font-family:var(--mono);font-size:11px;color:var(--text3)">v4.12 — 28 mai 2026</span>';
   if (v === 'home') { setTopbar('AMV / <span>Accueil</span>'); renderHome(c); }
   else if (v === 'fiches') { setTopbar('AMV / <span>Fiches de cours</span>'); renderFiches(c); }
   else if (v === 'flash') { setTopbar('AMV / <span>Flashcards</span>'); renderFlash(c); }
@@ -3195,7 +3164,7 @@ function renderHome(c) {
   const qc = QUIZ.length;
   c.innerHTML = `
 <div class="section-heading">Bienvenue 👋</div>
-<div class="section-sub">Application de révision AMV — SECUFER · v4.11 — 28 mai 2026 · ${THEMES.length} thèmes</div>
+<div class="section-sub">Application de révision AMV — SECUFER · v4.12 — 29 mai 2026 · ${THEMES.length} thèmes</div>
 
 <!-- SCHEMA EXAMEN AMV -->
 <div class="card" style="border-color:rgba(96,165,250,0.3);background:rgba(96,165,250,0.04);margin-bottom:16px">
@@ -3227,7 +3196,7 @@ function renderHome(c) {
 
 <!-- BARRE DE RECHERCHE -->
 <div style="margin-bottom:20px;position:relative">
-  <input id="search-input" type="text" placeholder="🔍  Rechercher dans toute l'appli : FAMAS, ZD, BAL, RITA..."
+  <input id="search-input" type="text" placeholder="🔍  Rechercher dans toute l'appli : FAMAS, ZD, BAL, CDIS..."
     oninput="doSearch(this.value)"
     style="width:100%;padding:12px 16px;background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius);color:var(--text);font-family:var(--sans);font-size:14px;outline:none;"
     onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border2)'">
@@ -3274,7 +3243,7 @@ function renderHome(c) {
       ['16','4 essais de frein — bien différencier','formation','Bien différencier'],
       ['17','Définition Cantonnement','cantonnement','Par cœur'],
       ['18','PRR — Point de Reconnaissance et de Remise en marche','cantonnement','Par cœur'],
-      ['19','ACPP — définition à confirmer par formateur','aiguillage','À connaître'],
+      ['19','ACPP — A·C·P·P : 4 conditions avant ouverture d\'un signal','aiguillage','Par cœur'],
     ].map(([n,titre,theme,tag]) => `
     <div style="display:flex;align-items:center;gap:10px;padding:7px 12px;background:var(--bg3);border-radius:var(--radius);flex-wrap:wrap">
       <span style="font-family:var(--mono);font-size:11px;color:var(--accent);min-width:24px">${n}.</span>
@@ -3430,12 +3399,14 @@ function renderFiches(c) {
         <span style="font-size:14px;color:var(--text2)">${t.title}</span>
       </div>
       <div class="fiche-content">${FICHES[currentTheme] || '<p style="color:var(--text3)">Fiche en cours de rédaction.</p>'}</div>`;
+    c.scrollTop = 0;
+    document.querySelector('.main').scrollTop = 0;
   } else {
     c.innerHTML = `
       <div class="section-heading">Fiches de cours</div>
       <div class="section-sub">Recherche un mot-clé ou sélectionne un thème</div>
       <div style="position:relative;margin-bottom:20px">
-        <input id="fiche-search" type="text" placeholder="🔍  Rechercher dans les fiches : cantonnement, ZI, RITA, carré, DATZD..."
+        <input id="fiche-search" type="text" placeholder="🔍  Rechercher dans les fiches : cantonnement, ZI, carré, DATZD..."
           oninput="searchFiches(this.value)"
           style="width:100%;padding:10px 14px;background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius);color:var(--text);font-family:var(--sans);font-size:14px;outline:none;"
           onfocus="this.style.borderColor='var(--accent2)'" onblur="this.style.borderColor='var(--border2)'">
