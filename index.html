@@ -315,6 +315,12 @@ h2.theme-heading:first-child { margin-top: 0; }
     <div class="nav-item" id="nav-dictee" onclick="showView('dictee')">
       <span class="icon">✎</span> Dictée de définitions
     </div>
+    <div class="nav-item" id="nav-signaux-learn" onclick="showView('signaux-learn')" style="border-left-color:var(--accent)">
+      <span class="icon">🚦</span> Signaux & panneaux
+    </div>
+    <div class="nav-item" id="nav-gares" onclick="showView('gares')" style="border-left-color:var(--accent)">
+      <span class="icon">🏘️</span> Gares & Tab. mouvements
+    </div>
   </div>
 
   <div class="nav-section theme-nav">
@@ -559,68 +565,322 @@ formation: `
 `,
 
 manœuvre: `
-<h2 class="theme-heading">Manœuvres</h2>
-<div class="theme-ref">AMV905 · OP823 · OP490 · OP820</div>
+<h2 class="theme-heading">Manœuvres de manœuvre guidé</h2>
+<div class="theme-ref">AMV905 · OP823 · OP490 · OP820 · PS9 · Formation de base AMV</div>
 
-<div class="def-block important">
-  <div class="def-term">Manœuvre</div>
-  <div class="def-text">Déplacement d'un train ou d'un convoi guidé par le chef de manœuvre dans une zone géographique limitée.</div>
-</div>
-<div class="def-block important">
-  <div class="def-term">Chef de la Manœuvre (CdM)</div>
-  <div class="def-text">Agent chargé de la commande et de l'exécution d'une manœuvre. Cet agent a autorité sur tous les agents participant à la manœuvre y compris le conducteur. Il définit la place et le rôle de chacune des personnes participant à l'opération.</div>
+<div style="background:rgba(248,113,113,0.08);border:2px solid var(--red);border-radius:var(--radius2);padding:14px 16px;margin-bottom:18px;font-size:13px;line-height:1.6">
+  🔥 <strong style="color:var(--red)">SPÉCIAL TEST DE POSITIONNEMENT n°2 (demain)</strong> — Articles à connaître PAR CŒUR :<br>
+  <strong>201.1</strong> · <strong>202</strong> · <strong>203</strong> · <strong>205</strong> · <strong>206.2</strong> · <strong>402.5</strong> · <strong>403</strong> · <strong>601.2</strong> · <strong>601.3</strong><br>
+  + §2.1 · §2.2 · §3.1 · §5 / §5.3.1 / §5.3.2 / §5.3.3 · §6.1
 </div>
 
-<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Les 5 ordres de manœuvre</h3>
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Définitions fondamentales</h3>
+
+<div class="def-block important">
+  <div class="def-term" style="color:var(--accent)">Mouvement de manœuvre <span class="tag yellow" style="margin-left:6px">⚠ PAR CŒUR</span></div>
+  <div class="def-text">Déplacement d'un ensemble formé par <strong>un ou plusieurs véhicules</strong> et autorisé sur une <strong>zone géographique limitée</strong>. Ce déplacement peut être <strong>guidé</strong> par un agent habilité à cette tâche ou par des signaux lumineux de manœuvre, ou <strong>non guidé</strong>.</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term" style="color:var(--accent)">Chef de la manœuvre (CdM) <span class="tag yellow" style="margin-left:6px">⚠ PAR CŒUR</span></div>
+  <div class="def-text">Travailleur <strong>chargé de la commande et de l'exécution d'une manœuvre</strong>, habilité à la TES H « Commander une manœuvre ».<br><br>
+  ⚠️ <strong style="color:var(--accent)">Le CdM est RESPONSABLE de TOUT LE MONDE</strong> participant à la manœuvre, y compris le conducteur. Il définit la place et le rôle de chaque personne. La sécurité du personnel participant à l'exécution d'une manœuvre <strong>repose sur le respect des dispositions du règlement par le CdM</strong>.</div>
+</div>
+
+<div class="def-block">
+  <div class="def-term">Conducteur</div>
+  <div class="def-text">Personne assurant la conduite d'un train, qu'elle en assure les commandes directes ou qu'elle donne des directives en cabine à la personne maîtrisant les organes de commande.</div>
+</div>
+
+<!-- ═══ ARTICLES PAR CŒUR — SURLIGNÉS BLEUS ═══ -->
+
+<h3 style="font-size:16px;font-weight:600;margin:28px 0 12px;color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:6px">⭐ Article 201.1 — Risques liés aux véhicules à l'arrêt</h3>
+<div class="def-block important">
+  <div class="def-term">201.1 — Risques</div>
+  <div class="def-text"><strong>Tout véhicule arrêté est susceptible d'être remis en mouvement à tout moment.</strong> D'autre part, passer entre un quai et un véhicule expose au risque d'écrasement.</div>
+</div>
+<div class="def-block">
+  <div class="def-term">201.2.1 — Principe (mesures à prendre)</div>
+  <div class="def-text">La traversée des voies à proximité d'un véhicule à l'arrêt s'effectue à une distance telle que le travailleur :<br>
+  • Ne risque pas d'être heurté par ce véhicule en cas de remise en mouvement ;<br>
+  • Dispose d'une visibilité suffisante sur la ou les voies contiguës.</div>
+</div>
+
+<h3 style="font-size:16px;font-weight:600;margin:28px 0 12px;color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:6px">⭐ Article 202 — Montées et descentes des véhicules <span class="tag red" style="margin-left:8px">VA TOMBER À L'EXAM</span></h3>
+<div class="def-block important">
+  <div class="def-term">202 — Risque</div>
+  <div class="def-text">La montée sur un véhicule (ou la descente) <strong>en mouvement</strong> présente des risques importants de <strong>chute ou de heurt</strong>.</div>
+</div>
+<div class="def-block important" style="border-color:var(--red)">
+  <div class="def-term" style="color:var(--red)">202 — Règle FONDAMENTALE</div>
+  <div class="def-text">🚨 <strong>La montée ou la descente d'un véhicule doit s'effectuer À L'ARRÊT.</strong></div>
+</div>
+<div class="def-block">
+  <div class="def-term">202 — Pour monter / descendre</div>
+  <div class="def-text">Le travailleur doit utiliser les <strong>mains courantes</strong>, les <strong>marchepieds</strong> et les <strong>échelles</strong>.<br><br>
+  Pour effectuer la montée ou la descente d'un véhicule, le travailleur doit :<br>
+  • <strong>Poser ou retirer</strong>, à partir du sol, les agrès ou sacoches qu'il transporte ;<br>
+  • <strong>Faire face au véhicule</strong> (sauf s'il s'agit d'une voiture stationnée à quai pour la descente) ;<br>
+  • <strong>Progresser en s'assurant dans toute la mesure du possible trois points d'appui</strong> (deux pieds et une main ou un pied et deux mains) ;<br>
+  • <strong>Observer l'état du sol</strong> avant d'y poser les pieds lors de la descente.</div>
+</div>
+
+<h3 style="font-size:16px;font-weight:600;margin:28px 0 12px;color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:6px">⭐ Article 203 — Maintien des organes mobiles des véhicules</h3>
+<div class="def-block important">
+  <div class="def-term">203 — Risque</div>
+  <div class="def-text">Tout organe mobile d'un véhicule est susceptible de provoquer des <strong>chutes</strong>, des <strong>heurts</strong>, des <strong>pincements</strong> ou des <strong>écrasements</strong>.</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">203 — Règles</div>
+  <div class="def-text"><strong>Avant d'entreprendre le mouvement de manœuvre guidé d'un véhicule</strong>, il faut s'assurer que ses organes mobiles sont <strong>maintenus solidement</strong> et ne pourront se rabattre ou se déplacer. La manipulation de tout organe mobile ne peut s'effectuer que <strong>sur un véhicule à l'arrêt</strong>.</div>
+</div>
+<div class="def-block">
+  <div class="def-term">203 — Particularité</div>
+  <div class="def-text">Un <strong>frein à main</strong>, actionné par un volant et manœuvrable du sol, ne peut être utilisé que si le véhicule est à l'arrêt.</div>
+</div>
+
+<h3 style="font-size:16px;font-weight:600;margin:28px 0 12px;color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:6px">⭐ Article 205 — Manipulation des organes d'attelage</h3>
+<div class="def-block important">
+  <div class="def-term">205 — Risque</div>
+  <div class="def-text">Une mauvaise technique gestuelle lors des opérations d'attelage et de dételage des véhicules peut entraîner des risques de <strong>pincements, d'écrasements</strong> au niveau des membres supérieurs ou de <strong>lombalgies</strong>.</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">205 — Règle (tendeur d'attelage)</div>
+  <div class="def-text">Pour la manipulation du tendeur d'attelage, il est nécessaire de tenir solidement la <strong>manille mobile</strong>, une main sur chaque branche à la hauteur de l'écrou à tourillon, les <strong>coudes serrés au corps</strong>. L'accrochage ou le décrochage des accouplements de frein, doit s'effectuer <strong>par-dessous</strong> les tendeurs d'attelage.</div>
+</div>
+<div class="def-block">
+  <div class="def-term">205 — Autres mesures de prévention lors du désaccouplement</div>
+  <div class="def-text">• Avant de désaccoupler la conduite principale (CP, si présente) et la conduite générale (CG), fermer les robinets d'arrêt en commençant par le robinet situé côté source d'air.<br>
+  • Le travailleur qui désaccouple la CP la CG et les autres conduites pneumatiques doit tourner légèrement la tête et fermer les yeux au moment où il ferme les robinets d'arrêt afin d'éviter les poussières chassées par l'air qui s'en échappe.<br>
+  • Le travailleur qui procède à la vidange de la CG et/ou de la CP doit tourner la tête du côté opposé à la sortie de l'air ou fermer les yeux et utiliser sa main pour protéger la tête contre les montants ou l'encadrement, ou sur le chemin de roulement.</div>
+</div>
+
+<h3 style="font-size:16px;font-weight:600;margin:28px 0 12px;color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:6px">⭐ Article 206.2 — Opérations sur les lignes de trains</h3>
+<div class="def-block important">
+  <div class="def-term">206.2 — Règles à observer (ligne de train sous tension)</div>
+  <div class="def-text">🔌 <strong>Toute intervention sur la ligne de train n'est autorisée que si cette dernière est privée de tension et que le travailleur concerné en a obtenu l'assurance.</strong><br><br>
+  Le travailleur, chargé des opérations d'accouplement ou de désaccouplement de la ligne de train, doit, avant de commencer toute opération, obtenir l'assurance que cette ligne de train est privée de tension.<br><br>
+  Il obtient cette assurance soit en :<br>
+  • <strong>Recevant directement la ou les clés</strong> de chauffage du circuit d'alimentation de la rame ;<br>
+  • <strong>Recevant l'information</strong> d'un travailleur responsable du service du train en gare et possesseur de cette ou ces clés, cette information pouvant être transmise par radio ou par d'autres moyens permettant d'identifier le détenteur de cette ou ces clés et le destinataire de l'information ;<br>
+  • <strong>Avisant et recevant confirmation du conducteur</strong> dans le cas d'une ligne d'alimentation 380 volts alternatifs.</div>
+</div>
+<div class="def-block">
+  <div class="def-term">206.1 — Généralités (à savoir)</div>
+  <div class="def-text">L'énergie nécessaire aux véhicules remorqués du parc voyageurs est distribuée sur toute la longueur de la rame par une <strong>ligne de train</strong>.<br>
+  La ligne de train est alimentée sous une tension de <strong>1500 volts</strong>.<br>
+  Certains matériels disposent en plus d'une ligne de train de <strong>660 volts ou de 380 volts</strong>.</div>
+</div>
+
+<h3 style="font-size:16px;font-weight:600;margin:28px 0 12px;color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:6px">⭐ Article 402.5 — Place du chef de la manœuvre</h3>
+<div class="def-block important">
+  <div class="def-term">402.5 — Le CdM doit :</div>
+  <div class="def-text">▸ <strong>Surveiller les travailleurs</strong> participant au mouvement de manœuvre guidé ;<br>
+  ▸ <strong>Se tenir à proximité du conducteur ou des atteleurs</strong> ;<br>
+  ▸ <strong>Être visible du conducteur</strong> ou, lorsque cela n'est pas possible, être en liaison constante avec ce dernier par des dispositifs appropriés (radio, signal lumineux de manœuvre…) ;<br>
+  ▸ <strong>Veiller à sa propre sécurité.</strong></div>
+</div>
+<div class="def-block">
+  <div class="def-term">402.4 — Assurances à obtenir par le CdM</div>
+  <div class="def-text"><strong>Avant de donner un ordre de mise en mouvement</strong>, le chef de la manœuvre doit s'assurer que chaque participant occupe bien la place qui lui a été indiquée, compatible avec sa sécurité (au sol ou sur les véhicules).<br><br>
+  <strong>À la fin du mouvement de manœuvre guidé</strong>, le chef de la manœuvre ne doit pas laisser en stationnement des véhicules qui constitueraient une gêne à l'utilisation normale des pistes et des itinéraires ou des accès aux installations utilisées par les travailleurs.</div>
+</div>
+
+<h3 style="font-size:16px;font-weight:600;margin:28px 0 12px;color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:6px">⭐ Article 403 — Obligations des travailleurs participant au mouvement de manœuvre guidé</h3>
+<div class="def-block important">
+  <div class="def-term">403 — Obligations</div>
+  <div class="def-text">Après avoir reçu une <strong>formation pratique et théorique</strong>, tout travailleur participant à un mouvement de manœuvre guidé doit être <strong>conscient que sa sécurité repose sur le respect</strong> :<br>
+  ▸ <strong>Des dispositions du présent texte</strong> ;<br>
+  ▸ <strong>Des ordres reçus du chef de la manœuvre.</strong><br><br>
+  Au cours d'un mouvement de manœuvre guidé, il doit s'efforcer de rester toujours en vue du chef de la manœuvre, ou en liaison radio avec celui-ci.<br><br>
+  Il ne doit pas pénétrer entre les véhicules sans autorisation du chef de la manœuvre.<br><br>
+  La pénétration entre les véhicules (ou la sortie) doit s'effectuer du côté où est placé le chef de la manœuvre. Si exceptionnellement cela n'était pas possible, la pénétration entre les véhicules (ou la sortie) en dehors de la vue du chef de la manœuvre devrait faire l'objet d'une entente préalable entre celui-ci et l'atteleur.<br><br>
+  La <strong>nuit</strong>, avant de pénétrer dans l'attelage, il dispose sa lanterne du même côté de la voie que le chef de la manœuvre, le feu latéral ou le feu rouge tourné vers le conducteur.</div>
+</div>
+
+<h3 style="font-size:16px;font-weight:600;margin:28px 0 12px;color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:6px">⭐ Article 601.2 — Règle générale (accompagnement)</h3>
+<div class="def-block important">
+  <div class="def-term">601.1 — Risque</div>
+  <div class="def-text">Tout véhicule en mouvement est susceptible de provoquer des <strong>chutes</strong> ou des <strong>heurts</strong>.</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">601.2 — Règle générale</div>
+  <div class="def-text">📋 <strong>Les déplacements liés à l'exécution d'un mouvement de manœuvre guidés doivent s'effectuer à PIED.</strong></div>
+</div>
+
+<h3 style="font-size:16px;font-weight:600;margin:28px 0 12px;color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:6px">⭐ Article 601.3 — Règle particulière (accompagnement sur véhicule)</h3>
+<div class="def-block important">
+  <div class="def-term">601.3 — Accompagnement sur un véhicule</div>
+  <div class="def-text">L'accompagnement du mouvement de manœuvre guidé sur un véhicule peut être autorisé, par consignes opérationnelles, lorsque cette mesure est de nature à :<br>
+  ▸ <strong>Améliorer l'exécution du mouvement de manœuvre guidé</strong> (par exemple : distance importante, visibilité des signaux, installations…) ;<br>
+  ▸ <strong>Limiter les risques d'accidents</strong> (par exemple : traversée de voies, obstacles).</div>
+</div>
+<div class="def-block">
+  <div class="def-term">601.3 — Moyens d'accompagnement sur un véhicule</div>
+  <div class="def-text">Cet accompagnement du mouvement de manœuvre guidé doit s'effectuer :<br>
+  ▸ <strong>Dans la cabine d'un engin moteur</strong> ;<br>
+  ▸ <strong>À l'intérieur d'un véhicule à voyageurs ou d'un fourgon</strong> ;<br>
+  ▸ <strong>Sur la plate-forme ou la passerelle d'extrémité</strong> dont certains véhicules sont équipés.</div>
+</div>
+
+<!-- ═══ AVANT / PENDANT / APRÈS ═══ -->
+
+<h3 style="font-size:16px;font-weight:600;margin:32px 0 12px;color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:6px">⭐ §3.1 — AVANT la manœuvre : Renseignements & vérifications préalables <span class="tag red" style="margin-left:8px">PAR CŒUR</span></h3>
+
+<div class="def-block important">
+  <div class="def-term">§3 — Opérations préalables à la mise en mouvement</div>
+  <div class="def-text"><strong>Avant de donner l'ordre de mise en mouvement au conducteur</strong>, l'agent habilité à la TES « Commander une manœuvre » doit :<br><br>
+  1️⃣ <strong>Renseigner précisément sur le mouvement de manœuvre guidé tous les agents intéressés</strong> :<br>
+  • Mouvements successifs<br>
+  • Missions et place des agents<br>
+  • Véhicules concernés<br>
+  • Particularités<br><br>
+  2️⃣ <strong>Vérifier ou faire vérifier que</strong> :<br>
+  <strong>a)</strong> L'état des véhicules concernés et leurs chargements ne s'opposent pas à leur déplacement (étiquettes et inscriptions, matériel pouvant porter, équipements en tenant compte des particularités notamment des déplacements concernés) ;<br>
+  <strong>b)</strong> Les freins ont été desserrés et les cales enlevées ;<br>
+  <strong>c)</strong> L'immobilisation des véhicules qui ne sont pas manœuvrés reste assurée ;<br>
+  <strong>d)</strong> Le cas échéant, le freinage de la rame est suffisant ;<br>
+  <strong>e)</strong> Les mesures pour assurer la sécurité des personnes (agents, prestataires, tiers…) se trouvant sur les véhicules ou à proximité des voies intéressées sont prises ;<br>
+  <strong>f)</strong> Les parties de voies à parcourir sont et resteront libres et l'itinéraire est correctement tracé, le cas échéant en relation avec les agents chargés de la manœuvre des aiguilles concernées.<br><br>
+  ➕ <strong>De plus</strong> :<br>
+  • Toute modification de l'un quelconque des éléments d'organisation initialement prévus est immédiatement portée à la connaissance des mêmes agents ;<br>
+  • Les mouvements de manœuvres guidés peuvent être effectués sur voie occupée, notamment pour les mouvements de manœuvres guidés entre eux ; dans ce cas le chef de la manœuvre renseigne tous les agents.</div>
+</div>
+
+<h3 style="font-size:16px;font-weight:600;margin:32px 0 12px;color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:6px">⭐ §5 — PENDANT la manœuvre : Dispositions à appliquer</h3>
+
+<div class="def-block">
+  <div class="def-term">§5.1 — Observation de la signalisation</div>
+  <div class="def-text">Tout agent commandant la manœuvre <strong>connaît la signalisation</strong> qui peut lui être présentée sur l'itinéraire concerné.<br>
+  Tout ordre prescrit par la signalisation ou par un agent du service du GI en charge de la circulation est <strong>immédiatement respecté</strong> par l'agent commandant la manœuvre.<br><br>
+  ⚠️ <strong>L'observation de la signalisation incombe au chef de la manœuvre et/ou au conducteur</strong> selon les modalités reprises à la présente recommandation.</div>
+</div>
+
+<div class="def-block">
+  <div class="def-term">§5.2 — Ordre de mise en mouvement</div>
+  <div class="def-text">Pour exécuter un mouvement de manœuvre guidé, <strong>le conducteur attend l'ordre du chef de la manœuvre</strong> (ou de l'agent désigné par lui à cet effet) pour se mettre en mouvement. <strong>L'ouverture d'un signal d'arrêt ne constitue pas en elle-même un ordre de mise en mouvement.</strong><br><br>
+  Avant de donner l'ordre de mise en mouvement, le chef de la manœuvre s'assure que les agents habilités nécessaires à la bonne exécution du mouvement sont à leur place et prêts à exécuter les ordres qui leur seront donnés. Il s'assure également, le cas échéant, que l'indication donnée par le signal d'arrêt le retenant ne s'oppose pas à ce mouvement.</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term" style="color:var(--accent)">§5.3.1 — Le chef de la manœuvre</div>
+  <div class="def-text">Le chef de la manœuvre :<br>
+  ▸ <strong>Organise</strong> le mouvement de manœuvre guidé de façon que le conducteur puisse obéir en temps utile aux ordres qui lui sont donnés, notamment ceux de ralentissement et d'arrêt ;<br>
+  ▸ <strong>Surveille la bonne exécution des ordres</strong> donnés et doit pouvoir faire arrêter d'urgence le mouvement le cas échéant ;<br>
+  ▸ <strong>Donne toute instruction utile</strong> afin qu'aucun matériel roulant ne participant pas au mouvement ne puisse en raison de celui-ci être mis accidentellement en mouvement.</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term" style="color:var(--accent)">§5.3.2 — Aiguillage pendant le mouvement</div>
+  <div class="def-text">⚠️ <strong>Lorsqu'un ou plusieurs appareils de voie ont été disposés pour un mouvement</strong> et à partir du moment où le mouvement de manœuvre guidé a été autorisé, tout agent participant à ce mouvement doit <strong>attendre le dégagement complet de chacun des appareils avant d'en modifier éventuellement la position</strong>.<br><br>
+  🚨 En particulier, <strong>il ne doit pas modifier la position d'une aiguille pendant son franchissement.</strong><br><br>
+  Si plusieurs aiguilles, verrous ou taquets sont manœuvrés par un même levier, il doit attendre le dégagement de l'ensemble de ces appareils avant de modifier la position du levier.</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term" style="color:var(--accent)">§5.3.3 — Place du conducteur</div>
+  <div class="def-text">🚆 <strong>Le conducteur doit être EN TÊTE du mouvement toutes les fois que les conditions d'exécution de la manœuvre le permettent.</strong><br><br>
+  Au cours de l'exécution du mouvement de manœuvre guidé, le conducteur observe la marche en manœuvre et règle sa vitesse compte tenu notamment du nombre de véhicules de la rame, des moyens de freinage dont il dispose et du profil de la voie. La vitesse maximum de la marche en manœuvre est définie par l'article 22 de l'arrêté du 9 décembre 2021.<br><br>
+  S'il constate que le déroulement du mouvement de manœuvre guidé ne correspond pas aux renseignements qui lui ont été donnés lors de la préparation, il n'obéit pas à l'ordre reçu et s'arrête, puis demande des renseignements complémentaires au chef de la manœuvre.</div>
+</div>
+
+<h3 style="font-size:16px;font-weight:600;margin:32px 0 12px;color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:6px">⭐ §6.1 — APRÈS la manœuvre : Mesures à prendre à la fin</h3>
+
+<div class="def-block important">
+  <div class="def-term">§6.1 (point 1) — À la fin du mouvement de manœuvre guidé</div>
+  <div class="def-text">À la fin du mouvement de manœuvre guidé, le chef de la manœuvre <strong>prend ou fait prendre les mesures pour que les véhicules</strong> :<br>
+  ▸ <strong>N'engagent pas les autres voies</strong> et stationnent en deçà des taquets, dérailleurs, etc. ;<br>
+  ▸ <strong>Dégagent les croisements des voies contiguës</strong> (compte tenu de la décompression des tampons après desserrage des freins à air) ;<br>
+  ▸ <strong>Soient immobilisés.</strong><br><br>
+  Lorsque les croisements des voies restent exceptionnellement engagés par un véhicule ou une rame en stationnement, le chef de la manœuvre avise ou fait aviser les agents intéressés (agent du service en stationnement, le chef de la manœuvre avise ou fait aviser les agents intéressés du GI en charge de la gestion des circulations ou opérateur IS simples du poste, agents de la manœuvre, etc.).<br><br>
+  Le GI en charge de la gestion des circulations définit, dans la documentation d'exploitation, les mesures :<br>
+  ▸ De <strong>protection des voies occupées</strong> à la fin d'un mouvement de manœuvre guidé ;<br>
+  ▸ <strong>Assurant la protection des croisements des voies restés exceptionnellement engagés.</strong> <em>(Par SAM !)</em></div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">§6.1 (point 2) — Remise en place des appareils</div>
+  <div class="def-text">Le chef de la manœuvre fait par ailleurs <strong>remettre en place les appareils</strong> (aiguilles, etc.) ayant une position imposée et <strong>rétablir les dispositifs de sécurité</strong> (cadenas, serrures, taquets, etc.) dont la position a été modifiée au cours de ce mouvement. Il opère de même, le cas échéant, à l'égard des installations de traction électrique.<br><br>
+  💡 <strong>Mémo perso :</strong> les aiguilles proches des voies de service, je dois les replacer en position normale (ou ⊕). Pour la sécu !</div>
+</div>
+
+<!-- ═══ §2.1 et §2.2 ═══ -->
+
+<h3 style="font-size:16px;font-weight:600;margin:32px 0 12px;color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:6px">⭐ §2.1 et §2.2 — Acteurs et définitions</h3>
+
+<div class="def-block">
+  <div class="def-term">§2.1 — Objet et champ d'application</div>
+  <div class="def-text">Ce document définit les <strong>mesures de prévention liées à la sécurité des travailleurs</strong> effectuant des mouvements de manœuvres guidés ou participant à l'accompagnement des trains-travaux.<br>
+  Les dispositions de ce document s'imposent à tout employeur et sont applicables sur les voies dont SNCF Réseau est gestionnaire d'infrastructure.</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">§2.2 — Glossaire (à connaître par cœur)</div>
+  <div class="def-text"><strong>Chef de la manœuvre :</strong> Travailleur, chargé de la commande et de l'exécution d'une manœuvre, habilité à la TES H « Commander une manœuvre ».<br><br>
+  <strong>Conducteur :</strong> Personne assurant la conduite d'un train, qu'elle en assure les commandes directes ou qu'elle donne des directives en cabine à la personne maîtrisant les organes de commande.<br><br>
+  <strong>Ligne de train :</strong> Conduite d'alimentation en énergie électrique assurant le chauffage ou le conditionnement des trains. Elle comprend les câblots, les coupleurs, les boîtes de repos, les canalisations électriques fixées sur les véhicules.<br><br>
+  <strong>Mouvement de manœuvre :</strong> Déplacement d'un ensemble formé par un ou plusieurs véhicules et autorisé sur une zone géographique limitée. Ce déplacement peut être guidé par un agent habilité à cette tâche ou par des signaux lumineux de manœuvre, ou non guidé.<br><br>
+  <strong>Train-Travaux :</strong> Train constitué pour les besoins de la maintenance de l'infrastructure et utilisé, dans le cadre d'un processus-travaux, pour desservir une ou plusieurs zones de chantier.<br><br>
+  <strong>Zone dangereuse :</strong> Zone de danger, définie voie par voie, dans laquelle un travailleur, l'outillage ou le matériel qu'il manipule peut être heurté ou accroché par la circulation de véhicules de transport ferroviaire ou guidé ou subir son effet de souffle de manière dangereuse.</div>
+</div>
+
+<!-- ═══ 5 ORDRES DE MANŒUVRE ═══ -->
+
+<h3 style="font-size:16px;font-weight:600;margin:32px 0 12px;color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:6px">⭐ Les 5 signaux à main du mouvement de manœuvre guidé <span class="tag red" style="margin-left:8px">PAR CŒUR !</span></h3>
+
+<div style="background:rgba(248,113,113,0.05);border:1px solid var(--red);border-radius:var(--radius2);padding:14px;margin-bottom:14px;font-size:13px;line-height:1.6">
+  🔥 <strong style="color:var(--red)">SURTOUT BIEN CONNAÎTRE CES 5 SIGNES !!!</strong> Ils peuvent t'être présentés par radio, par signaux optiques conventionnels (gestuel) ou de vive voix.
+</div>
+
 <div class="table-wrap"><table>
-  <thead><tr><th>Ordre</th><th>Signification</th></tr></thead>
+  <thead><tr><th style="width:90px">Ordre</th><th>Signification (selon position de l'EM)</th><th>Gestuel</th></tr></thead>
   <tbody>
-    <tr><td>TIREZ</td><td>EM à l'extrémité : tire les wagons / EM dans le convoi : s'éloigne du CdM</td></tr>
-    <tr><td>REFOULEZ</td><td>EM à l'extrémité : pousse les wagons / EM dans le convoi : se rapproche du CdM</td></tr>
-    <tr><td>RALENTISSEZ</td><td>Ordre au conducteur de ralentir</td></tr>
-    <tr><td>ARRÊTEZ</td><td>Ordre au conducteur de s'arrêter</td></tr>
-    <tr><td>APPUYEZ</td><td>Se coller aux tampons d'un autre engin ou wagon</td></tr>
+    <tr>
+      <td><strong style="color:var(--accent)">ARRÊTEZ</strong></td>
+      <td>Ordre au conducteur de <strong>s'arrêter</strong>.</td>
+      <td>Drapeau rouge tendu horizontalement à bout de bras</td>
+    </tr>
+    <tr>
+      <td><strong style="color:var(--accent)">APPUYEZ</strong></td>
+      <td>Ordre au conducteur de <strong>se coller aux tampons</strong> d'un autre engin moteur ou d'un wagon.</td>
+      <td>Deux poings face à face devant le corps, pouces dressés</td>
+    </tr>
+    <tr>
+      <td><strong style="color:var(--accent)">RALENTISSEZ</strong></td>
+      <td>Ordre au conducteur de <strong>ralentir</strong>.</td>
+      <td>Drapeau rouge agité horizontalement</td>
+    </tr>
+    <tr>
+      <td><strong style="color:var(--accent)">TIREZ</strong></td>
+      <td><strong>EM à l'extrémité du convoi</strong> : ordre au conducteur de « tirer » les wagons sans tenir compte de la position du CdM.<br><strong>EM dans le convoi ou seul</strong> : ordre au conducteur de <strong>s'éloigner du CdM</strong>.</td>
+      <td>Drapeau rouge tenu vertical en l'air</td>
+    </tr>
+    <tr>
+      <td><strong style="color:var(--accent)">REFOULEZ</strong></td>
+      <td><strong>EM à l'extrémité du convoi</strong> : ordre au conducteur de « pousser » les wagons sans tenir compte de la position du CdM.<br><strong>EM dans le convoi ou seul</strong> : ordre au conducteur de <strong>s'approcher du CdM</strong>.</td>
+      <td>Drapeau rouge agité verticalement, pointe en bas</td>
+    </tr>
   </tbody>
 </table></div>
 
-<div class="rule-box">
-  Ces ordres peuvent être effectués par <strong>radio</strong>, par <strong>signaux optiques conventionnels</strong> ou de <strong>vive voix</strong>.
+<div class="rule-box" style="margin-top:14px">
+  💡 <strong>Astuce mémo :</strong> <em>« Arrêtez, Appuyez, Ralentissez, Tirez, Refoulez »</em> — par ordre croissant de mouvement (immobile → contact → ralenti → s'éloigne → s'approche).
 </div>
 
-<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Art. 204.3 — Traversée devant ou derrière un véhicule à l'arrêt</h3>
-<div class="def-block important">
-  <div class="def-term">204.3.1 — Risque</div>
-  <div class="def-text">Tout véhicule arrêté est susceptible d'être remis en mouvement à tout moment. D'autre part, passer entre un quai et un véhicule expose au risque d'écrasement.</div>
-</div>
-<div class="def-block important">
-  <div class="def-term">204.3.2 — Mesures à prendre</div>
-  <div class="def-text">La traversée des voies à proximité d'un véhicule à l'arrêt s'effectue à une distance telle que le travailleur :
-• Ne risque pas d'être heurté par ce véhicule en cas de remise en mouvement ;
-• Dispose d'une visibilité suffisante sur la ou les voies contiguës.
+<!-- ═══ ANCIEN CONTENU CONSERVÉ ═══ -->
 
-➤ Pour passer devant ou derrière un véhicule arrêté : respecter une distance d'au moins <strong>3 m</strong> par rapport à l'extrémité de chaque véhicule.
+<h3 style="font-size:15px;font-weight:500;margin:24px 0 10px;color:var(--text2)">Manœuvre sur voie principale (OP820)</h3>
+<ul class="numbered-list">
+  <li><span class="num">1.</span><strong>Demande verbale</strong> du CdM auprès de l'AC : durée + limites géographiques</li>
+  <li><span class="num">2.</span><strong>Assurance que rien ne s'y oppose</strong> : AC vérifie l'ONJ + contacte le régulateur (pas de retard, pas de MI)</li>
+  <li><span class="num">3.</span><strong>Protection de la manœuvre</strong> : signaux convenables fermés ou aiguilles en protection</li>
+  <li><span class="num">4.</span><strong>Autorisation verbale</strong> de l'AC au CdM</li>
+</ul>
 
-➤ Pour traverser entre deux rames immobilisées sur la même voie : respecter une distance minimale de <strong>6,70 m</strong>.
-
-NOTA : Sur certaines voies désignées à la consigne des particularités locales, l'intervalle de 3 m peut être réduit à 1,50 m lorsque le travailleur a obtenu l'assurance qu'aucune manœuvre n'est susceptible de mettre les véhicules en mouvement et que ces derniers sont convenablement immobilisés.</div>
-</div>
-<div class="def-block important">
-  <div class="def-term">204.3.3 — Traversée d'une voie occupée par une rame en stationnement</div>
-  <div class="def-text">Pour traverser une voie occupée par une rame en stationnement, utiliser les moyens de franchissement, en s'assurant que la rame est et restera immobilisée lors du passage :
-• Sur une passerelle ou sur une plate-forme ;
-• Sur un marchepied de franchissement.
-
-➤ Traverser la voie SOUS un véhicule, ou entre véhicules accouplés est <strong>INTERDIT</strong>.</div>
-</div>
-
-<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Règles de sécurité (OP490)</h3>
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Autres règles OP490 (à compléter)</h3>
 <div class="def-block">
   <div class="def-term">Art. 6 — Approche d'un véhicule arrêté</div>
   <div class="def-text">Pour passer devant/derrière un véhicule arrêté, l'intervalle doit être d'au moins <strong>3 mètres</strong> de l'extrémité de chaque véhicule. Interdit de s'abriter sous un véhicule ou de s'asseoir sur les tampons.</div>
-</div>
-<div class="def-block">
-  <div class="def-term">Art. 7 — Montée/descente</div>
-  <div class="def-text">La montée ou la descente d'un véhicule doit s'effectuer à l'ARRÊT uniquement.</div>
 </div>
 <div class="def-block">
   <div class="def-term">Art. 11 — Pénétration entre véhicules</div>
@@ -630,19 +890,18 @@ NOTA : Sur certaines voies désignées à la consigne des particularités locale
   <div class="def-term">Art. 15 — Attelage/dételage hors zones interdites</div>
   <div class="def-text">Interdit d'effectuer l'attelage ou dételage sur : voie dégarnie en cours de travaux · appareil de voie · fosse de visite · courbe de faible rayon · voie comportant obstacles/matériaux gênants.</div>
 </div>
-
-<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Manœuvre sur voie principale</h3>
-<ul class="numbered-list">
-  <li><span class="num">1.</span>Demande verbale du CdM à l'agent de circulation (durée + limites géographiques)</li>
-  <li><span class="num">2.</span>Vérification sur l'ONJ + contact régulateur (pas de train en retard / MI)</li>
-  <li><span class="num">3.</span>Protection de la manœuvre (signaux fermés ou aiguilles en protection)</li>
-  <li><span class="num">4.</span>Autorisation verbale de l'agent de circulation</li>
-</ul>
 `,
 
 circulation: `
 <h2 class="theme-heading">Circulation des trains</h2>
 <div class="theme-ref">AMV101 · AMV104 · AMV108 · AMV160 · DC1505 · DC1510 · OP0528 · OP843</div>
+
+<div style="background:rgba(248,113,113,0.08);border:2px solid var(--red);border-radius:var(--radius2);padding:14px 16px;margin-bottom:18px;font-size:13px;line-height:1.6">
+  🔥 <strong style="color:var(--red)">SPÉCIAL TEST DE POSITIONNEMENT n°2 (demain)</strong> :<br>
+  ▸ <strong>Service de la circulation</strong> : les RT (renseignements techniques) et les <strong>5 paragraphes</strong> du Document A<br>
+  ▸ <strong>Sillon</strong> (par cœur)<br>
+  ▸ <strong>Ordre théorique</strong> : TST + ONJ &nbsp;·&nbsp; <strong>Ordre réel</strong> : EC (état de circulation)
+</div>
 
 <h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Définitions — Lignes et voies <span class="tag yellow">PS9 p.195 · À connaître par cœur</span></h3>
 <div class="def-block important">
@@ -668,43 +927,59 @@ circulation: `
   <div class="def-text">Mode de circulation imposant au conducteur de franchir une partie de voie délimitée en réduisant sa vitesse compte tenu du motif qui lui a été indiqué. Avec restrictions — parfois moins rapide que la marche à vue.</div>
 </div>
 
-<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">AMV101 — Organiser le mouvement</h3>
+<h3 style="font-size:16px;font-weight:600;margin:24px 0 12px;color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:6px">⭐ Service de la circulation <span class="tag red" style="margin-left:8px">TEST DEMAIN</span></h3>
 
 <div class="def-block important">
-  <div class="def-term">Sillon <span class="tag yellow" style="margin-left:6px">Par cœur</span></div>
-  <div class="def-text">Capacité d'infrastructure requise pour faire circuler un train donné d'un point à un autre à un moment donné.</div>
+  <div class="def-term">Service de la circulation</div>
+  <div class="def-text">Ensemble des opérations permettant d'<strong>assurer la sécurité</strong> et d'<strong>organiser le mouvement</strong> des trains, des évolutions et des manœuvres.<br><br>
+  Assuré par : l'<strong>Agent de Circulation (AC)</strong> et les <strong>aiguilleurs</strong>, sous la supervision du <strong>régulateur</strong> sur les lignes régulées.</div>
 </div>
 
 <div class="def-block important">
-  <div class="def-term">Ordre normal (ou théorique)</div>
-  <div class="def-text">Horaires prévus de passage des trains. Déterminé par le TST et l'ONJ.</div>
+  <div class="def-term" style="color:var(--accent)">Renseignements Techniques (RT) — Document A : les 5 paragraphes <span class="tag red" style="margin-left:6px">PAR CŒUR</span></div>
+  <div class="def-text">Le Document A contient les caractéristiques propres à chaque ligne. Il comporte <strong>5 paragraphes</strong> :<br><br>
+  <strong>§ 1</strong> — <strong>Caractéristiques générales d'exploitation</strong> (régimes d'exploitation, signalisation, RST, circulation, traction électrique…)<br>
+  <strong>§ 2</strong> — <strong>Distances, Installations, Cantonnement</strong><br>
+  <strong>§ 3</strong> — <strong>Vitesses limites</strong>, conditions particulières de traction<br>
+  <strong>§ 4</strong> — <strong>Pentes et rampes caractéristiques</strong>, freinage de fortes pentes, charge à l'essieu, masse des trains<br>
+  <strong>§ 5</strong> — <strong>Prescriptions diverses</strong> (communications de sécurité, signalisation, conditions de circulation, PN, sécurité du personnel, autres particularités)<br><br>
+  💡 <strong>Astuce mémo :</strong> <em>« Caractéristiques – Distances – Vitesses – Pentes – Prescriptions »</em></div>
 </div>
+
+<h3 style="font-size:15px;font-weight:500;margin:24px 0 10px;color:var(--text2)">AMV101 — Organiser le mouvement</h3>
+
 <div class="def-block important">
-  <div class="def-term">Ordre réel</div>
-  <div class="def-text">Horaires auxquels les trains sont réellement passés. L'ordre réel peut différer de l'ordre normal par : le retard ou l'avance de certains trains (entraînant garage ou dépassement), ou la mise en marche de trains à marche indéterminée (MI).</div>
+  <div class="def-term" style="color:var(--accent)">Sillon <span class="tag red" style="margin-left:6px">PAR CŒUR</span></div>
+  <div class="def-text">Capacité d'infrastructure requise pour faire circuler un <strong>train donné</strong> d'un <strong>point à un autre</strong> à un <strong>moment donné</strong>.</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term" style="color:var(--accent)">Ordre théorique (ou normal)</div>
+  <div class="def-text">Horaires <strong>prévus</strong> de passage des trains. Déterminé par :<br>
+  ▸ Le <strong>TST</strong> (Tableau de Succession des Trains)<br>
+  ▸ L'<strong>ONJ</strong> (Ordre Normal Journalier)</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term" style="color:var(--accent)">Ordre réel</div>
+  <div class="def-text">Horaires auxquels les trains sont <strong>réellement</strong> passés. Relevé sur l'<strong>EC</strong> (État de Circulation).<br><br>
+  L'ordre réel peut différer de l'ordre théorique par :<br>
+  • Le <strong>retard ou l'avance</strong> de certains trains (entraînant garage ou dépassement)<br>
+  • La mise en marche de trains à <strong>marche indéterminée (MI)</strong></div>
 </div>
 
 <div class="table-wrap"><table>
-  <thead><tr><th>Document</th><th>Type</th><th>Définition</th></tr></thead>
+  <thead><tr><th>Document</th><th>Type d'ordre</th><th>Définition</th></tr></thead>
   <tbody>
-    <tr><td><strong>TST</strong></td><td>Ordre normal</td><td>Tableau de Succession des Trains — liste et horaires de tous les trains réguliers et facultatifs, par ordre chronologique. Établi à chaque nouveau service.</td></tr>
-    <tr><td><strong>ONJ</strong></td><td>Ordre normal</td><td>Ordre Normal Journalier — tableau de tous les passages de trains pour une journée à un poste donné. Format papier ou informatique (OLERON).</td></tr>
-    <tr><td><strong>EC</strong></td><td>Ordre réel</td><td>État de Circulation — relevé où l'agent note l'heure exacte de passage réel des trains. Permet de connaître le dernier train reçu et le dernier expédié.</td></tr>
+    <tr><td><strong>TST</strong></td><td>Théorique</td><td>Tableau de Succession des Trains — liste et horaires de tous les trains réguliers et facultatifs, par ordre chronologique. Établi à chaque nouveau service.</td></tr>
+    <tr><td><strong>ONJ</strong></td><td>Théorique</td><td>Ordre Normal Journalier — tableau de tous les passages de trains pour une journée à un poste donné. Format papier ou informatique (OLERON).</td></tr>
+    <tr><td><strong>EC</strong></td><td>Réel</td><td>État de Circulation — relevé où l'agent note l'heure exacte de passage réel des trains. Permet de connaître le dernier train reçu et le dernier expédié.</td></tr>
   </tbody>
 </table></div>
 
 <div class="def-block">
   <div class="def-term">CLE — Consigne Locale d'Exploitation</div>
   <div class="def-text">Remplace les anciens renseignements techniques, devenus obsolètes. La CLE regroupe toutes les informations d'exploitation propres à une ligne ou à un secteur. Elle intègre notamment le Document A avec ses 5 paragraphes.</div>
-</div>
-
-<div class="def-block important">
-  <div class="def-term">Renseignements techniques — Document A <span class="tag yellow" style="margin-left:6px">5 § par cœur</span></div>
-  <div class="def-text">§ 1 : Caractéristiques générales d'exploitation
-§ 2 : Distances, Installations, Cantonnement
-§ 3 : Vitesses limitées, conditions particulières de traction
-§ 4 : Pentes et rampes caractéristiques, freinage de fortes pentes, charge à l'essieu, masse des trains
-§ 5 : Prescriptions diverses (PN, sécurité personnel, communications de sécurité...)</div>
 </div>
 
 <div class="def-block">
@@ -816,11 +1091,6 @@ circulation: `
   </div>
 </div>
 
-<div class="def-block important">
-  <div class="def-term" style="color:var(--accent)">PRR — Point de Reconnaissance et de Remise en marche <span class="tag yellow" style="margin-left:6px">⚠ À connaître</span></div>
-  <div class="def-text">Emplacement précis en amont d'un signal où le conducteur doit s'arrêter pour se faire reconnaître avant de demander l'autorisation de franchir le signal fermé. Sur les signaux BM : le PRR est matérialisé par un panneau spécifique.</div>
-</div>
-
 <!-- FA — Fermeture Automatique -->
 <h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">FA — Fermeture Automatique</h3>
 <div class="def-block">
@@ -833,6 +1103,15 @@ circulation: `
 <!-- ÉQUIPEMENTS COMPLÉMENTAIRES DES SIGNAUX -->
 <h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Équipements complémentaires des signaux — Comment reconnaître le type de cantonnement ?</h3>
 <div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);padding:16px;margin-bottom:12px">
+
+  <div style="background:rgba(240,192,64,0.08);border:1px solid var(--accent);border-radius:var(--radius);padding:12px 14px;margin-bottom:14px;font-size:13px;line-height:1.6">
+    💡 <strong style="color:var(--accent)">RÔLE de l'œilleton</strong> — c'est un <strong>signal de permissivité</strong> qui sert à distinguer un sémaphore d'un carré.<br><br>
+    🔍 <strong>Cas typique :</strong> tu vois <strong>un seul feu rouge</strong> allumé sur une cible Nf.<br>
+    ▸ <strong>Œilleton allumé</strong> → c'est un <strong>sémaphore</strong> (un seul feu rouge en BAL, c'est normal)<br>
+    ▸ <strong>Œilleton éteint</strong> → c'est un <strong>carré avec un feu en panne / ampoule grillée</strong> (le carré devrait avoir 2 feux rouges)<br><br>
+    <em>→ L'œilleton sert à éviter que le conducteur confonde un carré avarié (avec une seule ampoule fonctionnelle) avec un sémaphore franchissable.</em>
+  </div>
+
   <!-- Schéma plaque Nf -->
   <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;padding:10px 14px;background:var(--bg4);border-radius:6px">
     <div style="font-size:20px;font-weight:900;color:#fff;background:#222;border:3px solid #fff;width:40px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:4px;flex-shrink:0">Nf</div>
@@ -867,13 +1146,56 @@ circulation: `
   </div>
 </div>
 
-<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Plaques d'équipements complémentaires des signaux</h3>
+<h3 style="font-size:16px;font-weight:600;margin:24px 0 12px;color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:6px">⭐ Les 3 plaques — BIEN LES DIFFÉRENCIER !!! <span class="tag red" style="margin-left:8px">TEST DEMAIN</span></h3>
+
+<div style="background:rgba(248,113,113,0.05);border:1px solid var(--red);border-radius:var(--radius2);padding:12px 14px;margin-bottom:14px;font-size:13px;line-height:1.6">
+  🔥 <strong style="color:var(--red)">À retenir absolument :</strong> sur un mât de signal, il y a souvent <strong>3 plaques différentes</strong> qu'il faut savoir distinguer. Elles n'ont pas le même rôle !
+</div>
+
+<!-- Schéma visuel d'un mât avec ses 3 plaques -->
+<div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);padding:18px;margin-bottom:14px">
+  <div style="display:flex;gap:18px;align-items:stretch;flex-wrap:wrap;justify-content:center">
+
+    <!-- Plaque d'identification -->
+    <div style="flex:1;min-width:200px;background:var(--bg4);border:2px solid var(--accent);border-radius:var(--radius2);padding:14px">
+      <div style="display:flex;justify-content:center;margin-bottom:10px">
+        <div style="background:#fafafa;color:#1a1a1a;border:2px solid #1a1a1a;padding:6px 14px;font-family:var(--mono);font-weight:700;font-size:16px;border-radius:2px">Nf</div>
+      </div>
+      <div style="font-weight:600;color:var(--accent);font-size:13px;text-align:center;margin-bottom:6px">1️⃣ Plaque d'IDENTIFICATION</div>
+      <div style="font-size:12px;color:var(--text2);line-height:1.5">Indique l'<strong>état le plus restrictif</strong> que le signal peut présenter (Nf = non franchissable, F, PR, BM, D, A).<br><br>
+      <span style="color:var(--accent)">→ Sert à savoir comment réagir en cas de panneau éteint.</span></div>
+    </div>
+
+    <!-- Plaque de cantonnement -->
+    <div style="flex:1;min-width:200px;background:var(--bg4);border:2px solid var(--blue);border-radius:var(--radius2);padding:14px">
+      <div style="display:flex;justify-content:center;margin-bottom:10px;gap:6px">
+        <div style="background:#fafafa;color:#1a1a1a;border:2px solid #1a1a1a;padding:6px 12px;font-family:var(--mono);font-weight:700;font-size:14px;border-radius:2px">BM</div>
+        <div style="background:#fafafa;color:#1a1a1a;border:2px solid #1a1a1a;padding:6px 12px;font-family:var(--mono);font-weight:700;font-size:14px;border-radius:2px">PR</div>
+      </div>
+      <div style="font-weight:600;color:var(--blue);font-size:13px;text-align:center;margin-bottom:6px">2️⃣ Plaque de CANTONNEMENT</div>
+      <div style="font-size:12px;color:var(--text2);line-height:1.5">Indique le <strong>type de block</strong> du canton protégé : <strong>BM</strong> (Bloc Manuel), <strong>PR</strong> (BAPR). Si <strong>ni BM ni PR → BAL</strong>.<br><br>
+      <span style="color:var(--blue)">→ Sert à savoir comment franchir un sémaphore fermé.</span></div>
+    </div>
+
+    <!-- Plaque de repérage -->
+    <div style="flex:1;min-width:200px;background:var(--bg4);border:2px solid #4ade80;border-radius:var(--radius2);padding:14px">
+      <div style="display:flex;justify-content:center;margin-bottom:10px">
+        <div style="background:#fafafa;color:#1a1a1a;border:2px solid #1a1a1a;padding:6px 14px;font-family:var(--mono);font-weight:700;font-size:15px;border-radius:2px">C.77</div>
+      </div>
+      <div style="font-weight:600;color:#4ade80;font-size:13px;text-align:center;margin-bottom:6px">3️⃣ Plaque de REPÉRAGE</div>
+      <div style="font-size:12px;color:var(--text2);line-height:1.5">Indique le <strong>numéro du signal</strong> (ex. C.77 = carré n°77) ou le <strong>PK</strong>.<br><br>
+      <span style="color:#4ade80">→ Sert à localiser et identifier précisément le signal sur la ligne.</span></div>
+    </div>
+  </div>
+</div>
+
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Tableau récapitulatif</h3>
 <div class="table-wrap"><table>
   <thead><tr><th>Plaque</th><th>Rôle</th><th>Exemple</th></tr></thead>
   <tbody>
-    <tr><td><strong>Plaque d'identification Nf</strong></td><td>Indique que le signal est fermé et permet au conducteur de déterminer le type (carré ou sémaphore) en observant l'œilleton</td><td>Nf c.77 — présent sur tout mât de signal fermé</td></tr>
-    <tr><td><strong>Plaque de cantonnement</strong></td><td>Permet d'identifier le type de block (BAL, BAPR ou BM) lorsque l'œilleton est allumé. Indique la direction du canton protégé</td><td>BM / PR / BM vers Nancy / PR vers Lyon</td></tr>
-    <tr><td><strong>Plaque de repérage</strong></td><td>Repère géographique du signal sur la ligne — indique le numéro du signal et/ou le point kilométrique. Permet à l'aiguilleur et au conducteur de se localiser précisément</td><td>c.77 · c.319 · Nf 114 — visible sur les mâts de signaux</td></tr>
+    <tr><td><strong style="color:var(--accent)">Plaque d'identification</strong></td><td>Indique l'état le plus restrictif que le signal peut présenter (Nf, F, PR, BM, D, A). Sert quand le panneau est éteint.</td><td>Nf · F · PR · BM · D · A</td></tr>
+    <tr><td><strong style="color:var(--blue)">Plaque de cantonnement</strong></td><td>Permet d'identifier le type de block (BAL, BAPR ou BM) et la direction du canton protégé. Si ni BM ni PR : BAL.</td><td>BM · PR · BM vers Nancy · PR vers Lyon</td></tr>
+    <tr><td><strong style="color:#4ade80">Plaque de repérage</strong></td><td>Repère géographique du signal — numéro du signal et/ou point kilométrique. Permet la localisation précise.</td><td>c.77 · c.319 · Nf 114</td></tr>
   </tbody>
 </table></div>
 
@@ -1070,11 +1392,6 @@ cantonnement: `
   </div>
 </div>
 
-<div class="def-block important">
-  <div class="def-term" style="color:var(--accent)">PRR — Point de Reconnaissance et de Remise en marche <span class="tag yellow" style="margin-left:6px">⚠ À connaître</span></div>
-  <div class="def-text">Emplacement précis en amont d'un signal où le conducteur doit s'arrêter pour se faire reconnaître avant de demander l'autorisation de franchir le signal fermé.</div>
-</div>
-
 <h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Comment reconnaître BAL / BAPR / BM sur le terrain</h3>
 <div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);padding:16px;margin-bottom:12px">
   <div style="font-size:12px;color:var(--text2);margin-bottom:12px">Présence de la plaque <strong style="color:var(--text)">Nf</strong> → observer l'œilleton → si allumé, consulter la plaque de cantonnement :</div>
@@ -1092,6 +1409,62 @@ cantonnement: `
       <div style="font-size:13px;font-weight:600;color:var(--accent)">→ Sémaphore de <strong>BM</strong></div>
     </div>
   </div>
+</div>
+
+<h3 style="font-size:16px;font-weight:600;margin:28px 0 12px;color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:6px">⭐ Les 3 plaques d'un signal — BIEN LES DIFFÉRENCIER <span style="font-size:12px;color:var(--red);margin-left:8px">🔥 Test demain</span></h3>
+
+<div style="background:rgba(248,113,113,0.05);border:2px solid var(--red);border-radius:var(--radius2);padding:14px;margin-bottom:14px;font-size:13px;line-height:1.6">
+  ⚠️ Chaque signal possède <strong>1 plaque d'identification</strong> (obligatoire) + éventuellement une <strong>plaque de cantonnement</strong> + une <strong>plaque de repérage</strong>. Les confondre est une faute classique à l'examen.
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-bottom:18px">
+
+  <div style="background:var(--bg3);border-top:4px solid #f87171;border-radius:var(--radius2);padding:14px">
+    <div style="font-size:13px;font-weight:700;color:#f87171;margin-bottom:8px">1️⃣ Plaque d'IDENTIFICATION</div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px">
+      <span class="signal-tag" style="font-weight:700">Nf</span>
+      <span class="signal-tag" style="font-weight:700">F</span>
+      <span class="signal-tag" style="font-weight:700">D</span>
+      <span class="signal-tag" style="font-weight:700">A</span>
+      <span class="signal-tag" style="font-weight:700">GA</span>
+    </div>
+    <div style="font-size:12px;color:var(--text2);line-height:1.6">
+      Indique <strong style="color:var(--text)">l'état le plus restrictif</strong> que le signal peut présenter.<br>
+      → C'est elle qui te dit comment réagir en cas d'avarie (panneau éteint).
+    </div>
+  </div>
+
+  <div style="background:var(--bg3);border-top:4px solid #4ade80;border-radius:var(--radius2);padding:14px">
+    <div style="font-size:13px;font-weight:700;color:#4ade80;margin-bottom:8px">2️⃣ Plaque de CANTONNEMENT</div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px">
+      <span class="signal-tag" style="font-weight:700">BM</span>
+      <span class="signal-tag" style="font-weight:700">BM vers...</span>
+      <span class="signal-tag" style="font-weight:700">PR</span>
+      <span class="signal-tag" style="font-weight:700">PR vers...</span>
+    </div>
+    <div style="font-size:12px;color:var(--text2);line-height:1.6">
+      Indique <strong style="color:var(--text)">le type de cantonnement</strong> du canton qui suit (Block Manuel ou Permissivité Restreinte).<br>
+      → <strong>Absente</strong> = on est en BAL.
+    </div>
+  </div>
+
+  <div style="background:var(--bg3);border-top:4px solid #7db3f5;border-radius:var(--radius2);padding:14px">
+    <div style="font-size:13px;font-weight:700;color:#7db3f5;margin-bottom:8px">3️⃣ Plaque de REPÉRAGE</div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px">
+      <span class="signal-tag" style="font-weight:700">c.77</span>
+      <span class="signal-tag" style="font-weight:700">N° carré</span>
+      <span class="signal-tag" style="font-weight:700">PK</span>
+    </div>
+    <div style="font-size:12px;color:var(--text2);line-height:1.6">
+      Indique le <strong style="color:var(--text)">numéro du carré</strong> ou éventuellement le <strong>point kilométrique</strong>.<br>
+      → Sert à <strong>identifier précisément</strong> le signal lors d'une communication.
+    </div>
+  </div>
+
+</div>
+
+<div style="background:var(--bg4);border-left:3px solid var(--accent);border-radius:var(--radius);padding:10px 14px;margin-bottom:14px;font-size:12px;color:var(--text2);line-height:1.6">
+  <strong style="color:var(--accent)">📸 Exemple :</strong> un signal avec plaque <strong>Nf</strong> + plaque <strong>BM vers le poste 7</strong> + plaque <strong>c.77</strong> = c'est un sémaphore de BM, identifié comme étant le carré 77, et il garde le canton qui mène vers le poste 7.
 </div>
 
 <h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">FA — Fermeture Automatique</h3>
@@ -1154,6 +1527,12 @@ incidents: `
       <span style="font-family:var(--mono);font-size:22px;font-weight:700;color:var(--blue);flex-shrink:0;min-width:28px">M</span>
       <div>
         <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px">Mesures supplémentaires — provoquer l'arrêt par un des 7 moyens suivants :</div>
+        <div style="background:rgba(96,165,250,0.12);border-left:3px solid var(--blue);padding:8px 10px;border-radius:4px;margin-bottom:8px;font-size:12px;line-height:1.6;color:var(--text2)">
+          🎯 <strong style="color:var(--blue)">QUAND déclencher les mesures supplémentaires ?</strong><br>
+          ▸ <strong>Une circulation se trouve entre le signal d'annonce et le signal d'arrêt</strong> (= le train est déjà engagé, il a vu l'avertissement mais pas encore le carré qu'on vient de fermer) → <strong>il faut absolument l'alerter</strong> par un moyen rapide.<br>
+          ▸ Aussi : pas de retour radio = coupure d'urgence, situation où la simple fermeture du signal ne suffit pas.<br><br>
+          💡 <em>Autrement dit : si on a "zappé" le train (il a déjà dépassé le signal d'annonce), on l'avertit en urgence par un de ces 7 moyens.</em>
+        </div>
         <div style="font-size:12px;color:var(--text3);line-height:1.7">
           <div style="background:rgba(240,192,64,0.08);border-left:2px solid var(--accent);padding:4px 8px;border-radius:4px;margin-bottom:4px;color:var(--text2)">⭐ <strong>1. Radio sol-trains GSM-R en phonie</strong> (lieu + nature du danger) ou téléphone GSM-GFU</div>
           <div style="background:rgba(240,192,64,0.08);border-left:2px solid var(--accent);padding:4px 8px;border-radius:4px;margin-bottom:4px;color:var(--text2)">⭐ <strong>2. Demande au COGC</strong> d'arrêter le train</div>
@@ -1311,13 +1690,48 @@ aiguillage: `
 • <strong>Contrôle de position lumineuse</strong> : sur le TCO (Tableau de Contrôle Optique) — indique visuellement la position des aiguilles au poste</div>
 </div>
 
-<div class="def-block important">
-  <div class="def-term">ACPP — 4 conditions avant l'ouverture d'un signal <span class="tag yellow" style="margin-left:6px">À connaître</span></div>
-  <div class="def-text">Avant d'ouvrir un signal de protection, l'aiguilleur doit vérifier les 4 conditions ACPP :<br><br>
-  <strong style="color:var(--accent)">A</strong> — <strong>Appareil(s) de Voie convenablement Disposé(s)</strong><br>
-  <strong style="color:var(--accent)">C</strong> — <strong>Croisement(s) Dégagé(s)</strong><br>
-  <strong style="color:var(--accent)">P</strong> — <strong>Protection du Parcours Assurée</strong><br>
-  <strong style="color:var(--accent)">P</strong> — <strong>Partie(s) de Voie à Parcourir Libre</strong></div>
+<h3 style="font-size:15px;font-weight:500;margin:24px 0 10px;color:var(--accent)">⭐ PRR & ACPP — À CONNAÎTRE PAR CŒUR (exam !)</h3>
+<div style="background:var(--bg3);border:1px solid var(--accent);border-radius:var(--radius2);padding:14px 16px;margin-bottom:14px;font-size:13px;line-height:1.6">
+  <strong style="color:var(--accent)">Règle fondamentale :</strong> dans le <strong>Tableau des mouvements</strong> (Annexe 2 Consigne Rose), pour chaque levier à actionner :<br>
+  • Levier d'<strong>aiguille</strong> → on applique le <strong style="color:var(--accent)">PRR</strong> (vérification avant manœuvre d'un appareil de voie)<br>
+  • Levier de <strong>signal</strong> → on applique l'<strong style="color:var(--accent)">ACPP</strong> (vérification avant ouverture d'un signal)<br><br>
+  💡 <strong>Astuce</strong> : les <strong>derniers chiffres</strong> du tableau des mouvements sont écrits <strong>en gras</strong> — ce sont <strong>forcément des signaux</strong> (donc ACPP à la fin du mouvement).
+</div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px">
+
+  <!-- PRR -->
+  <div class="def-block important" style="margin:0">
+    <div class="def-term" style="color:var(--accent)">PRR — Avant la manœuvre d'un appareil de voie (aiguille)</div>
+    <div class="def-text">Prescriptions morales à vérifier <strong>avant</strong> de manœuvrer un appareil de voie :<br><br>
+    <strong style="color:var(--accent)">P</strong> — <strong>Protection</strong> de l'appareil de voie<br>
+    <span style="color:var(--text2);font-size:12px;display:block;margin:2px 0 8px 18px">→ fermer tous les signaux convenables (+ assurance par signal d'arrêt à main si besoin)</span>
+    <strong style="color:var(--accent)">R</strong> — <strong>Rien</strong> entre le signal de protection et l'appareil de voie<br>
+    <span style="color:var(--text2);font-size:12px;display:block;margin:2px 0 8px 18px">→ vérifier les zones entre le signal et l'aiguille (zones Z101, Z103…)</span>
+    <strong style="color:var(--accent)">R</strong> — <strong>Rien</strong> sur l'appareil de voie<br>
+    <span style="color:var(--text2);font-size:12px;display:block;margin:2px 0 8px 18px">→ vérifier la zone de l'aiguille elle-même</span>
+    <div style="background:var(--bg4);border-radius:6px;padding:8px 10px;margin-top:8px;font-size:12px;color:var(--text2)">
+      ✅ Contrôle par <strong style="color:var(--text)">observation du contrôle de zone (TCO)</strong><br>
+      ✅ Ou <strong style="color:var(--text)">de visu sur le terrain</strong><br><br>
+      <strong style="color:var(--text)">Après la manœuvre :</strong> s'assurer que l'aiguille a obéi <strong>et qu'elle colle</strong> dans sa nouvelle position.
+    </div></div>
+  </div>
+
+  <!-- ACPP -->
+  <div class="def-block important" style="margin:0">
+    <div class="def-term" style="color:var(--accent)">ACPP — Avant l'ouverture d'un signal</div>
+    <div class="def-text">4 conditions à vérifier <strong>avant</strong> d'ouvrir un signal de protection :<br><br>
+    <strong style="color:var(--accent)">A</strong> — <strong>Appareils de voie</strong> convenablement disposés<br>
+    <span style="color:var(--text2);font-size:12px;display:block;margin:2px 0 8px 18px">→ on vérifie que toutes les <strong>aiguilles</strong> de l'itinéraire sont dans la bonne position et collent</span>
+    <strong style="color:var(--accent)">C</strong> — <strong>Croisements</strong> dégagés (zones libres)<br>
+    <span style="color:var(--text2);font-size:12px;display:block;margin:2px 0 8px 18px">→ on vérifie que les <strong>zones sont au blanc</strong> sur le TCO = assurément libres</span>
+    <strong style="color:var(--accent)">P</strong> — <strong>Protection</strong> du parcours assurée<br>
+    <span style="color:var(--text2);font-size:12px;display:block;margin:2px 0 8px 18px">→ on vérifie les <strong>aiguilles ET signaux autour</strong> du parcours qui le protègent (pas d'engagement possible)</span>
+    <strong style="color:var(--accent)">P</strong> — <strong>Partie</strong> de voie à parcourir libre<br>
+    <span style="color:var(--text2);font-size:12px;display:block;margin:2px 0 8px 18px">→ <strong>recheck</strong> de toutes les zones du parcours pour vérifier qu'elles sont <strong>encore au blanc</strong> = assurément libres</span>
+    </div>
+  </div>
+
 </div>
 
 
@@ -1454,6 +1868,19 @@ signaux: `
     <tr><td>V > 120 km/h</td><td>300 m</td></tr>
   </tbody>
 </table></div>
+
+<h3 style="font-size:16px;font-weight:600;margin:24px 0 12px;color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:6px">👁️ L'œilleton — cas du carré avarié <span style="font-size:12px;color:var(--red);margin-left:8px">🔥 Test demain</span></h3>
+
+<div style="background:rgba(167,139,250,0.05);border:1px solid #a78bfa;border-radius:var(--radius2);padding:14px;margin-bottom:14px;font-size:13px;line-height:1.7">
+  <strong style="color:#a78bfa">Pourquoi l'œilleton existe :</strong> Sur une cible <strong>Nf</strong> (qui peut présenter un carré), tu peux voir un seul feu rouge. Sans information complémentaire, tu ne saurais pas s'il s'agit :
+  <ul style="margin:8px 0 8px 22px;padding:0">
+    <li>D'un <strong style="color:var(--text)">sémaphore</strong> de BAL (normal qu'il n'y ait qu'un feu rouge)</li>
+    <li>D'un <strong style="color:var(--text)">carré avarié</strong> dont l'une des deux ampoules a grillé (le carré devrait avoir 2 feux rouges)</li>
+  </ul>
+  L'œilleton lève l'ambiguïté :<br>
+  ● <strong style="color:#a78bfa">Œilleton ALLUMÉ</strong> → c'est un <strong>sémaphore</strong> (donc franchissable sous conditions)<br>
+  ○ <strong style="color:var(--text3)">Œilleton ÉTEINT</strong> → c'est un <strong>carré avarié</strong> (donc NON franchissable, arrêt absolu)
+</div>
 
 <h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">5 Familles de signaux</h3>
 <div class="table-wrap"><table>
@@ -1983,11 +2410,62 @@ elect: `
 <h2 class="theme-heading">Risques traction électrique — SECUFER</h2>
 <div class="theme-ref">AMV803 · OP491 · SECUFER PS9/CG</div>
 
+<div style="background:rgba(248,113,113,0.08);border:2px solid var(--red);border-radius:var(--radius2);padding:14px 16px;margin-bottom:18px;font-size:13px;line-height:1.6">
+  🔥 <strong style="color:var(--red)">SPÉCIAL TEST DE POSITIONNEMENT n°2 (demain)</strong> :<br>
+  ▸ <strong>Les zones d'environnement</strong> (0, 1, 2, 3) — distances et accès<br>
+  ▸ Tout conducteur est considéré <strong>SOUS TENSION sauf assurance du contraire</strong>
+</div>
+
 <div class="rule-box" style="border-left-color:var(--red)">
   <strong>⚠️ Principe général Art. 4.1 :</strong> Tout conducteur électrique nu ou isolé et toute installation électrique doivent être considérés comme étant <strong>sous tension</strong>, sauf assurance du contraire.
 </div>
 
-<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">4.6 — Les 3 familles d'interdictions <span class="tag yellow" style="margin-left:6px">Par cœur</span></h3>
+<h3 style="font-size:16px;font-weight:600;margin:24px 0 12px;color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:6px">⭐ Article 2.2.1 — Les ZONES d'environnement (PAR CŒUR)</h3>
+
+<div class="def-block important">
+  <div class="def-term">Définition des zones</div>
+  <div class="def-text">Les zones d'environnement sont définies par <strong>la distance à un conducteur nu ou pièce nue sous tension</strong>. Plus on s'approche, plus le danger électrique augmente, et plus la qualification requise est élevée.<br><br>
+  💡 <em>De bas en haut (du plus loin au plus proche du conducteur) : Zone 0 → 1 → 2 → 3</em></div>
+</div>
+
+<!-- Schéma visuel des zones -->
+<div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);padding:18px;margin-bottom:14px">
+  <div style="display:flex;flex-direction:column;gap:6px">
+    <div style="display:flex;gap:10px;align-items:center;padding:10px 14px;background:#2a0a0a;border-left:4px solid #dc2626;border-radius:var(--radius)">
+      <div style="background:#dc2626;color:#fff;font-weight:700;padding:6px 10px;border-radius:4px;font-family:var(--mono);min-width:75px;text-align:center">ZONE 3</div>
+      <div style="flex:1">
+        <div style="color:#f87171;font-weight:600;font-size:14px">0 à 1 m</div>
+        <div style="font-size:12px;color:var(--text2)">→ <strong>Agents de la spécialité « caténaire »</strong> uniquement (très haut risque)</div>
+      </div>
+    </div>
+    <div style="display:flex;gap:10px;align-items:center;padding:10px 14px;background:#2a1f04;border-left:4px solid #f59e0b;border-radius:var(--radius)">
+      <div style="background:#f59e0b;color:#1a1a1a;font-weight:700;padding:6px 10px;border-radius:4px;font-family:var(--mono);min-width:75px;text-align:center">ZONE 2</div>
+      <div style="flex:1">
+        <div style="color:#fbbf24;font-weight:600;font-size:14px">1 à 2 m</div>
+        <div style="font-size:12px;color:var(--text2)">→ <strong>Agents habilités « caténaire C0 »</strong> ou sous surveillance d'un agent C0</div>
+      </div>
+    </div>
+    <div style="display:flex;gap:10px;align-items:center;padding:10px 14px;background:#1f2a0a;border-left:4px solid #84cc16;border-radius:var(--radius)">
+      <div style="background:#84cc16;color:#1a1a1a;font-weight:700;padding:6px 10px;border-radius:4px;font-family:var(--mono);min-width:75px;text-align:center">ZONE 1</div>
+      <div style="flex:1">
+        <div style="color:#bef264;font-weight:600;font-size:14px">2 à 3 m</div>
+        <div style="font-size:12px;color:var(--text2)">→ <strong>Agents avertis des risques électriques</strong> et formés aux prescriptions de sécurité</div>
+      </div>
+    </div>
+    <div style="display:flex;gap:10px;align-items:center;padding:10px 14px;background:#052016;border-left:4px solid #10b981;border-radius:var(--radius)">
+      <div style="background:#10b981;color:#fff;font-weight:700;padding:6px 10px;border-radius:4px;font-family:var(--mono);min-width:75px;text-align:center">ZONE 0</div>
+      <div style="flex:1">
+        <div style="color:#6ee7b7;font-weight:600;font-size:14px">> 3 m</div>
+        <div style="font-size:12px;color:var(--text2)">→ <strong>Tous les agents</strong> des emprises ferroviaires (zone sans danger imminent)</div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:12px;padding:10px;background:var(--bg4);border-radius:var(--radius);font-size:12px;color:var(--text3);text-align:center">
+    📏 Distances mesurées à partir du <strong style="color:var(--text)">conducteur nu (caténaire ou pièce sous tension)</strong>
+  </div>
+</div>
+
+<h3 style="font-size:15px;font-weight:500;margin:24px 0 10px;color:var(--text2)">4.6 — Les 3 familles d'interdictions <span class="tag yellow" style="margin-left:6px">Par cœur</span></h3>
 
 <div class="def-block important">
   <div class="def-term">1. Interdictions relatives aux COMPORTEMENTS</div>
@@ -2161,6 +2639,66 @@ A2 — Partie de la zone : protection via installations du poste + DPGR (Demande
 
 // ── FLASHCARDS ──
 const FLASHCARDS = [
+// ═══ 🔥 SPÉCIAL TEST DEMAIN — Mouvement de manœuvre guidé ═══
+{theme:'manœuvre', tag:'§2.2 PS9', q:'🔥 Définition du MOUVEMENT DE MANŒUVRE (par cœur)',
+ a:'Déplacement d\'un ensemble formé par UN OU PLUSIEURS VÉHICULES et autorisé sur une ZONE GÉOGRAPHIQUE LIMITÉE. Ce déplacement peut être GUIDÉ par un agent habilité à cette tâche ou par des signaux lumineux de manœuvre, ou NON GUIDÉ.'},
+{theme:'manœuvre', tag:'§2.2 PS9', q:'🔥 Définition du CHEF DE LA MANŒUVRE',
+ a:'Travailleur, chargé de la commande et de l\'exécution d\'une manœuvre, habilité à la TES H « Commander une manœuvre ». ⚠️ Il est RESPONSABLE de TOUT LE MONDE participant à la manœuvre, y compris le conducteur.'},
+{theme:'manœuvre', tag:'Art. 202', q:'🔥 Article 202 — Règle pour monter ou descendre d\'un véhicule',
+ a:'🚨 La montée ou la descente d\'un véhicule doit S\'EFFECTUER À L\'ARRÊT.\n\nPour monter/descendre :\n• Utiliser mains courantes, marchepieds, échelles\n• Poser/retirer agrès depuis le sol\n• Faire face au véhicule\n• Trois points d\'appui (2 pieds + 1 main OU 1 pied + 2 mains)\n• Observer l\'état du sol avant d\'y poser les pieds'},
+{theme:'manœuvre', tag:'Art. 201.1', q:'🔥 Article 201.1 — Risque lié aux véhicules à l\'arrêt',
+ a:'Tout véhicule arrêté est susceptible d\'être REMIS EN MOUVEMENT À TOUT MOMENT. D\'autre part, passer entre un quai et un véhicule expose au risque d\'écrasement.'},
+{theme:'manœuvre', tag:'Art. 203', q:'🔥 Article 203 — Maintien des organes mobiles',
+ a:'Risque : Tout organe mobile est susceptible de provoquer chutes, heurts, pincements ou écrasements.\n\nRègle : Avant d\'entreprendre le mouvement de manœuvre guidé, s\'assurer que les organes mobiles sont maintenus solidement et ne pourront se rabattre ou se déplacer. La manipulation de tout organe mobile ne peut s\'effectuer que SUR UN VÉHICULE À L\'ARRÊT.'},
+{theme:'manœuvre', tag:'Art. 205', q:'🔥 Article 205 — Manipulation du tendeur d\'attelage',
+ a:'Tenir solidement la MANILLE MOBILE, une main sur chaque branche à la hauteur de l\'écrou à tourillon, les COUDES SERRÉS AU CORPS. L\'accrochage ou le décrochage des accouplements de frein doit s\'effectuer PAR-DESSOUS les tendeurs d\'attelage.'},
+{theme:'manœuvre', tag:'Art. 206.2', q:'🔥 Article 206.2 — Avant d\'intervenir sur la ligne de train',
+ a:'Toute intervention sur la ligne de train n\'est autorisée que si cette dernière est PRIVÉE DE TENSION et que le travailleur en a obtenu l\'assurance, en :\n• Recevant directement la/les clés de chauffage\n• Recevant l\'information d\'un responsable possesseur des clés\n• Avisant et recevant confirmation du conducteur (ligne 380 V alternatifs)'},
+{theme:'manœuvre', tag:'Art. 402.5', q:'🔥 Article 402.5 — Place du CdM',
+ a:'Le chef de la manœuvre doit :\n• Surveiller les travailleurs participant au mouvement\n• Se tenir à proximité du conducteur ou des atteleurs\n• Être visible du conducteur (ou en liaison constante par radio/signal lumineux si impossible)\n• Veiller à sa propre sécurité'},
+{theme:'manœuvre', tag:'Art. 403', q:'🔥 Article 403 — Obligations des travailleurs',
+ a:'Après formation pratique et théorique, tout travailleur doit être conscient que sa sécurité repose sur le respect :\n• Des dispositions du texte\n• Des ordres reçus du chef de la manœuvre\n\nIl doit rester en vue du CdM (ou en liaison radio). Il ne doit pas pénétrer entre les véhicules sans autorisation. La nuit, lanterne du même côté que le CdM.'},
+{theme:'manœuvre', tag:'Art. 601.2', q:'🔥 Article 601.2 — Règle générale d\'accompagnement',
+ a:'Les déplacements liés à l\'exécution d\'un mouvement de manœuvre guidé doivent s\'effectuer À PIED.'},
+{theme:'manœuvre', tag:'Art. 601.3', q:'🔥 Article 601.3 — Accompagnement sur un véhicule',
+ a:'L\'accompagnement sur un véhicule peut être autorisé, par consignes opérationnelles, lorsque cela permet de :\n• Améliorer l\'exécution du mouvement (distance, visibilité)\n• Limiter les risques d\'accidents\n\nMoyens : dans la cabine d\'un EM · à l\'intérieur d\'une voiture voyageurs/fourgon · sur plate-forme ou passerelle d\'extrémité.'},
+{theme:'manœuvre', tag:'§3.1', q:'🔥 §3.1 — Avant la mise en mouvement, le CdM doit vérifier (6 points)',
+ a:'a) État des véhicules + chargements ne s\'opposent pas au déplacement (étiquettes, particularités)\nb) Freins desserrés + cales enlevées\nc) Véhicules non manœuvrés restent immobilisés\nd) Cas échéant, freinage de la rame suffisant\ne) Mesures pour assurer la sécurité des personnes prises\nf) Parties de voies à parcourir libres et resteront libres + itinéraire correctement tracé'},
+{theme:'manœuvre', tag:'§5.3.2', q:'🔥 §5.3.2 — Règle CRITIQUE sur les aiguilles pendant le mouvement',
+ a:'⚠️ Lorsqu\'un AdV a été disposé et que le mouvement a été autorisé, tout agent doit ATTENDRE LE DÉGAGEMENT COMPLET de chaque appareil avant d\'en modifier la position.\n\n🚨 En particulier, IL NE DOIT PAS MODIFIER LA POSITION D\'UNE AIGUILLE PENDANT SON FRANCHISSEMENT.'},
+{theme:'manœuvre', tag:'§5.3.3', q:'🔥 §5.3.3 — Place du conducteur',
+ a:'🚆 Le conducteur doit être EN TÊTE du mouvement toutes les fois que les conditions d\'exécution le permettent. Il observe la marche, règle sa vitesse selon nombre de véhicules, moyens de freinage et profil de la voie. Vmax définie par art. 22 arrêté 9 décembre 2021.'},
+{theme:'manœuvre', tag:'§6.1', q:'🔥 §6.1 — Mesures à prendre à la fin du mouvement',
+ a:'Le CdM prend ou fait prendre les mesures pour que les véhicules :\n• N\'engagent pas les autres voies\n• Stationnent en deçà des taquets/dérailleurs\n• Dégagent les croisements des voies contiguës\n• Soient immobilisés\n\nSi croisements restent engagés → protection par SAM. Faire remettre en place AdV à position imposée + rétablir dispositifs de sécurité.'},
+{theme:'manœuvre', tag:'AMV905', q:'🔥 Les 5 signaux à main du CdM (PAR CŒUR)',
+ a:'1. ARRÊTEZ — ordre de s\'arrêter\n2. APPUYEZ — se coller aux tampons d\'un autre EM/wagon\n3. RALENTISSEZ — ordre de ralentir\n4. TIREZ — EM extrémité : tirer les wagons / EM dans/seul : s\'éloigner du CdM\n5. REFOULEZ — EM extrémité : pousser les wagons / EM dans/seul : s\'approcher du CdM\n\nPeuvent être faits par radio, signaux optiques ou vive voix.'},
+
+// ═══ 🔥 TEST DEMAIN — Circulation ═══
+{theme:'circulation', tag:'Service Circ.', q:'🔥 Service de la circulation — définition',
+ a:'Ensemble des opérations permettant d\'ASSURER LA SÉCURITÉ et d\'ORGANISER LE MOUVEMENT des trains, des évolutions et des manœuvres.\n\nAssuré par : Agent de Circulation (AC) + aiguilleurs, sous la supervision du régulateur sur les lignes régulées.'},
+{theme:'circulation', tag:'RT Doc A', q:'🔥 Les 5 paragraphes du Document A (RT)',
+ a:'§ 1 — Caractéristiques générales d\'exploitation\n§ 2 — Distances, Installations, Cantonnement\n§ 3 — Vitesses limites, conditions particulières de traction\n§ 4 — Pentes et rampes, freinage de fortes pentes, charge à l\'essieu, masse des trains\n§ 5 — Prescriptions diverses (communications, signalisation, PN, sécu personnel)\n\nMémo : Caractéristiques – Distances – Vitesses – Pentes – Prescriptions'},
+{theme:'circulation', tag:'Sillon', q:'🔥 Définition du SILLON (par cœur)',
+ a:'Capacité d\'infrastructure requise pour faire circuler un TRAIN DONNÉ d\'un POINT À UN AUTRE à un MOMENT DONNÉ.'},
+{theme:'circulation', tag:'Ordres', q:'🔥 Différence Ordre théorique vs Ordre réel',
+ a:'ORDRE THÉORIQUE (ou normal) : horaires PRÉVUS. Documents : TST (Tableau de Succession des Trains) + ONJ (Ordre Normal Journalier).\n\nORDRE RÉEL : horaires auxquels les trains sont RÉELLEMENT passés. Document : EC (État de Circulation).\n\nL\'ordre réel peut différer par retards/avances ou MI (Marche Indéterminée).'},
+
+// ═══ 🔥 TEST DEMAIN — FAMAS ═══
+{theme:'incidents', tag:'FAMAS', q:'🔥 FAMAS — quand déclencher les MESURES SUPPLÉMENTAIRES (M) ?',
+ a:'Quand une circulation se trouve ENTRE LE SIGNAL D\'ANNONCE ET LE SIGNAL D\'ARRÊT (le train est déjà engagé, il a vu l\'avertissement mais pas encore le carré qu\'on vient de fermer).\n\n→ Il faut ABSOLUMENT L\'ALERTER par un moyen rapide (radio GSM-R, COGC, coupure d\'urgence, SAM, torche, etc.) — autrement dit : si on a "zappé" le train.'},
+
+// ═══ 🔥 TEST DEMAIN — Traction électrique ═══
+{theme:'elect', tag:'Zones', q:'🔥 Les 4 zones d\'environnement (distance + accès)',
+ a:'ZONE 0 (> 3 m) → Tous les agents des emprises ferroviaires\nZONE 1 (2 à 3 m) → Agents avertis des risques + formés aux prescriptions\nZONE 2 (1 à 2 m) → Agents habilités "caténaire C0" ou sous surveillance d\'un C0\nZONE 3 (0 à 1 m) → Agents de la spécialité "caténaire" UNIQUEMENT\n\nDistances mesurées à partir du conducteur nu.'},
+{theme:'elect', tag:'Art. 4.1', q:'🔥 Principe général de la traction électrique',
+ a:'Tout conducteur électrique nu ou isolé et toute installation électrique doivent être considérés comme étant SOUS TENSION, sauf assurance du contraire.'},
+
+// ═══ 🔥 TEST DEMAIN — Aiguillage / Plaques / Œilleton ═══
+{theme:'aiguillage', tag:'Plaques', q:'🔥 BIEN DIFFÉRENCIER les 3 plaques sur un mât',
+ a:'1️⃣ Plaque d\'IDENTIFICATION (Nf, F, PR, BM, D, A) — indique l\'état le plus restrictif que le signal peut présenter (sert en cas de panneau éteint).\n\n2️⃣ Plaque de CANTONNEMENT (BM, PR ou absence = BAL) — indique le type de block et la direction du canton.\n\n3️⃣ Plaque de REPÉRAGE (c.77, PK…) — numéro/PK du signal pour la localisation.'},
+{theme:'aiguillage', tag:'Œilleton', q:'🔥 À quoi sert l\'œilleton (cas du feu unique) ?',
+ a:'Quand tu vois UN SEUL FEU ROUGE sur une cible Nf :\n• Œilleton ALLUMÉ → c\'est un SÉMAPHORE (normal en BAL d\'avoir un seul feu)\n• Œilleton ÉTEINT → c\'est un CARRÉ AVEC UNE AMPOULE GRILLÉE (le carré devrait avoir 2 feux)\n\nL\'œilleton permet donc de distinguer un sémaphore franchissable d\'un carré avarié.'},
+
 // RISQUES
 {theme:'risques', tag:'AMV005', q:'Citez les 5 risques ferroviaires.',
  a:'1. Collision avec un obstacle\n2. Prise en écharpe (carrefour)\n3. Nez à nez (sens inverse)\n4. Déraillement par excès de vitesse\n5. Rattrapage'},
@@ -2275,6 +2813,104 @@ const FLASHCARDS = [
 
 // ── QUIZ ──
 const QUIZ = [
+// ═══ 🔥 SPÉCIAL TEST DEMAIN — Mouvement de manœuvre guidé ═══
+{theme:'manœuvre', q:'🔥 Définition du MOUVEMENT DE MANŒUVRE (par cœur) :',
+ opts:['Déplacement d\'un train sur une ligne nationale','Déplacement d\'un ensemble formé par un ou plusieurs véhicules et autorisé sur une zone géographique limitée — peut être guidé ou non guidé','Déplacement d\'un train de fret entre deux gares','Toute circulation hors voie principale'],
+ ans:1, exp:'PAR CŒUR pour le test : Déplacement d\'un ensemble formé par un ou plusieurs véhicules et autorisé sur une zone géographique limitée. Peut être guidé par un agent habilité, par signaux lumineux de manœuvre, ou non guidé.'},
+{theme:'manœuvre', q:'🔥 Le Chef de la Manœuvre (CdM) est responsable :',
+ opts:['Uniquement du conducteur','Uniquement des atteleurs','De TOUT LE MONDE participant à la manœuvre, y compris le conducteur','Uniquement de la signalisation'],
+ ans:2, exp:'Le CdM est RESPONSABLE de tous les agents participant à la manœuvre, y compris le conducteur. Il définit la place et le rôle de chacun. C\'est lui qui commande et exécute la manœuvre.'},
+{theme:'manœuvre', q:'🔥 Article 202 — La montée ou la descente d\'un véhicule doit s\'effectuer :',
+ opts:['Au pas (vitesse ≤ 5 km/h)','À l\'ARRÊT — uniquement','En marche lente, après accord du CdM','À n\'importe quelle vitesse si on s\'accroche bien'],
+ ans:1, exp:'🚨 Article 202 = UNIQUEMENT À L\'ARRÊT. Avec mains courantes, marchepieds ou échelles, en faisant face au véhicule, trois points d\'appui (2 pieds + 1 main OU 1 pied + 2 mains), observer l\'état du sol.'},
+{theme:'manœuvre', q:'🔥 Article 201.1 — Quel est le risque lié aux véhicules à l\'arrêt ?',
+ opts:['Le véhicule peut prendre feu','Tout véhicule arrêté est susceptible d\'être remis en mouvement à tout moment','Le véhicule peut dérailler','Le véhicule peut être volé'],
+ ans:1, exp:'Article 201.1 : Tout véhicule arrêté est susceptible d\'être remis en mouvement à tout moment. + Passer entre un quai et un véhicule expose au risque d\'écrasement.'},
+{theme:'manœuvre', q:'🔥 Article 203 — La manipulation de tout organe mobile ne peut s\'effectuer que :',
+ opts:['Pendant le mouvement à vitesse réduite','Sur un véhicule à l\'arrêt','Avec l\'accord du conducteur','Avec un équipement spécial'],
+ ans:1, exp:'Article 203 : La manipulation de tout organe mobile ne peut s\'effectuer que SUR UN VÉHICULE À L\'ARRÊT. Avant tout mouvement, s\'assurer que les organes mobiles sont maintenus solidement et ne peuvent pas se rabattre.'},
+{theme:'manœuvre', q:'🔥 Article 206.2 — Avant d\'intervenir sur la ligne de train, le travailleur doit :',
+ opts:['Couper l\'alimentation lui-même','Obtenir l\'assurance que la ligne de train est privée de tension','Attendre 5 minutes','Mettre des gants isolants'],
+ ans:1, exp:'Article 206.2 : Toute intervention sur la ligne de train n\'est autorisée que si elle est PRIVÉE DE TENSION et que le travailleur en a obtenu l\'assurance (réception directe des clés de chauffage, ou information par radio d\'un responsable possesseur des clés, ou confirmation du conducteur pour 380V alt.).'},
+{theme:'manœuvre', q:'🔥 Article 402.5 — Place du Chef de la Manœuvre :',
+ opts:['Toujours en tête du convoi','Toujours dans la cabine du conducteur','À proximité du conducteur ou des atteleurs, visible du conducteur ou en liaison constante','À 100 mètres de la rame'],
+ ans:2, exp:'Article 402.5 : Le CdM doit surveiller les travailleurs, se tenir à proximité du conducteur ou des atteleurs, être visible du conducteur ou en liaison constante (radio, signal lumineux) si impossible, et veiller à sa propre sécurité.'},
+{theme:'manœuvre', q:'🔥 §3.1 — Avant de donner l\'ordre de mise en mouvement, le CdM doit vérifier :',
+ opts:['Uniquement que les voies sont libres','Uniquement que les agents sont à leur place','6 points : état des véhicules · freins desserrés et cales enlevées · immobilisation OK · freinage suffisant · sécurité des personnes · aiguilles correctement tracées','3 points : freins, signaux, aiguilles'],
+ ans:2, exp:'§3.1 — 6 vérifications obligatoires avant la mise en mouvement : (a) état des véhicules, (b) freins desserrés et cales enlevées, (c) immobilisation des véhicules non manœuvrés, (d) freinage de la rame suffisant, (e) sécurité des personnes assurée, (f) voies/itinéraire correctement tracés.'},
+{theme:'manœuvre', q:'🔥 §5.3.2 — Règle CRITIQUE pendant le mouvement (aiguilles) :',
+ opts:['On peut modifier la position d\'une aiguille à tout moment','Il NE FAUT PAS modifier la position d\'une aiguille pendant son franchissement','On peut modifier la position d\'une aiguille uniquement à vitesse réduite','La modification est libre si on prévient l\'aiguilleur'],
+ ans:1, exp:'§5.3.2 — Règle CRITIQUE : il NE FAUT PAS modifier la position d\'une aiguille pendant son franchissement par un véhicule. Risque de déraillement majeur.'},
+{theme:'manœuvre', q:'🔥 §5.3.3 — Où doit se trouver le conducteur pendant le mouvement ?',
+ opts:['Toujours dans la cabine arrière','En tête du mouvement toutes les fois que les conditions d\'exécution le permettent','À côté du CdM','Au milieu du convoi'],
+ ans:1, exp:'§5.3.3 : Le conducteur doit être EN TÊTE du mouvement toutes les fois que les conditions d\'exécution de la manœuvre le permettent.'},
+{theme:'manœuvre', q:'🔥 §6.1 — À la fin du mouvement de manœuvre guidé, le CdM doit :',
+ opts:['Quitter immédiatement le poste','Prendre ou faire prendre les mesures pour que les véhicules ne soient plus une gêne, soient immobilisés, et que les croisements soient dégagés','Remplir un formulaire et partir','Aviser uniquement le COGC'],
+ ans:1, exp:'§6.1 — Mesures à la fin du mouvement : véhicules n\'engagent pas les voies principales, sont immobilisés (cales, freins), stationnent en deçà des taquets, croisements dégagés. Si croisements restent engagés → faire protéger par SAM ou signaux du poste.'},
+
+// ═══ 🔥 SPÉCIAL TEST DEMAIN — 5 signaux à main ═══
+{theme:'signaux', q:'🔥 Le signe à main "REFOULEZ" (EM à l\'extrémité du convoi) signifie :',
+ opts:['Tirer les wagons','Pousser les wagons sans tenir compte de la position du CdM','S\'arrêter','Ralentir'],
+ ans:1, exp:'REFOULEZ (EM à l\'extrémité) = pousser les wagons sans tenir compte de la position du CdM. Si l\'EM est dans le convoi ou seul = se rapprocher du CdM.'},
+{theme:'signaux', q:'🔥 Le signe à main "TIREZ" (EM à l\'extrémité) signifie :',
+ opts:['Pousser les wagons','Tirer les wagons sans tenir compte de la position du CdM','S\'arrêter','S\'approcher du CdM'],
+ ans:1, exp:'TIREZ (EM à l\'extrémité) = tirer les wagons sans tenir compte de la position du CdM. Si l\'EM est dans le convoi ou seul = s\'éloigner du CdM.'},
+{theme:'signaux', q:'🔥 Le signe à main "APPUYEZ" signifie :',
+ opts:['Appuyer sur le frein','Se coller aux tampons d\'un autre EM ou wagon','S\'arrêter immédiatement','Ralentir au pas'],
+ ans:1, exp:'APPUYEZ = se coller aux tampons d\'un autre engin moteur ou d\'un wagon. Indispensable pour les opérations d\'attelage.'},
+{theme:'signaux', q:'🔥 Cite les 5 signaux à main du CdM (dans le bon ordre) :',
+ opts:['Arrêter / Avancer / Reculer / Lent / Stop','TIREZ / REFOULEZ / RALENTISSEZ / ARRÊTEZ / APPUYEZ','Aller / Reculer / Arrêter / Vite / Lent','Gauche / Droite / Avant / Arrière / Stop'],
+ ans:1, exp:'Les 5 signaux à main du CdM : TIREZ · REFOULEZ · RALENTISSEZ · ARRÊTEZ · APPUYEZ. À connaître PAR CŒUR pour l\'exam !'},
+
+// ═══ 🔥 SPÉCIAL TEST DEMAIN — Circulation / Document A ═══
+{theme:'circulation', q:'🔥 Définition du SILLON :',
+ opts:['Trace laissée par les roues sur le rail','Capacité d\'infrastructure requise pour faire circuler un train donné d\'un point à un autre à un moment donné','Trajet d\'un train entre deux gares','Voie de service réservée'],
+ ans:1, exp:'SILLON = capacité d\'infrastructure requise pour faire circuler un train donné d\'un point à un autre à un moment donné. Définition à connaître par cœur.'},
+{theme:'circulation', q:'🔥 Quels sont les 5 paragraphes du Document A (Renseignements Techniques) ?',
+ opts:['Caractéristiques / Distances / Vitesses / Pentes / Prescriptions','Lignes / Gares / Trains / Personnel / Sécurité','Voies / Signaux / Horaires / Vitesses / Trains','Caractéristiques / Horaires / Vitesses / Itinéraires / Particularités'],
+ ans:0, exp:'Les 5 paragraphes du Document A à connaître par cœur : §1 Caractéristiques générales d\'exploitation · §2 Distances, Installations, Cantonnement · §3 Vitesses limites, conditions particulières de traction · §4 Pentes et rampes caractéristiques · §5 Prescriptions diverses.'},
+{theme:'circulation', q:'🔥 L\'ordre théorique de circulation est défini par :',
+ opts:['L\'agent circulation à chaque passage','Le Tableau de Succession des Trains (TST) + Ordre Normal Journalier (ONJ)','L\'État de Circulation (EC)','Le régulateur en temps réel'],
+ ans:1, exp:'Ordre THÉORIQUE = TST (Tableau de Succession des Trains : tous les trains réguliers/facultatifs classés chronologiquement) + ONJ (Ordre Normal Journalier : tous les passages prévus d\'une journée).'},
+{theme:'circulation', q:'🔥 L\'ordre RÉEL de circulation est constaté grâce à :',
+ opts:['Le TST','L\'ONJ','L\'État de Circulation (EC) — relevé où l\'agent indique l\'heure exacte de passage des trains','La Marche-Type'],
+ ans:2, exp:'Ordre RÉEL = État de Circulation (EC). Relevé (papier ou informatique) où l\'agent indique l\'heure exacte de passage des trains à son poste. Ces données remontent ensuite au régulateur. Permet de connaître le dernier reçu et le dernier expédié.'},
+{theme:'circulation', q:'🔥 Définition du Service de la circulation :',
+ opts:['Service commercial des trains de voyageurs','Ensemble des opérations permettant d\'assurer la sécurité et d\'organiser le mouvement des trains, des évolutions et des manœuvres','Service de maintenance des voies','Service de gestion du personnel SNCF'],
+ ans:1, exp:'Service de la circulation = ensemble des opérations permettant d\'assurer la sécurité ET d\'organiser le mouvement des trains, des évolutions et des manœuvres.'},
+
+// ═══ 🔥 SPÉCIAL TEST DEMAIN — FAMAS ═══
+{theme:'incidents', q:'🔥 FAMAS — Quand déclencher les MESURES SUPPLÉMENTAIRES (M) ?',
+ opts:['Toujours, systématiquement','Lorsqu\'une circulation se trouve déjà entre le signal d\'annonce et le signal d\'arrêt (= train zappé / engagé)','Uniquement la nuit','Quand on a le temps'],
+ ans:1, exp:'Mesures supplémentaires (M) du FAMAS = lorsqu\'une circulation est déjà engagée entre le signal d\'annonce et le signal d\'arrêt → on doit l\'AVERTIR car elle ne verra pas le signal d\'arrêt qui vient d\'être fermé.'},
+{theme:'incidents', q:'🔥 Si entre le signal d\'annonce et le signal d\'arrêt il n\'y a RIEN, alors :',
+ opts:['On déclenche quand même les mesures supplémentaires','On peut passer directement à l\'Assurance (S) — pas besoin de M','On annule le FAMAS','On attend 5 minutes'],
+ ans:1, exp:'Si rien entre signal d\'annonce et signal d\'arrêt → pas de circulation engagée à avertir → on passe directement à S (Assurance). Les mesures supplémentaires (M) ne sont déclenchées QUE quand un train est déjà engagé entre les deux.'},
+{theme:'incidents', q:'🔥 FAMAS — que veut dire chaque lettre ?',
+ opts:['Fermez / Alerter / Mesurer / Aviser / Sécuriser','Fermez les signaux / Alertez les postes / Mesures supplémentaires / Assurance (arrêt) / Suivi','Fermer / Annoncer / Maintenir / Arrêter / Sécuriser','Feu / Alerte / Mouvement / Arrêt / Signal'],
+ ans:1, exp:'FAMAS : F = Fermez les signaux d\'arrêt convenables · A = Alertez verbalement les postes ou gares concernés · M = Mesures supplémentaires (si circulation déjà engagée entre annonce et arrêt) · A = Assurance que la circulation est arrêtée et retenue + ordre de ne pas remettre en marche · S = Suivi (autocontrôle avec fiche 2.2 DC1503).'},
+
+// ═══ 🔥 SPÉCIAL TEST DEMAIN — Traction électrique ═══
+{theme:'elect', q:'🔥 Les 4 zones d\'environnement (à partir du conducteur nu) :',
+ opts:['Zone 0 (>3m) · Zone 1 (2-3m) · Zone 2 (1-2m) · Zone 3 (0-1m)','Zone 1 (>3m) · Zone 2 (2-3m) · Zone 3 (1-2m) · Zone 4 (0-1m)','Zone A (>3m) · Zone B (2-3m) · Zone C (1-2m) · Zone D (0-1m)','Zone 0 (0-1m) · Zone 1 (1-2m) · Zone 2 (2-3m) · Zone 3 (>3m)'],
+ ans:0, exp:'4 zones (PAR CŒUR) : Zone 0 (>3m, tous agents) · Zone 1 (2-3m, agents avertis) · Zone 2 (1-2m, habilités C0) · Zone 3 (0-1m, spécialité caténaire). Plus on est proche, plus la qualification doit être élevée.'},
+{theme:'elect', q:'🔥 Principe général de la traction électrique (Art 4.1) :',
+ opts:['Tout conducteur en service est sous tension','Tout conducteur ou pièce nue doit être considéré comme étant SOUS TENSION, sauf assurance du contraire','Les conducteurs sont sous tension uniquement la journée','Seuls les conducteurs marqués sont sous tension'],
+ ans:1, exp:'Article 4.1 : Tout conducteur nu ou isolé et toute installation électrique doivent être considérés comme étant SOUS TENSION, sauf assurance du contraire. Règle de sécurité absolue.'},
+
+// ═══ 🔥 SPÉCIAL TEST DEMAIN — 3 plaques / œilleton ═══
+{theme:'cantonnement', q:'🔥 Les 3 plaques sur un mât de signal — laquelle indique le type de cantonnement ?',
+ opts:['Plaque d\'identification (Nf, F, D, A, GA)','Plaque de cantonnement (BM, PR…)','Plaque de repérage (c.77, PK…)','La plaque indicatrice de vitesse'],
+ ans:1, exp:'Plaque d\'identification = état le plus restrictif du signal (Nf, F, D, A, GA). Plaque de CANTONNEMENT = type de cantonnement (BM, PR, ou absente = BAL). Plaque de repérage = numéro du carré ou PK.'},
+{theme:'cantonnement', q:'🔥 Sur un mât, tu vois une plaque "Nf" + une plaque "BM vers le poste 7" + "c.77" — c\'est :',
+ opts:['Un sémaphore de BAL, carré n°77','Un sémaphore de BM identifié comme carré 77, qui garde le canton vers le poste 7','Un carré BAPR n°77','Un signal avancé du poste 7'],
+ ans:1, exp:'Nf = non franchissable (état le plus restrictif = carré). BM vers... = cantonnement Block Manuel. c.77 = repérage carré n°77. Donc : sémaphore de BM identifié "carré 77" gardant l\'entrée du canton vers le poste 7.'},
+{theme:'signaux', q:'🔥 Tu vois UN SEUL FEU ROUGE sur une cible Nf. L\'œilleton est ALLUMÉ. Que signifie-t-il ?',
+ opts:['C\'est un carré avec une ampoule grillée','C\'est un sémaphore (normal qu\'il n\'y ait qu\'un feu)','C\'est une erreur, il faut deux feux pour un carré','C\'est un signal en panne'],
+ ans:1, exp:'Œilleton ALLUMÉ = sémaphore (donc franchissable sous conditions). Si l\'œilleton avait été ÉTEINT, ce serait un carré avarié (avec une ampoule grillée — non franchissable, arrêt absolu).'},
+
+// ═══ FIN 🔥 SPÉCIAL TEST DEMAIN ═══
+
 // RISQUES
 {theme:'risques', q:'Quelles sont les 4 étapes d\'une bonne communication de sécurité (OP0542) ?',
  opts:['Identification / Transmission / Finalisation / Archivage','Identification / Appel d\'instruction / Transmission des informations / Finalisation','Appel / Identification / Message / Confirmation','Ouverture / Contenu / Réponse / Clôture'],
@@ -3131,8 +3767,9 @@ function selectTheme(id) {
 }
 
 function setNavActive(v) {
-  ['home','fiches','flash','quiz','dictee'].forEach(x => {
-    document.getElementById('nav-'+x).classList.toggle('active', x === v);
+  ['home','fiches','flash','quiz','dictee','signaux-learn','gares'].forEach(x => {
+    const el = document.getElementById('nav-'+x);
+    if (el) el.classList.toggle('active', x === v);
   });
 }
 
@@ -3153,6 +3790,40 @@ function showView(v) {
   else if (v === 'flash') { setTopbar('AMV / <span>Flashcards</span>'); renderFlash(c); }
   else if (v === 'quiz') { setTopbar('AMV / <span>Quiz QCM</span>'); renderQuiz(c); }
   else if (v === 'dictee') { setTopbar('AMV / <span>Dictée de définitions</span>'); renderDictee(c); }
+  else if (v === 'signaux-learn') { setTopbar('AMV / <span>🚦 Signaux & panneaux</span>'); renderSignauxLearn(c); }
+  else if (v === 'gares') { setTopbar('AMV / <span>🏘️ Gares & Tableaux des mouvements</span>'); renderGares(c); }
+}
+
+// Navigation vers une fiche + scroll précis vers une ancre textuelle
+function gotoFiche(theme, anchorText) {
+  currentTheme = theme;
+  document.querySelectorAll('.theme-item').forEach(el => el.classList.remove('active'));
+  const navEl = document.getElementById('tnav-' + theme);
+  if (navEl) navEl.classList.add('active');
+  showView('fiches');
+  if (!anchorText) return;
+  setTimeout(() => {
+    const content = document.querySelector('.fiche-content');
+    if (!content) return;
+    const q = anchorText.toLowerCase().trim();
+    const candidates = content.querySelectorAll('h2, h3, .def-term');
+    let target = null;
+    for (const el of candidates) {
+      if (el.textContent.toLowerCase().includes(q)) { target = el; break; }
+    }
+    if (!target) return;
+    target.scrollIntoView({behavior:'smooth', block:'start'});
+    // Surlignage temporaire du bloc parent
+    const block = target.closest('.def-block') || target.parentElement || target;
+    const prevTransition = block.style.transition;
+    const prevBoxShadow = block.style.boxShadow;
+    block.style.transition = 'box-shadow 0.35s ease';
+    block.style.boxShadow = '0 0 0 2px var(--accent), 0 0 18px rgba(240,192,64,0.35)';
+    setTimeout(() => {
+      block.style.boxShadow = prevBoxShadow;
+      setTimeout(() => { block.style.transition = prevTransition; }, 400);
+    }, 2200);
+  }, 180);
 }
 
 // ═══════════════════════════════════════════════
@@ -3165,6 +3836,123 @@ function renderHome(c) {
   c.innerHTML = `
 <div class="section-heading">Bienvenue 👋</div>
 <div class="section-sub">Application de révision AMV — SECUFER · v4.12 — 29 mai 2026 · ${THEMES.length} thèmes</div>
+
+<!-- 🔥 SPÉCIAL TEST DEMAIN -->
+<div class="card" style="border:2px solid var(--red);background:rgba(248,113,113,0.05);margin-bottom:16px">
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+    <span style="font-size:24px">🔥</span>
+    <div class="card-title" style="color:var(--red);margin-bottom:0;font-size:16px">SPÉCIAL TEST DE POSITIONNEMENT n°2 — DEMAIN</div>
+  </div>
+  <div style="font-size:13px;color:var(--text2);line-height:1.7;margin-bottom:14px">
+    Checklist ultra-condensée des points à maîtriser <strong>par cœur</strong> pour réussir le 2ème test de positionnement.
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px;margin-bottom:14px">
+
+    <!-- Manœuvre -->
+    <div style="background:var(--bg3);border-left:4px solid var(--accent);border-radius:var(--radius);padding:12px 14px">
+      <div style="font-weight:700;color:var(--accent);font-size:13px;margin-bottom:6px">📋 Mouvement de manœuvre guidé</div>
+      <div style="font-size:12px;color:var(--text2);line-height:1.6">
+        <strong>Articles surlignés bleus (PAR CŒUR) :</strong><br>
+        201.1 · 202 · 203 · 205 · 206.2 · 402.5 · 403 · 601.2 · 601.3<br>
+        <strong>Paragraphes :</strong> §2.1 · §2.2 · §3.1 · §5 (5.3.1, 5.3.2, 5.3.3) · §6.1<br>
+        <strong>Définitions :</strong> Mouvement de manœuvre · Chef de la manœuvre
+      </div>
+      <button class="btn btn-sm" style="margin-top:8px;padding:4px 10px;font-size:11px" onclick="gotoFiche('manœuvre','SPÉCIAL TEST')">Fiche manœuvre →</button>
+    </div>
+
+    <!-- 5 signaux à main -->
+    <div style="background:var(--bg3);border-left:4px solid #fb923c;border-radius:var(--radius);padding:12px 14px">
+      <div style="font-weight:700;color:#fb923c;font-size:13px;margin-bottom:6px">🤚 Les 5 signaux à main du CdM</div>
+      <div style="font-size:12px;color:var(--text2);line-height:1.6">
+        <strong>PAR CŒUR — surtout bien les connaître :</strong><br>
+        ARRÊTEZ · APPUYEZ · RALENTISSEZ · TIREZ · REFOULEZ<br>
+        <em style="color:var(--text3)">Gestuel + signification selon la position de l'EM</em>
+      </div>
+      <button class="btn btn-sm" style="margin-top:8px;padding:4px 10px;font-size:11px" onclick="showView('signaux-learn'); setTimeout(()=>{signauxFamily='M'; renderSignauxContent();}, 200)">Voir les 5 signaux →</button>
+    </div>
+
+    <!-- Article 202 -->
+    <div style="background:var(--bg3);border-left:4px solid var(--red);border-radius:var(--radius);padding:12px 14px">
+      <div style="font-weight:700;color:var(--red);font-size:13px;margin-bottom:6px">🚆 Article 202 — Montée/Descente</div>
+      <div style="font-size:12px;color:var(--text2);line-height:1.6">
+        <strong>VA TOMBER À L'EXAM :</strong><br>
+        Montée/descente <strong>uniquement à l'ARRÊT</strong> · Mains courantes · 3 points d'appui · Observer l'état du sol
+      </div>
+      <button class="btn btn-sm" style="margin-top:8px;padding:4px 10px;font-size:11px" onclick="gotoFiche('manœuvre','Article 202')">Fiche article 202 →</button>
+    </div>
+
+    <!-- Service circulation + Document A -->
+    <div style="background:var(--bg3);border-left:4px solid var(--blue);border-radius:var(--radius);padding:12px 14px">
+      <div style="font-weight:700;color:var(--blue);font-size:13px;margin-bottom:6px">🚦 Service de la circulation</div>
+      <div style="font-size:12px;color:var(--text2);line-height:1.6">
+        <strong>RT — Document A : 5 paragraphes par cœur</strong><br>
+        Caractéristiques · Distances · Vitesses · Pentes · Prescriptions<br>
+        <strong>+ Sillon · Ordre théorique (TST/ONJ) · Ordre réel (EC)</strong>
+      </div>
+      <button class="btn btn-sm" style="margin-top:8px;padding:4px 10px;font-size:11px" onclick="gotoFiche('circulation','Service de la circulation')">Fiche circulation →</button>
+    </div>
+
+    <!-- FAMAS -->
+    <div style="background:var(--bg3);border-left:4px solid #e8a020;border-radius:var(--radius);padding:12px 14px">
+      <div style="font-weight:700;color:#e8a020;font-size:13px;margin-bottom:6px">🚨 FAMAS — Incidents</div>
+      <div style="font-size:12px;color:var(--text2);line-height:1.6">
+        <strong>Bien comprendre les Mesures supplémentaires :</strong><br>
+        Rien entre le signal d'annonce et mon signal d'arrêt → ✓<br>
+        <strong>Si on est zappé (train déjà engagé) → on l'avertit !</strong>
+      </div>
+      <button class="btn btn-sm" style="margin-top:8px;padding:4px 10px;font-size:11px" onclick="gotoFiche('incidents','FAMAS')">Fiche FAMAS →</button>
+    </div>
+
+    <!-- Plaques cantonnement -->
+    <div style="background:var(--bg3);border-left:4px solid #4ade80;border-radius:var(--radius);padding:12px 14px">
+      <div style="font-weight:700;color:#4ade80;font-size:13px;margin-bottom:6px">🟩 Plaques de cantonnement</div>
+      <div style="font-size:12px;color:var(--text2);line-height:1.6">
+        <strong>BIEN LES DIFFÉRENCIER !!!</strong><br>
+        1️⃣ Plaque d'<strong>identification</strong> (Nf, F, PR…)<br>
+        2️⃣ Plaque de <strong>cantonnement</strong> (BM, PR…)<br>
+        3️⃣ Plaque de <strong>repérage</strong> (c.77, PK…)
+      </div>
+      <button class="btn btn-sm" style="margin-top:8px;padding:4px 10px;font-size:11px" onclick="gotoFiche('aiguillage','3 plaques')">Fiche plaques →</button>
+    </div>
+
+    <!-- Œilleton -->
+    <div style="background:var(--bg3);border-left:4px solid #a78bfa;border-radius:var(--radius);padding:12px 14px">
+      <div style="font-weight:700;color:#a78bfa;font-size:13px;margin-bottom:6px">👁️ L'œilleton</div>
+      <div style="font-size:12px;color:var(--text2);line-height:1.6">
+        Permet de <strong>distinguer un carré avarié (avec une seule ampoule qui fonctionne)</strong> d'un sémaphore.<br>
+        ⚫ Œilleton allumé = sémaphore · ⚪ Œilleton éteint = carré
+      </div>
+      <button class="btn btn-sm" style="margin-top:8px;padding:4px 10px;font-size:11px" onclick="showView('signaux-learn'); setTimeout(()=>{setSignauxMode('plaques');}, 200)">Voir œilleton →</button>
+    </div>
+
+    <!-- Traction électrique -->
+    <div style="background:var(--bg3);border-left:4px solid #fbbf24;border-radius:var(--radius);padding:12px 14px">
+      <div style="font-weight:700;color:#fbbf24;font-size:13px;margin-bottom:6px">⚡ Traction électrique — Les zones</div>
+      <div style="font-size:12px;color:var(--text2);line-height:1.6">
+        <strong>Les 4 zones (à partir du conducteur nu) :</strong><br>
+        Zone 0 (&gt;3m) · Zone 1 (2-3m) · Zone 2 (1-2m) · Zone 3 (0-1m)<br>
+        Plus c'est proche, plus l'habilitation requise est élevée.
+      </div>
+      <button class="btn btn-sm" style="margin-top:8px;padding:4px 10px;font-size:11px" onclick="gotoFiche('elect','ZONES')">Fiche zones →</button>
+    </div>
+
+    <!-- Gares -->
+    <div style="background:var(--bg3);border-left:4px solid var(--accent);border-radius:var(--radius);padding:12px 14px">
+      <div style="font-weight:700;color:var(--accent);font-size:13px;margin-bottom:6px">🏘️ Gares & PK à connaître</div>
+      <div style="font-size:12px;color:var(--text2);line-height:1.6">
+        <strong>AMV Ville :</strong> PK <strong style="color:var(--text)">100,600</strong><br>
+        <strong>St-Saturnin :</strong> PK <strong style="color:var(--text)">139,000</strong><br>
+        <em>→ S'entraîner sur les tableaux des mouvements des deux gares !</em>
+      </div>
+      <button class="btn btn-sm" style="margin-top:8px;padding:4px 10px;font-size:11px" onclick="showView('gares')">Voir les 2 gares →</button>
+    </div>
+  </div>
+
+  <div style="padding:12px;background:var(--bg4);border-radius:var(--radius);font-size:12px;color:var(--text2);text-align:center">
+    💡 <strong style="color:var(--accent)">Conseil :</strong> Pour chaque point, ouvre la fiche correspondante puis fais les flashcards et le quiz du thème en boucle jusqu'à ce que tout coule de source.
+  </div>
+</div>
 
 <!-- SCHEMA EXAMEN AMV -->
 <div class="card" style="border-color:rgba(96,165,250,0.3);background:rgba(96,165,250,0.04);margin-bottom:16px">
@@ -3215,6 +4003,8 @@ function renderHome(c) {
   <div class="mode-card" onclick="showView('flash')"><div class="mode-icon">⟳</div><div class="mode-title">Flashcards</div><div class="mode-desc">${tc} cartes recto/verso</div></div>
   <div class="mode-card" onclick="showView('quiz')"><div class="mode-icon">✦</div><div class="mode-title">Quiz QCM</div><div class="mode-desc">${qc} questions</div></div>
   <div class="mode-card" onclick="showView('dictee')"><div class="mode-icon">✎</div><div class="mode-title">Dictées</div><div class="mode-desc">${DICTEES.length} définitions</div></div>
+  <div class="mode-card" onclick="showView('signaux-learn')" style="border-color:rgba(240,192,64,0.4);background:rgba(240,192,64,0.03)"><div class="mode-icon">🚦</div><div class="mode-title" style="color:var(--accent)">Signaux & panneaux</div><div class="mode-desc">Reconnaître ${SIGNAUX.length} signaux visuellement</div></div>
+  <div class="mode-card" onclick="showView('gares')" style="border-color:rgba(240,192,64,0.4);background:rgba(240,192,64,0.03)"><div class="mode-icon">🏘️</div><div class="mode-title" style="color:var(--accent)">Gares & Tab. mouvements</div><div class="mode-desc">St-Saturnin · AMVVille — PK & tableaux</div></div>
 </div>
 
 <!-- A TOMBER A L'EXAM -->
@@ -3225,31 +4015,31 @@ function renderHome(c) {
   </div>
   <div style="display:flex;flex-direction:column;gap:6px">
     ${[
-      ['1','Définition Zone dangereuse (ZD)','zd','Par cœur'],
-      ['2','Définition Emplacement de Garage (EG)','epi','Par cœur'],
-      ['3','FAMAS — 4 étapes + autocontrôle','incidents','Par cœur'],
-      ['4','Obstacle · Danger · Présomption de danger','incidents','Par cœur'],
-      ['5','Sillon · Ordre normal (ONJ) / Ordre réel (EC)','circulation','Par cœur'],
-      ['6','5 § du Document A (renseignements techniques)','circulation','Par cœur'],
-      ['7','Les 3 marches : manœuvre / à vue / prudente','circulation','Par cœur'],
-      ['8','Article 1 DC3858 — 15 familles IS','install-sec','Par cœur'],
-      ['9','Cantonnement + identifier BAL/BAPR/BM sur terrain','cantonnement','Par cœur'],
-      ['10','Consigne Rose — 5 chapitres + 6 premières annexes','aiguillage','À savoir'],
-      ['11','5 familles de signaux (A/B/C/D/E)','signaux','À savoir'],
-      ['12','3 types de communication + 4 étapes (OP0542)','risques','À savoir'],
-      ['13','Les 9 codes radios','risques','À savoir'],
-      ['14','VP / VS — définitions exactes','circulation','Par cœur'],
-      ['15','RAT — définition et utilité','formation','Par cœur'],
-      ['16','4 essais de frein — bien différencier','formation','Bien différencier'],
-      ['17','Définition Cantonnement','cantonnement','Par cœur'],
-      ['18','PRR — Point de Reconnaissance et de Remise en marche','cantonnement','Par cœur'],
-      ['19','ACPP — A·C·P·P : 4 conditions avant ouverture d\'un signal','aiguillage','Par cœur'],
-    ].map(([n,titre,theme,tag]) => `
+      ['1','Définition Zone dangereuse (ZD)','zd','Par cœur','Zone dangereuse'],
+      ['2','Définition Emplacement de Garage (EG)','epi','Par cœur','Emplacement de garage'],
+      ['3','FAMAS — 4 étapes + autocontrôle','incidents','Par cœur','FAMAS'],
+      ['4','Obstacle · Danger · Présomption de danger','incidents','Par cœur','Obstacle'],
+      ['5','Sillon · Ordre normal (ONJ) / Ordre réel (EC)','circulation','Par cœur','Sillon'],
+      ['6','5 § du Document A (renseignements techniques)','circulation','Par cœur','Document A'],
+      ['7','Les 3 marches : manœuvre / à vue / prudente','circulation','Par cœur','Marche à vue'],
+      ['8','Article 1 DC3858 — 15 familles IS','install-sec','Par cœur','15 familles'],
+      ['9','Cantonnement + identifier BAL/BAPR/BM sur terrain','cantonnement','Par cœur','BAL / BAPR / BM'],
+      ['10','Consigne Rose — 5 chapitres + 6 premières annexes','aiguillage','À savoir','Consigne Rose'],
+      ['11','5 familles de signaux (A/B/C/D/E)','signaux','À savoir','5 familles de signaux'],
+      ['12','3 types de communication + 4 étapes (OP0542)','risques','À savoir','communication'],
+      ['13','Les 9 codes radios','risques','À savoir','codes radios'],
+      ['14','VP / VS — définitions exactes','circulation','Par cœur','Voie principale'],
+      ['15','RAT — définition et utilité','formation','Par cœur','RAT'],
+      ['16','4 essais de frein — bien différencier','formation','Bien différencier','essais de frein'],
+      ['17','Définition Cantonnement','cantonnement','Par cœur','Cantonnement'],
+      ['18','PRR — P·R·R : 3 vérifications avant manœuvre d\'un appareil de voie (aiguille)','aiguillage','Par cœur','PRR & ACPP'],
+      ['19','ACPP — A·C·P·P : 4 conditions avant ouverture d\'un signal','aiguillage','Par cœur','PRR & ACPP'],
+    ].map(([n,titre,theme,tag,anchor]) => `
     <div style="display:flex;align-items:center;gap:10px;padding:7px 12px;background:var(--bg3);border-radius:var(--radius);flex-wrap:wrap">
       <span style="font-family:var(--mono);font-size:11px;color:var(--accent);min-width:24px">${n}.</span>
       <span style="font-size:13px;color:var(--text);flex:1">${titre}</span>
       <span class="tag" style="font-size:10px">${tag}</span>
-      <button class="btn btn-sm" style="padding:3px 10px;font-size:11px;white-space:nowrap" onclick="selectTheme('${theme}')">Fiche →</button>
+      <button class="btn btn-sm" style="padding:3px 10px;font-size:11px;white-space:nowrap" onclick="gotoFiche('${theme}','${anchor}')">Fiche →</button>
     </div>`).join('')}
   </div>
 </div>
@@ -3848,6 +4638,962 @@ function showDicteeResult() {
     <button class="btn" onclick="showView('quiz')">← Retour quiz</button>
   </div>
 </div>`;
+}
+
+// ═══════════════════════════════════════════════
+// SIGNAUX & PANNEAUX — Page d'apprentissage
+// ═══════════════════════════════════════════════
+
+// Helper SVG : panneau oblong avec cible noire
+function svgPanel(content, w=80, h=160) {
+  return `<svg viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block">
+    <rect x="${w*0.12}" y="${h*0.05}" width="${w*0.76}" height="${h*0.90}" rx="${w*0.35}" fill="#1a1a1a" stroke="#666" stroke-width="1.5"/>
+    ${content}
+  </svg>`;
+}
+function svgRound(content, sz=120) {
+  return `<svg viewBox="0 0 ${sz} ${sz}" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block">
+    <circle cx="${sz/2}" cy="${sz/2}" r="${sz*0.42}" fill="#1a1a1a" stroke="#666" stroke-width="1.5"/>
+    ${content}
+  </svg>`;
+}
+
+const SIGNAUX = [
+  // ═══ FAMILLE A — SIGNAUX D'ARRÊT ═══
+  {
+    id:'carre', nom:'Carré (C)', fam:'A', plaque:'Nf', voie:'Voie principale',
+    role:'Arrêt absolu — protège les aiguilles et zones de danger',
+    detail:'Rôles : protéger les aiguilles (rôle principal), protéger le stationnement d\'un train en gare, assurer le cantonnement, protéger un obstacle, arrêter les trains. Doit être annoncé par un avertissement.',
+    œilleton:'éteint',
+    svg: svgPanel(`<circle cx="40" cy="55" r="13" fill="#ef4444"/><circle cx="40" cy="100" r="13" fill="#ef4444"/>`)
+  },
+  {
+    id:'carre-violet', nom:'Carré violet (Cv)', fam:'A', plaque:'Nf', voie:'Voie de service',
+    role:'Arrêt absolu sur voies de service / utilisé pour les manœuvres',
+    detail:'Utilisé sur les voies principales pour les manœuvres et sur voies de service. Commande l\'arrêt avant le signal. N\'est pas annoncé. L\'œilleton est éteint quand le Cv est fermé.',
+    œilleton:'éteint',
+    svg: svgPanel(`<circle cx="40" cy="78" r="13" fill="#a855f7"/>`)
+  },
+  {
+    id:'semaphore', nom:'Sémaphore (S)', fam:'A', plaque:'F · PR · BM · Nf', voie:'Voie principale',
+    role:'Assure le cantonnement (espacement des trains)',
+    detail:'Implanté à l\'origine du canton qu\'il protège. Œilleton allumé = franchissable sous conditions (BAL). Œilleton éteint ou absent (BAPR, BM) = non franchissable sauf ordre. En BAL : peut être franchi de lui-même après temps d\'arrêt en marche à vue. En BAPR : accord verbal de l\'aiguilleur ou 15 min d\'attente. En BM : formulaire S ou MV.',
+    œilleton:'allumé (BAL) / éteint ou absent (BAPR, BM)',
+    svg: svgPanel(`<circle cx="40" cy="78" r="13" fill="#ef4444"/><circle cx="68" cy="78" r="6" fill="#fafafa" stroke="#888" stroke-width="0.8"/>`)
+  },
+  {
+    id:'rouge-cli', nom:'Sémaphore clignotant (Rcli)', fam:'A', plaque:'F · Nf', voie:'Voie principale',
+    role:'Marche à vue à 15 km/h max jusqu\'au signal suivant',
+    detail:'Utilisé sur les cantons courts de BAL (zone urbaine dense) ou pour éviter un arrêt non désiré (gare sans arrêt, arrêt en rampe). N\'existe pas en signalisation mécanique. Œilleton allumé.',
+    œilleton:'allumé',
+    svg: svgPanel(`<circle cx="40" cy="78" r="13" fill="#ef4444" opacity="0.95"><animate attributeName="opacity" values="0.95;0.15;0.95" dur="1.2s" repeatCount="indefinite"/></circle><circle cx="68" cy="78" r="6" fill="#fafafa" stroke="#888" stroke-width="0.8"/>`)
+  },
+  {
+    id:'guidon', nom:'Guidon d\'arrêt (GA)', fam:'A', plaque:'GA', voie:'VP ou VS',
+    role:'Arrêt — protège un point particulier (PN, manœuvres)',
+    detail:'Ne peut être abordé que par des convois en marche à vue ou en marche de manœuvre. Présente une barre lumineuse rouge horizontale (lumineux) ou une demi-aile rouge horizontale + feu rouge (mécanique).',
+    œilleton:'—',
+    svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block"><rect x="15" y="30" width="70" height="40" rx="6" fill="#1a1a1a" stroke="#666" stroke-width="1.5"/><rect x="22" y="44" width="56" height="12" rx="2" fill="#ef4444"/></svg>`
+  },
+  {
+    id:'sam', nom:'Signal d\'arrêt à main (SAM)', fam:'A', plaque:'—', voie:'VP',
+    role:'Arrêt immédiat — signal portatif au sol',
+    detail:'Jour : drapeau rouge déployé ou jalon d\'arrêt à damier rouge/blanc. Nuit : feu rouge d\'une lanterne à main ou d\'un jalon. Sert au repérage d\'un point à ne pas dépasser ou à la protection d\'un chantier/obstacle inopiné.',
+    œilleton:'—',
+    svg: `<svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block">
+      <rect x="35" y="10" width="30" height="30" fill="#ef4444"/>
+      <rect x="35" y="10" width="15" height="15" fill="#fff"/>
+      <rect x="50" y="25" width="15" height="15" fill="#fff"/>
+      <circle cx="50" cy="55" r="9" fill="#ef4444"/>
+      <rect x="48" y="60" width="4" height="55" fill="#444"/>
+    </svg>`
+  },
+  {
+    id:'disque', nom:'Disque (D)', fam:'A', plaque:'D', voie:'Voie principale',
+    role:'Annonce un arrêt différé — marche à vue + arrêt avant 1er ADV ou avant le poste',
+    detail:'Signal particulier qui annonce un arrêt différé. Utilisé sur les lignes équipées de Block Manuel pour protéger les petites gares ou les établissements de pleine ligne. Cible RONDE en lumineux, cocarde circulaire rouge en mécanique. Présente 1 feu rouge + 1 feu jaune.',
+    œilleton:'—',
+    svg: svgRound(`<circle cx="44" cy="60" r="11" fill="#ef4444"/><circle cx="76" cy="60" r="11" fill="#fbbf24"/>`)
+  },
+  {
+    id:'heurtoir', nom:'Feu de heurtoir', fam:'A', plaque:'—', voie:'Fin de ligne',
+    role:'Arrêt absolu — fin de ligne, fixé au-dessus d\'un heurtoir',
+    detail:'Présente un feu rouge (sur voie principale) ou violet (sur voie de service) allumé en permanence. N\'est abordé que par des convois en marche à vue.',
+    œilleton:'—',
+    svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block">
+      <rect x="10" y="65" width="80" height="6" fill="#666"/>
+      <rect x="30" y="40" width="40" height="25" rx="3" fill="#1a1a1a" stroke="#666" stroke-width="1.2"/>
+      <circle cx="50" cy="52" r="8" fill="#ef4444"/>
+      <line x1="20" y1="71" x2="20" y2="85" stroke="#666" stroke-width="3"/>
+      <line x1="80" y1="71" x2="80" y2="85" stroke="#666" stroke-width="3"/>
+    </svg>`
+  },
+
+  // ═══ FAMILLE B — ANNONCE D'ARRÊT ═══
+  {
+    id:'avertissement', nom:'Avertissement (A)', fam:'B', plaque:'A · F · Nf', voie:'Voie principale',
+    role:'Annonce la fermeture du signal suivant — distance d\'arrêt suffisante',
+    detail:'Implanté à une distance ≥ à la distance d\'arrêt du signal annoncé. Annonce : un carré, un sémaphore ou sémaphore cli fermés ; en VU peut aussi annoncer un SAM ou un GA fermé. Cible oblongue (BAL) ou ronde (BAPR). Peut annoncer un panneau éteint.',
+    œilleton:'allumé si présent',
+    svg: svgPanel(`<circle cx="40" cy="78" r="13" fill="#fbbf24"/>`)
+  },
+  {
+    id:'jaune-cli', nom:'Jaune clignotant (Jcli)', fam:'B', plaque:'F · Nf', voie:'Voie principale',
+    role:'Annonce un signal d\'arrêt à distance réduite (cantons courts)',
+    detail:'Avant le signal jaune (avertissement). Peut annoncer un ralentissement 30. Œilleton allumé si la cible peut présenter un carré.',
+    œilleton:'allumé',
+    svg: svgPanel(`<circle cx="40" cy="78" r="13" fill="#fbbf24"><animate attributeName="opacity" values="1;0.2;1" dur="1.2s" repeatCount="indefinite"/></circle>`)
+  },
+  {
+    id:'vert-cli', nom:'Vert clignotant (Vcli)', fam:'B', plaque:'—', voie:'Lignes V ≥ 160 km/h',
+    role:'Préannonce signaux d\'arrêt / ralentissement / limitation vitesse',
+    detail:'Concerne les trains roulant à plus de 160 km/h. Leur commande de ralentir.',
+    œilleton:'—',
+    svg: svgPanel(`<circle cx="40" cy="78" r="13" fill="#22c55e"><animate attributeName="opacity" values="1;0.2;1" dur="1.2s" repeatCount="indefinite"/></circle>`)
+  },
+  {
+    id:'bande-jaune', nom:'Bande lumineuse jaune horizontale', fam:'B', plaque:'—', voie:'Gares',
+    role:'Voie à quai courte ou raccourcie',
+    detail:'Indique au conducteur qu\'il va entrer sur une voie à quai courte ou raccourcie. Présentée en complément de l\'avertissement sur le panneau portant le carré d\'entrée.',
+    œilleton:'—',
+    svg: `<svg viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block">
+      <rect x="15" y="15" width="70" height="30" rx="4" fill="#1a1a1a" stroke="#666" stroke-width="1.5"/>
+      <rect x="22" y="25" width="56" height="10" rx="1" fill="#fbbf24"/>
+    </svg>`
+  },
+
+  // ═══ FAMILLE C — LIMITATION DE VITESSE ═══
+  {
+    id:'tiv-30', nom:'TIV 30 fixe — Limitation à 30 km/h', fam:'C', plaque:'—', voie:'VP',
+    role:'Limitation à 30 km/h (prise d\'aiguille)',
+    detail:'Tableau Indicateur de Vitesse — losange jaune avec chiffre noir. À cet endroit le train devra être à 30 km/h pour prendre l\'aiguille.',
+    œilleton:'—',
+    svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block">
+      <polygon points="50,15 85,50 50,85 15,50" fill="#fbbf24" stroke="#1a1a1a" stroke-width="2"/>
+      <text x="50" y="60" text-anchor="middle" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#1a1a1a">30</text>
+    </svg>`
+  },
+  {
+    id:'tiv-60', nom:'TIV 60 — Limitation à 60 km/h', fam:'C', plaque:'—', voie:'VP',
+    role:'Limitation à 60 km/h',
+    detail:'TIV à distance ordinaire. Format losange ou pancarte selon limitation.',
+    œilleton:'—',
+    svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block">
+      <polygon points="50,15 85,50 50,85 15,50" fill="#fbbf24" stroke="#1a1a1a" stroke-width="2"/>
+      <text x="50" y="60" text-anchor="middle" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#1a1a1a">60</text>
+    </svg>`
+  },
+  {
+    id:'tiv-plus60', nom:'TIV +60 km/h (pancarte chiffre)', fam:'C', plaque:'—', voie:'VP',
+    role:'Limitation à plus de 60 km/h',
+    detail:'Pour les limitations supérieures à 60 km/h, la pancarte affiche directement le chiffre dans un cadre.',
+    œilleton:'—',
+    svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block">
+      <rect x="15" y="30" width="70" height="40" rx="2" fill="#fbbf24" stroke="#1a1a1a" stroke-width="2"/>
+      <text x="50" y="62" text-anchor="middle" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#1a1a1a">90</text>
+    </svg>`
+  },
+  {
+    id:'tiv-mobile', nom:'TIV mobile (Z / R)', fam:'C', plaque:'—', voie:'VP',
+    role:'Zone (Z = début) / Reprise (R = fin) d\'une limitation temporaire',
+    detail:'Pour les limitations temporaires supérieures à 60 km/h. Z marque le début de la zone, R marque la reprise de la vitesse normale.',
+    œilleton:'—',
+    svg: `<svg viewBox="0 0 160 80" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block">
+      <rect x="10" y="15" width="50" height="50" fill="#fff" stroke="#1a1a1a" stroke-width="2"/>
+      <text x="35" y="50" text-anchor="middle" font-family="Arial,sans-serif" font-size="30" font-weight="700" fill="#1a1a1a">Z</text>
+      <rect x="100" y="15" width="50" height="50" fill="#fff" stroke="#1a1a1a" stroke-width="2"/>
+      <text x="125" y="50" text-anchor="middle" font-family="Arial,sans-serif" font-size="30" font-weight="700" fill="#1a1a1a">R</text>
+    </svg>`
+  },
+
+  // ═══ FAMILLE D — OUVERTURE / VOIE LIBRE ═══
+  {
+    id:'feu-vert', nom:'Feu vert (voie libre)', fam:'D', plaque:'F · Nf', voie:'VP ou VS',
+    role:'Marche normale autorisée',
+    detail:'Le feu vert de voie libre autorise le conducteur à reprendre sa marche normale si rien ne s\'y oppose. Un train peut s\'arrêter ou rester immobile au feu vert pour un autre motif que la sécurité (arrêt commercial). Œilleton allumé si la cible peut présenter un carré.',
+    œilleton:'allumé si présent',
+    svg: svgPanel(`<circle cx="40" cy="78" r="13" fill="#22c55e"/>`)
+  },
+  {
+    id:'feu-blanc', nom:'Feu blanc (manœuvre)', fam:'D', plaque:'Nf', voie:'Voie de service',
+    role:'Marche en manœuvre autorisée',
+    detail:'En voies de service pour l\'exécution des manœuvres. Si donne accès à une voie principale : marche à vue (30 km/h max) jusqu\'au prochain carré/sémaphore. Œilleton blanc éteint sur les cibles qui peuvent aussi présenter un sémaphore.',
+    œilleton:'éteint',
+    svg: svgPanel(`<circle cx="40" cy="78" r="13" fill="#fafafa"/>`)
+  },
+  {
+    id:'feu-blanc-cli', nom:'Feu blanc clignotant', fam:'D', plaque:'Nf', voie:'VS',
+    role:'Manœuvre courte distance — départ interdit en ligne',
+    detail:'Autorise une marche en manœuvre sur une courte distance. S\'il donne accès à une voie principale, il interdit le départ en ligne. N\'existe pas en signalisation mécanique.',
+    œilleton:'éteint',
+    svg: svgPanel(`<circle cx="40" cy="78" r="13" fill="#fafafa"><animate attributeName="opacity" values="1;0.2;1" dur="1.2s" repeatCount="indefinite"/></circle>`)
+  },
+
+  // ═══ FAMILLE E — SIGNAUX DIVERS ═══
+  {
+    id:'chevron', nom:'Chevron pointe en haut', fam:'E', plaque:'—', voie:'—',
+    role:'Repère le point imposé pour l\'arrêt des mouvements de manœuvre',
+    detail:'Permet au conducteur d\'identifier le point précis où il doit marquer l\'arrêt.',
+    œilleton:'—',
+    svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block">
+      <polygon points="50,15 85,75 60,75 50,55 40,75 15,75" fill="#fff" stroke="#1a1a1a" stroke-width="2.5"/>
+    </svg>`
+  },
+  {
+    id:'arret', nom:'Pancarte ARRÊT', fam:'E', plaque:'—', voie:'—',
+    role:'Repère le point où les circulations doivent marquer un arrêt',
+    detail:'Commande de s\'arrêter avant la pancarte. Si la franchir est nécessaire, le conducteur doit en recevoir l\'ordre verbalement. Peut être complétée par "Arrêt...m" pour indiquer la distance.',
+    œilleton:'—',
+    svg: `<svg viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block">
+      <rect x="10" y="10" width="100" height="40" fill="#fff" stroke="#1a1a1a" stroke-width="2"/>
+      <text x="60" y="38" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#1a1a1a">ARRÊT</text>
+    </svg>`
+  },
+  {
+    id:'stop', nom:'Pancarte STOP', fam:'E', plaque:'—', voie:'—',
+    role:'Marquer un arrêt — le conducteur peut franchir de lui-même si rien ne s\'oppose',
+    detail:'À la différence d\'ARRÊT, le conducteur peut franchir la pancarte STOP de lui-même après l\'arrêt si rien ne s\'y oppose.',
+    œilleton:'—',
+    svg: `<svg viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block">
+      <rect x="10" y="10" width="100" height="40" fill="#fff" stroke="#1a1a1a" stroke-width="2"/>
+      <text x="60" y="38" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#1a1a1a">STOP</text>
+    </svg>`
+  },
+  {
+    id:'lm', nom:'Pancarte LM (Limite Manœuvre)', fam:'E', plaque:'—', voie:'VS',
+    role:'Repère un point que les mouvements de manœuvre ne doivent pas dépasser',
+    detail:'Peut être franchie sur l\'ordre verbal du chef de la manœuvre.',
+    œilleton:'—',
+    svg: `<svg viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block">
+      <rect x="20" y="10" width="60" height="40" fill="#fff" stroke="#1a1a1a" stroke-width="2"/>
+      <text x="50" y="38" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#1a1a1a">LM</text>
+    </svg>`
+  },
+  {
+    id:'lgr', nom:'Pancarte LGR (Limite Garage Refoulement)', fam:'E', plaque:'—', voie:'VS',
+    role:'Repère le point que les mouvements à garer par refoulement doivent atteindre sans dépasser',
+    detail:'Peut être franchie sur l\'ordre verbal du chef de la manœuvre.',
+    œilleton:'—',
+    svg: `<svg viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block">
+      <rect x="15" y="10" width="70" height="40" fill="#fff" stroke="#1a1a1a" stroke-width="2"/>
+      <text x="50" y="38" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#1a1a1a">LGR</text>
+    </svg>`
+  },
+  {
+    id:'losange-noir', nom:'Losange noir', fam:'E', plaque:'—', voie:'—',
+    role:'Repère la limite de certains établissements',
+    detail:'Disposé parallèlement à la voie, partie noire vers la pleine voie, à distance de protection du disque. S\'adresse aux agents de manœuvre et de maintenance.',
+    œilleton:'—',
+    svg: `<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block">
+      <polygon points="40,12 68,40 40,68 12,40" fill="#1a1a1a" stroke="#444" stroke-width="2"/>
+    </svg>`
+  },
+  {
+    id:'tab-garage', nom:'Tableau Garage (G ou D)', fam:'E', plaque:'—', voie:'VS',
+    role:'Indique une voie de garage ou de dépôt',
+    detail:'G = Garage, D = Dépôt. Pour les voies de service.',
+    œilleton:'—',
+    svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block">
+      <rect x="20" y="20" width="60" height="60" fill="#fff" stroke="#1a1a1a" stroke-width="2.5"/>
+      <text x="50" y="68" text-anchor="middle" font-family="Arial,sans-serif" font-size="38" font-weight="700" fill="#1a1a1a">G</text>
+    </svg>`
+  },
+  {
+    id:'indic-dir', nom:'Indicateur de direction', fam:'E', plaque:'—', voie:'VP',
+    role:'Nombre de feux = direction géographique',
+    detail:'1 feu = à gauche · 2 feux = à droite · 3 feux = le plus à droite. Permet de prévenir le conducteur de l\'itinéraire qui lui est tracé.',
+    œilleton:'—',
+    svg: `<svg viewBox="0 0 140 60" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block">
+      <rect x="10" y="10" width="120" height="40" rx="4" fill="#1a1a1a" stroke="#666" stroke-width="1.5"/>
+      <circle cx="40" cy="30" r="8" fill="#fafafa"/>
+      <circle cx="70" cy="30" r="8" fill="#fafafa"/>
+      <circle cx="100" cy="30" r="8" fill="#fafafa"/>
+    </svg>`
+  },
+  {
+    id:'baisser-panto', nom:'Baisser pantographe', fam:'E', plaque:'—', voie:'Traction élec.',
+    role:'Ordre au conducteur de baisser le pantographe',
+    detail:'Concerne la traction électrique. Annoncé à distance par une pancarte spécifique.',
+    œilleton:'—',
+    svg: `<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block">
+      <rect x="15" y="15" width="50" height="50" fill="#fff" stroke="#1a1a1a" stroke-width="2"/>
+      <path d="M 25 35 L 40 25 L 55 35 L 55 50 L 25 50 Z" fill="none" stroke="#1a1a1a" stroke-width="2.5"/>
+      <line x1="20" y1="55" x2="60" y2="55" stroke="#1a1a1a" stroke-width="2.5"/>
+      <path d="M 30 28 L 40 38 M 50 28 L 40 38" stroke="#ef4444" stroke-width="2.5"/>
+    </svg>`
+  },
+  {
+    id:'remonter-panto', nom:'Remonter pantographe', fam:'E', plaque:'—', voie:'Traction élec.',
+    role:'Ordre au conducteur de remonter le pantographe',
+    detail:'Marque la fin d\'une zone sans caténaire ou d\'une section neutre.',
+    œilleton:'—',
+    svg: `<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block">
+      <rect x="15" y="15" width="50" height="50" fill="#fff" stroke="#1a1a1a" stroke-width="2"/>
+      <path d="M 25 50 L 40 40 L 55 50" fill="none" stroke="#1a1a1a" stroke-width="2.5"/>
+      <line x1="40" y1="40" x2="40" y2="22" stroke="#1a1a1a" stroke-width="2.5"/>
+      <line x1="30" y1="22" x2="50" y2="22" stroke="#1a1a1a" stroke-width="2.5"/>
+      <line x1="20" y1="55" x2="60" y2="55" stroke="#1a1a1a" stroke-width="2.5"/>
+    </svg>`
+  },
+  {
+    id:'couper-courant', nom:'Couper courant', fam:'E', plaque:'—', voie:'Traction élec.',
+    role:'Ordre de couper la traction (sectionnement à franchir à vide)',
+    detail:'Pancarte annonçant un sectionnement à franchir circuit à vide. Évite le pontage et l\'amorçage.',
+    œilleton:'—',
+    svg: `<svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block">
+      <rect x="10" y="15" width="100" height="50" fill="#1a1a1a" stroke="#666" stroke-width="2"/>
+      <text x="60" y="48" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#fbbf24">SECT</text>
+    </svg>`
+  },
+
+  // ═══ FAMILLE F — DIVERS (mirliton, croix de St-André) ═══
+  {
+    id:'mirliton', nom:'Mirliton', fam:'E', plaque:'—', voie:'VP',
+    role:'Annonce d\'un signal à visibilité réduite (3 lignes / 2 lignes / 1 ligne)',
+    detail:'Pour les signaux à visibilité réduite : repère à 300 m (3 lignes obliques), puis 200 m (2 lignes), puis 100 m (1 ligne) avant le signal annoncé.',
+    œilleton:'—',
+    svg: `<svg viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block">
+      <rect x="20" y="15" width="60" height="50" fill="#fff" stroke="#1a1a1a" stroke-width="2"/>
+      <line x1="32" y1="22" x2="42" y2="58" stroke="#1a1a1a" stroke-width="3"/>
+      <line x1="48" y1="22" x2="58" y2="58" stroke="#1a1a1a" stroke-width="3"/>
+      <line x1="64" y1="22" x2="74" y2="58" stroke="#1a1a1a" stroke-width="3"/>
+    </svg>`
+  },
+  {
+    id:'st-andre', nom:'Croix de Saint-André', fam:'E', plaque:'—', voie:'—',
+    role:'Annulation des signaux',
+    detail:'Indique que le signal qui la porte est hors service / annulé.',
+    œilleton:'—',
+    svg: `<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block">
+      <rect x="10" y="10" width="60" height="60" fill="#fff" stroke="#1a1a1a" stroke-width="1.5"/>
+      <line x1="15" y1="15" x2="65" y2="65" stroke="#1a1a1a" stroke-width="5"/>
+      <line x1="65" y1="15" x2="15" y2="65" stroke="#1a1a1a" stroke-width="5"/>
+    </svg>`
+  },
+
+  // ═══ FAMILLE M — SIGNAUX À MAIN DU CHEF DE MANŒUVRE ═══
+  {
+    id:'sig-arretez', nom:'ARRÊTEZ', fam:'M', plaque:'—', voie:'Manœuvre',
+    role:'Ordre au conducteur de s\'ARRÊTER',
+    detail:'Le chef de la manœuvre présente un drapeau rouge tendu horizontalement à bout de bras, ou émet l\'ordre par radio « ARRÊTEZ ». La nuit : feu rouge d\'une lanterne. C\'est l\'ordre absolu d\'arrêt pour le conducteur.',
+    œilleton:'—',
+    svg: `<svg viewBox="0 0 100 140" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block">
+      <!-- Personnage -->
+      <circle cx="50" cy="22" r="9" fill="#fde68a" stroke="#1a1a1a" stroke-width="1.5"/>
+      <rect x="40" y="32" width="20" height="35" fill="#f97316" stroke="#1a1a1a" stroke-width="1.5"/>
+      <!-- Bras tendu avec drapeau rouge -->
+      <line x1="40" y1="40" x2="15" y2="45" stroke="#1a1a1a" stroke-width="3"/>
+      <rect x="0" y="35" width="18" height="22" fill="#dc2626" stroke="#1a1a1a" stroke-width="1.5"/>
+      <line x1="60" y1="42" x2="72" y2="50" stroke="#1a1a1a" stroke-width="3"/>
+      <!-- Jambes -->
+      <line x1="44" y1="67" x2="40" y2="100" stroke="#1a1a1a" stroke-width="3"/>
+      <line x1="56" y1="67" x2="60" y2="100" stroke="#1a1a1a" stroke-width="3"/>
+    </svg>`
+  },
+  {
+    id:'sig-appuyez', nom:'APPUYEZ', fam:'M', plaque:'—', voie:'Manœuvre',
+    role:'Ordre au conducteur de se coller aux tampons d\'un autre EM ou wagon',
+    detail:'Le CdM présente les deux poings face à face devant le corps, pouces dressés (ou un drapeau dans chaque main). Geste de rapprochement contrôlé.',
+    œilleton:'—',
+    svg: `<svg viewBox="0 0 100 140" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block">
+      <circle cx="50" cy="22" r="9" fill="#fde68a" stroke="#1a1a1a" stroke-width="1.5"/>
+      <rect x="40" y="32" width="20" height="35" fill="#f97316" stroke="#1a1a1a" stroke-width="1.5"/>
+      <!-- Bras horizontaux pliés -->
+      <line x1="40" y1="40" x2="22" y2="40" stroke="#1a1a1a" stroke-width="3"/>
+      <line x1="22" y1="40" x2="22" y2="28" stroke="#1a1a1a" stroke-width="3"/>
+      <circle cx="22" cy="24" r="5" fill="#1a1a1a"/>
+      <line x1="60" y1="40" x2="78" y2="40" stroke="#1a1a1a" stroke-width="3"/>
+      <line x1="78" y1="40" x2="78" y2="28" stroke="#1a1a1a" stroke-width="3"/>
+      <circle cx="78" cy="24" r="5" fill="#1a1a1a"/>
+      <!-- Pouces dressés (petits arcs) -->
+      <line x1="22" y1="19" x2="22" y2="14" stroke="#1a1a1a" stroke-width="2.5"/>
+      <line x1="78" y1="19" x2="78" y2="14" stroke="#1a1a1a" stroke-width="2.5"/>
+      <!-- Jambes -->
+      <line x1="44" y1="67" x2="40" y2="100" stroke="#1a1a1a" stroke-width="3"/>
+      <line x1="56" y1="67" x2="60" y2="100" stroke="#1a1a1a" stroke-width="3"/>
+    </svg>`
+  },
+  {
+    id:'sig-ralentissez', nom:'RALENTISSEZ', fam:'M', plaque:'—', voie:'Manœuvre',
+    role:'Ordre au conducteur de RALENTIR',
+    detail:'Le CdM agite le drapeau rouge horizontalement d\'un côté à l\'autre. La nuit : balancement d\'une lanterne. Demande de réduction progressive de la vitesse.',
+    œilleton:'—',
+    svg: `<svg viewBox="0 0 100 140" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block">
+      <circle cx="50" cy="22" r="9" fill="#fde68a" stroke="#1a1a1a" stroke-width="1.5"/>
+      <rect x="40" y="32" width="20" height="35" fill="#f97316" stroke="#1a1a1a" stroke-width="1.5"/>
+      <!-- Bras qui balance avec drapeau -->
+      <line x1="40" y1="40" x2="18" y2="38" stroke="#1a1a1a" stroke-width="3"/>
+      <path d="M 5 30 Q 12 35 18 38 Q 12 41 5 46 Z" fill="#dc2626" stroke="#1a1a1a" stroke-width="1.5"/>
+      <!-- Flèches d'oscillation -->
+      <path d="M 22 18 Q 5 25 22 32" stroke="#1a1a1a" stroke-width="1.5" fill="none" stroke-dasharray="2,2"/>
+      <polygon points="20,16 23,19 25,15" fill="#1a1a1a"/>
+      <polygon points="20,34 23,31 25,35" fill="#1a1a1a"/>
+      <line x1="60" y1="42" x2="72" y2="50" stroke="#1a1a1a" stroke-width="3"/>
+      <line x1="44" y1="67" x2="40" y2="100" stroke="#1a1a1a" stroke-width="3"/>
+      <line x1="56" y1="67" x2="60" y2="100" stroke="#1a1a1a" stroke-width="3"/>
+    </svg>`
+  },
+  {
+    id:'sig-tirez', nom:'TIREZ', fam:'M', plaque:'—', voie:'Manœuvre',
+    role:'EM à l\'extrémité : tirer les wagons. EM dans/seul : s\'éloigner du CdM',
+    detail:'Le CdM tient le drapeau rouge VERTICAL en l\'air. EM à l\'extrémité du convoi → ordre de tirer les wagons sans tenir compte de la position du CdM. EM dans le convoi ou seul → ordre de s\'éloigner du CdM.',
+    œilleton:'—',
+    svg: `<svg viewBox="0 0 100 140" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block">
+      <circle cx="50" cy="32" r="9" fill="#fde68a" stroke="#1a1a1a" stroke-width="1.5"/>
+      <rect x="40" y="42" width="20" height="35" fill="#f97316" stroke="#1a1a1a" stroke-width="1.5"/>
+      <!-- Bras en l'air avec drapeau vertical -->
+      <line x1="40" y1="48" x2="32" y2="20" stroke="#1a1a1a" stroke-width="3"/>
+      <rect x="22" y="5" width="14" height="22" fill="#dc2626" stroke="#1a1a1a" stroke-width="1.5"/>
+      <line x1="32" y1="5" x2="32" y2="35" stroke="#1a1a1a" stroke-width="2"/>
+      <line x1="60" y1="52" x2="72" y2="60" stroke="#1a1a1a" stroke-width="3"/>
+      <line x1="44" y1="77" x2="40" y2="110" stroke="#1a1a1a" stroke-width="3"/>
+      <line x1="56" y1="77" x2="60" y2="110" stroke="#1a1a1a" stroke-width="3"/>
+    </svg>`
+  },
+  {
+    id:'sig-refoulez', nom:'REFOULEZ', fam:'M', plaque:'—', voie:'Manœuvre',
+    role:'EM à l\'extrémité : pousser les wagons. EM dans/seul : s\'approcher du CdM',
+    detail:'Le CdM agite le drapeau verticalement de haut en bas, pointe vers le sol. EM à l\'extrémité du convoi → ordre de pousser les wagons sans tenir compte de la position du CdM. EM dans le convoi ou seul → ordre de s\'approcher du CdM.',
+    œilleton:'—',
+    svg: `<svg viewBox="0 0 100 140" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block">
+      <circle cx="50" cy="22" r="9" fill="#fde68a" stroke="#1a1a1a" stroke-width="1.5"/>
+      <rect x="40" y="32" width="20" height="35" fill="#f97316" stroke="#1a1a1a" stroke-width="1.5"/>
+      <!-- Bras vers le bas avec drapeau pointe vers sol -->
+      <line x1="40" y1="42" x2="22" y2="75" stroke="#1a1a1a" stroke-width="3"/>
+      <polygon points="10,68 28,68 19,95" fill="#dc2626" stroke="#1a1a1a" stroke-width="1.5"/>
+      <!-- Flèches d'oscillation verticale -->
+      <line x1="6" y1="60" x2="6" y2="100" stroke="#1a1a1a" stroke-width="1.5" stroke-dasharray="2,2"/>
+      <polygon points="4,62 8,62 6,58" fill="#1a1a1a"/>
+      <polygon points="4,98 8,98 6,102" fill="#1a1a1a"/>
+      <line x1="60" y1="42" x2="72" y2="50" stroke="#1a1a1a" stroke-width="3"/>
+      <line x1="44" y1="67" x2="40" y2="105" stroke="#1a1a1a" stroke-width="3"/>
+      <line x1="56" y1="67" x2="60" y2="105" stroke="#1a1a1a" stroke-width="3"/>
+    </svg>`
+  },
+];
+
+const PLAQUES = [
+  { code:'Nf', label:'Non franchissable', detail:'Le signal peut présenter un carré ou un carré violet. Lorsqu\'il est rouge/violet, il est NON FRANCHISSABLE sans ordre.' },
+  { code:'F',  label:'Franchissable',     detail:'Le signal ne peut présenter QUE le sémaphore de BAL. Donc franchissable de lui-même après temps d\'arrêt en marche à vue.' },
+  { code:'PR', label:'Permissivité Restreinte', detail:'Sémaphore de BAPR. NON franchissable sauf accord verbal de l\'aiguilleur ou après 15 min d\'attente (puis VM sur tout le canton).' },
+  { code:'BM', label:'Bloc Manuel',       detail:'Sémaphore de BM. NON franchissable sauf sur ordre (formulaire S si garde a l\'assurance, MV sinon, ou ordre écrit).' },
+  { code:'D',  label:'Disque',            detail:'L\'état le plus restrictif que le signal peut présenter est le disque (arrêt différé en marche à vue).' },
+  { code:'A',  label:'Avertissement',     detail:'L\'état le plus restrictif est l\'avertissement (annonce simple, pas de carré). Cible souvent ronde.' },
+  { code:'GA', label:'Guidon d\'arrêt',   detail:'L\'état le plus restrictif est le guidon d\'arrêt (point particulier à protéger).' },
+];
+
+const FAMILLES_SIGNAUX = [
+  { id:'*', label:'Tous',          color:'var(--text)',    desc:'Tous les signaux' },
+  { id:'A', label:'A · Arrêt',     color:'#f87171',         desc:'Signaux d\'arrêt (carré, sémaphore, disque…)' },
+  { id:'B', label:'B · Annonce',   color:'#fbbf24',         desc:'Annonce d\'arrêt (avertissement…)' },
+  { id:'C', label:'C · Vitesse',   color:'#a78bfa',         desc:'Limitations de vitesse (TIV)' },
+  { id:'D', label:'D · Ouverture', color:'#4ade80',         desc:'Voie libre / manœuvre (vert, blanc)' },
+  { id:'E', label:'E · Divers',    color:'#7db3f5',         desc:'Pancartes et autres (ARRÊT, STOP, panto…)' },
+  { id:'M', label:'M · Manœuvre 🤚', color:'#fb923c',       desc:'5 signaux à main du CdM (Arrêtez, Appuyez, Ralentissez, Tirez, Refoulez)' },
+];
+
+let signauxFamily = '*';
+let signauxMode = 'decouverte'; // 'decouverte' | 'quiz' | 'plaques'
+let signauxQuiz = { current:null, score:0, total:0, answered:false };
+
+function renderSignauxLearn(c) {
+  c = c || document.getElementById('main-content');
+  c.innerHTML = `
+    <div class="section-heading" style="display:flex;align-items:center;gap:10px"><span style="font-size:26px">🚦</span> Signaux & panneaux ferroviaires</div>
+    <div class="section-sub">Apprends à reconnaître les principaux signaux SNCF — d'après AMV207 (PDF de révision) et letraindemanu.fr</div>
+
+    <!-- Switch de mode -->
+    <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap">
+      <button class="signaux-mode-btn ${signauxMode==='decouverte'?'active':''}" onclick="setSignauxMode('decouverte')">🔍 Découverte</button>
+      <button class="signaux-mode-btn ${signauxMode==='quiz'?'active':''}" onclick="setSignauxMode('quiz')">❓ Quiz d'identification</button>
+      <button class="signaux-mode-btn ${signauxMode==='plaques'?'active':''}" onclick="setSignauxMode('plaques')">📋 Plaques & œilleton</button>
+    </div>
+
+    <div id="signaux-content"></div>
+  `;
+  // Injecter le style des boutons s'il n'existe pas
+  if (!document.getElementById('signaux-style')) {
+    const st = document.createElement('style');
+    st.id = 'signaux-style';
+    st.textContent = `
+      .signaux-mode-btn { padding:8px 14px; background:var(--bg3); border:1px solid var(--border2); color:var(--text2); border-radius:var(--radius); font-family:var(--sans); font-size:13px; cursor:pointer; transition:all 0.15s; }
+      .signaux-mode-btn:hover { color:var(--text); border-color:var(--accent2); }
+      .signaux-mode-btn.active { background:var(--accent); color:#1a1a1a; border-color:var(--accent); font-weight:600; }
+      .fam-tab { padding:6px 12px; background:var(--bg3); border:1px solid var(--border); color:var(--text2); border-radius:var(--radius); font-family:var(--mono); font-size:11px; cursor:pointer; transition:all 0.15s; letter-spacing:0.05em; }
+      .fam-tab:hover { color:var(--text); }
+      .fam-tab.active { background:var(--bg4); border-color:var(--accent); color:var(--accent); }
+      .signal-card { background:var(--bg3); border:1px solid var(--border); border-radius:var(--radius2); padding:14px; transition:all 0.15s; cursor:pointer; display:flex; flex-direction:column; gap:10px; }
+      .signal-card:hover { border-color:var(--accent2); transform:translateY(-2px); box-shadow:0 6px 18px rgba(0,0,0,0.25); }
+      .signal-svg-wrap { background:var(--bg4); border-radius:var(--radius); display:flex; align-items:center; justify-content:center; padding:14px; min-height:120px; max-height:160px; }
+      .signal-svg-wrap svg { max-height:130px; width:auto; }
+      .signal-name { font-size:13px; font-weight:600; color:var(--text); line-height:1.3; }
+      .signal-meta { display:flex; gap:6px; flex-wrap:wrap; }
+      .signal-tag { font-family:var(--mono); font-size:10px; padding:2px 7px; background:var(--bg4); border-radius:3px; color:var(--text3); letter-spacing:0.05em; }
+      .signal-tag.fam-A { color:#f87171; background:#2a0a0a; }
+      .signal-tag.fam-B { color:#fbbf24; background:#2a1f04; }
+      .signal-tag.fam-C { color:#a78bfa; background:#1c0a2e; }
+      .signal-tag.fam-D { color:#4ade80; background:#052016; }
+      .signal-tag.fam-E { color:#7db3f5; background:#071229; }
+      .signal-tag.fam-M { color:#fb923c; background:#2a1106; }
+      .signal-role { font-size:12px; color:var(--text2); line-height:1.5; }
+    `;
+    document.head.appendChild(st);
+  }
+  renderSignauxContent();
+}
+
+function setSignauxMode(m) {
+  signauxMode = m;
+  if (m === 'quiz') signauxQuiz = { current:null, score:0, total:0, answered:false };
+  // Re-render tout pour mettre à jour les boutons mode
+  renderSignauxLearn();
+}
+
+function setSignauxFamily(f) {
+  signauxFamily = f;
+  renderSignauxContent();
+}
+
+function renderSignauxContent() {
+  const wrap = document.getElementById('signaux-content');
+  if (!wrap) return;
+  if (signauxMode === 'decouverte') wrap.innerHTML = renderSignauxDecouverte();
+  else if (signauxMode === 'quiz') wrap.innerHTML = renderSignauxQuiz();
+  else if (signauxMode === 'plaques') wrap.innerHTML = renderSignauxPlaques();
+}
+
+function renderSignauxDecouverte() {
+  const tabsHtml = FAMILLES_SIGNAUX.map(f =>
+    `<button class="fam-tab ${signauxFamily===f.id?'active':''}" onclick="setSignauxFamily('${f.id}')" title="${f.desc}">${f.label}</button>`
+  ).join('');
+
+  const filtered = signauxFamily === '*' ? SIGNAUX : SIGNAUX.filter(s => s.fam === signauxFamily);
+
+  const cards = filtered.map(s => `
+    <div class="signal-card" onclick="showSignalDetail('${s.id}')">
+      <div class="signal-svg-wrap">${s.svg}</div>
+      <div class="signal-name">${s.nom}</div>
+      <div class="signal-meta">
+        <span class="signal-tag fam-${s.fam}">Famille ${s.fam}</span>
+        ${s.plaque !== '—' ? `<span class="signal-tag">Plaque : ${s.plaque}</span>` : ''}
+        <span class="signal-tag">${s.voie}</span>
+      </div>
+      <div class="signal-role">${s.role}</div>
+    </div>
+  `).join('');
+
+  return `
+    <!-- Tabs familles -->
+    <div style="display:flex;gap:6px;margin-bottom:18px;flex-wrap:wrap;align-items:center">
+      <span style="font-family:var(--mono);font-size:10px;color:var(--text3);letter-spacing:0.1em;margin-right:6px">FAMILLES :</span>
+      ${tabsHtml}
+    </div>
+
+    <div style="background:var(--bg3);border:1px solid var(--accent);border-radius:var(--radius2);padding:12px 14px;margin-bottom:18px;font-size:12px;line-height:1.6">
+      💡 <strong style="color:var(--accent)">Astuce mémo</strong> — Les 5 familles : <strong>A</strong>rrêt · <strong>B</strong>annonce d'arrêt · <strong>C</strong> limitation de vitesse · <strong>D</strong> ouverture · <strong>E</strong> divers.<br>
+      Clique sur une carte pour voir le détail complet du signal.
+    </div>
+
+    <div id="signal-detail-modal" style="display:none"></div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px">
+      ${cards}
+    </div>
+
+    <div style="margin-top:24px;padding:14px;background:var(--bg3);border:1px dashed var(--border2);border-radius:var(--radius2);font-size:12px;color:var(--text2)">
+      📚 <strong style="color:var(--text)">Sources :</strong> PDF de révision AMV (AMV207, p.23-26) · letraindemanu.fr/2023/10/20/signalisation-ferroviaire-les-principaux-signaux
+    </div>
+  `;
+}
+
+function showSignalDetail(id) {
+  const s = SIGNAUX.find(x => x.id === id);
+  if (!s) return;
+  const m = document.getElementById('signal-detail-modal');
+  if (!m) return;
+  m.style.display = 'block';
+  m.innerHTML = `
+    <div style="position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:1000;display:flex;align-items:center;justify-content:center;padding:20px" onclick="hideSignalDetail(event)">
+      <div style="background:var(--bg2);border:1px solid var(--accent);border-radius:var(--radius2);padding:20px;max-width:520px;width:100%;max-height:90vh;overflow-y:auto" onclick="event.stopPropagation()">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:14px">
+          <div>
+            <div style="font-size:18px;font-weight:600;color:var(--text);line-height:1.3">${s.nom}</div>
+            <div style="display:flex;gap:6px;margin-top:6px;flex-wrap:wrap">
+              <span class="signal-tag fam-${s.fam}">Famille ${s.fam}</span>
+              ${s.plaque !== '—' ? `<span class="signal-tag">Plaque : ${s.plaque}</span>` : ''}
+              <span class="signal-tag">${s.voie}</span>
+            </div>
+          </div>
+          <button onclick="hideSignalDetail()" style="background:none;border:none;color:var(--text2);font-size:22px;cursor:pointer;padding:0;line-height:1">✕</button>
+        </div>
+        <div style="background:var(--bg4);border-radius:var(--radius);padding:20px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;min-height:180px">
+          <div style="max-width:200px;max-height:200px">${s.svg}</div>
+        </div>
+        <div style="margin-bottom:10px"><strong style="color:var(--accent);font-size:13px">Rôle :</strong><div style="font-size:13px;color:var(--text);margin-top:3px;line-height:1.5">${s.role}</div></div>
+        <div style="margin-bottom:10px"><strong style="color:var(--accent);font-size:13px">Détail :</strong><div style="font-size:13px;color:var(--text2);margin-top:3px;line-height:1.6">${s.detail}</div></div>
+        ${s.œilleton !== '—' ? `<div><strong style="color:var(--accent);font-size:13px">Œilleton :</strong> <span style="font-size:13px;color:var(--text2)">${s.œilleton}</span></div>` : ''}
+      </div>
+    </div>
+  `;
+}
+function hideSignalDetail(e) {
+  if (e && e.target !== e.currentTarget && !e.target.matches('[onclick*="hideSignalDetail"]')) return;
+  const m = document.getElementById('signal-detail-modal');
+  if (m) { m.style.display='none'; m.innerHTML=''; }
+}
+
+function renderSignauxQuiz() {
+  if (!signauxQuiz.current) {
+    pickSignauxQuiz();
+  }
+  const q = signauxQuiz.current;
+  if (!q) return '<div style="color:var(--text3)">Aucun signal disponible.</div>';
+  const optsHtml = q.options.map((opt, i) => {
+    let cls = 'quiz-opt';
+    let extra = '';
+    if (signauxQuiz.answered) {
+      if (i === q.correct) { cls += ' correct'; extra = '✓'; }
+      else if (i === q.picked) { cls += ' wrong'; extra = '✕'; }
+    }
+    return `<button class="${cls}" onclick="answerSignauxQuiz(${i})" ${signauxQuiz.answered?'disabled':''} style="text-align:left;padding:10px 14px;background:var(--bg3);border:1px solid var(--border2);color:var(--text);border-radius:var(--radius);font-family:var(--sans);font-size:13px;cursor:${signauxQuiz.answered?'default':'pointer'};display:flex;justify-content:space-between;align-items:center;gap:10px;transition:all 0.15s">
+      <span>${opt}</span><span style="color:${i===q.correct?'#4ade80':i===q.picked?'#f87171':'transparent'};font-size:16px;font-weight:700">${extra}</span>
+    </button>`;
+  }).join('');
+
+  return `
+    <div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);padding:18px;margin-bottom:14px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+        <div style="font-family:var(--mono);font-size:11px;color:var(--text3);letter-spacing:0.1em">QUIZ D'IDENTIFICATION</div>
+        <div style="font-size:13px;color:var(--text2)">Score : <strong style="color:var(--accent)">${signauxQuiz.score}</strong> / ${signauxQuiz.total}</div>
+      </div>
+
+      <div style="background:var(--bg4);border-radius:var(--radius);padding:24px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;min-height:200px">
+        <div style="max-width:200px;max-height:200px">${q.signal.svg}</div>
+      </div>
+
+      <div style="font-size:14px;color:var(--text);margin-bottom:12px;text-align:center"><strong>Quel est ce signal ?</strong></div>
+
+      <div style="display:flex;flex-direction:column;gap:8px">${optsHtml}</div>
+
+      ${signauxQuiz.answered ? `
+        <div style="margin-top:14px;padding:12px;background:${q.picked===q.correct?'rgba(74,222,128,0.1)':'rgba(248,113,113,0.1)'};border-left:3px solid ${q.picked===q.correct?'#4ade80':'#f87171'};border-radius:var(--radius);font-size:12px;color:var(--text2);line-height:1.6">
+          <strong style="color:${q.picked===q.correct?'#4ade80':'#f87171'}">${q.picked===q.correct?'✓ Correct !':'✕ Faux'}</strong> — ${q.signal.role}<br>
+          <span style="color:var(--text3)">${q.signal.detail.substring(0, 220)}${q.signal.detail.length>220?'…':''}</span>
+        </div>
+        <div style="margin-top:12px;display:flex;gap:8px;justify-content:center">
+          <button class="btn btn-accent" onclick="nextSignauxQuiz()">Signal suivant →</button>
+          <button class="btn" onclick="setSignauxMode('decouverte')">← Découverte</button>
+        </div>
+      ` : `
+        <div style="margin-top:14px;font-size:11px;color:var(--text3);text-align:center">Choisis une réponse pour voir l'explication</div>
+      `}
+    </div>
+  `;
+}
+
+function pickSignauxQuiz() {
+  const pool = SIGNAUX.slice();
+  // Tirer un signal au hasard
+  const idx = Math.floor(Math.random() * pool.length);
+  const signal = pool[idx];
+  // Tirer 3 autres signaux comme leurres (différents)
+  const others = pool.filter(s => s.id !== signal.id).sort(() => Math.random() - 0.5).slice(0, 3);
+  const all = [signal, ...others].sort(() => Math.random() - 0.5);
+  const correct = all.indexOf(signal);
+  signauxQuiz.current = {
+    signal, options: all.map(s => s.nom), correct, picked: null
+  };
+  signauxQuiz.answered = false;
+}
+
+function answerSignauxQuiz(i) {
+  if (signauxQuiz.answered) return;
+  signauxQuiz.answered = true;
+  signauxQuiz.current.picked = i;
+  signauxQuiz.total++;
+  if (i === signauxQuiz.current.correct) signauxQuiz.score++;
+  renderSignauxContent();
+}
+
+function nextSignauxQuiz() {
+  pickSignauxQuiz();
+  renderSignauxContent();
+}
+
+function renderSignauxPlaques() {
+  const rows = PLAQUES.map(p => `
+    <tr>
+      <td style="font-family:var(--mono);font-size:14px;font-weight:700;color:var(--accent);width:60px">${p.code}</td>
+      <td style="font-weight:600;color:var(--text)">${p.label}</td>
+      <td style="color:var(--text2);font-size:13px;line-height:1.6">${p.detail}</td>
+    </tr>
+  `).join('');
+
+  return `
+    <h3 style="font-size:15px;font-weight:500;margin-bottom:12px;color:var(--text2)">Plaques d'identification des signaux</h3>
+    <div style="background:var(--bg3);border:1px solid var(--accent);border-radius:var(--radius2);padding:14px;margin-bottom:18px;font-size:12px;line-height:1.6">
+      💡 <strong style="color:var(--accent)">À retenir</strong> — La plaque indique l'<strong>état le plus restrictif</strong> que le signal peut présenter. C'est elle qui te dit comment réagir en cas d'avarie (panneau éteint).
+    </div>
+
+    <div class="table-wrap"><table>
+      <thead><tr><th>Code</th><th>Signification</th><th>Détail</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table></div>
+
+    <h3 style="font-size:15px;font-weight:500;margin:24px 0 12px;color:var(--text2)">👁️ L'œilleton — clé de lecture</h3>
+    <div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);padding:18px;line-height:1.7;font-size:13px">
+      <p style="margin-bottom:14px">L'<strong style="color:var(--accent)">œilleton</strong> est une petite lampe blanche située latéralement à la cible principale (généralement côté extérieur). C'est un <strong>signal de permissivité</strong> en cantonnement.</p>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px">
+        <div style="background:var(--bg4);border:1px solid var(--border);border-radius:var(--radius);padding:14px">
+          <div style="font-weight:600;color:var(--accent);margin-bottom:8px;font-size:13px">Œilleton ALLUMÉ ●</div>
+          <div style="font-size:12px;color:var(--text2);line-height:1.6">Cible présente uniquement un signal de cantonnement BAL :
+            <ul style="margin:6px 0 0 18px;padding:0">
+              <li>Sémaphore (de BAL)</li>
+              <li>Avertissement</li>
+              <li>Voie libre</li>
+            </ul>
+            → <strong style="color:var(--text)">Sémaphore franchissable sous conditions</strong>
+          </div>
+        </div>
+        <div style="background:var(--bg4);border:1px solid var(--border);border-radius:var(--radius);padding:14px">
+          <div style="font-weight:600;color:var(--text3);margin-bottom:8px;font-size:13px">Œilleton ÉTEINT ○ ou absent</div>
+          <div style="font-size:12px;color:var(--text2);line-height:1.6">Cible présente :
+            <ul style="margin:6px 0 0 18px;padding:0">
+              <li>Carré</li>
+              <li>Carré violet</li>
+              <li>Feu blanc de manœuvre</li>
+            </ul>
+            → <strong style="color:var(--text)">Arrêt absolu — non franchissable</strong>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:14px;padding:10px;background:var(--bg4);border-left:3px solid var(--accent);border-radius:var(--radius);font-size:12px;color:var(--text2)">
+        <strong style="color:var(--accent)">Cas particulier :</strong> Sur les cibles ne pouvant présenter que le sémaphore de BAL, l'œilleton est généralement absent (puisqu'il serait en permanence allumé). Sur les sémaphores de BAPR et BM, pas d'œilleton non plus.
+      </div>
+    </div>
+
+    <h3 style="font-size:15px;font-weight:500;margin:24px 0 12px;color:var(--text2)">📏 Distances de visibilité des signaux</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Vitesse</th><th>Distance minimale</th></tr></thead>
+      <tbody>
+        <tr><td>V ≤ 60 km/h</td><td><strong style="color:var(--accent)">100 m</strong></td></tr>
+        <tr><td>60 &lt; V ≤ 120 km/h</td><td><strong style="color:var(--accent)">200 m</strong></td></tr>
+        <tr><td>V &gt; 120 km/h</td><td><strong style="color:var(--accent)">300 m</strong></td></tr>
+      </tbody>
+    </table></div>
+    <div style="font-size:12px;color:var(--text3);margin-top:8px;font-style:italic">
+      Pour les signaux à visibilité réduite : on installe des <strong>mirlitons</strong> à 300 m (3 traits), 200 m (2 traits) puis 100 m (1 trait) avant le signal annoncé.
+    </div>
+  `;
+}
+
+// ═══════════════════════════════════════════════
+// GARES — Schémas + Tableaux des mouvements
+// ═══════════════════════════════════════════════
+
+const GARES = {
+  amvville: {
+    nom: "AMVVille",
+    pk: "100,600",
+    voiePrincipale: "AVILLE (-) ↔ ZEDVILLE (+)",
+    leviers: [
+      { id:'1', type:'aiguille', desc:'Aiguille 1 — accès voie V1 / V2' },
+      { id:'2', type:'aiguille', desc:'Aiguille 2' },
+      { id:'3', type:'aiguille', desc:'Aiguille 3' },
+      { id:'4', type:'aiguille', desc:'Aiguille 4' },
+      { id:'5', type:'aiguille', desc:'Aiguille 5' },
+      { id:'6', type:'aiguille', desc:'Aiguille 6' },
+      { id:'C1', type:'signal', desc:'Carré C1 — accès' },
+      { id:'C2', type:'signal', desc:'Carré C2' },
+      { id:'C3', type:'signal', desc:'Carré C3' },
+      { id:'C4', type:'signal', desc:'Carré C4' },
+      { id:'C5', type:'signal', desc:'Carré C5' },
+      { id:'Cv6', type:'signal', desc:'Carré violet Cv6 (manœuvre)' },
+      { id:'Cv8', type:'signal', desc:'Carré violet Cv8 (manœuvre)' },
+      { id:'Cv101', type:'signal', desc:'Carré violet Cv101' },
+    ],
+    // Tableau des mouvements — quelques mouvements types
+    mouvements: [
+      { id:'M1', dep:'AVILLE V1', dest:'ZEDVILLE V1', leviers:['6','4a','3a','2a','1','C1'], note:'Mouvement direct V1 → V1' },
+      { id:'M2', dep:'AVILLE V2', dest:'ZEDVILLE V2', leviers:['6','4b','3a','2a','1','C3'], note:'Mouvement direct V2 → V2' },
+      { id:'M3', dep:'AVILLE V1', dest:'ZEDVILLE V2', leviers:['6','4a','3b','2b','1','C1'], note:'Avec changement de voie (croisement)' },
+      { id:'M4', dep:'Voie 101', dest:'V1 vers ZEDVILLE', leviers:['101','3a','2a','1','Cv101'], note:'Sortie voie de service 101' },
+    ],
+  },
+  stsaturnin: {
+    nom: "Saint-Saturnin",
+    pk: "139,000",
+    voiePrincipale: "PARIS (-) ↔ LA PRESLE (+)",
+    leviers: [
+      { id:'11', type:'aiguille', desc:'Aiguille 11' },
+      { id:'12', type:'aiguille', desc:'Aiguille 12' },
+      { id:'13', type:'aiguille', desc:'Aiguille 13' },
+      { id:'14', type:'aiguille', desc:'Aiguille 14' },
+      { id:'15a', type:'aiguille', desc:'Aiguille 15a' },
+      { id:'15b', type:'aiguille', desc:'Aiguille 15b' },
+      { id:'C211', type:'signal', desc:'Carré C211' },
+      { id:'C213', type:'signal', desc:'Carré C213' },
+      { id:'S219', type:'signal', desc:'Sémaphore S219' },
+      { id:'Cv212', type:'signal', desc:'Carré violet Cv212' },
+      { id:'Cv214', type:'signal', desc:'Carré violet Cv214' },
+      { id:'Cv215', type:'signal', desc:'Carré violet Cv215' },
+      { id:'Cv222', type:'signal', desc:'Carré violet Cv222' },
+      { id:'Cv224', type:'signal', desc:'Carré violet Cv224' },
+      { id:'Cv226', type:'signal', desc:'Carré violet Cv226' },
+    ],
+    mouvements: [
+      { id:'M1', dep:'PARIS V1', dest:'LA PRESLE V1', leviers:['11','13','14','15a','S219'], note:'Direct V1 → V1' },
+      { id:'M2', dep:'PARIS V2', dest:'LA PRESLE V2', leviers:['11','13','14','15b','C211'], note:'Direct V2 → V2' },
+      { id:'M3', dep:'V1', dest:'V2 LA PRESLE', leviers:['11','13','14','15b','S219'], note:'Avec changement V1 → V2' },
+      { id:'M4', dep:'Voie A (annexe)', dest:'V1 vers LA PRESLE', leviers:['11','13','14','15a','Cv215'], note:'Sortie voie annexe' },
+    ],
+  },
+};
+
+let garesCurrent = 'amvville';
+let garesQuiz = { active:false, current:null, score:0, total:0, answered:false };
+
+function renderGares(c) {
+  c = c || document.getElementById('main-content');
+
+  // Style local pour Gares
+  if (!document.getElementById('gares-style')) {
+    const st = document.createElement('style');
+    st.id = 'gares-style';
+    st.textContent = `
+      .gare-tab { padding:10px 20px; background:var(--bg3); border:1px solid var(--border2); color:var(--text2); border-radius:var(--radius); font-family:var(--sans); font-size:14px; font-weight:600; cursor:pointer; transition:all 0.15s; }
+      .gare-tab:hover { color:var(--text); border-color:var(--accent2); }
+      .gare-tab.active { background:var(--accent); color:#1a1a1a; border-color:var(--accent); }
+      .gare-schema { background:var(--bg4); border:1px solid var(--border); border-radius:var(--radius2); padding:18px; overflow-x:auto; margin-bottom:16px; }
+      .gare-schema-rail { font-family:var(--mono); font-size:13px; color:var(--text2); white-space:pre; line-height:1.7; }
+      .mvt-row { display:grid; grid-template-columns:60px 1fr 1fr 2fr; gap:10px; padding:10px 12px; background:var(--bg3); border:1px solid var(--border); border-radius:var(--radius); align-items:center; transition:all 0.15s; }
+      .mvt-row:hover { border-color:var(--accent2); }
+      .mvt-id { font-family:var(--mono); font-size:14px; font-weight:700; color:var(--accent); }
+      .mvt-dep-dest { font-size:12px; color:var(--text); }
+      .mvt-leviers { display:flex; gap:4px; flex-wrap:wrap; }
+      .lev-chip { font-family:var(--mono); font-size:11px; padding:3px 7px; border-radius:3px; font-weight:600; cursor:help; transition:all 0.15s; }
+      .lev-chip.aiguille { background:#1e3a8a; color:#bfdbfe; border:1px solid #3b82f6; }
+      .lev-chip.signal { background:#7c2d12; color:#fed7aa; border:1px solid #ea580c; }
+      .lev-chip.last { box-shadow:0 0 0 2px var(--accent); }
+    `;
+    document.head.appendChild(st);
+  }
+
+  const g = GARES[garesCurrent];
+
+  c.innerHTML = `
+    <div class="section-heading" style="display:flex;align-items:center;gap:10px"><span style="font-size:26px">🏘️</span> Gares & Tableaux des mouvements</div>
+    <div class="section-sub">Schémas et tableaux des mouvements de St-Saturnin et AMVVille — d'après le PDF de révision (p.44)</div>
+
+    <div style="background:rgba(248,113,113,0.05);border:1px solid var(--red);border-radius:var(--radius2);padding:12px 14px;margin-bottom:16px;font-size:13px;line-height:1.6">
+      🔥 <strong style="color:var(--red)">SPÉCIAL EXAM JUILLET</strong> — Bien connaître les <strong>2 gares</strong>, leur <strong>PK (point kilométrique)</strong> et savoir lire/exécuter le <strong>tableau des mouvements</strong> de chacune.<br>
+      💡 <strong>Rappel PRR/ACPP :</strong> pour chaque levier du tableau → si <strong>aiguille</strong>, on fait un <strong style="color:#3b82f6">PRR</strong> · si <strong>signal</strong>, on fait un <strong style="color:#ea580c">ACPP</strong>. Les <strong>derniers chiffres en gras</strong> sont forcément des signaux !
+    </div>
+
+    <!-- Onglets gares -->
+    <div style="display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap">
+      <button class="gare-tab ${garesCurrent==='amvville'?'active':''}" onclick="garesCurrent='amvville'; renderGares()">AMVVille — PK 100,600</button>
+      <button class="gare-tab ${garesCurrent==='stsaturnin'?'active':''}" onclick="garesCurrent='stsaturnin'; renderGares()">Saint-Saturnin — PK 139,000</button>
+    </div>
+
+    <!-- En-tête gare -->
+    <div style="background:var(--bg3);border:1px solid var(--accent);border-radius:var(--radius2);padding:14px 16px;margin-bottom:14px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
+      <div>
+        <div style="font-size:18px;font-weight:700;color:var(--accent)">${g.nom}</div>
+        <div style="font-size:13px;color:var(--text2)">Ligne : <strong style="color:var(--text)">${g.voiePrincipale}</strong></div>
+      </div>
+      <div style="text-align:right">
+        <div style="font-size:11px;color:var(--text3);font-family:var(--mono);letter-spacing:0.05em">POINT KILOMÉTRIQUE</div>
+        <div style="font-size:22px;font-weight:700;color:var(--accent);font-family:var(--mono)">PK ${g.pk}</div>
+      </div>
+    </div>
+
+    <!-- Schéma simplifié -->
+    <h3 style="font-size:15px;font-weight:500;margin:18px 0 10px;color:var(--text2)">Schéma de voie simplifié</h3>
+    <div class="gare-schema">
+      <div class="gare-schema-rail">${garesSchemaSVG(garesCurrent)}</div>
+      <div style="margin-top:10px;padding:10px;background:var(--bg3);border-radius:var(--radius);font-size:12px;color:var(--text3)">
+        ${garesCurrent === 'amvville'
+          ? '📍 <strong>AVILLE</strong> côté (–) à gauche, <strong>ZEDVILLE</strong> côté (+) à droite. V1 = sens normal vers Zedville · V2 = sens normal vers Aville.'
+          : '📍 <strong>PARIS</strong> côté (–) à gauche, <strong>LA PRESLE</strong> côté (+) à droite. V1 = sens normal vers La Presle · V2 = sens normal vers Paris.'}
+      </div>
+    </div>
+
+    <!-- Liste des leviers -->
+    <h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Leviers du poste</h3>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px">
+      ${g.leviers.map(l => `
+        <span class="lev-chip ${l.type}" title="${l.desc}">${l.id}</span>
+      `).join('')}
+    </div>
+    <div style="font-size:11px;color:var(--text3);margin-bottom:18px">
+      <span class="lev-chip aiguille" style="cursor:default">Aiguille → PRR</span>
+      &nbsp;
+      <span class="lev-chip signal" style="cursor:default">Signal → ACPP</span>
+    </div>
+
+    <!-- Tableau des mouvements -->
+    <h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Tableau des mouvements ${g.nom}</h3>
+    <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:16px">
+      ${g.mouvements.map((m, i) => {
+        const lastIdx = m.leviers.length - 1;
+        const chips = m.leviers.map((id, j) => {
+          // Trouver le levier dans la liste (gérer les variantes type 4a/4b)
+          const baseId = id.replace(/[ab]$/, '');
+          const lever = g.leviers.find(l => l.id === id || l.id === baseId);
+          const type = lever ? lever.type : (id.match(/^[A-Z]/) ? 'signal' : 'aiguille');
+          const isLast = (j === lastIdx);
+          return `<span class="lev-chip ${type} ${isLast?'last':''}" title="${lever ? lever.desc : id}">${id}</span>`;
+        }).join('');
+        return `
+          <div class="mvt-row">
+            <div class="mvt-id">${m.id}</div>
+            <div class="mvt-dep-dest">📤 <strong>${m.dep}</strong></div>
+            <div class="mvt-dep-dest">📥 ${m.dest}</div>
+            <div>
+              <div class="mvt-leviers" style="margin-bottom:4px">${chips}</div>
+              <div style="font-size:11px;color:var(--text3)">${m.note}</div>
+            </div>
+          </div>
+        `;
+      }).join('')}
+    </div>
+
+    <div style="padding:12px;background:rgba(240,192,64,0.05);border:1px solid var(--accent);border-radius:var(--radius2);font-size:12px;color:var(--text2);line-height:1.6">
+      💡 <strong style="color:var(--accent)">Méthode d'entraînement :</strong> Prends un mouvement, lis les leviers de gauche à droite. À chaque levier :<br>
+      • <strong style="color:#3b82f6">Aiguille</strong> → applique le <strong>PRR</strong> (Protection AdV, Rien entre le signal et l'AdV, Rien sur l'AdV)<br>
+      • <strong style="color:#ea580c">Signal</strong> (toujours en dernier, en gras) → applique l'<strong>ACPP</strong> (Aiguilles, Croisements, Protection, Partie de voie)
+    </div>
+
+    <div style="margin-top:14px;padding:12px;background:var(--bg3);border:1px dashed var(--border2);border-radius:var(--radius2);font-size:11px;color:var(--text3);font-style:italic">
+      ℹ️ Les mouvements indiqués ici sont des <strong>exemples types</strong> reconstitués d'après le schéma général du PDF de révision (p.44). Pour les mouvements exacts de l'examen, se référer à la Consigne Rose Annexe 2 de la gare concernée.
+    </div>
+  `;
+}
+
+function garesSchemaSVG(id) {
+  // Schémas ASCII-art simplifiés des deux gares (sortie monospace)
+  if (id === 'amvville') {
+    return `AVILLE (-)                    AMVVILLE  PK 100,600                    ZEDVILLE (+)
+═══════════════════════> [C1] ════>══════ [1] ═══>═══ V1 ═══>═══════════════════
+                                  ╲                ╱
+                              [5] ╳  [3a] [2a] [3b] [2b]
+                                  ╱                ╲
+═══════════════════════> [C3] ════>══════ [4] ═══<═══ V2 ═══<═══════════════════
+                          ╲
+                          [Cv6][Cv8]  voies de service`;
+  } else {
+    return `PARIS (-)                     ST-SATURNIN  PK 139,000                  LA PRESLE (+)
+═════>══ [C213] ══>════════ [11] ═══════ [13] ═══ [15a] ═══ [S219] ══>═════════
+              ╲                    ╲                  ╱
+              [Cv212] [Cv214]   [14]                [15b]
+              ╱                    ╱                  ╲
+═════<══ [C211] ══<════════ [12] ═══════════════ [15b] ═══<═════════════════════
+                              ╲
+                              [Cv222][Cv224][Cv226]  Voie A — annexe`;
+  }
 }
 
 // ═══════════════════════════════════════════════
