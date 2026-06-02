@@ -336,7 +336,7 @@ h2.theme-heading:first-child { margin-top: 0; }
   <div class="topbar">
     <button class="burger" onclick="toggleSidebar()">☰</button>
     <div class="topbar-title" id="topbar-txt">AMV / <span>Accueil</span></div>
-    <div id="topbar-right" style="font-family:var(--mono);font-size:11px;color:var(--text3)">v4.9 — 28 mai 2026</div>
+    <div id="topbar-right" style="font-family:var(--mono);font-size:11px;color:var(--text3)">v5.0 — 02 juin 2026</div>
   </div>
 
   <div class="content" id="main-content"></div>
@@ -444,6 +444,13 @@ formation: `
 <h2 class="theme-heading">Formation des trains</h2>
 <div class="theme-ref">AMV901 · AMV903 · AMV904 · OP827 · OP828 · OP840 · OP521 · OP825</div>
 
+<div style="background:rgba(248,113,113,0.08);border:2px solid var(--red);border-radius:var(--radius2);padding:14px 16px;margin-bottom:18px;font-size:13px;line-height:1.6">
+  🔥 <strong style="color:var(--red)">SPÉCIAL TEST DEMAIN</strong> — À maîtriser absolument :<br>
+  ▸ <strong>Reconnaître visuellement les différents types de wagons</strong> (galerie ci-dessous)<br>
+  ▸ <strong>Différence Bogies vs Essieux</strong> (sous le wagon)<br>
+  ▸ <strong>Les 4 essais de frein</strong> — bien différencier (complet, partiel, continuité, raccordement)
+</div>
+
 <h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">AMV901 — Types de wagons, marquage, attelage/dételage</h3>
 <div class="def-block">
   <div class="def-term">Convoi</div>
@@ -452,6 +459,386 @@ formation: `
 <div class="def-block">
   <div class="def-term">Train</div>
   <div class="def-text">Ensemble formé par un ou plusieurs véhicules de transports ferroviaires pour effectuer un service de transport ferroviaire de voyageurs ou de marchandises dans le cadre du droit d'accès.</div>
+</div>
+
+<!-- ═══ BOGIES vs ESSIEUX ═══ -->
+<h3 style="font-size:16px;font-weight:600;margin:28px 0 12px;color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:6px">🎯 Bogies vs Essieux — la base à reconnaître</h3>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px">
+  <div style="background:var(--bg3);border:1px solid var(--accent);border-radius:var(--radius2);padding:14px">
+    <div style="font-size:14px;font-weight:700;color:var(--accent);margin-bottom:10px;text-align:center">BOGIES</div>
+    <div style="background:var(--bg4);border-radius:var(--radius);padding:14px;margin-bottom:10px;display:flex;justify-content:center">
+      <svg viewBox="0 0 280 110" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:260px">
+        <!-- caisse wagon -->
+        <rect x="10" y="20" width="260" height="40" rx="3" fill="#7a3a3a" stroke="#444" stroke-width="1.5"/>
+        <!-- bogie gauche (groupe de 2 essieux + chassis) -->
+        <rect x="25" y="60" width="70" height="14" rx="3" fill="#2a2a2a" stroke="#555" stroke-width="1.2"/>
+        <circle cx="40" cy="82" r="10" fill="#1a1a1a" stroke="#666" stroke-width="1.5"/>
+        <circle cx="40" cy="82" r="3" fill="#666"/>
+        <circle cx="80" cy="82" r="10" fill="#1a1a1a" stroke="#666" stroke-width="1.5"/>
+        <circle cx="80" cy="82" r="3" fill="#666"/>
+        <!-- bogie droit -->
+        <rect x="185" y="60" width="70" height="14" rx="3" fill="#2a2a2a" stroke="#555" stroke-width="1.2"/>
+        <circle cx="200" cy="82" r="10" fill="#1a1a1a" stroke="#666" stroke-width="1.5"/>
+        <circle cx="200" cy="82" r="3" fill="#666"/>
+        <circle cx="240" cy="82" r="10" fill="#1a1a1a" stroke="#666" stroke-width="1.5"/>
+        <circle cx="240" cy="82" r="3" fill="#666"/>
+        <!-- rails -->
+        <line x1="0" y1="95" x2="280" y2="95" stroke="#888" stroke-width="2"/>
+        <!-- annotations -->
+        <ellipse cx="60" cy="80" rx="48" ry="20" fill="none" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="3,2"/>
+        <ellipse cx="220" cy="80" rx="48" ry="20" fill="none" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="3,2"/>
+      </svg>
+    </div>
+    <div style="font-size:12px;color:var(--text2);line-height:1.6">
+      <strong style="color:var(--accent)">Chariot pivotant</strong> à 2 (ou 3) essieux qui porte le wagon. Il y a généralement <strong>2 bogies par wagon</strong>. Permet une meilleure répartition de la charge et un meilleur comportement dans les courbes.
+    </div>
+  </div>
+
+  <div style="background:var(--bg3);border:1px solid var(--blue);border-radius:var(--radius2);padding:14px">
+    <div style="font-size:14px;font-weight:700;color:var(--blue);margin-bottom:10px;text-align:center">ESSIEUX (directs)</div>
+    <div style="background:var(--bg4);border-radius:var(--radius);padding:14px;margin-bottom:10px;display:flex;justify-content:center">
+      <svg viewBox="0 0 280 110" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:260px">
+        <!-- caisse wagon -->
+        <rect x="10" y="20" width="260" height="40" rx="3" fill="#7a3a3a" stroke="#444" stroke-width="1.5"/>
+        <!-- essieux fixés directement -->
+        <rect x="55" y="58" width="6" height="20" fill="#2a2a2a"/>
+        <rect x="219" y="58" width="6" height="20" fill="#2a2a2a"/>
+        <!-- roues -->
+        <circle cx="58" cy="82" r="10" fill="#1a1a1a" stroke="#666" stroke-width="1.5"/>
+        <circle cx="58" cy="82" r="3" fill="#666"/>
+        <circle cx="222" cy="82" r="10" fill="#1a1a1a" stroke="#666" stroke-width="1.5"/>
+        <circle cx="222" cy="82" r="3" fill="#666"/>
+        <!-- rails -->
+        <line x1="0" y1="95" x2="280" y2="95" stroke="#888" stroke-width="2"/>
+        <!-- annotations -->
+        <ellipse cx="58" cy="82" rx="18" ry="14" fill="none" stroke="#60a5fa" stroke-width="1.5" stroke-dasharray="3,2"/>
+        <ellipse cx="222" cy="82" rx="18" ry="14" fill="none" stroke="#60a5fa" stroke-width="1.5" stroke-dasharray="3,2"/>
+      </svg>
+    </div>
+    <div style="font-size:12px;color:var(--text2);line-height:1.6">
+      Axe portant 2 roues, <strong style="color:var(--blue)">fixé directement</strong> sous le wagon. Il y a généralement <strong>2 essieux par wagon</strong>. Construction plus simple, utilisée pour les wagons de petite capacité.
+    </div>
+  </div>
+</div>
+
+<!-- ═══ GALERIE DES WAGONS ═══ -->
+<h3 style="font-size:16px;font-weight:600;margin:28px 0 12px;color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:6px">📚 Galerie visuelle — Les types de wagons</h3>
+
+<div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);padding:14px;margin-bottom:14px;font-size:12px;color:var(--text2)">
+  💡 <strong style="color:var(--accent)">Conseil :</strong> Apprends à les reconnaître visuellement. Chaque type a un usage spécifique. Survole/clique pour voir les détails.
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-bottom:18px">
+
+  <!-- Wagon plat -->
+  <div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);padding:12px">
+    <div style="background:var(--bg4);border-radius:var(--radius);padding:14px;margin-bottom:10px;min-height:90px;display:flex;align-items:center;justify-content:center">
+      <svg viewBox="0 0 240 90" xmlns="http://www.w3.org/2000/svg" style="width:100%">
+        <rect x="10" y="35" width="220" height="10" fill="#7a3a3a" stroke="#444" stroke-width="1"/>
+        <rect x="5" y="32" width="6" height="16" fill="#444"/>
+        <rect x="229" y="32" width="6" height="16" fill="#444"/>
+        <circle cx="40" cy="62" r="8" fill="#1a1a1a" stroke="#666" stroke-width="1"/>
+        <circle cx="80" cy="62" r="8" fill="#1a1a1a" stroke="#666" stroke-width="1"/>
+        <circle cx="160" cy="62" r="8" fill="#1a1a1a" stroke="#666" stroke-width="1"/>
+        <circle cx="200" cy="62" r="8" fill="#1a1a1a" stroke="#666" stroke-width="1"/>
+        <line x1="0" y1="75" x2="240" y2="75" stroke="#888" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <div style="font-size:13px;font-weight:600;color:var(--text)">Wagon plat</div>
+    <div style="font-size:11px;color:var(--text3);line-height:1.5">Plateau ras, sans parois — pour charges volumineuses, conteneurs, véhicules.</div>
+  </div>
+
+  <!-- Wagon plat indissociable -->
+  <div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);padding:12px">
+    <div style="background:var(--bg4);border-radius:var(--radius);padding:14px;margin-bottom:10px;min-height:90px;display:flex;align-items:center;justify-content:center">
+      <svg viewBox="0 0 240 90" xmlns="http://www.w3.org/2000/svg" style="width:100%">
+        <rect x="10" y="35" width="220" height="10" fill="#7a3a3a" stroke="#444" stroke-width="1"/>
+        <rect x="5" y="32" width="6" height="16" fill="#444"/>
+        <rect x="229" y="32" width="6" height="16" fill="#444"/>
+        <circle cx="40" cy="62" r="8" fill="#1a1a1a" stroke="#666" stroke-width="1"/>
+        <circle cx="80" cy="62" r="8" fill="#1a1a1a" stroke="#666" stroke-width="1"/>
+        <circle cx="160" cy="62" r="8" fill="#1a1a1a" stroke="#666" stroke-width="1"/>
+        <circle cx="200" cy="62" r="8" fill="#1a1a1a" stroke="#666" stroke-width="1"/>
+        <!-- icône chaîne -->
+        <circle cx="120" cy="40" r="5" fill="none" stroke="#fbbf24" stroke-width="1.5"/>
+        <circle cx="128" cy="40" r="5" fill="none" stroke="#fbbf24" stroke-width="1.5"/>
+        <line x1="0" y1="75" x2="240" y2="75" stroke="#888" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <div style="font-size:13px;font-weight:600;color:var(--text)">Wagon plat indissociable</div>
+    <div style="font-size:11px;color:var(--text3);line-height:1.5">2 wagons plats reliés en permanence (chaîne) pour transport de charges très longues.</div>
+  </div>
+
+  <!-- Wagon surbaissé -->
+  <div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);padding:12px">
+    <div style="background:var(--bg4);border-radius:var(--radius);padding:14px;margin-bottom:10px;min-height:90px;display:flex;align-items:center;justify-content:center">
+      <svg viewBox="0 0 240 90" xmlns="http://www.w3.org/2000/svg" style="width:100%">
+        <path d="M 10 38 L 50 38 L 60 50 L 180 50 L 190 38 L 230 38 L 230 48 L 190 48 L 180 60 L 60 60 L 50 48 L 10 48 Z" fill="#7a3a3a" stroke="#444" stroke-width="1"/>
+        <circle cx="40" cy="68" r="7" fill="#1a1a1a" stroke="#666" stroke-width="1"/>
+        <circle cx="200" cy="68" r="7" fill="#1a1a1a" stroke="#666" stroke-width="1"/>
+        <line x1="0" y1="78" x2="240" y2="78" stroke="#888" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <div style="font-size:13px;font-weight:600;color:var(--text)">Wagon surbaissé</div>
+    <div style="font-size:11px;color:var(--text3);line-height:1.5">Plateau central abaissé entre les bogies — pour charges hautes (gabarit).</div>
+  </div>
+
+  <!-- Wagon trémie -->
+  <div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);padding:12px">
+    <div style="background:var(--bg4);border-radius:var(--radius);padding:14px;margin-bottom:10px;min-height:90px;display:flex;align-items:center;justify-content:center">
+      <svg viewBox="0 0 240 90" xmlns="http://www.w3.org/2000/svg" style="width:100%">
+        <path d="M 15 18 L 225 18 L 215 50 L 150 50 L 140 62 L 100 62 L 90 50 L 25 50 Z" fill="#7a3a3a" stroke="#444" stroke-width="1"/>
+        <circle cx="45" cy="68" r="7" fill="#1a1a1a" stroke="#666" stroke-width="1"/>
+        <circle cx="195" cy="68" r="7" fill="#1a1a1a" stroke="#666" stroke-width="1"/>
+        <line x1="0" y1="78" x2="240" y2="78" stroke="#888" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <div style="font-size:13px;font-weight:600;color:var(--text)">Wagon trémie</div>
+    <div style="font-size:11px;color:var(--text3);line-height:1.5">Forme en V au-dessus — pour vrac (ballast, charbon, céréales). Trappes au-dessous.</div>
+  </div>
+
+  <!-- Wagon couvert -->
+  <div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);padding:12px">
+    <div style="background:var(--bg4);border-radius:var(--radius);padding:14px;margin-bottom:10px;min-height:90px;display:flex;align-items:center;justify-content:center">
+      <svg viewBox="0 0 240 90" xmlns="http://www.w3.org/2000/svg" style="width:100%">
+        <rect x="15" y="20" width="210" height="32" fill="#7a3a3a" stroke="#444" stroke-width="1"/>
+        <rect x="100" y="26" width="40" height="20" fill="#5a2a2a" stroke="#444" stroke-width="0.8"/>
+        <circle cx="45" cy="62" r="7" fill="#1a1a1a" stroke="#666" stroke-width="1"/>
+        <circle cx="195" cy="62" r="7" fill="#1a1a1a" stroke="#666" stroke-width="1"/>
+        <line x1="0" y1="75" x2="240" y2="75" stroke="#888" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <div style="font-size:13px;font-weight:600;color:var(--text)">Wagon couvert</div>
+    <div style="font-size:11px;color:var(--text3);line-height:1.5">Caisse fermée avec portes coulissantes — pour marchandises à protéger.</div>
+  </div>
+
+  <!-- Wagon bâché -->
+  <div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);padding:12px">
+    <div style="background:var(--bg4);border-radius:var(--radius);padding:14px;margin-bottom:10px;min-height:90px;display:flex;align-items:center;justify-content:center">
+      <svg viewBox="0 0 240 90" xmlns="http://www.w3.org/2000/svg" style="width:100%">
+        <path d="M 15 50 L 15 30 Q 120 12 225 30 L 225 50 Z" fill="#3a3a3a" stroke="#222" stroke-width="1"/>
+        <rect x="15" y="48" width="210" height="6" fill="#7a3a3a"/>
+        <circle cx="45" cy="62" r="7" fill="#1a1a1a" stroke="#666" stroke-width="1"/>
+        <circle cx="195" cy="62" r="7" fill="#1a1a1a" stroke="#666" stroke-width="1"/>
+        <line x1="0" y1="75" x2="240" y2="75" stroke="#888" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <div style="font-size:13px;font-weight:600;color:var(--text)">Wagon bâché</div>
+    <div style="font-size:11px;color:var(--text3);line-height:1.5">Recouvert d'une bâche souple — pour charges à protéger de la pluie.</div>
+  </div>
+
+  <!-- Wagon tombereau -->
+  <div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);padding:12px">
+    <div style="background:var(--bg4);border-radius:var(--radius);padding:14px;margin-bottom:10px;min-height:90px;display:flex;align-items:center;justify-content:center">
+      <svg viewBox="0 0 240 90" xmlns="http://www.w3.org/2000/svg" style="width:100%">
+        <rect x="15" y="25" width="210" height="28" fill="#0e7a7a" stroke="#055" stroke-width="1"/>
+        <rect x="15" y="50" width="210" height="6" fill="#054"/>
+        <!-- ouverture haut -->
+        <rect x="15" y="25" width="210" height="3" fill="#0a4a4a"/>
+        <circle cx="45" cy="65" r="7" fill="#1a1a1a" stroke="#666" stroke-width="1"/>
+        <circle cx="195" cy="65" r="7" fill="#1a1a1a" stroke="#666" stroke-width="1"/>
+        <line x1="0" y1="78" x2="240" y2="78" stroke="#888" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <div style="font-size:13px;font-weight:600;color:var(--text)">Wagon tombereau</div>
+    <div style="font-size:11px;color:var(--text3);line-height:1.5">Caisse ouverte avec parois hautes — pour vrac (charbon, gravats). Souvent vert/turquoise.</div>
+  </div>
+
+  <!-- Wagon citerne -->
+  <div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);padding:12px">
+    <div style="background:var(--bg4);border-radius:var(--radius);padding:14px;margin-bottom:10px;min-height:90px;display:flex;align-items:center;justify-content:center">
+      <svg viewBox="0 0 240 90" xmlns="http://www.w3.org/2000/svg" style="width:100%">
+        <ellipse cx="120" cy="38" rx="105" ry="18" fill="#dadada" stroke="#666" stroke-width="1"/>
+        <rect x="15" y="38" width="210" height="3" fill="#fb923c"/>
+        <rect x="15" y="50" width="210" height="6" fill="#5a3a3a"/>
+        <circle cx="45" cy="65" r="7" fill="#1a1a1a" stroke="#666" stroke-width="1"/>
+        <circle cx="195" cy="65" r="7" fill="#1a1a1a" stroke="#666" stroke-width="1"/>
+        <line x1="0" y1="78" x2="240" y2="78" stroke="#888" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <div style="font-size:13px;font-weight:600;color:var(--text)">Wagon citerne</div>
+    <div style="font-size:11px;color:var(--text3);line-height:1.5">Cuve cylindrique — pour liquides ou gaz. <strong>Bande orange</strong> = gaz liquéfié/réfrigéré/dissous.</div>
+  </div>
+
+  <!-- Wagon porte-auto -->
+  <div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);padding:12px">
+    <div style="background:var(--bg4);border-radius:var(--radius);padding:14px;margin-bottom:10px;min-height:90px;display:flex;align-items:center;justify-content:center">
+      <svg viewBox="0 0 240 90" xmlns="http://www.w3.org/2000/svg" style="width:100%">
+        <rect x="10" y="42" width="220" height="6" fill="#7a3a3a"/>
+        <rect x="10" y="22" width="220" height="6" fill="#7a3a3a"/>
+        <line x1="20" y1="22" x2="20" y2="48" stroke="#444" stroke-width="2"/>
+        <line x1="220" y1="22" x2="220" y2="48" stroke="#444" stroke-width="2"/>
+        <line x1="120" y1="22" x2="120" y2="48" stroke="#444" stroke-width="2"/>
+        <!-- voitures stylisées -->
+        <rect x="32" y="30" width="35" height="10" rx="3" fill="#4a8acc"/>
+        <rect x="155" y="30" width="35" height="10" rx="3" fill="#cc4a4a"/>
+        <rect x="32" y="50" width="35" height="10" rx="3" fill="#cc8a4a"/>
+        <rect x="155" y="50" width="35" height="10" rx="3" fill="#4acc8a"/>
+        <circle cx="45" cy="72" r="7" fill="#1a1a1a" stroke="#666" stroke-width="1"/>
+        <circle cx="195" cy="72" r="7" fill="#1a1a1a" stroke="#666" stroke-width="1"/>
+      </svg>
+    </div>
+    <div style="font-size:13px;font-weight:600;color:var(--text)">Wagon porte-auto</div>
+    <div style="font-size:11px;color:var(--text3);line-height:1.5">Double niveau pour transport de voitures.</div>
+  </div>
+
+  <!-- Wagon travaux spécifiques -->
+  <div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);padding:12px">
+    <div style="background:var(--bg4);border-radius:var(--radius);padding:14px;margin-bottom:10px;min-height:90px;display:flex;align-items:center;justify-content:center">
+      <svg viewBox="0 0 240 90" xmlns="http://www.w3.org/2000/svg" style="width:100%">
+        <rect x="10" y="40" width="220" height="10" fill="#e8a020" stroke="#a07000" stroke-width="1"/>
+        <!-- structure travaux dessus -->
+        <line x1="40" y1="40" x2="40" y2="14" stroke="#a07000" stroke-width="2"/>
+        <line x1="80" y1="40" x2="80" y2="14" stroke="#a07000" stroke-width="2"/>
+        <line x1="160" y1="40" x2="160" y2="14" stroke="#a07000" stroke-width="2"/>
+        <line x1="200" y1="40" x2="200" y2="14" stroke="#a07000" stroke-width="2"/>
+        <line x1="38" y1="14" x2="202" y2="14" stroke="#a07000" stroke-width="2"/>
+        <line x1="38" y1="26" x2="202" y2="26" stroke="#a07000" stroke-width="1.5"/>
+        <circle cx="45" cy="62" r="7" fill="#1a1a1a" stroke="#666" stroke-width="1"/>
+        <circle cx="195" cy="62" r="7" fill="#1a1a1a" stroke="#666" stroke-width="1"/>
+        <line x1="0" y1="75" x2="240" y2="75" stroke="#888" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <div style="font-size:13px;font-weight:600;color:var(--text)">Wagon travaux spécifiques</div>
+    <div style="font-size:11px;color:var(--text3);line-height:1.5">Équipé d'une plateforme/portique de travail pour maintenance.</div>
+  </div>
+
+  <!-- Remorque de draisine -->
+  <div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);padding:12px">
+    <div style="background:var(--bg4);border-radius:var(--radius);padding:14px;margin-bottom:10px;min-height:90px;display:flex;align-items:center;justify-content:center">
+      <svg viewBox="0 0 240 90" xmlns="http://www.w3.org/2000/svg" style="width:100%">
+        <rect x="50" y="32" width="140" height="20" fill="#e8a020" stroke="#a07000" stroke-width="1"/>
+        <rect x="50" y="32" width="140" height="5" fill="#a07000"/>
+        <line x1="55" y1="40" x2="55" y2="50" stroke="#a07000" stroke-width="2"/>
+        <line x1="185" y1="40" x2="185" y2="50" stroke="#a07000" stroke-width="2"/>
+        <circle cx="80" cy="62" r="7" fill="#1a1a1a" stroke="#666" stroke-width="1"/>
+        <circle cx="160" cy="62" r="7" fill="#1a1a1a" stroke="#666" stroke-width="1"/>
+        <line x1="0" y1="75" x2="240" y2="75" stroke="#888" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <div style="font-size:13px;font-weight:600;color:var(--text)">Remorque de draisine (wagonnet)</div>
+    <div style="font-size:11px;color:var(--text3);line-height:1.5">Petit wagon tracté derrière une draisine — pour matériel d'entretien.</div>
+  </div>
+
+  <!-- Wagon interdit VP -->
+  <div style="background:var(--bg3);border:2px solid var(--accent);border-radius:var(--radius2);padding:12px">
+    <div style="background:var(--bg4);border-radius:var(--radius);padding:14px;margin-bottom:10px;min-height:90px;display:flex;align-items:center;justify-content:center">
+      <svg viewBox="0 0 240 90" xmlns="http://www.w3.org/2000/svg" style="width:100%">
+        <rect x="15" y="22" width="210" height="32" fill="#a8a8a8" stroke="#666" stroke-width="1"/>
+        <!-- parois de bout jaunes -->
+        <rect x="15" y="22" width="20" height="32" fill="#fbbf24"/>
+        <rect x="205" y="22" width="20" height="32" fill="#fbbf24"/>
+        <circle cx="45" cy="64" r="7" fill="#1a1a1a" stroke="#666" stroke-width="1"/>
+        <circle cx="195" cy="64" r="7" fill="#1a1a1a" stroke="#666" stroke-width="1"/>
+        <line x1="0" y1="77" x2="240" y2="77" stroke="#888" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <div style="font-size:13px;font-weight:600;color:var(--accent)">Wagon interdit VP ⚠️</div>
+    <div style="font-size:11px;color:var(--text3);line-height:1.5"><strong>Parois de bout peintes en jaune</strong> = interdit de circuler sur Voie Principale, uniquement sur VS.</div>
+  </div>
+
+  <!-- Wagon conduite blanche -->
+  <div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);padding:12px">
+    <div style="background:var(--bg4);border-radius:var(--radius);padding:14px;margin-bottom:10px;min-height:90px;display:flex;align-items:center;justify-content:center">
+      <svg viewBox="0 0 240 90" xmlns="http://www.w3.org/2000/svg" style="width:100%">
+        <rect x="15" y="22" width="210" height="32" fill="#9a9a9a" stroke="#666" stroke-width="1"/>
+        <!-- conduite blanche soulignée -->
+        <circle cx="120" cy="50" r="8" fill="none" stroke="#fbbf24" stroke-width="2"/>
+        <line x1="20" y1="50" x2="220" y2="50" stroke="#fafafa" stroke-width="2"/>
+        <circle cx="45" cy="62" r="7" fill="#1a1a1a" stroke="#666" stroke-width="1"/>
+        <circle cx="195" cy="62" r="7" fill="#1a1a1a" stroke="#666" stroke-width="1"/>
+        <line x1="0" y1="75" x2="240" y2="75" stroke="#888" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <div style="font-size:13px;font-weight:600;color:var(--text)">Wagon à conduite blanche</div>
+    <div style="font-size:11px;color:var(--text3);line-height:1.5">Assure <strong>uniquement la continuité de l'air</strong>. Ne dispose pas de semelle de frein.</div>
+  </div>
+
+  <!-- Véhicule voyageur -->
+  <div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);padding:12px">
+    <div style="background:var(--bg4);border-radius:var(--radius);padding:14px;margin-bottom:10px;min-height:90px;display:flex;align-items:center;justify-content:center">
+      <svg viewBox="0 0 240 90" xmlns="http://www.w3.org/2000/svg" style="width:100%">
+        <rect x="15" y="20" width="210" height="35" rx="5" fill="#d8d8d8" stroke="#666" stroke-width="1"/>
+        <rect x="25" y="28" width="18" height="12" fill="#4a8acc"/>
+        <rect x="50" y="28" width="18" height="12" fill="#4a8acc"/>
+        <rect x="75" y="28" width="18" height="12" fill="#4a8acc"/>
+        <rect x="100" y="28" width="18" height="12" fill="#4a8acc"/>
+        <rect x="125" y="28" width="18" height="12" fill="#4a8acc"/>
+        <rect x="150" y="28" width="18" height="12" fill="#4a8acc"/>
+        <rect x="175" y="28" width="18" height="12" fill="#4a8acc"/>
+        <rect x="200" y="28" width="18" height="12" fill="#4a8acc"/>
+        <rect x="15" y="48" width="210" height="3" fill="#a02a2a"/>
+        <circle cx="45" cy="65" r="7" fill="#1a1a1a" stroke="#666" stroke-width="1"/>
+        <circle cx="195" cy="65" r="7" fill="#1a1a1a" stroke="#666" stroke-width="1"/>
+        <line x1="0" y1="78" x2="240" y2="78" stroke="#888" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <div style="font-size:13px;font-weight:600;color:var(--text)">Véhicule voyageur</div>
+    <div style="font-size:11px;color:var(--text3);line-height:1.5">Voiture passagers — avec fenêtres et portes.</div>
+  </div>
+
+  <!-- Engin moteur électrique -->
+  <div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);padding:12px">
+    <div style="background:var(--bg4);border-radius:var(--radius);padding:14px;margin-bottom:10px;min-height:90px;display:flex;align-items:center;justify-content:center">
+      <svg viewBox="0 0 240 90" xmlns="http://www.w3.org/2000/svg" style="width:100%">
+        <!-- caténaire -->
+        <line x1="0" y1="8" x2="240" y2="8" stroke="#fbbf24" stroke-width="1.5"/>
+        <!-- pantographe -->
+        <path d="M 110 8 L 100 18 L 100 28 L 140 28 L 140 18 L 130 8" fill="none" stroke="#fafafa" stroke-width="1.5"/>
+        <rect x="15" y="28" width="210" height="28" rx="3" fill="#4a6acc" stroke="#2a4a8c" stroke-width="1"/>
+        <rect x="25" y="34" width="14" height="10" fill="#dadada"/>
+        <rect x="200" y="34" width="14" height="10" fill="#dadada"/>
+        <circle cx="45" cy="65" r="7" fill="#1a1a1a" stroke="#666" stroke-width="1"/>
+        <circle cx="195" cy="65" r="7" fill="#1a1a1a" stroke="#666" stroke-width="1"/>
+        <line x1="0" y1="78" x2="240" y2="78" stroke="#888" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <div style="font-size:13px;font-weight:600;color:var(--text)">Engin moteur électrique</div>
+    <div style="font-size:11px;color:var(--text3);line-height:1.5">Locomotive électrique avec <strong>pantographe</strong> — longueur env. <strong>20 m</strong>.</div>
+  </div>
+
+  <!-- Engin moteur diesel -->
+  <div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);padding:12px">
+    <div style="background:var(--bg4);border-radius:var(--radius);padding:14px;margin-bottom:10px;min-height:90px;display:flex;align-items:center;justify-content:center">
+      <svg viewBox="0 0 240 90" xmlns="http://www.w3.org/2000/svg" style="width:100%">
+        <rect x="15" y="20" width="210" height="35" rx="3" fill="#2d8a4a" stroke="#155a2a" stroke-width="1"/>
+        <rect x="25" y="28" width="14" height="14" fill="#dadada"/>
+        <rect x="200" y="28" width="14" height="14" fill="#dadada"/>
+        <rect x="180" y="14" width="14" height="8" fill="#444"/>
+        <circle cx="45" cy="65" r="7" fill="#1a1a1a" stroke="#666" stroke-width="1"/>
+        <circle cx="195" cy="65" r="7" fill="#1a1a1a" stroke="#666" stroke-width="1"/>
+        <line x1="0" y1="78" x2="240" y2="78" stroke="#888" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <div style="font-size:13px;font-weight:600;color:var(--text)">Engin moteur diesel</div>
+    <div style="font-size:11px;color:var(--text3);line-height:1.5">Locomotive thermique — longueur env. <strong>20 m</strong>.</div>
+  </div>
+
+  <!-- Locotracteur -->
+  <div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);padding:12px">
+    <div style="background:var(--bg4);border-radius:var(--radius);padding:14px;margin-bottom:10px;min-height:90px;display:flex;align-items:center;justify-content:center">
+      <svg viewBox="0 0 240 90" xmlns="http://www.w3.org/2000/svg" style="width:100%">
+        <rect x="60" y="22" width="120" height="33" rx="3" fill="#e8b020" stroke="#a07000" stroke-width="1"/>
+        <rect x="100" y="28" width="14" height="14" fill="#dadada"/>
+        <rect x="130" y="28" width="14" height="14" fill="#dadada"/>
+        <circle cx="80" cy="65" r="7" fill="#1a1a1a" stroke="#666" stroke-width="1"/>
+        <circle cx="160" cy="65" r="7" fill="#1a1a1a" stroke="#666" stroke-width="1"/>
+        <line x1="0" y1="78" x2="240" y2="78" stroke="#888" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <div style="font-size:13px;font-weight:600;color:var(--text)">Locotracteur</div>
+    <div style="font-size:11px;color:var(--text3);line-height:1.5">Petite locomotive de manœuvre — longueur env. <strong>10 m</strong>. Souvent jaune.</div>
+  </div>
+
+</div>
+
+<div style="background:rgba(248,113,113,0.05);border-left:3px solid var(--red);border-radius:var(--radius);padding:12px 14px;margin-bottom:18px;font-size:12px;color:var(--text2);line-height:1.7">
+  ⚠️ <strong style="color:var(--red)">À retenir absolument :</strong><br>
+  • <strong>Wagon à conduite blanche</strong> = assure uniquement la continuité de l'air, <strong>pas de semelle de frein</strong><br>
+  • <strong>Parois de bout JAUNES</strong> = wagon interdit sur Voie Principale (uniquement VS)<br>
+  • <strong>Bande orange</strong> sur citerne = gaz liquéfié, réfrigéré ou dissous<br>
+  • <strong>EM électrique / diesel</strong> = 20 m · <strong>Locotracteur</strong> = 10 m
 </div>
 
 <h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Le marquage du matériel — L'identité du véhicule <span class="tag yellow" style="margin-left:6px">À l'examen</span></h3>
@@ -512,32 +899,119 @@ formation: `
   <li><span class="num">06</span>Mettre les organes en position de repos sur leurs supports</li>
 </ul>
 
-<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Les 4 types d'essais de frein (Article 401) <span class="tag yellow" style="margin-left:6px">Bien connaître les différences</span></h3>
-<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:12px">
-  <div style="background:var(--bg3);border-radius:6px;padding:10px 14px;border-left:3px solid var(--green)">
-    <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:3px">Essai complet</div>
-    <div style="font-size:12px;color:var(--text3)">Vérification du serrage de <strong style="color:var(--text)">tous les véhicules freinés</strong>, de la continuité de la Conduite Générale et du desserrage de l'ensemble des véhicules.</div>
+<h3 style="font-size:16px;font-weight:600;margin:28px 0 12px;color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:6px">⭐ Les 4 types d'essais de frein (Article 401) <span style="font-size:12px;color:var(--red);margin-left:8px">🔥 Test demain — BIEN DIFFÉRENCIER !</span></h3>
+
+<div style="background:rgba(248,113,113,0.05);border:2px solid var(--red);border-radius:var(--radius2);padding:14px;margin-bottom:14px;font-size:13px;line-height:1.6">
+  ⚠️ Tu dois savoir <strong>lequel appliquer dans quelle situation</strong>. Le principe est toujours : vérifier le <strong>serrage</strong> (frein serré) puis le <strong>desserrage</strong> (frein relâché) + la <strong>continuité de la CG</strong> (Conduite Générale).
+</div>
+
+<!-- Schéma visuel des 4 essais -->
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px">
+  <!-- Complet -->
+  <div style="background:var(--bg3);border:2px solid var(--green);border-radius:var(--radius2);padding:14px">
+    <div style="font-size:14px;font-weight:700;color:var(--green);margin-bottom:8px">✅ Essai COMPLET</div>
+    <div style="background:var(--bg4);border-radius:var(--radius);padding:10px;margin-bottom:8px;display:flex;align-items:center;justify-content:center">
+      <svg viewBox="0 0 260 50" xmlns="http://www.w3.org/2000/svg" style="width:100%">
+        <rect x="5" y="15" width="40" height="20" rx="3" fill="#4a6a4a" stroke="#4ade80" stroke-width="1.5"/>
+        <text x="25" y="30" text-anchor="middle" font-size="8" fill="#fff" font-weight="700">EM</text>
+        <rect x="55" y="15" width="35" height="20" rx="2" fill="#4ade80" stroke="#22c55e" stroke-width="1.5"/>
+        <rect x="100" y="15" width="35" height="20" rx="2" fill="#4ade80" stroke="#22c55e" stroke-width="1.5"/>
+        <rect x="145" y="15" width="35" height="20" rx="2" fill="#4ade80" stroke="#22c55e" stroke-width="1.5"/>
+        <rect x="190" y="15" width="35" height="20" rx="2" fill="#4ade80" stroke="#22c55e" stroke-width="1.5"/>
+        <text x="72" y="29" text-anchor="middle" font-size="7" fill="#1a1a1a" font-weight="700">✓</text>
+        <text x="117" y="29" text-anchor="middle" font-size="7" fill="#1a1a1a" font-weight="700">✓</text>
+        <text x="162" y="29" text-anchor="middle" font-size="7" fill="#1a1a1a" font-weight="700">✓</text>
+        <text x="207" y="29" text-anchor="middle" font-size="7" fill="#1a1a1a" font-weight="700">✓</text>
+        <line x1="45" y1="43" x2="225" y2="43" stroke="#4ade80" stroke-width="2"/>
+        <text x="135" y="49" text-anchor="middle" font-size="7" fill="#4ade80">TOUS vérifiés</text>
+      </svg>
+    </div>
+    <div style="font-size:12px;color:var(--text2);line-height:1.6">
+      Vérification du serrage de <strong style="color:var(--text)">TOUS les véhicules freinés</strong>, de la continuité de la CG et du desserrage de <strong>l'ensemble</strong> des véhicules.
+    </div>
+    <div style="margin-top:6px;font-size:11px;color:var(--text3)">📌 <em>Quand : constitution initiale du train.</em></div>
   </div>
-  <div style="background:var(--bg3);border-radius:6px;padding:10px 14px;border-left:3px solid var(--blue)">
-    <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:3px">Essai partiel</div>
-    <div style="font-size:12px;color:var(--text3)">Vérification du serrage et du desserrage des <strong style="color:var(--text)">véhicules ajoutés ainsi que du dernier</strong> (pour s'assurer de la continuité de la Conduite Générale).</div>
+
+  <!-- Partiel -->
+  <div style="background:var(--bg3);border:2px solid var(--blue);border-radius:var(--radius2);padding:14px">
+    <div style="font-size:14px;font-weight:700;color:var(--blue);margin-bottom:8px">🔵 Essai PARTIEL</div>
+    <div style="background:var(--bg4);border-radius:var(--radius);padding:10px;margin-bottom:8px;display:flex;align-items:center;justify-content:center">
+      <svg viewBox="0 0 260 50" xmlns="http://www.w3.org/2000/svg" style="width:100%">
+        <rect x="5" y="15" width="40" height="20" rx="3" fill="#4a6a4a" stroke="#666" stroke-width="1"/>
+        <text x="25" y="30" text-anchor="middle" font-size="8" fill="#fff" font-weight="700">EM</text>
+        <rect x="55" y="15" width="35" height="20" rx="2" fill="#333" stroke="#555" stroke-width="1"/>
+        <rect x="100" y="15" width="35" height="20" rx="2" fill="#333" stroke="#555" stroke-width="1"/>
+        <rect x="145" y="15" width="35" height="20" rx="2" fill="#60a5fa" stroke="#3b82f6" stroke-width="1.5"/>
+        <rect x="190" y="15" width="35" height="20" rx="2" fill="#60a5fa" stroke="#3b82f6" stroke-width="1.5"/>
+        <text x="162" y="29" text-anchor="middle" font-size="7" fill="#1a1a1a" font-weight="700">✓</text>
+        <text x="207" y="29" text-anchor="middle" font-size="7" fill="#1a1a1a" font-weight="700">✓</text>
+        <text x="72" y="29" text-anchor="middle" font-size="7" fill="#666">—</text>
+        <text x="117" y="29" text-anchor="middle" font-size="7" fill="#666">—</text>
+        <line x1="133" y1="8" x2="133" y2="40" stroke="#60a5fa" stroke-width="1" stroke-dasharray="3,2"/>
+        <text x="187" y="49" text-anchor="middle" font-size="7" fill="#60a5fa">ajoutés + dernier</text>
+      </svg>
+    </div>
+    <div style="font-size:12px;color:var(--text2);line-height:1.6">
+      Vérification du serrage et desserrage des <strong style="color:var(--text)">véhicules AJOUTÉS + le dernier</strong> (pour s'assurer de la continuité de la CG).
+    </div>
+    <div style="margin-top:6px;font-size:11px;color:var(--text3)">📌 <em>Quand : ajout de véhicules à un train existant.</em></div>
   </div>
-  <div style="background:var(--bg3);border-radius:6px;padding:10px 14px;border-left:3px solid var(--accent)">
-    <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:3px">Essai de continuité</div>
-    <div style="font-size:12px;color:var(--text3)">Vérification du serrage et du desserrage du <strong style="color:var(--text)">dernier véhicule freiné</strong>, de la continuité de la Conduite Générale.</div>
+
+  <!-- Continuité -->
+  <div style="background:var(--bg3);border:2px solid var(--accent);border-radius:var(--radius2);padding:14px">
+    <div style="font-size:14px;font-weight:700;color:var(--accent);margin-bottom:8px">🟡 Essai de CONTINUITÉ</div>
+    <div style="background:var(--bg4);border-radius:var(--radius);padding:10px;margin-bottom:8px;display:flex;align-items:center;justify-content:center">
+      <svg viewBox="0 0 260 50" xmlns="http://www.w3.org/2000/svg" style="width:100%">
+        <rect x="5" y="15" width="40" height="20" rx="3" fill="#4a6a4a" stroke="#666" stroke-width="1"/>
+        <text x="25" y="30" text-anchor="middle" font-size="8" fill="#fff" font-weight="700">EM</text>
+        <rect x="55" y="15" width="35" height="20" rx="2" fill="#333" stroke="#555" stroke-width="1"/>
+        <rect x="100" y="15" width="35" height="20" rx="2" fill="#333" stroke="#555" stroke-width="1"/>
+        <rect x="145" y="15" width="35" height="20" rx="2" fill="#333" stroke="#555" stroke-width="1"/>
+        <rect x="190" y="15" width="35" height="20" rx="2" fill="#fbbf24" stroke="#d97706" stroke-width="1.5"/>
+        <text x="207" y="29" text-anchor="middle" font-size="7" fill="#1a1a1a" font-weight="700">✓</text>
+        <text x="72" y="29" text-anchor="middle" font-size="7" fill="#666">—</text>
+        <text x="117" y="29" text-anchor="middle" font-size="7" fill="#666">—</text>
+        <text x="162" y="29" text-anchor="middle" font-size="7" fill="#666">—</text>
+        <text x="207" y="49" text-anchor="middle" font-size="7" fill="#fbbf24">dernier seul</text>
+      </svg>
+    </div>
+    <div style="font-size:12px;color:var(--text2);line-height:1.6">
+      Vérification du serrage et desserrage du <strong style="color:var(--text)">DERNIER véhicule freiné</strong> uniquement + continuité de la CG.
+    </div>
+    <div style="margin-top:6px;font-size:11px;color:var(--text3)">📌 <em>Quand : après arrêt prolongé ou immobilisation.</em></div>
   </div>
-  <div style="background:var(--bg3);border-radius:6px;padding:10px 14px;border-left:3px solid #e8a020">
-    <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:3px">Essai de raccordement</div>
-    <div style="font-size:12px;color:var(--text3)">Vérification du bon rétablissement de la continuité de la CG en vérifiant le serrage et desserrage du <strong style="color:var(--text)">véhicule situé en arrière du point de raccordement</strong>.</div>
+
+  <!-- Raccordement -->
+  <div style="background:var(--bg3);border:2px solid #e8a020;border-radius:var(--radius2);padding:14px">
+    <div style="font-size:14px;font-weight:700;color:#e8a020;margin-bottom:8px">🟠 Essai de RACCORDEMENT</div>
+    <div style="background:var(--bg4);border-radius:var(--radius);padding:10px;margin-bottom:8px;display:flex;align-items:center;justify-content:center">
+      <svg viewBox="0 0 260 50" xmlns="http://www.w3.org/2000/svg" style="width:100%">
+        <rect x="5" y="15" width="40" height="20" rx="3" fill="#4a6a4a" stroke="#666" stroke-width="1"/>
+        <text x="25" y="30" text-anchor="middle" font-size="8" fill="#fff" font-weight="700">EM</text>
+        <rect x="55" y="15" width="35" height="20" rx="2" fill="#333" stroke="#555" stroke-width="1"/>
+        <rect x="100" y="15" width="35" height="20" rx="2" fill="#333" stroke="#555" stroke-width="1"/>
+        <line x1="140" y1="5" x2="140" y2="45" stroke="#e8a020" stroke-width="2.5" stroke-dasharray="4,3"/>
+        <text x="140" y="4" text-anchor="middle" font-size="6" fill="#e8a020">raccord</text>
+        <rect x="145" y="15" width="35" height="20" rx="2" fill="#e8a020" stroke="#d97706" stroke-width="1.5"/>
+        <rect x="190" y="15" width="35" height="20" rx="2" fill="#333" stroke="#555" stroke-width="1"/>
+        <text x="162" y="29" text-anchor="middle" font-size="7" fill="#1a1a1a" font-weight="700">✓</text>
+        <text x="162" y="49" text-anchor="middle" font-size="7" fill="#e8a020">derrière raccord</text>
+      </svg>
+    </div>
+    <div style="font-size:12px;color:var(--text2);line-height:1.6">
+      Vérification du bon rétablissement de la continuité de la CG en vérifiant le serrage et desserrage du <strong style="color:var(--text)">véhicule situé en ARRIÈRE du point de raccordement</strong>.
+    </div>
+    <div style="margin-top:6px;font-size:11px;color:var(--text3)">📌 <em>Quand : après raccordement de la CG interrompue (rupture réparée).</em></div>
   </div>
 </div>
 
-<div class="rule-box">
-  <strong>Mémo essais :</strong><br>
-  Complet = <strong>TOUS</strong> les véhicules<br>
-  Partiel = véhicules <strong>ajoutés</strong> + le dernier<br>
-  Continuité = <strong>dernier</strong> véhicule seulement<br>
-  Raccordement = véhicule <strong>derrière le point de raccordement</strong>
+<div class="rule-box" style="border-left-color:var(--accent)">
+  <strong style="color:var(--accent)">Mémo ultra-rapide :</strong><br>
+  <strong style="color:var(--green)">Complet</strong> = <strong>TOUS</strong> les véhicules · <strong style="color:var(--blue)">Partiel</strong> = <strong>AJOUTÉS</strong> + le dernier · <strong style="color:var(--accent)">Continuité</strong> = <strong>DERNIER</strong> seul · <strong style="color:#e8a020">Raccordement</strong> = <strong>DERRIÈRE</strong> le point de raccordement
+</div>
+
+<div style="background:var(--bg3);border:1px dashed var(--border2);border-radius:var(--radius2);padding:12px 14px;margin-bottom:12px;font-size:12px;color:var(--text3)">
+  📸 Voir le PDF <em>Formation_des_trains.pdf</em> pour les photos réelles des wagons et le schéma des essais en couleurs.
 </div>
 
 <h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">AMV904 — Signalisation des trains</h3>
@@ -3784,7 +4258,7 @@ function showView(v) {
   const c = document.getElementById('main-content');
   c.scrollTop = 0;
   window.scrollTo(0,0);
-  document.getElementById('topbar-right').innerHTML = '<span style="font-family:var(--mono);font-size:11px;color:var(--text3)">v4.12 — 28 mai 2026</span>';
+  document.getElementById('topbar-right').innerHTML = '<span style="font-family:var(--mono);font-size:11px;color:var(--text3)">v5.0 — 02 juin 2026</span>';
   if (v === 'home') { setTopbar('AMV / <span>Accueil</span>'); renderHome(c); }
   else if (v === 'fiches') { setTopbar('AMV / <span>Fiches de cours</span>'); renderFiches(c); }
   else if (v === 'flash') { setTopbar('AMV / <span>Flashcards</span>'); renderFlash(c); }
@@ -3835,7 +4309,7 @@ function renderHome(c) {
   const qc = QUIZ.length;
   c.innerHTML = `
 <div class="section-heading">Bienvenue 👋</div>
-<div class="section-sub">Application de révision AMV — SECUFER · v4.12 — 29 mai 2026 · ${THEMES.length} thèmes</div>
+<div class="section-sub">Application de révision AMV — SECUFER · v5.0 — 02 juin 2026 · ${THEMES.length} thèmes</div>
 
 <!-- 🔥 SPÉCIAL TEST DEMAIN -->
 <div class="card" style="border:2px solid var(--red);background:rgba(248,113,113,0.05);margin-bottom:16px">
