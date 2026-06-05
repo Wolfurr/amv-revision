@@ -336,7 +336,7 @@ h2.theme-heading:first-child { margin-top: 0; }
   <div class="topbar">
     <button class="burger" onclick="toggleSidebar()">☰</button>
     <div class="topbar-title" id="topbar-txt">AMV / <span>Accueil</span></div>
-    <div id="topbar-right" style="font-family:var(--mono);font-size:11px;color:var(--text3)">v5.0 — 02 juin 2026</div>
+    <div id="topbar-right" style="font-family:var(--mono);font-size:11px;color:var(--text3)">v5.1 — 05 juin 2026</div>
   </div>
 
   <div class="content" id="main-content"></div>
@@ -1789,7 +1789,178 @@ circulation: `
 
 <div class="rule-box">
   <strong>FAMAS — uniquement pour les signaux :</strong><br>
-  Lors d'un incident, on ne ferme que les <strong>signaux</strong> (pas les aiguilles). Les <strong>DR</strong> (Dispositifs de Retenue) ne se mettent que sur les leviers de <strong>signaux</strong>, pas sur les leviers d'aiguilles.
+  Lors d'un incident, on ne ferme que les <strong>signaux</strong> (pas les aiguilles). Les <strong>DR</strong> (Dispositifs de Réflexion) ne se mettent que sur les leviers de <strong>signaux</strong>, pas sur les leviers d'aiguilles.
+</div>
+
+<!-- ═══ FONCTIONNEMENT OPÉRATIONNEL TERRITORIAL ═══ -->
+<h3 style="font-size:16px;font-weight:600;margin:28px 0 12px;color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:6px">🏢 Fonctionnement opérationnel territorial — COGC · CRC · Régulateur</h3>
+
+<div class="def-block important">
+  <div class="def-term" style="color:var(--accent)">COGC — Centre Opérationnel de Gestion des Circulations <span class="tag red" style="margin-left:6px">🔥 Par cœur</span></div>
+  <div class="def-text">Le COGC est en charge, sur son territoire :
+  <ul style="margin:6px 0 0 16px;padding:0">
+    <li><strong>De la gestion opérationnelle de la circulation</strong></li>
+    <li><strong>Du pilotage des incidents de gravité GI</strong></li>
+    <li>De l'information des Entreprises Ferroviaires (EF) sur les événements circulation impactant leurs trains et des autres GI le cas échéant</li>
+    <li>De missions diverses : traitement des transports avec particularité (transports exceptionnels, matières radioactives, mesures vis-à-vis des circulations de catégorie A…)</li>
+  </ul></div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term" style="color:var(--accent)">CRC — Coordonnateur Réseau Circulation <span class="tag red" style="margin-left:6px">🔥 Par cœur</span></div>
+  <div class="def-text">Le CRC est le <strong>dirigeant opérationnel du COGC</strong>. Il est le garant de l'application des règles d'exploitation reprises dans l'OP0508 sur son territoire.<br><br>
+  Ses missions :
+  <ul style="margin:6px 0 0 16px;padding:0">
+    <li><strong>Suivi global permanent</strong> : exploite les indications de ses outils et les avis des régulateurs, des AC et de l'externe</li>
+    <li>Doit disposer d'une <strong>connaissance actualisée de la circulation</strong> sur l'ensemble de son territoire</li>
+    <li><strong>Assure une mission de supervision des lignes non régulées</strong></li>
+    <li><strong>Pilote et gère les incidents de circulation</strong> conformément à la DC4380</li>
+  </ul></div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term" style="color:var(--accent)">Missions du Régulateur <span class="tag red" style="margin-left:6px">🔥 Par cœur</span></div>
+  <div class="def-text">Au cœur du système, le régulateur assure la gestion en opérationnel de la capacité <strong>(circulation et travaux)</strong> sur son périmètre dans le respect du graphique théorique.<br><br>
+  <strong>Il applique les règles d'exploitation reprises dans l'OP0508.</strong><br><br>
+  Il agit au service de la performance du système et de l'information voyageur, et échange régulièrement avec les AC et CCL, pour la qualité de la gestion opérationnelle.<br><br>
+  Il a en charge le suivi actif de la circulation par délégation du CRC. Cette tâche consiste à confronter en permanence le <strong>sillon théorique</strong> à la <strong>circulation réelle du train</strong>, et les planches travaux prévues, afin d'alléger le plus possible les écarts.<br><br>
+  <strong>Les orientations prises visent à recentrer le rôle du régulateur dans sa mission d'organisation du trafic</strong> sur les lignes régulées, afin de détecter les écarts des missions de sécurité.</div>
+</div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px">
+  <div style="background:var(--bg3);border-left:4px solid var(--green);border-radius:var(--radius2);padding:14px">
+    <div style="font-weight:700;color:var(--green);margin-bottom:6px">Ligne RÉGULÉE</div>
+    <div style="font-size:12px;color:var(--text2);line-height:1.6">
+      Circulation en ligne organisée et suivie par le <strong style="color:var(--text)">régulateur</strong>. Il peut donner par radio ou téléphone aux conducteurs les ordres et avis utiles.<br><br>
+      → Forcément rattachée à un <strong>COGC</strong> et donc à un régulateur qui organise la circulation.
+    </div>
+  </div>
+  <div style="background:var(--bg3);border-left:4px solid #f87171;border-radius:var(--radius2);padding:14px">
+    <div style="font-weight:700;color:#f87171;margin-bottom:6px">Ligne NON RÉGULÉE</div>
+    <div style="font-size:12px;color:var(--text2);line-height:1.6">
+      Circulation en ligne organisée et suivie par les <strong style="color:var(--text)">agents circulation de chaque gare</strong>. Pas de régulateur dédié.<br><br>
+      → Le CRC assure une mission de <strong>supervision</strong> des lignes non régulées.
+    </div>
+  </div>
+</div>
+
+<div style="background:var(--bg4);border-left:3px solid var(--accent);border-radius:var(--radius);padding:10px 14px;margin-bottom:14px;font-size:12px;color:var(--text2)">
+  <strong style="color:var(--accent)">Comment savoir si une ligne est régulée ?</strong> → On regarde dans les <strong>RT (Renseignements Techniques) — Document A</strong>, §1 Caractéristiques générales d'exploitation.
+</div>
+
+<!-- ═══ STEM ═══ -->
+<h3 style="font-size:16px;font-weight:600;margin:28px 0 12px;color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:6px">👁️ STEM — Surveillance des Trains en Marche <span style="font-size:12px;color:var(--red);margin-left:8px">🔥 Définition par cœur</span></h3>
+
+<div class="def-block important">
+  <div class="def-term" style="color:var(--accent)">STEM — Article 601 DC1505</div>
+  <div class="def-text">Toutes les fois que l'exécution normale du service le permet, il y a lieu d'<strong>observer les trains en marche</strong> afin d'être en mesure de déceler, le cas échéant, les <strong>défectuosités dangereuses</strong> pour la sécurité des usagers, de la circulation ou susceptibles de provoquer des avaries aux installations.<br><br>
+  <strong style="color:var(--accent)">La STEM se fait à l'EXTÉRIEUR</strong> (sur le quai, au bord de la voie).<br><br>
+  L'agent sédentaire qui a donné l'autorisation de départ <strong>doit assister au défilé du train</strong> dans le but de déceler les anomalies éventuelles.<br>
+  Si le train doit être arrêté → <strong>coups de sifflet saccadés</strong>.</div>
+</div>
+
+<div class="def-block">
+  <div class="def-term">Défectuosités à surveiller lors de la STEM <span class="tag yellow" style="margin-left:6px">À connaître</span></div>
+  <div class="def-text">
+  • Chauffage des boîtes d'essieux (crissement aigu, fumée, odeur de brûlé, métal rouge)<br>
+  • Freins anormalement serrés<br>
+  • Avaries d'organes de roulement (plaques de garde, ressorts, bandages)<br>
+  • Déplacements de chargement, engagement du gabarit (porte ouverte, bâche flottante)<br>
+  • Pièces traînantes<br>
+  • Incendie<br>
+  • Pertes de marchandises (liquide ou gaz)<br>
+  • Extinction ou absence des signaux portés par les trains<br>
+  • Wagons instables<br>
+  • Porte(s) ouverte(s) d'un train transportant des voyageurs</div>
+</div>
+
+<!-- ═══ ARTICLES 101 / 102 / 401 / 403 ═══ -->
+<h3 style="font-size:16px;font-weight:600;margin:28px 0 12px;color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:6px">📋 Articles essentiels — Processus de départ & circulation <span style="font-size:12px;color:var(--red);margin-left:8px">🔥 Par cœur</span></h3>
+
+<div class="def-block important">
+  <div class="def-term" style="color:var(--accent)">Article 101 — Principes généraux de départ</div>
+  <div class="def-text">Aucun train ne doit partir d'un établissement où il a son origine ou un arrêt prévu sans que le conducteur y soit autorisé.<br><br>
+  Si rien ne s'y oppose, le conducteur doit avoir l'assurance avant de se mettre en marche que :
+  <ul style="margin:8px 0 0 18px;padding:0">
+    <li>Son train est <strong>« prêt pour l'expédition » (PPE)</strong> dans les conditions définies au chapitre 2</li>
+    <li>Le <strong>« service du train » (ST)</strong> est terminé dans les conditions définies au chapitre 3</li>
+    <li>Les <strong>conditions relatives à la circulation</strong> du train sont remplies</li>
+    <li>De mouvement <strong>(AuM)</strong> dans les conditions définies au chapitre 4</li>
+    <li><strong>Il est l'heure de départ</strong></li>
+  </ul>
+  Les opérations relatives au PPE et au ST sont de la responsabilité de l'exploitant ferroviaire. La transmission au conducteur de l'autorisation de mouvement est de la responsabilité du gestionnaire d'infrastructure.</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term" style="color:var(--accent)">Article 102 — Regarder la circulation arrière</div>
+  <div class="def-text">L'agent sédentaire qui assiste au défilé du train <strong>doit regarder l'arrière de la circulation</strong> pour s'assurer que le <strong>train est complet</strong> (signalisation d'arrière présente : 2 feux rouges ou plaques de queue).</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term" style="color:var(--accent)">Article 401 — Principes de l'autorisation de mouvement (AuM) <span class="tag red" style="margin-left:6px">🔥 Par cœur</span></div>
+  <div class="def-text">Les différentes formes que peuvent prendre l'autorisation de mouvement ainsi que leurs modalités de transmission sont reprises dans le document d'exploitation RFN-CG-SE 02 C-00-n° 009.<br><br>
+  Le conducteur doit recevoir une AuM <strong>avant la mise en marche</strong> de son train :
+  <ul style="margin:6px 0 0 18px;padding:0">
+    <li>À l'établissement d'origine</li>
+    <li>Après un arrêt prévu</li>
+    <li>Dans certains cas prévus dans la documentation d'exploitation (circulations sur VUT, à contre-voie…)</li>
+  </ul></div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term" style="color:var(--accent)">Article 403 — Autorisation de mouvement après un arrêt prévu <span class="tag red" style="margin-left:6px">🔥 Par cœur</span></div>
+  <div class="def-text"><strong>Arrêt prévu dans une gare ouverte au service de la circulation sur VP :</strong><br>
+  Lorsque le signal de sortie est commun à plusieurs voies, le SGC transmet l'AuM au conducteur ; il en est de même en l'absence de signal de sortie.<br><br>
+  Lorsque le signal de sortie est propre à la voie et visible depuis le poste de conduite, <strong>son ouverture constitue l'AuM</strong>.<br><br>
+  <strong>Arrêt prévu dans une gare fermée</strong> au service de la circulation ou dans un établissement sur VS : le SGC transmet l'AuM au conducteur.<br><br>
+  <strong>Arrêt prévu dans un établissement sur VS :</strong> le signal de sortie est commun à plusieurs voies → le SGC transmet l'AuM au conducteur.</div>
+</div>
+
+<!-- ═══ SÉCURITÉ DU PUBLIC — DLC / ZONES / BATEAUX / BANDE JAUNE ═══ -->
+<h3 style="font-size:16px;font-weight:600;margin:28px 0 12px;color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:6px">🚶 Sécurité du public dans les gares — AMV108 · OP3008 <span style="font-size:12px;color:var(--red);margin-left:8px">🔥 Par cœur</span></h3>
+
+<div class="def-block important">
+  <div class="def-term" style="color:var(--accent)">DLC — Document Local Commun</div>
+  <div class="def-text">Pour chaque point d'arrêt desservi par des trains de voyageurs, le DLC (Document Local Commun au métier Circulation ferroviaire de SNCF Réseau et à Gares&Connexions) précise les règles et mesures à prendre pour assurer la <strong>sécurité du public</strong>, à la traversée des voies et sur les quais.</div>
+</div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:14px">
+  <div style="background:var(--bg3);border-top:4px solid #f87171;border-radius:var(--radius2);padding:14px">
+    <div style="font-weight:700;color:#f87171;font-size:13px;margin-bottom:6px">ZEF — Zone d'Exploitation Ferroviaire</div>
+    <div style="font-size:12px;color:var(--text2);line-height:1.5">Pleine voie, voies de service.<br><strong style="color:var(--text)">Accès TOTALEMENT INTERDIT au public.</strong></div>
+  </div>
+  <div style="background:var(--bg3);border-top:4px solid #fbbf24;border-radius:var(--radius2);padding:14px">
+    <div style="font-weight:700;color:#fbbf24;font-size:13px;margin-bottom:6px">ZAFS — Zone d'Activité Ferroviaire Sensible</div>
+    <div style="font-size:12px;color:var(--text2);line-height:1.5">Les quais.<br><strong style="color:var(--text)">Risque potentiel de heurt.</strong></div>
+  </div>
+  <div style="background:var(--bg3);border-top:4px solid #4ade80;border-radius:var(--radius2);padding:14px">
+    <div style="font-weight:700;color:#4ade80;font-size:13px;margin-bottom:6px">ZC — Zone Commerciale</div>
+    <div style="font-size:12px;color:var(--text2);line-height:1.5">Hall de gare, guichets.<br><strong style="color:var(--text)">Reste de la gare.</strong></div>
+  </div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term" style="color:var(--accent)">Bateaux de quai — repérage <span class="tag red" style="margin-left:6px">🔥 Par cœur</span></div>
+  <div class="def-text">Les <strong>bateaux de quai</strong> sont des abaissements localisés du quai qui permettent de rattraper la différence de niveau avec un passage planchéié entre les voies (repérés par la mise en place d'un «zébra» sur toute la surface du bateau et comprenant les parties en pente). Le zébra est constitué de <strong>bandes alternées contrastées (jaune et noir)</strong>.<br><br>
+  Le repérage est complété d'une signalétique spécifique lorsque des voitures à voyageurs sont susceptibles d'être normalement arrêtées au droit du bateau de quai.</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term" style="color:var(--accent)">Bande jaune — disposition particulière ≥ 150 km/h <span class="tag red" style="margin-left:6px">🔥 2m50 par cœur !</span></div>
+  <div class="def-text">Dans les points d'arrêt franchis par des trains circulant à une vitesse <strong>≥ 150 km/h</strong> : bande de couleur jaune à une distance minimale de <strong style="color:var(--accent);font-size:16px">2,50 m</strong> du bord du quai.<br><br>
+  <strong>Exception :</strong> si le quai fait moins de 1 m de large → distance réduite à <strong>1,80 m</strong> si train < 160 km/h.<br><br>
+  Pour les points d'arrêt franchis à V < 150 km/h : panneau de mise en garde jaune invitant à rester éloigné de la bordure du quai.</div>
+</div>
+
+<div class="def-block">
+  <div class="def-term">TVP — Traversée des Voies à niveau par le Public</div>
+  <div class="def-text">Équipement mis en place pour permettre au public de traverser, dans un point d'arrêt, les voies à niveau en empruntant un <strong>passage planchéié</strong>, muni ou non d'un dispositif signalant l'approche des circulations.<br><br>
+  <strong>TVP avec signalétique fixe seule :</strong> responsabilité du public, affichage de sécurité adapté, attention « un train peut en cacher un autre ».<br>
+  <strong>TVP avec signalétique lumineuse :</strong> 3 pictogrammes par sens de circulation + signalisation fixe + annonce sonore à l'approche.</div>
+</div>
+
+<div style="background:rgba(248,113,113,0.08);border:2px solid var(--red);border-radius:var(--radius2);padding:12px 14px;margin-bottom:14px;font-size:13px;line-height:1.5">
+  ⚠️ <strong style="color:var(--red)">Rappel important :</strong> un <strong>rail cassé</strong> constitue un <strong>OBSTACLE</strong> (et non un simple danger) car il fait obstruction à la circulation et crée un risque grave de déraillement.
 </div>
 `,
 
@@ -2070,6 +2241,60 @@ incidents: `
   <div class="def-term">Entrave (AMV113)</div>
   <div class="def-text">Action délibérée d'une ou plusieurs personnes revendicatives présentes dans la zone dangereuse, y restant et ayant l'intention d'empêcher la circulation des trains.</div>
 </div>
+
+<!-- ═══ PROCÉDURE FAMAS COMPLÈTE ═══ -->
+<h3 style="font-size:16px;font-weight:600;margin:28px 0 12px;color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:6px">🚨 Déroulé complet du FAMAS — du début à la fin <span style="font-size:12px;color:var(--red);margin-left:8px">🔥 Hyper important</span></h3>
+
+<div style="background:rgba(248,113,113,0.05);border:2px solid var(--red);border-radius:var(--radius2);padding:14px;margin-bottom:14px;font-size:13px;line-height:1.7">
+  <strong style="color:var(--red)">⚠️ IMPORTANT :</strong> Le FAMAS ne concerne QUE les <strong>signaux</strong> — on ne touche PAS aux aiguilles. On considère que les aiguilles seules ne protègent pas, donc il faut bien fermer <strong>tous les signaux utiles</strong>.
+</div>
+
+<div style="display:flex;flex-direction:column;gap:10px;margin-bottom:14px">
+
+  <div style="background:var(--bg3);border-left:4px solid #ef4444;border-radius:var(--radius2);padding:12px 14px">
+    <div style="font-weight:700;color:#ef4444;margin-bottom:4px">F — Fermez d'urgence les signaux d'arrêt convenables</div>
+    <div style="font-size:12px;color:var(--text2);line-height:1.5">On ferme TOUS les signaux nécessaires pour protéger l'obstacle/danger. <strong style="color:var(--text)">Uniquement les signaux — pas les aiguilles.</strong></div>
+  </div>
+
+  <div style="background:var(--bg3);border-left:4px solid #fbbf24;border-radius:var(--radius2);padding:12px 14px">
+    <div style="font-weight:700;color:#fbbf24;margin-bottom:4px">A — Alertez d'urgence verbalement les postes ou gares concernés</div>
+    <div style="font-size:12px;color:var(--text2);line-height:1.5">Prévenir tout poste ou gare susceptible d'expédier des circulations vers l'obstacle ou le danger.</div>
+  </div>
+
+  <div style="background:var(--bg3);border-left:4px solid #a78bfa;border-radius:var(--radius2);padding:12px 14px">
+    <div style="font-weight:700;color:#a78bfa;margin-bottom:4px">M — Mesures supplémentaires (si circulation déjà engagée)</div>
+    <div style="font-size:12px;color:var(--text2);line-height:1.7">
+      On <strong style="color:var(--text)">checke l'EC (État de Circulation)</strong> et les <strong>zones sur le TCO</strong> pour vérifier :<br>
+      → Y a-t-il une circulation déjà engagée <strong>entre le signal d'annonce et le signal d'arrêt</strong> ?<br><br>
+      <strong style="color:#a78bfa">Si OUI</strong> (circulation « zappée ») → il faut l'<strong>AVERTIR</strong> car elle ne verra pas le signal d'arrêt qui vient d'être fermé. Moyens : radio sol-train, GSM-GFU, protection globale, demande au COGC, SAM, torche, coupure d'urgence…<br>
+      <strong style="color:var(--text3)">Si NON</strong> (rien entre annonce et arrêt) → pas besoin de M, on passe directement à AS.
+    </div>
+  </div>
+
+  <div style="background:var(--bg3);border-left:4px solid #60a5fa;border-radius:var(--radius2);padding:12px 14px">
+    <div style="font-weight:700;color:#60a5fa;margin-bottom:4px">AS — Assurance : circulation arrêtée et retenue</div>
+    <div style="font-size:12px;color:var(--text2);line-height:1.5">S'assurer que la circulation la plus proche de l'obstacle sur chaque voie intéressée a été <strong style="color:var(--text)">arrêtée ET retenue</strong> : par l'ordre verbal au conducteur de ne pas remettre en marche + par un SAM si nécessaire.</div>
+  </div>
+
+</div>
+
+<div style="background:var(--bg3);border:2px solid var(--accent);border-radius:var(--radius2);padding:14px;margin-bottom:14px;font-size:13px;line-height:1.7">
+  <strong style="color:var(--accent)">Après le FAMAS — ce qu'il faut faire :</strong><br><br>
+
+  <strong>1.</strong> <strong style="color:var(--accent)">Autocontrôle</strong> avec la <strong>fiche 2.2 de la DC 1503</strong> — on relit tout ce qu'on a fait pour vérifier qu'il n'y a pas d'erreur.<br><br>
+
+  <strong>2.</strong> Poser des <strong style="color:var(--accent)">DR (Dispositifs de Réflexion — jaune)</strong> sur les leviers de <strong>signaux</strong> qu'on a fermés. <em>(Rappel : JAMAIS de DR sur les aiguilles !)</em><br><br>
+
+  <strong>3.</strong> Sortir la <strong>fiche procédure</strong> correspondante :<br>
+  → <strong>Fiche 3</strong> si c'est un <strong>OBSTACLE</strong> (rail cassé, gabarit engagé…)<br>
+  → <strong>Fiche 4</strong> si c'est un <strong>DANGER</strong> ou une <strong>présomption de danger</strong><br><br>
+
+  <strong>4.</strong> Suivre la fiche en remplissant le <strong style="color:var(--accent)">CED (Carnet d'Enregistrement des Dépêches)</strong> quand il le faut : avis à lancer, signaux fermés et maintenus fermés.<br><br>
+
+  <strong>5.</strong> Rédiger et fournir un <strong style="color:var(--accent)">OCAR</strong> (Ordre de Circuler Avec Restriction) au conducteur.<br><br>
+
+  <strong>6.</strong> <strong style="color:var(--red)">Point crucial :</strong> même si un <strong>DR est posé</strong> sur un levier de signal, quand on a fourni l'OCAR au conducteur, on peut lui <strong>ouvrir le signal</strong> munis du DR pour le laisser passer, <strong>MAIS on le referme IMMÉDIATEMENT après</strong> → et on continue comme ça, circulation par circulation, jusqu'à ce que l'obstacle ou le danger ait <strong>disparu</strong>.
+</div>
 `,
 
 aiguillage: `
@@ -2284,6 +2509,14 @@ Il est utilisé par l'aiguilleur pour <strong>préparer ses manœuvres de levier
 <div class="def-block important">
   <div class="def-term">Temps moral</div>
   <div class="def-text">Délai que doit respecter l'aiguilleur après la fermeture d'un signal de protection (carré, guidon, sémaphore) pour s'assurer qu'aucune circulation, même ayant franchi fermé le signal d'avertissement correspondant, ne se trouve engagée entre ce signal d'avertissement et le signal d'arrêt. Il dépend des circonstances locales.</div>
+</div>
+
+<div style="background:rgba(248,113,113,0.08);border:2px solid var(--red);border-radius:var(--radius2);padding:14px;margin:18px 0 14px;font-size:13px;line-height:1.7">
+  <strong style="color:var(--red)">⚠️ Règle fondamentale :</strong> Les <strong>Voies Principales</strong> doivent <strong>TOUJOURS</strong> être soit <strong>LIBRES</strong>, soit <strong>PROTÉGÉES</strong> (par des appareils de voie convenablement disposés ou par des signaux).
+</div>
+
+<div style="background:var(--bg4);border-left:3px solid var(--accent);border-radius:var(--radius);padding:10px 14px;font-size:12px;color:var(--text2);line-height:1.6">
+  <strong style="color:var(--accent)">Rappel :</strong> pour les manœuvres aussi, on utilise le <strong>Tableau des mouvements</strong> (Annexe 2 Consigne Rose). Chaque levier d'aiguille → PRR, chaque levier de signal → ACPP.
 </div>
 `,
 
@@ -3113,6 +3346,31 @@ A2 — Partie de la zone : protection via installations du poste + DPGR (Demande
 
 // ── FLASHCARDS ──
 const FLASHCARDS = [
+// ═══ 🔥 NOUVEAUX CONTENUS — Mercredi/Jeudi ═══
+{theme:'circulation', tag:'COGC', q:'🔥 Définition du COGC et ses 4 missions',
+ a:'Centre Opérationnel de Gestion des Circulations. Missions sur son territoire :\n1. Gestion opérationnelle de la circulation\n2. Pilotage des incidents de gravité GI\n3. Information des EF sur les événements circulation\n4. Missions diverses (TE, matières radioactives, cat. A…)'},
+{theme:'circulation', tag:'CRC', q:'🔥 Définition du CRC (Coordonnateur Réseau Circulation)',
+ a:'Dirigeant opérationnel du COGC. Garant des règles d\'exploitation (OP0508). Suivi global permanent + connaissance actualisée de la circulation. Supervise les lignes NON RÉGULÉES. Pilote et gère les incidents (DC4380).'},
+{theme:'circulation', tag:'Régulateur', q:'🔥 Missions du Régulateur (par cœur)',
+ a:'Gestion en opérationnel de la capacité (circulation + travaux) dans le respect du graphique théorique. Applique les règles OP0508. Échange avec AC et CCL. Suivi actif : confronte en permanence SILLON THÉORIQUE ↔ CIRCULATION RÉELLE du train.'},
+{theme:'circulation', tag:'Lignes', q:'🔥 Ligne régulée vs non régulée — quelle différence ?',
+ a:'RÉGULÉE = circulation organisée et suivie par le RÉGULATEUR (rattachée au COGC). Il donne ordres/avis par radio ou tel.\nNON RÉGULÉE = circulation organisée et suivie par les AGENTS CIRCULATION de chaque gare. Le CRC supervise.\n→ On vérifie dans les RT (Document A, §1).'},
+{theme:'circulation', tag:'STEM', q:'🔥 STEM — définition par cœur',
+ a:'Surveillance des Trains en Marche (Art. 601 DC1505). Toutes les fois que l\'exécution normale du service le permet, observer les trains en marche pour déceler les défectuosités dangereuses.\n→ Se fait à l\'EXTÉRIEUR (quai/bord de voie).\n→ Après départ : assister au défilé du train. Si problème → coups de sifflet saccadés.'},
+{theme:'circulation', tag:'AMV108', q:'🔥 Bande jaune — quelle distance et quelle condition ?',
+ a:'Points d\'arrêt franchis par des trains ≥ 150 km/h : bande jaune à 2,50 m du bord du quai.\nException : quai < 1 m de large → 1,80 m si train < 160 km/h.'},
+{theme:'circulation', tag:'AMV108', q:'🔥 Les 3 zones de sécurité d\'une gare (DLC)',
+ a:'ZEF (Zone d\'Exploitation Ferroviaire) = pleine voie, VS → accès TOTALEMENT INTERDIT au public\nZAFS (Zone d\'Activité Ferroviaire Sensible) = quais → risque potentiel de heurt\nZC (Zone Commerciale) = hall, guichets → reste de la gare'},
+{theme:'circulation', tag:'AMV108', q:'🔥 Bateau de quai — c\'est quoi et comment le reconnaître ?',
+ a:'Abaissement localisé du quai pour rattraper la différence de niveau avec un passage planchéié. Repéré par un ZÉBRA constitué de bandes alternées contrastées JAUNE ET NOIR sur toute la surface.'},
+{theme:'incidents', tag:'FAMAS', q:'🔥 Après le FAMAS — les étapes à suivre (déroulé complet)',
+ a:'1. AUTOCONTRÔLE avec fiche 2.2 DC1503 — relire tout pour vérifier\n2. Poser des DR (jaune) sur les leviers de SIGNAUX fermés (jamais sur aiguilles !)\n3. Sortir fiche 3 (obstacle) ou fiche 4 (danger)\n4. Remplir le CED (Carnet d\'Enregistrement des Dépêches)\n5. Rédiger et fournir un OCAR au conducteur\n6. Ouvrir le signal (même avec DR) pour laisser passer puis REFERMER IMMÉDIATEMENT → jusqu\'à disparition de l\'obstacle/danger'},
+{theme:'circulation', tag:'Art.101', q:'🔥 Article 101 — 5 conditions avant de partir',
+ a:'Le conducteur doit avoir l\'assurance :\n1. PPE (Prêt Pour l\'Expédition) — chapitre 2\n2. ST (Service du Train) terminé — chapitre 3\n3. Conditions relatives à la circulation remplies\n4. AuM (Autorisation de Mouvement) obtenue — chapitre 4\n5. Il est l\'heure de départ'},
+{theme:'aiguillage', tag:'VP', q:'🔥 Règle fondamentale des Voies Principales',
+ a:'Les VP doivent TOUJOURS être soit LIBRES, soit PROTÉGÉES (par des appareils de voie convenablement disposés OU par des signaux).'},
+{theme:'incidents', tag:'FAMAS', q:'🔥 Un rail cassé constitue-t-il un obstacle ou un danger ?',
+ a:'Un rail cassé est un OBSTACLE (pas un simple danger) car il fait obstruction à la circulation et crée un risque grave de déraillement. → Fiche 3 du DC1503.'},
 // ═══ 🔥 SPÉCIAL TEST DEMAIN — Mouvement de manœuvre guidé ═══
 {theme:'manœuvre', tag:'§2.2 PS9', q:'🔥 Définition du MOUVEMENT DE MANŒUVRE (par cœur)',
  a:'Déplacement d\'un ensemble formé par UN OU PLUSIEURS VÉHICULES et autorisé sur une ZONE GÉOGRAPHIQUE LIMITÉE. Ce déplacement peut être GUIDÉ par un agent habilité à cette tâche ou par des signaux lumineux de manœuvre, ou NON GUIDÉ.'},
@@ -4258,7 +4516,7 @@ function showView(v) {
   const c = document.getElementById('main-content');
   c.scrollTop = 0;
   window.scrollTo(0,0);
-  document.getElementById('topbar-right').innerHTML = '<span style="font-family:var(--mono);font-size:11px;color:var(--text3)">v5.0 — 02 juin 2026</span>';
+  document.getElementById('topbar-right').innerHTML = '<span style="font-family:var(--mono);font-size:11px;color:var(--text3)">v5.1 — 05 juin 2026</span>';
   if (v === 'home') { setTopbar('AMV / <span>Accueil</span>'); renderHome(c); }
   else if (v === 'fiches') { setTopbar('AMV / <span>Fiches de cours</span>'); renderFiches(c); }
   else if (v === 'flash') { setTopbar('AMV / <span>Flashcards</span>'); renderFlash(c); }
@@ -4309,7 +4567,7 @@ function renderHome(c) {
   const qc = QUIZ.length;
   c.innerHTML = `
 <div class="section-heading">Bienvenue 👋</div>
-<div class="section-sub">Application de révision AMV — SECUFER · v5.0 — 02 juin 2026 · ${THEMES.length} thèmes</div>
+<div class="section-sub">Application de révision AMV — SECUFER · v5.1 — 05 juin 2026 · ${THEMES.length} thèmes</div>
 
 <!-- 🔥 SPÉCIAL TEST DEMAIN -->
 <div class="card" style="border:2px solid var(--red);background:rgba(248,113,113,0.05);margin-bottom:16px">
@@ -4508,6 +4766,7 @@ function renderHome(c) {
       ['17','Définition Cantonnement','cantonnement','Par cœur','Cantonnement'],
       ['18','PRR — P·R·R : 3 vérifications avant manœuvre d\'un appareil de voie (aiguille)','aiguillage','Par cœur','PRR & ACPP'],
       ['19','ACPP — A·C·P·P : 4 conditions avant ouverture d\'un signal','aiguillage','Par cœur','PRR & ACPP'],
+      ['20','Bande jaune : 2,50 m si V ≥ 150 km/h (exception 1,80 m si quai < 1 m)','circulation','Par cœur — 100% exam','Bande jaune'],
     ].map(([n,titre,theme,tag,anchor]) => `
     <div style="display:flex;align-items:center;gap:10px;padding:7px 12px;background:var(--bg3);border-radius:var(--radius);flex-wrap:wrap">
       <span style="font-family:var(--mono);font-size:11px;color:var(--accent);min-width:24px">${n}.</span>
