@@ -336,7 +336,7 @@ h2.theme-heading:first-child { margin-top: 0; }
   <div class="topbar">
     <button class="burger" onclick="toggleSidebar()">☰</button>
     <div class="topbar-title" id="topbar-txt">AMV / <span>Accueil</span></div>
-    <div id="topbar-right" style="font-family:var(--mono);font-size:11px;color:var(--text3)">v5.3 — 08 juin 2026</div>
+    <div id="topbar-right" style="font-family:var(--mono);font-size:11px;color:var(--text3)">v5.4 — 12 juin 2026</div>
   </div>
 
   <div class="content" id="main-content"></div>
@@ -1062,6 +1062,47 @@ manœuvre: `
   <div class="def-term">Art. 15 — Attelage/dételage hors zones interdites</div>
   <div class="def-text">Interdit d'effectuer l'attelage ou dételage sur : voie dégarnie en cours de travaux · appareil de voie · fosse de visite · courbe de faible rayon · voie comportant obstacles/matériaux gênants.</div>
 </div>
+
+<!-- ═══ CONTENU COMPLÉMENTAIRE (PDF Capucine) ═══ -->
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">AMV903 — Étiquettes de réforme <span class="tag yellow" style="margin-left:6px">À connaître</span></h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>Étiquette</th><th>Signification</th></tr></thead>
+  <tbody>
+    <tr><td style="color:var(--red);font-weight:700">Rouge (0)</td><td><strong>Interdiction de circuler</strong> + interdiction d'être incorporé dans un train ou réparé</td></tr>
+    <tr><td style="color:var(--red);font-weight:700">Rouge (1)</td><td><strong>Inapte à la circulation</strong>. Interdiction de circulation hors de la gare de réforme. Indique si le véhicule peut ou non être manœuvré</td></tr>
+    <tr><td style="font-weight:700">Modèle K</td><td>Avarie n'empêchant pas son acheminement mais nécessitant retrait du service pour réparation. Si wagon vide = ne doit pas être rechargé</td></tr>
+    <tr><td style="font-weight:700">Frein inutilisable</td><td>Frein continu isolé suite à anomalie/avarie. Frein à main inutilisable</td></tr>
+    <tr><td style="font-weight:700">Frein isolé</td><td>Frein continu isolé pour respecter les règles de freinage des trains (hors anomalie)</td></tr>
+  </tbody>
+</table></div>
+
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">AMV906 — 4 classes de trains + indice de composition</h3>
+<div class="def-block">
+  <div class="def-term">Les 4 classes de trains</div>
+  <div class="def-text">1. Trains de voyageurs · 2. Trains de messagerie · 3. Trains de marchandises · 4. Machines HLP et trains de machines.<br><br>
+  Les trains sont caractérisés par un <strong>indice de composition</strong> ou un <strong>code de composition</strong> (V160, AUTOR, BIMA, MVGV, MA100, HLP…).</div>
+</div>
+
+<div class="def-block">
+  <div class="def-term">Organes du frein continu</div>
+  <div class="def-text"><strong>Organes principaux :</strong> Conduite Générale (CG) · Conduite Principale (CP) · Organes de frein du véhicule<br>
+  <strong>Organes secondaires :</strong> Dispositif vide/chargé · Dispositif M/V · Valve de purge · Robinet d'isolement · Signal d'alarme · Robinet d'urgence<br><br>
+  Le frein continu est : <strong>Continu</strong> (se transmet tout le long du train) · <strong>Automatique</strong> (entre en action en cas d'inétanchéité CG) · <strong>Modérable</strong> (intensité ajustable par paliers).</div>
+</div>
+
+<div class="def-block">
+  <div class="def-term">Masses — formules à retenir</div>
+  <div class="def-text">
+  <strong>Masse d'un véhicule remorqué</strong> = tare + masse de chargement<br>
+  <strong>Masse remorquée du train</strong> = somme des masses de chaque véhicule remorqué (arrondie à la tonne sup.)<br>
+  <strong>Masse totale du train</strong> = masse remorquée + tare du ou des EM<br>
+  <strong>Masse freinée remorquée</strong> = somme des masses freinées des véhicules remorqués<br>
+  <strong>Masse freinée totale (MFT)</strong> = masse freinée remorquée + masse freinée du ou des EM<br>
+  <strong>Masse freinée nécessaire (MFTN)</strong> = freinage normal si MFT ≥ MFTN<br>
+  <strong>Masse admissible</strong> = masse la plus élevée remorquable sans détérioration de l'EM<br>
+  <strong>Masse de tracé</strong> = masse remorquée du train doit être &lt; masse de tracé pour tenir l'horaire<br><br>
+  <strong>Longueur du train</strong> = somme des longueurs + longueur réelle des machines (Loco = 20 m · Locotracteur = 10 m)</div>
+</div>
 `,
 
 circulation: `
@@ -1660,6 +1701,53 @@ circulation: `
 <div style="background:rgba(248,113,113,0.08);border:2px solid var(--red);border-radius:var(--radius2);padding:12px 14px;margin-bottom:14px;font-size:13px;line-height:1.5">
   ⚠️ <strong style="color:var(--red)">Rappel important :</strong> un <strong>rail cassé</strong> constitue un <strong>OBSTACLE</strong> (et non un simple danger) car il fait obstruction à la circulation et crée un risque grave de déraillement.
 </div>
+
+<!-- ═══ CONTENU COMPLÉMENTAIRE (PDF Capucine) ═══ -->
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Les différents types d'arrêts (OP843) <span class="tag yellow" style="margin-left:6px">À connaître</span></h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>Type</th><th>Sous-type</th><th>Symbole ONJ</th><th>Conditions d'arrêt</th><th>Remise en marche</th></tr></thead>
+  <tbody>
+    <tr><td rowspan="3"><strong>Normaux réguliers</strong></td><td>Arrêt normal</td><td>—</td><td>Toujours respecté sauf suppression</td><td>Autorisation de départ</td></tr>
+    <tr><td>Arrêt normal de service</td><td>S</td><td>Besoins du service</td><td>Autorisation de départ</td></tr>
+    <tr><td colspan="4" style="font-size:11px;color:var(--text3)">Le conducteur doit toujours respecter tous les arrêts normaux</td></tr>
+    <tr><td rowspan="3"><strong>Normaux facultatifs</strong></td><td>Circulation [c]</td><td>[c]</td><td>Si l'aiguilleur présente un signal fermé</td><td>Signal ouvert / AuM</td></tr>
+    <tr><td>Service [s]</td><td>[s]</td><td>Le conducteur s'arrête de lui-même si besoin</td><td>Après exécution du service</td></tr>
+    <tr><td>Automoteur</td><td>x</td><td>Signe d'un agent ou voyageur sur le quai</td><td>Autorisation de départ</td></tr>
+    <tr><td><strong>Prescrits</strong></td><td>—</td><td>ARPI</td><td>Sur ordre (écrit, tel, radio) du SGC</td><td>Autorisation de départ</td></tr>
+    <tr><td><strong>Par les signaux</strong></td><td>—</td><td>—</td><td>Imposé par la signalisation</td><td>Signal ouvert (gare) / de lui-même (pleine voie)</td></tr>
+    <tr><td><strong>Accidentels</strong></td><td>—</td><td>—</td><td>Obstacle, avarie, signal d'urgence</td><td>De lui-même si rien ne s'y oppose</td></tr>
+  </tbody>
+</table></div>
+
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Remise de service (prise/fin de poste)</h3>
+<div class="def-block">
+  <div class="def-term">Remise de service</div>
+  <div class="def-text">Écrite + signature, sur document homologué = <strong>Carnet d'Enregistrement des Dépêches (CED)</strong>. Elle consiste à préparer et commenter les différents documents et imprimés de sécurité + informer verbalement de tout fait pouvant avoir une influence sur la circulation des trains.</div>
+</div>
+
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Formation / Destruction d'itinéraire (DC3858)</h3>
+<div class="def-block">
+  <div class="def-term">Formation d'itinéraire</div>
+  <div class="def-text">Mise en position <strong>renversée</strong> du levier de commande du signal de protection → enclenche les leviers des aiguilles de l'itinéraire correspondant.</div>
+</div>
+<div class="def-block">
+  <div class="def-term">Destruction d'itinéraire</div>
+  <div class="def-text">Mise en position <strong>normale</strong> du levier de commande du signal de protection.</div>
+</div>
+
+<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Pétards et détonateurs</h3>
+<div class="def-block important">
+  <div class="def-term">Explosion pétard = arrêt absolu</div>
+  <div class="def-text">Plus impératif qu'un signal ouvert. Après l'arrêt, le conducteur est autorisé à se remettre en marche en <strong>marche à vue</strong> sur une distance au moins égale à la distance de couverture des obstacles, puis reprendre sa marche normale.<br><br>
+  <strong>Détonateur talonnable</strong> = explosion sens de la voie uniquement (pas à contre-sens)<br>
+  <strong>Détonateur non talonnable</strong> = explosion dans les 2 sens (S et CS)<br>
+  <strong>Pétards à griffe</strong> = couverture d'obstacle</div>
+</div>
+
+<div class="def-block">
+  <div class="def-term">IPCS — Installation Permanente de Contre-Sens</div>
+  <div class="def-text">En double voie, installations permanentes permettant de faire circuler sur une voie des trains en sens inverse du sens normal. Des IS s'opposent à l'expédition de deux trains de sens contraires à la rencontre l'un de l'autre.</div>
+</div>
 `,
 
 cantonnement: `
@@ -1837,81 +1925,6 @@ incidents: `
   <div class="def-text">Probabilité de l'existence d'un événement inopiné survenant dans les emprises ferroviaires et présentant un risque pour les circulations et les personnes. Elle nécessite d'obtenir un supplément d'information afin de confirmer l'existence du danger et d'identifier sa nature.</div>
 </div>
 
-<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">FAMAS — Fiche 2.2 DC1503 <span class="tag red" style="margin-left:6px">À apprendre par cœur</span></h3>
-<div class="rule-box" style="border-left-color:var(--red);margin-bottom:8px">
-  <strong>⚠️ À ne pas ouvrir en poste</strong> — c'est une procédure d'urgence à connaître par cœur.<br>
-  <strong>→ Après le FAMAS : autocontrôle (rebouclage)</strong> — reprendre la fiche 2.2 depuis le début pour vérifier qu'aucune étape n'a été oubliée.
-</div>
-
-<div style="display:flex;flex-direction:column;gap:6px;margin-bottom:12px">
-  <div style="background:var(--red-bg);border:1px solid var(--red);border-radius:6px;padding:10px 14px">
-    <div style="display:flex;gap:10px;align-items:flex-start">
-      <span style="font-family:var(--mono);font-size:22px;font-weight:700;color:var(--red);flex-shrink:0;min-width:28px">F</span>
-      <div>
-        <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px">Fermez d'urgence les signaux d'arrêt convenables</div>
-        <div style="font-size:12px;color:var(--text3)">ou activez la protection globale pour les postes équipés.<br>
-        <strong style="color:var(--text2)">Technique :</strong> pb sur voie 1 → fermer les carrés <strong>impairs</strong> · pb sur voie 2 → fermer les carrés <strong>pairs</strong></div>
-      </div>
-    </div>
-  </div>
-
-  <div style="background:rgba(230,140,20,0.1);border:1px solid #e8a020;border-radius:6px;padding:10px 14px">
-    <div style="display:flex;gap:10px;align-items:flex-start">
-      <span style="font-family:var(--mono);font-size:22px;font-weight:700;color:#e8a020;flex-shrink:0;min-width:28px">A</span>
-      <div>
-        <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px">Alertez d'urgence verbalement</div>
-        <div style="font-size:12px;color:var(--text3)">Tout poste ou gare susceptible d'expédier des circulations vers l'obstacle ou le danger.</div>
-      </div>
-    </div>
-  </div>
-
-  <div style="background:var(--blue-bg);border:1px solid var(--blue);border-radius:6px;padding:10px 14px">
-    <div style="display:flex;gap:10px;align-items:flex-start">
-      <span style="font-family:var(--mono);font-size:22px;font-weight:700;color:var(--blue);flex-shrink:0;min-width:28px">M</span>
-      <div>
-        <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px">Mesures supplémentaires — provoquer l'arrêt par un des 7 moyens suivants :</div>
-        <div style="background:rgba(96,165,250,0.12);border-left:3px solid var(--blue);padding:8px 10px;border-radius:4px;margin-bottom:8px;font-size:12px;line-height:1.6;color:var(--text2)">
-          🎯 <strong style="color:var(--blue)">QUAND déclencher les mesures supplémentaires ?</strong><br>
-          ▸ <strong>Une circulation se trouve entre le signal d'annonce et le signal d'arrêt</strong> (= le train est déjà engagé, il a vu l'avertissement mais pas encore le carré qu'on vient de fermer) → <strong>il faut absolument l'alerter</strong> par un moyen rapide.<br>
-          ▸ Aussi : pas de retour radio = coupure d'urgence, situation où la simple fermeture du signal ne suffit pas.<br><br>
-          💡 <em>Autrement dit : si on a "zappé" le train (il a déjà dépassé le signal d'annonce), on l'avertit en urgence par un de ces 7 moyens.</em>
-        </div>
-        <div style="font-size:12px;color:var(--text3);line-height:1.7">
-          <div style="background:rgba(240,192,64,0.08);border-left:2px solid var(--accent);padding:4px 8px;border-radius:4px;margin-bottom:4px;color:var(--text2)">⭐ <strong>1. Radio sol-trains GSM-R en phonie</strong> (lieu + nature du danger) ou téléphone GSM-GFU</div>
-          <div style="background:rgba(240,192,64,0.08);border-left:2px solid var(--accent);padding:4px 8px;border-radius:4px;margin-bottom:4px;color:var(--text2)">⭐ <strong>2. Demande au COGC</strong> d'arrêter le train</div>
-          <div style="background:rgba(240,192,64,0.08);border-left:2px solid var(--accent);padding:4px 8px;border-radius:4px;margin-bottom:8px;color:var(--text2)">⭐ <strong>3. Ordre de coupure d'urgence</strong> (sur ligne électrifiée)</div>
-          4. Présentation d'un signal d'arrêt à main<br>
-          5. Allumage d'une torche<br>
-          6. Demande à tout agent susceptible de l'arrêter (garde de PN, agent de desserte...)<br>
-          7. En dernier recours : demande via le COGC d'un appel d'urgence de l'agent d'accompagnement
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div style="background:var(--green-bg);border:1px solid var(--green);border-radius:6px;padding:10px 14px">
-    <div style="display:flex;gap:10px;align-items:flex-start">
-      <span style="font-family:var(--mono);font-size:22px;font-weight:700;color:var(--green);flex-shrink:0;min-width:28px">AS</span>
-      <div>
-        <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px">ASsurez-vous que la circulation la plus proche a été arrêtée et <u>retenue</u></div>
-        <div style="font-size:12px;color:var(--text3)">Sur chaque voie intéressée — par l'ordre verbal donné au conducteur de ne pas se remettre en marche jusqu'à nouvel avis, ou par un signal d'arrêt à main.</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div style="display:flex;align-items:center;gap:10px;padding:10px 14px;border:1px dashed var(--accent);border-radius:6px;margin-bottom:12px;background:rgba(240,192,64,0.04)">
-  <span style="font-size:20px">↓</span>
-  <div>
-    <div style="font-size:13px;font-weight:600;color:var(--accent)">Autocontrôle (rebouclage) — après le FAMAS</div>
-    <div style="font-size:12px;color:var(--text3)">Reprendre la fiche 2.2 depuis le début pour vérifier qu'aucune étape n'a été oubliée. Puis lancer les avis et prendre en attachements.</div>
-  </div>
-</div>
-
-
-<div class="rule-box">
-  <strong>Note :</strong> Lorsque des mesures de protection sont assurées à la suite de l'avis d'un conducteur, l'AC doit lui confirmer verbalement la mise en œuvre effective de cette protection.
-</div>
 
 <h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Bestiaux (AMV111)</h3>
 <div class="def-block important">
@@ -4321,7 +4334,7 @@ function showView(v) {
   const c = document.getElementById('main-content');
   c.scrollTop = 0;
   window.scrollTo(0,0);
-  document.getElementById('topbar-right').innerHTML = '<span style="font-family:var(--mono);font-size:11px;color:var(--text3)">v5.3 — 08 juin 2026</span>';
+  document.getElementById('topbar-right').innerHTML = '<span style="font-family:var(--mono);font-size:11px;color:var(--text3)">v5.4 — 12 juin 2026</span>';
   if (v === 'home') { setTopbar('AMV / <span>Accueil</span>'); renderHome(c); }
   else if (v === 'fiches') { setTopbar('AMV / <span>Fiches de cours</span>'); renderFiches(c); }
   else if (v === 'flash') { setTopbar('AMV / <span>Flashcards</span>'); renderFlash(c); }
@@ -4372,7 +4385,7 @@ function renderHome(c) {
   const qc = QUIZ.length;
   c.innerHTML = `
 <div class="section-heading">Bienvenue 👋</div>
-<div class="section-sub">Application de révision AMV — SECUFER · v5.3 — 08 juin 2026 · ${THEMES.length} thèmes</div>
+<div class="section-sub">Application de révision AMV — SECUFER · v5.4 — 12 juin 2026 · ${THEMES.length} thèmes</div>
 
 <div style="display:flex;gap:16px;justify-content:center;align-items:center;padding:10px 16px;background:var(--bg3);border:1px solid var(--accent);border-radius:var(--radius);margin-bottom:16px;font-family:var(--mono);font-size:13px">
   <span style="color:var(--text3)">📍</span>
