@@ -4563,51 +4563,200 @@ function renderHome(c) {
 
 // ── SEARCH ENGINE ──
 const SEARCH_INDEX = [];
+
+// ── Recherche : normalisation, tokenisation, alias ──
+const _searchNorm = s => (s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/œ/g,'oe').replace(/æ/g,'ae');
+// "flat" : minuscules, sans accents, ponctuation/espaces réduits à un espace simple
+const _searchFlat = s => _searchNorm(s).replace(/[^a-z0-9]+/g,' ').trim();
+const _searchTokens = s => _searchFlat(s).split(' ').filter(Boolean);
+
+// Table d'alias acronyme → forme(s) développée(s) (en "flat" : sans accents ni apostrophes).
+// Permet de retrouver une fiche en tapant l'abréviation OU les mots-clés.
+// Pour en ajouter une : copier une ligne sur le même modèle.
+const SEARCH_ALIASES = {
+  ac:['agent de circulation'],
+  adv:['appareil de voie','appareils de voie'],
+  bal:['block automatique lumineux'],
+  bapr:['block automatique a permissivite restreinte'],
+  bm:['block manuel','cantonnement telephonique'],
+  ced:['carnet d enregistrement des depeches'],
+  cdis:['carnet de derangements des is'],
+  cdm:['chef de la manoeuvre'],
+  cip:['controle imperatif permanent'],
+  cle:['consigne locale d exploitation'],
+  cogc:['centre operationnel de gestion des circulations'],
+  crc:['coordonnateur reseau circulation'],
+  daelzd:['dispositif d autorisation d engagement longitudinal de la zone dangereuse'],
+  datzd:['dispositif d autorisation de traverser la zone dangereuse'],
+  dfv:['demande de fermeture de voie'],
+  dmvc:['distance minimale de visibilite compatible'],
+  eap:['enclenchement d approche'],
+  eg:['emplacement de garage'],
+  epi:['equipements de protection individuels','equipement de protection individuel'],
+  fa:['fermeture automatique'],
+  ipcs:['installation permanente de contre sens'],
+  is:['installations de securite','installation de securite'],
+  ocar:['ordre de circulation a restrictions'],
+  pfr:['point facilement reperable'],
+  ptx:['planche travaux'],
+  rss:['regulateur sous stations'],
+  sam:['signal d arret a main'],
+  sel:['section elementaire'],
+  sld:['signal lumineux de depart'],
+  stem:['surveillance des trains en marche'],
+  tvp:['traversee des voies a niveau par le public'],
+  vm:['marche a vue'],
+  vp:['voie principale','voies principales'],
+  vs:['voie de service','voies de service'],
+  zap:['zone d approche'],
+  zd:['zone dangereuse'],
+  zep:['zone elementaire de protection'],
+  zi:['zone isolee'],
+  zp:['zone de protection'],
+};
+
+// Distance d'édition bornée (≤ max) — tolère les petites fautes de frappe
+function _editWithin(a, b, max) {
+  if (a === b) return true;
+  const la = a.length, lb = b.length;
+  if (Math.abs(la - lb) > max) return false;
+  let prev = Array.from({length: lb + 1}, (_, i) => i);
+  for (let i = 1; i <= la; i++) {
+    const cur = [i];
+    let best = i;
+    for (let j = 1; j <= lb; j++) {
+      const cost = a[i-1] === b[j-1] ? 0 : 1;
+      const v = Math.min(prev[j] + 1, cur[j-1] + 1, prev[j-1] + cost);
+      cur[j] = v;
+      if (v < best) best = v;
+    }
+    if (best > max) return false;
+    prev = cur;
+  }
+  return prev[lb] <= max;
+}
+
+// Score d'un document pour une requête. Retourne 0 si un mot ne correspond pas (logique ET).
+// Hiérarchie : mot exact dans le titre > mot exact > phrase-alias dans le titre > phrase-alias
+//              > préfixe > faute de frappe > sous-chaîne (repli).
+function _scoreDoc(doc, qWords, qPhrase) {
+  let total = 0;
+  for (const w of qWords) {
+    const variants = [w];
+    if (SEARCH_ALIASES[w]) variants.push(...SEARCH_ALIASES[w]);
+    let ws = 0;
+    for (const v of variants) {
+      if (v.indexOf(' ') >= 0) { // variante multi-mots (forme développée d'un acronyme)
+        if (doc.labelFlat.includes(v)) ws = Math.max(ws, 115);
+        else if (doc.text.includes(v)) ws = Math.max(ws, 70);
+        continue;
+      }
+      if (doc.tokenSet.has(v)) { ws = Math.max(ws, doc.labelTokens.has(v) ? 120 : 90); continue; }
+      let lvl = 0;
+      for (const tok of doc.tokens) {
+        if (v.length >= 2 && tok.startsWith(v)) { lvl = 55; break; }
+        if (v.length >= 4 && tok.length >= 4 && _editWithin(tok, v, 1)) lvl = Math.max(lvl, 45);
+      }
+      if (lvl) { ws = Math.max(ws, doc.labelFlat.includes(v) ? lvl + 25 : lvl); continue; }
+      if (v.length >= 3 && doc.text.includes(v)) ws = Math.max(ws, 20);
+    }
+    if (ws === 0) return 0;
+    total += ws;
+  }
+  if (qPhrase.length >= 3 && doc.text.includes(qPhrase)) total += 60; // bonus phrase exacte
+  return total;
+}
+
+function _mkDoc(raw, label) {
+  const toks = [...new Set(_searchTokens(raw))];
+  const labelToks = [...new Set(_searchTokens(label || ''))];
+  return {
+    text: _searchFlat(raw),
+    tokens: toks,
+    tokenSet: new Set(toks),
+    labelFlat: _searchFlat(label || ''),
+    labelTokens: new Set(labelToks),
+  };
+}
+
 function buildSearchIndex() {
   SEARCH_INDEX.length = 0;
+  const themeMap = { encl:'aiguillage', traction:'elect' };
+
   FLASHCARDS.forEach(f => {
-    SEARCH_INDEX.push({ type:'flash', theme:f.theme, text:(f.q+' '+f.a).toLowerCase(), label:f.q.slice(0,80) });
+    const raw = f.q + ' ' + f.a;
+    SEARCH_INDEX.push({ type:'flash', theme:f.theme, label:f.q.slice(0,80), raw, ..._mkDoc(raw, f.q) });
   });
   Object.entries(FICHES).forEach(([tid, html]) => {
-    const plain = html.replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').toLowerCase();
-    SEARCH_INDEX.push({ type:'fiche', theme:tid, text:plain, label:(THEMES.find(x=>x.id===tid)?.title||tid) });
+    const mappedTid = themeMap[tid] || tid;
+    const sections = html.split(/<h[23][^>]*>/);
+    sections.forEach(sec => {
+      const plain = sec.replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim();
+      if (plain.length < 20) return;
+      const titleMatch = sec.match(/>(.*?)<\//);
+      const label = titleMatch ? titleMatch[1].replace(/<[^>]+>/g,'').trim().slice(0,80) : plain.slice(0,80);
+      SEARCH_INDEX.push({ type:'fiche', theme:mappedTid, label, anchor:label.slice(0,40), ..._mkDoc(plain, label) });
+    });
   });
   DICTEES.forEach(d => {
-    SEARCH_INDEX.push({ type:'dictée', theme:d.theme, text:(d.titre+' '+d.texte+' '+d.mots_cles.join(' ')).toLowerCase(), label:d.titre });
+    const raw = d.titre + ' ' + d.texte + ' ' + d.mots_cles.join(' ');
+    SEARCH_INDEX.push({ type:'dictée', theme:d.theme, label:d.titre, ..._mkDoc(raw, d.titre) });
   });
   QUIZ.forEach(q => {
-    SEARCH_INDEX.push({ type:'quiz', theme:q.theme, text:(q.q+' '+q.opts.join(' ')+' '+q.exp).toLowerCase(), label:q.q.slice(0,80) });
+    const raw = q.q + ' ' + q.opts.join(' ') + ' ' + q.exp;
+    SEARCH_INDEX.push({ type:'quiz', theme:q.theme, label:q.q.slice(0,80), ..._mkDoc(raw, q.q) });
   });
 }
 
 function doSearch(val) {
   const box = document.getElementById('search-results');
   if (!box) return;
-  const q = val.trim().toLowerCase();
-  if (q.length < 2) { box.style.display='none'; return; }
-  const hits = new Map();
+  const qFlat = _searchFlat(val);
+  if (qFlat.length < 2) { box.style.display = 'none'; return; }
+  const words = qFlat.split(' ').filter(w => w.length >= 2);
+  if (!words.length) { box.style.display = 'none'; return; }
+
+  const results = [];
   SEARCH_INDEX.forEach(item => {
-    if (!item.text.includes(q)) return;
-    if (!hits.has(item.theme)) hits.set(item.theme, { theme:item.theme, types:new Set(), example:'' });
-    const h = hits.get(item.theme);
-    h.types.add(item.type);
-    if (!h.example && item.type !== 'fiche') h.example = item.label;
+    const score = _scoreDoc(item, words, qFlat);
+    if (score > 0) results.push({ ...item, score });
   });
-  if (!hits.size) {
-    box.style.display=''; box.innerHTML='<div style="padding:12px 16px;font-size:13px;color:var(--text3)">Aucun résultat pour "'+val+'"</div>'; return;
+
+  const typePrio = { fiche:0, flash:1, quiz:2, 'dictée':3 };
+  results.sort((a, b) => b.score - a.score || (typePrio[a.type]||9) - (typePrio[b.type]||9));
+  const shown = results.slice(0, 12);
+
+  if (!shown.length) {
+    box.style.display = '';
+    box.innerHTML = '<div style="padding:12px 16px;font-size:13px;color:var(--text3)">Aucun résultat pour "' + val + '"</div>';
+    return;
   }
-  const tl = {flash:'Flashcard',fiche:'Fiche',dictée:'Dictée',quiz:'Quiz'};
-  box.style.display='';
-  box.innerHTML=[...hits.values()].map(h=>{
-    const t=THEMES.find(x=>x.id===h.theme);
-    const badges=[...h.types].map(tp=>`<span class="tag" style="font-size:10px">${tl[tp]||tp}</span>`).join('');
-    return `<div onclick="searchGo('${h.theme}')" style="padding:10px 16px;cursor:pointer;border-bottom:1px solid var(--border)"
+  const tl = { flash:'Flashcard', fiche:'Fiche', dictée:'Dictée', quiz:'Quiz' };
+  const icons = { flash:'⟳', fiche:'◧', dictée:'✎', quiz:'✦' };
+  box.style.display = '';
+  box.innerHTML = shown.map(h => {
+    const t = THEMES.find(x => x.id === h.theme);
+    const themeName = t?.short || h.theme;
+    const anchor = h.anchor || '';
+    const onclick = h.type === 'fiche' && anchor
+      ? `gotoFiche('${h.theme}','${anchor.replace(/'/g,'')}')`
+      : `searchGo('${h.theme}')`;
+    let displayLabel = h.label;
+    words.forEach(w => {
+      const re = new RegExp('(' + w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + ')', 'gi');
+      displayLabel = displayLabel.replace(re, '<mark style="background:rgba(240,192,64,0.3);color:var(--text);padding:0 1px;border-radius:2px">$1</mark>');
+    });
+    return `<div onclick="${onclick}" style="padding:8px 14px;cursor:pointer;border-bottom:1px solid var(--border);display:flex;gap:10px;align-items:flex-start"
       onmouseover="this.style.background='var(--bg3)'" onmouseout="this.style.background=''">
-      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
-        <div style="flex:1"><div style="font-size:13px;font-weight:500;color:var(--text)">${t?.title||h.theme}</div>
-        ${h.example?`<div style="font-size:11px;color:var(--text3);margin-top:2px">${h.example}</div>`:''}</div>
-        <div style="display:flex;gap:4px;flex-wrap:wrap">${badges}</div>
-      </div></div>`;
+      <span style="font-size:14px;min-width:18px;text-align:center;color:var(--text3)">${icons[h.type]||'•'}</span>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:12px;color:var(--text);line-height:1.4;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical">${displayLabel}</div>
+        <div style="font-size:10px;color:var(--text3);margin-top:2px;display:flex;gap:6px;align-items:center">
+          <span class="tag" style="font-size:9px;padding:1px 5px">${tl[h.type]||h.type}</span>
+          <span>${themeName}</span>
+        </div>
+      </div>
+    </div>`;
   }).join('');
 }
 
@@ -4669,30 +4818,59 @@ function renderFiches(c) {
 function searchFiches(val) {
   const res = document.getElementById('fiche-search-results');
   if (!res) return;
-  const q = val.trim().toLowerCase();
-  if (q.length < 2) { res.style.display = 'none'; return; }
+  const qFlat = _searchFlat(val);
+  if (qFlat.length < 2) { res.style.display = 'none'; return; }
+  const words = qFlat.split(' ').filter(w => w.length >= 2);
+  if (!words.length) { res.style.display = 'none'; return; }
+  const themeMap = { encl:'aiguillage', traction:'elect' };
   const matches = [];
-  THEMES.forEach(t => {
-    const content = (FICHES[t.id] || '').replace(/<[^>]+>/g, ' ').toLowerCase();
-    if (content.includes(q)) {
-      // Find snippet around match
-      const idx = content.indexOf(q);
-      const start = Math.max(0, idx - 40);
-      const end = Math.min(content.length, idx + 80);
-      let snippet = content.slice(start, end).replace(/\s+/g,' ').trim();
-      const hi = snippet.toLowerCase().indexOf(q);
-      if (hi >= 0) snippet = snippet.slice(0,hi) + '<strong style="color:var(--accent)">' + snippet.slice(hi, hi+q.length) + '</strong>' + snippet.slice(hi+q.length);
-      matches.push({ t, snippet: '...' + snippet + '...' });
-    }
+
+  Object.entries(FICHES).forEach(([tid, html]) => {
+    const mappedTid = themeMap[tid] || tid;
+    const t = THEMES.find(x => x.id === mappedTid) || THEMES.find(x => x.id === tid);
+    if (!t) return;
+    const content = html.replace(/<[^>]+>/g, ' ').replace(/\s+/g,' ');
+    const doc = _mkDoc(content, t.title);
+    const score = _scoreDoc(doc, words, qFlat);
+    if (score <= 0) return;
+
+    // Extrait : autour de la première occurrence d'un mot (ou de sa forme développée)
+    const contentNorm = _searchNorm(content);
+    let idx = -1;
+    words.forEach(w => {
+      const variants = [w].concat(SEARCH_ALIASES[w] || []);
+      variants.forEach(v => {
+        const i = contentNorm.indexOf(v);
+        if (i >= 0 && (idx < 0 || i < idx)) idx = i;
+      });
+    });
+    if (idx < 0) idx = 0;
+    const start = Math.max(0, idx - 40);
+    const end = Math.min(content.length, idx + 100);
+    let snippet = content.slice(start, end).replace(/\s+/g,' ').trim();
+    words.forEach(w => {
+      const variants = [w].concat(SEARCH_ALIASES[w] || []);
+      variants.forEach(v => {
+        const re = new RegExp('(' + v.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + ')', 'gi');
+        snippet = snippet.replace(re, '<strong style="color:var(--accent)">$1</strong>');
+      });
+    });
+    const beforeMatch = html.slice(0, html.toLowerCase().indexOf(content.slice(idx, idx+20).toLowerCase()));
+    const headingMatch = beforeMatch.match(/<h[23][^>]*>([^<]*)</g);
+    const anchor = headingMatch ? headingMatch[headingMatch.length-1].replace(/<[^>]+>/g,'').trim().slice(0,40) : '';
+    matches.push({ t, mappedTid, snippet: '...' + snippet + '...', anchor, score });
   });
+
+  matches.sort((a, b) => b.score - a.score);
+
   if (!matches.length) {
     res.style.display = '';
     res.innerHTML = '<div style="padding:12px 16px;font-size:13px;color:var(--text3)">Aucun résultat trouvé</div>';
     return;
   }
   res.style.display = '';
-  res.innerHTML = matches.map(m => `
-    <div onclick="currentTheme='${m.t.id}';document.querySelectorAll('.theme-item').forEach(el=>el.classList.remove('active'));document.getElementById('tnav-${m.t.id}')?.classList.add('active');renderFiches();document.getElementById('fiche-search-results').style.display='none'"
+  res.innerHTML = matches.slice(0, 12).map(m => `
+    <div onclick="gotoFiche('${m.mappedTid}','${m.anchor.replace(/'/g,'')}')"
       style="padding:10px 16px;cursor:pointer;border-bottom:1px solid var(--border);transition:background 0.1s"
       onmouseover="this.style.background='var(--bg3)'" onmouseout="this.style.background=''">
       <div style="font-size:13px;font-weight:500;color:var(--text);margin-bottom:2px">${m.t.title} <span class="tag" style="font-size:10px">${m.t.code}</span></div>
