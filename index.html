@@ -336,7 +336,7 @@ h2.theme-heading:first-child { margin-top: 0; }
   <div class="topbar">
     <button class="burger" onclick="toggleSidebar()">☰</button>
     <div class="topbar-title" id="topbar-txt">AMV / <span>Accueil</span></div>
-    <div id="topbar-right" style="font-family:var(--mono);font-size:11px;color:var(--text3)">v5.4 — 12 juin 2026</div>
+    <div id="topbar-right" style="font-family:var(--mono);font-size:11px;color:var(--text3)" title="v6.0 — Cours des 16 & 17/06 intégré : AMV910 (TE/MD/ATE, encadré jaune, repérage), enclenchements (EAP, annexes, FC/coupons), serrures">v6.0 — 17 juin 2026</div>
   </div>
 
   <div class="content" id="main-content"></div>
@@ -733,6 +733,62 @@ formation: `
 <div class="rule-box">
   <span style="color:#e8a020">1 seul feu rouge : acceptable en circulation mais <strong>réparation obligatoire à la prochaine gare</strong>. Permet quand même d'assurer que c'est la queue du train.</span><br>
   <span style="color:var(--red)">⚠️ Aucun feu rouge ni lanterne ni plaque réfléchissante → <strong>pas de certitude que le train est complet</strong>.</span>
+</div>
+
+<h3 style="font-size:16px;font-weight:600;margin:28px 0 12px;color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:6px">AMV910 — Transports Exceptionnels (TE) & Marchandises Dangereuses <span style="font-size:12px;color:var(--red);margin-left:8px">🔥 100% à l'éval</span></h3>
+<div class="def-block important">
+  <div class="def-term">TE — Transport Exceptionnel <span class="tag red" style="margin-left:6px">🔥 Par cœur</span></div>
+  <div class="def-text">Chargement ou véhicule ferroviaire dont les dimensions, la masse ou le conditionnement ne répondent pas à toutes les exigences de compatibilité avec les caractéristiques de l'infrastructure ferroviaire. Pour circuler, il nécessite une ATE.
+Difficultés spéciales de chargement ou d'acheminement en raison de : dimensions, masse, caractéristiques des itinéraires empruntés (gabarit de chargement, limite de charge), caractéristiques du matériel utilisé.</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">BTE & ATE — Avis de Transport Exceptionnel</div>
+  <div class="def-text">BTE = Bureau des Transports Exceptionnels. Il définit les conditions de circulation des TE et élabore l'ATE.
+ATE = Avis de Transport Exceptionnel, créé par le BTE. Le type est indiqué en tête de chaque ATE (1er chiffre).</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">ATE — 3 types (selon le niveau de restrictions) <span class="tag red" style="margin-left:6px">🔥 Par cœur : 4 / 5 / 7</span></div>
+  <div class="def-text">Type 4 : restrictions de circulation importantes → étiquette spéciale + n° ATE
+Type 5 : restrictions de circulation peu nombreuses → étiquette spéciale + n° ATE
+Type 7 : aucune restriction de circulation
+(Types 4 et 5 = étiquettes spéciales ; type 7 = pas de restriction.)</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">MD — Marchandises Dangereuses <span class="tag red" style="margin-left:6px">🔥 Par cœur</span></div>
+  <div class="def-text">Matières ou objets qui, par leur nature, sont susceptibles de mettre en danger :
+• la sécurité des personnes,
+• la sécurité des biens,
+• et/ou de nuire à l'environnement.</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">Repérage — Identification des envois (5 points) <span class="tag red" style="margin-left:6px">🔥 Par cœur</span></div>
+  <div class="def-text">1. L'étiquetage d'acheminement au départ du chantier expéditeur
+2. Le placardage de danger des 2 côtés du wagon
+3. La mention sur le bulletin de freinage
+4. La signalisation orange : n° d'identification du danger + n° ONU
+5. Une bande orange peinte à mi-hauteur de la citerne (= gaz liquéfié, réfrigéré ou dissous en wagons-citernes)</div>
+</div>
+<div class="def-block">
+  <div class="def-term">Panneau orange — signification des numéros</div>
+  <div class="def-text">En haut : n° d'identification du danger (ex : 33). En bas : n° ONU (ex : 1203).
+1er chiffre = danger principal ; 2e / 3e = dangers subsidiaires. Chiffre doublé = intensification. X devant les chiffres = interdiction d'utiliser l'eau.
+2 = émanation de gaz · 3 = inflammabilité gaz/liquide · 4 = inflammabilité solides · 5 = comburant · 6 = toxicité · 7 = radioactivité · 8 = corrosivité · 9 = réaction violente spontanée.</div>
+</div>
+<div class="rule-box" style="border-color:var(--accent);background:rgba(240,192,64,0.06)">
+  <div class="def-term" style="color:var(--accent);margin-bottom:8px">🟡 ENCADRÉ JAUNE — Constater une anomalie sur un convoi de MD <span style="color:var(--red)">(100% à l'éval — par cœur)</span></div>
+  <strong>Respecter les précautions suivantes :</strong><br>
+  • Éloignez-vous<br>
+  • Conducteurs : arrêtez le train / engin mis hors-service<br>
+  • Tenez-vous par rapport à l'envoi, du côté d'où vient le vent<br>
+  • Éloignez les curieux<br>
+  • Ne fumez pas, ne provoquez ni flamme, ni étincelle<br>
+  • Ne marchez pas dans les flaques de produit<br>
+  • Ne touchez pas le produit, n'utilisez pas le téléphone mobile, la radio de manœuvre ou sol/train à proximité de l'envoi<br><br>
+  <strong>À distance, essayez de déterminer :</strong><br>
+  • la localisation de l'envoi (position dans le train, lieu de stationnement)<br>
+  • la présence d'une bande orange, les n° d'identification du danger et n° ONU du panneau orange — à défaut, la nature du danger selon les étiquettes, le n° du wagon<br>
+  • la nature de l'anomalie<br><br>
+  <strong>Avisez immédiatement :</strong> par le moyen le plus rapide, le responsable local du site ou les services du SGTC (Agent Circulation, Régulateur) en indiquant les informations collectées.
 </div>
 `,
 
@@ -2411,7 +2467,25 @@ encl: `
   <div class="def-term">3 types d'enclenchements mécaniques</div>
   <div class="def-text">1. Les TOCS (directement entre les leviers)
 2. La TABLE D'ENCLENCHEMENT (horizontale ou verticale, derrière les leviers)
-3. Les SERRURES (dont serrures à transmetteur électrique)</div>
+3. Les SERRURES
+Ils agissent entre : ADV ↔ ADV · signaux ↔ ADV · signaux ↔ signaux.</div>
+</div>
+<div class="def-block">
+  <div class="def-term">Les serrures — 2 systèmes</div>
+  <div class="def-text">• Serrure à pêne saillant
+• Serrure à agrafe
+Serrures centrales : rassemblent les clés (si elles existent → Annexe 1 bis de la Consigne Rose).
+Serrure à transmetteur électrique : permet de récupérer les clés sur le terrain plutôt qu'au poste (intermédiaire).</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">Clés & immobilisation — à retenir</div>
+  <div class="def-text">Un taquet est toujours en position haute par défaut ; retirer une clé immobilise la position.
+Une absence de clé sur un taquet ou une aiguille immobilise cet appareil dans la position où il se trouve.</div>
+</div>
+<div class="def-block">
+  <div class="def-term">Formation / Destruction d'itinéraire (Art. 201)</div>
+  <div class="def-text">Formation : mise en position renversée (−) du levier de commande du signal de protection → enclenche les leviers des aiguilles de l'itinéraire correspondant.
+Destruction : mise en position normale (+) du levier de commande du signal de protection.</div>
 </div>
 
 <h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">AMV211 — Enclenchements électriques (4 types)</h3>
@@ -2443,7 +2517,30 @@ Libération : libération de la zone (blanc)</div>
   <div class="def-text">Rôle : Interdire toute opération permettant une destruction prématurée d'itinéraire (manœuvre d'une aiguille devant une circulation)
 Agit sur : Levier du signal de protection (position −)
 Mise en action : ZAP présumée occupée (rouge) ET signal commandé à l'ouverture (levier en −)
-Libération : ZAP libre (blanc) OU fermeture automatique du signal après passage d'une circulation</div>
+Libération :
+• Si ZAP libre (blanc) → EAP libéré.
+• Si ZAP occupée (rouge), l'EAP se libère par : 1. attaque de la 1re zone aval · 2. fermeture automatique (FA) actionnée · 3. attaque de la pédale (si elle existe).</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">📍 Récap annexes des enclenchements électriques <span class="tag red" style="margin-left:6px">🔥 Par cœur</span></div>
+  <div class="def-text">CIP et ZP → Annexe 2 · ZI → Annexe 4 · EAP → Annexe 5.
+Règle générale : appareil de voie → Annexe 4 · signal → Annexe 2. (Annexe 5 = enclenchements d'approche ET de parcours.)
+Art. 202 (DC 3858) : les enclenchements électriques complètent les mécaniques. Ils agissent soit sur le(s) organe(s) de commande (via un verrou de levier), soit directement sur le circuit de commande de l'appareil.</div>
+</div>
+<div class="def-block">
+  <div class="def-term">EAP vs enclenchement de parcours — à confirmer avec le formateur</div>
+  <div class="def-text">L'Annexe 5 s'intitule « Enclenchements d'approche ET de parcours ». EAP = Enclenchement d'Approche (ci-dessus). La définition de l'enclenchement de parcours ne figure pas dans les supports fournis — à compléter en cours.</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">FC — Commutateur de Fermeture (urgence uniquement) <span class="tag red" style="margin-left:6px">⚠ Urgence</span></div>
+  <div class="def-text">La FC (commutateur de fermeture) permet de fermer un signal alors que la ZAP est au rouge (un train est déjà dans la zone proche et ne pourra pas s'arrêter avant le signal). À n'actionner qu'en cas d'urgence (ex : FAMAS, modification d'itinéraire).
+Ne pas confondre avec la FA (fermeture automatique) : la FA est automatique, la FC est une action volontaire d'urgence.</div>
+</div>
+<div class="def-block">
+  <div class="def-term">Modification d'itinéraire & coupons (Art. 302 DC3858, p.34)</div>
+  <div class="def-text">Urgence / reprise de voie / changement d'itinéraire : 1. FC actionnée (rapidement) ; 2. on applique l'article 302 de la DC 3858 et on suit le logigramme.
+C'est le seul cas où l'on est autorisé à perforer les coupons pour manœuvrer un levier immobilisé (donc uniquement en urgence, le plus souvent sur ordre du régulateur / COGC). Après remise du levier en position normale, on remet un nouveau coupon : 1 trou (de coupon) = 1 arrêt.</div>
 </div>
 `,
 
@@ -3257,6 +3354,15 @@ const FLASHCARDS = [
  a:'A1 : toute la zone → aiguilleur ferme les signaux et graisse lui-même\nA2 : partie de zone → protection installations + DPGR\nB : interdiction impossible → agent sécurité avec trompe réglementaire\nC : nuit / appareils télécommandés → DPGR obligatoire (conditions A2)'},
 {theme:'graissage', tag:'Art.203', q:'Quelle est la différence de matériel entre une aiguille normale et une aiguille à moteur ?',
  a:'Aiguille normale : appareil protecteur pour graisseur (immobilise l\'aiguille + jalon à damier).\nAiguille à moteur : l\'appareil protecteur NE DOIT PAS être utilisé → utiliser un DRAPEAU ROUGE À HAMPE fixé dans la voie à proximité de l\'appareil.'},
+,
+{theme:"formation", tag:"AMV910", q:"Définition d'un Transport Exceptionnel (TE) ?", a:"Chargement ou véhicule ferroviaire dont les dimensions, la masse ou le conditionnement ne répondent pas à toutes les exigences de compatibilité avec les caractéristiques de l'infrastructure. Pour circuler, il nécessite une ATE."},
+{theme:"formation", tag:"AMV910", q:"Définition des Marchandises Dangereuses (MD) ?", a:"Matières ou objets qui, par leur nature, sont susceptibles de mettre en danger la sécurité des personnes, la sécurité des biens, et/ou de nuire à l'environnement."},
+{theme:"formation", tag:"AMV910", q:"BTE / ATE : qui fait quoi ? Les 3 types d'ATE ?", a:"BTE = Bureau des Transports Exceptionnels ; il élabore l'ATE (Avis de Transport Exceptionnel). 3 types : Type 4 (restrictions importantes) et Type 5 (restrictions peu nombreuses) = étiquette spéciale + n°ATE ; Type 7 = aucune restriction."},
+{theme:"formation", tag:"AMV910", q:"Repérage : comment identifie-t-on un envoi de MD ? (5 points)", a:"1. Étiquetage d'acheminement au départ du chantier expéditeur. 2. Placardage de danger des 2 côtés du wagon. 3. Mention sur le bulletin de freinage. 4. Signalisation orange : n° identification du danger + n° ONU. 5. Bande orange à mi-hauteur de la citerne (gaz liquéfié, réfrigéré ou dissous)."},
+{theme:"formation", tag:"AMV910", q:"Encadré jaune : précautions en cas d'anomalie sur un convoi de MD ?", a:"Éloignez-vous ; conducteurs : arrêtez le train / engin hors-service ; tenez-vous du côté d'où vient le vent ; éloignez les curieux ; ne fumez pas (ni flamme ni étincelle) ; ne marchez pas dans les flaques ; ne touchez pas le produit, pas de téléphone/radio à proximité. À distance : localiser l'envoi, lire bande/panneau orange (n° danger + ONU) ou étiquettes + n° wagon, nature de l'anomalie. Aviser immédiatement le responsable local ou le SGTC (AC, régulateur)."},
+{theme:"aiguillage", tag:"AMV211", q:"EAP : conditions de mise en action et de libération ?", a:"Mise en action : ZAP présumée occupée (rouge) ET signal commandé à l'ouverture (levier en −). Libération : si ZAP libre (blanc) → EAP libéré ; si ZAP occupée → 1. attaque 1re zone aval, 2. FA actionnée, 3. attaque pédale si existante."},
+{theme:"aiguillage", tag:"AMV211", q:"Annexes de la Consigne Rose : où trouve-t-on ZI, CIP, ZP, EAP ?", a:"ZI → Annexe 4. CIP et ZP → Annexe 2. EAP → Annexe 5. Règle : appareil de voie → Annexe 4 ; signal → Annexe 2."},
+{theme:"aiguillage", tag:"DC3858", q:"À quoi sert la FC (commutateur de fermeture) ?", a:"Fermer un signal alors que la ZAP est au rouge (train déjà proche, ne pourra pas s'arrêter avant le signal). À n'actionner qu'en cas d'urgence (FAMAS, modification d'itinéraire). À ne pas confondre avec la FA (automatique)."}
 ];
 
 // ── QUIZ ──
@@ -4008,6 +4114,13 @@ const QUIZ = [
 {theme:'incidents', q:'Un rail cassé est considéré comme :',
  opts:['Un danger','Une présomption de danger','Un OBSTACLE','Un incident mineur'],
  ans:2, exp:'Rail cassé = OBSTACLE (pas un simple danger). Il fait obstruction à la circulation et crée un risque grave de déraillement → Fiche 3 du DC1503.'},
+,
+{theme:"formation", q:"Combien de types d'ATE existe-t-il et lesquels ?", opts:["3 types : 4, 5 et 7","2 types : 4 et 7","4 types : 1, 2, 3, 4","3 types : 1, 5 et 7"], ans:0, exp:"3 types : Type 4 (restrictions importantes) et Type 5 (restrictions peu nombreuses) = étiquette spéciale + n°ATE ; Type 7 = aucune restriction."},
+{theme:"formation", q:"Qui élabore l'ATE (Avis de Transport Exceptionnel) ?", opts:["Le conducteur","Le BTE (Bureau des Transports Exceptionnels)","Le régulateur","L'agent formation"], ans:1, exp:"L'ATE est élaboré par le BTE — Bureau des Transports Exceptionnels."},
+{theme:"formation", q:"Les marchandises dangereuses peuvent mettre en danger…", opts:["Uniquement l'environnement","Uniquement les personnes","Les personnes, les biens et/ou l'environnement","Uniquement la circulation"], ans:2, exp:"MD = matières/objets susceptibles de mettre en danger la sécurité des personnes, des biens, et/ou de nuire à l'environnement."},
+{theme:"formation", q:"Sur un convoi de MD avec anomalie, qu'est-il INTERDIT de faire ?", opts:["S'éloigner","Se placer du côté d'où vient le vent","Utiliser le téléphone mobile à proximité de l'envoi","Aviser le responsable local"], ans:2, exp:"Interdit : marcher dans les flaques, toucher le produit, et utiliser le téléphone mobile / la radio à proximité de l'envoi."},
+{theme:"aiguillage", q:"Dans quelle annexe de la Consigne Rose se trouve la Zone Isolée (ZI) ?", opts:["Annexe 2","Annexe 4","Annexe 5","Annexe 1 bis"], ans:1, exp:"ZI → Annexe 4 (appareil de voie). CIP et ZP → Annexe 2. EAP → Annexe 5."},
+{theme:"aiguillage", q:"Si la ZAP est occupée (rouge), comment l'EAP se libère-t-il ?", opts:["Jamais","Attaque de la 1re zone aval + FA actionnée (+ pédale si existante)","Dès que le signal passe au rouge","Uniquement sur ordre du COGC"], ans:1, exp:"ZAP occupée : libération par attaque de la 1re zone aval, fermeture automatique (FA) actionnée et attaque de la pédale si elle existe. Si ZAP libre (blanc), l'EAP est libéré directement."}
 ];
 
 // ── DICTÉES (définitions à apprendre mot pour mot) ──
@@ -4385,7 +4498,7 @@ function renderHome(c) {
   const qc = QUIZ.length;
   c.innerHTML = `
 <div class="section-heading">Bienvenue 👋</div>
-<div class="section-sub">Application de révision AMV — SECUFER · v5.4 — 12 juin 2026 · ${THEMES.length} thèmes</div>
+<div class="section-sub">Application de révision AMV — SECUFER · v6.0 — 17 juin 2026 · ${THEMES.length} thèmes</div>
 
 <div style="display:flex;gap:16px;justify-content:center;align-items:center;padding:10px 16px;background:var(--bg3);border:1px solid var(--accent);border-radius:var(--radius);margin-bottom:16px;font-family:var(--mono);font-size:13px">
   <span style="color:var(--text3)">📍</span>
@@ -4399,16 +4512,16 @@ function renderHome(c) {
   <div class="card-title" style="color:var(--blue);margin-bottom:12px">🎓 STRUCTURE DE L'EXAMEN AMV</div>
   <div style="display:flex;justify-content:center;gap:32px;flex-wrap:wrap">
     <div style="display:flex;flex-direction:column;align-items:center;gap:6px">
-      <div style="padding:6px 18px;background:var(--blue-bg);border:2px solid var(--blue);border-radius:6px;font-weight:700;color:var(--blue);font-size:13px">✍️ Écrite (ExpertQuizz)</div>
+      <div style="padding:6px 18px;background:var(--blue-bg);border:2px solid var(--blue);border-radius:6px;font-weight:700;color:var(--blue);font-size:13px">✍️ Écrite — 1h (ExpertQuizz)</div>
       <div style="display:flex;gap:8px">
         <div style="padding:5px 10px;background:var(--bg4);border-radius:5px;font-size:11px;color:var(--text3);text-align:center">PS9</div>
         <div style="padding:5px 10px;background:var(--bg4);border-radius:5px;font-size:11px;color:var(--text3);text-align:center">Formation trains</div>
       </div>
     </div>
     <div style="display:flex;flex-direction:column;align-items:center;gap:6px">
-      <div style="padding:6px 18px;background:var(--bg3);border:2px solid var(--border2);border-radius:6px;font-weight:700;color:var(--text);font-size:13px">🗣️ Orale</div>
+      <div style="padding:6px 18px;background:var(--bg3);border:2px solid var(--border2);border-radius:6px;font-weight:700;color:var(--text);font-size:13px">🗣️ Orale — 2h30</div>
       <div style="display:flex;gap:8px;align-items:flex-start">
-        <div style="padding:5px 10px;background:var(--bg4);border-radius:5px;font-size:11px;color:var(--text3)">Aiguillage</div>
+        <div style="padding:5px 10px;background:var(--bg4);border-radius:5px;font-size:11px;color:var(--text3)">Aiguillage<br>(tracé PRR / ACPP)</div>
         <div style="display:flex;flex-direction:column;align-items:center;gap:3px">
           <div style="padding:5px 10px;background:var(--bg4);border-radius:5px;font-size:11px;color:var(--text3)">Circulation</div>
           <div style="font-size:10px;color:var(--text3)">↓</div>
@@ -4416,6 +4529,7 @@ function renderHome(c) {
           <div style="font-size:10px;color:var(--text3)">↓</div>
           <div style="padding:5px 10px;background:var(--red-bg);border:1px solid var(--red);border-radius:5px;font-size:11px;color:var(--red);font-weight:600">Incident de circulation</div>
         </div>
+        <div style="padding:5px 10px;background:var(--bg4);border-radius:5px;font-size:11px;color:var(--text3);text-align:center">Travaux / S11<br>→ DFV</div>
       </div>
     </div>
   </div>
@@ -4487,6 +4601,14 @@ function renderHome(c) {
       ['30','3 zones gare : ZEF (interdit) · ZAFS (quais) · ZC (commerciale)','circulation','Par cœur','ZEF'],
       ['31','VP doivent TOUJOURS être libres ou protégées','aiguillage','Par cœur','Temps moral'],
       ['32','Déroulé FAMAS complet : F·A·M·A·S + autocontrôle 2.2 + DR + fiche 3 ou 4 + CED + OCAR','incidents','Par cœur','Déroulé complet du FAMAS'],
+      ['33','TE — Transport Exceptionnel : définition par cœur (+ rôle du BTE)','formation','🔥 Par cœur','Transport Exceptionnel'],
+      ['34','MD — Marchandises Dangereuses : définition par cœur (personnes · biens · environnement)','formation','🔥 Par cœur','Marchandises Dangereuses'],
+      ['35','ATE — 3 types : 4 et 5 (étiquette spéciale) · 7 (aucune restriction), créé par le BTE','formation','🔥 Par cœur','Avis de Transport'],
+      ['36','Encadré jaune — Constater une anomalie sur un convoi de MD','formation','🔥 100% éval','anomalie sur un convoi'],
+      ['37','Repérage — Identification des envois : 5 points','formation','🔥 Par cœur','Identification des envois'],
+      ['38','Citer 4 types de wagon','formation','À savoir','types de wagons'],
+      ['39','Enclenchements électriques : ZI→Anx4 · CIP & ZP→Anx2 · EAP→Anx5','aiguillage','🔥 Par cœur','Enclenchements électriques'],
+      ['40','FC — Commutateur de fermeture : urgence uniquement (modif itinéraire, coupons)','aiguillage','⚠ Urgence','Commutateur de Fermeture'],
     ].map(([n,titre,theme,tag,anchor]) => `
     <div style="display:flex;align-items:center;gap:10px;padding:7px 12px;background:var(--bg3);border-radius:var(--radius);flex-wrap:wrap">
       <span style="font-family:var(--mono);font-size:11px;color:var(--accent);min-width:24px">${n}.</span>
