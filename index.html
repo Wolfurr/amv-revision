@@ -336,7 +336,7 @@ h2.theme-heading:first-child { margin-top: 0; }
   <div class="topbar">
     <button class="burger" onclick="toggleSidebar()">☰</button>
     <div class="topbar-title" id="topbar-txt">AMV / <span>Accueil</span></div>
-    <div id="topbar-right" style="font-family:var(--mono);font-size:11px;color:var(--text3)" title="v6.0 — Cours des 16 & 17/06 intégré : AMV910 (TE/MD/ATE, encadré jaune, repérage), enclenchements (EAP, annexes, FC/coupons), serrures">v6.0 — 17 juin 2026</div>
+    <div id="topbar-right" style="font-family:var(--mono);font-size:11px;color:var(--text3)" title="v6.1 — Préparation exam vendredi : focus cyclomoteurs/vélos (Art. 8.2 RRA20068) mis en avant, 4 exemples de types de wagons ajoutés">v6.1 — 18 juin 2026</div>
   </div>
 
   <div class="content" id="main-content"></div>
@@ -347,6 +347,9 @@ h2.theme-heading:first-child { margin-top: 0; }
 // ═══════════════════════════════════════════════
 // DATA
 // ═══════════════════════════════════════════════
+
+// Source unique de vérité pour la version + date de MAJ (affichée en haut à droite)
+const VERSION_LABEL = 'v6.1 — 18 juin 2026';
 
 const THEMES = [
   { id:'epi',         code:'AMV801',        title:'EPI & Déplacements',                 short:'EPI' },
@@ -536,6 +539,29 @@ formation: `
   • <strong>Parois de bout JAUNES</strong> = wagon interdit sur Voie Principale (uniquement VS)<br>
   • <strong>Bande orange</strong> sur citerne = gaz liquéfié, réfrigéré ou dissous<br>
   • <strong>EM électrique / diesel</strong> = 20 m · <strong>Locotracteur</strong> = 10 m
+</div>
+
+<!-- ═══ 4 EXEMPLES DE TYPES DE WAGONS ═══ -->
+<div style="background:var(--bg3);border:1px solid var(--accent);border-radius:var(--radius2);padding:16px;margin-bottom:18px">
+  <div style="font-size:13px;font-weight:600;color:var(--accent);margin-bottom:12px">🚃 4 exemples de types de wagons à reconnaître</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+    <div style="background:var(--bg4);border-radius:var(--radius);padding:10px 12px;border-left:2px solid var(--border2)">
+      <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:3px">Wagon citerne</div>
+      <div style="font-size:11px;color:var(--text3)">Réservoir cylindrique — transport de liquides ou de gaz (bande orange = gaz liquéfié/réfrigéré/dissous).</div>
+    </div>
+    <div style="background:var(--bg4);border-radius:var(--radius);padding:10px 12px;border-left:2px solid var(--border2)">
+      <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:3px">Wagon bâché</div>
+      <div style="font-size:11px;color:var(--text3)">Plateau couvert d'une bâche amovible — protège la marchandise tout en facilitant le chargement par le dessus.</div>
+    </div>
+    <div style="background:var(--bg4);border-radius:var(--radius);padding:10px 12px;border-left:2px solid var(--border2)">
+      <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:3px">Wagon plat (plateforme)</div>
+      <div style="font-size:11px;color:var(--text3)">Plancher plat sans parois — conteneurs, engins, charges longues ou volumineuses.</div>
+    </div>
+    <div style="background:var(--bg4);border-radius:var(--radius);padding:10px 12px;border-left:2px solid var(--border2)">
+      <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:3px">Wagon couvert</div>
+      <div style="font-size:11px;color:var(--text3)">Caisse fermée avec toit et portes — marchandises à protéger des intempéries.</div>
+    </div>
+  </div>
 </div>
 
 
@@ -2828,18 +2854,42 @@ epi: `
   Autorisation spéciale du chef d'établissement si : largeur > 2,50 m · hauteur > 4,00 m · poids > 12 tonnes.
 </div>
 
-<h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Art. 8.2 RRA20068 — Règles pour les bicyclettes et cyclomoteurs</h3>
-<div class="rule-box">
-  <strong>Vitesse max :</strong> 20 km/h<br>
-  <strong>Mettre pied à terre</strong> obligatoirement si circulation sur voie contiguë<br><br>
-  <strong>INTERDIT :</strong><br>
-  • Traverser les voies sauf sur itinéraire carrossable<br>
-  • Circuler dans les tunnels et sur les ponts (sauf piste aménagée)<br>
-  • Par temps de visibilité réduite<br>
-  • À 2 personnes sur le même vélo<br>
-  • Atteler une remorque (sauf sur piste/itinéraire dont le bord intérieur est à ≥ 2,00 m du rail)<br>
-  • Transporter des objets encombrants susceptibles d'engager la ZD ou de déséquilibrer<br><br>
-  <strong>De nuit :</strong> à éviter — éclairage en état de fonctionnement obligatoire si nécessaire
+<!-- ═══ FOCUS EXAM VENDREDI — CYCLOMOTEURS & VÉLOS ═══ -->
+<div style="background:linear-gradient(135deg,rgba(240,192,64,0.12),rgba(240,192,64,0.04));border:2px solid var(--accent);border-radius:var(--radius2);padding:18px 20px;margin:28px 0 22px;box-shadow:0 0 16px rgba(240,192,64,0.15)">
+  <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px">
+    <span style="font-size:18px">🎯</span>
+    <div>
+      <div style="font-size:15px;font-weight:700;color:var(--accent);letter-spacing:0.02em">FOCUS EXAM VENDREDI</div>
+      <div style="font-size:11px;font-family:var(--mono);color:var(--text3);margin-top:2px">Cyclomoteurs &amp; vélos aux abords des voies — Art. 8.2 RRA20068</div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px">
+    <div style="background:var(--bg4);border-radius:var(--radius);padding:12px 14px;text-align:center">
+      <div style="font-size:11px;color:var(--text3);font-family:var(--mono);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px">Vitesse max</div>
+      <div style="font-size:22px;font-weight:700;color:var(--accent)">20 km/h</div>
+    </div>
+    <div style="background:var(--bg4);border-radius:var(--radius);padding:12px 14px;text-align:center">
+      <div style="font-size:11px;color:var(--text3);font-family:var(--mono);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px">Voie contiguë occupée</div>
+      <div style="font-size:15px;font-weight:700;color:var(--accent);line-height:1.3;margin-top:4px">Pied à terre obligatoire</div>
+    </div>
+  </div>
+
+  <div style="background:var(--red-bg);border-left:3px solid var(--red);border-radius:var(--radius);padding:12px 14px;margin-bottom:12px">
+    <div style="font-size:12px;font-weight:700;color:var(--red);letter-spacing:0.05em;margin-bottom:8px">⛔ INTERDIT</div>
+    <div style="font-size:13px;color:var(--text);line-height:1.8">
+      • Traverser les voies sauf sur itinéraire carrossable<br>
+      • Circuler dans les tunnels et sur les ponts (sauf piste aménagée)<br>
+      • Circuler par temps de visibilité réduite<br>
+      • Être à 2 personnes sur le même vélo<br>
+      • Atteler une remorque (sauf piste/itinéraire dont le bord intérieur est à ≥ 2,00 m du rail)<br>
+      • Transporter des objets encombrants pouvant engager la ZD ou déséquilibrer
+    </div>
+  </div>
+
+  <div style="font-size:12px;color:var(--text2);line-height:1.6">
+    🌙 <strong style="color:var(--text)">De nuit :</strong> à éviter — si nécessaire, éclairage en état de fonctionnement obligatoire.
+  </div>
 </div>
 `,
 
@@ -4447,7 +4497,7 @@ function showView(v) {
   const c = document.getElementById('main-content');
   c.scrollTop = 0;
   window.scrollTo(0,0);
-  document.getElementById('topbar-right').innerHTML = '<span style="font-family:var(--mono);font-size:11px;color:var(--text3)">v5.4 — 12 juin 2026</span>';
+  document.getElementById('topbar-right').innerHTML = '<span style="font-family:var(--mono);font-size:11px;color:var(--text3)">' + VERSION_LABEL + '</span>';
   if (v === 'home') { setTopbar('AMV / <span>Accueil</span>'); renderHome(c); }
   else if (v === 'fiches') { setTopbar('AMV / <span>Fiches de cours</span>'); renderFiches(c); }
   else if (v === 'flash') { setTopbar('AMV / <span>Flashcards</span>'); renderFlash(c); }
@@ -4498,7 +4548,7 @@ function renderHome(c) {
   const qc = QUIZ.length;
   c.innerHTML = `
 <div class="section-heading">Bienvenue 👋</div>
-<div class="section-sub">Application de révision AMV — SECUFER · v6.0 — 17 juin 2026 · ${THEMES.length} thèmes</div>
+<div class="section-sub">Application de révision AMV — SECUFER · ${VERSION_LABEL} · ${THEMES.length} thèmes</div>
 
 <div style="display:flex;gap:16px;justify-content:center;align-items:center;padding:10px 16px;background:var(--bg3);border:1px solid var(--accent);border-radius:var(--radius);margin-bottom:16px;font-family:var(--mono);font-size:13px">
   <span style="color:var(--text3)">📍</span>
