@@ -2141,21 +2141,26 @@ encl: `
   💡 Un enclenchement <strong style="color:var(--blue)">interdit ou conditionne</strong> la manœuvre d'un appareil de voie ou d'un signal, pour empêcher une situation dangereuse. On distingue 2 grandes familles : les enclenchements <strong>mécaniques</strong> (entre leviers, au poste) et les enclenchements <strong>électriques</strong> (4 types, selon des conditions de voie/signal présumées occupées ou non).
 </div>
 
+<div class="def-block important">
+  <div class="def-term">⚠️ Ne pas confondre les 3 consignes <span class="tag yellow ml6">À l'examen</span></div>
+  <div class="def-text">• <strong class="fc-accent">Consigne Rose</strong> : consigne des <strong>installations de sécurité</strong> (ZI, CIP, ZP, EAP, enclenchements, schémas, tableaux de mouvements...) — c'est elle qui est utilisée dans toute cette fiche.
+• <strong class="fc-accent">Consigne Bleue</strong> : consigne des <strong>installations de traction électrique</strong>.
+• <strong class="fc-accent">Consigne de protection</strong> : consigne pour les <strong>travaux</strong> (ZEP, DFV).</div>
+</div>
+
 <h3 class="fc-h3-accent">⭐ Vue d'ensemble des enclenchements électriques — à connaître par cœur</h3>
 <div class="table-wrap"><table>
-  <thead><tr><th>Enclenchement</th><th>Empêche</th><th>Agit sur</th></tr></thead>
+  <thead><tr><th>Enclenchement</th><th>Empêche</th><th>Agit sur</th><th>Annexe CR</th></tr></thead>
   <tbody>
-    <tr><td>Zone isolée (ZI)</td><td>la manœuvre d'un appareil de voie pendant son franchissement</td><td>levier de l'aiguille</td></tr>
-    <tr><td>Transit*</td><td>la manœuvre d'un appareil de voie</td><td>levier de l'aiguille</td></tr>
-    <tr><td>Enclenchement d'approche (EAP)</td><td>la fermeture prématurée d'un signal</td><td>levier du signal</td></tr>
-    <tr><td>Enclenchement de parcours*</td><td>la fermeture prématurée d'un signal</td><td>levier du signal</td></tr>
-    <tr><td>Zone de protection (ZP)</td><td>l'ouverture d'un signal</td><td>levier du signal <strong>OU</strong> circuit de commande</td></tr>
-    <tr><td>Zone d'espacement automatique*</td><td>l'ouverture d'un signal</td><td>levier du signal <strong>OU</strong> circuit de commande</td></tr>
-    <tr><td>Contrôle impératif permanent (CIP)</td><td>l'ouverture d'un signal</td><td>circuit de commande du signal <strong>uniquement</strong> (jamais le levier)</td></tr>
+    <tr><td>Zone isolée (ZI)</td><td>la manœuvre d'un appareil de voie pendant son franchissement</td><td>levier de l'aiguille</td><td class="fc-accent">Annexe 4</td></tr>
+    <tr><td>Enclenchement d'approche (EAP)</td><td>la fermeture prématurée d'un signal</td><td>levier du signal</td><td class="fc-accent">Annexe 5</td></tr>
+    <tr><td>Enclenchement de parcours*</td><td>la fermeture prématurée d'un signal</td><td>levier du signal</td><td>Annexe 5</td></tr>
+    <tr><td>Zone de protection (ZP)</td><td>l'ouverture d'un signal</td><td>levier du signal <strong>OU</strong> circuit de commande</td><td class="fc-accent">Annexe 2</td></tr>
+    <tr><td>Contrôle impératif permanent (CIP)</td><td>l'ouverture d'un signal</td><td>circuit de commande du signal <strong>uniquement</strong> (jamais le levier)</td><td class="fc-accent">Annexe 2</td></tr>
   </tbody>
 </table></div>
 <div class="rule-box">
-  * <strong>Transit</strong>, <strong>Enclenchement de parcours</strong> et <strong>Zone d'espacement automatique</strong> apparaissent dans la classification du formateur mais ne sont pas détaillés dans les supports disponibles — à compléter en cours si besoin. Les 4 enclenchements détaillés ci-dessous (ZI, CIP, ZP, EAP) sont ceux du programme AMV211.
+  * <strong>Enclenchement de parcours</strong> partage l'Annexe 5 avec l'EAP (intitulé exact de l'annexe : « Enclenchements d'approche ET de parcours »). Les 4 enclenchements détaillés ci-dessous (ZI, CIP, ZP, EAP) sont ceux du programme AMV211.
 </div>
 
 <h3 class="fc-h3">AMV210 — Enclenchements mécaniques</h3>
@@ -2249,6 +2254,9 @@ Destruction : mise en position normale (+) du levier de commande du signal de pr
     <tr><td>Comment savoir s'il existe ?</td><td>Consigne Rose <strong>Annexe 5</strong> — Article 216 DC3858.</td></tr>
   </tbody>
 </table></div>
+<div class="rule-box">
+  💡 <strong>Pourquoi ?</strong> L'EAP empêche de fermer le signal de protection au moment où un train est déjà trop proche pour pouvoir s'arrêter avant lui. Sans l'EAP, fermer le signal « au nez » d'une circulation en approche (ZAP rouge) pourrait provoquer un dépassement de signal fermé faute de distance de freinage suffisante.
+</div>
 
 <div class="def-block important">
   <div class="def-term">📍 Récap annexes des enclenchements électriques <span class="tag red ml6">🔥 Par cœur</span></div>
@@ -2262,13 +2270,13 @@ Art. 202 (DC 3858) : les enclenchements électriques complètent les mécaniques
 </div>
 <div class="def-block important">
   <div class="def-term">FC — Commutateur de Fermeture (urgence uniquement) <span class="tag red ml6">⚠ Urgence</span></div>
-  <div class="def-text">La FC (commutateur de fermeture) permet de fermer un signal alors que la ZAP est au rouge (un train est déjà dans la zone proche et ne pourra pas s'arrêter avant le signal). À n'actionner qu'en cas d'urgence (ex : FAMAS, modification d'itinéraire).
+  <div class="def-text">La FC (commutateur de fermeture) permet de fermer un signal alors que la ZAP est au rouge (un train est déjà dans la zone proche et ne pourra pas s'arrêter avant le signal) : actionnée, elle fait fermer le carré <strong>instantanément</strong>. À n'actionner qu'en cas d'urgence (ex : FAMAS, modification d'itinéraire).
 Ne pas confondre avec la FA (fermeture automatique) : la FA est automatique, la FC est une action volontaire d'urgence.</div>
 </div>
 <div class="def-block">
-  <div class="def-term">Modification d'itinéraire & coupons (Art. 302 DC3858, p.34)</div>
-  <div class="def-text">Urgence / reprise de voie / changement d'itinéraire : 1. FC actionnée (rapidement) ; 2. on applique l'article 302 de la DC 3858 et on suit le logigramme.
-C'est le seul cas où l'on est autorisé à perforer les coupons pour manœuvrer un levier immobilisé (donc uniquement en urgence, le plus souvent sur ordre du régulateur / COGC). Après remise du levier en position normale, on remet un nouveau coupon : 1 trou (de coupon) = 1 arrêt.</div>
+  <div class="def-term">Modification d'itinéraire & coupons (Art. 202 DC3858)</div>
+  <div class="def-text"><strong>Seule une modification d'itinéraire</strong> autorise à perforer (découper) un coupon pour manœuvrer un levier immobilisé — c'est une urgence. Déroulé : 1. la FC est actionnée (le carré se ferme instantanément) ; 2. on applique l'article 202 de la DC 3858 (modification d'itinéraire) et on suit le logigramme — le plus souvent sur ordre du régulateur / COGC.
+Après avoir remis le levier en position normale, on remet un nouveau coupon : <strong>1 trou perforé = 1 coupon</strong> (le coupon utilisé est remplacé).</div>
 </div>
 `,
 
