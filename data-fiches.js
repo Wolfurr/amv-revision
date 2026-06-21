@@ -1,0 +1,2841 @@
+// AMV — Révision SECUFER — Fiches de cours
+// Contenu texte des 14 fiches thématiques (HTML inline en template literals)
+// Référencé par : app.js → renderFiches(), renderHome(), gotoFiche(), search engine
+
+const FICHES = {
+risques: `
+<h2 class="theme-heading">Risques ferroviaires & Communication</h2>
+<div class="theme-ref">AMV005 · AMV009 · PS9 · OP0542</div>
+
+<h3 class="fc-h3">AMV005 — Les 5 risques ferroviaires</h3>
+<div class="def-block important">
+  <div class="def-term">Collision avec obstacle</div>
+  <div class="def-text">Conséquence de la présence sur la voie d'un événement anormal empêchant la libre circulation ferroviaire.</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">Prise en écharpe</div>
+  <div class="def-text">Éviter que deux ou plusieurs trains entrent en collision à un carrefour (point de jonction de 2 ou plusieurs voies).</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">Nez à nez</div>
+  <div class="def-text">Sur une voie, un train circulant dans un sens est percuté par un train circulant en sens inverse.</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">Déraillement par excès de vitesse</div>
+  <div class="def-text">Lorsqu'un train quitte le rail suite à excès de vitesse (courbe).</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">Rattrapage</div>
+  <div class="def-text">Sur une voie, un train rattrape et percute un train circulant dans le même sens.</div>
+</div>
+
+<h3 class="fc-h3">AMV009 — Communication de sécurité</h3>
+<div class="def-block">
+  <div class="def-term">Moyens de communication</div>
+  <div class="def-text">De vive voix · Exprès · Haut-parleur · Téléphonie (voies / mobile) · Radio (RST-STD, RST-TD, GSM-R, radio manœuvre) · Documents écrits · Interphonie · Télécopie · Transmission numérique (terminaux mobiles, tablettes, e-mails) · Avertisseurs sonores</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">4 étapes d'une communication de sécurité (OP0542) <span class="tag yellow ml6">À l'examen</span></div>
+  <div class="def-text">1. L'identification
+2. L'appel d'instruction, si nécessaire (utilisation d'un formulaire)
+3. La transmission des informations (nature de l'appel)
+4. La finalisation (clôture de la transmission)
+
+⚡ En cas d'urgence : sauter les étapes 1 ET 2, passer directement à l'étape 3 (transmission).
+⚠️ Ne pas oublier de <strong>collationner</strong> à l'issue de la transmission (principe n°5 des règles de communication verbale).</div>
+</div>
+<div class="rule-box" style="border-left-color:var(--text3)">
+  <strong>⚠️ À ne pas confondre :</strong><br>
+  Les <strong>4 étapes OP0542</strong> = le déroulement d'un appel de sécurité. C'est ce qu'il faut connaître.<br>
+  Ne pas oublier de <strong>collationner</strong> à l'issue de la transmission.
+</div>
+<div class="def-block important">
+  <div class="def-term">Les 9 codes radios <span class="tag yellow">9 à connaître</span></div>
+  <div class="def-text">1. À TOI — transmettre la parole
+2. REÇU — message bien reçu
+3. MAL REÇU — mauvaise réception
+4. CORRECT — message collationné conforme
+5. ERREUR — message collationné non conforme
+6. JE RÉPÈTE — on répète le message (utilisé après ERREUR ou sur demande)
+7. ATTENDEZ — interruption temporaire, connexion maintenue
+8. RÉPÉTER — demander à l'interlocuteur de répéter
+9. TERMINÉ — fin de communication</div>
+</div>
+<div class="rule-box" style="margin-bottom:6px">
+  <strong>Note :</strong> Dans la terminologie 2.4 (classeur Circulation), on trouve aussi <strong>«Je rappelle»</strong> (communication qui sera reprise ultérieurement) et <strong>«À toi»</strong> (version alternative de «À vous» pour certains postes). Les 9 codes ci-dessus sont ceux à connaître pour l'examen.
+</div>
+<div class="rule-box">
+  <strong>Communications formalisées :</strong> Communication prédéterminée dont les termes et la forme sont fixés par la documentation réglementaire. À RESPECTER OBLIGATOIREMENT.<br><br>
+  <strong>Communications non formalisées :</strong> Déterminées par l'opérateur.
+</div>
+<div class="def-block">
+  <div class="def-term">Carnet d'enregistrement des dépêches (CED)</div>
+  <div class="def-text">Registre que l'agent doit remplir manuellement, retraçant tous les événements de la journée (dépêches, dérangements, communications, etc). Sert d'élément de traçabilité pour les remises et prises de postes.</div>
+</div>
+`,
+
+formation: `
+<h2 class="theme-heading">Formation des trains</h2>
+<div class="theme-ref">AMV901 · AMV903 · AMV904 · OP827 · OP828 · OP840 · OP521 · OP825</div>
+
+<div style="background:rgba(248,113,113,0.08);border:2px solid var(--red);border-radius:var(--radius2);padding:14px 16px;margin-bottom:18px;font-size:13px;line-height:1.6">
+  🔥 <strong style="color:var(--red)">🔥 EXAM AMV</strong> — À maîtriser absolument :<br>
+  ▸ <strong>Reconnaître visuellement les différents types de wagons</strong> (galerie ci-dessous)<br>
+  ▸ <strong>Différence Bogies vs Essieux</strong> (sous le wagon)<br>
+  ▸ <strong>Les 4 essais de frein</strong> — bien différencier (complet, partiel, continuité, raccordement)
+</div>
+
+<h3 class="fc-h3">AMV901 — Types de wagons, marquage, attelage/dételage</h3>
+<div class="def-block">
+  <div class="def-term">Convoi</div>
+  <div class="def-text">Engin moteur ou groupe d'engins moteurs attelés ou non à un ou plusieurs véhicules remorqués.</div>
+</div>
+<div class="def-block">
+  <div class="def-term">Train</div>
+  <div class="def-text">Ensemble formé par un ou plusieurs véhicules de transports ferroviaires pour effectuer un service de transport ferroviaire de voyageurs ou de marchandises dans le cadre du droit d'accès.</div>
+</div>
+
+<!-- ═══ BOGIES vs ESSIEUX ═══ -->
+<h3 class="fc-h3-accent">🎯 Bogies vs Essieux — la base à reconnaître</h3>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px">
+  <div style="background:var(--bg3);border:1px solid var(--accent);border-radius:var(--radius2);padding:14px">
+    <div style="font-size:14px;font-weight:700;color:var(--accent);margin-bottom:10px;text-align:center">BOGIES</div>
+    <div style="background:var(--bg4);border-radius:var(--radius);padding:14px;margin-bottom:10px;display:flex;justify-content:center">
+      <svg viewBox="0 0 280 110" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:260px">
+        <!-- caisse wagon -->
+        <rect x="10" y="20" width="260" height="40" rx="3" fill="#7a3a3a" stroke="#444" stroke-width="1.5"/>
+        <!-- bogie gauche (groupe de 2 essieux + chassis) -->
+        <rect x="25" y="60" width="70" height="14" rx="3" fill="#2a2a2a" stroke="#555" stroke-width="1.2"/>
+        <circle cx="40" cy="82" r="10" fill="#1a1a1a" stroke="#666" stroke-width="1.5"/>
+        <circle cx="40" cy="82" r="3" fill="#666"/>
+        <circle cx="80" cy="82" r="10" fill="#1a1a1a" stroke="#666" stroke-width="1.5"/>
+        <circle cx="80" cy="82" r="3" fill="#666"/>
+        <!-- bogie droit -->
+        <rect x="185" y="60" width="70" height="14" rx="3" fill="#2a2a2a" stroke="#555" stroke-width="1.2"/>
+        <circle cx="200" cy="82" r="10" fill="#1a1a1a" stroke="#666" stroke-width="1.5"/>
+        <circle cx="200" cy="82" r="3" fill="#666"/>
+        <circle cx="240" cy="82" r="10" fill="#1a1a1a" stroke="#666" stroke-width="1.5"/>
+        <circle cx="240" cy="82" r="3" fill="#666"/>
+        <!-- rails -->
+        <line x1="0" y1="95" x2="280" y2="95" stroke="#888" stroke-width="2"/>
+        <!-- annotations -->
+        <ellipse cx="60" cy="80" rx="48" ry="20" fill="none" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="3,2"/>
+        <ellipse cx="220" cy="80" rx="48" ry="20" fill="none" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="3,2"/>
+      </svg>
+    </div>
+    <div class="fc-note">
+      <strong class="fc-accent">Chariot pivotant</strong> à 2 (ou 3) essieux qui porte le wagon. Il y a généralement <strong>2 bogies par wagon</strong>. Permet une meilleure répartition de la charge et un meilleur comportement dans les courbes.
+    </div>
+  </div>
+
+  <div style="background:var(--bg3);border:1px solid var(--blue);border-radius:var(--radius2);padding:14px">
+    <div style="font-size:14px;font-weight:700;color:var(--blue);margin-bottom:10px;text-align:center">ESSIEUX (directs)</div>
+    <div style="background:var(--bg4);border-radius:var(--radius);padding:14px;margin-bottom:10px;display:flex;justify-content:center">
+      <svg viewBox="0 0 280 110" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:260px">
+        <!-- caisse wagon -->
+        <rect x="10" y="20" width="260" height="40" rx="3" fill="#7a3a3a" stroke="#444" stroke-width="1.5"/>
+        <!-- essieux fixés directement -->
+        <rect x="55" y="58" width="6" height="20" fill="#2a2a2a"/>
+        <rect x="219" y="58" width="6" height="20" fill="#2a2a2a"/>
+        <!-- roues -->
+        <circle cx="58" cy="82" r="10" fill="#1a1a1a" stroke="#666" stroke-width="1.5"/>
+        <circle cx="58" cy="82" r="3" fill="#666"/>
+        <circle cx="222" cy="82" r="10" fill="#1a1a1a" stroke="#666" stroke-width="1.5"/>
+        <circle cx="222" cy="82" r="3" fill="#666"/>
+        <!-- rails -->
+        <line x1="0" y1="95" x2="280" y2="95" stroke="#888" stroke-width="2"/>
+        <!-- annotations -->
+        <ellipse cx="58" cy="82" rx="18" ry="14" fill="none" stroke="#60a5fa" stroke-width="1.5" stroke-dasharray="3,2"/>
+        <ellipse cx="222" cy="82" rx="18" ry="14" fill="none" stroke="#60a5fa" stroke-width="1.5" stroke-dasharray="3,2"/>
+      </svg>
+    </div>
+    <div class="fc-note">
+      Axe portant 2 roues, <strong style="color:var(--blue)">fixé directement</strong> sous le wagon. Il y a généralement <strong>2 essieux par wagon</strong>. Construction plus simple, utilisée pour les wagons de petite capacité.
+    </div>
+  </div>
+</div>
+
+<!-- ═══ TYPES DE WAGONS ═══ -->
+<h3 class="fc-h3-accent">📚 Les types de wagons — voir le PDF Formation_des_trains.pdf</h3>
+
+<div style="background:var(--bg3);border:1px solid var(--accent);border-radius:var(--radius2);padding:16px;margin-bottom:14px">
+  <div style="font-size:13px;color:var(--text2);margin-bottom:12px;line-height:1.6">
+    📸 <strong class="fc-accent">Planche photos des wagons & essais de frein</strong> — apprends à les reconnaître visuellement !
+  </div>
+  <img src="data:image/jpeg;base64,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" alt="Formation des trains — Types de wagons et essais de frein" style="width:100%;border-radius:var(--radius);border:1px solid var(--border)"/>
+</div>
+
+<div style="background:rgba(248,113,113,0.05);border-left:3px solid var(--red);border-radius:var(--radius);padding:12px 14px;margin-bottom:18px;font-size:12px;color:var(--text2);line-height:1.7">
+  ⚠️ <strong style="color:var(--red)">À retenir absolument :</strong><br>
+  • <strong>Wagon à conduite blanche</strong> = assure uniquement la continuité de l'air, <strong>pas de semelle de frein</strong><br>
+  • <strong>Parois de bout JAUNES</strong> = wagon interdit sur Voie Principale (uniquement VS)<br>
+  • <strong>Bande orange</strong> sur citerne = gaz liquéfié, réfrigéré ou dissous<br>
+  • <strong>EM électrique / diesel</strong> = 20 m · <strong>Locotracteur</strong> = 10 m
+</div>
+
+<!-- ═══ 4 EXEMPLES DE TYPES DE WAGONS ═══ -->
+<div style="background:var(--bg3);border:1px solid var(--accent);border-radius:var(--radius2);padding:16px;margin-bottom:18px">
+  <div style="font-size:13px;font-weight:600;color:var(--accent);margin-bottom:12px">🚃 4 exemples de types de wagons à reconnaître</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+    <div style="background:var(--bg4);border-radius:var(--radius);padding:10px 12px;border-left:2px solid var(--border2)">
+      <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:3px">Wagon citerne</div>
+      <div class="fc-meta">Réservoir cylindrique — transport de liquides ou de gaz (bande orange = gaz liquéfié/réfrigéré/dissous).</div>
+    </div>
+    <div style="background:var(--bg4);border-radius:var(--radius);padding:10px 12px;border-left:2px solid var(--border2)">
+      <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:3px">Wagon bâché</div>
+      <div class="fc-meta">Plateau couvert d'une bâche amovible — protège la marchandise tout en facilitant le chargement par le dessus.</div>
+    </div>
+    <div style="background:var(--bg4);border-radius:var(--radius);padding:10px 12px;border-left:2px solid var(--border2)">
+      <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:3px">Wagon plat (plateforme)</div>
+      <div class="fc-meta">Plancher plat sans parois — conteneurs, engins, charges longues ou volumineuses.</div>
+    </div>
+    <div style="background:var(--bg4);border-radius:var(--radius);padding:10px 12px;border-left:2px solid var(--border2)">
+      <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:3px">Wagon couvert</div>
+      <div class="fc-meta">Caisse fermée avec toit et portes — marchandises à protéger des intempéries.</div>
+    </div>
+  </div>
+</div>
+
+
+<h3 class="fc-h3">Le marquage du matériel — L'identité du véhicule <span class="tag yellow ml6">À l'examen</span></h3>
+<div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);padding:16px;margin-bottom:12px">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+    ${[
+      ['Numéro du wagon','12 chiffres — identifiant unique du véhicule'],
+      ['Tare du wagon','Masse du wagon vide (ex: 23 730 kg)'],
+      ['Superficie du plancher','Surface utile de chargement (ex: 50,5 m²)'],
+      ['Longueur utilisable','Longueur intérieure disponible (ex: 18,5 m)'],
+      ['Longueur du wagon','Longueur totale (ex: 20,09 m)'],
+      ['Porte-étiquette d\'acheminement','Emplacement de l\'étiquette de destination'],
+      ['Marquage littéral','Type/code du wagon (ex: Rils)'],
+      ['Étiquettes de réforme','🔴 Rouge = interdit de circuler · ⬜ Blanc = restrictions'],
+    ].map(([k,v]) => `
+    <div style="padding:7px 10px;background:var(--bg4);border-radius:5px;border-left:2px solid var(--border2)">
+      <div style="font-size:12px;font-weight:600;color:var(--text);margin-bottom:2px">${k}</div>
+      <div class="fc-meta">${v}</div>
+    </div>`).join('')}
+  </div>
+</div>
+
+<h3 class="fc-h3">Le cartouche de chargement</h3>
+<div class="def-block">
+  <div class="def-term">Catégories de ligne (A, B, C, D) × Vitesse (S / SS)</div>
+  <div class="def-text">Le cartouche indique la masse maximale de chargement autorisée en fonction de la catégorie de ligne empruntée et de la vitesse du véhicule.<br><br>
+  <strong>S = 100 km/h · SS = 120 km/h</strong><br>
+  Catégories A → B → C → D (D = charge croissante)<br><br>
+  <strong>Charge D :</strong> la majorité des lignes du RFN autorise les véhicules dont la charge par essieu est supérieure à 20 tonnes sans dépasser 22,5 tonnes.</div>
+</div>
+
+<h3 class="fc-h3">AMV903 — RAT (Reconnaissance à l'Aptitude au Transport) <span class="tag yellow ml6">Par cœur</span></h3>
+<div class="def-block important">
+  <div class="def-term">Définition de la RAT</div>
+  <div class="def-text">Opération de sécurité qui s'applique aux véhicules remorqués affectés au transport de marchandises et leur chargement, avant leur manœuvre. Elle consiste à vérifier la conformité des véhicules, s'assurer que l'acheminement peut supporter sans dommage et sans risque la durée et les exigences du transport jusqu'à sa destination.</div>
+</div>
+<div class="rule-box">
+  La RAT est effectuée depuis le sol, à proximité, debout et des deux côtés du wagon (essai visuel uniquement — méthode OMO de cheminement visuel).
+</div>
+
+<h3 class="fc-h3">Ordre d'attelage</h3>
+<ul class="numbered-list">
+  <li><span class="num">01</span>Régler le tendeur d'attelage</li>
+  <li><span class="num">02</span>Placer la manille dans le crochet de traction du véhicule voisin et serrer à l'aide de la manivelle</li>
+  <li><span class="num">03</span>Libérer les accouplements de leurs supports</li>
+  <li><span class="num">04</span>Réunir et enclencher à fond les têtes d'accouplement de la CG et/ou de la CP</li>
+  <li><span class="num">05</span>Ouvrir les robinets d'arrêt (simultanément ou de la queue vers la tête)</li>
+  <li><span class="num">06</span>Réaliser les autres liaisons si nécessaire</li>
+</ul>
+
+<h3 class="fc-h3">Ordre de dételage</h3>
+<ul class="numbered-list">
+  <li><span class="num">01</span>Supprimer l'intercirculation si elle existe</li>
+  <li><span class="num">02</span>Désaccoupler les autres liaisons</li>
+  <li><span class="num">03</span>Fermer les robinets d'arrêt de la tête à la queue</li>
+  <li><span class="num">04</span>Desserrer l'attelage</li>
+  <li><span class="num">05</span>Décrocher le tendeur</li>
+  <li><span class="num">06</span>Mettre les organes en position de repos sur leurs supports</li>
+</ul>
+
+<h3 class="fc-h3-accent">⭐ Les 4 types d'essais de frein (Article 401) <span style="font-size:12px;color:var(--red);margin-left:8px">🔥 Exam AMV — BIEN DIFFÉRENCIER !</span></h3>
+
+<div style="background:rgba(248,113,113,0.05);border:2px solid var(--red);border-radius:var(--radius2);padding:14px;margin-bottom:14px;font-size:13px;line-height:1.6">
+  ⚠️ Tu dois savoir <strong>lequel appliquer dans quelle situation</strong>. Le principe est toujours : vérifier le <strong>serrage</strong> (frein serré) puis le <strong>desserrage</strong> (frein relâché) + la <strong>continuité de la CG</strong> (Conduite Générale).
+</div>
+
+<!-- Schéma visuel des 4 essais -->
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px">
+  <!-- Complet -->
+  <div style="background:var(--bg3);border:2px solid var(--green);border-radius:var(--radius2);padding:14px">
+    <div style="font-size:14px;font-weight:700;color:var(--green);margin-bottom:8px">✅ Essai COMPLET</div>
+    <div style="background:var(--bg4);border-radius:var(--radius);padding:10px;margin-bottom:8px;display:flex;align-items:center;justify-content:center">
+      <svg viewBox="0 0 260 50" xmlns="http://www.w3.org/2000/svg" style="width:100%">
+        <rect x="5" y="15" width="40" height="20" rx="3" fill="#4a6a4a" stroke="#4ade80" stroke-width="1.5"/>
+        <text x="25" y="30" text-anchor="middle" font-size="8" fill="#fff" font-weight="700">EM</text>
+        <rect x="55" y="15" width="35" height="20" rx="2" fill="#4ade80" stroke="#22c55e" stroke-width="1.5"/>
+        <rect x="100" y="15" width="35" height="20" rx="2" fill="#4ade80" stroke="#22c55e" stroke-width="1.5"/>
+        <rect x="145" y="15" width="35" height="20" rx="2" fill="#4ade80" stroke="#22c55e" stroke-width="1.5"/>
+        <rect x="190" y="15" width="35" height="20" rx="2" fill="#4ade80" stroke="#22c55e" stroke-width="1.5"/>
+        <text x="72" y="29" text-anchor="middle" font-size="7" fill="#1a1a1a" font-weight="700">✓</text>
+        <text x="117" y="29" text-anchor="middle" font-size="7" fill="#1a1a1a" font-weight="700">✓</text>
+        <text x="162" y="29" text-anchor="middle" font-size="7" fill="#1a1a1a" font-weight="700">✓</text>
+        <text x="207" y="29" text-anchor="middle" font-size="7" fill="#1a1a1a" font-weight="700">✓</text>
+        <line x1="45" y1="43" x2="225" y2="43" stroke="#4ade80" stroke-width="2"/>
+        <text x="135" y="49" text-anchor="middle" font-size="7" fill="#4ade80">TOUS vérifiés</text>
+      </svg>
+    </div>
+    <div class="fc-note">
+      Vérification du serrage de <strong class="fc-text">TOUS les véhicules freinés</strong>, de la continuité de la CG et du desserrage de <strong>l'ensemble</strong> des véhicules.
+    </div>
+    <div style="margin-top:6px;font-size:11px;color:var(--text3)">📌 <em>Quand : constitution initiale du train.</em></div>
+  </div>
+
+  <!-- Partiel -->
+  <div style="background:var(--bg3);border:2px solid var(--blue);border-radius:var(--radius2);padding:14px">
+    <div style="font-size:14px;font-weight:700;color:var(--blue);margin-bottom:8px">🔵 Essai PARTIEL</div>
+    <div style="background:var(--bg4);border-radius:var(--radius);padding:10px;margin-bottom:8px;display:flex;align-items:center;justify-content:center">
+      <svg viewBox="0 0 260 50" xmlns="http://www.w3.org/2000/svg" style="width:100%">
+        <rect x="5" y="15" width="40" height="20" rx="3" fill="#4a6a4a" stroke="#666" stroke-width="1"/>
+        <text x="25" y="30" text-anchor="middle" font-size="8" fill="#fff" font-weight="700">EM</text>
+        <rect x="55" y="15" width="35" height="20" rx="2" fill="#333" stroke="#555" stroke-width="1"/>
+        <rect x="100" y="15" width="35" height="20" rx="2" fill="#333" stroke="#555" stroke-width="1"/>
+        <rect x="145" y="15" width="35" height="20" rx="2" fill="#60a5fa" stroke="#3b82f6" stroke-width="1.5"/>
+        <rect x="190" y="15" width="35" height="20" rx="2" fill="#60a5fa" stroke="#3b82f6" stroke-width="1.5"/>
+        <text x="162" y="29" text-anchor="middle" font-size="7" fill="#1a1a1a" font-weight="700">✓</text>
+        <text x="207" y="29" text-anchor="middle" font-size="7" fill="#1a1a1a" font-weight="700">✓</text>
+        <text x="72" y="29" text-anchor="middle" font-size="7" fill="#666">—</text>
+        <text x="117" y="29" text-anchor="middle" font-size="7" fill="#666">—</text>
+        <line x1="133" y1="8" x2="133" y2="40" stroke="#60a5fa" stroke-width="1" stroke-dasharray="3,2"/>
+        <text x="187" y="49" text-anchor="middle" font-size="7" fill="#60a5fa">ajoutés + dernier</text>
+      </svg>
+    </div>
+    <div class="fc-note">
+      Vérification du serrage et desserrage des <strong class="fc-text">véhicules AJOUTÉS + le dernier</strong> (pour s'assurer de la continuité de la CG).
+    </div>
+    <div style="margin-top:6px;font-size:11px;color:var(--text3)">📌 <em>Quand : ajout de véhicules à un train existant.</em></div>
+  </div>
+
+  <!-- Continuité -->
+  <div style="background:var(--bg3);border:2px solid var(--accent);border-radius:var(--radius2);padding:14px">
+    <div style="font-size:14px;font-weight:700;color:var(--accent);margin-bottom:8px">🟡 Essai de CONTINUITÉ</div>
+    <div style="background:var(--bg4);border-radius:var(--radius);padding:10px;margin-bottom:8px;display:flex;align-items:center;justify-content:center">
+      <svg viewBox="0 0 260 50" xmlns="http://www.w3.org/2000/svg" style="width:100%">
+        <rect x="5" y="15" width="40" height="20" rx="3" fill="#4a6a4a" stroke="#666" stroke-width="1"/>
+        <text x="25" y="30" text-anchor="middle" font-size="8" fill="#fff" font-weight="700">EM</text>
+        <rect x="55" y="15" width="35" height="20" rx="2" fill="#333" stroke="#555" stroke-width="1"/>
+        <rect x="100" y="15" width="35" height="20" rx="2" fill="#333" stroke="#555" stroke-width="1"/>
+        <rect x="145" y="15" width="35" height="20" rx="2" fill="#333" stroke="#555" stroke-width="1"/>
+        <rect x="190" y="15" width="35" height="20" rx="2" fill="#fbbf24" stroke="#d97706" stroke-width="1.5"/>
+        <text x="207" y="29" text-anchor="middle" font-size="7" fill="#1a1a1a" font-weight="700">✓</text>
+        <text x="72" y="29" text-anchor="middle" font-size="7" fill="#666">—</text>
+        <text x="117" y="29" text-anchor="middle" font-size="7" fill="#666">—</text>
+        <text x="162" y="29" text-anchor="middle" font-size="7" fill="#666">—</text>
+        <text x="207" y="49" text-anchor="middle" font-size="7" fill="#fbbf24">dernier seul</text>
+      </svg>
+    </div>
+    <div class="fc-note">
+      Vérification du serrage et desserrage du <strong class="fc-text">DERNIER véhicule freiné</strong> uniquement + continuité de la CG.
+    </div>
+    <div style="margin-top:6px;font-size:11px;color:var(--text3)">📌 <em>Quand : après arrêt prolongé ou immobilisation.</em></div>
+  </div>
+
+  <!-- Raccordement -->
+  <div style="background:var(--bg3);border:2px solid #e8a020;border-radius:var(--radius2);padding:14px">
+    <div style="font-size:14px;font-weight:700;color:#e8a020;margin-bottom:8px">🟠 Essai de RACCORDEMENT</div>
+    <div style="background:var(--bg4);border-radius:var(--radius);padding:10px;margin-bottom:8px;display:flex;align-items:center;justify-content:center">
+      <svg viewBox="0 0 260 50" xmlns="http://www.w3.org/2000/svg" style="width:100%">
+        <rect x="5" y="15" width="40" height="20" rx="3" fill="#4a6a4a" stroke="#666" stroke-width="1"/>
+        <text x="25" y="30" text-anchor="middle" font-size="8" fill="#fff" font-weight="700">EM</text>
+        <rect x="55" y="15" width="35" height="20" rx="2" fill="#333" stroke="#555" stroke-width="1"/>
+        <rect x="100" y="15" width="35" height="20" rx="2" fill="#333" stroke="#555" stroke-width="1"/>
+        <line x1="140" y1="5" x2="140" y2="45" stroke="#e8a020" stroke-width="2.5" stroke-dasharray="4,3"/>
+        <text x="140" y="4" text-anchor="middle" font-size="6" fill="#e8a020">raccord</text>
+        <rect x="145" y="15" width="35" height="20" rx="2" fill="#e8a020" stroke="#d97706" stroke-width="1.5"/>
+        <rect x="190" y="15" width="35" height="20" rx="2" fill="#333" stroke="#555" stroke-width="1"/>
+        <text x="162" y="29" text-anchor="middle" font-size="7" fill="#1a1a1a" font-weight="700">✓</text>
+        <text x="162" y="49" text-anchor="middle" font-size="7" fill="#e8a020">derrière raccord</text>
+      </svg>
+    </div>
+    <div class="fc-note">
+      Vérification du bon rétablissement de la continuité de la CG en vérifiant le serrage et desserrage du <strong class="fc-text">véhicule situé en ARRIÈRE du point de raccordement</strong>.
+    </div>
+    <div style="margin-top:6px;font-size:11px;color:var(--text3)">📌 <em>Quand : après raccordement de la CG interrompue (rupture réparée).</em></div>
+  </div>
+</div>
+
+<div class="rule-box" style="border-left-color:var(--accent)">
+  <strong class="fc-accent">Mémo ultra-rapide :</strong><br>
+  <strong style="color:var(--green)">Complet</strong> = <strong>TOUS</strong> les véhicules · <strong style="color:var(--blue)">Partiel</strong> = <strong>AJOUTÉS</strong> + le dernier · <strong class="fc-accent">Continuité</strong> = <strong>DERNIER</strong> seul · <strong style="color:#e8a020">Raccordement</strong> = <strong>DERRIÈRE</strong> le point de raccordement
+</div>
+
+<div style="background:var(--bg3);border:1px dashed var(--border2);border-radius:var(--radius2);padding:12px 14px;margin-bottom:12px;font-size:12px;color:var(--text3)">
+  📸 Voir le PDF <em>Formation_des_trains.pdf</em> pour les photos réelles des wagons et le schéma des essais en couleurs.
+</div>
+
+<h3 class="fc-h3">AMV904 — Signalisation des trains</h3>
+<div class="def-block">
+  <div class="def-term">Signalisation d'avant</div>
+  <div class="def-text">Au départ : <strong>3 feux blancs obligatoires</strong>. L'allumage incombe au conducteur.<br>
+  <span style="color:#e8a020">Si seulement 2 feux blancs horizontaux : acceptable en circulation mais <strong>réparation obligatoire à la prochaine gare</strong>.</span></div>
+</div>
+<div class="def-block">
+  <div class="def-term">Signalisation d'arrière — Constitution par type de train</div>
+  <div class="def-text">La présence de signalisation d'arrière sur le dernier véhicule permet de donner l'assurance que le train est complet.</div>
+</div>
+<div class="table-wrap"><table>
+  <thead><tr><th>Type de train</th><th>Signalisation d'arrière (jour, faible visibilité &lt;100m, nuit)</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Voyageurs</strong></td><td>2 signaux électriques incorporés (2 feux rouges fixes) OU 2 lanternes amovibles (2 feux rouges fixes)</td></tr>
+    <tr><td><strong>Messagerie · Machine HLP · Train de machines</strong></td><td>2 signaux électriques incorporés OU 2 lanternes amovibles OU 2 plaques réfléchissantes</td></tr>
+    <tr><td><strong>Marchandises</strong></td><td>2 lanternes amovibles (2 feux rouges fixes) OU 2 plaques réfléchissantes</td></tr>
+  </tbody>
+</table></div>
+<div class="rule-box">
+  <span style="color:#e8a020">1 seul feu rouge : acceptable en circulation mais <strong>réparation obligatoire à la prochaine gare</strong>. Permet quand même d'assurer que c'est la queue du train.</span><br>
+  <span style="color:var(--red)">⚠️ Aucun feu rouge ni lanterne ni plaque réfléchissante → <strong>pas de certitude que le train est complet</strong>.</span>
+</div>
+
+<h3 class="fc-h3-accent">AMV910 — Transports Exceptionnels (TE) & Marchandises Dangereuses <span style="font-size:12px;color:var(--red);margin-left:8px">🔥 100% à l'éval</span></h3>
+<div class="def-block important">
+  <div class="def-term">TE — Transport Exceptionnel <span class="tag red ml6">🔥 Par cœur</span></div>
+  <div class="def-text">Chargement ou véhicule ferroviaire dont les dimensions, la masse ou le conditionnement ne répondent pas à toutes les exigences de compatibilité avec les caractéristiques de l'infrastructure ferroviaire. Pour circuler, il nécessite une ATE.
+Difficultés spéciales de chargement ou d'acheminement en raison de : dimensions, masse, caractéristiques des itinéraires empruntés (gabarit de chargement, limite de charge), caractéristiques du matériel utilisé.</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">BTE & ATE — Avis de Transport Exceptionnel</div>
+  <div class="def-text">BTE = Bureau des Transports Exceptionnels. Il définit les conditions de circulation des TE et élabore l'ATE.
+ATE = Avis de Transport Exceptionnel, créé par le BTE. Le type est indiqué en tête de chaque ATE (1er chiffre).</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">ATE — 3 types (selon le niveau de restrictions) <span class="tag red ml6">🔥 Par cœur : 4 / 5 / 7</span></div>
+  <div class="def-text">Type 4 : restrictions de circulation importantes → étiquette spéciale + n° ATE
+Type 5 : restrictions de circulation peu nombreuses → étiquette spéciale + n° ATE
+Type 7 : aucune restriction de circulation
+(Types 4 et 5 = étiquettes spéciales ; type 7 = pas de restriction.)</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">MD — Marchandises Dangereuses <span class="tag red ml6">🔥 Par cœur</span></div>
+  <div class="def-text">Matières ou objets qui, par leur nature, sont susceptibles de mettre en danger :
+• la sécurité des personnes,
+• la sécurité des biens,
+• et/ou de nuire à l'environnement.</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">Repérage — Identification des envois (5 points) <span class="tag red ml6">🔥 Par cœur</span></div>
+  <div class="def-text">1. L'étiquetage d'acheminement au départ du chantier expéditeur
+2. Le placardage de danger des 2 côtés du wagon
+3. La mention sur le bulletin de freinage
+4. La signalisation orange : n° d'identification du danger + n° ONU
+5. Une bande orange peinte à mi-hauteur de la citerne (= gaz liquéfié, réfrigéré ou dissous en wagons-citernes)</div>
+</div>
+<div class="def-block">
+  <div class="def-term">Panneau orange — signification des numéros</div>
+  <div class="def-text">En haut : n° d'identification du danger (ex : 33). En bas : n° ONU (ex : 1203).
+1er chiffre = danger principal ; 2e / 3e = dangers subsidiaires. Chiffre doublé = intensification. X devant les chiffres = interdiction d'utiliser l'eau.
+2 = émanation de gaz · 3 = inflammabilité gaz/liquide · 4 = inflammabilité solides · 5 = comburant · 6 = toxicité · 7 = radioactivité · 8 = corrosivité · 9 = réaction violente spontanée.</div>
+</div>
+<div class="rule-box" style="border-color:var(--accent);background:rgba(240,192,64,0.06)">
+  <div class="def-term" style="color:var(--accent);margin-bottom:8px">🟡 ENCADRÉ JAUNE — Constater une anomalie sur un convoi de MD <span style="color:var(--red)">(100% à l'éval — par cœur)</span></div>
+  <strong>Respecter les précautions suivantes :</strong><br>
+  • Éloignez-vous<br>
+  • Conducteurs : arrêtez le train / engin mis hors-service<br>
+  • Tenez-vous par rapport à l'envoi, du côté d'où vient le vent<br>
+  • Éloignez les curieux<br>
+  • Ne fumez pas, ne provoquez ni flamme, ni étincelle<br>
+  • Ne marchez pas dans les flaques de produit<br>
+  • Ne touchez pas le produit, n'utilisez pas le téléphone mobile, la radio de manœuvre ou sol/train à proximité de l'envoi<br><br>
+  <strong>À distance, essayez de déterminer :</strong><br>
+  • la localisation de l'envoi (position dans le train, lieu de stationnement)<br>
+  • la présence d'une bande orange, les n° d'identification du danger et n° ONU du panneau orange — à défaut, la nature du danger selon les étiquettes, le n° du wagon<br>
+  • la nature de l'anomalie<br><br>
+  <strong>Avisez immédiatement :</strong> par le moyen le plus rapide, le responsable local du site ou les services du SGTC (Agent Circulation, Régulateur) en indiquant les informations collectées.
+</div>
+`,
+
+manœuvre: `
+<h2 class="theme-heading">Manœuvres de manœuvre guidé</h2>
+<div class="theme-ref">AMV905 · OP823 · OP490 · OP820 · PS9 · Formation de base AMV</div>
+
+<div style="background:rgba(248,113,113,0.08);border:2px solid var(--red);border-radius:var(--radius2);padding:14px 16px;margin-bottom:18px;font-size:13px;line-height:1.6">
+  🔥 <strong style="color:var(--red)">🔥 Exam AMV — À MAÎTRISER</strong> — Articles à connaître PAR CŒUR :<br>
+  <strong>201.1</strong> · <strong>202</strong> · <strong>203</strong> · <strong>205</strong> · <strong>206.2</strong> · <strong>402.5</strong> · <strong>403</strong> · <strong>601.2</strong> · <strong>601.3</strong><br>
+  + §2.1 · §2.2 · §3.1 · §5 / §5.3.1 / §5.3.2 / §5.3.3 · §6.1
+</div>
+
+<h3 class="fc-h3">Définitions fondamentales</h3>
+
+<div class="def-block important">
+  <div class="def-term fc-accent">Mouvement de manœuvre <span class="tag yellow ml6">⚠ PAR CŒUR</span></div>
+  <div class="def-text">Déplacement d'un ensemble formé par <strong>un ou plusieurs véhicules</strong> et autorisé sur une <strong>zone géographique limitée</strong>. Ce déplacement peut être <strong>guidé</strong> par un agent habilité à cette tâche ou par des signaux lumineux de manœuvre, ou <strong>non guidé</strong>.</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term fc-accent">Chef de la manœuvre (CdM) <span class="tag yellow ml6">⚠ PAR CŒUR</span></div>
+  <div class="def-text">Travailleur <strong>chargé de la commande et de l'exécution d'une manœuvre</strong>, habilité à la TES H « Commander une manœuvre ».<br><br>
+  ⚠️ <strong class="fc-accent">Le CdM est RESPONSABLE de TOUT LE MONDE</strong> participant à la manœuvre, y compris le conducteur. Il définit la place et le rôle de chaque personne. La sécurité du personnel participant à l'exécution d'une manœuvre <strong>repose sur le respect des dispositions du règlement par le CdM</strong>.</div>
+</div>
+
+<div class="def-block">
+  <div class="def-term">Conducteur</div>
+  <div class="def-text">Personne assurant la conduite d'un train, qu'elle en assure les commandes directes ou qu'elle donne des directives en cabine à la personne maîtrisant les organes de commande.</div>
+</div>
+
+<!-- ═══ ARTICLES PAR CŒUR — SURLIGNÉS BLEUS ═══ -->
+
+<h3 class="fc-h3-accent">⭐ Article 201.1 — Risques liés aux véhicules à l'arrêt</h3>
+<div class="def-block important">
+  <div class="def-term">201.1 — Risques</div>
+  <div class="def-text"><strong>Tout véhicule arrêté est susceptible d'être remis en mouvement à tout moment.</strong> D'autre part, passer entre un quai et un véhicule expose au risque d'écrasement.</div>
+</div>
+<div class="def-block">
+  <div class="def-term">201.2.1 — Principe (mesures à prendre)</div>
+  <div class="def-text">La traversée des voies à proximité d'un véhicule à l'arrêt s'effectue à une distance telle que le travailleur :<br>
+  • Ne risque pas d'être heurté par ce véhicule en cas de remise en mouvement ;<br>
+  • Dispose d'une visibilité suffisante sur la ou les voies contiguës.</div>
+</div>
+
+<h3 class="fc-h3-accent">⭐ Article 202 — Montées et descentes des véhicules <span class="tag red" style="margin-left:8px">VA TOMBER À L'EXAM</span></h3>
+<div class="def-block important">
+  <div class="def-term">202 — Risque</div>
+  <div class="def-text">La montée sur un véhicule (ou la descente) <strong>en mouvement</strong> présente des risques importants de <strong>chute ou de heurt</strong>.</div>
+</div>
+<div class="def-block important" style="border-color:var(--red)">
+  <div class="def-term" style="color:var(--red)">202 — Règle FONDAMENTALE</div>
+  <div class="def-text">🚨 <strong>La montée ou la descente d'un véhicule doit s'effectuer À L'ARRÊT.</strong></div>
+</div>
+<div class="def-block">
+  <div class="def-term">202 — Pour monter / descendre</div>
+  <div class="def-text">Le travailleur doit utiliser les <strong>mains courantes</strong>, les <strong>marchepieds</strong> et les <strong>échelles</strong>.<br><br>
+  Pour effectuer la montée ou la descente d'un véhicule, le travailleur doit :<br>
+  • <strong>Poser ou retirer</strong>, à partir du sol, les agrès ou sacoches qu'il transporte ;<br>
+  • <strong>Faire face au véhicule</strong> (sauf s'il s'agit d'une voiture stationnée à quai pour la descente) ;<br>
+  • <strong>Progresser en s'assurant dans toute la mesure du possible trois points d'appui</strong> (deux pieds et une main ou un pied et deux mains) ;<br>
+  • <strong>Observer l'état du sol</strong> avant d'y poser les pieds lors de la descente.</div>
+</div>
+
+<h3 class="fc-h3-accent">⭐ Article 203 — Maintien des organes mobiles des véhicules</h3>
+<div class="def-block important">
+  <div class="def-term">203 — Risque</div>
+  <div class="def-text">Tout organe mobile d'un véhicule est susceptible de provoquer des <strong>chutes</strong>, des <strong>heurts</strong>, des <strong>pincements</strong> ou des <strong>écrasements</strong>.</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">203 — Règles</div>
+  <div class="def-text"><strong>Avant d'entreprendre le mouvement de manœuvre guidé d'un véhicule</strong>, il faut s'assurer que ses organes mobiles sont <strong>maintenus solidement</strong> et ne pourront se rabattre ou se déplacer. La manipulation de tout organe mobile ne peut s'effectuer que <strong>sur un véhicule à l'arrêt</strong>.</div>
+</div>
+<div class="def-block">
+  <div class="def-term">203 — Particularité</div>
+  <div class="def-text">Un <strong>frein à main</strong>, actionné par un volant et manœuvrable du sol, ne peut être utilisé que si le véhicule est à l'arrêt.</div>
+</div>
+
+<h3 class="fc-h3-accent">⭐ Article 205 — Manipulation des organes d'attelage</h3>
+<div class="def-block important">
+  <div class="def-term">205 — Risque</div>
+  <div class="def-text">Une mauvaise technique gestuelle lors des opérations d'attelage et de dételage des véhicules peut entraîner des risques de <strong>pincements, d'écrasements</strong> au niveau des membres supérieurs ou de <strong>lombalgies</strong>.</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">205 — Règle (tendeur d'attelage)</div>
+  <div class="def-text">Pour la manipulation du tendeur d'attelage, il est nécessaire de tenir solidement la <strong>manille mobile</strong>, une main sur chaque branche à la hauteur de l'écrou à tourillon, les <strong>coudes serrés au corps</strong>. L'accrochage ou le décrochage des accouplements de frein, doit s'effectuer <strong>par-dessous</strong> les tendeurs d'attelage.</div>
+</div>
+<div class="def-block">
+  <div class="def-term">205 — Autres mesures de prévention lors du désaccouplement</div>
+  <div class="def-text">• Avant de désaccoupler la conduite principale (CP, si présente) et la conduite générale (CG), fermer les robinets d'arrêt en commençant par le robinet situé côté source d'air.<br>
+  • Le travailleur qui désaccouple la CP la CG et les autres conduites pneumatiques doit tourner légèrement la tête et fermer les yeux au moment où il ferme les robinets d'arrêt afin d'éviter les poussières chassées par l'air qui s'en échappe.<br>
+  • Le travailleur qui procède à la vidange de la CG et/ou de la CP doit tourner la tête du côté opposé à la sortie de l'air ou fermer les yeux et utiliser sa main pour protéger la tête contre les montants ou l'encadrement, ou sur le chemin de roulement.</div>
+</div>
+
+<h3 class="fc-h3-accent">⭐ Article 206.2 — Opérations sur les lignes de trains</h3>
+<div class="def-block important">
+  <div class="def-term">206.2 — Règles à observer (ligne de train sous tension)</div>
+  <div class="def-text">🔌 <strong>Toute intervention sur la ligne de train n'est autorisée que si cette dernière est privée de tension et que le travailleur concerné en a obtenu l'assurance.</strong><br><br>
+  Le travailleur, chargé des opérations d'accouplement ou de désaccouplement de la ligne de train, doit, avant de commencer toute opération, obtenir l'assurance que cette ligne de train est privée de tension.<br><br>
+  Il obtient cette assurance soit en :<br>
+  • <strong>Recevant directement la ou les clés</strong> de chauffage du circuit d'alimentation de la rame ;<br>
+  • <strong>Recevant l'information</strong> d'un travailleur responsable du service du train en gare et possesseur de cette ou ces clés, cette information pouvant être transmise par radio ou par d'autres moyens permettant d'identifier le détenteur de cette ou ces clés et le destinataire de l'information ;<br>
+  • <strong>Avisant et recevant confirmation du conducteur</strong> dans le cas d'une ligne d'alimentation 380 volts alternatifs.</div>
+</div>
+<div class="def-block">
+  <div class="def-term">206.1 — Généralités (à savoir)</div>
+  <div class="def-text">L'énergie nécessaire aux véhicules remorqués du parc voyageurs est distribuée sur toute la longueur de la rame par une <strong>ligne de train</strong>.<br>
+  La ligne de train est alimentée sous une tension de <strong>1500 volts</strong>.<br>
+  Certains matériels disposent en plus d'une ligne de train de <strong>660 volts ou de 380 volts</strong>.</div>
+</div>
+
+<h3 class="fc-h3-accent">⭐ Article 402.5 — Place du chef de la manœuvre</h3>
+<div class="def-block important">
+  <div class="def-term">402.5 — Le CdM doit :</div>
+  <div class="def-text">▸ <strong>Surveiller les travailleurs</strong> participant au mouvement de manœuvre guidé ;<br>
+  ▸ <strong>Se tenir à proximité du conducteur ou des atteleurs</strong> ;<br>
+  ▸ <strong>Être visible du conducteur</strong> ou, lorsque cela n'est pas possible, être en liaison constante avec ce dernier par des dispositifs appropriés (radio, signal lumineux de manœuvre…) ;<br>
+  ▸ <strong>Veiller à sa propre sécurité.</strong></div>
+</div>
+<div class="def-block">
+  <div class="def-term">402.4 — Assurances à obtenir par le CdM</div>
+  <div class="def-text"><strong>Avant de donner un ordre de mise en mouvement</strong>, le chef de la manœuvre doit s'assurer que chaque participant occupe bien la place qui lui a été indiquée, compatible avec sa sécurité (au sol ou sur les véhicules).<br><br>
+  <strong>À la fin du mouvement de manœuvre guidé</strong>, le chef de la manœuvre ne doit pas laisser en stationnement des véhicules qui constitueraient une gêne à l'utilisation normale des pistes et des itinéraires ou des accès aux installations utilisées par les travailleurs.</div>
+</div>
+
+<h3 class="fc-h3-accent">⭐ Article 403 — Obligations des travailleurs participant au mouvement de manœuvre guidé</h3>
+<div class="def-block important">
+  <div class="def-term">403 — Obligations</div>
+  <div class="def-text">Après avoir reçu une <strong>formation pratique et théorique</strong>, tout travailleur participant à un mouvement de manœuvre guidé doit être <strong>conscient que sa sécurité repose sur le respect</strong> :<br>
+  ▸ <strong>Des dispositions du présent texte</strong> ;<br>
+  ▸ <strong>Des ordres reçus du chef de la manœuvre.</strong><br><br>
+  Au cours d'un mouvement de manœuvre guidé, il doit s'efforcer de rester toujours en vue du chef de la manœuvre, ou en liaison radio avec celui-ci.<br><br>
+  Il ne doit pas pénétrer entre les véhicules sans autorisation du chef de la manœuvre.<br><br>
+  La pénétration entre les véhicules (ou la sortie) doit s'effectuer du côté où est placé le chef de la manœuvre. Si exceptionnellement cela n'était pas possible, la pénétration entre les véhicules (ou la sortie) en dehors de la vue du chef de la manœuvre devrait faire l'objet d'une entente préalable entre celui-ci et l'atteleur.<br><br>
+  La <strong>nuit</strong>, avant de pénétrer dans l'attelage, il dispose sa lanterne du même côté de la voie que le chef de la manœuvre, le feu latéral ou le feu rouge tourné vers le conducteur.</div>
+</div>
+
+<h3 class="fc-h3-accent">⭐ Article 601.2 — Règle générale (accompagnement)</h3>
+<div class="def-block important">
+  <div class="def-term">601.1 — Risque</div>
+  <div class="def-text">Tout véhicule en mouvement est susceptible de provoquer des <strong>chutes</strong> ou des <strong>heurts</strong>.</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">601.2 — Règle générale</div>
+  <div class="def-text">📋 <strong>Les déplacements liés à l'exécution d'un mouvement de manœuvre guidés doivent s'effectuer à PIED.</strong></div>
+</div>
+
+<h3 class="fc-h3-accent">⭐ Article 601.3 — Règle particulière (accompagnement sur véhicule)</h3>
+<div class="def-block important">
+  <div class="def-term">601.3 — Accompagnement sur un véhicule</div>
+  <div class="def-text">L'accompagnement du mouvement de manœuvre guidé sur un véhicule peut être autorisé, par consignes opérationnelles, lorsque cette mesure est de nature à :<br>
+  ▸ <strong>Améliorer l'exécution du mouvement de manœuvre guidé</strong> (par exemple : distance importante, visibilité des signaux, installations…) ;<br>
+  ▸ <strong>Limiter les risques d'accidents</strong> (par exemple : traversée de voies, obstacles).</div>
+</div>
+<div class="def-block">
+  <div class="def-term">601.3 — Moyens d'accompagnement sur un véhicule</div>
+  <div class="def-text">Cet accompagnement du mouvement de manœuvre guidé doit s'effectuer :<br>
+  ▸ <strong>Dans la cabine d'un engin moteur</strong> ;<br>
+  ▸ <strong>À l'intérieur d'un véhicule à voyageurs ou d'un fourgon</strong> ;<br>
+  ▸ <strong>Sur la plate-forme ou la passerelle d'extrémité</strong> dont certains véhicules sont équipés.</div>
+</div>
+
+<!-- ═══ AVANT / PENDANT / APRÈS ═══ -->
+
+<h3 style="font-size:16px;font-weight:600;margin:32px 0 12px;color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:6px">⭐ §3.1 — AVANT la manœuvre : Renseignements & vérifications préalables <span class="tag red" style="margin-left:8px">PAR CŒUR</span></h3>
+
+<div class="def-block important">
+  <div class="def-term">§3 — Opérations préalables à la mise en mouvement</div>
+  <div class="def-text"><strong>Avant de donner l'ordre de mise en mouvement au conducteur</strong>, l'agent habilité à la TES « Commander une manœuvre » doit :<br><br>
+  1️⃣ <strong>Renseigner précisément sur le mouvement de manœuvre guidé tous les agents intéressés</strong> :<br>
+  • Mouvements successifs<br>
+  • Missions et place des agents<br>
+  • Véhicules concernés<br>
+  • Particularités<br><br>
+  2️⃣ <strong>Vérifier ou faire vérifier que</strong> :<br>
+  <strong>a)</strong> L'état des véhicules concernés et leurs chargements ne s'opposent pas à leur déplacement (étiquettes et inscriptions, matériel pouvant porter, équipements en tenant compte des particularités notamment des déplacements concernés) ;<br>
+  <strong>b)</strong> Les freins ont été desserrés et les cales enlevées ;<br>
+  <strong>c)</strong> L'immobilisation des véhicules qui ne sont pas manœuvrés reste assurée ;<br>
+  <strong>d)</strong> Le cas échéant, le freinage de la rame est suffisant ;<br>
+  <strong>e)</strong> Les mesures pour assurer la sécurité des personnes (agents, prestataires, tiers…) se trouvant sur les véhicules ou à proximité des voies intéressées sont prises ;<br>
+  <strong>f)</strong> Les parties de voies à parcourir sont et resteront libres et l'itinéraire est correctement tracé, le cas échéant en relation avec les agents chargés de la manœuvre des aiguilles concernées.<br><br>
+  ➕ <strong>De plus</strong> :<br>
+  • Toute modification de l'un quelconque des éléments d'organisation initialement prévus est immédiatement portée à la connaissance des mêmes agents ;<br>
+  • Les mouvements de manœuvres guidés peuvent être effectués sur voie occupée, notamment pour les mouvements de manœuvres guidés entre eux ; dans ce cas le chef de la manœuvre renseigne tous les agents.</div>
+</div>
+
+<h3 style="font-size:16px;font-weight:600;margin:32px 0 12px;color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:6px">⭐ §5 — PENDANT la manœuvre : Dispositions à appliquer</h3>
+
+<div class="def-block">
+  <div class="def-term">§5.1 — Observation de la signalisation</div>
+  <div class="def-text">Tout agent commandant la manœuvre <strong>connaît la signalisation</strong> qui peut lui être présentée sur l'itinéraire concerné.<br>
+  Tout ordre prescrit par la signalisation ou par un agent du service du GI en charge de la circulation est <strong>immédiatement respecté</strong> par l'agent commandant la manœuvre.<br><br>
+  ⚠️ <strong>L'observation de la signalisation incombe au chef de la manœuvre et/ou au conducteur</strong> selon les modalités reprises à la présente recommandation.</div>
+</div>
+
+<div class="def-block">
+  <div class="def-term">§5.2 — Ordre de mise en mouvement</div>
+  <div class="def-text">Pour exécuter un mouvement de manœuvre guidé, <strong>le conducteur attend l'ordre du chef de la manœuvre</strong> (ou de l'agent désigné par lui à cet effet) pour se mettre en mouvement. <strong>L'ouverture d'un signal d'arrêt ne constitue pas en elle-même un ordre de mise en mouvement.</strong><br><br>
+  Avant de donner l'ordre de mise en mouvement, le chef de la manœuvre s'assure que les agents habilités nécessaires à la bonne exécution du mouvement sont à leur place et prêts à exécuter les ordres qui leur seront donnés. Il s'assure également, le cas échéant, que l'indication donnée par le signal d'arrêt le retenant ne s'oppose pas à ce mouvement.</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term fc-accent">§5.3.1 — Le chef de la manœuvre</div>
+  <div class="def-text">Le chef de la manœuvre :<br>
+  ▸ <strong>Organise</strong> le mouvement de manœuvre guidé de façon que le conducteur puisse obéir en temps utile aux ordres qui lui sont donnés, notamment ceux de ralentissement et d'arrêt ;<br>
+  ▸ <strong>Surveille la bonne exécution des ordres</strong> donnés et doit pouvoir faire arrêter d'urgence le mouvement le cas échéant ;<br>
+  ▸ <strong>Donne toute instruction utile</strong> afin qu'aucun matériel roulant ne participant pas au mouvement ne puisse en raison de celui-ci être mis accidentellement en mouvement.</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term fc-accent">§5.3.2 — Aiguillage pendant le mouvement</div>
+  <div class="def-text">⚠️ <strong>Lorsqu'un ou plusieurs appareils de voie ont été disposés pour un mouvement</strong> et à partir du moment où le mouvement de manœuvre guidé a été autorisé, tout agent participant à ce mouvement doit <strong>attendre le dégagement complet de chacun des appareils avant d'en modifier éventuellement la position</strong>.<br><br>
+  🚨 En particulier, <strong>il ne doit pas modifier la position d'une aiguille pendant son franchissement.</strong><br><br>
+  Si plusieurs aiguilles, verrous ou taquets sont manœuvrés par un même levier, il doit attendre le dégagement de l'ensemble de ces appareils avant de modifier la position du levier.</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term fc-accent">§5.3.3 — Place du conducteur</div>
+  <div class="def-text">🚆 <strong>Le conducteur doit être EN TÊTE du mouvement toutes les fois que les conditions d'exécution de la manœuvre le permettent.</strong><br><br>
+  Au cours de l'exécution du mouvement de manœuvre guidé, le conducteur observe la marche en manœuvre et règle sa vitesse compte tenu notamment du nombre de véhicules de la rame, des moyens de freinage dont il dispose et du profil de la voie. La vitesse maximum de la marche en manœuvre est définie par l'article 22 de l'arrêté du 9 décembre 2021.<br><br>
+  S'il constate que le déroulement du mouvement de manœuvre guidé ne correspond pas aux renseignements qui lui ont été donnés lors de la préparation, il n'obéit pas à l'ordre reçu et s'arrête, puis demande des renseignements complémentaires au chef de la manœuvre.</div>
+</div>
+
+<h3 style="font-size:16px;font-weight:600;margin:32px 0 12px;color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:6px">⭐ §6.1 — APRÈS la manœuvre : Mesures à prendre à la fin</h3>
+
+<div class="def-block important">
+  <div class="def-term">§6.1 (point 1) — À la fin du mouvement de manœuvre guidé</div>
+  <div class="def-text">À la fin du mouvement de manœuvre guidé, le chef de la manœuvre <strong>prend ou fait prendre les mesures pour que les véhicules</strong> :<br>
+  ▸ <strong>N'engagent pas les autres voies</strong> et stationnent en deçà des taquets, dérailleurs, etc. ;<br>
+  ▸ <strong>Dégagent les croisements des voies contiguës</strong> (compte tenu de la décompression des tampons après desserrage des freins à air) ;<br>
+  ▸ <strong>Soient immobilisés.</strong><br><br>
+  Lorsque les croisements des voies restent exceptionnellement engagés par un véhicule ou une rame en stationnement, le chef de la manœuvre avise ou fait aviser les agents intéressés (agent du service en stationnement, le chef de la manœuvre avise ou fait aviser les agents intéressés du GI en charge de la gestion des circulations ou opérateur IS simples du poste, agents de la manœuvre, etc.).<br><br>
+  Le GI en charge de la gestion des circulations définit, dans la documentation d'exploitation, les mesures :<br>
+  ▸ De <strong>protection des voies occupées</strong> à la fin d'un mouvement de manœuvre guidé ;<br>
+  ▸ <strong>Assurant la protection des croisements des voies restés exceptionnellement engagés.</strong> <em>(Par SAM !)</em></div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">§6.1 (point 2) — Remise en place des appareils</div>
+  <div class="def-text">Le chef de la manœuvre fait par ailleurs <strong>remettre en place les appareils</strong> (aiguilles, etc.) ayant une position imposée et <strong>rétablir les dispositifs de sécurité</strong> (cadenas, serrures, taquets, etc.) dont la position a été modifiée au cours de ce mouvement. Il opère de même, le cas échéant, à l'égard des installations de traction électrique.<br><br>
+  💡 <strong>Mémo perso :</strong> les aiguilles proches des voies de service, je dois les replacer en position normale (ou ⊕). Pour la sécu !</div>
+</div>
+
+<!-- ═══ §2.1 et §2.2 ═══ -->
+
+<h3 style="font-size:16px;font-weight:600;margin:32px 0 12px;color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:6px">⭐ §2.1 et §2.2 — Acteurs et définitions</h3>
+
+<div class="def-block">
+  <div class="def-term">§2.1 — Objet et champ d'application</div>
+  <div class="def-text">Ce document définit les <strong>mesures de prévention liées à la sécurité des travailleurs</strong> effectuant des mouvements de manœuvres guidés ou participant à l'accompagnement des trains-travaux.<br>
+  Les dispositions de ce document s'imposent à tout employeur et sont applicables sur les voies dont SNCF Réseau est gestionnaire d'infrastructure.</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">§2.2 — Glossaire (à connaître par cœur)</div>
+  <div class="def-text"><strong>Chef de la manœuvre :</strong> Travailleur, chargé de la commande et de l'exécution d'une manœuvre, habilité à la TES H « Commander une manœuvre ».<br><br>
+  <strong>Conducteur :</strong> Personne assurant la conduite d'un train, qu'elle en assure les commandes directes ou qu'elle donne des directives en cabine à la personne maîtrisant les organes de commande.<br><br>
+  <strong>Ligne de train :</strong> Conduite d'alimentation en énergie électrique assurant le chauffage ou le conditionnement des trains. Elle comprend les câblots, les coupleurs, les boîtes de repos, les canalisations électriques fixées sur les véhicules.<br><br>
+  <strong>Mouvement de manœuvre :</strong> Déplacement d'un ensemble formé par un ou plusieurs véhicules et autorisé sur une zone géographique limitée. Ce déplacement peut être guidé par un agent habilité à cette tâche ou par des signaux lumineux de manœuvre, ou non guidé.<br><br>
+  <strong>Train-Travaux :</strong> Train constitué pour les besoins de la maintenance de l'infrastructure et utilisé, dans le cadre d'un processus-travaux, pour desservir une ou plusieurs zones de chantier.<br><br>
+  <strong>Zone dangereuse :</strong> Zone de danger, définie voie par voie, dans laquelle un travailleur, l'outillage ou le matériel qu'il manipule peut être heurté ou accroché par la circulation de véhicules de transport ferroviaire ou guidé ou subir son effet de souffle de manière dangereuse.</div>
+</div>
+
+<!-- ═══ 5 ORDRES DE MANŒUVRE ═══ -->
+
+<h3 style="font-size:16px;font-weight:600;margin:32px 0 12px;color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:6px">⭐ Les 5 signaux à main du mouvement de manœuvre guidé <span class="tag red" style="margin-left:8px">PAR CŒUR !</span></h3>
+
+<div style="background:rgba(248,113,113,0.05);border:1px solid var(--red);border-radius:var(--radius2);padding:14px;margin-bottom:14px;font-size:13px;line-height:1.6">
+  🔥 <strong style="color:var(--red)">SURTOUT BIEN CONNAÎTRE CES 5 SIGNES !!!</strong> Ils peuvent t'être présentés par radio, par signaux optiques conventionnels (gestuel) ou de vive voix.
+</div>
+
+<div class="table-wrap"><table>
+  <thead><tr><th style="width:90px">Ordre</th><th>Signification (selon position de l'EM)</th><th>Gestuel</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><strong class="fc-accent">ARRÊTEZ</strong></td>
+      <td>Ordre au conducteur de <strong>s'arrêter</strong>.</td>
+      <td>Drapeau rouge tendu horizontalement à bout de bras</td>
+    </tr>
+    <tr>
+      <td><strong class="fc-accent">APPUYEZ</strong></td>
+      <td>Ordre au conducteur de <strong>se coller aux tampons</strong> d'un autre engin moteur ou d'un wagon.</td>
+      <td>Deux poings face à face devant le corps, pouces dressés</td>
+    </tr>
+    <tr>
+      <td><strong class="fc-accent">RALENTISSEZ</strong></td>
+      <td>Ordre au conducteur de <strong>ralentir</strong>.</td>
+      <td>Drapeau rouge agité horizontalement</td>
+    </tr>
+    <tr>
+      <td><strong class="fc-accent">TIREZ</strong></td>
+      <td><strong>EM à l'extrémité du convoi</strong> : ordre au conducteur de « tirer » les wagons sans tenir compte de la position du CdM.<br><strong>EM dans le convoi ou seul</strong> : ordre au conducteur de <strong>s'éloigner du CdM</strong>.</td>
+      <td>Drapeau rouge tenu vertical en l'air</td>
+    </tr>
+    <tr>
+      <td><strong class="fc-accent">REFOULEZ</strong></td>
+      <td><strong>EM à l'extrémité du convoi</strong> : ordre au conducteur de « pousser » les wagons sans tenir compte de la position du CdM.<br><strong>EM dans le convoi ou seul</strong> : ordre au conducteur de <strong>s'approcher du CdM</strong>.</td>
+      <td>Drapeau rouge agité verticalement, pointe en bas</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<div class="rule-box" style="margin-top:14px">
+  💡 <strong>Astuce mémo :</strong> <em>« Arrêtez, Appuyez, Ralentissez, Tirez, Refoulez »</em> — par ordre croissant de mouvement (immobile → contact → ralenti → s'éloigne → s'approche).
+</div>
+
+<!-- ═══ ANCIEN CONTENU CONSERVÉ ═══ -->
+
+<h3 class="fc-h3-alt">Manœuvre sur voie principale (OP820)</h3>
+<ul class="numbered-list">
+  <li><span class="num">1.</span><strong>Demande verbale</strong> du CdM auprès de l'AC : durée + limites géographiques</li>
+  <li><span class="num">2.</span><strong>Assurance que rien ne s'y oppose</strong> : AC vérifie l'ONJ + contacte le régulateur (pas de retard, pas de MI)</li>
+  <li><span class="num">3.</span><strong>Protection de la manœuvre</strong> : signaux convenables fermés ou aiguilles en protection</li>
+  <li><span class="num">4.</span><strong>Autorisation verbale</strong> de l'AC au CdM</li>
+</ul>
+
+<h3 class="fc-h3">Autres règles OP490 (à compléter)</h3>
+<div class="def-block">
+  <div class="def-term">Art. 6 — Approche d'un véhicule arrêté</div>
+  <div class="def-text">Pour passer devant/derrière un véhicule arrêté, l'intervalle doit être d'au moins <strong>3 mètres</strong> de l'extrémité de chaque véhicule. Interdit de s'abriter sous un véhicule ou de s'asseoir sur les tampons.</div>
+</div>
+<div class="def-block">
+  <div class="def-term">Art. 11 — Pénétration entre véhicules</div>
+  <div class="def-text">Un agent ne doit s'introduire entre deux véhicules que si ces véhicules sont en contact, complètement arrêtés et le resteront. Interdit lors d'une opération d'appui.</div>
+</div>
+<div class="def-block">
+  <div class="def-term">Art. 15 — Attelage/dételage hors zones interdites</div>
+  <div class="def-text">Interdit d'effectuer l'attelage ou dételage sur : voie dégarnie en cours de travaux · appareil de voie · fosse de visite · courbe de faible rayon · voie comportant obstacles/matériaux gênants.</div>
+</div>
+
+<!-- ═══ CONTENU COMPLÉMENTAIRE (PDF Capucine) ═══ -->
+<h3 class="fc-h3">AMV903 — Étiquettes de réforme <span class="tag yellow ml6">À connaître</span></h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>Étiquette</th><th>Signification</th></tr></thead>
+  <tbody>
+    <tr><td style="color:var(--red);font-weight:700">Rouge (0)</td><td><strong>Interdiction de circuler</strong> + interdiction d'être incorporé dans un train ou réparé</td></tr>
+    <tr><td style="color:var(--red);font-weight:700">Rouge (1)</td><td><strong>Inapte à la circulation</strong>. Interdiction de circulation hors de la gare de réforme. Indique si le véhicule peut ou non être manœuvré</td></tr>
+    <tr><td class="fc-bold">Modèle K</td><td>Avarie n'empêchant pas son acheminement mais nécessitant retrait du service pour réparation. Si wagon vide = ne doit pas être rechargé</td></tr>
+    <tr><td class="fc-bold">Frein inutilisable</td><td>Frein continu isolé suite à anomalie/avarie. Frein à main inutilisable</td></tr>
+    <tr><td class="fc-bold">Frein isolé</td><td>Frein continu isolé pour respecter les règles de freinage des trains (hors anomalie)</td></tr>
+  </tbody>
+</table></div>
+
+<h3 class="fc-h3">AMV906 — 4 classes de trains + indice de composition</h3>
+<div class="def-block">
+  <div class="def-term">Les 4 classes de trains</div>
+  <div class="def-text">1. Trains de voyageurs · 2. Trains de messagerie · 3. Trains de marchandises · 4. Machines HLP et trains de machines.<br><br>
+  Les trains sont caractérisés par un <strong>indice de composition</strong> ou un <strong>code de composition</strong> (V160, AUTOR, BIMA, MVGV, MA100, HLP…).</div>
+</div>
+
+<div class="def-block">
+  <div class="def-term">Organes du frein continu</div>
+  <div class="def-text"><strong>Organes principaux :</strong> Conduite Générale (CG) · Conduite Principale (CP) · Organes de frein du véhicule<br>
+  <strong>Organes secondaires :</strong> Dispositif vide/chargé · Dispositif M/V · Valve de purge · Robinet d'isolement · Signal d'alarme · Robinet d'urgence<br><br>
+  Le frein continu est : <strong>Continu</strong> (se transmet tout le long du train) · <strong>Automatique</strong> (entre en action en cas d'inétanchéité CG) · <strong>Modérable</strong> (intensité ajustable par paliers).</div>
+</div>
+
+<div class="def-block">
+  <div class="def-term">Masses — formules à retenir</div>
+  <div class="def-text">
+  <strong>Masse d'un véhicule remorqué</strong> = tare + masse de chargement<br>
+  <strong>Masse remorquée du train</strong> = somme des masses de chaque véhicule remorqué (arrondie à la tonne sup.)<br>
+  <strong>Masse totale du train</strong> = masse remorquée + tare du ou des EM<br>
+  <strong>Masse freinée remorquée</strong> = somme des masses freinées des véhicules remorqués<br>
+  <strong>Masse freinée totale (MFT)</strong> = masse freinée remorquée + masse freinée du ou des EM<br>
+  <strong>Masse freinée nécessaire (MFTN)</strong> = freinage normal si MFT ≥ MFTN<br>
+  <strong>Masse admissible</strong> = masse la plus élevée remorquable sans détérioration de l'EM<br>
+  <strong>Masse de tracé</strong> = masse remorquée du train doit être &lt; masse de tracé pour tenir l'horaire<br><br>
+  <strong>Longueur du train</strong> = somme des longueurs + longueur réelle des machines (Loco = 20 m · Locotracteur = 10 m)</div>
+</div>
+`,
+
+circulation: `
+<h2 class="theme-heading">Circulation des trains</h2>
+<div class="theme-ref">AMV101 · AMV104 · AMV108 · AMV160 · DC1505 · DC1510 · OP0528 · OP843</div>
+
+<div style="background:rgba(248,113,113,0.08);border:2px solid var(--red);border-radius:var(--radius2);padding:14px 16px;margin-bottom:18px;font-size:13px;line-height:1.6">
+  🔥 <strong style="color:var(--red)">🔥 Exam AMV — À MAÎTRISER</strong> :<br>
+  ▸ <strong>Service de la circulation</strong> : les RT (renseignements techniques) et les <strong>5 paragraphes</strong> du Document A<br>
+  ▸ <strong>Sillon</strong> (par cœur)<br>
+  ▸ <strong>Ordre théorique</strong> : TST + ONJ &nbsp;·&nbsp; <strong>Ordre réel</strong> : EC (état de circulation)
+</div>
+
+<h3 class="fc-h3">Définitions — Lignes et voies <span class="tag yellow">PS9 p.195 · À connaître par cœur</span></h3>
+<div class="def-block important">
+  <div class="def-term">Voie principale (VP)</div>
+  <div class="def-text">Voie, identifiée comme telle par la documentation d'exploitation, affectée au départ ou à l'arrivée des trains transportant des voyageurs ou à la circulation des trains.</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">Voie de service (VS)</div>
+  <div class="def-text">Voie autre que voie principale.</div>
+</div>
+
+<h3 class="fc-h3">Modes de circulation</h3>
+<div class="def-block important">
+  <div class="def-term">Marche à vue (VM)</div>
+  <div class="def-text">Mode de circulation imposant au conducteur de s'avancer avec prudence et de régler sa vitesse en fonction de la voie qu'il aperçoit devant lui afin de pouvoir s'arrêter avant une queue de train, un signal d'arrêt ou un obstacle, sans dépasser la vitesse de 30 km/h.</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">Marche en manœuvre</div>
+  <div class="def-text">Mode de circulation imposant au conducteur de s'avancer avec prudence et de se tenir prêt à obéir aux signaux qu'il pourrait rencontrer ou qui pourraient lui être faits, sans dépasser la vitesse de 30 km/h.</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">Marche prudente <span class="tag yellow ml6">Par cœur</span></div>
+  <div class="def-text">Mode de circulation imposant au conducteur de franchir une partie de voie délimitée en réduisant sa vitesse compte tenu du motif qui lui a été indiqué. Avec restrictions — parfois moins rapide que la marche à vue.</div>
+</div>
+
+<h3 style="font-size:16px;font-weight:600;margin:24px 0 12px;color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:6px">⭐ Service de la circulation <span class="tag red" style="margin-left:8px">EXAM AMV</span></h3>
+
+<div class="def-block important">
+  <div class="def-term">Service de la circulation</div>
+  <div class="def-text">Ensemble des opérations permettant d'<strong>assurer la sécurité</strong> et d'<strong>organiser le mouvement</strong> des trains, des évolutions et des manœuvres.<br><br>
+  Assuré par : l'<strong>Agent de Circulation (AC)</strong> et les <strong>aiguilleurs</strong>, sous la supervision du <strong>régulateur</strong> sur les lignes régulées.</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term fc-accent">Renseignements Techniques (RT) — Document A : les 5 paragraphes <span class="tag red ml6">PAR CŒUR</span></div>
+  <div class="def-text">Le Document A contient les caractéristiques propres à chaque ligne. Il comporte <strong>5 paragraphes</strong> :<br><br>
+  <strong>§ 1</strong> — <strong>Caractéristiques générales d'exploitation</strong> (régimes d'exploitation, signalisation, RST, circulation, traction électrique…)<br>
+  <strong>§ 2</strong> — <strong>Distances, Installations, Cantonnement</strong><br>
+  <strong>§ 3</strong> — <strong>Vitesses limites</strong>, conditions particulières de traction<br>
+  <strong>§ 4</strong> — <strong>Pentes et rampes caractéristiques</strong>, freinage de fortes pentes, charge à l'essieu, masse des trains<br>
+  <strong>§ 5</strong> — <strong>Prescriptions diverses</strong> (communications de sécurité, signalisation, conditions de circulation, PN, sécurité du personnel, autres particularités)<br><br>
+  💡 <strong>Astuce mémo :</strong> <em>« Caractéristiques – Distances – Vitesses – Pentes – Prescriptions »</em></div>
+</div>
+
+<h3 class="fc-h3-alt">AMV101 — Organiser le mouvement</h3>
+
+<div class="def-block important">
+  <div class="def-term fc-accent">Sillon <span class="tag red ml6">PAR CŒUR</span></div>
+  <div class="def-text">Capacité d'infrastructure requise pour faire circuler un <strong>train donné</strong> d'un <strong>point à un autre</strong> à un <strong>moment donné</strong>.</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term fc-accent">Ordre théorique (ou normal)</div>
+  <div class="def-text">Horaires <strong>prévus</strong> de passage des trains. Déterminé par :<br>
+  ▸ Le <strong>TST</strong> (Tableau de Succession des Trains)<br>
+  ▸ L'<strong>ONJ</strong> (Ordre Normal Journalier)</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term fc-accent">Ordre réel</div>
+  <div class="def-text">Horaires auxquels les trains sont <strong>réellement</strong> passés. Relevé sur l'<strong>EC</strong> (État de Circulation).<br><br>
+  L'ordre réel peut différer de l'ordre théorique par :<br>
+  • Le <strong>retard ou l'avance</strong> de certains trains (entraînant garage ou dépassement)<br>
+  • La mise en marche de trains à <strong>marche indéterminée (MI)</strong></div>
+</div>
+
+<div class="table-wrap"><table>
+  <thead><tr><th>Document</th><th>Type d'ordre</th><th>Définition</th></tr></thead>
+  <tbody>
+    <tr><td><strong>TST</strong></td><td>Théorique</td><td>Tableau de Succession des Trains — liste et horaires de tous les trains réguliers et facultatifs, par ordre chronologique. Établi à chaque nouveau service.</td></tr>
+    <tr><td><strong>ONJ</strong></td><td>Théorique</td><td>Ordre Normal Journalier — tableau de tous les passages de trains pour une journée à un poste donné. Format papier ou informatique (OLERON).</td></tr>
+    <tr><td><strong>EC</strong></td><td>Réel</td><td>État de Circulation — relevé où l'agent note l'heure exacte de passage réel des trains. Permet de connaître le dernier train reçu et le dernier expédié.</td></tr>
+  </tbody>
+</table></div>
+
+<div class="def-block">
+  <div class="def-term">CLE — Consigne Locale d'Exploitation</div>
+  <div class="def-text">Remplace les anciens renseignements techniques, devenus obsolètes. La CLE regroupe toutes les informations d'exploitation propres à une ligne ou à un secteur. Elle intègre notamment le Document A avec ses 5 paragraphes.</div>
+</div>
+
+<div class="def-block">
+  <div class="def-term">OCAR — Ordre de Circulation À Restrictions</div>
+  <div class="def-text">Formulaire transmis au conducteur pour lui prescrire des restrictions de circulation particulières sur un itinéraire donné (marche prudente, limitation de vitesse, pantographes baissés...). À savoir ce que c'est — pas à apprendre par cœur.</div>
+</div>
+
+<div class="def-block">
+  <div class="def-term">PFR — Point Facilement Repérable</div>
+  <div class="def-text">Point géographique précis et identifiable sur une ligne, mentionné dans la consigne locale. Utilisé pour localiser et transmettre des informations lors d'un incident. Un PN ne peut pas être un PFR.</div>
+</div>
+
+<div class="rule-box">
+  <strong>PK à connaître pour l'examen :</strong><br>
+  <strong>AMV Ville</strong> = PK 100,600 · <strong>St-Saturnin</strong> = PK 139,000
+</div>
+
+<div class="def-block">
+  <div class="def-term">Article 101 — Service de la circulation (p98)</div>
+  <div class="def-text">Le service de la circulation comprend l'ensemble des opérations permettant d'assurer la sécurité et d'organiser le mouvement des trains, des évolutions et des manœuvres. Il est assuré par l'Agent de circulation (AC) et les aiguilleurs, sous la supervision du régulateur sur les lignes régulées.<br><br>
+  <strong>Gare temporaire</strong> : gare ouverte provisoirement pour les besoins du service (à connaître mais pas par cœur).<br>
+  <strong>Établissement PL (Pleine Ligne)</strong> : établissement sans voies de service, situé en pleine voie (à connaître mais pas par cœur).</div>
+</div>
+
+
+<div class="def-block important">
+  <div class="def-term">Cantonnement</div>
+  <div class="def-text">Système d'espacement des trains de même sens destiné à éviter les rattrapages et consistant à fractionner la ligne en plusieurs cantons dont l'entrée est protégée par un signal d'arrêt.</div>
+</div>
+<div class="rule-box">
+  <strong>Principe fondamental :</strong> <strong>1 train par canton</strong> — surtout vrai en BM (block manuel). En BAL/BAPR, le principe reste la base mais la gestion automatique permet des nuances.<br>
+  <strong>En BAL ou BAPR : le sémaphore ARRÊTE mais ne RETIENT PAS.</strong><br>
+  <strong>En BM : le sémaphore ARRÊTE et RETIENT.</strong>
+</div>
+
+<!-- SCHÉMA TYPES DE CANTONNEMENT -->
+<h3 class="fc-h3">Types de cantonnement</h3>
+<div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);padding:20px;margin-bottom:12px;overflow-x:auto">
+  <div style="display:flex;gap:20px;min-width:500px">
+    <!-- Block Manuel -->
+    <div style="flex:1;border:2px solid var(--accent);border-radius:8px;padding:14px;background:rgba(240,192,64,0.05)">
+      <div style="text-align:center;font-weight:700;color:var(--accent);font-size:14px;margin-bottom:12px;letter-spacing:0.05em">BLOCK MANUEL (BM)</div>
+      <div style="display:flex;gap:8px">
+        <div style="flex:1;background:var(--bg4);border-radius:6px;padding:10px;text-align:center;border:1px solid var(--border2)">
+          <div style="font-size:11px;font-weight:600;color:var(--text);margin-bottom:4px">Cantonnement Téléphonique</div>
+          <div class="fc-meta">Garde à chaque poste · communication téléphonique</div>
+        </div>
+        <div style="flex:1;background:var(--bg4);border-radius:6px;padding:10px;text-align:center;border:1px solid var(--border2)">
+          <div style="font-size:11px;font-weight:600;color:var(--text);margin-bottom:4px">Block par Appareils</div>
+          <div class="fc-meta">Appareils de block mécaniques ou électriques</div>
+        </div>
+      </div>
+      <div style="margin-top:10px;font-size:11px;color:var(--text3);text-align:center">Signaux normalement <strong style="color:var(--red)">FERMÉS</strong> · Arrête ET retient</div>
+    </div>
+    <!-- Block Automatique -->
+    <div style="flex:1;border:2px solid var(--blue);border-radius:8px;padding:14px;background:rgba(96,165,250,0.05)">
+      <div style="text-align:center;font-weight:700;color:var(--blue);font-size:14px;margin-bottom:12px;letter-spacing:0.05em">BLOCK AUTOMATIQUE</div>
+      <div style="display:flex;gap:8px">
+        <div style="flex:1;background:var(--bg4);border-radius:6px;padding:10px;text-align:center;border:1px solid var(--border2)">
+          <div style="font-size:11px;font-weight:600;color:var(--text);margin-bottom:4px">BAL</div>
+          <div class="fc-meta">≈ max 3 km · petites lignes · lumineux</div>
+        </div>
+        <div style="flex:1;background:var(--bg4);border-radius:6px;padding:10px;text-align:center;border:1px solid var(--border2)">
+          <div style="font-size:11px;font-weight:600;color:var(--text);margin-bottom:4px">BAPR</div>
+          <div class="fc-meta">6 à 15 km · grandes distances · contrainte</div>
+        </div>
+      </div>
+      <div style="margin-top:10px;font-size:11px;color:var(--text3);text-align:center">Signaux automatiques · Arrête mais <strong class="fc-accent">NE RETIENT PAS</strong></div>
+    </div>
+  </div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">BAL — Block Automatique Lumineux (≈ 2800 m)</div>
+  <div class="def-text">Système de cantonnement automatique d'environ 2800 m. Le signal se ferme automatiquement au passage des trains. <strong>Sémaphore permissif</strong> : lorsqu'un train rencontre un sémaphore BAL fermé, il peut de lui-même et après un temps d'arrêt, le franchir en marche à vue. <strong>Arrête mais NE RETIENT PAS.</strong></div>
+</div>
+<div class="def-block important">
+  <div class="def-term">BAPR — Block Automatique à Permissivité Restreinte (6 à 15 km)</div>
+  <div class="def-text">Système de cantonnement automatique de 6 à 15 km. Le signal se ferme automatiquement. <strong>Non permissif</strong> : le conducteur doit se faire reconnaître et obtenir l'accord verbal de l'aiguilleur. En cas d'impossibilité et après 15 min, il peut franchir en VM sur tout le canton. <strong>Arrête mais NE RETIENT PAS.</strong></div>
+</div>
+<div class="def-block important">
+  <div class="def-term">BM — Block Manuel / Cantonnement Téléphonique</div>
+  <div class="def-text">Système à block manuel avec garde à chaque poste relié par téléphone. Signaux normalement <strong>FERMÉS</strong>. <strong>Arrête ET RETIENT.</strong><br>Pour franchir le sémaphore : Formulaire S (canton libre) / Formulaire MV (pas d'assurance de libération) / Ordre verbal du chef de manœuvre.</div>
+</div>
+
+<!-- SCHÉMA FRANCHISSEMENT SÉMAPHORE BM -->
+<h3 class="fc-h3">Franchissement d'un sémaphore fermé — Block Manuel</h3>
+<div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);padding:16px;margin-bottom:12px">
+  <div style="font-size:12px;color:var(--red);font-weight:600;margin-bottom:12px;text-transform:uppercase;letter-spacing:0.08em">⛔ Il est interdit au conducteur de franchir de lui-même un sémaphore fermé de Block Manuel</div>
+  <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:10px">
+    <div style="background:var(--bg4);border-radius:6px;padding:10px 14px;font-size:12px;color:var(--text2);flex:1;border-left:3px solid var(--accent)">
+      <strong class="fc-text">① Le conducteur doit recevoir une autorisation</strong><br>
+      Après reconnaissance au signal, le conducteur doit obtenir une autorisation écrite du garde
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:8px">
+    <div style="background:var(--bg4);border-radius:6px;padding:10px;text-align:center;border:1px solid var(--green);background:var(--green-bg)">
+      <div style="font-size:12px;font-weight:700;color:var(--green);margin-bottom:4px">Formulaire S</div>
+      <div class="fc-meta">Délivré par le garde lorsqu'il a l'assurance que le canton est libre</div>
+    </div>
+    <div style="background:var(--bg4);border-radius:6px;padding:10px;text-align:center;border:1px solid var(--accent)">
+      <div style="font-size:12px;font-weight:700;color:var(--accent);margin-bottom:4px">Formulaire MV</div>
+      <div class="fc-meta">Délivré par le garde dans le cas contraire — marche à vue jusqu'à la fin du canton</div>
+    </div>
+    <div style="background:var(--bg4);border-radius:6px;padding:10px;text-align:center;border:1px solid var(--blue)">
+      <div style="font-size:12px;font-weight:700;color:var(--blue);margin-bottom:4px">Ordre verbal du CdM</div>
+      <div class="fc-meta">Pour les manœuvres uniquement</div>
+    </div>
+  </div>
+</div>
+
+<!-- FA — Fermeture Automatique -->
+<h3 class="fc-h3">FA — Fermeture Automatique</h3>
+<div class="def-block">
+  <div class="def-term">Fermeture Automatique (FA)</div>
+  <div class="def-text">Dispositif qui ferme automatiquement le signal de protection après le passage d'un train, sans que l'aiguilleur ait à agir sur le levier.<br><br>
+• <strong>FA annulable</strong> : l'aiguilleur peut désactiver la FA pour laisser passer plusieurs trains à la suite sans avoir à rouvrir le signal à chaque fois. C'est le cas sur la plupart des lignes classiques. On dit que la FA est <strong>en service</strong> quand elle est actionnée et <strong>pas en service</strong> quand elle est non actionnée.<br><br>
+• <strong>FA non annulable</strong> : impossible de désactiver la FA — le signal se referme systématiquement après chaque passage. Généralement sur les lignes croisées (voies se croisant) pour des raisons de sécurité, où il n'y a pas de bouton permettant de la désactiver.</div>
+</div>
+
+<!-- ÉQUIPEMENTS COMPLÉMENTAIRES DES SIGNAUX -->
+<h3 class="fc-h3">Équipements complémentaires des signaux — Comment reconnaître le type de cantonnement ?</h3>
+<div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);padding:16px;margin-bottom:12px">
+
+  <div style="background:rgba(240,192,64,0.08);border:1px solid var(--accent);border-radius:var(--radius);padding:12px 14px;margin-bottom:14px;font-size:13px;line-height:1.6">
+    💡 <strong class="fc-accent">RÔLE de l'œilleton</strong> — c'est un <strong>signal de permissivité</strong> qui sert à distinguer un sémaphore d'un carré.<br><br>
+    🔍 <strong>Cas typique :</strong> tu vois <strong>un seul feu rouge</strong> allumé sur une cible Nf.<br>
+    ▸ <strong>Œilleton allumé</strong> → c'est un <strong>sémaphore</strong> (un seul feu rouge en BAL, c'est normal)<br>
+    ▸ <strong>Œilleton éteint</strong> → c'est un <strong>carré avec un feu en panne / ampoule grillée</strong> (le carré devrait avoir 2 feux rouges)<br><br>
+    <em>→ L'œilleton sert à éviter que le conducteur confonde un carré avarié (avec une seule ampoule fonctionnelle) avec un sémaphore franchissable.</em>
+  </div>
+
+  <!-- Schéma plaque Nf -->
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;padding:10px 14px;background:var(--bg4);border-radius:6px">
+    <div style="font-size:20px;font-weight:900;color:#fff;background:#222;border:3px solid #fff;width:40px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:4px;flex-shrink:0">Nf</div>
+    <div style="font-size:13px;color:var(--text)"><strong>Plaque d'identification Nf</strong> — présente sur tout signal fermé. Le conducteur observe l'œilleton.</div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:6px">
+    <div style="background:var(--bg4);border-radius:6px;padding:12px;border-left:3px solid var(--red)">
+      <div style="font-size:12px;font-weight:600;color:var(--red);margin-bottom:6px">Œilleton ÉTEINT ou absent</div>
+      <div style="font-size:12px;color:var(--text2)">Le conducteur se comporte <strong class="fc-text">comme en présence d'un carré</strong></div>
+    </div>
+    <div style="background:var(--bg4);border-radius:6px;padding:12px;border-left:3px solid var(--green)">
+      <div style="font-size:12px;font-weight:600;color:var(--green);margin-bottom:6px">Œilleton ALLUMÉ</div>
+      <div style="font-size:12px;color:var(--text2)">Le conducteur consulte la <strong class="fc-text">plaque de cantonnement</strong></div>
+    </div>
+  </div>
+  <div style="margin-top:10px">
+    <div style="font-size:11px;font-family:var(--mono);color:var(--text3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px">Lecture de la plaque de cantonnement</div>
+    <div style="display:flex;flex-direction:column;gap:6px">
+      <div style="display:flex;align-items:center;gap:10px;padding:8px 12px;background:var(--bg4);border-radius:6px">
+        <div style="font-size:12px;color:var(--text3);min-width:180px">Absence de plaque de cantonnement</div>
+        <div style="font-size:13px;font-weight:600;color:var(--blue)">→ Sémaphore de <strong>BAL</strong></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;padding:8px 12px;background:var(--bg4);border-radius:6px">
+        <div style="font-size:12px;color:var(--text3);min-width:180px">Plaque <strong class="fc-text">PR</strong> ou <strong class="fc-text">PR vers...</strong></div>
+        <div style="font-size:13px;font-weight:600;color:var(--blue)">→ Sémaphore de <strong>BAPR</strong></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;padding:8px 12px;background:var(--bg4);border-radius:6px">
+        <div style="font-size:12px;color:var(--text3);min-width:180px">Plaque <strong class="fc-text">BM</strong> ou <strong class="fc-text">BM vers...</strong></div>
+        <div style="font-size:13px;font-weight:600;color:var(--accent)">→ Sémaphore de <strong>BM</strong></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3 style="font-size:16px;font-weight:600;margin:24px 0 12px;color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:6px">⭐ Les 3 plaques — BIEN LES DIFFÉRENCIER !!! <span class="tag red" style="margin-left:8px">EXAM AMV</span></h3>
+
+<div style="background:rgba(248,113,113,0.05);border:1px solid var(--red);border-radius:var(--radius2);padding:12px 14px;margin-bottom:14px;font-size:13px;line-height:1.6">
+  🔥 <strong style="color:var(--red)">À retenir absolument :</strong> sur un mât de signal, il y a souvent <strong>3 plaques différentes</strong> qu'il faut savoir distinguer. Elles n'ont pas le même rôle !
+</div>
+
+<!-- Schéma visuel d'un mât avec ses 3 plaques -->
+<div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);padding:18px;margin-bottom:14px">
+  <div style="display:flex;gap:18px;align-items:stretch;flex-wrap:wrap;justify-content:center">
+
+    <!-- Plaque d'identification -->
+    <div style="flex:1;min-width:200px;background:var(--bg4);border:2px solid var(--accent);border-radius:var(--radius2);padding:14px">
+      <div style="display:flex;justify-content:center;margin-bottom:10px">
+        <div style="background:#fafafa;color:#1a1a1a;border:2px solid #1a1a1a;padding:6px 14px;font-family:var(--mono);font-weight:700;font-size:16px;border-radius:2px">Nf</div>
+      </div>
+      <div style="font-weight:600;color:var(--accent);font-size:13px;text-align:center;margin-bottom:6px">1️⃣ Plaque d'IDENTIFICATION</div>
+      <div style="font-size:12px;color:var(--text2);line-height:1.5">Indique l'<strong>état le plus restrictif</strong> que le signal peut présenter (Nf = non franchissable, F, PR, BM, D, A).<br><br>
+      <span class="fc-accent">→ Sert à savoir comment réagir en cas de panneau éteint.</span></div>
+    </div>
+
+    <!-- Plaque de cantonnement -->
+    <div style="flex:1;min-width:200px;background:var(--bg4);border:2px solid var(--blue);border-radius:var(--radius2);padding:14px">
+      <div style="display:flex;justify-content:center;margin-bottom:10px;gap:6px">
+        <div style="background:#fafafa;color:#1a1a1a;border:2px solid #1a1a1a;padding:6px 12px;font-family:var(--mono);font-weight:700;font-size:14px;border-radius:2px">BM</div>
+        <div style="background:#fafafa;color:#1a1a1a;border:2px solid #1a1a1a;padding:6px 12px;font-family:var(--mono);font-weight:700;font-size:14px;border-radius:2px">PR</div>
+      </div>
+      <div style="font-weight:600;color:var(--blue);font-size:13px;text-align:center;margin-bottom:6px">2️⃣ Plaque de CANTONNEMENT</div>
+      <div style="font-size:12px;color:var(--text2);line-height:1.5">Indique le <strong>type de block</strong> du canton protégé : <strong>BM</strong> (Bloc Manuel), <strong>PR</strong> (BAPR). Si <strong>ni BM ni PR → BAL</strong>.<br><br>
+      <span style="color:var(--blue)">→ Sert à savoir comment franchir un sémaphore fermé.</span></div>
+    </div>
+
+    <!-- Plaque de repérage -->
+    <div style="flex:1;min-width:200px;background:var(--bg4);border:2px solid #4ade80;border-radius:var(--radius2);padding:14px">
+      <div style="display:flex;justify-content:center;margin-bottom:10px">
+        <div style="background:#fafafa;color:#1a1a1a;border:2px solid #1a1a1a;padding:6px 14px;font-family:var(--mono);font-weight:700;font-size:15px;border-radius:2px">C.77</div>
+      </div>
+      <div style="font-weight:600;color:#4ade80;font-size:13px;text-align:center;margin-bottom:6px">3️⃣ Plaque de REPÉRAGE</div>
+      <div style="font-size:12px;color:var(--text2);line-height:1.5">Indique le <strong>numéro du signal</strong> (ex. C.77 = carré n°77) ou le <strong>PK</strong>.<br><br>
+      <span style="color:#4ade80">→ Sert à localiser et identifier précisément le signal sur la ligne.</span></div>
+    </div>
+  </div>
+</div>
+
+<h3 class="fc-h3">Tableau récapitulatif</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>Plaque</th><th>Rôle</th><th>Exemple</th></tr></thead>
+  <tbody>
+    <tr><td><strong class="fc-accent">Plaque d'identification</strong></td><td>Indique l'état le plus restrictif que le signal peut présenter (Nf, F, PR, BM, D, A). Sert quand le panneau est éteint.</td><td>Nf · F · PR · BM · D · A</td></tr>
+    <tr><td><strong style="color:var(--blue)">Plaque de cantonnement</strong></td><td>Permet d'identifier le type de block (BAL, BAPR ou BM) et la direction du canton protégé. Si ni BM ni PR : BAL.</td><td>BM · PR · BM vers Nancy · PR vers Lyon</td></tr>
+    <tr><td><strong style="color:#4ade80">Plaque de repérage</strong></td><td>Repère géographique du signal — numéro du signal et/ou point kilométrique. Permet la localisation précise.</td><td>c.77 · c.319 · Nf 114</td></tr>
+  </tbody>
+</table></div>
+
+<div class="rule-box">
+  <strong>Astuce numéros de signaux, trains, PK :</strong><br>
+  Les numéros <strong>pairs</strong> → direction <strong>VERS PARIS</strong><br>
+  Les numéros <strong>impairs</strong> → direction <strong>VERS les provinces</strong><br>
+  <span style="font-size:12px;color:var(--text3)">Valable aussi pour les numéros de trains, de PK, de signaux, de voies...</span>
+</div>
+
+<div class="rule-box">
+  <strong>Annexe 1 de la Consigne Rose :</strong> Schéma de signalisation de la gare. C'est le plan général qui représente toutes les voies, tous les signaux et leur position exacte dans la zone d'action du poste. L'aiguilleur s'y réfère pour identifier un signal par son numéro et sa localisation.
+</div>
+
+
+
+<h3 class="fc-h3">Programme H.00 — AMV005</h3>
+<div class="rule-box">
+  Programme H : 00 = <strong>départ à la seconde</strong> : c'est le point névralgique de la gestion des circulations. Tout retard au départ se répercute sur l'ensemble du plan de transport.
+</div>
+<div class="def-block">
+  <div class="def-term">Modes d'exploitation (OP823)</div>
+  <div class="def-text">• Mode nominal d'exploitation : ordre théorique de circulation, programmation des travaux et IS correctes
+• Mode dégradé : situations impactant l'ordre théorique (retard, détresse, dérangement IS, travaux non programmés...)
+• Mode d'urgence : situation où survient un événement inopiné incompatible avec les circulations (obstacle, danger...)</div>
+</div>
+
+<h3 class="fc-h3">Acteurs de la circulation</h3>
+<div class="def-block important">
+  <div class="def-term">Agent de circulation (AC)</div>
+  <div class="def-text">Agent chargé d'assurer le service de la circulation des trains, habilité à la TES « Assurer le service de la circulation ferroviaire ».</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">Aiguilleur</div>
+  <div class="def-text">Agent chargé de la manœuvre des signaux ou des appareils de voie, habilité à la TES « Manœuvrer les signaux et les autres installations de gestion des circulations ».</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">Régulateur</div>
+  <div class="def-text">Agent chargé d'organiser et de contrôler la circulation des trains sur certaines lignes ou sections de lignes dites « régulées » et désignées comme telles dans les renseignements techniques, et d'exécuter ou de faire exécuter certaines opérations de sécurité. Décideur en matière d'organisation de la circulation entre les gares.</div>
+</div>
+
+<h3 class="fc-h3">Documents horaires</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>Document</th><th>Définition</th></tr></thead>
+  <tbody>
+    <tr><td>TST</td><td>Tableau de Succession des Trains — liste et horaires des trains réguliers et facultatifs</td></tr>
+    <tr><td>ONJ</td><td>Ordre Normal Journalier — tous les passages de trains dans l'ordre chronologique pour une journée à un poste</td></tr>
+    <tr><td>EC</td><td>État de Circulation — relevé de l'heure exacte de passage des trains à un poste</td></tr>
+    <tr><td>ART/AGT</td><td>Avis Régional/Général Train — modification d'horaires, suppressions ou ajouts</td></tr>
+  </tbody>
+</table></div>
+
+<div class="rule-box" style="margin-bottom:12px">
+  <strong>Différence ONJ / EC :</strong><br><br>
+  <strong>ONJ (Ordre Normal Journalier)</strong> = document <em>prévisionnel</em>. Il liste <strong>à l'avance</strong> tous les trains qui doivent passer au poste dans la journée, avec leurs horaires théoriques. L'aiguilleur le consulte pour savoir ce qu'il doit attendre.<br><br>
+  <strong>EC (État de Circulation)</strong> = document <em>constat</em>. L'aiguilleur y note <strong>au fur et à mesure</strong> l'heure réelle de passage de chaque train. C'est le compte-rendu de ce qui s'est réellement passé — il permet de savoir quel est le dernier train reçu et le dernier expédié.
+</div>
+
+<h3 class="fc-h3">2.1.4 — Types d'arrêts des trains <span class="tag yellow ml6">À connaître</span></h3>
+
+<div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);padding:16px;margin-bottom:12px">
+
+  <div style="font-size:12px;font-weight:600;color:var(--text);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.06em;font-family:var(--mono)">Arrêts NORMAUX — prévus dans les documents horaires</div>
+  <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:14px">
+
+    <div style="padding:8px 12px;background:var(--bg4);border-radius:6px;border-left:3px solid var(--green)">
+      <div style="font-size:12px;font-weight:600;color:var(--text);margin-bottom:2px">Réguliers <span style="color:var(--text3);font-weight:400">(dont Service <span class="tag" style="font-size:10px">S</span>)</span></div>
+      <div class="fc-meta">Toujours respectés (sauf si supprimés). Les arrêts réguliers imposés pour les seuls besoins du service sont dits "arrêts de service" — repérés par la lettre <strong class="fc-text">S</strong> dans l'horaire.</div>
+      <div style="font-size:11px;color:var(--text2);margin-top:4px">▶ Remise en marche : le conducteur doit obtenir une <strong>autorisation de mouvement</strong></div>
+    </div>
+
+    <div style="padding:8px 12px;background:var(--bg4);border-radius:6px;border-left:3px solid var(--accent)">
+      <div style="font-size:12px;font-weight:600;color:var(--text);margin-bottom:4px">Facultatifs — respectés <em>uniquement si les besoins de la circulation ou de l'ExF le nécessitent</em></div>
+      <div style="display:flex;flex-direction:column;gap:4px">
+        <div style="font-size:11px;color:var(--text3);padding:4px 8px;background:var(--bg3);border-radius:4px">
+          <span class="tag yellow" style="font-size:10px">C</span> <strong class="fc-text">Circulation</strong> — L'aiguilleur prend les mesures pour arrêter et retenir le train en fermant les signaux. Le conducteur n'observe l'arrêt [C] que si le signal lui est confirmé par fermeture ou s'il lui est imposé.
+        </div>
+        <div style="font-size:11px;color:var(--text3);padding:4px 8px;background:var(--bg3);border-radius:4px">
+          <span class="tag yellow" style="font-size:10px">S</span> <strong class="fc-text">Service</strong> — Le conducteur est avisé de la nécessité de s'arrêter par radio sol-train par exemple, même si les signaux sont ouverts.
+        </div>
+        <div style="font-size:11px;color:var(--text3);padding:4px 8px;background:var(--bg3);border-radius:4px">
+          <span class="tag" style="font-size:10px">X</span> <strong class="fc-text">Automoteur</strong> — Sur signe d'un agent de l'établissement ou d'un voyageur s'il y a des voyageurs à prendre, ou sur ordre de l'agent d'accompagnement si voyageurs à laisser descendre.
+        </div>
+      </div>
+      <div style="font-size:11px;color:var(--text2);margin-top:6px">▶ Remise en marche : le conducteur doit obtenir une <strong>autorisation de mouvement</strong></div>
+    </div>
+  </div>
+
+  <div style="font-size:12px;font-weight:600;color:var(--text);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.06em;font-family:var(--mono)">Autres arrêts</div>
+  <div style="display:flex;flex-direction:column;gap:6px">
+    <div style="padding:8px 12px;background:var(--bg4);border-radius:6px;border-left:3px solid var(--blue)">
+      <div style="font-size:12px;font-weight:600;color:var(--text);margin-bottom:2px">Par les signaux d'un poste</div>
+      <div class="fc-meta">Imposés par la signalisation. Le conducteur se conforme à la signalisation présentée ou aux prescriptions du SGC.</div>
+    </div>
+    <div style="padding:8px 12px;background:var(--bg4);border-radius:6px;border-left:3px solid var(--blue)">
+      <div style="font-size:12px;font-weight:600;color:var(--text);margin-bottom:2px">Prescrits</div>
+      <div class="fc-meta">Ordonnés par le SGC ou l'ExF — donnés au conducteur par écrit, téléphone ou radio. En établissement : autorisation de mouvement requise. En pleine voie : le conducteur repart de lui-même si rien ne s'y oppose.</div>
+    </div>
+    <div style="padding:8px 12px;background:var(--bg4);border-radius:6px;border-left:3px solid var(--red)">
+      <div style="font-size:12px;font-weight:600;color:var(--text);margin-bottom:2px">Accidentels</div>
+      <div class="fc-meta">Arrêts autres que normaux, prescrits ou par signaux d'un poste. Ex : arrêt à la suite d'un incident, ou en pleine voie par un signal d'arrêt à main.</div>
+      <div style="font-size:11px;color:var(--text2);margin-top:4px">▶ Remise en marche : le conducteur repart de lui-même, <strong>si rien ne s'y oppose et si le conducteur n'a rien touché dans son train</strong>, en appliquant les dispositions réglementaires correspondantes.</div>
+    </div>
+  </div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">SLD — Signal Lumineux de Départ <span class="tag yellow ml6">À connaître</span></div>
+  <div class="def-text">Feu blanc et vert — signal spécifique pour les reprises d'arrêts en gare. Autorise le conducteur à procéder au départ. Spécifique aux lignes équipées.</div>
+</div>
+
+<div class="rule-box">
+  <strong>Règle générale — remises en marche :</strong><br>
+  Quasiment toutes les remises en marche se font avec l'<strong>autorisation de l'AC ou de l'aiguilleur</strong> au conducteur.<br>
+  Exception : l'arrêt accidentel — si le conducteur n'a rien touché dans son train, il peut repartir de lui-même après son arrêt, si rien ne s'y oppose.
+</div>
+
+<div class="rule-box">
+  <strong>FAMAS — uniquement pour les signaux :</strong><br>
+  Lors d'un incident, on ne ferme que les <strong>signaux</strong> (pas les aiguilles). Les <strong>DR</strong> (Dispositifs de Réflexion) ne se mettent que sur les leviers de <strong>signaux</strong>, pas sur les leviers d'aiguilles.
+</div>
+
+<!-- ═══ FONCTIONNEMENT OPÉRATIONNEL TERRITORIAL ═══ -->
+<h3 class="fc-h3-accent">🏢 Fonctionnement opérationnel territorial — COGC · CRC · Régulateur</h3>
+
+<div class="def-block important">
+  <div class="def-term fc-accent">COGC — Centre Opérationnel de Gestion des Circulations <span class="tag red ml6">🔥 Par cœur</span></div>
+  <div class="def-text">Le COGC est en charge, sur son territoire :
+  <ul style="margin:6px 0 0 16px;padding:0">
+    <li><strong>De la gestion opérationnelle de la circulation</strong></li>
+    <li><strong>Du pilotage des incidents de gravité GI</strong></li>
+    <li>De l'information des Entreprises Ferroviaires (EF) sur les événements circulation impactant leurs trains et des autres GI le cas échéant</li>
+    <li>De missions diverses : traitement des transports avec particularité (transports exceptionnels, matières radioactives, mesures vis-à-vis des circulations de catégorie A…)</li>
+  </ul></div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term fc-accent">CRC — Coordonnateur Réseau Circulation <span class="tag red ml6">🔥 Par cœur</span></div>
+  <div class="def-text">Le CRC est le <strong>dirigeant opérationnel du COGC</strong>. Il est le garant de l'application des règles d'exploitation reprises dans l'OP0508 sur son territoire.<br><br>
+  Ses missions :
+  <ul style="margin:6px 0 0 16px;padding:0">
+    <li><strong>Suivi global permanent</strong> : exploite les indications de ses outils et les avis des régulateurs, des AC et de l'externe</li>
+    <li>Doit disposer d'une <strong>connaissance actualisée de la circulation</strong> sur l'ensemble de son territoire</li>
+    <li><strong>Assure une mission de supervision des lignes non régulées</strong></li>
+    <li><strong>Pilote et gère les incidents de circulation</strong> conformément à la DC4380</li>
+  </ul></div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term fc-accent">Missions du Régulateur <span class="tag red ml6">🔥 Par cœur</span></div>
+  <div class="def-text">Au cœur du système, le régulateur assure la gestion en opérationnel de la capacité <strong>(circulation et travaux)</strong> sur son périmètre dans le respect du graphique théorique.<br><br>
+  <strong>Il applique les règles d'exploitation reprises dans l'OP0508.</strong><br><br>
+  Il agit au service de la performance du système et de l'information voyageur, et échange régulièrement avec les AC et CCL, pour la qualité de la gestion opérationnelle.<br><br>
+  Il a en charge le suivi actif de la circulation par délégation du CRC. Cette tâche consiste à confronter en permanence le <strong>sillon théorique</strong> à la <strong>circulation réelle du train</strong>, et les planches travaux prévues, afin d'alléger le plus possible les écarts.<br><br>
+  <strong>Les orientations prises visent à recentrer le rôle du régulateur dans sa mission d'organisation du trafic</strong> sur les lignes régulées, afin de détecter les écarts des missions de sécurité.</div>
+</div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px">
+  <div style="background:var(--bg3);border-left:4px solid var(--green);border-radius:var(--radius2);padding:14px">
+    <div style="font-weight:700;color:var(--green);margin-bottom:6px">Ligne RÉGULÉE</div>
+    <div class="fc-note">
+      Circulation en ligne organisée et suivie par le <strong class="fc-text">régulateur</strong>. Il peut donner par radio ou téléphone aux conducteurs les ordres et avis utiles.<br><br>
+      → Forcément rattachée à un <strong>COGC</strong> et donc à un régulateur qui organise la circulation.
+    </div>
+  </div>
+  <div style="background:var(--bg3);border-left:4px solid #f87171;border-radius:var(--radius2);padding:14px">
+    <div style="font-weight:700;color:#f87171;margin-bottom:6px">Ligne NON RÉGULÉE</div>
+    <div class="fc-note">
+      Circulation en ligne organisée et suivie par les <strong class="fc-text">agents circulation de chaque gare</strong>. Pas de régulateur dédié.<br><br>
+      → Le CRC assure une mission de <strong>supervision</strong> des lignes non régulées.
+    </div>
+  </div>
+</div>
+
+<div style="background:var(--bg4);border-left:3px solid var(--accent);border-radius:var(--radius);padding:10px 14px;margin-bottom:14px;font-size:12px;color:var(--text2)">
+  <strong class="fc-accent">Comment savoir si une ligne est régulée ?</strong> → On regarde dans les <strong>RT (Renseignements Techniques) — Document A</strong>, §1 Caractéristiques générales d'exploitation.
+</div>
+
+<!-- ═══ STEM ═══ -->
+<h3 class="fc-h3-accent">👁️ STEM — Surveillance des Trains en Marche <span style="font-size:12px;color:var(--red);margin-left:8px">🔥 Définition par cœur</span></h3>
+
+<div class="def-block important">
+  <div class="def-term fc-accent">STEM — Article 601 DC1505</div>
+  <div class="def-text">Toutes les fois que l'exécution normale du service le permet, il y a lieu d'<strong>observer les trains en marche</strong> afin d'être en mesure de déceler, le cas échéant, les <strong>défectuosités dangereuses</strong> pour la sécurité des usagers, de la circulation ou susceptibles de provoquer des avaries aux installations.<br><br>
+  <strong class="fc-accent">La STEM se fait à l'EXTÉRIEUR</strong> (sur le quai, au bord de la voie).<br><br>
+  L'agent sédentaire qui a donné l'autorisation de départ <strong>doit assister au défilé du train</strong> dans le but de déceler les anomalies éventuelles.<br>
+  Si le train doit être arrêté → <strong>coups de sifflet saccadés</strong>.</div>
+</div>
+
+<div class="def-block">
+  <div class="def-term">Défectuosités à surveiller lors de la STEM <span class="tag yellow ml6">À connaître</span></div>
+  <div class="def-text">
+  • Chauffage des boîtes d'essieux (crissement aigu, fumée, odeur de brûlé, métal rouge)<br>
+  • Freins anormalement serrés<br>
+  • Avaries d'organes de roulement (plaques de garde, ressorts, bandages)<br>
+  • Déplacements de chargement, engagement du gabarit (porte ouverte, bâche flottante)<br>
+  • Pièces traînantes<br>
+  • Incendie<br>
+  • Pertes de marchandises (liquide ou gaz)<br>
+  • Extinction ou absence des signaux portés par les trains<br>
+  • Wagons instables<br>
+  • Porte(s) ouverte(s) d'un train transportant des voyageurs</div>
+</div>
+
+<!-- ═══ ARTICLES 101 / 102 / 401 / 403 ═══ -->
+<h3 class="fc-h3-accent">📋 Articles essentiels — Processus de départ & circulation <span style="font-size:12px;color:var(--red);margin-left:8px">🔥 Par cœur</span></h3>
+
+<div class="def-block important">
+  <div class="def-term fc-accent">Article 101 — Principes généraux de départ</div>
+  <div class="def-text">Aucun train ne doit partir d'un établissement où il a son origine ou un arrêt prévu sans que le conducteur y soit autorisé.<br><br>
+  Si rien ne s'y oppose, le conducteur doit avoir l'assurance avant de se mettre en marche que :
+  <ul style="margin:8px 0 0 18px;padding:0">
+    <li>Son train est <strong>« prêt pour l'expédition » (PPE)</strong> dans les conditions définies au chapitre 2</li>
+    <li>Le <strong>« service du train » (ST)</strong> est terminé dans les conditions définies au chapitre 3</li>
+    <li>Les <strong>conditions relatives à la circulation</strong> du train sont remplies</li>
+    <li>De mouvement <strong>(AuM)</strong> dans les conditions définies au chapitre 4</li>
+    <li><strong>Il est l'heure de départ</strong></li>
+  </ul>
+  Les opérations relatives au PPE et au ST sont de la responsabilité de l'exploitant ferroviaire. La transmission au conducteur de l'autorisation de mouvement est de la responsabilité du gestionnaire d'infrastructure.</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term fc-accent">Article 102 — Regarder la circulation arrière</div>
+  <div class="def-text">L'agent sédentaire qui assiste au défilé du train <strong>doit regarder l'arrière de la circulation</strong> pour s'assurer que le <strong>train est complet</strong> (signalisation d'arrière présente : 2 feux rouges ou plaques de queue).</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term fc-accent">Article 401 — Principes de l'autorisation de mouvement (AuM) <span class="tag red ml6">🔥 Par cœur</span></div>
+  <div class="def-text">Les différentes formes que peuvent prendre l'autorisation de mouvement ainsi que leurs modalités de transmission sont reprises dans le document d'exploitation RFN-CG-SE 02 C-00-n° 009.<br><br>
+  Le conducteur doit recevoir une AuM <strong>avant la mise en marche</strong> de son train :
+  <ul style="margin:6px 0 0 18px;padding:0">
+    <li>À l'établissement d'origine</li>
+    <li>Après un arrêt prévu</li>
+    <li>Dans certains cas prévus dans la documentation d'exploitation (circulations sur VUT, à contre-voie…)</li>
+  </ul></div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term fc-accent">Article 403 — Autorisation de mouvement après un arrêt prévu <span class="tag red ml6">🔥 Par cœur</span></div>
+  <div class="def-text"><strong>Arrêt prévu dans une gare ouverte au service de la circulation sur VP :</strong><br>
+  Lorsque le signal de sortie est commun à plusieurs voies, le SGC transmet l'AuM au conducteur ; il en est de même en l'absence de signal de sortie.<br><br>
+  Lorsque le signal de sortie est propre à la voie et visible depuis le poste de conduite, <strong>son ouverture constitue l'AuM</strong>.<br><br>
+  <strong>Arrêt prévu dans une gare fermée</strong> au service de la circulation ou dans un établissement sur VS : le SGC transmet l'AuM au conducteur.<br><br>
+  <strong>Arrêt prévu dans un établissement sur VS :</strong> le signal de sortie est commun à plusieurs voies → le SGC transmet l'AuM au conducteur.</div>
+</div>
+
+<!-- ═══ SÉCURITÉ DU PUBLIC — DLC / ZONES / BATEAUX / BANDE JAUNE ═══ -->
+<h3 class="fc-h3-accent">🚶 Sécurité du public dans les gares — AMV108 · OP3008 <span style="font-size:12px;color:var(--red);margin-left:8px">🔥 Par cœur</span></h3>
+
+<div class="def-block important">
+  <div class="def-term fc-accent">DLC — Document Local Commun</div>
+  <div class="def-text">Pour chaque point d'arrêt desservi par des trains de voyageurs, le DLC (Document Local Commun au métier Circulation ferroviaire de SNCF Réseau et à Gares&Connexions) précise les règles et mesures à prendre pour assurer la <strong>sécurité du public</strong>, à la traversée des voies et sur les quais.</div>
+</div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:14px">
+  <div style="background:var(--bg3);border-top:4px solid #f87171;border-radius:var(--radius2);padding:14px">
+    <div style="font-weight:700;color:#f87171;font-size:13px;margin-bottom:6px">ZEF — Zone d'Exploitation Ferroviaire</div>
+    <div style="font-size:12px;color:var(--text2);line-height:1.5">Pleine voie, voies de service.<br><strong class="fc-text">Accès TOTALEMENT INTERDIT au public.</strong></div>
+  </div>
+  <div style="background:var(--bg3);border-top:4px solid #fbbf24;border-radius:var(--radius2);padding:14px">
+    <div style="font-weight:700;color:#fbbf24;font-size:13px;margin-bottom:6px">ZAFS — Zone d'Activité Ferroviaire Sensible</div>
+    <div style="font-size:12px;color:var(--text2);line-height:1.5">Les quais.<br><strong class="fc-text">Risque potentiel de heurt.</strong></div>
+  </div>
+  <div style="background:var(--bg3);border-top:4px solid #4ade80;border-radius:var(--radius2);padding:14px">
+    <div style="font-weight:700;color:#4ade80;font-size:13px;margin-bottom:6px">ZC — Zone Commerciale</div>
+    <div style="font-size:12px;color:var(--text2);line-height:1.5">Hall de gare, guichets.<br><strong class="fc-text">Reste de la gare.</strong></div>
+  </div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term fc-accent">Bateaux de quai — repérage <span class="tag red ml6">🔥 Par cœur</span></div>
+  <div class="def-text">Les <strong>bateaux de quai</strong> sont des abaissements localisés du quai qui permettent de rattraper la différence de niveau avec un passage planchéié entre les voies (repérés par la mise en place d'un «zébra» sur toute la surface du bateau et comprenant les parties en pente). Le zébra est constitué de <strong>bandes alternées contrastées (jaune et noir)</strong>.<br><br>
+  Le repérage est complété d'une signalétique spécifique lorsque des voitures à voyageurs sont susceptibles d'être normalement arrêtées au droit du bateau de quai.</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term fc-accent">Bande jaune — disposition particulière ≥ 150 km/h <span class="tag red ml6">🔥 2m50 par cœur !</span></div>
+  <div class="def-text">Dans les points d'arrêt franchis par des trains circulant à une vitesse <strong>≥ 150 km/h</strong> : bande de couleur jaune à une distance minimale de <strong style="color:var(--accent);font-size:16px">2,50 m</strong> du bord du quai.<br><br>
+  <strong>Exception :</strong> si le quai fait moins de 1 m de large → distance réduite à <strong>1,80 m</strong> si train < 160 km/h.<br><br>
+  Pour les points d'arrêt franchis à V < 150 km/h : panneau de mise en garde jaune invitant à rester éloigné de la bordure du quai.</div>
+</div>
+
+<div class="def-block">
+  <div class="def-term">TVP — Traversée des Voies à niveau par le Public</div>
+  <div class="def-text">Équipement mis en place pour permettre au public de traverser, dans un point d'arrêt, les voies à niveau en empruntant un <strong>passage planchéié</strong>, muni ou non d'un dispositif signalant l'approche des circulations.<br><br>
+  <strong>TVP avec signalétique fixe seule :</strong> responsabilité du public, affichage de sécurité adapté, attention « un train peut en cacher un autre ».<br>
+  <strong>TVP avec signalétique lumineuse :</strong> 3 pictogrammes par sens de circulation + signalisation fixe + annonce sonore à l'approche.</div>
+</div>
+
+<div style="background:rgba(248,113,113,0.08);border:2px solid var(--red);border-radius:var(--radius2);padding:12px 14px;margin-bottom:14px;font-size:13px;line-height:1.5">
+  ⚠️ <strong style="color:var(--red)">Rappel important :</strong> un <strong>rail cassé</strong> constitue un <strong>OBSTACLE</strong> (et non un simple danger) car il fait obstruction à la circulation et crée un risque grave de déraillement.
+</div>
+
+<!-- ═══ CONTENU COMPLÉMENTAIRE (PDF Capucine) ═══ -->
+<h3 class="fc-h3">Les différents types d'arrêts (OP843) <span class="tag yellow ml6">À connaître</span></h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>Type</th><th>Sous-type</th><th>Symbole ONJ</th><th>Conditions d'arrêt</th><th>Remise en marche</th></tr></thead>
+  <tbody>
+    <tr><td rowspan="3"><strong>Normaux réguliers</strong></td><td>Arrêt normal</td><td>—</td><td>Toujours respecté sauf suppression</td><td>Autorisation de départ</td></tr>
+    <tr><td>Arrêt normal de service</td><td>S</td><td>Besoins du service</td><td>Autorisation de départ</td></tr>
+    <tr><td colspan="4" class="fc-meta">Le conducteur doit toujours respecter tous les arrêts normaux</td></tr>
+    <tr><td rowspan="3"><strong>Normaux facultatifs</strong></td><td>Circulation [c]</td><td>[c]</td><td>Si l'aiguilleur présente un signal fermé</td><td>Signal ouvert / AuM</td></tr>
+    <tr><td>Service [s]</td><td>[s]</td><td>Le conducteur s'arrête de lui-même si besoin</td><td>Après exécution du service</td></tr>
+    <tr><td>Automoteur</td><td>x</td><td>Signe d'un agent ou voyageur sur le quai</td><td>Autorisation de départ</td></tr>
+    <tr><td><strong>Prescrits</strong></td><td>—</td><td>ARPI</td><td>Sur ordre (écrit, tel, radio) du SGC</td><td>Autorisation de départ</td></tr>
+    <tr><td><strong>Par les signaux</strong></td><td>—</td><td>—</td><td>Imposé par la signalisation</td><td>Signal ouvert (gare) / de lui-même (pleine voie)</td></tr>
+    <tr><td><strong>Accidentels</strong></td><td>—</td><td>—</td><td>Obstacle, avarie, signal d'urgence</td><td>De lui-même si rien ne s'y oppose</td></tr>
+  </tbody>
+</table></div>
+
+<h3 class="fc-h3">Remise de service (prise/fin de poste)</h3>
+<div class="def-block">
+  <div class="def-term">Remise de service</div>
+  <div class="def-text">Écrite + signature, sur document homologué = <strong>Carnet d'Enregistrement des Dépêches (CED)</strong>. Elle consiste à préparer et commenter les différents documents et imprimés de sécurité + informer verbalement de tout fait pouvant avoir une influence sur la circulation des trains.</div>
+</div>
+
+<h3 class="fc-h3">Formation / Destruction d'itinéraire (DC3858)</h3>
+<div class="def-block">
+  <div class="def-term">Formation d'itinéraire</div>
+  <div class="def-text">Mise en position <strong>renversée</strong> du levier de commande du signal de protection → enclenche les leviers des aiguilles de l'itinéraire correspondant.</div>
+</div>
+<div class="def-block">
+  <div class="def-term">Destruction d'itinéraire</div>
+  <div class="def-text">Mise en position <strong>normale</strong> du levier de commande du signal de protection.</div>
+</div>
+
+<h3 class="fc-h3">Pétards et détonateurs</h3>
+<div class="def-block important">
+  <div class="def-term">Explosion pétard = arrêt absolu</div>
+  <div class="def-text">Plus impératif qu'un signal ouvert. Après l'arrêt, le conducteur est autorisé à se remettre en marche en <strong>marche à vue</strong> sur une distance au moins égale à la distance de couverture des obstacles, puis reprendre sa marche normale.<br><br>
+  <strong>Détonateur talonnable</strong> = explosion sens de la voie uniquement (pas à contre-sens)<br>
+  <strong>Détonateur non talonnable</strong> = explosion dans les 2 sens (S et CS)<br>
+  <strong>Pétards à griffe</strong> = couverture d'obstacle</div>
+</div>
+
+<div class="def-block">
+  <div class="def-term">IPCS — Installation Permanente de Contre-Sens</div>
+  <div class="def-text">En double voie, installations permanentes permettant de faire circuler sur une voie des trains en sens inverse du sens normal. Des IS s'opposent à l'expédition de deux trains de sens contraires à la rencontre l'un de l'autre.</div>
+</div>
+`,
+
+cantonnement: `
+<h2 class="theme-heading">Cantonnement</h2>
+<div class="theme-ref">AMV160 · DC1551 BAL · DC1552 BAPR · OP O599 ARRET</div>
+
+<div class="def-block important">
+  <div class="def-term">Cantonnement <span class="tag yellow ml6">⚠ À l'examen</span></div>
+  <div class="def-text">Système d'espacement des trains de même sens destiné à éviter les rattrapages et consistant à fractionner la ligne en plusieurs cantons dont l'entrée est protégée par un signal d'arrêt.</div>
+</div>
+<div class="rule-box">
+  <strong>Principe fondamental :</strong> <strong>1 train par canton</strong> — particulièrement vrai en BM.<br>
+  <strong>En BAL ou BAPR : le sémaphore ARRÊTE mais ne RETIENT PAS.</strong><br>
+  <strong>En BM : le sémaphore ARRÊTE et RETIENT.</strong>
+</div>
+
+<h3 class="fc-h3">Types de cantonnement</h3>
+<div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);padding:20px;margin-bottom:12px;overflow-x:auto">
+  <div style="display:flex;gap:20px;min-width:500px">
+    <div style="flex:1;border:2px solid var(--accent);border-radius:8px;padding:14px;background:rgba(240,192,64,0.05)">
+      <div style="text-align:center;font-weight:700;color:var(--accent);font-size:14px;margin-bottom:12px">BLOCK MANUEL (BM)</div>
+      <div style="display:flex;gap:8px">
+        <div style="flex:1;background:var(--bg4);border-radius:6px;padding:10px;text-align:center;border:1px solid var(--border2)">
+          <div style="font-size:11px;font-weight:600;color:var(--text);margin-bottom:4px">Cantonnement Téléphonique</div>
+          <div class="fc-meta">Garde à chaque poste · communication téléphonique</div>
+        </div>
+        <div style="flex:1;background:var(--bg4);border-radius:6px;padding:10px;text-align:center;border:1px solid var(--border2)">
+          <div style="font-size:11px;font-weight:600;color:var(--text);margin-bottom:4px">Block par Appareils</div>
+          <div class="fc-meta">Appareils de block mécaniques ou électriques</div>
+        </div>
+      </div>
+      <div style="margin-top:10px;font-size:11px;color:var(--text3);text-align:center">Signaux normalement <strong style="color:var(--red)">FERMÉS</strong> · Arrête ET retient</div>
+    </div>
+    <div style="flex:1;border:2px solid var(--blue);border-radius:8px;padding:14px;background:rgba(96,165,250,0.05)">
+      <div style="text-align:center;font-weight:700;color:var(--blue);font-size:14px;margin-bottom:12px">BLOCK AUTOMATIQUE</div>
+      <div style="display:flex;gap:8px">
+        <div style="flex:1;background:var(--bg4);border-radius:6px;padding:10px;text-align:center;border:1px solid var(--border2)">
+          <div style="font-size:11px;font-weight:600;color:var(--text);margin-bottom:4px">BAL</div>
+          <div class="fc-meta">≈ max 3 km · lumineux</div>
+        </div>
+        <div style="flex:1;background:var(--bg4);border-radius:6px;padding:10px;text-align:center;border:1px solid var(--border2)">
+          <div style="font-size:11px;font-weight:600;color:var(--text);margin-bottom:4px">BAPR</div>
+          <div class="fc-meta">6 à 15 km · contrainte</div>
+        </div>
+      </div>
+      <div style="margin-top:10px;font-size:11px;color:var(--text3);text-align:center">Signaux automatiques · Arrête mais <strong class="fc-accent">NE RETIENT PAS</strong></div>
+    </div>
+  </div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">BAL — Block Automatique Lumineux (≈ 2800 m)</div>
+  <div class="def-text">Sémaphore <strong>permissif</strong> : après arrêt, le conducteur peut le franchir de lui-même en marche à vue. Arrête mais NE RETIENT PAS.</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">BAPR — Block Automatique à Permissivité Restreinte (6 à 15 km)</div>
+  <div class="def-text">Sémaphore <strong>non permissif</strong> : le conducteur doit se faire reconnaître et obtenir l'accord verbal de l'aiguilleur. Si impossible : attendre 15 min puis VM sur tout le canton. Arrête mais NE RETIENT PAS.</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">BM — Block Manuel / Cantonnement Téléphonique</div>
+  <div class="def-text">Signaux normalement <strong>FERMÉS</strong>. Arrête ET RETIENT.<br>Pour franchir : Formulaire S (canton libre) / Formulaire MV (pas d'assurance) / Ordre verbal du CdM.</div>
+</div>
+
+<h3 class="fc-h3">Franchissement sémaphore BM — Formulaire S vs Formulaire MV</h3>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px">
+  <div style="background:var(--green-bg);border:1px solid var(--green);border-radius:var(--radius2);padding:14px">
+    <div style="font-size:14px;font-weight:700;color:var(--green);margin-bottom:8px">Formulaire S</div>
+    <div class="fc-note">Délivré par le garde lorsqu'il a l'<strong class="fc-text">assurance que le canton est libre</strong>.<br>Le conducteur peut circuler normalement dans le canton.</div>
+  </div>
+  <div style="background:rgba(240,192,64,0.05);border:1px solid var(--accent);border-radius:var(--radius2);padding:14px">
+    <div style="font-size:14px;font-weight:700;color:var(--accent);margin-bottom:8px">Formulaire MV</div>
+    <div class="fc-note">Délivré par le garde <strong class="fc-text">dans le cas contraire</strong> — il n'a pas l'assurance.<br>Le conducteur doit rester en <strong class="fc-accent">marche à vue jusqu'à la fin du canton</strong>.</div>
+  </div>
+</div>
+
+<h3 class="fc-h3">Comment reconnaître BAL / BAPR / BM sur le terrain</h3>
+<div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);padding:16px;margin-bottom:12px">
+  <div style="font-size:12px;color:var(--text2);margin-bottom:12px">Présence de la plaque <strong class="fc-text">Nf</strong> → observer l'œilleton → si allumé, consulter la plaque de cantonnement :</div>
+  <div style="display:flex;flex-direction:column;gap:6px">
+    <div style="display:flex;align-items:center;gap:10px;padding:8px 12px;background:var(--bg4);border-radius:6px">
+      <div style="font-size:12px;color:var(--text3);min-width:180px">Absence de plaque de cantonnement</div>
+      <div style="font-size:13px;font-weight:600;color:var(--blue)">→ Sémaphore de <strong>BAL</strong></div>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px;padding:8px 12px;background:var(--bg4);border-radius:6px">
+      <div style="font-size:12px;color:var(--text3);min-width:180px">Plaque <strong class="fc-text">PR</strong> ou <strong class="fc-text">PR vers...</strong></div>
+      <div style="font-size:13px;font-weight:600;color:var(--blue)">→ Sémaphore de <strong>BAPR</strong></div>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px;padding:8px 12px;background:var(--bg4);border-radius:6px">
+      <div style="font-size:12px;color:var(--text3);min-width:180px">Plaque <strong class="fc-text">BM</strong> ou <strong class="fc-text">BM vers...</strong></div>
+      <div style="font-size:13px;font-weight:600;color:var(--accent)">→ Sémaphore de <strong>BM</strong></div>
+    </div>
+  </div>
+</div>
+
+<h3 class="fc-h3-accent">⭐ Les 3 plaques d'un signal — BIEN LES DIFFÉRENCIER <span style="font-size:12px;color:var(--red);margin-left:8px">🔥 Exam AMV</span></h3>
+
+<div style="background:rgba(248,113,113,0.05);border:2px solid var(--red);border-radius:var(--radius2);padding:14px;margin-bottom:14px;font-size:13px;line-height:1.6">
+  ⚠️ Chaque signal possède <strong>1 plaque d'identification</strong> (obligatoire) + éventuellement une <strong>plaque de cantonnement</strong> + une <strong>plaque de repérage</strong>. Les confondre est une faute classique à l'examen.
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-bottom:18px">
+
+  <div style="background:var(--bg3);border-top:4px solid #f87171;border-radius:var(--radius2);padding:14px">
+    <div style="font-size:13px;font-weight:700;color:#f87171;margin-bottom:8px">1️⃣ Plaque d'IDENTIFICATION</div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px">
+      <span class="signal-tag fc-bold">Nf</span>
+      <span class="signal-tag fc-bold">F</span>
+      <span class="signal-tag fc-bold">D</span>
+      <span class="signal-tag fc-bold">A</span>
+      <span class="signal-tag fc-bold">GA</span>
+    </div>
+    <div class="fc-note">
+      Indique <strong class="fc-text">l'état le plus restrictif</strong> que le signal peut présenter.<br>
+      → C'est elle qui te dit comment réagir en cas d'avarie (panneau éteint).
+    </div>
+  </div>
+
+  <div style="background:var(--bg3);border-top:4px solid #4ade80;border-radius:var(--radius2);padding:14px">
+    <div style="font-size:13px;font-weight:700;color:#4ade80;margin-bottom:8px">2️⃣ Plaque de CANTONNEMENT</div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px">
+      <span class="signal-tag fc-bold">BM</span>
+      <span class="signal-tag fc-bold">BM vers...</span>
+      <span class="signal-tag fc-bold">PR</span>
+      <span class="signal-tag fc-bold">PR vers...</span>
+    </div>
+    <div class="fc-note">
+      Indique <strong class="fc-text">le type de cantonnement</strong> du canton qui suit (Block Manuel ou Permissivité Restreinte).<br>
+      → <strong>Absente</strong> = on est en BAL.
+    </div>
+  </div>
+
+  <div style="background:var(--bg3);border-top:4px solid #7db3f5;border-radius:var(--radius2);padding:14px">
+    <div style="font-size:13px;font-weight:700;color:#7db3f5;margin-bottom:8px">3️⃣ Plaque de REPÉRAGE</div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px">
+      <span class="signal-tag fc-bold">c.77</span>
+      <span class="signal-tag fc-bold">N° carré</span>
+      <span class="signal-tag fc-bold">PK</span>
+    </div>
+    <div class="fc-note">
+      Indique le <strong class="fc-text">numéro du carré</strong> ou éventuellement le <strong>point kilométrique</strong>.<br>
+      → Sert à <strong>identifier précisément</strong> le signal lors d'une communication.
+    </div>
+  </div>
+
+</div>
+
+<div style="background:var(--bg4);border-left:3px solid var(--accent);border-radius:var(--radius);padding:10px 14px;margin-bottom:14px;font-size:12px;color:var(--text2);line-height:1.6">
+  <strong class="fc-accent">📸 Exemple :</strong> un signal avec plaque <strong>Nf</strong> + plaque <strong>BM vers le poste 7</strong> + plaque <strong>c.77</strong> = c'est un sémaphore de BM, identifié comme étant le carré 77, et il garde le canton qui mène vers le poste 7.
+</div>
+
+<h3 class="fc-h3">FA — Fermeture Automatique</h3>
+<div class="def-block">
+  <div class="def-term">Fermeture Automatique (FA)</div>
+  <div class="def-text">Ferme automatiquement le signal après le passage d'un train.<br>
+• <strong>FA annulable</strong> : l'aiguilleur peut désactiver la FA — laisser passer plusieurs trains à la suite. Cas des lignes classiques.<br>
+• <strong>FA non annulable</strong> : le signal se referme systématiquement après chaque passage (lignes croisées, pas de bouton de désactivation).<br>
+FA <strong>en service</strong> = actionnée · FA <strong>pas en service</strong> = non actionnée.</div>
+</div>
+`,
+
+incidents: `
+<h2 class="theme-heading">Incidents de circulation</h2>
+<div class="theme-ref">AMV109 · AMV111 · AMV112 · AMV113 · AMV108 · DC1503</div>
+
+<div class="def-block important">
+  <div class="def-term">Obstacle</div>
+  <div class="def-text">Événement inopiné et identifié, visible ou non, qui fait obstruction à la circulation des trains. Un obstacle crée un risque grave de déraillement par collision (gabarit engagé) ou met gravement en péril la sécurité bien que le gabarit ne soit pas engagé.</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">Danger</div>
+  <div class="def-text">Événement inopiné et identifié survenant dans les emprises ferroviaires et présentant un risque pour les circulations et les personnes. À la différence d'un obstacle, un danger ne fait pas obstruction à la circulation mais nécessite des mesures particulières (marche prudente, limitation de vitesse, pantographes baissés...).</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">Présomption de danger</div>
+  <div class="def-text">Probabilité de l'existence d'un événement inopiné survenant dans les emprises ferroviaires et présentant un risque pour les circulations et les personnes. Elle nécessite d'obtenir un supplément d'information afin de confirmer l'existence du danger et d'identifier sa nature.</div>
+</div>
+
+
+<h3 class="fc-h3">Bestiaux (AMV111)</h3>
+<div class="def-block important">
+  <div class="def-term">Bestiaux</div>
+  <div class="def-text">Tous les animaux d'élevage, seuls ou en troupeau, dont la taille est, au moins, égale à celle d'un mouton. C'est un DANGER et non un obstacle. Zone de protection : 1000 m de part et d'autre du point de signalement, sur toutes les voies de la plateforme.</div>
+</div>
+
+<h3 class="fc-h3">Passages à niveau (AMV112)</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>Type</th><th>Description</th></tr></thead>
+  <tbody>
+    <tr><td>SAL 0</td><td>Uniquement la signalisation lumineuse automatique</td></tr>
+    <tr><td>SAL 2</td><td>2 demi-barrières du côté de l'entrée</td></tr>
+    <tr><td>SAL 2B</td><td>2 barrières de la largeur de la chaussée</td></tr>
+    <tr><td>SAL 4</td><td>4 demi-barrières</td></tr>
+    <tr><td>SAL FC</td><td>À franchissement conditionnel</td></tr>
+  </tbody>
+</table></div>
+<div class="rule-box">
+  <strong>Fonctionnement SAL 2 :</strong> Pédale d'annonce franchie → sonnerie → feux rouges clignotent → barrières se baissent → 10 secondes après fermeture → train passe → pédale de reddition → barrières s'ouvrent et feux s'éteignent.<br><br>
+  On délivre un <strong>RATO</strong> par circulation jusqu'à rétablissement.
+</div>
+
+<div class="def-block important">
+  <div class="def-term">Entrave (AMV113)</div>
+  <div class="def-text">Action délibérée d'une ou plusieurs personnes revendicatives présentes dans la zone dangereuse, y restant et ayant l'intention d'empêcher la circulation des trains.</div>
+</div>
+
+<!-- ═══ PROCÉDURE FAMAS COMPLÈTE ═══ -->
+<h3 class="fc-h3-accent">🚨 Déroulé complet du FAMAS — du début à la fin <span style="font-size:12px;color:var(--red);margin-left:8px">🔥 Hyper important</span></h3>
+
+<div style="background:rgba(248,113,113,0.05);border:2px solid var(--red);border-radius:var(--radius2);padding:14px;margin-bottom:14px;font-size:13px;line-height:1.7">
+  <strong style="color:var(--red)">⚠️ IMPORTANT :</strong> Le FAMAS ne concerne QUE les <strong>signaux</strong> — on ne touche PAS aux aiguilles. On considère que les aiguilles seules ne protègent pas, donc il faut bien fermer <strong>tous les signaux utiles</strong>.
+</div>
+
+<div style="display:flex;flex-direction:column;gap:10px;margin-bottom:14px">
+
+  <div style="background:var(--bg3);border-left:4px solid #ef4444;border-radius:var(--radius2);padding:12px 14px">
+    <div style="font-weight:700;color:#ef4444;margin-bottom:4px">F — Fermez d'urgence les signaux d'arrêt convenables</div>
+    <div style="font-size:12px;color:var(--text2);line-height:1.5">On ferme TOUS les signaux nécessaires pour protéger l'obstacle/danger. <strong class="fc-text">Uniquement les signaux — pas les aiguilles.</strong></div>
+  </div>
+
+  <div style="background:var(--bg3);border-left:4px solid #fbbf24;border-radius:var(--radius2);padding:12px 14px">
+    <div style="font-weight:700;color:#fbbf24;margin-bottom:4px">A — Alertez d'urgence verbalement les postes ou gares concernés</div>
+    <div style="font-size:12px;color:var(--text2);line-height:1.5">Prévenir tout poste ou gare susceptible d'expédier des circulations vers l'obstacle ou le danger.</div>
+  </div>
+
+  <div style="background:var(--bg3);border-left:4px solid #a78bfa;border-radius:var(--radius2);padding:12px 14px">
+    <div style="font-weight:700;color:#a78bfa;margin-bottom:4px">M — Mesures supplémentaires (si circulation déjà engagée)</div>
+    <div style="font-size:12px;color:var(--text2);line-height:1.7">
+      On <strong class="fc-text">checke l'EC (État de Circulation)</strong> et les <strong>zones sur le TCO</strong> pour vérifier :<br>
+      → Y a-t-il une circulation déjà engagée <strong>entre le signal d'annonce et le signal d'arrêt</strong> ?<br><br>
+      <strong style="color:#a78bfa">Si OUI</strong> (circulation « zappée ») → il faut l'<strong>AVERTIR</strong> car elle ne verra pas le signal d'arrêt qui vient d'être fermé. Moyens : radio sol-train, GSM-GFU, protection globale, demande au COGC, SAM, torche, coupure d'urgence…<br>
+      <strong style="color:var(--text3)">Si NON</strong> (rien entre annonce et arrêt) → pas besoin de M, on passe directement à AS.
+    </div>
+  </div>
+
+  <div style="background:var(--bg3);border-left:4px solid #60a5fa;border-radius:var(--radius2);padding:12px 14px">
+    <div style="font-weight:700;color:#60a5fa;margin-bottom:4px">AS — Assurance : circulation arrêtée et retenue</div>
+    <div style="font-size:12px;color:var(--text2);line-height:1.5">S'assurer que la circulation la plus proche de l'obstacle sur chaque voie intéressée a été <strong class="fc-text">arrêtée ET retenue</strong> : par l'ordre verbal au conducteur de ne pas remettre en marche + par un SAM si nécessaire.</div>
+  </div>
+
+</div>
+
+<div style="background:var(--bg3);border:2px solid var(--accent);border-radius:var(--radius2);padding:14px;margin-bottom:14px;font-size:13px;line-height:1.7">
+  <strong class="fc-accent">Après le FAMAS — ce qu'il faut faire :</strong><br><br>
+
+  <strong>1.</strong> <strong class="fc-accent">Autocontrôle</strong> avec la <strong>fiche 2.2 de la DC 1503</strong> — on relit tout ce qu'on a fait pour vérifier qu'il n'y a pas d'erreur.<br><br>
+
+  <strong>2.</strong> Poser des <strong class="fc-accent">DR (Dispositifs de Réflexion — jaune)</strong> sur les leviers de <strong>signaux</strong> qu'on a fermés. <em>(Rappel : JAMAIS de DR sur les aiguilles !)</em><br><br>
+
+  <strong>3.</strong> Sortir la <strong>fiche procédure</strong> correspondante :<br>
+  → <strong>Fiche 3</strong> si c'est un <strong>OBSTACLE</strong> (rail cassé, gabarit engagé…)<br>
+  → <strong>Fiche 4</strong> si c'est un <strong>DANGER</strong> ou une <strong>présomption de danger</strong><br><br>
+
+  <strong>4.</strong> Suivre la fiche en remplissant le <strong class="fc-accent">CED (Carnet d'Enregistrement des Dépêches)</strong> quand il le faut : avis à lancer, signaux fermés et maintenus fermés.<br><br>
+
+  <strong>5.</strong> Rédiger et fournir un <strong class="fc-accent">OCAR</strong> (Ordre de Circuler Avec Restriction) au conducteur.<br><br>
+
+  <strong>6.</strong> <strong style="color:var(--red)">Point crucial :</strong> même si un <strong>DR est posé</strong> sur un levier de signal, quand on a fourni l'OCAR au conducteur, on peut lui <strong>ouvrir le signal</strong> munis du DR pour le laisser passer, <strong>MAIS on le referme IMMÉDIATEMENT après</strong> → et on continue comme ça, circulation par circulation, jusqu'à ce que l'obstacle ou le danger ait <strong>disparu</strong>.
+</div>
+`,
+
+aiguillage: `
+<h2 class="theme-heading">Aiguillage & Appareils de voie</h2>
+<div class="theme-ref">AMV200 · AMV203 · AMV204 · AMV205 · AMV206 · AMV208 · AMV210 · DC3858</div>
+
+<h3 class="fc-h3">Définitions de base</h3>
+<div class="def-block important">
+  <div class="def-term">Aiguille</div>
+  <div class="def-text">Sert à diriger et à protéger. Elle peut être empruntée par la pointe ou le talon. On parle à partir de la pointe vers le talon, elle indique la direction droite ou gauche.</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">Aiguilles conjuguées</div>
+  <div class="def-text">Lorsqu'un levier contrôle deux aiguilles en même temps, ces aiguilles sont appelées des aiguilles conjuguées.</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">Règle fondamentale — "Je manœuvre, je contrôle"</div>
+  <div class="def-text">À chaque manipulation d'un levier ou d'une aiguille, l'aiguilleur doit impérativement contrôler l'obéissance de l'installation après la manœuvre. Règle absolue : <strong>JE MANŒUVRE → JE CONTRÔLE.</strong></div>
+</div>
+<div class="def-block">
+  <div class="def-term">Levier (organe de commande)</div>
+  <div class="def-text">Organe de commande mécanique : position + = normale / position − = renversée. Si la position est imposée : on doit la remettre dans cette position imposée.</div>
+</div>
+<div class="def-block">
+  <div class="def-term">Verrou</div>
+  <div class="def-text">Dispositif permettant le passage en pointe d'un train sur une aiguille à une vitesse supérieure à 40 km/h. « Lancé » = en action / « Retiré » = pas en action. Peut être indépendant (2 leviers) ou dépendant (lié à l'aiguille).</div>
+</div>
+<div class="def-block">
+  <div class="def-term">Taquet</div>
+  <div class="def-text">Dispositif assurant la protection d'une partie de voie contre toute dérive. Position « haute » = en action / « basse » = pas en action. 3 types : Taquet (bloque dérive) · Taquet dérailleur (fait dérailler intentionnellement) · Taquet enrayeur (fait ralentir).</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">Talonner une aiguille</div>
+  <div class="def-text">C'est emprunter une aiguille du côté de son talon alors qu'elle n'assure pas la continuité de la voie.</div>
+</div>
+
+<h3 class="fc-h3">Les 3 familles d'appareils de voie</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>Famille</th><th>Rôle</th><th>Détails</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Aiguilles</strong></td><td>Diriger et protéger</td><td>Pointe : lame mobile / Talon : côté fixe. Peut être empruntée pointe ou talon.</td></tr>
+    <tr><td><strong>Taquets</strong></td><td>Protéger contre les dérives</td><td>Taquet d'arrêt (bloque) / Taquet dérailleur (fait dérailler) / Taquet enrayeur (fait ralentir)</td></tr>
+    <tr><td><strong>Verrous</strong></td><td>Permettre le passage en pointe à plus de 40 km/h</td><td>Dépendant (lié à l'aiguille) ou Indépendant (levier séparé). Lancé = en action / Retiré = pas en action.</td></tr>
+  </tbody>
+</table></div>
+
+<h3 class="fc-h3">Types d'aiguilles — Talonnable / Renversable</h3>
+<div class="def-block important">
+  <div class="def-term">Aiguille talonnable <span style="color:var(--text3);font-weight:400">≠</span> Talonner une aiguille</div>
+  <div class="def-text"><strong>⚠️ Nuance importante :</strong><br>
+• <strong>Aiguille talonnable</strong> : aiguille conçue pour pouvoir être empruntée par le talon sans dommage (construction spéciale).<br>
+• <strong>Talonner une aiguille</strong> : acte de passer sur le talon d'une aiguille alors qu'elle n'était pas dans la bonne position → le train <strong>détruit l'aiguille</strong>. C'est un incident grave.</div>
+</div>
+<div class="table-wrap"><table>
+  <thead><tr><th>Type</th><th>Description</th><th>Levier</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Talonnable Renversable (TR)</strong></td><td>Peut être empruntée dans tous les sens — la position n'a pas d'importance pour la sécurité</td><td>Levier Saxby — commande à pied d'œuvre ≤ 7 m</td></tr>
+    <tr><td><strong>Talonnable Non Renversable (TNR)</strong></td><td>Talonnable mais avec un ressort — l'aiguille se remet automatiquement en position normale après chaque passage</td><td>Levier à crans</td></tr>
+    <tr><td><strong>Non talonnable (avec verrou)</strong></td><td>Si une aiguille a un verrou, elle est <strong>forcément non talonnable</strong></td><td>Levier V (TRX) ou levier indépendant</td></tr>
+  </tbody>
+</table></div>
+
+<h3 class="fc-h3">Verrous — Dépendant / Indépendant</h3>
+<div class="def-block important">
+  <div class="def-term">Verrou dépendant</div>
+  <div class="def-text">Un seul levier commande à la fois l'aiguille ET le verrou. Sur les schémas : <strong>VD</strong> = verrouillé à droite · <strong>VG</strong> = verrouillé à gauche.</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">Verrou indépendant</div>
+  <div class="def-text">Deux leviers séparés : un pour l'aiguille, un pour le verrou. Le <strong>VCC (Verrou Carter Coussinet)</strong> est un type de verrou indépendant — culture générale à connaître.</div>
+</div>
+<div class="rule-box">
+  Verrou <strong>lancé</strong> = en action · Verrou <strong>retiré</strong> = pas en action<br>
+  Si une aiguille a un verrou → elle est <strong>forcément non talonnable</strong>
+</div>
+
+<h3 class="fc-h3">Taquets — 3 types</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>Type</th><th>Rôle</th><th>Position haute / basse</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Taquet d'arrêt</strong></td><td>Arrête le véhicule</td><td>Haute = activé · Basse = désactivé</td></tr>
+    <tr><td><strong>Taquet dérailleur</strong></td><td>Fait dérailler intentionnellement le véhicule pour protéger une voie</td><td>Haute = activé · Basse = désactivé</td></tr>
+    <tr><td><strong>Taquet enrayeur</strong></td><td>Ralentit le véhicule jusqu'à l'arrêt</td><td>Haute = activé · Basse = désactivé</td></tr>
+  </tbody>
+</table></div>
+
+<h3 class="fc-h3">Contrôles des appareils de voie</h3>
+<div class="def-block">
+  <div class="def-term">3 types de contrôles</div>
+  <div class="def-text">• <strong>Contrôle d'entrebaillement</strong> : en cours de manœuvre — vérifie que l'aiguille n'est pas en position intermédiaire pendant la manœuvre<br>
+• <strong>Contrôle de position mécanique</strong> : vérifie la position physique de l'aiguille sur le terrain<br>
+• <strong>Contrôle de position lumineuse</strong> : sur le TCO (Tableau de Contrôle Optique) — indique visuellement la position des aiguilles au poste</div>
+</div>
+
+<h3 style="font-size:15px;font-weight:500;margin:24px 0 10px;color:var(--accent)">⭐ PRR & ACPP — À CONNAÎTRE PAR CŒUR (exam !)</h3>
+<div style="background:var(--bg3);border:1px solid var(--accent);border-radius:var(--radius2);padding:14px 16px;margin-bottom:14px;font-size:13px;line-height:1.6">
+  <strong class="fc-accent">Règle fondamentale :</strong> dans le <strong>Tableau des mouvements</strong> (Annexe 2 Consigne Rose), pour chaque levier à actionner :<br>
+  • Levier d'<strong>aiguille</strong> → on applique le <strong class="fc-accent">PRR</strong> (vérification avant manœuvre d'un appareil de voie)<br>
+  • Levier de <strong>signal</strong> → on applique l'<strong class="fc-accent">ACPP</strong> (vérification avant ouverture d'un signal)<br><br>
+  💡 <strong>Astuce</strong> : les <strong>derniers chiffres</strong> du tableau des mouvements sont écrits <strong>en gras</strong> — ce sont <strong>forcément des signaux</strong> (donc ACPP à la fin du mouvement).
+</div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px">
+
+  <!-- PRR -->
+  <div class="def-block important" style="margin:0">
+    <div class="def-term fc-accent">PRR — Avant la manœuvre d'un appareil de voie (aiguille)</div>
+    <div class="def-text">Prescriptions morales à vérifier <strong>avant</strong> de manœuvrer un appareil de voie :<br><br>
+    <strong class="fc-accent">P</strong> — <strong>Protection</strong> de l'appareil de voie<br>
+    <span style="color:var(--text2);font-size:12px;display:block;margin:2px 0 8px 18px">→ fermer tous les signaux convenables (+ assurance par signal d'arrêt à main si besoin)</span>
+    <strong class="fc-accent">R</strong> — <strong>Rien</strong> entre le signal de protection et l'appareil de voie<br>
+    <span style="color:var(--text2);font-size:12px;display:block;margin:2px 0 8px 18px">→ vérifier les zones entre le signal et l'aiguille (zones Z101, Z103…)</span>
+    <strong class="fc-accent">R</strong> — <strong>Rien</strong> sur l'appareil de voie<br>
+    <span style="color:var(--text2);font-size:12px;display:block;margin:2px 0 8px 18px">→ vérifier la zone de l'aiguille elle-même</span>
+    <div style="background:var(--bg4);border-radius:6px;padding:8px 10px;margin-top:8px;font-size:12px;color:var(--text2)">
+      ✅ Contrôle par <strong class="fc-text">observation du contrôle de zone (TCO)</strong><br>
+      ✅ Ou <strong class="fc-text">de visu sur le terrain</strong><br><br>
+      <strong class="fc-text">Après la manœuvre :</strong> s'assurer que l'aiguille a obéi <strong>et qu'elle colle</strong> dans sa nouvelle position.
+    </div></div>
+  </div>
+
+  <!-- ACPP -->
+  <div class="def-block important" style="margin:0">
+    <div class="def-term fc-accent">ACPP — Avant l'ouverture d'un signal</div>
+    <div class="def-text">4 conditions à vérifier <strong>avant</strong> d'ouvrir un signal de protection :<br><br>
+    <strong class="fc-accent">A</strong> — <strong>Appareils de voie</strong> convenablement disposés<br>
+    <span style="color:var(--text2);font-size:12px;display:block;margin:2px 0 8px 18px">→ on vérifie que toutes les <strong>aiguilles</strong> de l'itinéraire sont dans la bonne position et collent</span>
+    <strong class="fc-accent">C</strong> — <strong>Croisements</strong> dégagés (zones libres)<br>
+    <span style="color:var(--text2);font-size:12px;display:block;margin:2px 0 8px 18px">→ on vérifie que les <strong>zones sont au blanc</strong> sur le TCO = assurément libres</span>
+    <strong class="fc-accent">P</strong> — <strong>Protection</strong> du parcours assurée<br>
+    <span style="color:var(--text2);font-size:12px;display:block;margin:2px 0 8px 18px">→ on vérifie les <strong>aiguilles ET signaux autour</strong> du parcours qui le protègent (pas d'engagement possible)</span>
+    <strong class="fc-accent">P</strong> — <strong>Partie</strong> de voie à parcourir libre<br>
+    <span style="color:var(--text2);font-size:12px;display:block;margin:2px 0 8px 18px">→ <strong>recheck</strong> de toutes les zones du parcours pour vérifier qu'elles sont <strong>encore au blanc</strong> = assurément libres</span>
+    </div>
+  </div>
+
+</div>
+
+
+<div class="def-block">
+  <div class="def-term">Levier immobilisé</div>
+  <div class="def-text">Lorsqu'un problème survient sur une installation de sécurité empêchant la manœuvre d'un levier, on dit que le levier est <strong>immobilisé</strong>.</div>
+</div>
+
+<h3 class="fc-h3">AMV204 — Consigne Rose (DC3858)</h3>
+<div class="def-block important">
+  <div class="def-term">Objet de la Consigne Rose (CG S6A n°15)</div>
+  <div class="def-text">La présente consigne a pour objet de <strong>décrire les installations de sécurité du Poste 1 type mécanique AMVILLE</strong>, d'indiquer les règles d'utilisation et les particularités de fonctionnement des installations de sécurité de ce poste dans la mesure où elles ne sont pas fixées par la CG S6A n°15 (DC3858).
+  
+⚠️ La Consigne Rose est donc directement liée aux <strong>Installations de Sécurité (IS)</strong> — elle en décrit le fonctionnement, les règles d'utilisation et les particularités propres à chaque poste.</div>
+</div>
+<div class="rule-box">
+  La consigne rose a pour but de décrire les IS, d'indiquer les règles d'utilisation et les particularités de fonctionnement des IS, et de préciser les vérifications à effectuer en cas de dérangement.
+</div>
+<div class="def-block">
+  <div class="def-term">5 Chapitres — à connaître <span class="tag yellow ml6">Surtout les 5 noms</span></div>
+  <div class="def-text">Chap. 1 : Généralités — Contrôles
+Chap. 2 : Signaux
+Chap. 3 : Appareils de voie
+Chap. 4 : Enclenchements électriques
+Chap. 5 : Relations du poste avec les PN voisins</div>
+</div>
+
+<div class="def-block">
+  <div class="def-term">Annexes — <span class="fc-accent">retenir surtout les 6 premières</span> · 7 ou 8 selon le type de poste</div>
+  <div class="def-text">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:6px">
+  ${[
+    ['A1','Schéma de signalisation','⭐','var(--accent)'],
+    ['A2','Tableau des mouvements — Conditions d\'ouverture des signaux carrés','⭐⭐','var(--accent)'],
+    ['A3','Enclenchements de poste à poste <em style="color:var(--text3)">(parfois "Réservée")</em>','','var(--text2)'],
+    ['A4','Enclenchements des appareils de voie','','var(--text2)'],
+    ['A5','Enclenchements d\'approche et de parcours','','var(--text2)'],
+    ['A6','Tableau des dispositifs d\'annulation de transit','','var(--text2)'],
+    ['A7','Réservée <em style="color:var(--text3)">(toujours)</em>','','var(--text3)'],
+    ['A8','Consigne d\'Établissement relative à l\'inventaire du petit matériel <em style="color:var(--text3)">(uniquement version 8 annexes)</em>','','var(--text3)'],
+  ].map(([n,titre,star,col]) => `<div style="padding:6px 8px;background:var(--bg3);border-radius:5px;${star?'border-left:2px solid var(--accent)':''}">
+    <span style="font-family:var(--mono);font-size:10px;color:${col};font-weight:700">${n}</span>
+    <span style="font-size:11px;color:${col === 'var(--text3)' ? 'var(--text3)' : 'var(--text2)'}"> — ${titre}</span>
+    ${star ? `<span class="fc-accent">${star}</span>` : ''}
+  </div>`).join('')}
+</div>
+  </div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">Tableau des mouvements — Annexe 2 de la Consigne Rose</div>
+  <div class="def-text">Le tableau des mouvements recense l'ensemble des itinéraires possibles dans la zone d'action d'un poste : pour chaque mouvement, il indique quels leviers manœuvrer, dans quel ordre, et les conditions à réunir (aiguilles à positionner, signaux à ouvrir).
+Il est utilisé par l'aiguilleur pour <strong>préparer ses manœuvres de leviers et d'aiguilles</strong> avant d'exécuter un itinéraire. C'est le document de référence pratique de l'aiguilleur au quotidien.</div>
+</div>
+
+<h3 class="fc-h3">Dispositifs d'Attention</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>Sigle</th><th>Couleur</th><th>Signification</th></tr></thead>
+  <tbody>
+    <tr><td>DA</td><td>🔴 Rouge</td><td>Dispositif d'Attention — interdit de manœuvrer ABSOLUMENT. Interdit de retirer le DA</td></tr>
+    <tr><td>DR</td><td>🟡 Jaune</td><td>Dispositif de Réflexion</td></tr>
+    <tr><td>DSA</td><td>🔵 Bleu</td><td>Dispositif Spécial d'Attention</td></tr>
+  </tbody>
+</table></div>
+
+<h3 class="fc-h3">AMV205 — Ouverture des signaux (Art. 203.2)</h3>
+<div class="rule-box">
+  Un signal ne doit être ouvert que si :<br>
+  1. Les appareils de voie sont convenablement disposés et les aiguilles collent<br>
+  2. Les croisements des appareils de voie sont dégagés<br>
+  3. La protection du parcours est assurée<br>
+  4. La partie de voie intéressée est libre
+</div>
+
+<h3 class="fc-h3">Temps moral</h3>
+<div class="def-block important">
+  <div class="def-term">Temps moral</div>
+  <div class="def-text">Délai que doit respecter l'aiguilleur après la fermeture d'un signal de protection (carré, guidon, sémaphore) pour s'assurer qu'aucune circulation, même ayant franchi fermé le signal d'avertissement correspondant, ne se trouve engagée entre ce signal d'avertissement et le signal d'arrêt. Il dépend des circonstances locales.</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term fc-accent">DAA — Dispositif d'Arrêt Aval <span class="tag yellow ml6">À connaître</span></div>
+  <div class="def-text">Signal situé <strong>en aval d'un poste</strong> permettant d'arrêter un train circulant dans des <strong>conditions dangereuses</strong>. Sert de filet de sécurité en cas de franchissement intempestif d'un signal d'arrêt.</div>
+</div>
+
+<div style="background:rgba(248,113,113,0.08);border:2px solid var(--red);border-radius:var(--radius2);padding:14px;margin:18px 0 14px;font-size:13px;line-height:1.7">
+  <strong style="color:var(--red)">⚠️ Règle fondamentale :</strong> Les <strong>Voies Principales</strong> doivent <strong>TOUJOURS</strong> être soit <strong>LIBRES</strong>, soit <strong>PROTÉGÉES</strong> (par des appareils de voie convenablement disposés ou par des signaux).
+</div>
+
+<div style="background:var(--bg4);border-left:3px solid var(--accent);border-radius:var(--radius);padding:10px 14px;font-size:12px;color:var(--text2);line-height:1.6">
+  <strong class="fc-accent">Rappel :</strong> pour les manœuvres aussi, on utilise le <strong>Tableau des mouvements</strong> (Annexe 2 Consigne Rose). Chaque levier d'aiguille → PRR, chaque levier de signal → ACPP.
+</div>
+`,
+
+signaux: `
+<h2 class="theme-heading">Signaux ferroviaires</h2>
+<div class="theme-ref">AMV207 · DC11482 · OP0839 · OP0580</div>
+
+<div class="rule-box">
+  <strong>Fermé = présenté = affiché</strong><br>
+  <strong>Ouverture = effacé</strong><br>
+  Implantés à demeure généralement à gauche (sauf Alsace à droite).
+</div>
+
+<h3 class="fc-h3">À quoi servent les signaux ?</h3>
+<ul class="numbered-list">
+  <li><span class="num">1.</span>Arrêter et retenir les trains</li>
+  <li><span class="num">2.</span>Limiter la vitesse des trains</li>
+  <li><span class="num">3.</span>Transmettre des indications ou des ordres divers</li>
+  <li><span class="num">4.</span>Transmettre des ordres propres à la traction électrique</li>
+</ul>
+
+<h3 class="fc-h3">Types de signaux</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>Critère</th><th>Types</th></tr></thead>
+  <tbody>
+    <tr><td>Durée</td><td>Permanents / Temporaires</td></tr>
+    <tr><td>Mobilité</td><td>Mobiles / Fixes</td></tr>
+    <tr><td>Technologie</td><td>Lumineux / Mécaniques</td></tr>
+    <tr><td>Visibilité</td><td>À visibilité normale / Réduite / Annulés</td></tr>
+    <tr><td>Implantation</td><td>À gauche (sauf Alsace : droite)</td></tr>
+  </tbody>
+</table></div>
+
+<h3 class="fc-h3">Signaux permanents lumineux</h3>
+<div class="def-block">
+  <div class="def-term">Panneaux</div>
+  <div class="def-text">Circulaires ou oblongs · Un ou plusieurs feux de couleur · Fixes ou clignotants</div>
+</div>
+<div class="def-block">
+  <div class="def-term">Tableaux</div>
+  <div class="def-text">Lumineux ou réflétorisés (ex : TIV, tableaux de vitesse)</div>
+</div>
+
+<h3 class="fc-h3">Signaux permanents mécaniques</h3>
+<div class="rule-box">
+  <strong>Position de fermeture :</strong> perpendiculaires aux voies<br>
+  <strong>Position d'ouverture :</strong> parallèlement aux voies
+</div>
+
+<h3 class="fc-h3">Distances minimales de visibilité</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>Vitesse</th><th>Distance</th></tr></thead>
+  <tbody>
+    <tr><td>V ≤ 60 km/h</td><td>100 m</td></tr>
+    <tr><td>60 < V ≤ 120 km/h</td><td>200 m</td></tr>
+    <tr><td>V > 120 km/h</td><td>300 m</td></tr>
+  </tbody>
+</table></div>
+
+<h3 style="font-size:16px;font-weight:600;margin:24px 0 12px;color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:6px">👁️ L'œilleton — cas du carré avarié <span style="font-size:12px;color:var(--red);margin-left:8px">🔥 Exam AMV</span></h3>
+
+<div style="background:rgba(167,139,250,0.05);border:1px solid #a78bfa;border-radius:var(--radius2);padding:14px;margin-bottom:14px;font-size:13px;line-height:1.7">
+  <strong style="color:#a78bfa">Pourquoi l'œilleton existe :</strong> Sur une cible <strong>Nf</strong> (qui peut présenter un carré), tu peux voir un seul feu rouge. Sans information complémentaire, tu ne saurais pas s'il s'agit :
+  <ul style="margin:8px 0 8px 22px;padding:0">
+    <li>D'un <strong class="fc-text">sémaphore</strong> de BAL (normal qu'il n'y ait qu'un feu rouge)</li>
+    <li>D'un <strong class="fc-text">carré avarié</strong> dont l'une des deux ampoules a grillé (le carré devrait avoir 2 feux rouges)</li>
+  </ul>
+  L'œilleton lève l'ambiguïté :<br>
+  ● <strong style="color:#a78bfa">Œilleton ALLUMÉ</strong> → c'est un <strong>sémaphore</strong> (donc franchissable sous conditions)<br>
+  ○ <strong style="color:var(--text3)">Œilleton ÉTEINT</strong> → c'est un <strong>carré avarié</strong> (donc NON franchissable, arrêt absolu)
+</div>
+
+<h3 class="fc-h3">5 Familles de signaux</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>Famille</th><th>Nom</th><th>Contenu</th></tr></thead>
+  <tbody>
+    <tr><td>A</td><td>Signaux d'arrêt</td><td>Carré · Carré violet · Sémaphore · SAM · Disque · Guidon d'arrêt <span class="tag yellow">2C2SDG</span></td></tr>
+    <tr><td>B</td><td>Annonce d'arrêt</td><td>Avertissement · Feu rouge clignotant · Feu jaune clignotant · Feu vert clignotant · Bande jaune horizontale</td></tr>
+    <tr><td>C</td><td>Limitation de vitesse</td><td>TIV fixe · TIV mobile (>60 km/h)</td></tr>
+    <tr><td>D</td><td>Signaux d'ouverture</td><td>Feu vert · Feu blanc · Feu blanc clignotant</td></tr>
+    <tr><td>E</td><td>Signaux divers</td><td>Chevron · Indicateurs de direction · Tableau Garage · Baisser/Remonter panto · Couper/Remettre courant</td></tr>
+  </tbody>
+</table></div>
+
+<h3 class="fc-h3">Famille A — Signaux d'arrêt (mémo : 2C2SDG)</h3>
+<div class="rule-box">
+  Les signaux d'arrêt commandent l'arrêt du train <strong>avant</strong> le signal pour :<br>
+  • Protéger un itinéraire, une aiguille, un passage à niveau<br>
+  • Assurer l'espacement des trains
+</div>
+<div class="def-block important">
+  <div class="def-term">Carré</div>
+  <div class="def-text">Rôle principal : protéger les aiguilles. Aussi : protéger le stationnement · assurer le cantonnement · protéger les obstacles · arrêter les trains. <strong>Arrête ET retient.</strong></div>
+</div>
+<div class="def-block">
+  <div class="def-term">Carré Violet</div>
+  <div class="def-text">Utilisé sur les voies principales pour les manœuvres.</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">Sémaphore</div>
+  <div class="def-text">Sert à l'espacement des trains. Implanté à l'origine du canton qu'il protège. Œilleton allumé = sémaphore / Œilleton fermé = carré. Sans œilleton avec F = sémaphore.</div>
+</div>
+<div class="def-block">
+  <div class="def-term">SAM — Signal d'Arrêt à Main</div>
+  <div class="def-text">Commande l'arrêt immédiat. De jour : drapeau rouge déployé ou jalon d'arrêt à damier. De nuit : feu rouge d'une lanterne ou jalon d'arrêt. Protège un chantier ou obstacle inopiné.</div>
+</div>
+<div class="def-block">
+  <div class="def-term">Disque</div>
+  <div class="def-text">Sur lignes équipées de Block manuel pour la protection des petites gares ou établissements de pleine ligne.</div>
+</div>
+<div class="def-block">
+  <div class="def-term">Guidon d'arrêt</div>
+  <div class="def-text">Protection d'un point particulier (ex : PN).</div>
+</div>
+
+<h3 class="fc-h3">Famille B — Signaux d'annonce d'arrêt</h3>
+<div class="rule-box">
+  Ils indiquent que le <strong>signal d'arrêt suivant est fermé</strong> et commandent au conducteur d'être en mesure de s'arrêter avant.
+</div>
+<div class="table-wrap"><table>
+  <thead><tr><th>Signal</th><th>Rôle / Particularité</th></tr></thead>
+  <tbody>
+    <tr><td>Avertissement (feu jaune fixe)</td><td>Annonce principal d'un signal d'arrêt</td></tr>
+    <tr><td>Feu rouge clignotant</td><td>Annonce courte distance — franchissable SANS arrêt</td></tr>
+    <tr><td>Feu jaune clignotant</td><td>Annonce signal d'arrêt — marche à vue</td></tr>
+    <tr><td>Feu vert clignotant</td><td>Annonce ralentissement</td></tr>
+    <tr><td>Bande lumineuse jaune horizontale</td><td>Informe le conducteur qu'il va entrer sur une voie à quai courte ou raccourcie</td></tr>
+  </tbody>
+</table></div>
+
+<h3 class="fc-h3">Famille D — Signaux présentés à l'ouverture</h3>
+<div class="rule-box">
+  Ils donnent l'autorisation au conducteur de franchir le signal :<br>
+  • <strong>Feu vert</strong> → franchissement sans restriction (voie principale)<br>
+  • <strong>Feu blanc</strong> et <strong>feu blanc clignotant</strong> → franchissement avec restrictions (voie de service)
+</div>
+
+<h3 class="fc-h3">Famille C — Signaux de limitation de vitesse</h3>
+<div class="def-block">
+  <div class="def-term">TIV fixe — Tableau Indicateur de Vitesse fixe</div>
+  <div class="def-text">Annonce une limitation de vitesse permanente sur une section de voie. Il est implanté en amont du point où la limitation s'applique. La vitesse indiquée (ex : 30, 60, 80...) est en km/h.</div>
+</div>
+<div class="def-block">
+  <div class="def-term">TIV mobile (R) — Tableau Indicateur de Vitesse mobile</div>
+  <div class="def-text">Annonce une limitation de vitesse temporaire. Utilisé pour V > 60 km/h. Il peut être lumineux (carré jaune avec chiffre) ou réflétorisé. Son activation est commandée depuis un poste.</div>
+</div>
+<div class="rule-box">
+  <strong>Implantation :</strong> le TIV est placé à distance suffisante pour que le conducteur puisse réduire sa vitesse avant le point à protéger.
+</div>
+
+<h3 class="fc-h3">Famille E — Signaux divers</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>Signal</th><th>Rôle</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Chevron</strong></td><td>Repère de freinage ou d'arrêt — indique au conducteur où commencer le freinage</td></tr>
+    <tr><td><strong>Indicateurs de direction</strong></td><td>Indiquent la voie sur laquelle le train est dirigé (ex : lettre ou numéro)</td></tr>
+    <tr><td><strong>Tableau Garage</strong></td><td>Limite d'un mouvement en gare — le train ne doit pas dépasser ce signal. Implanté en bout de voie ou à l'entrée d'une zone protégée.</td></tr>
+    <tr><td><strong>Baisser pantographe</strong></td><td>Le conducteur doit baisser le(s) pantographe(s) avant de franchir le signal</td></tr>
+    <tr><td><strong>Remonter pantographe</strong></td><td>Le conducteur peut remonter le(s) pantographe(s) après avoir franchi le signal</td></tr>
+    <tr><td><strong>Couper le courant (traction)</strong></td><td>Le conducteur doit couper la traction avant de franchir le signal</td></tr>
+    <tr><td><strong>Remettre le courant</strong></td><td>Le conducteur peut remettre la traction après avoir franchi le signal</td></tr>
+  </tbody>
+</table></div>
+`,
+
+encl: `
+<h2 class="theme-heading">Enclenchements</h2>
+<div class="theme-ref">AMV210 · AMV211 · DC3858 · Consigne Rose Chap.4 · Annexes 3-4-5</div>
+
+<h3 class="fc-h3">AMV210 — Enclenchements mécaniques</h3>
+<div class="def-block important">
+  <div class="def-term">Rôle (Art. 201.1)</div>
+  <div class="def-text">Les enclenchements mécaniques ont pour but de matérialiser les conditions de manœuvre des organes de commande des signaux et des appareils de voie, notamment l'ordre dans lequel ils doivent être manœuvrés.</div>
+</div>
+<div class="def-block">
+  <div class="def-term">3 types d'enclenchements mécaniques</div>
+  <div class="def-text">1. Les TOCS (directement entre les leviers)
+2. La TABLE D'ENCLENCHEMENT (horizontale ou verticale, derrière les leviers)
+3. Les SERRURES
+Ils agissent entre : ADV ↔ ADV · signaux ↔ ADV · signaux ↔ signaux.</div>
+</div>
+<div class="def-block">
+  <div class="def-term">Les serrures — 2 systèmes</div>
+  <div class="def-text">• Serrure à pêne saillant
+• Serrure à agrafe
+Serrures centrales : rassemblent les clés (si elles existent → Annexe 1 bis de la Consigne Rose).
+Serrure à transmetteur électrique : permet de récupérer les clés sur le terrain plutôt qu'au poste (intermédiaire).</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">Clés & immobilisation — à retenir</div>
+  <div class="def-text">Un taquet est toujours en position haute par défaut ; retirer une clé immobilise la position.
+Une absence de clé sur un taquet ou une aiguille immobilise cet appareil dans la position où il se trouve.</div>
+</div>
+<div class="def-block">
+  <div class="def-term">Formation / Destruction d'itinéraire (Art. 201)</div>
+  <div class="def-text">Formation : mise en position renversée (−) du levier de commande du signal de protection → enclenche les leviers des aiguilles de l'itinéraire correspondant.
+Destruction : mise en position normale (+) du levier de commande du signal de protection.</div>
+</div>
+
+<h3 class="fc-h3">AMV211 — Enclenchements électriques (4 types)</h3>
+<div class="def-block important">
+  <div class="def-term">Zone Isolée (ZI) — Art. 214 — Annexe 4A</div>
+  <div class="def-text">Rôle : Interdire la manœuvre d'une aiguille pendant son franchissement par une circulation
+Agit sur : Levier de l'aiguille (position + ou −)
+Mise en action : dès que la zone propre est présumée occupée (rouge)
+Libération : libération de la zone propre (blanc)</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">CIP — Contrôle Impératif Permanent — Art. 212 — Annexe 2 partie 3</div>
+  <div class="def-text">Rôle : Maintenir fermé le signal de protection ou provoquer sa fermeture si l'aiguille ne réunit pas ses 4 conditions :
+1. Concordance de la position terrain / poste
+2. Collage de la lame appliquée donnant la direction
+3. Décollage de la lame opposée (aiguille intègre)
+4. Verrouillage lancé le cas échéant
+Libération : quand les 4 conditions sont réunies (voyant allumé)</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">Zone de Protection (ZP) — Art. 218 — Annexe 2 P2 ou P3</div>
+  <div class="def-text">Rôle : Protéger des mouvements ou des véhicules en stationnement
+Agit sur : Levier de signal origine OU circuit de commande du signal
+Mise en action : dès qu'une Zone de Protection est présumée occupée (rouge)
+Libération : libération de la zone (blanc)</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">EAP — Enclenchement d'Approche — Art. 216 — Annexe 5</div>
+  <div class="def-text">Rôle : Interdire toute opération permettant une destruction prématurée d'itinéraire (manœuvre d'une aiguille devant une circulation)
+Agit sur : Levier du signal de protection (position −)
+Mise en action : ZAP présumée occupée (rouge) ET signal commandé à l'ouverture (levier en −)
+Libération :
+• Si ZAP libre (blanc) → EAP libéré.
+• Si ZAP occupée (rouge), l'EAP se libère par : 1. attaque de la 1re zone aval · 2. fermeture automatique (FA) actionnée · 3. attaque de la pédale (si elle existe).</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">📍 Récap annexes des enclenchements électriques <span class="tag red ml6">🔥 Par cœur</span></div>
+  <div class="def-text">CIP et ZP → Annexe 2 · ZI → Annexe 4 · EAP → Annexe 5.
+Règle générale : appareil de voie → Annexe 4 · signal → Annexe 2. (Annexe 5 = enclenchements d'approche ET de parcours.)
+Art. 202 (DC 3858) : les enclenchements électriques complètent les mécaniques. Ils agissent soit sur le(s) organe(s) de commande (via un verrou de levier), soit directement sur le circuit de commande de l'appareil.</div>
+</div>
+<div class="def-block">
+  <div class="def-term">EAP vs enclenchement de parcours — à confirmer avec le formateur</div>
+  <div class="def-text">L'Annexe 5 s'intitule « Enclenchements d'approche ET de parcours ». EAP = Enclenchement d'Approche (ci-dessus). La définition de l'enclenchement de parcours ne figure pas dans les supports fournis — à compléter en cours.</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">FC — Commutateur de Fermeture (urgence uniquement) <span class="tag red ml6">⚠ Urgence</span></div>
+  <div class="def-text">La FC (commutateur de fermeture) permet de fermer un signal alors que la ZAP est au rouge (un train est déjà dans la zone proche et ne pourra pas s'arrêter avant le signal). À n'actionner qu'en cas d'urgence (ex : FAMAS, modification d'itinéraire).
+Ne pas confondre avec la FA (fermeture automatique) : la FA est automatique, la FC est une action volontaire d'urgence.</div>
+</div>
+<div class="def-block">
+  <div class="def-term">Modification d'itinéraire & coupons (Art. 302 DC3858, p.34)</div>
+  <div class="def-text">Urgence / reprise de voie / changement d'itinéraire : 1. FC actionnée (rapidement) ; 2. on applique l'article 302 de la DC 3858 et on suit le logigramme.
+C'est le seul cas où l'on est autorisé à perforer les coupons pour manœuvrer un levier immobilisé (donc uniquement en urgence, le plus souvent sur ordre du régulateur / COGC). Après remise du levier en position normale, on remet un nouveau coupon : 1 trou (de coupon) = 1 arrêt.</div>
+</div>
+`,
+
+'install-sec': `
+<h2 class="theme-heading">Installations de Sécurité (IS)</h2>
+<div class="theme-ref">AMV200 · AMV250 · AMV310 · DC3858 · Consigne Rose</div>
+
+<h3 class="fc-h3">AMV200 — Définition & Liste des 15 familles <span class="tag red">À connaître par cœur</span></h3>
+<div class="def-block important">
+  <div class="def-term">Définition des IS (Article 1 DC3858)</div>
+  <div class="def-text">Les installations de sécurité comprennent tout système (composé ou non avec des éléments techniquement de sécurité) nécessaire pour assurer la sécurité des circulations et dont le dérangement entraîne l'application de dispositions réglementaires.</div>
+</div>
+
+<div class="table-wrap"><table>
+  <thead><tr><th>N°</th><th>Famille IS</th><th>Rôle principal</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><strong>Dispositifs de signalisation</strong><br><span class="fc-meta">signaux + organes mécaniques de commande</span></td><td>Protéger les AdV · Espacer les circulations · Avertir de la fermeture · Imposer une vitesse</td></tr>
+    <tr><td>2</td><td><strong>Appareils de voie</strong><br><span class="fc-meta">organes mécaniques + partie électrique</span></td><td>Aiguille (diriger/protéger) · Verrou (passage en pointe > 40 km/h) · Taquet (protéger contre dérives)</td></tr>
+    <tr><td>3</td><td><strong>Organes de commande</strong><br><span class="fc-meta">leviers, manettes</span></td><td>Permettre la manœuvre des IS — position Normale ou Renversée</td></tr>
+    <tr><td>4</td><td><strong>Enclenchements mécaniques</strong></td><td>Éviter les conséquences dangereuses d'une manœuvre IS contraire à la réglementation</td></tr>
+    <tr><td>5</td><td><strong>Enclenchements électriques</strong></td><td>ZI · CIP · ZP · EAP — contrôle automatique des conditions de sécurité</td></tr>
+    <tr><td>6</td><td><strong>Composants sur le terrain</strong><br><span class="fc-meta">circuits de voie, pédales, compteurs d'essieux</span></td><td>Détecter l'occupation/libération d'une partie de voie · Déclencher pictogrammes lumineux (TVP)</td></tr>
+    <tr><td>7</td><td><strong>Dispositifs de contrôle</strong></td><td>Renseigner l'aiguilleur sur la position et l'état des IS · Guider son action en normal et en dérangement</td></tr>
+    <tr><td>8</td><td><strong>Dispositifs de répétition des signaux</strong><br><span class="fc-meta">crocodiles, balises</span></td><td>Répéter dans la cabine de conduite une indication présentée par un signal — pallier un défaut de vigilance</td></tr>
+    <tr><td>9</td><td><strong>Appuis acoustiques des signaux</strong><br><span class="fc-meta">pétards, détonateurs</span></td><td>Alerter le conducteur par explosion lors du franchissement d'un signal</td></tr>
+    <tr><td>10</td><td><strong>Installations de PN à SAL</strong></td><td>Obtenir l'arrêt de la circulation routière pour le passage des trains</td></tr>
+    <tr><td>11</td><td><strong>Détecteurs d'obstacles</strong></td><td>Arrêter ou ralentir les circulations en cas d'obstruction probable de la voie</td></tr>
+    <tr><td>12</td><td><strong>Dispositifs de contrôle de vitesse et d'arrêt automatique</strong><br><span class="fc-meta">KVB, DAAT</span></td><td>Déclencher l'arrêt automatique si action inappropriée du conducteur ou erreur de l'AC vis-à-vis de la sécurité</td></tr>
+    <tr><td>13</td><td><strong>Installations de block</strong></td><td>Assurer l'espacement des trains</td></tr>
+    <tr><td>14</td><td><strong>Dispositifs d'annonce aux PN gardés</strong></td><td>Prévenir le garde-barrière de l'approche d'un train</td></tr>
+    <tr><td>15</td><td><strong>Installations de PN à SAL voisins de gare</strong></td><td>Assurer la sécurité des PN proches d'une gare</td></tr>
+  </tbody>
+</table></div>
+
+<h3 class="fc-h3-alt">Pétards et détonateurs — rôle détaillé</h3>
+<div class="def-block">
+  <div class="def-term">Pétard / Détonateur</div>
+  <div class="def-text">Lorsqu'un conducteur franchit un carré fermé suite à dérangement, l'explosion d'un pétard ou détonateur lui commande l'arrêt absolu.<br>
+  Si le conducteur perçoit l'explosion au franchissement d'un signal <strong>ouvert</strong>, il considère le carré comme fermé.</div>
+</div>
+
+<h3 class="fc-h3-alt">AMV250 — Dérangements des IS (DC3858 + Consigne Rose + CDIS)</h3>
+
+<div class="def-block important">
+  <div class="def-term">3 types de dérangements signaux</div>
+  <div class="def-text">• <strong>Raté de fermeture</strong> : le signal n'obéit pas à une commande de fermeture → reste ouvert
+• <strong>Raté d'ouverture</strong> : le signal n'obéit pas à une commande d'ouverture → reste fermé
+• <strong>Extinction</strong> : le signal est éteint en position de fermeture ET d'ouverture</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">3C2D — Franchissement d'un carré fermé sur dérangement</div>
+  <div class="def-text"><strong>C</strong>onditions d'ouverture : Annexe 2 consigne rose partie 2 ou 3
+<strong>C</strong>arré commandé à l'ouverture : itinéraire formé — levier signal en − = ouvert
+<strong>C</strong>hoix du bulletin de franchissement : CBA si BA (BAL ou BAPR) — Type de Block Annexe 1 ou C
+<strong>D</strong>irection indiquée au conducteur : indication verbale par radio « tu seras dirigé vers... »
+<strong>D</strong>étonateur : annoter le suivi des appuis acoustiques (1 train = 1 cartouche) + aviser AMI + prévenir le conducteur</div>
+</div>
+
+<h3 class="fc-h3-alt">CDIS — Carnet de dérangements des IS</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>Colonne(s)</th><th>Contenu</th></tr></thead>
+  <tbody>
+    <tr><td>Col 1&2</td><td>Date + Heure du début = Constat du dérangement</td></tr>
+    <tr><td>Col 3</td><td>Nature du dérangement (ex : Aig 13 absence de contrôle pour la direction de droite)</td></tr>
+    <tr><td>Col 4</td><td>L'heure à laquelle on a avisé l'AMI</td></tr>
+    <tr><td>Col 5&6</td><td>Fonction normale rétablie après intervention AMI OU reprise normale avant intervention AMI (seule)</td></tr>
+    <tr><td>Col 7&8</td><td>L'AMI vient annoter lui-même le carnet AU poste OU avis donné par dépêche au CED par AMI</td></tr>
+    <tr><td>Col 9</td><td>Soit 1ère catégorie soit N° DATIS</td></tr>
+  </tbody>
+</table></div>
+
+<h3 class="fc-h3-alt">AMV310 — Travaux sur les IS (IN1582)</h3>
+<div class="def-block">
+  <div class="def-term">Article 101 — Champ d'application</div>
+  <div class="def-text">L'AMV310 s'applique à toute IS qui est manœuvrée directement ou indirectement, et/ou contrôlée par un AC ou un Aiguilleur — quel que soit son lieu d'implantation (gare ou pleine voie).
+  
+En clair : dès qu'une IS est sous la responsabilité d'un agent de circulation ou d'un aiguilleur (même à distance), les règles de travaux AMV310 s'appliquent.</div>
+</div>
+<div class="def-block">
+  <div class="def-term">Article 102 — 4 catégories de travaux</div>
+  <div class="def-text">• <strong>1ère catégorie</strong> : Travaux de petit entretien
+• <strong>2ème catégorie</strong> : Travaux de relève de dérangement
+• <strong>3ème catégorie</strong> : Travaux de grand entretien
+• <strong>4ème catégorie</strong> : Travaux d'établissement, de modification ou de suppression</div>
+</div>
+
+<h3 class="fc-h3-alt">Code couleur DC3858 (Consigne Rose)</h3>
+<div class="rule-box">
+  🟢 <strong>Vert</strong> = Opération pouvant être effectuée par un Aiguilleur<br>
+  🟡 <strong>Jaune</strong> = Opération devant être effectuée par un Agent-circulation<br>
+  ⬜ <strong>Gris</strong> = Opération pouvant être effectuée par un opérateur habilité<br>
+  🟠 <strong>Orange</strong> = Aboutissement d'une opération<br>
+  🔵 <strong>Bleu</strong> = Opérations liées au fonctionnement des installations<br>
+  🔴 <strong>Rouge</strong> = Situation constatée ou particularité des installations
+</div>
+`,
+
+traction: `
+<h2 class="theme-heading">Traction électrique</h2>
+<div class="theme-ref">AMV600 · AMV601 · DC8043 · Consigne Bleue · RRG0474 · OP847 · SECUFER</div>
+
+<h3 class="fc-h3">Définitions clés — Traction électrique</h3>
+<div class="def-block important">
+  <div class="def-term">RSS — Régulateur Sous-Stations</div>
+  <div class="def-text">Agent chargé, à partir d'un central sous-stations, de l'exploitation des installations de traction électrique de sa zone d'action. Repéré par des <strong>flèches rouges</strong> sur les poteaux caténaires (= téléphone d'alarme TA).</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">Section Élémentaire (SEL)</div>
+  <div class="def-text">Plus petit élément de caténaire pouvant être isolé des éléments encadrants par un ou plusieurs appareils d'interruption. Découpe le réseau électrique sur les schémas et dans la réalité.</div>
+</div>
+<div class="def-block">
+  <div class="def-term">Secteur</div>
+  <div class="def-text">Ensemble des installations alimentées normalement par un ou plusieurs disjoncteurs.</div>
+</div>
+<div class="def-block">
+  <div class="def-term">Section commutable</div>
+  <div class="def-text">Partie de caténaire pouvant être alimentée sous des tensions différentes.</div>
+</div>
+<div class="def-block">
+  <div class="def-term">Section de séparation</div>
+  <div class="def-text">Partie de caténaire comportant, à chaque extrémité, un sectionnement destiné à éviter le pontage par les pantographes des caténaires situées de part et d'autre.</div>
+</div>
+<div class="def-block">
+  <div class="def-term">Sectionneur</div>
+  <div class="def-text">Appareil d'interruption destiné à ouvrir et fermer volontairement un circuit. Les sectionneurs ne peuvent être ouverts qu'à vide (absence de tout captage d'énergie par pantographe ou installation annexe). Certains peuvent s'ouvrir automatiquement.</div>
+</div>
+
+<h3 class="fc-h3">DISC — 4 types d'appareils d'interruption <span class="tag yellow ml6">3 premiers à connaître</span></h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>Lettre</th><th>Appareil</th><th>À connaître</th></tr></thead>
+  <tbody>
+    <tr><td><strong class="fc-accent">D</strong></td><td>Disjoncteur</td><td><span class="tag green">✓ À connaître</span></td></tr>
+    <tr><td><strong class="fc-accent">I</strong></td><td>Interrupteur</td><td><span class="tag green">✓ À connaître</span></td></tr>
+    <tr><td><strong class="fc-accent">S</strong></td><td>Sectionneur</td><td><span class="tag green">✓ À connaître</span></td></tr>
+    <tr><td>C</td><td>Commutateur</td><td><span class="tag">Culture G</span></td></tr>
+  </tbody>
+</table></div>
+<div class="rule-box">
+  <strong>Tous les appareils d'interruption sont sous cadenas.</strong><br>
+  Passage du pantographe rendu possible par : le <strong>sectionnement à lame d'air</strong> et l'<strong>isolateur de section</strong>.<br>
+  <strong>Caténaires primaires</strong> (trait épais, 1-2 chiffres) = comme les VP → gérés par le <strong>RSS</strong><br>
+  <strong>Caténaires secondaires</strong> (trait fin, +2 chiffres) = comme les VS → gérés par l'<strong>agent E</strong>
+</div>
+
+<h3 class="fc-h3">Documents obligatoires — Incidents électriques</h3>
+<div class="rule-box" style="border-left-color:var(--blue)">
+  En cas d'incident électrique, deux documents sont <strong>obligatoires</strong> à ouvrir :<br>
+  • <strong>Consigne Bleue</strong> — décrit les installations de traction électrique du poste<br>
+  • <strong>DC8043</strong> — procédures de protection C et de traitement des incidents<br><br>
+  <span style="color:var(--text3)">Les règles de sécurité SECUFER (4.1, 4.6, 2.1, 2.2, 3.1, coupure d'urgence, PAS) sont dans le thème <strong>Risques traction électrique</strong>.</span>
+</div>
+
+<h3 class="fc-h3">AMV600 — Organisation de la caténaire</h3>
+<div class="def-block">
+  <div class="def-term">Organisation de la caténaire</div>
+  <div class="def-text">La caténaire est découpée en : Secteur → Sous-Secteur → Sections élémentaires (SEL)</div>
+</div>
+<div class="def-block">
+  <div class="def-term">Consigne Bleue — Rôle</div>
+  <div class="def-text">Décrit les installations de traction électrique de la gare et précise les modalités d'application de la DC8043. Chapitres : 1 Description · 2 Application des procédures · 3 Tableaux consignation C. Annexes : 1 Schéma synoptique · 2 Coffret IA2</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">Protection C</div>
+  <div class="def-text">Ensemble des mesures interdisant aux circulations électriques l'accès aux voies situées sous l'élément de caténaire à consigner, de façon à empêcher que les pantographes ne réalimentent cet élément par pontage d'un sectionnement.</div>
+</div>
+<div class="def-block">
+  <div class="def-term">Circulation électrique</div>
+  <div class="def-text">Toute circulation comportant au moins un pantographe (sauf assurance qu'il est et restera baissé) ou bi-mode.</div>
+</div>
+
+<h3 class="fc-h3">AMV601 — Protection C (DC8043 Fiche 30)</h3>
+<ul class="numbered-list">
+  <li><span class="num">1</span>Noter ordre Agent E → RDTE (colonnes 1 à 4)</li>
+  <li><span class="num">2</span>Vérifier si concerné ? Consulter Art. 2 Consigne Bleue</li>
+  <li><span class="num">3</span>Consigne Bleue Art. 3 → identifier la page correspondant à la S.él</li>
+  <li><span class="num">4</span>Identifier la S.él + mesures de Protection C page de droite</li>
+  <li><span class="num">5</span>Apposer DSA sur levier (munit le levier de l'aiguille d'un DSA)</li>
+  <li><span class="num">6</span>Vérifier absence de circulation électrique entre aiguille et 1er isolateur</li>
+  <li><span class="num">7</span>AUTOCONTRÔLE : ferme et rouvre</li>
+  <li><span class="num">8</span>Aviser Agent E "Protection C assurée dans la S.él XXX" → RDTE col. 7&8</li>
+</ul>
+`,
+
+travaux: `
+<h2 class="theme-heading">Travaux sur les voies & IS</h2>
+<div class="theme-ref">AMV300 · AMV310 · AMV216 · AMV250 · DC3978 · IN1582 · OP565</div>
+
+<h3 class="fc-h3">AMV300 — Travaux sur les voies (DC3978)</h3>
+<div class="def-block important">
+  <div class="def-term">Planche-travaux (PTx)</div>
+  <div class="def-text">ZEP ou groupement de ZEP dédié aux travaux pendant une période déterminée.</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">ZEP — Zone Élémentaire de Protection</div>
+  <div class="def-text">Partie de voie résultant du découpage du RFN pour les besoins de la maintenance. Peut être de type « G » en gare ou de type « L » en ligne. Chaque ZEP est consignée dans la consigne de protection du poste.</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">DFV — Demande de Fermeture de Voie</div>
+  <div class="def-text">Procédé d'assurance-chantier reposant sur une fermeture de voie effectuée par l'exploitation et accompagnée de la mise en œuvre d'un bouclage par l'équipement.</div>
+</div>
+<div class="def-block">
+  <div class="def-term">Assurance-chantier</div>
+  <div class="def-text">Assurance que la zone de chantier est à la fois protégée et libre de toute circulation ne pouvant s'arrêter avant une activité. 2 procédés : DFV (fermeture par exploitation + bouclage) ou GEq (protection par maintenance seule).</div>
+</div>
+<div class="rule-box">
+  <strong>Entente préalable :</strong> Concertation entre RPTx et AC, au minimum 30 minutes avant le début de la planche-travaux.
+</div>
+
+<h3 class="fc-h3">AMV216 — Catégories A/B/C (OP565)</h3>
+<div class="def-block important">
+  <div class="def-term">Catégorie A</div>
+  <div class="def-text">Circulations « légères » pouvant provoquer des déshuntages brefs et intermittents (ex : autorail, thermique, bi-mode, locotracteurs).</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">Catégorie B</div>
+  <div class="def-text">Circulation comportant au moins un véhicule à empattement long et pouvant provoquer un déshuntage temporaire au passage de ce véhicule sur un circuit de voie court (ex : porte-char).</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">Catégorie C</div>
+  <div class="def-text">Circulation considérée « non shunteuse » et provoquant des déshuntages prolongés. Ne peut pas être expédiée de façon autonome sur une ligne équipée de circuit de voie. Doit être incorporée dans un train encadré par des véhicules assurant le bon fonctionnement des circuits de voie.</div>
+</div>
+`,
+
+epi: `
+<h2 class="theme-heading">EPI & Déplacements</h2>
+<div class="theme-ref">AMV801 · RRA0068 · OP485</div>
+
+<div class="def-block important">
+  <div class="def-term">EPI — Équipements de Protection Individuels</div>
+  <div class="def-text">Dispositifs ou moyens visés à l'article R4311-8 du code du travail visant à protéger un travailleur contre un ou plusieurs risques susceptibles de menacer sa sécurité ou sa santé.</div>
+</div>
+
+<h3 class="fc-h3">Les 9 familles d'EPI</h3>
+<ul class="numbered-list">
+  <li><span class="num">1</span>Signalisation visuelle de l'utilisateur <strong>(THV : Tenue Haute Visibilité)</strong></li>
+  <li><span class="num">2</span>Tête et visage</li>
+  <li><span class="num">3</span>Ouïe <strong>(PICB : Protecteurs Individuels Contre le Bruit)</strong></li>
+  <li><span class="num">4</span>Yeux</li>
+  <li><span class="num">5</span>Respiratoire</li>
+  <li><span class="num">6</span>Mains</li>
+  <li><span class="num">7</span>Corps</li>
+  <li><span class="num">8</span>Pieds</li>
+  <li><span class="num">9</span>Chutes de hauteur</li>
+</ul>
+
+<div class="def-block important">
+  <div class="def-term">Emprises ferroviaires (RRA20000 Art. 6.2)</div>
+  <div class="def-text">L'accès aux emprises ferroviaires n'est autorisé qu'en cas de nécessité de service. Un agent ne peut se déplacer dans une emprise ferroviaire que s'il est :
+• Habilité à une TES (tâche essentielle de sécurité)
+• Autorisé selon les dispositions du document d'application
+• Accompagné par un agent habilité TES ou autorisé</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">Emplacement de garage (EG) — Art. 6.2</div>
+  <div class="def-text">Lieu où les agents avec matériel ou outillage peuvent se garer en dehors de toute zone dangereuse lors du passage d'une circulation. Largeur minimale : <strong>0,70 m</strong>.</div>
+</div>
+<div class="def-block">
+  <div class="def-term">Formes possibles d'un emplacement de garage</div>
+  <div class="def-text">• Piste aménagée le long des voies permettant aux agents de se déplacer
+• Accotement situé hors ZD
+• <strong>Niche</strong> (creusée dans un mur, tunnel, ouvrage d'art)
+• <strong>Refuge d'ouvrage d'art</strong> (pont, viaduc, tunnel)
+• Voie interdite à la circulation et non parcourue par des trains de travaux
+• Entrevoie large, repérée sur le terrain par un pancartage</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">Pistes et itinéraires (Art. 6.4.2)</div>
+  <div class="def-text">Aménagements créés pour longer ou traverser les voies. Destinés au déplacement du personnel et de son outillage. Les pistes longent les voies principales en pleine voie ou dans les gares. Les itinéraires existent en dehors des voies principales dans les gares, triages, dépôts ou les ateliers. Obstacles fixes peints en blanc.
+<strong>Où les trouver :</strong> les schémas des pistes et itinéraires sont affichés aux principaux accès des sites (en gare et dans les postes d'aiguillage). La consigne des particularités locales y fait aussi référence.</div>
+</div>
+
+<h3 class="fc-h3">Art. 111 OP485 — Règles pour les véhicules automoteurs</h3>
+<div class="def-block important">
+  <div class="def-term">Règles d'utilisation sur pistes carrossables</div>
+  <div class="def-text">Le conducteur doit :
+• Rester en dehors des voies, à une distance d'au moins <strong>1,50 m du rail</strong>
+• Respecter la signalisation routière
+• Ne pas dépasser la vitesse de <strong>40 km/h</strong>
+• Céder la priorité à tout véhicule plus lourd ou plus encombrant
+• Immobiliser le véhicule à l'approche d'une circulation sur la voie contiguë (sauf si bord de piste > 2,00 m du rail)
+• <strong>De nuit : l'utilisation des FEUX DE ROUTE (plein phares) est INTERDITE</strong></div>
+</div>
+<div class="rule-box">
+  Autorisation spéciale du chef d'établissement si : largeur > 2,50 m · hauteur > 4,00 m · poids > 12 tonnes.
+</div>
+
+<!-- ═══ FOCUS EXAM VENDREDI — CYCLOMOTEURS & VÉLOS ═══ -->
+<div style="background:linear-gradient(135deg,rgba(240,192,64,0.12),rgba(240,192,64,0.04));border:2px solid var(--accent);border-radius:var(--radius2);padding:18px 20px;margin:28px 0 22px;box-shadow:0 0 16px rgba(240,192,64,0.15)">
+  <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px">
+    <span style="font-size:18px">🎯</span>
+    <div>
+      <div style="font-size:15px;font-weight:700;color:var(--accent);letter-spacing:0.02em">FOCUS EXAM VENDREDI</div>
+      <div style="font-size:11px;font-family:var(--mono);color:var(--text3);margin-top:2px">Cyclomoteurs &amp; vélos aux abords des voies — Art. 8.2 RRA20068</div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px">
+    <div style="background:var(--bg4);border-radius:var(--radius);padding:12px 14px;text-align:center">
+      <div style="font-size:11px;color:var(--text3);font-family:var(--mono);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px">Vitesse max</div>
+      <div style="font-size:22px;font-weight:700;color:var(--accent)">20 km/h</div>
+    </div>
+    <div style="background:var(--bg4);border-radius:var(--radius);padding:12px 14px;text-align:center">
+      <div style="font-size:11px;color:var(--text3);font-family:var(--mono);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px">Voie contiguë occupée</div>
+      <div style="font-size:15px;font-weight:700;color:var(--accent);line-height:1.3;margin-top:4px">Pied à terre obligatoire</div>
+    </div>
+  </div>
+
+  <div style="background:var(--red-bg);border-left:3px solid var(--red);border-radius:var(--radius);padding:12px 14px;margin-bottom:12px">
+    <div style="font-size:12px;font-weight:700;color:var(--red);letter-spacing:0.05em;margin-bottom:8px">⛔ INTERDIT</div>
+    <div style="font-size:13px;color:var(--text);line-height:1.8">
+      • Traverser les voies sauf sur itinéraire carrossable<br>
+      • Circuler dans les tunnels et sur les ponts (sauf piste aménagée)<br>
+      • Circuler par temps de visibilité réduite<br>
+      • Être à 2 personnes sur le même vélo<br>
+      • Atteler une remorque (sauf piste/itinéraire dont le bord intérieur est à ≥ 2,00 m du rail)<br>
+      • Transporter des objets encombrants pouvant engager la ZD ou déséquilibrer
+    </div>
+  </div>
+
+  <div class="fc-note">
+    🌙 <strong class="fc-text">De nuit :</strong> à éviter — si nécessaire, éclairage en état de fonctionnement obligatoire.
+  </div>
+</div>
+`,
+
+zd: `
+<h2 class="theme-heading">Zone dangereuse (ZD)</h2>
+<div class="theme-ref">RRA20068 · AMV801</div>
+
+<div class="def-block important">
+  <div class="def-term">Zone dangereuse (ZD)</div>
+  <div class="def-text">Zone de danger, définie voie par voie, dans laquelle un agent ou l'outillage ou le matériel qu'il manipule peut être heurté ou accroché par une circulation de véhicule de transport ferroviaire ou guidé ou subir son effet de souffle de manière dangereuse. Les distances sont mesurées par rapport au bord extérieur du rail.</div>
+</div>
+
+<h3 class="fc-h3">Distances de la zone dangereuse</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>Ligne</th><th>Vitesse</th><th>Distance ZD</th></tr></thead>
+  <tbody>
+    <tr><td>Hors LGV</td><td>V ≤ 40 km/h</td><td>1,25 m (1,50 m en courbe)</td></tr>
+    <tr><td>Hors LGV</td><td>40 < V ≤ 160 km/h</td><td>1,50 m</td></tr>
+    <tr><td>Hors LGV</td><td>V > 160 km/h</td><td>2,00 m</td></tr>
+    <tr><td>LGV</td><td>V ≤ 300 km/h</td><td>2,00 m <span style="color:var(--text3);font-size:12px">(reste 2,00 m grâce à l'aérodynamisme des trains TGV conçus pour minimiser l'effet de souffle)</span></td></tr>
+    <tr><td>LGV</td><td>V > 300 km/h</td><td>2,30 m</td></tr>
+  </tbody>
+</table></div>
+
+<h3 class="fc-h3">Avant d'engager la ZD</h3>
+<div class="rule-box">
+  1. Marquer l'arrêt<br>
+  2. Regarder attentivement dans la ou les directions d'où peut survenir une circulation<br>
+  3. S'assurer de disposer de la <strong>DMVC</strong><br>
+  4. Redoubler de prudence en cas d'intempéries ou zone bruyante<br>
+  5. Lorsqu'il doit se déplacer sur la voie, sur une ligne à double voie ou à voies multiples, marcher dans le sens opposé au sens normal des circulations.
+</div>
+
+<h3 class="fc-h3">Traversée des voies</h3>
+<div class="rule-box">
+  <strong>Avant :</strong> MARQUER L'ARRÊT · REGARDER · ÉCOUTER · S'ASSURER DE LA DMVC (hors chemins publics)<br>
+  <strong>Pendant :</strong> TRAVERSER FRANCHEMENT sans s'attarder · Éviter de poser le pied sur le rail ou aiguillage · Usage de distracteurs d'attention INTERDIT<br>
+  <strong>Après :</strong> Dégager la ZD — la traversée n'est achevée qu'une fois la ZD dégagée
+</div>
+
+<div class="def-block important">
+  <div class="def-term">Arrivée surprise d'une circulation dans la ZD</div>
+  <div class="def-text">• Dégager immédiatement la ZD
+• Si impossible : se coucher sur le sol, en dehors de la voie
+• Tête dirigée du côté d'où vient la circulation
+• Vêtements ramenés près du corps
+• Si circulation sur voie contiguë : la regarder venir</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">DMVC — Distance Minimale de Visibilité Compatible</div>
+  <div class="def-text">Distance minimale de visibilité dont doit disposer un agent avant d'engager la ZD en dehors des chemins publics et des itinéraires. Sans cette distance : choisir un autre endroit ou demander l'interdiction de circulation ou la mise en place d'un dispositif d'annonce (ex : agent sécurité avec trompe réglementaire, DATZD, DAELZD).</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">DATZD — Dispositif d'Autorisation de Traverser la Zone Dangereuse</div>
+  <div class="def-text">Dispositif permettant la traversée d'une ou de deux voies lorsque la visibilité ou la réglementation ne le permet pas. 1 demande par personne : 1 voie = 10 secondes, 2 voies = 15 secondes.</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">DAELZD — Dispositif d'Autorisation d'Engagement Longitudinal de la Zone Dangereuse</div>
+  <div class="def-text">Dispositif permettant l'engagement de la ZD de la voie longeant un obstacle dont le franchissement est impossible du fait d'une visibilité insuffisante. Il fait l'objet d'une consigne d'utilisation reprise dans la consigne des particularités locales.</div>
+</div>
+
+<h3 class="fc-h3">Engagement de la ZD — Art. 6.2.1 — Délais de visibilité requis</h3>
+<div class="def-block important">
+  <div class="def-term">6.2.1.1 — Engagement transversal sur voie(s) principale(s)</div>
+  <div class="def-text">L'engagement transversal n'est autorisé que lorsque le délai de visibilité, pour chaque sens de circulation, est au moins égal à :
+• <strong>10 secondes</strong> — plateformes à 1 ou 2 voies
+• <strong>15 secondes</strong> — plateformes à 3 ou 4 voies
+• <strong>20 secondes</strong> — plateformes à 5 ou 6 voies
+➤ Plus de 6 voies : disposer d'un EG intermédiaire après avoir traversé au plus 6 voies.</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">6.2.1.2 — Engagement transversal sur voie(s) de service</div>
+  <div class="def-text">Sur une voie de service libre de circulation, l'engagement transversal n'est autorisé que lorsque le délai de visibilité est au moins égal à <strong>10 secondes</strong> soit au moins <strong>90 mètres</strong>.</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">6.2.1.3 — Engagement longitudinal (contourner un obstacle)</div>
+  <div class="def-text">L'engagement longitudinal n'est autorisé que lorsque le délai de visibilité, pour chaque sens de circulation concerné, est au moins égal à :
+• <strong>10 secondes</strong> — obstacle continu jusqu'à 5 m
+• <strong>15 secondes</strong> — obstacle supérieur à 5 m jusqu'à 10 m
+• <strong>20 secondes</strong> — obstacle supérieur à 10 m jusqu'à 15 m
+➤ Obstacle supérieur à 15 m : mesures reprises à la consigne des particularités locales.
+➤ Ouvrages d'art (tunnel, viaduc...) : mesures spéciales si délai insuffisant entre 2 refuges ou 2 niches.</div>
+</div>
+`,
+
+elect: `
+<h2 class="theme-heading">Risques traction électrique — SECUFER</h2>
+<div class="theme-ref">AMV803 · OP491 · SECUFER PS9/CG</div>
+
+<div style="background:rgba(248,113,113,0.08);border:2px solid var(--red);border-radius:var(--radius2);padding:14px 16px;margin-bottom:18px;font-size:13px;line-height:1.6">
+  🔥 <strong style="color:var(--red)">🔥 Exam AMV — À MAÎTRISER</strong> :<br>
+  ▸ <strong>Les zones d'environnement</strong> (0, 1, 2, 3) — distances et accès<br>
+  ▸ Tout conducteur est considéré <strong>SOUS TENSION sauf assurance du contraire</strong>
+</div>
+
+<div class="rule-box" style="border-left-color:var(--red)">
+  <strong>⚠️ Principe général Art. 4.1 :</strong> Tout conducteur électrique nu ou isolé et toute installation électrique doivent être considérés comme étant <strong>sous tension</strong>, sauf assurance du contraire.
+</div>
+
+<h3 style="font-size:16px;font-weight:600;margin:24px 0 12px;color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:6px">⭐ Article 2.2.1 — Les ZONES d'environnement (PAR CŒUR)</h3>
+
+<div class="def-block important">
+  <div class="def-term">Définition des zones</div>
+  <div class="def-text">Les zones d'environnement sont définies par <strong>la distance à un conducteur nu ou pièce nue sous tension</strong>. Plus on s'approche, plus le danger électrique augmente, et plus la qualification requise est élevée.<br><br>
+  💡 <em>De bas en haut (du plus loin au plus proche du conducteur) : Zone 0 → 1 → 2 → 3</em></div>
+</div>
+
+<!-- Schéma visuel des zones -->
+<div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);padding:18px;margin-bottom:14px">
+  <div style="display:flex;flex-direction:column;gap:6px">
+    <div style="display:flex;gap:10px;align-items:center;padding:10px 14px;background:#2a0a0a;border-left:4px solid #dc2626;border-radius:var(--radius)">
+      <div style="background:#dc2626;color:#fff;font-weight:700;padding:6px 10px;border-radius:4px;font-family:var(--mono);min-width:75px;text-align:center">ZONE 3</div>
+      <div style="flex:1">
+        <div style="color:#f87171;font-weight:600;font-size:14px">0 à 1 m</div>
+        <div style="font-size:12px;color:var(--text2)">→ <strong>Agents de la spécialité « caténaire »</strong> uniquement (très haut risque)</div>
+      </div>
+    </div>
+    <div style="display:flex;gap:10px;align-items:center;padding:10px 14px;background:#2a1f04;border-left:4px solid #f59e0b;border-radius:var(--radius)">
+      <div style="background:#f59e0b;color:#1a1a1a;font-weight:700;padding:6px 10px;border-radius:4px;font-family:var(--mono);min-width:75px;text-align:center">ZONE 2</div>
+      <div style="flex:1">
+        <div style="color:#fbbf24;font-weight:600;font-size:14px">1 à 2 m</div>
+        <div style="font-size:12px;color:var(--text2)">→ <strong>Agents habilités « caténaire C0 »</strong> ou sous surveillance d'un agent C0</div>
+      </div>
+    </div>
+    <div style="display:flex;gap:10px;align-items:center;padding:10px 14px;background:#1f2a0a;border-left:4px solid #84cc16;border-radius:var(--radius)">
+      <div style="background:#84cc16;color:#1a1a1a;font-weight:700;padding:6px 10px;border-radius:4px;font-family:var(--mono);min-width:75px;text-align:center">ZONE 1</div>
+      <div style="flex:1">
+        <div style="color:#bef264;font-weight:600;font-size:14px">2 à 3 m</div>
+        <div style="font-size:12px;color:var(--text2)">→ <strong>Agents avertis des risques électriques</strong> et formés aux prescriptions de sécurité</div>
+      </div>
+    </div>
+    <div style="display:flex;gap:10px;align-items:center;padding:10px 14px;background:#052016;border-left:4px solid #10b981;border-radius:var(--radius)">
+      <div style="background:#10b981;color:#fff;font-weight:700;padding:6px 10px;border-radius:4px;font-family:var(--mono);min-width:75px;text-align:center">ZONE 0</div>
+      <div style="flex:1">
+        <div style="color:#6ee7b7;font-weight:600;font-size:14px">> 3 m</div>
+        <div style="font-size:12px;color:var(--text2)">→ <strong>Tous les agents</strong> des emprises ferroviaires (zone sans danger imminent)</div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:12px;padding:10px;background:var(--bg4);border-radius:var(--radius);font-size:12px;color:var(--text3);text-align:center">
+    📏 Distances mesurées à partir du <strong class="fc-text">conducteur nu (caténaire ou pièce sous tension)</strong>
+  </div>
+</div>
+
+<h3 class="fc-h3-alt">4.6 — Les 3 familles d'interdictions <span class="tag yellow ml6">Par cœur</span></h3>
+
+<div class="def-block important">
+  <div class="def-term">1. Interdictions relatives aux COMPORTEMENTS</div>
+  <div class="def-text">Il est interdit :<br>
+• D'approcher des supports ou ouvrages sur lesquels se produisent des <strong>phénomènes anormaux</strong> (grésillements, étincelles...)<br>
+• De pénétrer dans les locaux ou enceintes électriques d'un établissement (sous-station, poste de transformation...) — sauf agents autorisés<br>
+• D'intervenir sur toute installation électrique, machine, appareil — d'enlever ou déplacer tout dispositif mettant hors d'atteinte les installations électriques ou interdisant la manœuvre des appareils de coupure<br>
+• De monter aux poteaux supportant les conducteurs, à moins d'être autorisé<br>
+• D'entreprendre ou poursuivre des travaux en cas d'orage (apparition d'éclairs, tonnerre)<br>
+• De laisser circuler des engins (terrassement, levage...) à proximité des ouvrages électriques sans respecter les distances de voisinage</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">2. Interdictions relatives aux ÉLÉMENTS (Feu et Eau)</div>
+  <div class="def-text"><strong>🔥 FEU — il est interdit :</strong><br>
+• D'allumer du feu au voisinage immédiat de lignes électriques aériennes ou, sur ou à proximité des caniveaux et chambres de tirage<br>
+• De s'approcher d'un foyer d'incendie situé au voisinage immédiat de lignes électriques aériennes tant que celles-ci n'ont pas été mises hors tension (risque d'amorçage)<br><br>
+<strong>💧 EAU — il est interdit :</strong><br>
+• De diriger sur les installations ou appareils électriques, ou d'utiliser à leur proximité, des lances à jet (bâton ou non)<br>
+• De jeter de l'eau ou des linges mouillés sur des installations ou appareils électriques<br>
+• D'utiliser des extincteurs ou des lances non autorisés sur courant électrique pour combattre un incendie<br>
+• D'uriner sur les installations électriques et leurs supports (caténaire, troisième rail, rails, boîtes de raccordements...)</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">3. Interdictions relatives aux OBJETS MANIPULÉS</div>
+  <div class="def-text">Il est interdit :<br>
+• De projeter des objets, notamment métalliques, sur des installations ou équipements électriques<br>
+• D'utiliser des objets métalliques (mètres, décamètres, règles et échelles) au voisinage d'installations électriques comportant des conducteurs nus ou des pièces nues sous tension</div>
+</div>
+
+<h3 class="fc-h3">2.1 — Hauteur des fils de contact et repérage <span class="tag yellow ml6">Panneau à connaître</span></h3>
+<div class="def-block important">
+  <div class="def-term">Hauteur minimale des fils de contact</div>
+  <div class="def-text">Les fils de contact des caténaires sont placés en général à une hauteur <strong>supérieure ou égale à 5 mètres</strong> par rapport au plan de roulement.<br><br>
+  Cette hauteur peut être réduite à moins de 5 m au droit de certains ouvrages d'art — ces zones sont repérées sur ou au droit des supports par une <strong style="color:#3B82F6">bande BLEUE avec liserés BLANCS</strong> :<br>
+  <div style="display:flex;flex-direction:column;width:120px;margin:8px 0;border:1px solid var(--border);border-radius:4px;overflow:hidden;font-size:12px;text-align:center">
+    <div style="background:rgba(255,255,255,0.15);padding:3px;color:var(--text)">BLANC</div>
+    <div style="background:#2563EB;padding:3px;color:white;font-weight:600">BLEU</div>
+    <div style="background:rgba(255,255,255,0.15);padding:3px;color:var(--text)">BLANC</div>
+  </div>
+  Dans les tunnels, souterrains, tranchées couvertes : fil de contact à considérer comme inférieur à 5 m même en l'absence de repérage.</div>
+</div>
+
+<h3 class="fc-h3">2.2 — Zones d'environnement au voisinage des conducteurs nus</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>Zone</th><th>Distance</th><th>Accès</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Zone 0</strong></td><td>> 3 m</td><td>Accessible à tous les agents des emprises ferroviaires</td></tr>
+    <tr><td><strong>Zone 1</strong></td><td>2 à 3 m</td><td>Agents avertis des risques électriques et formés aux prescriptions de sécurité</td></tr>
+    <tr><td><strong>Zone 2</strong></td><td>1 à 2 m</td><td>Agents habilités "caténaire C0" ou sous surveillance d'un agent habilité C0</td></tr>
+    <tr><td><strong>Zone 3</strong></td><td>0 à 1 m</td><td>Agents de la spécialité "caténaire" uniquement</td></tr>
+  </tbody>
+</table></div>
+
+<h3 class="fc-h3">3.1 — Accouplement / désaccouplement de la ligne de train</h3>
+<div class="def-block important">
+  <div class="def-term">Règle fondamentale</div>
+  <div class="def-text">Toute opération sur la ligne de train n'est autorisée que si cette dernière est <strong>privée de tension</strong> et que l'agent concerné en a obtenu l'assurance.<br><br>
+L'assurance est obtenue : soit en recevant directement les clés de chauffage, soit en recevant l'information de l'agent responsable, soit en avisant et recevant confirmation du mécanicien.</div>
+</div>
+
+<h3 class="fc-h3">Coupure d'urgence (Chapitre IV SECUFER)</h3>
+<div class="def-block important">
+  <div class="def-term">Coupure d'urgence</div>
+  <div class="def-text">Suppression d'alimentation par les moyens les plus rapides pour écarter le danger ou réduire le risque d'accident, notamment dans les cas :<br>
+• Sauvegarde d'une personne en danger<br>
+• Lutte contre l'incendie au voisinage de la caténaire<br>
+• Obstacle en contact avec une installation sous tension risquant d'entrer en contact avec la caténaire<br><br>
+Tout agent qui constate ou est avisé d'une coupure d'urgence fait généralement le <strong>circuit d'alarme</strong>. Les <strong>flèches rouges sur les poteaux caténaires</strong> indiquent la direction du téléphone d'alarme (TA) le plus proche → contacter le RSS.</div>
+</div>
+
+<h3 class="fc-h3">PAS — En cas d'accident électrique <span class="tag yellow ml6">Par cœur</span></h3>
+<div style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap">
+  <div style="flex:1;min-width:140px;background:var(--red-bg);border:1px solid var(--red);border-radius:6px;padding:10px;text-align:center">
+    <div style="font-family:var(--mono);font-size:20px;font-weight:700;color:var(--red);margin-bottom:4px">P</div>
+    <div style="font-size:12px;font-weight:600;color:var(--text);margin-bottom:3px">Protéger</div>
+    <div class="fc-meta">Dégager l'accidenté — le soustraire au contact de tout conducteur ou pièce sous tension. Toute intervention imprudente risque d'accidenter le sauveteur.</div>
+  </div>
+  <div style="flex:1;min-width:140px;background:rgba(230,140,20,0.1);border:1px solid #e8a020;border-radius:6px;padding:10px;text-align:center">
+    <div style="font-family:var(--mono);font-size:20px;font-weight:700;color:#e8a020;margin-bottom:4px">A</div>
+    <div style="font-size:12px;font-weight:600;color:var(--text);margin-bottom:3px">Alerter</div>
+    <div class="fc-meta">Faire prévenir les secours spécialisés.</div>
+  </div>
+  <div style="flex:1;min-width:140px;background:var(--green-bg);border:1px solid var(--green);border-radius:6px;padding:10px;text-align:center">
+    <div style="font-family:var(--mono);font-size:20px;font-weight:700;color:var(--green);margin-bottom:4px">S</div>
+    <div style="font-size:12px;font-weight:600;color:var(--text);margin-bottom:3px">Secourir</div>
+    <div class="fc-meta">Mettre en œuvre d'urgence la réanimation.</div>
+  </div>
+</div>
+
+<h3 class="fc-h3">Installations concernées (Art. 2)</h3>
+<div class="def-block">
+  <div class="def-text">• Installations de traction électrique (caténaires, appareils d'interruption, feeders, circuit de retour, 3ème rail...)<br>
+• Installations de chauffage électrique et de conditionnement des trains (ligne de train)<br>
+• Équipements électriques du matériel roulant (compartiments moteurs, organes de liaison entre véhicules)<br>
+• Installations de signalisation et de télécommunication (circuits extérieurs, armoires, guérites...)<br>
+• Ouvrages électriques (lignes et câbles HT entre sous-station et poste de traction)</div>
+</div>
+
+<h3 class="fc-h3">Dangers du courant électrique</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>Danger</th><th>Conséquence</th></tr></thead>
+  <tbody>
+    <tr><td>Électrocution</td><td><span class="tag red">MORT</span></td></tr>
+    <tr><td>Électrisation</td><td><span class="tag yellow">Blessure</span></td></tr>
+    <tr><td>Perte d'équilibre</td><td>Chutes graves</td></tr>
+    <tr><td>Amorçage</td><td>Arc électrique — peut se produire sans contact direct</td></tr>
+  </tbody>
+</table></div>
+`,
+
+graissage: `
+<h2 class="theme-heading">Graissage des aiguilles</h2>
+<div class="theme-ref">AMV804 · OP487</div>
+
+<div class="def-block important">
+  <div class="def-term">Graissage</div>
+  <div class="def-text">Travail de maintenance légère d'une aiguille qui consiste à nettoyer et graisser les parties mobiles de l'appareil de voie.</div>
+</div>
+
+<h3 class="fc-h3">Art. 201 — Principes fondamentaux</h3>
+<div class="def-block important">
+  <div class="def-term">Règle absolue dès audition du signal ou vision d'une circulation</div>
+  <div class="def-text">• Quitter la zone dangereuse immédiatement
+• Se garer au plus près et sans délai hors de toute zone dangereuse
+• Demeurer sur place jusqu'à ce que la circulation soit passée COMPLÈTEMENT
+• Si circulation sur voie contiguë : la regarder venir pour détecter tout obstacle engageant le gabarit</div>
+</div>
+<div class="rule-box">
+  <strong>Cas exceptionnel — arrivée surprise :</strong> Se coucher sur le sol, en dehors de la voie, tête dirigée du côté d'où vient la circulation, vêtements ramenés près du corps.
+</div>
+<div class="rule-box">
+  <strong>Interdit</strong> de laisser des outils ou matériaux à l'intérieur de la ZD (risque de projection par effet de souffle).
+</div>
+
+<h3 class="fc-h3">Art. 204 — Périodes de graissage</h3>
+<div class="rule-box">
+  • Déterminées à chaque nouveau service ou modification importante<br>
+  • Situées aux moments de plus faible densité de circulation<br>
+  • Périodes de nuit : <strong>exceptionnelles et justifiées</strong> par l'importance de la circulation diurne<br>
+  • <strong>INTERDIT par temps de brouillard</strong>
+</div>
+
+<h3 class="fc-h3">Art. 205 — 3 modes de protection</h3>
+<div class="def-block important">
+  <div class="def-term">A — Interdiction de circulation possible</div>
+  <div class="def-text">A1 — Toute la zone d'un poste : l'aiguilleur ferme les signaux et graisse lui-même.
+A2 — Partie de la zone : protection via installations du poste + DPGR (Demande de Protection Graissage).</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">B — Interdiction impossible</div>
+  <div class="def-text">L'équipe est sous surveillance d'un agent sécurité qui annonce l'approche des circulations par un son allongé émis à l'aide de la trompe réglementaire. L'agent sécurité indique les mesures particulières, les limites de zone et les emplacements de garage.</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">C — Graissage de nuit / Appareils télécommandés</div>
+  <div class="def-text">Les mesures de protection A2 (DPGR) doivent obligatoirement être appliquées.</div>
+</div>
+
+<h3 class="fc-h3">Matériel de protection du graisseur</h3>
+<div class="def-block">
+  <div class="def-term">Aiguille classique</div>
+  <div class="def-text">Appareil protecteur pour graisseur d'aiguilles : immobilise l'aiguille + présente un jalon à damier attirant l'attention des mécaniciens.</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">Aiguille à moteur (télécommandée)</div>
+  <div class="def-text">L'appareil protecteur NE DOIT PAS être utilisé. Le graisseur se munit d'un DRAPEAU ROUGE À HAMPE qu'il fixe dans la voie, à proximité de l'appareil, pendant toute la durée du travail.</div>
+</div>
+`
+};
