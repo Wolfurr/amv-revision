@@ -2134,8 +2134,29 @@ signaux: `
 `,
 
 encl: `
-<h2 class="theme-heading">Enclenchements</h2>
-<div class="theme-ref">AMV210 · AMV211 · DC3858 · Consigne Rose Chap.4 · Annexes 3-4-5</div>
+<h2 class="theme-heading">Enclenchements (mécaniques & électriques)</h2>
+<div class="theme-ref">AMV210 · AMV211 · DC3858 · Consigne Rose Chap.4 · Annexes 2-4-5</div>
+
+<div style="background:rgba(96,165,250,0.08);border:1px solid var(--blue);border-radius:var(--radius2);padding:14px 16px;margin-bottom:18px;font-size:13px;line-height:1.6">
+  💡 Un enclenchement <strong style="color:var(--blue)">interdit ou conditionne</strong> la manœuvre d'un appareil de voie ou d'un signal, pour empêcher une situation dangereuse. On distingue 2 grandes familles : les enclenchements <strong>mécaniques</strong> (entre leviers, au poste) et les enclenchements <strong>électriques</strong> (4 types, selon des conditions de voie/signal présumées occupées ou non).
+</div>
+
+<h3 class="fc-h3-accent">⭐ Vue d'ensemble des enclenchements électriques — à connaître par cœur</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>Enclenchement</th><th>Empêche</th><th>Agit sur</th></tr></thead>
+  <tbody>
+    <tr><td>Zone isolée (ZI)</td><td>la manœuvre d'un appareil de voie pendant son franchissement</td><td>levier de l'aiguille</td></tr>
+    <tr><td>Transit*</td><td>la manœuvre d'un appareil de voie</td><td>levier de l'aiguille</td></tr>
+    <tr><td>Enclenchement d'approche (EAP)</td><td>la fermeture prématurée d'un signal</td><td>levier du signal</td></tr>
+    <tr><td>Enclenchement de parcours*</td><td>la fermeture prématurée d'un signal</td><td>levier du signal</td></tr>
+    <tr><td>Zone de protection (ZP)</td><td>l'ouverture d'un signal</td><td>levier du signal <strong>OU</strong> circuit de commande</td></tr>
+    <tr><td>Zone d'espacement automatique*</td><td>l'ouverture d'un signal</td><td>levier du signal <strong>OU</strong> circuit de commande</td></tr>
+    <tr><td>Contrôle impératif permanent (CIP)</td><td>l'ouverture d'un signal</td><td>circuit de commande du signal <strong>uniquement</strong> (jamais le levier)</td></tr>
+  </tbody>
+</table></div>
+<div class="rule-box">
+  * <strong>Transit</strong>, <strong>Enclenchement de parcours</strong> et <strong>Zone d'espacement automatique</strong> apparaissent dans la classification du formateur mais ne sont pas détaillés dans les supports disponibles — à compléter en cours si besoin. Les 4 enclenchements détaillés ci-dessous (ZI, CIP, ZP, EAP) sont ceux du programme AMV211.
+</div>
 
 <h3 class="fc-h3">AMV210 — Enclenchements mécaniques</h3>
 <div class="def-block important">
@@ -2167,39 +2188,67 @@ Une absence de clé sur un taquet ou une aiguille immobilise cet appareil dans l
 Destruction : mise en position normale (+) du levier de commande du signal de protection.</div>
 </div>
 
-<h3 class="fc-h3">AMV211 — Enclenchements électriques (4 types)</h3>
-<div class="def-block important">
-  <div class="def-term">Zone Isolée (ZI) — Art. 214 — Annexe 4A</div>
-  <div class="def-text">Rôle : Interdire la manœuvre d'une aiguille pendant son franchissement par une circulation
-Agit sur : Levier de l'aiguille (position + ou −)
-Mise en action : dès que la zone propre est présumée occupée (rouge)
-Libération : libération de la zone propre (blanc)</div>
+<h3 class="fc-h3-accent">⭐ AMV211 — Les 4 enclenchements électriques — détail par cœur</h3>
+
+<div class="def-block important" style="margin-bottom:6px">
+  <div class="def-term fc-accent">ZI — Zone Isolée (d'aiguille)</div>
 </div>
-<div class="def-block important">
-  <div class="def-term">CIP — Contrôle Impératif Permanent — Art. 212 — Annexe 2 partie 3</div>
-  <div class="def-text">Rôle : Maintenir fermé le signal de protection ou provoquer sa fermeture si l'aiguille ne réunit pas ses 4 conditions :
-1. Concordance de la position terrain / poste
-2. Collage de la lame appliquée donnant la direction
-3. Décollage de la lame opposée (aiguille intègre)
-4. Verrouillage lancé le cas échéant
-Libération : quand les 4 conditions sont réunies (voyant allumé)</div>
+<div class="table-wrap"><table>
+  <tbody>
+    <tr><td>Quel est le rôle ?</td><td>Pallier tout risque de déplacement d'un appareil de voie lors de son franchissement par une circulation, en interdisant sa manœuvre tant que la circulation ne l'a pas dégagé (= interdire la manœuvre d'une aiguille PENDANT son franchissement).</td></tr>
+    <tr><td>Sur quelle(s) installation(s) ?</td><td>Sur le levier de l'aiguille.</td></tr>
+    <tr><td>Dans quelle(s) position(s) ?</td><td>En position normale (+) OU en position renversée (−).</td></tr>
+    <tr><td>Conditions de mise en action ?</td><td>Dès que sa zone propre est présumée occupée (rouge).</td></tr>
+    <tr><td>Comment agit-il ?</td><td>Immobilise le levier de l'aiguille à l'aide d'un verrou.</td></tr>
+    <tr><td>Conditions de libération ?</td><td>Libération de la zone propre (blanc).</td></tr>
+    <tr><td>Comment savoir s'il existe ?</td><td>Consigne Rose <strong>Annexe 4</strong> (tableau A) — Article 214 DC3858.</td></tr>
+  </tbody>
+</table></div>
+
+<div class="def-block important" style="margin-bottom:6px">
+  <div class="def-term fc-accent">CIP — Contrôle Impératif Permanent</div>
 </div>
-<div class="def-block important">
-  <div class="def-term">Zone de Protection (ZP) — Art. 218 — Annexe 2 P2 ou P3</div>
-  <div class="def-text">Rôle : Protéger des mouvements ou des véhicules en stationnement
-Agit sur : Levier de signal origine OU circuit de commande du signal
-Mise en action : dès qu'une Zone de Protection est présumée occupée (rouge)
-Libération : libération de la zone (blanc)</div>
+<div class="table-wrap"><table>
+  <tbody>
+    <tr><td>Quel est le rôle ?</td><td>Maintenir fermé le signal de protection, ou provoquer sa (re)fermeture si la ou les aiguilles de l'itinéraire ne sont pas convenablement disposées.</td></tr>
+    <tr><td>Sur quelle(s) installation(s) ?</td><td>Sur le circuit de commande du signal — <strong>uniquement</strong>, jamais sur un levier.</td></tr>
+    <tr><td>Dans quelle(s) position(s) ?</td><td>Fermeture (carré présenté).</td></tr>
+    <tr><td>Conditions de mise en action ?</td><td>Si l'aiguille ne réunit pas l'une des 4 conditions suivantes : 1. concordance entre le levier de l'aiguille et sa position sur le terrain (cf. Annexe 1) · 2. lame donnant la direction collée · 3. lame opposée décollée · 4. verrouillage lancé (si elle est équipée d'un verrou).</td></tr>
+    <tr><td>Comment agit-il ?</td><td>Maintient fermé le signal de protection, ou le referme s'il avait été ouvert auparavant.</td></tr>
+    <tr><td>Conditions de libération ?</td><td>Lorsque les 4 conditions ci-dessus sont réunies, contrôlées par le contrôle de position de l'aiguille (voyant allumé).</td></tr>
+    <tr><td>Comment savoir s'il existe ?</td><td>Consigne Rose <strong>Annexe 2, 3<sup>e</sup> partie</strong> — Article 212 DC3858.</td></tr>
+  </tbody>
+</table></div>
+
+<div class="def-block important" style="margin-bottom:6px">
+  <div class="def-term fc-accent">ZP — Zone de Protection</div>
 </div>
-<div class="def-block important">
-  <div class="def-term">EAP — Enclenchement d'Approche — Art. 216 — Annexe 5</div>
-  <div class="def-text">Rôle : Interdire toute opération permettant une destruction prématurée d'itinéraire (manœuvre d'une aiguille devant une circulation)
-Agit sur : Levier du signal de protection (position −)
-Mise en action : ZAP présumée occupée (rouge) ET signal commandé à l'ouverture (levier en −)
-Libération :
-• Si ZAP libre (blanc) → EAP libéré.
-• Si ZAP occupée (rouge), l'EAP se libère par : 1. attaque de la 1re zone aval · 2. fermeture automatique (FA) actionnée · 3. attaque de la pédale (si elle existe).</div>
+<div class="table-wrap"><table>
+  <tbody>
+    <tr><td>Quel est le rôle ?</td><td>Protéger des mouvements ou des véhicules en stationnement, en interdisant l'accès intempestif des circulations à certaines parties de voie (voies à quai par exemple) lorsqu'elles sont occupées.</td></tr>
+    <tr><td>Sur quelle(s) installation(s) ?</td><td>Sur le levier de signal origine <strong>OU</strong> sur le circuit de commande du signal.</td></tr>
+    <tr><td>Dans quelle(s) position(s) ?</td><td>En position + (normale) si elle agit sur le levier du signal, <strong>OU</strong> en position de fermeture si elle agit sur le circuit de commande.</td></tr>
+    <tr><td>Conditions de mise en action ?</td><td>Dès qu'une zone dite « zone de protection » est présumée occupée (rouge).</td></tr>
+    <tr><td>Comment agit-il ?</td><td>Immobilise le levier du signal à l'aide d'un verrou, <strong>OU</strong> maintient le signal origine fermé (agit directement sur le circuit de commande).</td></tr>
+    <tr><td>Conditions de libération ?</td><td>Libération de la zone (blanc).</td></tr>
+    <tr><td>Comment savoir s'il existe ?</td><td>Consigne Rose <strong>Annexe 2</strong> — 2<sup>e</sup> partie si elle agit sur le levier, 3<sup>e</sup> partie si elle agit sur le circuit de commande — Article 218 DC3858.</td></tr>
+  </tbody>
+</table></div>
+
+<div class="def-block important" style="margin-bottom:6px">
+  <div class="def-term fc-accent">EAP — Enclenchement d'Approche</div>
 </div>
+<div class="table-wrap"><table>
+  <tbody>
+    <tr><td>Quel est le rôle ?</td><td>Interdire (rendre impossible) toute opération qui permettrait une destruction prématurée de l'itinéraire (manœuvre d'une aiguille devant une circulation).</td></tr>
+    <tr><td>Sur quelle(s) installation(s) ?</td><td>Sur le levier du signal de protection.</td></tr>
+    <tr><td>Dans quelle(s) position(s) ?</td><td>En position renversée (−).</td></tr>
+    <tr><td>Conditions de mise en action ?</td><td>ZAP (zone d'approche) présumée occupée (rouge) <strong>ET</strong> signal commandé à l'ouverture (levier en −).</td></tr>
+    <tr><td>Comment agit-il ?</td><td>Immobilise le levier du signal à l'aide d'un verrou.</td></tr>
+    <tr><td>Conditions de libération ?</td><td>Si ZAP libre (blanc) → l'EAP se libère <strong>immédiatement</strong>.<br>Si ZAP occupée (rouge), il faut : 1. attaque de la 1<sup>re</sup> zone aval <strong>ET</strong> 2. fermeture automatique (FA) actionnée, <strong>ET</strong> éventuellement 3. attaque d'une pédale (si elle existe).</td></tr>
+    <tr><td>Comment savoir s'il existe ?</td><td>Consigne Rose <strong>Annexe 5</strong> — Article 216 DC3858.</td></tr>
+  </tbody>
+</table></div>
 
 <div class="def-block important">
   <div class="def-term">📍 Récap annexes des enclenchements électriques <span class="tag red ml6">🔥 Par cœur</span></div>

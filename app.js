@@ -7,12 +7,13 @@
 // ═══════════════════════════════════════════════
 
 // Source unique de vérité pour la version + date de MAJ (affichée en haut à droite)
-const VERSION_LABEL = 'v6.1 — 18 juin 2026';
+const VERSION_LABEL = 'v6.2 — 21 juin 2026';
 
 const THEMES = [
   { id:'epi',         code:'AMV801',        title:'EPI & Déplacements',                 short:'EPI' },
   { id:'zd',          code:'RRA20068',       title:'Zone dangereuse',                    short:'Zone dangereuse' },
   { id:'aiguillage',  code:'AMV200–216',     title:'Aiguillage & Appareils de voie',     short:'Aiguillage' },
+  { id:'encl',        code:'AMV210–211',     title:'Enclenchements (méca. & élec.)',     short:'Enclenchements' },
   { id:'risques',     code:'AMV005/009',     title:'Risques ferroviaires & Communication',short:'Risques & Comm.' },
   { id:'install-sec', code:'AMV200/AMV250/AMV310', title:'Installations de Sécurité (IS)', short:'Install. Sécurité (IS)' },
   { id:'signaux',     code:'AMV207',         title:'Signaux ferroviaires',               short:'Signaux' },
@@ -66,7 +67,7 @@ const EXAM_PRIORITY = [
   ['36','Encadré jaune — Constater une anomalie sur un convoi de MD','formation','🔥 100% éval','anomalie sur un convoi'],
   ['37','Repérage — Identification des envois : 5 points','formation','🔥 Par cœur','Identification des envois'],
   ['38','Citer 4 types de wagon','formation','À savoir','types de wagons'],
-  ['39','Enclenchements électriques : ZI→Anx4 · CIP & ZP→Anx2 · EAP→Anx5','aiguillage','🔥 Par cœur','Enclenchements électriques'],
+  ['39','Enclenchements électriques : ZI→Anx4 · CIP & ZP→Anx2 · EAP→Anx5','encl','🔥 Par cœur','Enclenchements électriques'],
   ['40','FC — Commutateur de fermeture : urgence uniquement (modif itinéraire, coupons)','aiguillage','⚠ Urgence','Commutateur de Fermeture'],
 ];
 
@@ -500,7 +501,7 @@ function _mkDoc(raw, label) {
 
 function buildSearchIndex() {
   SEARCH_INDEX.length = 0;
-  const themeMap = { encl:'aiguillage', traction:'elect' };
+  const themeMap = { traction:'elect' };
 
   FLASHCARDS.forEach(f => {
     const raw = f.q + ' ' + f.a;
@@ -641,7 +642,7 @@ function searchFiches(val) {
   if (qFlat.length < 2) { res.style.display = 'none'; return; }
   const words = qFlat.split(' ').filter(w => w.length >= 2);
   if (!words.length) { res.style.display = 'none'; return; }
-  const themeMap = { encl:'aiguillage', traction:'elect' };
+  const themeMap = { traction:'elect' };
   const matches = [];
 
   Object.entries(FICHES).forEach(([tid, html]) => {
