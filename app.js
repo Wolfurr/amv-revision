@@ -26,6 +26,50 @@ const THEMES = [
   { id:'graissage',   code:'AMV804',         title:'Graissage des aiguilles',            short:'Graissage' },
 ];
 
+// Liste « sûrs de tomber à l'examen » — affichée sur la page d'accueil, liens vers les fiches
+const EXAM_PRIORITY = [
+  ['1','Définition Zone dangereuse (ZD)','zd','Par cœur','Zone dangereuse'],
+  ['2','Définition Emplacement de Garage (EG)','epi','Par cœur','Emplacement de garage'],
+  ['3','FAMAS — 4 étapes + autocontrôle','incidents','Par cœur','FAMAS'],
+  ['4','Obstacle · Danger · Présomption de danger','incidents','Par cœur','Obstacle'],
+  ['5','Sillon · Ordre normal (ONJ) / Ordre réel (EC)','circulation','Par cœur','Sillon'],
+  ['6','5 § du Document A (renseignements techniques)','circulation','Par cœur','Document A'],
+  ['7','Les 3 marches : manœuvre / à vue / prudente','circulation','Par cœur','Marche à vue'],
+  ['8','Article 1 DC3858 — 15 familles IS','install-sec','Par cœur','15 familles'],
+  ['9','Cantonnement + identifier BAL/BAPR/BM sur terrain','cantonnement','Par cœur','BAL / BAPR / BM'],
+  ['10','Consigne Rose — 5 chapitres + 6 premières annexes','aiguillage','À savoir','Consigne Rose'],
+  ['11','5 familles de signaux (A/B/C/D/E)','signaux','À savoir','5 familles de signaux'],
+  ['12','3 types de communication + 4 étapes (OP0542)','risques','À savoir','communication'],
+  ['13','Les 9 codes radios','risques','À savoir','codes radios'],
+  ['14','VP / VS — définitions exactes','circulation','Par cœur','Voie principale'],
+  ['15','RAT — définition et utilité','formation','Par cœur','RAT'],
+  ['16','4 essais de frein — bien différencier','formation','Bien différencier','essais de frein'],
+  ['17','Définition Cantonnement','cantonnement','Par cœur','Cantonnement'],
+  ['18','PRR — P·R·R : 3 vérifications avant manœuvre d\'un appareil de voie (aiguille)','aiguillage','Par cœur','PRR & ACPP'],
+  ['19','ACPP — A·C·P·P : 4 conditions avant ouverture d\'un signal','aiguillage','Par cœur','PRR & ACPP'],
+  ['20','Bande jaune : 2,50 m si V ≥ 150 km/h (exception 1,80 m si quai < 1 m)','circulation','Par cœur — 100% exam','Bande jaune'],
+  ['21','5 signaux à main du CdM : ARRÊTEZ · APPUYEZ · RALENTISSEZ · TIREZ · REFOULEZ','manœuvre','Par cœur','5 signaux à main'],
+  ['22','Art. 202 — Montée/descente UNIQUEMENT À L ARRÊT + 3 points d appui','manœuvre','Par cœur','Article 202'],
+  ['23','3 plaques d un signal : identification (Nf/F) · cantonnement (BM/PR) · repérage (c.77)','cantonnement','Bien différencier','3 plaques'],
+  ['24','Œilleton : allumé = sémaphore / éteint = carré avarié','signaux','Par cœur','œilleton'],
+  ['25','4 zones traction élec : Zone 0 (>3m) · Zone 1 (2-3m) · Zone 2 (1-2m) · Zone 3 (0-1m)','elect','Par cœur','ZONES'],
+  ['26','Gares & PK : AMVVille 100,600 · St-Saturnin 139,000','aiguillage','Par cœur','Consigne Rose'],
+  ['27','Art. 101 — 5 conditions avant départ : PPE · ST · Circulation · AuM · Heure','circulation','Par cœur','Article 101'],
+  ['28','STEM — Surveillance des Trains en Marche (se fait à l\'extérieur)','circulation','Par cœur','STEM'],
+  ['29','COGC · CRC · Régulateur — définitions et missions','circulation','Par cœur','COGC'],
+  ['30','3 zones gare : ZEF (interdit) · ZAFS (quais) · ZC (commerciale)','circulation','Par cœur','ZEF'],
+  ['31','VP doivent TOUJOURS être libres ou protégées','aiguillage','Par cœur','Temps moral'],
+  ['32','Déroulé FAMAS complet : F·A·M·A·S + autocontrôle 2.2 + DR + fiche 3 ou 4 + CED + OCAR','incidents','Par cœur','Déroulé complet du FAMAS'],
+  ['33','TE — Transport Exceptionnel : définition par cœur (+ rôle du BTE)','formation','🔥 Par cœur','Transport Exceptionnel'],
+  ['34','MD — Marchandises Dangereuses : définition par cœur (personnes · biens · environnement)','formation','🔥 Par cœur','Marchandises Dangereuses'],
+  ['35','ATE — 3 types : 4 et 5 (étiquette spéciale) · 7 (aucune restriction), créé par le BTE','formation','🔥 Par cœur','Avis de Transport'],
+  ['36','Encadré jaune — Constater une anomalie sur un convoi de MD','formation','🔥 100% éval','anomalie sur un convoi'],
+  ['37','Repérage — Identification des envois : 5 points','formation','🔥 Par cœur','Identification des envois'],
+  ['38','Citer 4 types de wagon','formation','À savoir','types de wagons'],
+  ['39','Enclenchements électriques : ZI→Anx4 · CIP & ZP→Anx2 · EAP→Anx5','aiguillage','🔥 Par cœur','Enclenchements électriques'],
+  ['40','FC — Commutateur de fermeture : urgence uniquement (modif itinéraire, coupons)','aiguillage','⚠ Urgence','Commutateur de Fermeture'],
+];
+
 // ═══════════════════════════════════════════════
 // STATE
 // ═══════════════════════════════════════════════
@@ -269,17 +313,24 @@ function gotoFiche(theme, anchorText) {
 // ═══════════════════════════════════════════════
 function renderHome(c) {
   c = c || document.getElementById('main-content');
-  const tc = FLASHCARDS.length;
-  const qc = QUIZ.length;
   c.innerHTML = `
 <div class="section-heading">Bienvenue 👋</div>
-<div class="section-sub">Application de révision AMV — SECUFER · ${VERSION_LABEL} · ${THEMES.length} thèmes</div>
+<div class="section-sub">Application de révision AMV — SECUFER · ${VERSION_LABEL}</div>
 
 <div style="display:flex;gap:16px;justify-content:center;align-items:center;padding:10px 16px;background:var(--bg3);border:1px solid var(--accent);border-radius:var(--radius);margin-bottom:16px;font-family:var(--mono);font-size:13px">
   <span style="color:var(--text3)">📍</span>
   <span><strong style="color:var(--accent)">AMVVille</strong> <span style="color:var(--text2)">PK</span> <strong style="color:var(--text)">100,600</strong></span>
   <span style="color:var(--border2)">│</span>
   <span><strong style="color:var(--accent)">Saint-Saturnin</strong> <span style="color:var(--text2)">PK</span> <strong style="color:var(--text)">139,000</strong></span>
+</div>
+
+<!-- BARRE DE RECHERCHE -->
+<div style="margin-bottom:20px;position:relative">
+  <input id="search-input" type="text" placeholder="🔍  Rechercher dans toute l'appli : FAMAS, ZD, BAL, CDIS..."
+    oninput="doSearch(this.value)"
+    style="width:100%;padding:12px 16px;background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius);color:var(--text);font-family:var(--sans);font-size:14px;outline:none;"
+    onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border2)'">
+  <div id="search-results" style="display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg2);border:1px solid var(--border2);border-radius:0 0 var(--radius) var(--radius);z-index:200;max-height:320px;overflow-y:auto;box-shadow:0 8px 24px rgba(0,0,0,0.4)"></div>
 </div>
 
 <!-- SCHEMA EXAMEN AMV -->
@@ -311,31 +362,6 @@ function renderHome(c) {
   <div style="font-size:11px;color:var(--text3);margin-top:10px;text-align:center">ExpertQuizz : IS · Cantonnement (BM/BAPR) · Plaques de signalisation</div>
 </div>
 
-<!-- BARRE DE RECHERCHE -->
-<div style="margin-bottom:20px;position:relative">
-  <input id="search-input" type="text" placeholder="🔍  Rechercher dans toute l'appli : FAMAS, ZD, BAL, CDIS..."
-    oninput="doSearch(this.value)"
-    style="width:100%;padding:12px 16px;background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius);color:var(--text);font-family:var(--sans);font-size:14px;outline:none;"
-    onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border2)'">
-  <div id="search-results" style="display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg2);border:1px solid var(--border2);border-radius:0 0 var(--radius) var(--radius);z-index:200;max-height:320px;overflow-y:auto;box-shadow:0 8px 24px rgba(0,0,0,0.4)"></div>
-</div>
-
-<!-- STATS + MODES -->
-<div class="stat-grid" style="margin-bottom:12px">
-  <div class="stat-card"><div class="stat-num">${THEMES.length}</div><div class="stat-label">Thèmes</div></div>
-  <div class="stat-card"><div class="stat-num">${tc}</div><div class="stat-label">Flashcards</div></div>
-  <div class="stat-card"><div class="stat-num">${qc}</div><div class="stat-label">Quiz</div></div>
-  <div class="stat-card"><div class="stat-num">${DICTEES.length}</div><div class="stat-label">Dictées</div></div>
-</div>
-<div class="mode-grid" style="margin-bottom:24px">
-  <div class="mode-card" onclick="showView('fiches')"><div class="mode-icon">◧</div><div class="mode-title">Fiches de cours</div><div class="mode-desc">Toutes les définitions et règles par thème</div></div>
-  <div class="mode-card" onclick="showView('flash')"><div class="mode-icon">⟳</div><div class="mode-title">Flashcards</div><div class="mode-desc">${tc} cartes recto/verso</div></div>
-  <div class="mode-card" onclick="showView('quiz')"><div class="mode-icon">✦</div><div class="mode-title">Quiz QCM</div><div class="mode-desc">${qc} questions</div></div>
-  <div class="mode-card" onclick="showView('dictee')"><div class="mode-icon">✎</div><div class="mode-title">Dictées</div><div class="mode-desc">${DICTEES.length} définitions</div></div>
-  <div class="mode-card" onclick="showView('signaux-learn')" style="border-color:rgba(240,192,64,0.4);background:rgba(240,192,64,0.03)"><div class="mode-icon">🚦</div><div class="mode-title" style="color:var(--accent)">Signaux & panneaux</div><div class="mode-desc">Reconnaître ${SIGNAUX.length} signaux visuellement</div></div>
-  <div class="mode-card" onclick="showView('gares')" style="border-color:rgba(240,192,64,0.4);background:rgba(240,192,64,0.03)"><div class="mode-icon">🏘️</div><div class="mode-title" style="color:var(--accent)">Gares & Tab. mouvements</div><div class="mode-desc">St-Saturnin · AMVVille — PK & tableaux</div></div>
-</div>
-
 <!-- A TOMBER A L'EXAM -->
 <div class="card" style="border-color:rgba(240,192,64,0.3);background:rgba(240,192,64,0.03);margin-bottom:16px">
   <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px">
@@ -343,48 +369,7 @@ function renderHome(c) {
     <div class="card-title" style="color:var(--accent)">SÛRS DE TOMBER À L'EXAMEN — selon les formateurs</div>
   </div>
   <div style="display:flex;flex-direction:column;gap:6px">
-    ${[
-      ['1','Définition Zone dangereuse (ZD)','zd','Par cœur','Zone dangereuse'],
-      ['2','Définition Emplacement de Garage (EG)','epi','Par cœur','Emplacement de garage'],
-      ['3','FAMAS — 4 étapes + autocontrôle','incidents','Par cœur','FAMAS'],
-      ['4','Obstacle · Danger · Présomption de danger','incidents','Par cœur','Obstacle'],
-      ['5','Sillon · Ordre normal (ONJ) / Ordre réel (EC)','circulation','Par cœur','Sillon'],
-      ['6','5 § du Document A (renseignements techniques)','circulation','Par cœur','Document A'],
-      ['7','Les 3 marches : manœuvre / à vue / prudente','circulation','Par cœur','Marche à vue'],
-      ['8','Article 1 DC3858 — 15 familles IS','install-sec','Par cœur','15 familles'],
-      ['9','Cantonnement + identifier BAL/BAPR/BM sur terrain','cantonnement','Par cœur','BAL / BAPR / BM'],
-      ['10','Consigne Rose — 5 chapitres + 6 premières annexes','aiguillage','À savoir','Consigne Rose'],
-      ['11','5 familles de signaux (A/B/C/D/E)','signaux','À savoir','5 familles de signaux'],
-      ['12','3 types de communication + 4 étapes (OP0542)','risques','À savoir','communication'],
-      ['13','Les 9 codes radios','risques','À savoir','codes radios'],
-      ['14','VP / VS — définitions exactes','circulation','Par cœur','Voie principale'],
-      ['15','RAT — définition et utilité','formation','Par cœur','RAT'],
-      ['16','4 essais de frein — bien différencier','formation','Bien différencier','essais de frein'],
-      ['17','Définition Cantonnement','cantonnement','Par cœur','Cantonnement'],
-      ['18','PRR — P·R·R : 3 vérifications avant manœuvre d\'un appareil de voie (aiguille)','aiguillage','Par cœur','PRR & ACPP'],
-      ['19','ACPP — A·C·P·P : 4 conditions avant ouverture d\'un signal','aiguillage','Par cœur','PRR & ACPP'],
-      ['20','Bande jaune : 2,50 m si V ≥ 150 km/h (exception 1,80 m si quai < 1 m)','circulation','Par cœur — 100% exam','Bande jaune'],
-      ['21','5 signaux à main du CdM : ARRÊTEZ · APPUYEZ · RALENTISSEZ · TIREZ · REFOULEZ','manœuvre','Par cœur','5 signaux à main'],
-      ['22','Art. 202 — Montée/descente UNIQUEMENT À L ARRÊT + 3 points d appui','manœuvre','Par cœur','Article 202'],
-      ['23','3 plaques d un signal : identification (Nf/F) · cantonnement (BM/PR) · repérage (c.77)','cantonnement','Bien différencier','3 plaques'],
-      ['24','Œilleton : allumé = sémaphore / éteint = carré avarié','signaux','Par cœur','œilleton'],
-      ['25','4 zones traction élec : Zone 0 (>3m) · Zone 1 (2-3m) · Zone 2 (1-2m) · Zone 3 (0-1m)','elect','Par cœur','ZONES'],
-      ['26','Gares & PK : AMVVille 100,600 · St-Saturnin 139,000','aiguillage','Par cœur','Consigne Rose'],
-      ['27','Art. 101 — 5 conditions avant départ : PPE · ST · Circulation · AuM · Heure','circulation','Par cœur','Article 101'],
-      ['28','STEM — Surveillance des Trains en Marche (se fait à l\'extérieur)','circulation','Par cœur','STEM'],
-      ['29','COGC · CRC · Régulateur — définitions et missions','circulation','Par cœur','COGC'],
-      ['30','3 zones gare : ZEF (interdit) · ZAFS (quais) · ZC (commerciale)','circulation','Par cœur','ZEF'],
-      ['31','VP doivent TOUJOURS être libres ou protégées','aiguillage','Par cœur','Temps moral'],
-      ['32','Déroulé FAMAS complet : F·A·M·A·S + autocontrôle 2.2 + DR + fiche 3 ou 4 + CED + OCAR','incidents','Par cœur','Déroulé complet du FAMAS'],
-      ['33','TE — Transport Exceptionnel : définition par cœur (+ rôle du BTE)','formation','🔥 Par cœur','Transport Exceptionnel'],
-      ['34','MD — Marchandises Dangereuses : définition par cœur (personnes · biens · environnement)','formation','🔥 Par cœur','Marchandises Dangereuses'],
-      ['35','ATE — 3 types : 4 et 5 (étiquette spéciale) · 7 (aucune restriction), créé par le BTE','formation','🔥 Par cœur','Avis de Transport'],
-      ['36','Encadré jaune — Constater une anomalie sur un convoi de MD','formation','🔥 100% éval','anomalie sur un convoi'],
-      ['37','Repérage — Identification des envois : 5 points','formation','🔥 Par cœur','Identification des envois'],
-      ['38','Citer 4 types de wagon','formation','À savoir','types de wagons'],
-      ['39','Enclenchements électriques : ZI→Anx4 · CIP & ZP→Anx2 · EAP→Anx5','aiguillage','🔥 Par cœur','Enclenchements électriques'],
-      ['40','FC — Commutateur de fermeture : urgence uniquement (modif itinéraire, coupons)','aiguillage','⚠ Urgence','Commutateur de Fermeture'],
-    ].map(([n,titre,theme,tag,anchor]) => `
+    ${EXAM_PRIORITY.map(([n,titre,theme,tag,anchor]) => `
     <div style="display:flex;align-items:center;gap:10px;padding:7px 12px;background:var(--bg3);border-radius:var(--radius);flex-wrap:wrap">
       <span style="font-family:var(--mono);font-size:11px;color:var(--accent);min-width:24px">${n}.</span>
       <span style="font-size:13px;color:var(--text);flex:1">${titre}</span>
@@ -392,69 +377,6 @@ function renderHome(c) {
       <button class="btn btn-sm" style="padding:3px 10px;font-size:11px;white-space:nowrap" onclick="gotoFiche('${theme}','${anchor}')">Fiche →</button>
     </div>`).join('')}
   </div>
-</div>
-
-<!-- DEFS OFFICIELLES + SIGLES + CODES -->
-<div class="card" style="margin-bottom:16px">
-  <div class="card-title" style="margin-bottom:12px">📋 Définitions officielles + Programme H:00</div>
-  <div class="def-block important" style="margin-bottom:8px">
-    <div class="def-term">Agent-circulation</div>
-    <div class="def-text">Agent, chargé d'assurer le service de la circulation des trains, habilité à la TES « Assurer la circulation des trains ferroviaire ».</div>
-  </div>
-  <div class="def-block important" style="margin-bottom:8px">
-    <div class="def-term">Aiguilleur</div>
-    <div class="def-text">Agent, chargé de la manœuvre des signaux et les autres installations de gestion des circulations, habilité à la TES « Manœuvrer les signaux et les autres installations de gestion des circulations ».</div>
-  </div>
-  <div class="def-block" style="margin-bottom:0">
-    <div class="def-term">Programme H : 00</div>
-    <div class="def-text"><strong style="color:var(--accent)">Départ à la seconde</strong> — point névralgique de l'organisation SNCF.</div>
-  </div>
-</div>
-
-<div class="card" style="margin-bottom:16px">
-  <div class="card-title" style="margin-bottom:10px">📎 Sigles SNCF · Astuce pairs/impairs · 9 codes radios</div>
-  <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px">
-    ${[['DC','Circulation'],['FR','FRET'],['VO','Voyageur'],['GG','Gare'],['DSF','Sûreté'],['MT','Maint. Travaux'],['TT','Traction'],['OP','Opposable'],['EIC','Déclinaison locale']].map(([s,d]) => `
-    <div style="padding:3px 8px;background:var(--bg3);border-radius:4px;font-size:12px"><span style="color:var(--accent);font-weight:600;font-family:var(--mono)">${s}</span> <span style="color:var(--text3)">${d}</span></div>`).join('')}
-  </div>
-  <div style="font-size:12px;color:var(--text2);margin-bottom:10px;padding:6px 10px;background:var(--bg3);border-radius:5px">
-    <strong>Pairs → Paris</strong> · <strong>Impairs → Provinces</strong> <span style="color:var(--text3)">(trains, signaux, PK, voies...)</span>
-  </div>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:4px">
-    ${[['1','À toi'],['2','Reçu'],['3','Mal reçu'],['4','Correct'],['5','Erreur'],['6','Je répète'],['7','Attendez'],['8','Répétez'],['9','Terminé']].map(([n,c]) => `
-    <div style="padding:5px 8px;background:var(--bg3);border-radius:5px;display:flex;gap:6px;align-items:center">
-      <span style="font-family:var(--mono);font-size:11px;color:var(--accent)">${n}.</span>
-      <span style="font-size:12px;color:var(--text)">${c}</span>
-    </div>`).join('')}
-  </div>
-</div>
-
-<!-- CONSIGNE ROSE COMPACT -->
-<div class="card" style="border-color:rgba(240,192,64,0.2);background:rgba(240,192,64,0.02);margin-bottom:16px">
-  <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:10px">
-    <div class="card-title">📌 Consigne Rose (DC3858) — 5 chapitres + 6 premières annexes à retenir</div>
-    <button onclick="currentTheme='aiguillage';document.querySelectorAll('.theme-item').forEach(el=>el.classList.remove('active'));document.getElementById('tnav-aiguillage')?.classList.add('active');showView('fiches')" class="btn btn-sm">Fiche →</button>
-  </div>
-  <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:4px;margin-bottom:6px">
-    ${[['CH1','Généralités'],['CH2','Signaux'],['CH3','AdV'],['CH4','Encl. élec.'],['CH5','PN voisins']].map(([n,t]) => `
-    <div style="padding:5px;background:var(--bg3);border-radius:5px;border-left:2px solid var(--accent);text-align:center">
-      <div style="font-family:var(--mono);font-size:10px;color:var(--accent);font-weight:700">${n}</div>
-      <div style="font-size:10px;color:var(--text3);margin-top:1px">${t}</div>
-    </div>`).join('')}
-  </div>
-  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:4px">
-    ${[['A1','Schéma signalisation',true],['A2','Tableau mouvements ⭐⭐',true],['A3','Encl. poste/poste*',false],['A4','Encl. AdV',false],['A5','Encl. approche',false],['A6','Annulation transits',false],['A7','Réservée',false],['A8','Petit matériel (v.8)',false]].map(([n,t,imp]) => `
-    <div style="padding:5px;background:var(--bg3);border-radius:5px;border:1px solid ${imp ? 'rgba(240,192,64,0.3)' : 'var(--border)'}">
-      <div style="font-family:var(--mono);font-size:10px;color:${imp ? 'var(--accent)' : 'var(--text3)'};font-weight:700">${n}</div>
-      <div style="font-size:10px;color:var(--text3);line-height:1.3;margin-top:1px">${t}</div>
-    </div>`).join('')}
-  </div>
-  <div style="font-size:11px;color:var(--text3);margin-top:5px">* A3 = Réservée en version 7 annexes (AMV Ville)</div>
-</div>
-
-<div class="card" style="background:var(--bg3);border-color:var(--border2)">
-  <div class="card-title" style="margin-bottom:8px">💡 Astuces</div>
-  <p style="font-size:13px;color:var(--text2);line-height:1.7">• Trait jaune dans le menu = niveau actuel — glisse-le pour marquer ta progression.<br>• Barre de recherche = n'importe quel mot-clé dans tout le contenu.<br>• L'app fonctionne <strong style="color:var(--accent)">hors connexion</strong> — enregistre le fichier HTML sur ton appareil.</p>
 </div>`;
 }
 

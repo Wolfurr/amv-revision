@@ -1165,6 +1165,15 @@ circulation: `
   <div class="def-text">Agent chargé d'organiser et de contrôler la circulation des trains sur certaines lignes ou sections de lignes dites « régulées » et désignées comme telles dans les renseignements techniques, et d'exécuter ou de faire exécuter certaines opérations de sécurité. Décideur en matière d'organisation de la circulation entre les gares.</div>
 </div>
 
+<h3 class="fc-h3">Sigles SNCF & repères</h3>
+<div class="def-block">
+  <div class="def-term">Principaux sigles d'organisation</div>
+  <div class="def-text">DC Circulation · FR FRET · VO Voyageur · GG Gare · DSF Sûreté · MT Maintenance Travaux · TT Traction · OP Opposable · EIC Déclinaison locale</div>
+</div>
+<div class="rule-box">
+  <strong>Astuce numérotation :</strong> Pairs → Paris · Impairs → Provinces (s'applique aux trains, signaux, PK, voies...)
+</div>
+
 <h3 class="fc-h3">Documents horaires</h3>
 <div class="table-wrap"><table>
   <thead><tr><th>Document</th><th>Définition</th></tr></thead>
@@ -1813,6 +1822,17 @@ aiguillage: `
   <div class="def-text">• <strong>Contrôle d'entrebaillement</strong> : en cours de manœuvre — vérifie que l'aiguille n'est pas en position intermédiaire pendant la manœuvre<br>
 • <strong>Contrôle de position mécanique</strong> : vérifie la position physique de l'aiguille sur le terrain<br>
 • <strong>Contrôle de position lumineuse</strong> : sur le TCO (Tableau de Contrôle Optique) — indique visuellement la position des aiguilles au poste</div>
+</div>
+
+<h3 class="fc-h3">Consigne Rose (DC3858) — Structure</h3>
+<div class="def-block">
+  <div class="def-term">5 chapitres à retenir</div>
+  <div class="def-text">CH1 Généralités · CH2 Signaux · CH3 AdV (Appareils de voie) · CH4 Enclenchements électriques · CH5 PN voisins</div>
+</div>
+<div class="def-block">
+  <div class="def-term">6 premières annexes à retenir</div>
+  <div class="def-text">A1 Schéma de signalisation · A2 Tableau des mouvements ⭐ (la plus importante) · A3 Enclenchements poste/poste* · A4 Enclenchements AdV · A5 Enclenchements d'approche · A6 Annulation des transits<br><br>
+  <span style="color:var(--text3);font-size:12px">A7 Réservée · A8 Petit matériel (à partir de la version 8) — moins prioritaires.<br>* A3 = Réservée dans la version 7 annexes (AMV Ville).</span></div>
 </div>
 
 <h3 style="font-size:15px;font-weight:500;margin:24px 0 10px;color:var(--accent)">⭐ PRR & ACPP — À CONNAÎTRE PAR CŒUR (exam !)</h3>
