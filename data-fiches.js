@@ -1683,48 +1683,111 @@ FA <strong>en service</strong> = actionnée · FA <strong>pas en service</strong
 
 incidents: `
 <h2 class="theme-heading">Incidents de circulation</h2>
-<div class="theme-ref">AMV109 · AMV111 · AMV112 · AMV113 · AMV108 · DC1503</div>
+<div class="theme-ref">AMV109 · AMV111 · AMV112 · AMV113 · DC1503 · CE S10B · IN83</div>
+
+<div style="background:rgba(239,68,68,0.07);border:1px solid rgba(239,68,68,0.3);border-radius:var(--radius2);padding:11px 16px;margin-bottom:16px;font-size:13px;line-height:1.6">
+  🔥 À l'AMV, <strong>un dérangement tombera forcément à l'examen</strong> — ce sera l'une de ces 3 situations : divagation de bestiaux · incident de PN · personnes dans les voies.
+</div>
+
+<h3 class="fc-h3-accent">⭐ Définitions fondamentales — par cœur</h3>
 
 <div class="def-block important">
-  <div class="def-term">Obstacle</div>
+  <div class="def-term">Obstacle <span class="tag red ml6">🔥 Par cœur</span></div>
   <div class="def-text">Événement inopiné et identifié, visible ou non, qui fait obstruction à la circulation des trains. Un obstacle crée un risque grave de déraillement par collision (gabarit engagé) ou met gravement en péril la sécurité bien que le gabarit ne soit pas engagé.</div>
 </div>
 <div class="def-block important">
-  <div class="def-term">Danger</div>
-  <div class="def-text">Événement inopiné et identifié survenant dans les emprises ferroviaires et présentant un risque pour les circulations et les personnes. À la différence d'un obstacle, un danger ne fait pas obstruction à la circulation mais nécessite des mesures particulières (marche prudente, limitation de vitesse, pantographes baissés...).</div>
+  <div class="def-term">Danger <span class="tag red ml6">🔥 Par cœur</span></div>
+  <div class="def-text">Événement inopiné et identifié survenant dans les emprises ferroviaires et présentant un risque pour les circulations et les personnes. À la différence d'un obstacle, un danger <strong>ne fait pas obstruction</strong> à la circulation mais nécessite des mesures particulières (marche prudente, limitation de vitesse, pantographes baissés...).</div>
 </div>
 <div class="def-block important">
-  <div class="def-term">Présomption de danger</div>
+  <div class="def-term">Présomption de danger <span class="tag red ml6">🔥 Par cœur</span></div>
   <div class="def-text">Probabilité de l'existence d'un événement inopiné survenant dans les emprises ferroviaires et présentant un risque pour les circulations et les personnes. Elle nécessite d'obtenir un supplément d'information afin de confirmer l'existence du danger et d'identifier sa nature.</div>
 </div>
 
+<h3 class="fc-h3-accent">⭐ Divagation de bestiaux — AMV111 · DC1503 fiche 6 <span class="tag red ml6">🔥 Exam</span></h3>
 
-<h3 class="fc-h3">Bestiaux (AMV111)</h3>
 <div class="def-block important">
-  <div class="def-term">Bestiaux</div>
-  <div class="def-text">Tous les animaux d'élevage, seuls ou en troupeau, dont la taille est, au moins, égale à celle d'un mouton. C'est un DANGER et non un obstacle. Zone de protection : 1000 m de part et d'autre du point de signalement, sur toutes les voies de la plateforme.</div>
+  <div class="def-term">Bestiaux — définition (DC1503 fiche 6) <span class="tag red ml6">Par cœur</span></div>
+  <div class="def-text">Tous les animaux d'élevage, seuls ou en troupeau, dont la taille est, au moins, égale à celle d'un mouton.<br><br>
+  ⚠️ C'est un <strong class="fc-accent">DANGER</strong> — <strong>pas un obstacle</strong> !<br>
+  <strong>Règle :</strong> 1 km de protection de chaque côté de l'obstacle (= 1 km dans chaque sens), avec les signaux d'arrêt convenables.</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">Mesure clé : fermer TOUTES les voies</div>
+  <div class="def-text">Ex : divagation annoncée sur la voie 1 → on ferme <strong>toutes les voies</strong> de la plateforme, car les bestiaux se déplacent et peuvent changer de voie à tout moment.</div>
 </div>
 
-<h3 class="fc-h3">Passages à niveau (AMV112)</h3>
+<h3 class="fc-h3-accent">⭐ Passages à niveau — AMV112 · DC1503 fiche 8 (8.1) <span class="tag red ml6">🔥 Exam</span></h3>
+
+<div class="def-block important">
+  <div class="def-term">Types de PN</div>
+  <div class="def-text">• <strong>Gardés</strong> (un agent est présent)<br>• <strong>Automatiques</strong> (SAL) — 5 types :</div>
+</div>
 <div class="table-wrap"><table>
   <thead><tr><th>Type</th><th>Description</th></tr></thead>
   <tbody>
-    <tr><td>SAL 0</td><td>Uniquement la signalisation lumineuse automatique</td></tr>
-    <tr><td>SAL 2</td><td>2 demi-barrières du côté de l'entrée</td></tr>
-    <tr><td>SAL 2B</td><td>2 barrières de la largeur de la chaussée</td></tr>
-    <tr><td>SAL 4</td><td>4 demi-barrières</td></tr>
+    <tr><td>SAL 0</td><td>Uniquement la signalisation lumineuse automatique (pas de barrières)</td></tr>
+    <tr><td>SAL 2</td><td>2 demi-barrières côté entrée</td></tr>
+    <tr><td>SAL 2 bis</td><td>2 barrières de la largeur de la chaussée</td></tr>
+    <tr><td>SAL 4</td><td>4 demi-barrières (2 entrée + 2 sortie)</td></tr>
     <tr><td>SAL FC</td><td>À franchissement conditionnel</td></tr>
   </tbody>
 </table></div>
-<div class="rule-box">
-  <strong>Fonctionnement SAL 2 :</strong> Pédale d'annonce franchie → sonnerie → feux rouges clignotent → barrières se baissent → 10 secondes après fermeture → train passe → pédale de reddition → barrières s'ouvrent et feux s'éteignent.<br><br>
-  On délivre un <strong>RATO</strong> par circulation jusqu'à rétablissement.
+
+<div class="def-block important">
+  <div class="def-term">Fonctionnement temporel — par cœur</div>
+  <div class="def-text">• <strong>7 secondes avant</strong> l'arrivée du train → fermeture des barrières<br>
+• <strong>Moins de 10 secondes</strong> après la fermeture → le train doit passer (voir consignes PN)</div>
 </div>
 
 <div class="def-block important">
-  <div class="def-term">Entrave (AMV113)</div>
-  <div class="def-text">Action délibérée d'une ou plusieurs personnes revendicatives présentes dans la zone dangereuse, y restant et ayant l'intention d'empêcher la circulation des trains.</div>
+  <div class="def-term">4 types d'incidents de PN — par cœur <span class="tag red ml6">🔥 Par cœur</span></div>
+  <div class="def-text">1. <strong>Raté d'ouverture</strong> — une barrière ne s'ouvre pas après le passage du train<br>
+2. <strong>Raté de fermeture</strong> — une barrière ne se ferme pas à l'approche du train<br>
+3. <strong>Bris de barrières</strong> — une barrière est cassée/endommagée<br>
+4. <strong>Autres dérangements</strong><br><br>
+⚠️ <strong>Exemple SAL 4 :</strong> problème sur une <strong>barrière de sortie</strong> (≠ barrière d'entrée) → c'est un <strong>raté d'ouverture</strong>.</div>
 </div>
+
+<div class="def-block">
+  <div class="def-term">Usager de la route qui appelle — 5 infos à obtenir</div>
+  <div class="def-text">1. Numéro du PN<br>
+2. Point kilométrique<br>
+3. Ligne<br>
+4. Nature du dérangement<br>
+5. Coordonnées de la personne qui avise<br><br>
+Pour situer le PN : utiliser la <strong>Consigne CE S10B</strong> = « Consigne PN » du poste.</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term fc-accent">⚡ Incident de PN → FAMAS d'abord ! (DC1503 fiche 8.1) <span class="tag red ml6">🔥 Ne pas oublier !</span></div>
+  <div class="def-text">Si incident de PN → faire le <strong>FAMAS</strong> immédiatement, puis autocontrôle avec la <strong>DC1503 fiche 8</strong> (surtout <strong>8.1</strong>).<br><br>
+  <strong>Reprise de la circulation :</strong><br>
+  1. Lancer un avis au <strong>COGC</strong>, <strong>agent SE</strong>, <strong>agent voie</strong>, <strong>dirigeant voie</strong><br>
+  2. Bulletin formulaire <strong>IN83</strong> — donner un ordre <strong>RATO</strong> (cf DC à lire et suivre à l'examen)</div>
+</div>
+
+<h3 class="fc-h3-accent">⭐ Personnes dans les voies — AMV113 <span class="tag red ml6">🔥 Exam</span></h3>
+
+<div class="def-block important">
+  <div class="def-term">Définition — personne dans les voies <span class="tag red ml6">Par cœur</span></div>
+  <div class="def-text">Personne <strong>hors SNCF</strong> qui ne connaît pas les risques ferroviaires et qui peut être heurtée par une circulation.</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">Entrave — définition <span class="tag red ml6">Par cœur</span></div>
+  <div class="def-text">Action délibérée d'une ou plusieurs personnes <strong>revendicatives</strong> présentes dans la zone dangereuse, y restant et ayant l'intention d'empêcher la circulation des trains.</div>
+</div>
+
+<div class="table-wrap"><table>
+  <thead><tr><th>Situation</th><th>Mesures</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Hors ZD</strong></td><td>Pas de risque immédiat → pas de mesures de signalisation, mais avis à donner à la <strong>police</strong> et au <strong>COGC</strong></td></tr>
+    <tr><td><strong>Dans la ZD, sans entrave</strong><br>(sans volonté d'y rester)</td><td>Danger → FAMAS + mesures DC1503. Informer COGC et police.</td></tr>
+    <tr><td><strong>Dans la ZD, avec entrave</strong><br>(volonté délibérée d'y rester)</td><td>Obstacle → FAMAS + mesures DC1503. Informer COGC et police.</td></tr>
+    <tr><td><strong>Engagement furtif</strong><br>(traverse rapidement, ne reste pas)</td><td>Pas d'action concrète sur la signalisation (elle ne reste pas dans les voies) — mais aviser <strong>police</strong>, <strong>SUG</strong> et <strong>COGC</strong></td></tr>
+  </tbody>
+</table></div>
 
 <!-- ═══ PROCÉDURE FAMAS COMPLÈTE ═══ -->
 <h3 class="fc-h3-accent">🚨 Déroulé complet du FAMAS — du début à la fin <span style="font-size:12px;color:var(--red);margin-left:8px">🔥 Hyper important</span></h3>
