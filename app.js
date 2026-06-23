@@ -7,7 +7,7 @@
 // ═══════════════════════════════════════════════
 
 // Source unique de vérité pour la version + date de MAJ (affichée en haut à droite)
-const VERSION_LABEL = 'v6.4 — 21 juin 2026';
+const VERSION_LABEL = 'v6.5 — 23 juin 2026';
 
 const THEMES = [
   { id:'epi',         code:'AMV801',        title:'EPI & Déplacements',                 short:'EPI' },
@@ -325,6 +325,22 @@ function renderHome(c) {
   <span><strong style="color:var(--accent)">Saint-Saturnin</strong> <span style="color:var(--text2)">PK</span> <strong style="color:var(--text)">139,000</strong></span>
 </div>
 
+<!-- 3 CONSIGNES -->
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px">
+  <div style="flex:1;min-width:150px;padding:10px 14px;background:var(--bg3);border:1px solid rgba(240,192,64,0.4);border-radius:var(--radius)">
+    <div style="font-family:var(--mono);font-size:10px;color:var(--accent);margin-bottom:4px">CONSIGNE ROSE</div>
+    <div style="font-size:12px;color:var(--text2)">Installations de sécurité (ZI, CIP, ZP, EAP, enclenchements, schémas, tableaux des mouvements…)</div>
+  </div>
+  <div style="flex:1;min-width:150px;padding:10px 14px;background:var(--bg3);border:1px solid rgba(96,165,250,0.4);border-radius:var(--radius)">
+    <div style="font-family:var(--mono);font-size:10px;color:var(--blue);margin-bottom:4px">CONSIGNE BLEUE</div>
+    <div style="font-size:12px;color:var(--text2)">Installations de traction électrique (caténaire, sectionneurs, zones…)</div>
+  </div>
+  <div style="flex:1;min-width:150px;padding:10px 14px;background:var(--bg3);border:1px solid rgba(52,211,153,0.4);border-radius:var(--radius)">
+    <div style="font-family:var(--mono);font-size:10px;color:#34d399;margin-bottom:4px">CONSIGNE DE PROTECTION</div>
+    <div style="font-size:12px;color:var(--text2)">Travaux (ZEP, DFV, assurance chantier…)</div>
+  </div>
+</div>
+
 <!-- BARRE DE RECHERCHE -->
 <div style="margin-bottom:20px;position:relative">
   <input id="search-input" type="text" placeholder="🔍  Rechercher dans toute l'appli : FAMAS, ZD, BAL, CDIS..."
@@ -337,30 +353,36 @@ function renderHome(c) {
 <!-- SCHEMA EXAMEN AMV -->
 <div class="card" style="border-color:rgba(96,165,250,0.3);background:rgba(96,165,250,0.04);margin-bottom:16px">
   <div class="card-title" style="color:var(--blue);margin-bottom:12px">🎓 STRUCTURE DE L'EXAMEN AMV</div>
-  <div style="display:flex;justify-content:center;gap:32px;flex-wrap:wrap">
-    <div style="display:flex;flex-direction:column;align-items:center;gap:6px">
-      <div style="padding:6px 18px;background:var(--blue-bg);border:2px solid var(--blue);border-radius:6px;font-weight:700;color:var(--blue);font-size:13px">✍️ Écrite — 1h (ExpertQuizz)</div>
-      <div style="display:flex;gap:8px">
-        <div style="padding:5px 10px;background:var(--bg4);border-radius:5px;font-size:11px;color:var(--text3);text-align:center">PS9</div>
-        <div style="padding:5px 10px;background:var(--bg4);border-radius:5px;font-size:11px;color:var(--text3);text-align:center">Formation trains</div>
-      </div>
+  <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap">
+
+    <div style="display:flex;flex-direction:column;gap:6px;min-width:180px">
+      <div style="padding:6px 14px;background:var(--blue-bg);border:2px solid var(--blue);border-radius:6px;font-weight:700;color:var(--blue);font-size:13px;text-align:center">✍️ Écrite — 1h<br><span style="font-size:11px;font-weight:400">(ExpertQuizz)</span></div>
+      <div style="padding:5px 10px;background:var(--bg4);border-radius:5px;font-size:11px;color:var(--text3);text-align:center">PS9 · Formation trains<br>IS · Cantonnement (BM/BAPR)<br>Plaques de signalisation</div>
     </div>
-    <div style="display:flex;flex-direction:column;align-items:center;gap:6px">
-      <div style="padding:6px 18px;background:var(--bg3);border:2px solid var(--border2);border-radius:6px;font-weight:700;color:var(--text);font-size:13px">🗣️ Orale — 2h30</div>
-      <div style="display:flex;gap:8px;align-items:flex-start">
-        <div style="padding:5px 10px;background:var(--bg4);border-radius:5px;font-size:11px;color:var(--text3)">Aiguillage<br>(tracé PRR / ACPP)</div>
-        <div style="display:flex;flex-direction:column;align-items:center;gap:3px">
-          <div style="padding:5px 10px;background:var(--bg4);border-radius:5px;font-size:11px;color:var(--text3)">Circulation</div>
-          <div style="font-size:10px;color:var(--text3)">↓</div>
-          <div style="padding:5px 10px;background:var(--bg4);border-radius:5px;font-size:11px;color:var(--text3)">Mise en situation</div>
-          <div style="font-size:10px;color:var(--text3)">↓</div>
-          <div style="padding:5px 10px;background:var(--red-bg);border:1px solid var(--red);border-radius:5px;font-size:11px;color:var(--red);font-weight:600">Incident de circulation</div>
+
+    <div style="display:flex;flex-direction:column;gap:6px;min-width:260px">
+      <div style="padding:6px 14px;background:var(--bg3);border:2px solid var(--border2);border-radius:6px;font-weight:700;color:var(--text);font-size:13px;text-align:center">🗣️ Oral — 2h30</div>
+      <div style="display:flex;flex-direction:column;gap:4px">
+
+        <div style="padding:7px 12px;background:var(--bg4);border-radius:5px;font-size:12px;color:var(--text2)">
+          <strong style="color:var(--text)">Aiguillage</strong> — séance 1 : théorie<br>
+          <span style="color:var(--text3);font-size:11px">Séance 2 : PRR · ACPP · dérangement (cas pratique)<br>
+          Séance 3 : théorie (élec + PS9 + travaux) + pratique (protection C ou DFV)</span>
         </div>
-        <div style="padding:5px 10px;background:var(--bg4);border-radius:5px;font-size:11px;color:var(--text3);text-align:center">Travaux / S11<br>→ DFV</div>
+
+        <div style="padding:7px 12px;background:var(--bg4);border-radius:5px;font-size:12px;color:var(--text2)">
+          <strong style="color:var(--text)">Circulation</strong> — 1h, théorie + pratique
+        </div>
+
+        <div style="padding:7px 12px;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.3);border-radius:5px;font-size:12px;color:var(--text2)">
+          <strong style="color:var(--red)">⚠ FAMAS</strong> — incident de circulation<br>
+          <span style="color:var(--text3);font-size:11px">100% sûr : Danger / Obstacle / Bestiaux · Penser autocontrôle + DR</span>
+        </div>
+
       </div>
     </div>
+
   </div>
-  <div style="font-size:11px;color:var(--text3);margin-top:10px;text-align:center">ExpertQuizz : IS · Cantonnement (BM/BAPR) · Plaques de signalisation</div>
 </div>
 
 <!-- A TOMBER A L'EXAM -->

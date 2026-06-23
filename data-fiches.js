@@ -2462,42 +2462,121 @@ traction: `
 `,
 
 travaux: `
-<h2 class="theme-heading">Travaux sur les voies & IS</h2>
-<div class="theme-ref">AMV300 · AMV310 · AMV216 · AMV250 · DC3978 · IN1582 · OP565</div>
+<h2 class="theme-heading">Travaux sur les voies & DFV</h2>
+<div class="theme-ref">AMV300 · AMV310 · DC3978 · IN1582 · Consigne de Protection · DC3858 Art.202</div>
 
-<h3 class="fc-h3">AMV300 — Travaux sur les voies (DC3978)</h3>
-<div class="def-block important">
-  <div class="def-term">Planche-travaux (PTx)</div>
-  <div class="def-text">ZEP ou groupement de ZEP dédié aux travaux pendant une période déterminée.</div>
+<div style="background:rgba(52,211,153,0.07);border:1px solid rgba(52,211,153,0.35);border-radius:var(--radius2);padding:12px 16px;margin-bottom:18px;font-size:13px;line-height:1.6">
+  ℹ️ À l'AMV, il n'y aura <strong>pas de TTx</strong> dans la DFV. Bien lire les textes et procédures à l'examen (DC 3978). Le thème Travaux intervient lors de la <strong>séance 3 de l'oral Aiguillage</strong> (pratique : protection C ou DFV).
 </div>
+
+<h3 class="fc-h3-accent">⭐ Vocabulaire fondamental — à connaître par cœur</h3>
+
 <div class="def-block important">
-  <div class="def-term">ZEP — Zone Élémentaire de Protection</div>
-  <div class="def-text">Partie de voie résultant du découpage du RFN pour les besoins de la maintenance. Peut être de type « G » en gare ou de type « L » en ligne. Chaque ZEP est consignée dans la consigne de protection du poste.</div>
+  <div class="def-term">PTx — Planche Travaux <span class="tag red ml6">Par cœur</span></div>
+  <div class="def-text">Addition d'une <strong>ZEP + une durée</strong>. La PTx est référencée dans des documents de planification : <strong>AJT</strong> (Avis Journalier de Travaux — planning du jour) et <strong>AHT</strong> (Avis Hebdomadaire de Travaux — planning de la semaine).</div>
 </div>
+
 <div class="def-block important">
-  <div class="def-term">DFV — Demande de Fermeture de Voie</div>
-  <div class="def-text">Procédé d'assurance-chantier reposant sur une fermeture de voie effectuée par l'exploitation et accompagnée de la mise en œuvre d'un bouclage par l'équipement.</div>
+  <div class="def-term">ZEP — Zone Élémentaire de Protection <span class="tag red ml6">Par cœur</span></div>
+  <div class="def-text">Partie de voie résultant du découpage du RFN pour les besoins de la maintenance. Peut être de type « G » (gare) ou « L » (ligne). Chaque ZEP est consignée dans la <strong>Consigne de Protection</strong> du poste (annexes 2, 3, 4).</div>
 </div>
+
+<div class="def-block important">
+  <div class="def-term">Activité <span class="tag yellow ml6">À savoir</span></div>
+  <div class="def-text">Intervention sur l'infrastructure et ses conséquences, <strong>incompatible avec le passage des circulations</strong>. Les travaux ou DFV font obstacle à la circulation — c'est pour les protéger qu'on ferme les signaux et qu'on protège la zone.</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">ZCh — Zone de Chantier</div>
+  <div class="def-text">Partie de voie regroupant l'ensemble des activités possédant un <strong>lien fonctionnel et/ou géographique</strong>. On peut avoir 1 ou plusieurs travaux en même temps, mais <strong>jamais 2 travaux sur la même ZEP</strong> (ou alors les 2 RPTx gèrent ça entre eux).</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">RPTx — Responsable Planche Travaux</div>
+  <div class="def-text">L'agent M&T (Maintenance & Travaux) qui demande et prend en charge la planche travaux côté chantier. C'est lui qui appelle l'AC, effectue le bouclage, et confirme la libération à la fin.</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">Assurance chantier <span class="tag red ml6">🔥 Par cœur</span></div>
+  <div class="def-text">Assurance que le chantier est à la fois : <strong>protégé</strong> (signaux fermés, zone au rouge) et <strong>libre de toute circulation</strong> (zone au blanc côté AC).<br>2 procédés possibles : <strong>DFV</strong> ou <strong>GEq</strong>.</div>
+</div>
+
 <div class="def-block">
-  <div class="def-term">Assurance-chantier</div>
-  <div class="def-text">Assurance que la zone de chantier est à la fois protégée et libre de toute circulation ne pouvant s'arrêter avant une activité. 2 procédés : DFV (fermeture par exploitation + bouclage) ou GEq (protection par maintenance seule).</div>
-</div>
-<div class="rule-box">
-  <strong>Entente préalable :</strong> Concertation entre RPTx et AC, au minimum 30 minutes avant le début de la planche-travaux.
+  <div class="def-term">DFV vs GEq — différence essentielle</div>
+  <div class="def-text">• <strong class="fc-accent">DFV (Demande de Fermeture de Voie)</strong> : 99% des cas. C'est l'AC <em>et</em> le RPTx qui se protègent ensemble — l'AC ferme la voie, le RPTx boucle. Interaction AC ↔ RPTx obligatoire.<br>
+• <strong class="fc-accent">GEq (Garantie Équipement)</strong> : protection assurée par le RPTx et les agents M&T seuls, sans intervention de l'AC. Procédé autonome côté maintenance.</div>
 </div>
 
-<h3 class="fc-h3">AMV216 — Catégories A/B/C (OP565)</h3>
+<h3 class="fc-h3">Déroulement d'une DFV</h3>
+
+<div class="def-block important">
+  <div class="def-term">3 étapes de la DFV</div>
+  <div class="def-text">1. <strong>Attribution de la PTx par l'AC</strong> — l'AC attribue la planche travaux au RPTx.<br>
+2. <strong>Assurance que les mesures ont été prises</strong> — l'AC donne l'assurance au RPTx que la voie est protégée (signaux fermés, zone en rouge).<br>
+3. <strong>Bouclage du RPTx</strong> — le RPTx boucle : les agents M&T installent un dispositif de <strong>shuntage</strong> sur les rails, qui maintient la zone en rouge côté AC. C'est une sécurité supplémentaire. Tant que le shunt est en place, la zone reste au rouge.</div>
+</div>
+
+<div class="def-block">
+  <div class="def-term">CCTT — Consigne Commune Temporaire de Travaux</div>
+  <div class="def-text">Document établi ponctuellement pour encadrer des travaux spécifiques nécessitant des conditions particulières non couvertes par la consigne de protection standard.</div>
+</div>
+
+<h3 class="fc-h3-accent">⭐ Entente préalable — à connaître par cœur <span class="tag red ml6">🔥 Exam</span></h3>
+
+<div class="def-block important">
+  <div class="def-term">Définition</div>
+  <div class="def-text">Concertation entre le <strong>RPTx et l'AC</strong>, en amont de tout processus-travaux. Intervient au minimum <strong>30 minutes avant</strong> l'heure théorique de début de la PTx, pour laisser le temps à l'AC de tout vérifier. Se conclut par la demande de DFV ou de DPTx. Les deux intervenants vérifient, chacun pour leur part, que les conditions prévues sont réunies.</div>
+</div>
+
+<div class="def-block">
+  <div class="def-term">Quand le RPTx appelle — informations à noter au brouillon</div>
+  <div class="def-text">• ZEP concernée<br>• Heure prévue<br>• TTx ? (non à l'AMV)<br>• Objet de l'opération<br>• Vérification de libération — options applicables</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">Déroulement de l'entente préalable — 7 étapes (DC 3978)</div>
+  <div class="def-text">Juste avant d'appeler le RPTx pour confirmer la prise en charge, ouvrir la <strong>DC 3978</strong> et suivre la procédure étape par étape.<br><br>
+  <strong>1.</strong> Suis-je concerné ? → vérifier l'<strong>article 4</strong> de la DC 3978<br>
+  <strong>2.</strong> ZEP existante ? → <strong>Annexes 2, 3, 4 de la Consigne de Protection</strong><br>
+  <strong>3.</strong> Horaires prévues ? → contacter le COGC, regarder l'ONJ / TST<br>
+  <strong>4.</strong> Procédure d'assurance chantier → <strong>DFV ou GEq</strong> ?<br>
+  <strong>5.</strong> Les travaux sont-ils prévus ? → vérifier l'<strong>AHT</strong> (article 2.2 de la DC 3978)<br>
+  <strong>6.</strong> Incompatibilité travaux ? → vérifier le carnet de DFV (pas de DFV en cours sur la même ZEP) + vérifier les DA déjà mis en place (DC 3978, imprimés de sécurité)<br>
+  <strong>7.</strong> Y a-t-il un TTx ? → <strong>Non, pas à l'AMV</strong></div>
+</div>
+
+<div class="def-block">
+  <div class="def-term">Généralités AC lors d'une demande de travaux</div>
+  <div class="def-text">• L'AC utilise l'<strong>ONJ</strong> (ordre normal journalier)<br>
+  • Appeler le <strong>régulateur</strong><br>
+  • Vérifier que la ZEP existe bien dans la <strong>Consigne de Protection</strong></div>
+</div>
+
+<h3 class="fc-h3">Documents obligatoires (4 catégories)</h3>
+
+<div class="table-wrap"><table>
+  <thead><tr><th>Catégorie</th><th>Documents</th><th>Rôle</th></tr></thead>
+  <tbody>
+    <tr><td>Documents permanents</td><td>Consigne de Protection</td><td>ZEP, procédés, conditions de libération</td></tr>
+    <tr><td>Référentiels</td><td>DC 3978</td><td>Mode opératoire — à lire et suivre à l'examen</td></tr>
+    <tr><td>Imprimés</td><td>Dépêches · DFV</td><td>Tracent les échanges AC ↔ RPTx</td></tr>
+    <tr><td>Documents d'organisation</td><td>AHT · AJT</td><td>Planification hebdomadaire / journalière — prévus à l'avance</td></tr>
+  </tbody>
+</table></div>
+
+<h3 class="fc-h3">AMV216 — Catégories de circulations A / B / C</h3>
+
 <div class="def-block important">
   <div class="def-term">Catégorie A</div>
   <div class="def-text">Circulations « légères » pouvant provoquer des déshuntages brefs et intermittents (ex : autorail, thermique, bi-mode, locotracteurs).</div>
 </div>
 <div class="def-block important">
   <div class="def-term">Catégorie B</div>
-  <div class="def-text">Circulation comportant au moins un véhicule à empattement long et pouvant provoquer un déshuntage temporaire au passage de ce véhicule sur un circuit de voie court (ex : porte-char).</div>
+  <div class="def-text">Circulation comportant au moins un véhicule à empattement long, pouvant provoquer un déshuntage temporaire au passage de ce véhicule sur un circuit de voie court (ex : porte-char).</div>
 </div>
 <div class="def-block important">
-  <div class="def-term">Catégorie C</div>
-  <div class="def-text">Circulation considérée « non shunteuse » et provoquant des déshuntages prolongés. Ne peut pas être expédiée de façon autonome sur une ligne équipée de circuit de voie. Doit être incorporée dans un train encadré par des véhicules assurant le bon fonctionnement des circuits de voie.</div>
+  <div class="def-term">Catégorie C <span class="tag red ml6">⚠ Exam séance 3</span></div>
+  <div class="def-text">Circulation considérée « non shunteuse », provoquant des déshuntages prolongés. <strong>Ne peut pas être expédiée de façon autonome</strong> sur une ligne équipée de circuits de voie. Doit être incorporée dans un train encadré par des véhicules assurant le bon fonctionnement des circuits de voie.</div>
 </div>
 `,
 
