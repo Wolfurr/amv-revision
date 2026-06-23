@@ -1472,6 +1472,55 @@ circulation: `
   <div class="def-term">IPCS — Installation Permanente de Contre-Sens</div>
   <div class="def-text">En double voie, installations permanentes permettant de faire circuler sur une voie des trains en sens inverse du sens normal. Des IS s'opposent à l'expédition de deux trains de sens contraires à la rencontre l'un de l'autre.</div>
 </div>
+
+<h3 class="fc-h3-accent">⭐ Réceptions sur voies de service — Art. 202 <span class="tag red ml6">🔥 Exam</span></h3>
+
+<div style="background:rgba(240,192,64,0.07);border:1px solid rgba(240,192,64,0.3);border-radius:var(--radius2);padding:12px 16px;margin-bottom:14px;font-size:13px;line-height:1.6">
+  ⚠️ Refaire l'exercice 3 du cahier d'exercices p.40 (feux de VS entourés) — <strong>pourrait tomber à l'AMV</strong>. Infos dans la <strong>CLE</strong> (Consigne Locale d'Exploitation) spéciale voies de service.
+</div>
+
+<div class="def-block important">
+  <div class="def-term">TOV / GOV</div>
+  <div class="def-text">• <strong class="fc-accent">TOV</strong> — Tableau d'Occupation des Voies : consulté par le RR avant toute réception.<br>• <strong class="fc-accent">GOV</strong> — Graphique d'Occupation des Voies : représentation graphique équivalente.</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">RR — Responsable Réception</div>
+  <div class="def-text">Agent responsable de la réception d'un train sur une voie de service. Deux groupes de réception :<br>• <strong>D</strong> — Direct<br>• <strong>R</strong> — Refoulé</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">Art. 202.1 — Rôle du RR (réception voie 3) <span class="tag red ml6">Par cœur</span></div>
+  <div class="def-text">Le RR :<br>
+• Consulte le TOV (tableau d'occupation des voies)<br>
+• S'assure que les croisements sont dégagés<br>
+• Annote le TOV<br>
+• Interdit toute manœuvre incompatible avec la réception du train<br>
+• Prend les dispositions utiles pour que la voie reste libre jusqu'à réception du train<br>
+• Trace l'itinéraire d'accès à la voie 3<br>
+• Une fois le train garé, s'assure que les croisements sont dégagés — à défaut, le mentionne en rouge sur son TOV et assure la protection de cette voie en application des mesures prévues au chapitre 5</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">Réception sur voie occupée — 2 conditions <span class="tag red ml6">🔥 Par cœur</span></div>
+  <div class="def-text">La réception sur voie occupée n'est autorisée <strong>que si</strong> :<br>
+1. <strong>Nécessité de service</strong><br>
+2. Le <strong>train doit avoir un arrêt normal</strong> sur cette voie</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">Comment aviser le conducteur (voie occupée) — 3 moyens <span class="tag red ml6">Par cœur</span></div>
+  <div class="def-text">1. Par la <strong>signalisation convenable</strong> — après l'arrêt au signal<br>
+2. Par <strong>RT</strong> (radio-téléphone)<br>
+3. Par sa <strong>commande</strong></div>
+</div>
+
+<div class="def-block">
+  <div class="def-term">Signaux utilisables pour aviser (voie occupée)</div>
+  <div class="def-text">• <strong>Feu rouge clignotant</strong><br>
+• <strong>Sémaphore de BAL</strong><br>
+• <strong>Bande jaune horizontale lumineuse</strong></div>
+</div>
 `,
 
 cantonnement: `
