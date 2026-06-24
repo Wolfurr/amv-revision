@@ -2081,6 +2081,68 @@ Il est utilisé par l'aiguilleur pour <strong>préparer ses manœuvres de levier
 <div style="background:var(--bg4);border-left:3px solid var(--accent);border-radius:var(--radius);padding:10px 14px;font-size:12px;color:var(--text2);line-height:1.6">
   <strong class="fc-accent">Rappel :</strong> pour les manœuvres aussi, on utilise le <strong>Tableau des mouvements</strong> (Annexe 2 Consigne Rose). Chaque levier d'aiguille → PRR, chaque levier de signal → ACPP.
 </div>
+
+<h3 class="fc-h3-accent">⭐ Dérangement des IS — Méthode RIAT <span class="tag red ml6">🔥 Par cœur</span></h3>
+
+<div style="background:rgba(240,192,64,0.07);border:1px solid rgba(240,192,64,0.3);border-radius:var(--radius2);padding:11px 16px;margin-bottom:14px;font-size:13px;line-height:1.6">
+  💡 La méthode s'appelle parfois RITA mais <strong>RIAT est préférable</strong> : on finit par le Traitement du dérangement plutôt que par l'Annotation — logique car on annote et on avise <em>avant</em> de traiter. Les deux formulations sont acceptées à l'examen. Référence : <strong>DC 3858 — Chapitre 4 — Article 417</strong>. Repasser toujours par le sommaire pour choisir la bonne fiche.
+</div>
+
+<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:14px">
+  <div style="background:var(--bg3);border-left:4px solid var(--accent);border-radius:var(--radius2);padding:11px 14px">
+    <div style="font-weight:700;color:var(--accent);margin-bottom:3px">R — Reconnaître le dérangement</div>
+    <div style="font-size:12px;color:var(--text2)">Identifier et constater le dérangement sur l'installation de sécurité.</div>
+  </div>
+  <div style="background:var(--bg3);border-left:4px solid #60a5fa;border-radius:var(--radius2);padding:11px 14px">
+    <div style="font-weight:700;color:#60a5fa;margin-bottom:3px">I — Immobiliser les leviers concernés (DR)</div>
+    <div style="font-size:12px;color:var(--text2)">Poser un DR (Dispositif de Réflexion — jaune) sur chaque levier de signal ou d'aiguille concerné par le dérangement.</div>
+  </div>
+  <div style="background:var(--bg3);border-left:4px solid #a78bfa;border-radius:var(--radius2);padding:11px 14px">
+    <div style="font-weight:700;color:#a78bfa;margin-bottom:3px">A — Annoter et Aviser</div>
+    <div style="font-size:12px;color:var(--text2)">Annoter le registre (CED) et aviser les agents/postes concernés + COGC + maintenance IS.</div>
+  </div>
+  <div style="background:var(--bg3);border-left:4px solid #34d399;border-radius:var(--radius2);padding:11px 14px">
+    <div style="font-weight:700;color:#34d399;margin-bottom:3px">T — Traiter le dérangement (DC 3858 chap. 4)</div>
+    <div style="font-size:12px;color:var(--text2)">Appliquer la procédure DC 3858 — Chapitre 4 — Article 417. Toujours passer par le sommaire pour choisir la bonne fiche selon le type de dérangement.</div>
+  </div>
+</div>
+
+<h3 class="fc-h3">Les 3 E — après un 2<sup>e</sup> RIAT infructueux sur un signal <span class="tag red ml6">🔥 Par cœur</span></h3>
+
+<div class="def-block important">
+  <div class="def-term">Si le levier de signal reste enclenché (immobilisé) après un 1<sup>er</sup> RIAT</div>
+  <div class="def-text">Poser la question dans cet ordre :<br><br>
+  <strong class="fc-accent">E1 — Erreur de ma part ?</strong><br>
+  → Vérifier l'<strong>Annexe 2 de la Consigne Rose</strong> (tableau des mouvements, partie 2 et 3) : est-ce que j'ai respecté toutes les conditions d'ouverture ? Ai-je actionné les bons leviers dans le bon ordre ?<br><br>
+  <strong class="fc-accent">E2 — Enclenchement mécanique ?</strong><br>
+  → Vérifier l'<strong>Annexe 2 CR</strong> (table d'enclenchement) : y a-t-il un enclenchement mécanique (toc, table, serrure) qui bloque ce levier ?<br><br>
+  <strong class="fc-accent">E3 — Enclenchement électrique ?</strong><br>
+  → Identifier le type d'enclenchement électrique (CIP, ZP, EAP, ZI) et aller dans la bonne annexe (ZI → Anx4 · CIP/ZP → Anx2 · EAP → Anx5) pour comprendre pourquoi il est en action et comment le lever.</div>
+</div>
+
+<h3 class="fc-h3-accent">⭐ Ordre C / CBA — franchissement d'un signal d'arrêt fermé <span class="tag red ml6">⚠ Hyper sensible</span></h3>
+
+<div style="background:rgba(239,68,68,0.07);border:2px solid var(--red);border-radius:var(--radius2);padding:12px 16px;margin-bottom:14px;font-size:13px;line-height:1.6">
+  ⚠️ <strong style="color:var(--red)">Acte extrêmement sensible et dangereux.</strong> On recheck plusieurs fois, on fait l'autocontrôle, contrôle croisé si possible. On n'émet un ordre C/CBA qu'après avoir épuisé toutes les procédures RIAT + 3E et confirmé que le signal doit être franchi. Référence : OP 599 / OP 665 + Annexe 1 CR (tableau des équipements complémentaires des signaux).
+</div>
+
+<div class="def-block important">
+  <div class="def-term">Choix du formulaire</div>
+  <div class="def-text">• <strong class="fc-accent">Formulaire CBA</strong> — si la voie est équipée en Block Automatique (BAL/BAPR)<br>
+• <strong class="fc-accent">Formulaire C</strong> — pour les autres cas (Block Manuel, etc.)<br>
+Vérifier dans l'<strong>Annexe 1 de la Consigne Rose</strong> (tableau des équipements complémentaires des signaux) pour confirmer le type de block.</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term fc-accent">3C2D — Autocontrôle du remplissage de l'ordre C/CBA <span class="tag red ml6">🔥 Par cœur</span></div>
+  <div class="def-text">Pendant et après le remplissage du formulaire C ou CBA :<br><br>
+  <strong>C1 — Carré</strong> : vérifier l'identité du signal (numéro, position)<br>
+  <strong>C2 — Conducteur</strong> : vérifier l'identité du conducteur (numéro de train, identification)<br>
+  <strong>C3 — Conditions</strong> : vérifier les conditions d'application de l'ordre (voie libre sur la portion à parcourir, mesures prises)<br>
+  <strong>D1 — Direction</strong> : indiquer clairement la direction donnée au conducteur<br>
+  <strong>D2 — Dos de la souche</strong> : inscrire le <strong>motif</strong> du franchissement au dos de l'ordre sur la souche (≠ l'ordre remis au conducteur — la souche reste à toi, c'est la trace).<br><br>
+  ⚠️ Ne pas oublier de <strong>donner la direction au conducteur</strong> (visible sur le schéma de gare).</div>
+</div>
 `,
 
 signaux: `
@@ -3047,6 +3109,33 @@ Tout agent qui constate ou est avisé d'une coupure d'urgence fait généralemen
     <tr><td>Amorçage</td><td>Arc électrique — peut se produire sans contact direct</td></tr>
   </tbody>
 </table></div>
+
+<h3 class="fc-h3-accent">⭐ Protection C — DC 8043 art. 2.3.1 <span class="tag red ml6">🔥 Par cœur + Exam séance 3</span></h3>
+
+<div class="def-block important">
+  <div class="def-term">Définition — à connaître mot pour mot (DC 8043 art. 2.3.1)</div>
+  <div class="def-text">La Protection C est <strong>l'ensemble des mesures interdisant aux circulations électriques l'accès des voies situées sous l'élément de caténaire à consigner</strong>, de façon à empêcher que les pantographes de ces circulations ne réalimentent cet élément par <strong>pontage d'un sectionnement</strong>.</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">Pourquoi ? — Pontage et DSA</div>
+  <div class="def-text">• <strong class="fc-accent">Pontage</strong> : si un train entre sous un élément de caténaire consigné (mis hors tension), son pantographe crée un pont électrique entre deux sections, réalimentant accidentellement la SEL (Sous-station Électrique de Ligne) que l'on souhaitait couper.<br>
+• <strong class="fc-accent">Fermeture intempestive</strong> : risque de fermer un sectionneur et de remettre du courant là où on l'avait coupé.<br>
+• <strong>Mesures</strong> : fermer les signaux d'arrêt <strong>OU</strong> bloquer les aiguilles pour interdire l'accès à la zone — c'est le <strong>DSA</strong> (Dispositif de Sécurité Aiguillage).</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">Comment réaliser une Protection C</div>
+  <div class="def-text">Prendre la <strong>DC 8043</strong> (mode opératoire traction électrique) et appliquer la <strong>Fiche 30</strong>.<br>
+Références : <strong>Consigne Bleue</strong> du poste + <strong>DC 8043</strong>.<br>
+Les schémas des ITE (Installations de Traction Électrique) se trouvent au <strong>Chapitre 3 de la Consigne Bleue</strong>.</div>
+</div>
+
+<div class="def-block">
+  <div class="def-term">RDTE — Registre de Dépêches de Traction Électrique</div>
+  <div class="def-text">Registre spécifique qui trace tous les échanges liés aux interventions sur la traction électrique (équivalent du carnet de DFV pour les travaux).<br>
+⚠️ <strong>Pas d'entente préalable</strong> pour la Protection C (≠ travaux DFV qui nécessitent une entente préalable ≥ 30 min avant).</div>
+</div>
 `,
 
 graissage: `

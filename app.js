@@ -7,7 +7,7 @@
 // ═══════════════════════════════════════════════
 
 // Source unique de vérité pour la version + date de MAJ (affichée en haut à droite)
-const VERSION_LABEL = 'v6.7 — 23 juin 2026';
+const VERSION_LABEL = 'v6.8 — 24 juin 2026';
 
 const THEMES = [
   { id:'epi',         code:'AMV801',        title:'EPI & Déplacements',                 short:'EPI' },
