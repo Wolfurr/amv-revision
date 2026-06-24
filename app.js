@@ -7,7 +7,7 @@
 // ═══════════════════════════════════════════════
 
 // Source unique de vérité pour la version + date de MAJ (affichée en haut à droite)
-const VERSION_LABEL = 'v6.8 — 24 juin 2026';
+const VERSION_LABEL = 'v6.9 — 24 juin 2026';
 
 const THEMES = [
   { id:'epi',         code:'AMV801',        title:'EPI & Déplacements',                 short:'EPI' },
@@ -382,6 +382,46 @@ function renderHome(c) {
       </div>
     </div>
 
+  </div>
+</div>
+
+<!-- A TOMBER A L'EXAM -->
+<div class="card" style="border-color:rgba(240,192,64,0.3);background:rgba(240,192,64,0.03);margin-bottom:16px">
+<!-- MÉMO DC/DOCUMENTS PAR THÈME -->
+<div class="card" style="border-color:rgba(167,139,250,0.3);background:rgba(167,139,250,0.03);margin-bottom:16px">
+  <div class="card-title" style="color:#a78bfa;margin-bottom:10px">📂 DC / DOCUMENTS À SORTIR PAR THÈME</div>
+  <div class="table-wrap"><table style="font-size:12px">
+    <thead><tr><th>Thème</th><th>Document principal</th><th>Fiche/article clé</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Dérangement IS</strong></td><td>DC 3858 (chap. 4) + CDIS</td><td>Art. 417 → sommaire → bonne fiche</td></tr>
+      <tr><td><strong>Franchissement carré fermé</strong></td><td>OP 599 / OP 665 + Annexe 1 CR</td><td>Formulaire CBA (BAL) ou C</td></tr>
+      <tr><td><strong>Protection C</strong></td><td>DC 8043 + Consigne Bleue</td><td>Fiche 30 · Chap. 3 CB (ITE)</td></tr>
+      <tr><td><strong>Travaux / DFV</strong></td><td>DC 3978 + Consigne de Protection</td><td>Art. 4 · Art. 2.2 · Anx 2-3-4</td></tr>
+      <tr><td><strong>Incident PN</strong></td><td>DC 1503 fiche 8 (8.1) + CE S10B</td><td>IN83 → RATO pour reprise</td></tr>
+      <tr><td><strong>Bestiaux / Danger</strong></td><td>DC 1503 fiche 6</td><td>Fiche 4 (danger)</td></tr>
+      <tr><td><strong>Obstacle</strong></td><td>DC 1503</td><td>Fiche 3 (obstacle)</td></tr>
+      <tr><td><strong>Réception voie occupée</strong></td><td>DC 1505 fiche 9</td><td>⚠️ À vérifier avec fiches autres promos</td></tr>
+      <tr><td><strong>Enclenchements</strong></td><td>Consigne Rose + DC 3858</td><td>Anx4 (ZI) · Anx2 (CIP/ZP) · Anx5 (EAP)</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<!-- PRIORITÉS DE RÉVISION -->
+<div class="card" style="border-color:rgba(239,68,68,0.3);background:rgba(239,68,68,0.03);margin-bottom:16px">
+  <div class="card-title" style="color:var(--red);margin-bottom:10px">🎯 PRIORITÉS DE RÉVISION — Grosses lacunes</div>
+  <div style="display:flex;flex-direction:column;gap:6px">
+    ${[
+      ['encl','Tableau récap visuel ZI/CIP/ZP/EAP par cœur (mémo Walid)','Enclenchements électriques','EE ZI'],
+      ['encl','Consigne Rose — annexes par cœur : Anx2 (CIP/ZP) · Anx4 (ZI) · Anx5 (EAP)','CR annexes','Récap annexes'],
+      ['aiguillage','RIAT complet + 3E + CBA/3C2D — réflexes à automatiser','RIAT / CBA','Les 3 E'],
+      ['circulation','Réceptions sur voies de service — AVANT et APRÈS (aiguille VS libre + croisements)','Réceptions VS','Réceptions sur voies'],
+      ['circulation','Réception sur voie occupée — DC 1505 fiche 9','Voie occupée','Réception sur voie occupée'],
+    ].map(([theme,titre,tag,anchor]) => `
+    <div style="display:flex;align-items:center;gap:10px;padding:7px 12px;background:var(--bg3);border-radius:var(--radius);flex-wrap:wrap">
+      <span style="font-size:13px;color:var(--text);flex:1">${titre}</span>
+      <span class="tag red" style="font-size:10px">${tag}</span>
+      <button class="btn btn-sm" style="padding:3px 10px;font-size:11px;white-space:nowrap" onclick="gotoFiche('${theme}','${anchor}')">Fiche →</button>
+    </div>`).join('')}
   </div>
 </div>
 

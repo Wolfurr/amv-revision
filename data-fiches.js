@@ -1473,7 +1473,7 @@ circulation: `
   <div class="def-text">En double voie, installations permanentes permettant de faire circuler sur une voie des trains en sens inverse du sens normal. Des IS s'opposent à l'expédition de deux trains de sens contraires à la rencontre l'un de l'autre.</div>
 </div>
 
-<h3 class="fc-h3-accent">⭐ Réceptions sur voies de service — Art. 202 <span class="tag red ml6">🔥 Exam</span></h3>
+<h3 class="fc-h3-accent">⭐ Réceptions sur voies de service — Art. 202 <span class="tag red ml6">🔥 Exam — Grosses lacunes à combler !</span></h3>
 
 <div style="background:rgba(240,192,64,0.07);border:1px solid rgba(240,192,64,0.3);border-radius:var(--radius2);padding:12px 16px;margin-bottom:14px;font-size:13px;line-height:1.6">
   ⚠️ Refaire l'exercice 3 du cahier d'exercices p.40 (feux de VS entourés) — <strong>pourrait tomber à l'AMV</strong>. Infos dans la <strong>CLE</strong> (Consigne Locale d'Exploitation) spéciale voies de service.
@@ -1481,31 +1481,46 @@ circulation: `
 
 <div class="def-block important">
   <div class="def-term">TOV / GOV</div>
-  <div class="def-text">• <strong class="fc-accent">TOV</strong> — Tableau d'Occupation des Voies : consulté par le RR avant toute réception.<br>• <strong class="fc-accent">GOV</strong> — Graphique d'Occupation des Voies : représentation graphique équivalente.</div>
+  <div class="def-text">• <strong class="fc-accent">TOV</strong> — Tableau d'Occupation des Voies<br>• <strong class="fc-accent">GOV</strong> — Graphique d'Occupation des Voies<br>Consultés par le RR avant toute réception.</div>
 </div>
 
 <div class="def-block important">
-  <div class="def-term">RR — Responsable Réception</div>
-  <div class="def-text">Agent responsable de la réception d'un train sur une voie de service. Deux groupes de réception :<br>• <strong>D</strong> — Direct<br>• <strong>R</strong> — Refoulé</div>
+  <div class="def-term">RR — Responsable Réception — 2 groupes</div>
+  <div class="def-text">• <strong>D</strong> — Direct<br>• <strong>R</strong> — Refoulé</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term fc-accent">AVANT la réception — Assurer la protection <span class="tag red ml6">🔥 Lacune à corriger</span></div>
+  <div class="def-text">Avant de lancer l'itinéraire vers la voie de service :<br>
+1. <strong>Orienter l'aiguille</strong> vers une autre voie de service <strong>libre</strong> (si dépassement, le train ira sur une voie libre et pas en collision)<br>
+2. <strong>S'assurer que les croisements sont dégagés</strong> — vérifier sur le TOV qu'aucun mouvement incompatible n'est en cours<br>
+3. Interdire toute manœuvre incompatible avec la réception</div>
 </div>
 
 <div class="def-block important">
   <div class="def-term">Art. 202.1 — Rôle du RR (réception voie 3) <span class="tag red ml6">Par cœur</span></div>
   <div class="def-text">Le RR :<br>
-• Consulte le TOV (tableau d'occupation des voies)<br>
+• Consulte le TOV<br>
 • S'assure que les croisements sont dégagés<br>
 • Annote le TOV<br>
-• Interdit toute manœuvre incompatible avec la réception du train<br>
+• Interdit toute manœuvre incompatible avec la réception<br>
 • Prend les dispositions utiles pour que la voie reste libre jusqu'à réception du train<br>
-• Trace l'itinéraire d'accès à la voie 3<br>
-• Une fois le train garé, s'assure que les croisements sont dégagés — à défaut, le mentionne en rouge sur son TOV et assure la protection de cette voie en application des mesures prévues au chapitre 5</div>
+• Trace l'itinéraire d'accès à la voie 3</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term fc-accent">APRÈS la réception <span class="tag red ml6">🔥 Lacune à corriger</span></div>
+  <div class="def-text">Une fois le train garé :<br>
+1. <strong>S'assurer que les croisements sont dégagés</strong><br>
+2. Si croisements <strong>non dégagés</strong> → les mentionner en <span style="color:#ef4444">rouge</span> sur son TOV ET assurer la <strong>protection de cette voie</strong> en application des mesures prévues au chapitre 5</div>
 </div>
 
 <div class="def-block important">
   <div class="def-term">Réception sur voie occupée — 2 conditions <span class="tag red ml6">🔥 Par cœur</span></div>
-  <div class="def-text">La réception sur voie occupée n'est autorisée <strong>que si</strong> :<br>
+  <div class="def-text">Autorisée <strong>uniquement si</strong> :<br>
 1. <strong>Nécessité de service</strong><br>
-2. Le <strong>train doit avoir un arrêt normal</strong> sur cette voie</div>
+2. Le <strong>train doit avoir un arrêt normal</strong> sur cette voie<br><br>
+Procédure : <strong>DC 1505 — fiche 9</strong> ⚠️ (à vérifier avec les fiches d'autres promos)</div>
 </div>
 
 <div class="def-block important">
@@ -2098,20 +2113,20 @@ Il est utilisé par l'aiguilleur pour <strong>préparer ses manœuvres de levier
     <div style="font-size:12px;color:var(--text2)">Poser un DR (Dispositif de Réflexion — jaune) sur chaque levier de signal ou d'aiguille concerné par le dérangement.</div>
   </div>
   <div style="background:var(--bg3);border-left:4px solid #a78bfa;border-radius:var(--radius2);padding:11px 14px">
-    <div style="font-weight:700;color:#a78bfa;margin-bottom:3px">A — Annoter et Aviser</div>
-    <div style="font-size:12px;color:var(--text2)">Annoter le registre (CED) et aviser les agents/postes concernés + COGC + maintenance IS.</div>
+    <div style="font-weight:700;color:#a78bfa;margin-bottom:3px">A — Annoter le CDIS et Aviser</div>
+    <div style="font-size:12px;color:var(--text2)">Annoter le <strong class="fc-accent">CDIS</strong> (Carnet de Dérangements des IS) et aviser les agents/postes concernés + COGC + maintenance IS (AMI). ⚠️ Au 2<sup>e</sup> RIAT, <strong>ne pas ré-annoter</strong> — c'est déjà fait.</div>
   </div>
   <div style="background:var(--bg3);border-left:4px solid #34d399;border-radius:var(--radius2);padding:11px 14px">
-    <div style="font-weight:700;color:#34d399;margin-bottom:3px">T — Traiter le dérangement (DC 3858 chap. 4)</div>
-    <div style="font-size:12px;color:var(--text2)">Appliquer la procédure DC 3858 — Chapitre 4 — Article 417. Toujours passer par le sommaire pour choisir la bonne fiche selon le type de dérangement.</div>
+    <div style="font-weight:700;color:#34d399;margin-bottom:3px">T — Traiter le dérangement → sortir la DC 3858 direct !</div>
+    <div style="font-size:12px;color:var(--text2)"><strong class="fc-accent">Réflexe :</strong> ouvrir la <strong>DC 3858 — Chapitre 4 — Article 417</strong>. Toujours passer par le sommaire pour choisir la bonne fiche selon le type de dérangement. Ne pas traiter de mémoire — lire et suivre la procédure.</div>
   </div>
 </div>
 
-<h3 class="fc-h3">Les 3 E — après un 2<sup>e</sup> RIAT infructueux sur un signal <span class="tag red ml6">🔥 Par cœur</span></h3>
+<h3 class="fc-h3">Les 3 E — si le signal ne s'ouvre toujours pas au 2<sup>e</sup> RIAT <span class="tag red ml6">🔥 Par cœur</span></h3>
 
 <div class="def-block important">
-  <div class="def-term">Si le levier de signal reste enclenché (immobilisé) après un 1<sup>er</sup> RIAT</div>
-  <div class="def-text">Poser la question dans cet ordre :<br><br>
+  <div class="def-term">Si le levier de signal reste enclenché (immobilisé) après le 1<sup>er</sup> RIAT</div>
+  <div class="def-text">Au 2<sup>e</sup> RIAT, pour identifier le <strong>I (Immobiliser)</strong>, faire les 3E. <strong>Pas besoin de ré-annoter le CDIS</strong> — c'est déjà fait lors du 1<sup>er</sup> RIAT.<br><br>
   <strong class="fc-accent">E1 — Erreur de ma part ?</strong><br>
   → Vérifier l'<strong>Annexe 2 de la Consigne Rose</strong> (tableau des mouvements, partie 2 et 3) : est-ce que j'ai respecté toutes les conditions d'ouverture ? Ai-je actionné les bons leviers dans le bon ordre ?<br><br>
   <strong class="fc-accent">E2 — Enclenchement mécanique ?</strong><br>
@@ -2335,6 +2350,67 @@ encl: `
 </table></div>
 <div class="rule-box">
   * <strong>Enclenchement de parcours</strong> partage l'Annexe 5 avec l'EAP (intitulé exact de l'annexe : « Enclenchements d'approche ET de parcours »). Les 4 enclenchements détaillés ci-dessous (ZI, CIP, ZP, EAP) sont ceux du programme AMV211.
+</div>
+
+<h3 class="fc-h3-accent">⭐ Tableau récap visuel — 4 EE à connaître par cœur <span class="tag red ml6">🔥 Mémo Walid</span></h3>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px">
+
+  <!-- ZI -->
+  <div style="background:var(--bg3);border:2px solid var(--accent);border-radius:var(--radius2);overflow:hidden">
+    <div style="background:var(--accent);padding:6px 10px;font-weight:700;font-size:12px;color:#000;text-align:center">ZI — Zone Isolée</div>
+    <div style="padding:8px 10px;font-size:11px;color:var(--text2);display:flex;flex-direction:column;gap:4px">
+      <div><span style="color:var(--text3)">Rôle :</span> Interdire la manœuvre d'une aiguille pendant son franchissement</div>
+      <div><span style="color:var(--text3)">Agit sur :</span> <strong>Levier de l'aiguille</strong></div>
+      <div><span style="color:var(--text3)">Position :</span> <strong>(+) ou (−)</strong></div>
+      <div><span style="color:var(--text3)">Mise en action :</span> Zone propre présumée occupée <span style="color:#ef4444">(rouge)</span></div>
+      <div><span style="color:var(--text3)">Action :</span> Verrou sur levier aiguille</div>
+      <div><span style="color:var(--text3)">Libération :</span> Zone propre libre <span style="color:#34d399">(blanc)</span></div>
+      <div style="margin-top:4px;padding:4px 6px;background:rgba(240,192,64,0.15);border-radius:4px"><span style="color:var(--accent);font-weight:700">CR Annexe 4</span> — tableau A</div>
+    </div>
+  </div>
+
+  <!-- CIP -->
+  <div style="background:var(--bg3);border:2px solid #60a5fa;border-radius:var(--radius2);overflow:hidden">
+    <div style="background:#60a5fa;padding:6px 10px;font-weight:700;font-size:12px;color:#000;text-align:center">CIP — Ctrl Impératif Permanent</div>
+    <div style="padding:8px 10px;font-size:11px;color:var(--text2);display:flex;flex-direction:column;gap:4px">
+      <div><span style="color:var(--text3)">Rôle :</span> Maintenir fermé le signal si aiguille mal disposée</div>
+      <div><span style="color:var(--text3)">Agit sur :</span> <strong>Circuit de commande signal uniquement</strong> (jamais levier)</div>
+      <div><span style="color:var(--text3)">Position :</span> Fermeture (carré présenté)</div>
+      <div><span style="color:var(--text3)">Mise en action :</span> 1 des 4 conditions non réunies<br><span style="font-size:10px;color:var(--text3)">Concordance · Lame collée · Lame décollée · Verrouillage</span></div>
+      <div><span style="color:var(--text3)">Action :</span> Maintient ou referme le signal</div>
+      <div><span style="color:var(--text3)">Libération :</span> 4 conditions réunies — voyant allumé</div>
+      <div style="margin-top:4px;padding:4px 6px;background:rgba(96,165,250,0.15);border-radius:4px"><span style="color:#60a5fa;font-weight:700">CR Annexe 2</span> — partie 3</div>
+    </div>
+  </div>
+
+  <!-- ZP -->
+  <div style="background:var(--bg3);border:2px solid #a78bfa;border-radius:var(--radius2);overflow:hidden">
+    <div style="background:#a78bfa;padding:6px 10px;font-weight:700;font-size:12px;color:#000;text-align:center">ZP — Zone de Protection</div>
+    <div style="padding:8px 10px;font-size:11px;color:var(--text2);display:flex;flex-direction:column;gap:4px">
+      <div><span style="color:var(--text3)">Rôle :</span> Protéger mouvements/véhicules en stationnement (voies à quai)</div>
+      <div><span style="color:var(--text3)">Agit sur :</span> <strong>Levier signal origine</strong> OU circuit de commande</div>
+      <div><span style="color:var(--text3)">Position :</span> (+) sur levier / fermeture sur circuit</div>
+      <div><span style="color:var(--text3)">Mise en action :</span> Zone de protection présumée occupée <span style="color:#ef4444">(rouge)</span></div>
+      <div><span style="color:var(--text3)">Action :</span> Verrou levier signal OU maintient signal fermé</div>
+      <div><span style="color:var(--text3)">Libération :</span> Zone libre <span style="color:#34d399">(blanc)</span></div>
+      <div style="margin-top:4px;padding:4px 6px;background:rgba(167,139,250,0.15);border-radius:4px"><span style="color:#a78bfa;font-weight:700">CR Annexe 2</span> — p.2 (levier) / p.3 (circuit)</div>
+    </div>
+  </div>
+
+  <!-- EAP -->
+  <div style="background:var(--bg3);border:2px solid #34d399;border-radius:var(--radius2);overflow:hidden">
+    <div style="background:#34d399;padding:6px 10px;font-weight:700;font-size:12px;color:#000;text-align:center">EAP — Enclench. d'Approche</div>
+    <div style="padding:8px 10px;font-size:11px;color:var(--text2);display:flex;flex-direction:column;gap:4px">
+      <div><span style="color:var(--text3)">Rôle :</span> Interdire la destruction prématurée d'un itinéraire</div>
+      <div><span style="color:var(--text3)">Agit sur :</span> <strong>Levier du signal de protection</strong></div>
+      <div><span style="color:var(--text3)">Position :</span> Renversée <strong>(−)</strong></div>
+      <div><span style="color:var(--text3)">Mise en action :</span> ZAP <span style="color:#ef4444">rouge</span> ET signal commandé à l'ouverture (levier en −)</div>
+      <div><span style="color:var(--text3)">Action :</span> Verrou sur levier du signal</div>
+      <div><span style="color:var(--text3)">Libération :</span> ZAP libre → immédiat · ZAP occupée → attaque zone aval + FA + pédale</div>
+      <div style="margin-top:4px;padding:4px 6px;background:rgba(52,211,153,0.15);border-radius:4px"><span style="color:#34d399;font-weight:700">CR Annexe 5</span></div>
+    </div>
+  </div>
+
 </div>
 
 <h3 class="fc-h3">AMV210 — Enclenchements mécaniques</h3>
