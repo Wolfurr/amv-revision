@@ -2097,6 +2097,43 @@ Il est utilisé par l'aiguilleur pour <strong>préparer ses manœuvres de levier
   <strong class="fc-accent">Rappel :</strong> pour les manœuvres aussi, on utilise le <strong>Tableau des mouvements</strong> (Annexe 2 Consigne Rose). Chaque levier d'aiguille → PRR, chaque levier de signal → ACPP.
 </div>
 
+<h3 class="fc-h3">3 types de dérangements des signaux <span class="tag red ml6">🔥 Par cœur</span></h3>
+
+<div class="def-block important">
+  <div class="def-term">Raté d'ouverture</div>
+  <div class="def-text">Le signal ne s'ouvre pas malgré la commande → c'est le dérangement le plus fréquent à l'AMV. Déclenche le RIAT.</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">Raté de fermeture</div>
+  <div class="def-text">Le signal ne se ferme pas malgré la commande → danger : une circulation pourrait passer sans autorisation.</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">Extinction</div>
+  <div class="def-text">Un ou plusieurs feux du signal s'éteignent. Conséquence : le <strong>signal d'annonce sera fermé</strong> (le système passe en sécurité).</div>
+</div>
+
+<h3 class="fc-h3-accent">⭐ Lire l'Annexe 2 CR à l'oral — Formule exacte <span class="tag red ml6">🔥 Exam oral</span></h3>
+
+<div class="def-block important">
+  <div class="def-term">Structure de lecture de l'Annexe 2 (ex. CIP sur aiguille)</div>
+  <div class="def-text" style="font-size:13px;line-height:1.9">
+    <div style="background:var(--bg4);border-left:3px solid var(--accent);padding:10px 14px;border-radius:0 var(--radius2) var(--radius2) 0;font-family:var(--mono);font-size:12px;color:var(--text)">
+      « Signal <strong style="color:var(--accent)">(C2)</strong> commandé à la fermeture par l'action <strong style="color:var(--accent)">(du CIP)</strong> maintenu en action par l'absence de contrôle de <strong style="color:var(--accent)">(l'aiguille 1)</strong> »
+    </div>
+    <div style="margin-top:8px;font-size:12px;color:var(--text2)">
+      Les éléments entre parenthèses sont à adapter selon l'exercice. La structure reste fixe : <strong>Signal → commandé à la fermeture par → maintenu en action par l'absence de contrôle de</strong>.
+    </div>
+  </div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">💬 Tip oral — « C'est mon cas » / « Ce n'est pas mon cas »</div>
+  <div class="def-text">Pendant la lecture des fiches de la DC 3858 à l'oral, utiliser ces formulations pour montrer qu'on comprend et qu'on évalue chaque condition :<br><br>
+  • Si la condition s'applique à la situation → <strong class="fc-accent">« C'est mon cas »</strong><br>
+  • Si la condition ne s'applique pas → <strong class="fc-accent">« Ce n'est pas mon cas »</strong><br><br>
+  <span style="font-size:12px;color:var(--text3)">Ça démontre au jury qu'on ne récite pas mécaniquement mais qu'on analyse la situation en temps réel — très apprécié.</span></div>
+</div>
+
 <h3 class="fc-h3-accent">⭐ Dérangement des IS — Méthode RIAT <span class="tag red ml6">🔥 Par cœur</span></h3>
 
 <div style="background:rgba(240,192,64,0.07);border:1px solid rgba(240,192,64,0.3);border-radius:var(--radius2);padding:11px 16px;margin-bottom:14px;font-size:13px;line-height:1.6">
