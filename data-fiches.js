@@ -1036,8 +1036,8 @@ circulation: `
     💡 <strong class="fc-accent">RÔLE de l'œilleton</strong> — c'est un <strong>signal de permissivité</strong> qui sert à distinguer un sémaphore d'un carré.<br><br>
     🔍 <strong>Cas typique :</strong> tu vois <strong>un seul feu rouge</strong> allumé sur une cible Nf.<br>
     ▸ <strong>Œilleton allumé</strong> → c'est un <strong>sémaphore</strong> (un seul feu rouge en BAL, c'est normal)<br>
-    ▸ <strong>Œilleton éteint</strong> → c'est un <strong>carré avec un feu en panne / ampoule grillée</strong> (le carré devrait avoir 2 feux rouges)<br><br>
-    <em>→ L'œilleton sert à éviter que le conducteur confonde un carré avarié (avec une seule ampoule fonctionnelle) avec un sémaphore franchissable.</em>
+    ▸ <strong>Œilleton éteint</strong> → c'est un <strong>carré avec un feu en panne / lampe grillée</strong> (le carré devrait avoir 2 feux rouges)<br><br>
+    <em>→ L'œilleton sert à éviter que le conducteur confonde un carré avarié (avec une seule lampe fonctionnelle) avec un sémaphore franchissable.</em>
   </div>
 
   <!-- Schéma plaque Nf -->
@@ -2134,36 +2134,47 @@ Il est utilisé par l'aiguilleur pour <strong>préparer ses manœuvres de levier
   <span style="font-size:12px;color:var(--text3)">Ça démontre au jury qu'on ne récite pas mécaniquement mais qu'on analyse la situation en temps réel — très apprécié.</span></div>
 </div>
 
-<h3 class="fc-h3-accent">⭐ Dérangement des IS — Méthode RIAT <span class="tag red ml6">🔥 Par cœur</span></h3>
+<h3 class="fc-h3-accent">⭐ Dérangement des IS — Méthode RIAT <span class="tag red ml6">🔥 Par cœur · CG S6A</span></h3>
 
-<div style="background:rgba(240,192,64,0.07);border:1px solid rgba(240,192,64,0.3);border-radius:var(--radius2);padding:11px 16px;margin-bottom:14px;font-size:13px;line-height:1.6">
-  💡 La méthode s'appelle parfois RITA mais <strong>RIAT est préférable</strong> : on finit par le Traitement du dérangement plutôt que par l'Annotation — logique car on annote et on avise <em>avant</em> de traiter. Les deux formulations sont acceptées à l'examen. Référence : <strong>DC 3858 — Chapitre 4 — Article 417</strong>. Repasser toujours par le sommaire pour choisir la bonne fiche.
+<div class="def-block">
+  <div class="def-term">CONSTAT — 3 façons de détecter un dérangement</div>
+  <div class="def-text">1. <strong>Manœuvre de l'IS impossible</strong><br>
+2. <strong>Contrôle non obtenu</strong> ou observation directe<br>
+3. <strong>Sur avis d'un conducteur</strong> ou d'un autre agent</div>
 </div>
 
 <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:14px">
   <div style="background:var(--bg3);border-left:4px solid var(--accent);border-radius:var(--radius2);padding:11px 14px">
-    <div style="font-weight:700;color:var(--accent);margin-bottom:3px">R — Reconnaître le dérangement</div>
-    <div style="font-size:12px;color:var(--text2)">Identifier et constater le dérangement sur l'installation de sécurité.</div>
+    <div style="font-weight:700;color:var(--accent);margin-bottom:3px">R — Y a-t-il un Risque immédiat ?</div>
+    <div style="font-size:12px;color:var(--text2)">Prendre des <strong>mesures de sécurité éventuelles</strong> si nécessaire (FAMAS si une circulation est menacée, fermer les signaux, etc.).</div>
   </div>
   <div style="background:var(--bg3);border-left:4px solid #60a5fa;border-radius:var(--radius2);padding:11px 14px">
-    <div style="font-weight:700;color:#60a5fa;margin-bottom:3px">I — Immobiliser les leviers concernés (DR)</div>
-    <div style="font-size:12px;color:var(--text2)">Poser un DR (Dispositif de Réflexion — jaune) sur chaque levier de signal ou d'aiguille concerné par le dérangement.</div>
+    <div style="font-weight:700;color:#60a5fa;margin-bottom:3px">I — Identifier la nature du dérangement et ses conséquences</div>
+    <div style="font-size:12px;color:var(--text2)">Comprendre quel type de dérangement c'est (raté d'ouverture, raté de fermeture, extinction…) et évaluer les conséquences sur la circulation. C'est ici qu'on fait les <strong>3E</strong> si le signal ne s'ouvre pas.</div>
   </div>
   <div style="background:var(--bg3);border-left:4px solid #a78bfa;border-radius:var(--radius2);padding:11px 14px">
-    <div style="font-weight:700;color:#a78bfa;margin-bottom:3px">A — Annoter le CDIS et Aviser</div>
-    <div style="font-size:12px;color:var(--text2)">Annoter le <strong class="fc-accent">CDIS</strong> (Carnet de Dérangements des IS) et aviser les agents/postes concernés + COGC + maintenance IS (AMI). ⚠️ Au 2<sup>e</sup> RIAT, <strong>ne pas ré-annoter</strong> — c'est déjà fait.</div>
+    <div style="font-weight:700;color:#a78bfa;margin-bottom:3px">A — Aviser et Annoter</div>
+    <div style="font-size:12px;color:var(--text2)">• <strong>Aviser</strong> : AC/COGC et <strong>agent mainteneur de l'infrastructure (AMI)</strong><br>• <strong>Annoter</strong> : le <strong class="fc-accent">CDIS</strong> (Carnet de Dérangements des IS)<br>⚠️ Au 2<sup>e</sup> RIAT, <strong>ne pas ré-annoter le CDIS</strong> — c'est déjà fait.</div>
   </div>
   <div style="background:var(--bg3);border-left:4px solid #34d399;border-radius:var(--radius2);padding:11px 14px">
     <div style="font-weight:700;color:#34d399;margin-bottom:3px">T — Traiter le dérangement → sortir la DC 3858 direct !</div>
-    <div style="font-size:12px;color:var(--text2)"><strong class="fc-accent">Réflexe :</strong> ouvrir la <strong>DC 3858 — Chapitre 4 — Article 417</strong>. Toujours passer par le sommaire pour choisir la bonne fiche selon le type de dérangement. Ne pas traiter de mémoire — lire et suivre la procédure.</div>
+    <div style="font-size:12px;color:var(--text2)"><strong class="fc-accent">Réflexe :</strong> ouvrir la <strong>DC 3858 — Chapitre 4</strong> (CG S6A). Passer par le sommaire pour choisir la bonne fiche. Prendre les mesures correspondant au dérangement décelé. Ne pas traiter de mémoire — lire et suivre la procédure.</div>
   </div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">AUTOCONTRÔLE — après chaque RIAT</div>
+  <div class="def-text">1. <strong>Prendre du recul</strong> sur les opérations effectuées<br>
+2. <strong>Vérifier une seconde fois</strong> les procédures mises en œuvre<br>
+3. <strong>Détecter ses propres erreurs</strong><br><br>
+<em style="color:var(--text3)">"Parce que vous ne pourrez jamais revenir en arrière."</em></div>
 </div>
 
 <h3 class="fc-h3">Les 3 E — si le signal ne s'ouvre toujours pas au 2<sup>e</sup> RIAT <span class="tag red ml6">🔥 Par cœur</span></h3>
 
 <div class="def-block important">
   <div class="def-term">Si le levier de signal reste enclenché (immobilisé) après le 1<sup>er</sup> RIAT</div>
-  <div class="def-text">Au 2<sup>e</sup> RIAT, pour identifier le <strong>I (Immobiliser)</strong>, faire les 3E. <strong>Pas besoin de ré-annoter le CDIS</strong> — c'est déjà fait lors du 1<sup>er</sup> RIAT.<br><br>
+  <div class="def-text">Au 2<sup>e</sup> RIAT, pour le <strong>I (Identifier)</strong>, faire les 3E. <strong>Pas besoin de ré-annoter le CDIS</strong> — c'est déjà fait lors du 1<sup>er</sup> RIAT.<br><br>
   <strong class="fc-accent">E1 — Erreur de ma part ?</strong><br>
   → Vérifier l'<strong>Annexe 2 de la Consigne Rose</strong> (tableau des mouvements, partie 2 et 3) : est-ce que j'ai respecté toutes les conditions d'ouverture ? Ai-je actionné les bons leviers dans le bon ordre ?<br><br>
   <strong class="fc-accent">E2 — Enclenchement mécanique ?</strong><br>
@@ -2259,7 +2270,7 @@ signaux: `
   <strong style="color:#a78bfa">Pourquoi l'œilleton existe :</strong> Sur une cible <strong>Nf</strong> (qui peut présenter un carré), tu peux voir un seul feu rouge. Sans information complémentaire, tu ne saurais pas s'il s'agit :
   <ul style="margin:8px 0 8px 22px;padding:0">
     <li>D'un <strong class="fc-text">sémaphore</strong> de BAL (normal qu'il n'y ait qu'un feu rouge)</li>
-    <li>D'un <strong class="fc-text">carré avarié</strong> dont l'une des deux ampoules a grillé (le carré devrait avoir 2 feux rouges)</li>
+    <li>D'un <strong class="fc-text">carré avarié</strong> dont l'une des deux lampes a grillé (le carré devrait avoir 2 feux rouges)</li>
   </ul>
   L'œilleton lève l'ambiguïté :<br>
   ● <strong style="color:#a78bfa">Œilleton ALLUMÉ</strong> → c'est un <strong>sémaphore</strong> (donc franchissable sous conditions)<br>
@@ -2636,19 +2647,39 @@ Après avoir remis le levier en position normale, on remet un nouveau coupon : <
   </tbody>
 </table></div>
 
-<h3 class="fc-h3-alt">AMV310 — Travaux sur les IS (IN1582)</h3>
-<div class="def-block">
-  <div class="def-term">Article 101 — Champ d'application</div>
-  <div class="def-text">L'AMV310 s'applique à toute IS qui est manœuvrée directement ou indirectement, et/ou contrôlée par un AC ou un Aiguilleur — quel que soit son lieu d'implantation (gare ou pleine voie).
-  
-En clair : dès qu'une IS est sous la responsabilité d'un agent de circulation ou d'un aiguilleur (même à distance), les règles de travaux AMV310 s'appliquent.</div>
+<h3 class="fc-h3-alt">AMV310 — Travaux sur les IS (IN1582) <span class="tag red ml6">🔥 Par cœur</span></h3>
+
+<div class="def-block important">
+  <div class="def-term">IS dépendant d'une gare — définition à savoir par cœur</div>
+  <div class="def-text">« Il s'agit d'une IS, quel que soit son lieu d'implantation, qui est <strong>manœuvrée directement ou indirectement et/ou contrôlée par un AC ou un aiguilleur</strong>. »</div>
 </div>
-<div class="def-block">
-  <div class="def-term">Article 102 — 4 catégories de travaux</div>
-  <div class="def-text">• <strong>1ère catégorie</strong> : Travaux de petit entretien
-• <strong>2ème catégorie</strong> : Travaux de relève de dérangement
-• <strong>3ème catégorie</strong> : Travaux de grand entretien
-• <strong>4ème catégorie</strong> : Travaux d'établissement, de modification ou de suppression</div>
+
+<div class="def-block important">
+  <div class="def-term">4 catégories de travaux sur les IS <span class="tag red ml6">Par cœur</span></div>
+  <div class="def-text">• <strong>1ère catégorie</strong> : Petit entretien <span class="tag yellow ml6">🎯 Seule à connaître en détail pour l'AMV</span><br>
+• <strong>2ème catégorie</strong> : Relève de dérangement<br>
+• <strong>3ème catégorie</strong> : Grand entretien<br>
+• <strong>4ème catégorie</strong> : Établissement, modification ou suppression d'IS</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term fc-accent">1ère catégorie — 5 étapes à connaître en détail <span class="tag red ml6">🔥 AMV</span></div>
+  <div class="def-text">Intervenant : l'<strong>AMI</strong> (Agent Mainteneur de l'Infrastructure / voie). ⚠️ <strong>Tout est verbal</strong> — rien à annoter nulle part.<br><br>
+
+  <strong>1. Réaliser une entente préalable avec l'AMI</strong> sur les 4 points suivants (à savoir) :<br>
+  &nbsp;&nbsp;• Quelle IS est concernée ?<br>
+  &nbsp;&nbsp;• Les répercussions sur les circulations ?<br>
+  &nbsp;&nbsp;• La durée de l'intervention ?<br>
+  &nbsp;&nbsp;• Les manœuvres éventuelles ?<br><br>
+
+  <strong>2. S'assurer qu'aucune circulation ne va emprunter la partie de voie concernée</strong><br>
+  &nbsp;&nbsp;→ Consulter l'<strong>ONJ / TST / COGC</strong> et trouver un créneau sûr à lui déclarer. <span class="tag yellow ml6">Autocontrôle</span><br><br>
+
+  <strong>3. Autoriser verbalement l'intervention</strong><br><br>
+
+  <strong>4. Procéder aux vérifications et essais de l'IS</strong> (manœuvres)<br><br>
+
+  <strong>5. Aviser verbalement l'aiguilleur de la fin des travaux</strong></div>
 </div>
 
 <h3 class="fc-h3-alt">Code couleur DC3858 (Consigne Rose)</h3>
@@ -2851,19 +2882,52 @@ travaux: `
   </tbody>
 </table></div>
 
-<h3 class="fc-h3">AMV216 — Catégories de circulations A / B / C</h3>
+<h3 class="fc-h3-accent">⭐ AMV216 — Catégories de circulations A / B / C <span class="tag red ml6">🔥 Exam — savoir expliquer</span></h3>
+
+<div style="background:rgba(96,165,250,0.06);border:1px solid rgba(96,165,250,0.3);border-radius:var(--radius2);padding:11px 16px;margin-bottom:14px;font-size:13px;line-height:1.6">
+  💡 Le critère qui distingue les catégories c'est le <strong>poids</strong> pour A et C, et l'<strong>empattement</strong> pour B — pas le poids. Bien les différencier à l'oral.
+</div>
 
 <div class="def-block important">
-  <div class="def-term">Catégorie A</div>
-  <div class="def-text">Circulations « légères » pouvant provoquer des déshuntages brefs et intermittents (ex : autorail, thermique, bi-mode, locotracteurs).</div>
+  <div class="def-term">Catégorie A <span class="tag yellow ml6">Poids léger</span></div>
+  <div class="def-text">Circulations <strong>légères</strong> (poids) → déshuntage <strong>bref et intermittent</strong>.<br>
+  Ex : autorail, thermique, bi-mode, locotracteurs.</div>
 </div>
 <div class="def-block important">
-  <div class="def-term">Catégorie B</div>
-  <div class="def-text">Circulation comportant au moins un véhicule à empattement long, pouvant provoquer un déshuntage temporaire au passage de ce véhicule sur un circuit de voie court (ex : porte-char).</div>
+  <div class="def-term">Catégorie B <span class="tag yellow ml6">Grand empattement</span></div>
+  <div class="def-text">Circulation contenant au moins un véhicule à <strong>grand empattement</strong> (pas le poids) → déshuntage temporaire au passage de ce véhicule sur un circuit de voie court.<br>
+  Ex : porte-char.</div>
 </div>
 <div class="def-block important">
   <div class="def-term">Catégorie C <span class="tag red ml6">⚠ Exam séance 3</span></div>
-  <div class="def-text">Circulation considérée « non shunteuse », provoquant des déshuntages prolongés. <strong>Ne peut pas être expédiée de façon autonome</strong> sur une ligne équipée de circuits de voie. Doit être incorporée dans un train encadré par des véhicules assurant le bon fonctionnement des circuits de voie.</div>
+  <div class="def-text">Circulation <strong>légère</strong> (poids) mais déshuntage <strong>prolongé</strong>. Considérée « non shunteuse ».<br>
+  <strong>Ne peut pas être expédiée de façon autonome</strong> sur une ligne équipée de circuits de voie. Doit être incorporée dans un train encadré par des véhicules assurant le bon fonctionnement des circuits de voie.</div>
+</div>
+
+<div class="def-block">
+  <div class="def-term">Comment savoir si un train de cat. B ou C est prévu ?</div>
+  <div class="def-text">• <strong>Train prévu</strong> → renseigné dans l'<strong>ONJ</strong>, le <strong>TST</strong> ou <strong>Oléron</strong><br>
+  • <strong>Train non prévu</strong> → c'est le <strong>régulateur / COGC</strong> qui nous prévient</div>
+</div>
+
+<h3 class="fc-h3-accent">⭐ Circuit de voie — à connaître <span class="tag red ml6">🔥 Par cœur</span></h3>
+
+<div class="def-block important">
+  <div class="def-term">Définition</div>
+  <div class="def-text">Le circuit de voie est un <strong>système de détection des circulations</strong> qui utilise un circuit électrique empruntant les rails, pour détecter la présence d'un train dans la section de voie considérée appelée <strong>zone</strong>. Il donne l'indication de la zone au <span style="color:#ef4444"><strong>rouge</strong></span> (occupée) ou au <span style="color:#34d399"><strong>blanc</strong></span> (libre) sur le TCO.</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">Shuntage — fonctionnement normal</div>
+  <div class="def-text">Quand un train passe sur une zone, ses essieux <strong>shuntent</strong> le circuit de voie (court-circuit par les rails) → la zone passe au <span style="color:#ef4444"><strong>rouge</strong></span> sur le TCO → on ne peut pas manœuvrer les aiguilles de cette zone.</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term fc-accent">⚠ Déshuntage = Libération intempestive <span class="tag red ml6">Risque majeur</span></div>
+  <div class="def-text">Quand une circulation de catégorie A, B ou C <strong>déshunte</strong> (perd le contact électrique avec les rails), le circuit de voie ne détecte plus le train → la zone passe au <span style="color:#34d399"><strong>blanc</strong></span> sur le TCO, <strong>alors que le train est encore présent</strong>.<br><br>
+  Conséquences potentielles :<br>
+  • <strong class="fc-accent">Risque de déraillement</strong> → une aiguille peut être manœuvrée sous le train<br>
+  • <strong class="fc-accent">Risque de rattrapage</strong> → on croit la zone libre, on expédie un autre train</div>
 </div>
 `,
 
@@ -3253,59 +3317,101 @@ Les schémas des ITE (Installations de Traction Électrique) se trouvent au <str
 
 graissage: `
 <h2 class="theme-heading">Graissage des aiguilles</h2>
-<div class="theme-ref">AMV804 · OP487</div>
+<div class="theme-ref">AMV804 · OP9023 · DAL · DC3858</div>
+
+<div style="background:rgba(240,192,64,0.07);border:1px solid rgba(240,192,64,0.3);border-radius:var(--radius2);padding:11px 16px;margin-bottom:16px;font-size:13px;line-height:1.6">
+  🎯 À l'examen AMV : les <strong>périodes de graissage</strong> (seul ou DPGR), les <strong>modes de protection</strong> et retenir que le <strong>brouillard = interdit</strong>.
+</div>
+
+<h3 class="fc-h3-accent">⭐ Définitions fondamentales</h3>
 
 <div class="def-block important">
   <div class="def-term">Graissage</div>
-  <div class="def-text">Travail de maintenance légère d'une aiguille qui consiste à nettoyer et graisser les parties mobiles de l'appareil de voie.</div>
+  <div class="def-text">Travail de maintenance légère d'une aiguille consistant à <strong>nettoyer et graisser</strong> les parties mobiles de l'appareil de voie. ⚠️ On ne graisse que les <strong>aiguilles et les verrous</strong> — pas les taquets.</div>
 </div>
 
-<h3 class="fc-h3">Art. 201 — Principes fondamentaux</h3>
 <div class="def-block important">
-  <div class="def-term">Règle absolue dès audition du signal ou vision d'une circulation</div>
-  <div class="def-text">• Quitter la zone dangereuse immédiatement
-• Se garer au plus près et sans délai hors de toute zone dangereuse
-• Demeurer sur place jusqu'à ce que la circulation soit passée COMPLÈTEMENT
-• Si circulation sur voie contiguë : la regarder venir pour détecter tout obstacle engageant le gabarit</div>
-</div>
-<div class="rule-box">
-  <strong>Cas exceptionnel — arrivée surprise :</strong> Se coucher sur le sol, en dehors de la voie, tête dirigée du côté d'où vient la circulation, vêtements ramenés près du corps.
-</div>
-<div class="rule-box">
-  <strong>Interdit</strong> de laisser des outils ou matériaux à l'intérieur de la ZD (risque de projection par effet de souffle).
+  <div class="def-term">Position d'un verrou</div>
+  <div class="def-text">Soit <strong>lancé</strong>, soit <strong>retiré</strong>.</div>
 </div>
 
-<h3 class="fc-h3">Art. 204 — Périodes de graissage</h3>
-<div class="rule-box">
-  • Déterminées à chaque nouveau service ou modification importante<br>
-  • Situées aux moments de plus faible densité de circulation<br>
-  • Périodes de nuit : <strong>exceptionnelles et justifiées</strong> par l'importance de la circulation diurne<br>
-  • <strong>INTERDIT par temps de brouillard</strong>
-</div>
-
-<h3 class="fc-h3">Art. 205 — 3 modes de protection</h3>
-<div class="def-block important">
-  <div class="def-term">A — Interdiction de circulation possible</div>
-  <div class="def-text">A1 — Toute la zone d'un poste : l'aiguilleur ferme les signaux et graisse lui-même.
-A2 — Partie de la zone : protection via installations du poste + DPGR (Demande de Protection Graissage).</div>
-</div>
-<div class="def-block important">
-  <div class="def-term">B — Interdiction impossible</div>
-  <div class="def-text">L'équipe est sous surveillance d'un agent sécurité qui annonce l'approche des circulations par un son allongé émis à l'aide de la trompe réglementaire. L'agent sécurité indique les mesures particulières, les limites de zone et les emplacements de garage.</div>
-</div>
-<div class="def-block important">
-  <div class="def-term">C — Graissage de nuit / Appareils télécommandés</div>
-  <div class="def-text">Les mesures de protection A2 (DPGR) doivent obligatoirement être appliquées.</div>
-</div>
-
-<h3 class="fc-h3">Matériel de protection du graisseur</h3>
 <div class="def-block">
-  <div class="def-term">Aiguille classique</div>
-  <div class="def-text">Appareil protecteur pour graisseur d'aiguilles : immobilise l'aiguille + présente un jalon à damier attirant l'attention des mécaniciens.</div>
+  <div class="def-term">Risques du graissage</div>
+  <div class="def-text">• <strong class="fc-accent">Risque de heurt</strong> — être heurté par une circulation<br>
+  • <strong class="fc-accent">Risque de pincement</strong> — se faire piéger par l'aiguille en mouvement</div>
 </div>
+
+<h3 class="fc-h3">Acteurs et organisation</h3>
+
 <div class="def-block important">
-  <div class="def-term">Aiguille à moteur (télécommandée)</div>
-  <div class="def-text">L'appareil protecteur NE DOIT PAS être utilisé. Le graisseur se munit d'un DRAPEAU ROUGE À HAMPE qu'il fixe dans la voie, à proximité de l'appareil, pendant toute la durée du travail.</div>
+  <div class="def-term">ASP — Agent de Sécurité du Personnel <span class="tag red ml6">Par cœur</span></div>
+  <div class="def-text">Responsable de l'équipe de graissage — équivalent du RPTx pour les travaux. C'est lui qui :<br>
+  • Se concerte avec l'aiguilleur (aiguilles à graisser, secteur à protéger, durée, période...)<br>
+  • Brief l'équipe de graisseurs<br>
+  • Discute avec l'AC / aiguilleur</div>
 </div>
-`
-};
+
+<div class="def-block important">
+  <div class="def-term">Annonceur</div>
+  <div class="def-text">Agent équipé d'une <strong>trompe</strong> qui annonce l'arrivée des trains à l'équipe. C'est lui qui signale le danger, <strong>pas</strong> celui qui décide quand retourner dans les voies.</div>
+</div>
+
+<div class="def-block">
+  <div class="def-term">Graisseur</div>
+  <div class="def-text">Agent qui réalise l'opération de graissage sur les aiguilles et verrous.</div>
+</div>
+
+<div class="def-block">
+  <div class="def-term">DAL — Document d'Application Local <span class="tag red ml6">Par cœur</span></div>
+  <div class="def-text">C'est le DAL qui détermine quand et comment graisser — ni l'aiguilleur ni le graisseur ne choisissent.<br>
+  • <strong>Annexe 2</strong> : les secteurs et mesures de protection<br>
+  • <strong>Annexe 3</strong> : programme théorique d'exécution des travaux → indique soit <strong>protection humaine</strong>, soit <strong>DPGR</strong><br>
+  Tout est décrit dans le DAL. Périodes de graissage à vérifier : <strong>OP 9023</strong>.</div>
+</div>
+
+<h3 class="fc-h3-accent">⭐ Modes de protection — à connaître par cœur <span class="tag red ml6">🔥 Exam</span></h3>
+
+<div class="def-block important">
+  <div class="def-term">Protection humaine (annonceur seul)</div>
+  <div class="def-text">Possible en l'absence de circulations. L'annonceur surveille et signale avec sa trompe. Aucune protection signalée à l'AC.</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">DPGR — Demande de Protection Garantissant les Risques <span class="tag red ml6">🔥 Par cœur</span></div>
+  <div class="def-text">Obligatoire dès qu'il y a des circulations. Comme une DFV pour les travaux : on protège la zone avec des signaux.<br><br>
+  ⚠️ <strong>Tant que la DPGR n'est pas restituée</strong>, il est impossible de manœuvrer → des DA (Dispositifs d'Arrêt) sont en place.<br><br>
+  Le <strong>graissage de nuit</strong> doit rester exceptionnel et se fait <strong>forcément sous DPGR</strong>.</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">Si un train doit passer pendant le graissage</div>
+  <div class="def-text">1. L'aiguilleur appelle l'ASP<br>
+  2. L'équipe <strong>restitue</strong> la DPGR (sort des voies)<br>
+  3. Le train passe<br>
+  4. On refait une nouvelle DPGR pour recommencer</div>
+</div>
+
+<h3 class="fc-h3">Conditions météo</h3>
+
+<div class="def-block important">
+  <div class="def-term">Météo et graissage <span class="tag red ml6">🔥 Par cœur</span></div>
+  <div class="def-text">• <strong style="color:#ef4444">Brouillard → INTERDIT !</strong><br>
+  • <strong style="color:#34d399">Pluie, neige, canicule → OK</strong> (conditions dégradées acceptées avec les protections adaptées)</div>
+</div>
+
+<h3 class="fc-h3">Références documentaires</h3>
+
+<div class="def-block">
+  <div class="def-term">Documents clés</div>
+  <div class="def-text">• <strong>OP 9023</strong> : périodes de graissage<br>
+  • <strong>DAL</strong> (Document d'Application Local) : tout le mode opératoire, secteurs, protections<br>
+  • <strong>Annexe 5 de la Consigne Rose</strong> : carnet de détonateurs<br>
+  • <strong>Consigne de protection</strong> : comme pour les travaux (DA, voie libre et protégée)</div>
+</div>
+
+<div class="def-block">
+  <div class="def-term">Avant le graissage — concertation aiguilleur / ASP</div>
+  <div class="def-text">Sujets abordés : aiguilles à graisser · secteur à protéger · durée · période · mode de protection (humain ou DPGR).<br>
+  → Aviser ensuite le <strong>COGC</strong> et l'<strong>AC</strong>.</div>
+</div>
+`};
