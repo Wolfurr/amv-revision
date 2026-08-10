@@ -7,7 +7,7 @@
 // ═══════════════════════════════════════════════
 
 // Source unique de vérité pour la version + date de MAJ (affichée en haut à droite)
-const VERSION_LABEL = 'v8.2 — 10 août 2026';
+const VERSION_LABEL = 'v8.3 — 10 août 2026';
 
 const THEMES = [
   { id:'epi',         code:'AMV801',        title:'EPI & Déplacements',                 short:'EPI' },
@@ -1240,171 +1240,129 @@ function renderGares(c) {
   c = c || document.getElementById('main-content');
 
   if (!document.getElementById('gares-style')) {
-    const st = document.createElement('style');
+    var st = document.createElement('style');
     st.id = 'gares-style';
-    st.textContent = `
-      .mvt-row { display:grid; grid-template-columns:64px 1fr 1fr 2fr; gap:10px; padding:10px 12px; background:var(--bg3); border:1px solid var(--border); border-radius:var(--radius); align-items:center; }
-      .mvt-row:hover { border-color:var(--border2); }
-      .mvt-id  { font-family:var(--mono); font-size:14px; font-weight:700; color:var(--accent); }
-      .mvt-dep { font-size:12px; color:var(--text); }
-      .mvt-leviers { display:flex; gap:4px; flex-wrap:wrap; }
-      .lev-chip { font-family:var(--mono); font-size:11px; padding:3px 8px; border-radius:3px; font-weight:600; }
-      .lev-chip.aiguille { background:#1e3a8a; color:#bfdbfe; border:1px solid #3b82f6; }
-      .lev-chip.signal   { background:#7c2d12; color:#fed7aa; border:1px solid #ea580c; }
-      .lev-chip.last     { box-shadow:0 0 0 2px var(--accent); }
-    `;
+    st.textContent = [
+      '.mvt-row{display:grid;grid-template-columns:64px 1fr 1fr 2fr;gap:10px;padding:10px 12px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);align-items:center}',
+      '.mvt-row:hover{border-color:var(--border2)}',
+      '.mvt-id{font-family:var(--mono);font-size:14px;font-weight:700;color:var(--accent)}',
+      '.mvt-dep{font-size:12px;color:var(--text)}',
+      '.mvt-leviers{display:flex;gap:4px;flex-wrap:wrap}',
+      '.lev-chip{font-family:var(--mono);font-size:11px;padding:3px 8px;border-radius:3px;font-weight:600}',
+      '.lev-chip.aiguille{background:#1e3a8a;color:#bfdbfe;border:1px solid #3b82f6}',
+      '.lev-chip.signal{background:#7c2d12;color:#fed7aa;border:1px solid #ea580c}',
+      '.lev-chip.last{box-shadow:0 0 0 2px var(--accent)}'
+    ].join('');
     document.head.appendChild(st);
   }
 
-  const g = GARES['stsaturnin'];
+  var g = GARES['stsaturnin'];
+  if (!g) { c.innerHTML = '<p style="color:var(--red)">Données gare non trouvées.</p>'; return; }
 
-  c.innerHTML = `
-<div class="section-heading">🏘️ Saint-Saturnin — PK 139,000</div>
-<div class="section-sub">Schéma de voie · Tableau des mouvements · Consigne Rose Annexe 2</div>
+  // --- SVG ---
+  var svg = '<svg viewBox="0 0 960 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;min-width:500px;display:block"><defs>'
+    + '<marker id="arrowR" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#4ade80"/></marker>'
+    + '<marker id="arrowL" markerWidth="8" markerHeight="8" refX="2" refY="3" orient="auto"><path d="M8,0 L8,6 L0,3 z" fill="#60a5fa"/></marker>'
+    + '</defs>'
+    // Titres
+    + '<text x="16" y="18" fill="#8a99b8" font-size="11" font-family="monospace" font-weight="700">PARIS (−)</text>'
+    + '<text x="480" y="18" fill="#f0c040" font-size="13" font-family="monospace" font-weight="700" text-anchor="middle">SAINT-SATURNIN · PK 139,000</text>'
+    + '<text x="944" y="18" fill="#8a99b8" font-size="11" font-family="monospace" font-weight="700" text-anchor="end">LA PRESLE (+)</text>'
+    // V1
+    + '<line x1="16" y1="70" x2="240" y2="70" stroke="#4ade80" stroke-width="3"/>'
+    + '<line x1="296" y1="70" x2="520" y2="70" stroke="#4ade80" stroke-width="3"/>'
+    + '<line x1="560" y1="70" x2="720" y2="70" stroke="#4ade80" stroke-width="3"/>'
+    + '<line x1="760" y1="70" x2="940" y2="70" stroke="#4ade80" stroke-width="3" marker-end="url(#arrowR)"/>'
+    + '<text x="860" y="60" fill="#4ade80" font-size="11" font-family="monospace">V1 →</text>'
+    // V2
+    + '<line x1="20" y1="140" x2="240" y2="140" stroke="#60a5fa" stroke-width="3" marker-start="url(#arrowL)"/>'
+    + '<line x1="296" y1="140" x2="520" y2="140" stroke="#60a5fa" stroke-width="3"/>'
+    + '<line x1="560" y1="140" x2="720" y2="140" stroke="#60a5fa" stroke-width="3"/>'
+    + '<line x1="760" y1="140" x2="940" y2="140" stroke="#60a5fa" stroke-width="3"/>'
+    + '<text x="70" y="163" fill="#60a5fa" font-size="11" font-family="monospace">← V2</text>'
+    // Aiguilles côté Paris (11, 12)
+    + '<line x1="240" y1="70" x2="296" y2="140" stroke="#3b82f6" stroke-width="2"/>'
+    + '<circle cx="248" cy="80" r="14" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2"/><text x="248" y="84" fill="#bfdbfe" font-size="9" text-anchor="middle" font-weight="700" font-family="monospace">11</text>'
+    + '<circle cx="286" cy="130" r="14" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2"/><text x="286" y="134" fill="#bfdbfe" font-size="9" text-anchor="middle" font-weight="700" font-family="monospace">12</text>'
+    // Aiguilles centrales (13, 14)
+    + '<line x1="520" y1="70" x2="560" y2="140" stroke="#3b82f6" stroke-width="2"/>'
+    + '<circle cx="528" cy="80" r="14" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2"/><text x="528" y="84" fill="#bfdbfe" font-size="9" text-anchor="middle" font-weight="700" font-family="monospace">13</text>'
+    + '<circle cx="552" cy="130" r="14" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2"/><text x="552" y="134" fill="#bfdbfe" font-size="9" text-anchor="middle" font-weight="700" font-family="monospace">14</text>'
+    // Aiguilles côté La Presle (15a, 15b)
+    + '<line x1="720" y1="70" x2="760" y2="140" stroke="#3b82f6" stroke-width="2"/>'
+    + '<circle cx="728" cy="80" r="14" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2"/><text x="728" y="84" fill="#bfdbfe" font-size="9" text-anchor="middle" font-weight="700" font-family="monospace">15a</text>'
+    + '<circle cx="752" cy="130" r="14" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2"/><text x="752" y="134" fill="#bfdbfe" font-size="9" text-anchor="middle" font-weight="700" font-family="monospace">15b</text>'
+    // Voie A (annexe, sous V2)
+    + '<line x1="296" y1="140" x2="260" y2="185" stroke="#505e7a" stroke-width="1.5" stroke-dasharray="5,3"/>'
+    + '<line x1="260" y1="185" x2="560" y2="185" stroke="#505e7a" stroke-width="2"/>'
+    + '<line x1="560" y1="185" x2="560" y2="140" stroke="#505e7a" stroke-width="1.5" stroke-dasharray="5,3"/>'
+    + '<text x="410" y="200" fill="#505e7a" font-size="10" font-family="monospace" text-anchor="middle">Voie A (annexe)</text>'
+    // Voie L (croisement haut)
+    + '<line x1="520" y1="70" x2="520" y2="42" stroke="#505e7a" stroke-width="1.5" stroke-dasharray="5,3"/>'
+    + '<line x1="520" y1="42" x2="720" y2="42" stroke="#505e7a" stroke-width="2"/>'
+    + '<line x1="720" y1="42" x2="720" y2="70" stroke="#505e7a" stroke-width="1.5" stroke-dasharray="5,3"/>'
+    + '<text x="620" y="38" fill="#505e7a" font-size="10" font-family="monospace" text-anchor="middle">Voie L</text>'
+    // Signaux V1
+    + '<rect x="110" y="56" width="50" height="18" rx="3" fill="#7c2d12" stroke="#ea580c" stroke-width="1.5"/><text x="135" y="69" fill="#fed7aa" font-size="9" text-anchor="middle" font-weight="700" font-family="monospace">C 213</text>'
+    + '<rect x="390" y="56" width="50" height="18" rx="3" fill="#7c2d12" stroke="#ea580c" stroke-width="1.5"/><text x="415" y="69" fill="#fed7aa" font-size="9" text-anchor="middle" font-weight="700" font-family="monospace">C 215</text>'
+    + '<rect x="820" y="56" width="50" height="18" rx="3" fill="#4a2c0a" stroke="#f59e0b" stroke-width="1.5"/><text x="845" y="69" fill="#fcd34d" font-size="9" text-anchor="middle" font-weight="700" font-family="monospace">S 219</text>'
+    // Signaux V2
+    + '<rect x="110" y="128" width="50" height="18" rx="3" fill="#7c2d12" stroke="#ea580c" stroke-width="1.5"/><text x="135" y="141" fill="#fed7aa" font-size="9" text-anchor="middle" font-weight="700" font-family="monospace">C 211</text>'
+    // Carrés VS voie A
+    + '<rect x="195" y="174" width="52" height="15" rx="3" fill="#3b0764" stroke="#a855f7" stroke-width="1"/><text x="221" y="185" fill="#d8b4fe" font-size="8" text-anchor="middle" font-weight="700" font-family="monospace">Cv 222</text>'
+    + '<rect x="460" y="174" width="52" height="15" rx="3" fill="#3b0764" stroke="#a855f7" stroke-width="1"/><text x="486" y="185" fill="#d8b4fe" font-size="8" text-anchor="middle" font-weight="700" font-family="monospace">Cv 224</text>'
+    // Légende
+    + '<rect x="16" y="220" width="12" height="9" rx="2" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1"/><text x="34" y="229" fill="#8a99b8" font-size="10" font-family="monospace">Aiguille (PRR)</text>'
+    + '<rect x="160" y="220" width="12" height="9" rx="2" fill="#7c2d12" stroke="#ea580c" stroke-width="1"/><text x="178" y="229" fill="#8a99b8" font-size="10" font-family="monospace">Carré (ACPP)</text>'
+    + '<rect x="300" y="220" width="12" height="9" rx="2" fill="#4a2c0a" stroke="#f59e0b" stroke-width="1"/><text x="318" y="229" fill="#8a99b8" font-size="10" font-family="monospace">Sémaphore (ACPP)</text>'
+    + '<rect x="480" y="220" width="12" height="9" rx="2" fill="#3b0764" stroke="#a855f7" stroke-width="1"/><text x="498" y="229" fill="#8a99b8" font-size="10" font-family="monospace">Carré violet (VS)</text>'
+    + '</svg>';
 
-<div class="rule-box" style="margin-bottom:16px">
-  💡 <strong>Rappel PRR / ACPP :</strong> pour chaque levier du tableau — si <strong>aiguille</strong> → <strong style="color:#60a5fa">PRR</strong> · si <strong>signal</strong> → <strong style="color:#ea580c">ACPP</strong>. Les <strong>derniers chiffres</strong> (en surbrillance dorée) sont toujours des signaux.
-</div>
-
-<!-- SCHÉMA SVG -->
-<div class="card" style="padding:16px;margin-bottom:20px;overflow-x:auto">
-  <div class="card-title" style="margin-bottom:12px">Schéma de voie simplifié</div>
-  ${stsatSVG()}
-  <div style="margin-top:12px;font-size:11px;color:var(--text3)">
-    📍 <strong style="color:var(--text2)">PARIS</strong> côté (−) à gauche · <strong style="color:var(--text2)">LA PRESLE</strong> côté (+) à droite · V1 = sens normal vers La Presle · V2 = sens normal vers Paris
-  </div>
-</div>
-
-<!-- TABLEAU DES MOUVEMENTS -->
-<h3 class="fc-h3-accent">Tableau des mouvements</h3>
-<div style="display:flex;flex-direction:column;gap:6px;margin-bottom:20px">
-  <div style="display:grid;grid-template-columns:64px 1fr 1fr 2fr;gap:10px;padding:8px 12px;font-family:var(--mono);font-size:10px;letter-spacing:0.08em;color:var(--text3);text-transform:uppercase">
-    <div>Mvt.</div><div>Départ</div><div>Destination</div><div>Leviers dans l'ordre</div>
-  </div>
-  ${g.mouvements.map((m, i) => {
-    const lastIdx = m.leviers.length - 1;
-    const chips = m.leviers.map((id, j) => {
-      const lever = g.leviers.find(l => l.id === id || l.id === id.replace(/[ab]$/, ''));
-      const type  = lever ? lever.type : (id.match(/^[A-Z]/) ? 'signal' : 'aiguille');
-      const last  = j === lastIdx;
-      return `<span class="lev-chip ${type}${last?' last':''}" title="${lever ? lever.desc : id}">${id}</span>`;
+  // --- Tableau des mouvements ---
+  var mvtHeader = '<div style="display:grid;grid-template-columns:64px 1fr 1fr 2fr;gap:10px;padding:8px 12px;font-family:var(--mono);font-size:10px;letter-spacing:0.08em;color:var(--text3);text-transform:uppercase">'
+    + '<div>Mvt.</div><div>D\u00e9part</div><div>Destination</div><div>Leviers dans l\'ordre</div></div>';
+  var mvtRows = g.mouvements.map(function(m) {
+    var lastIdx = m.leviers.length - 1;
+    var chips = m.leviers.map(function(id, j) {
+      var lever = null;
+      for (var k = 0; k < g.leviers.length; k++) {
+        if (g.leviers[k].id === id || g.leviers[k].id === id.replace(/[ab]$/, '')) { lever = g.leviers[k]; break; }
+      }
+      var type  = lever ? lever.type : (id.match(/^[A-Z]/) ? 'signal' : 'aiguille');
+      var last  = (j === lastIdx) ? ' last' : '';
+      var title = lever ? lever.desc : id;
+      return '<span class="lev-chip ' + type + last + '" title="' + title + '">' + id + '</span>';
     }).join('');
-    return `
-    <div class="mvt-row">
-      <div class="mvt-id">${m.id}</div>
-      <div class="mvt-dep">📤 ${m.dep}</div>
-      <div class="mvt-dep" style="color:var(--text2)">📥 ${m.dest}</div>
-      <div>
-        <div class="mvt-leviers" style="margin-bottom:4px">${chips}</div>
-        <div style="font-size:11px;color:var(--text3)">${m.note}</div>
-      </div>
-    </div>`;
-  }).join('')}
-</div>
+    return '<div class="mvt-row">'
+      + '<div class="mvt-id">' + m.id + '</div>'
+      + '<div class="mvt-dep">&#128228; ' + m.dep + '</div>'
+      + '<div class="mvt-dep" style="color:var(--text2)">&#128229; ' + m.dest + '</div>'
+      + '<div><div class="mvt-leviers" style="margin-bottom:4px">' + chips + '</div>'
+      + '<div style="font-size:11px;color:var(--text3)">' + m.note + '</div></div>'
+      + '</div>';
+  }).join('');
 
-<div class="def-block">
-  <div class="def-term">📌 Infos gare</div>
-  <div class="def-text">Ligne : <strong>${g.voiePrincipale}</strong> · PK : <strong>139,000</strong><br>
-  Schéma et données indicatifs — se référer à la <strong>Consigne Rose Annexe 2</strong> de Saint-Saturnin pour les données exactes.</div>
-</div>
-`;
+  // --- Rendu ---
+  c.innerHTML = ''
+    + '<div class="section-heading">\uD83C\uDFD8\uFE0F Gare de Saint-Saturnin — PK 139,000</div>'
+    + '<div class="section-sub">Sch\u00e9ma de voie \u00b7 Tableau des mouvements \u00b7 Consigne Rose Annexe 2</div>'
+    + '<div class="rule-box" style="margin-bottom:16px">'
+    + '\uD83D\uDCA1 <strong>Rappel PRR / ACPP :</strong> pour chaque levier du tableau \u2014 si <strong>aiguille</strong> \u2192 <strong style="color:#60a5fa">PRR</strong> \u00b7 si <strong>signal</strong> \u2192 <strong style="color:#ea580c">ACPP</strong>. Les <strong>derniers chiffres</strong> (en surbrillance dor\u00e9e) sont toujours des signaux.'
+    + '</div>'
+    + '<div class="card" style="padding:16px;margin-bottom:20px;overflow-x:auto">'
+    + '<div class="card-title" style="margin-bottom:12px">Sch\u00e9ma de voie simplifi\u00e9</div>'
+    + svg
+    + '<div style="margin-top:12px;font-size:11px;color:var(--text3)">\uD83D\uDCCD <strong style="color:var(--text2)">PARIS</strong> c\u00f4t\u00e9 (\u2212) \u00e0 gauche \u00b7 <strong style="color:var(--text2)">LA PRESLE</strong> c\u00f4t\u00e9 (+) \u00e0 droite \u00b7 V1 = sens normal vers La Presle \u00b7 V2 = sens normal vers Paris</div>'
+    + '</div>'
+    + '<h3 class="fc-h3-accent">Tableau des mouvements</h3>'
+    + '<div style="display:flex;flex-direction:column;gap:6px;margin-bottom:20px">'
+    + mvtHeader + mvtRows
+    + '</div>'
+    + '<div class="def-block"><div class="def-term">\uD83D\uDCCC Infos gare</div>'
+    + '<div class="def-text">Ligne : <strong>' + g.voiePrincipale + '</strong> \u00b7 PK : <strong>139,000</strong><br>'
+    + 'Sch\u00e9ma et donn\u00e9es indicatifs \u2014 se r\u00e9f\u00e9rer \u00e0 la <strong>Consigne Rose Annexe 2</strong> de Saint-Saturnin pour les donn\u00e9es exactes.</div></div>';
 }
 
-function stsatSVG() {
-  return `<svg viewBox="0 0 960 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;min-width:600px;background:transparent;display:block">
-  <defs>
-    <marker id="arrowR" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-      <path d="M0,0 L0,6 L8,3 z" fill="#4ade80"/>
-    </marker>
-    <marker id="arrowL" markerWidth="8" markerHeight="8" refX="2" refY="3" orient="auto">
-      <path d="M8,0 L8,6 L0,3 z" fill="#60a5fa"/>
-    </marker>
-  </defs>
-
-  <!-- ─── Titres extérieurs ─── -->
-  <text x="16"  y="18" fill="#8a99b8" font-size="11" font-family="monospace" font-weight="700">PARIS (−)</text>
-  <text x="480" y="18" fill="#f0c040" font-size="13" font-family="monospace" font-weight="700" text-anchor="middle">SAINT-SATURNIN · PK 139,000</text>
-  <text x="944" y="18" fill="#8a99b8" font-size="11" font-family="monospace" font-weight="700" text-anchor="end">LA PRESLE (+)</text>
-
-  <!-- ─── V1 (haut, → La Presle) ─── -->
-  <line x1="16" y1="70" x2="240" y2="70" stroke="#4ade80" stroke-width="3"/>
-  <line x1="296" y1="70" x2="520" y2="70" stroke="#4ade80" stroke-width="3"/>
-  <line x1="560" y1="70" x2="720" y2="70" stroke="#4ade80" stroke-width="3"/>
-  <line x1="760" y1="70" x2="944" y2="70" stroke="#4ade80" stroke-width="3" marker-end="url(#arrowR)"/>
-  <text x="860" y="60" fill="#4ade80" font-size="11" font-family="monospace">V1 →</text>
-
-  <!-- ─── V2 (bas, ← Paris) ─── -->
-  <line x1="16" y1="140" x2="240" y2="140" stroke="#60a5fa" stroke-width="3" marker-start="url(#arrowL)"/>
-  <line x1="296" y1="140" x2="520" y2="140" stroke="#60a5fa" stroke-width="3"/>
-  <line x1="560" y1="140" x2="720" y2="140" stroke="#60a5fa" stroke-width="3"/>
-  <line x1="760" y1="140" x2="944" y2="140" stroke="#60a5fa" stroke-width="3"/>
-  <text x="70" y="163" fill="#60a5fa" font-size="11" font-family="monospace">← V2</text>
-
-  <!-- ─── Aiguilles côté Paris (11, 12) ─── -->
-  <line x1="240" y1="70"  x2="296" y2="140" stroke="#3b82f6" stroke-width="2.5"/>
-  <circle cx="248" cy="78"  r="13" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2"/>
-  <text x="248" y="82"  fill="#bfdbfe" font-size="9" text-anchor="middle" font-weight="700" font-family="monospace">11</text>
-  <circle cx="288" cy="132" r="13" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2"/>
-  <text x="288" y="136" fill="#bfdbfe" font-size="9" text-anchor="middle" font-weight="700" font-family="monospace">12</text>
-
-  <!-- ─── Aiguilles centrales (13, 14) ─── -->
-  <line x1="520" y1="70"  x2="560" y2="140" stroke="#3b82f6" stroke-width="2.5"/>
-  <circle cx="528" cy="78"  r="13" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2"/>
-  <text x="528" y="82"  fill="#bfdbfe" font-size="9" text-anchor="middle" font-weight="700" font-family="monospace">13</text>
-  <circle cx="552" cy="132" r="13" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2"/>
-  <text x="552" y="136" fill="#bfdbfe" font-size="9" text-anchor="middle" font-weight="700" font-family="monospace">14</text>
-
-  <!-- ─── Aiguilles côté La Presle (15a, 15b) ─── -->
-  <line x1="720" y1="70"  x2="760" y2="140" stroke="#3b82f6" stroke-width="2.5"/>
-  <circle cx="728" cy="78"  r="13" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2"/>
-  <text x="728" y="82"  fill="#bfdbfe" font-size="9" text-anchor="middle" font-weight="700" font-family="monospace">15a</text>
-  <circle cx="752" cy="132" r="13" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2"/>
-  <text x="752" y="136" fill="#bfdbfe" font-size="9" text-anchor="middle" font-weight="700" font-family="monospace">15b</text>
-
-  <!-- ─── Voie A (annexe, sous V2) ─── -->
-  <line x1="296" y1="140" x2="260" y2="185" stroke="#505e7a" stroke-width="1.5" stroke-dasharray="5,3"/>
-  <line x1="260" y1="185" x2="560" y2="185" stroke="#505e7a" stroke-width="2"/>
-  <line x1="560" y1="140" x2="560" y2="185" stroke="#505e7a" stroke-width="1.5" stroke-dasharray="5,3"/>
-  <text x="410" y="200" fill="#505e7a" font-size="10" font-family="monospace" text-anchor="middle">Voie A (annexe)</text>
-
-  <!-- ─── Voie L (croisement haut) ─── -->
-  <line x1="520" y1="70"  x2="520" y2="42"  stroke="#505e7a" stroke-width="1.5" stroke-dasharray="5,3"/>
-  <line x1="520" y1="42"  x2="720" y2="42"  stroke="#505e7a" stroke-width="2"/>
-  <line x1="720" y1="42"  x2="720" y2="70"  stroke="#505e7a" stroke-width="1.5" stroke-dasharray="5,3"/>
-  <text x="620" y="38" fill="#505e7a" font-size="10" font-family="monospace" text-anchor="middle">Voie L</text>
-
-  <!-- ─── Signaux V1 ─── -->
-  <!-- C213 côté Paris, V1 -->
-  <rect x="110" y="56" width="50" height="18" rx="3" fill="#7c2d12" stroke="#ea580c" stroke-width="1.5"/>
-  <text x="135" y="69" fill="#fed7aa" font-size="9" text-anchor="middle" font-weight="700" font-family="monospace">C 213</text>
-  <!-- C215 entre jonctions V1 -->
-  <rect x="390" y="56" width="50" height="18" rx="3" fill="#7c2d12" stroke="#ea580c" stroke-width="1.5"/>
-  <text x="415" y="69" fill="#fed7aa" font-size="9" text-anchor="middle" font-weight="700" font-family="monospace">C 215</text>
-  <!-- S219 côté La Presle, V1 -->
-  <rect x="820" y="56" width="50" height="18" rx="3" fill="#4a2c0a" stroke="#f59e0b" stroke-width="1.5"/>
-  <text x="845" y="69" fill="#fcd34d" font-size="9" text-anchor="middle" font-weight="700" font-family="monospace">S 219</text>
-
-  <!-- ─── Signaux V2 ─── -->
-  <!-- C211 côté Paris, V2 -->
-  <rect x="110" y="128" width="50" height="18" rx="3" fill="#7c2d12" stroke="#ea580c" stroke-width="1.5"/>
-  <text x="135" y="141" fill="#fed7aa" font-size="9" text-anchor="middle" font-weight="700" font-family="monospace">C 211</text>
-  <!-- Carré VS protection voie A -->
-  <rect x="195" y="174" width="50" height="15" rx="3" fill="#3b0764" stroke="#a855f7" stroke-width="1"/>
-  <text x="220" y="185" fill="#d8b4fe" font-size="8" text-anchor="middle" font-weight="700" font-family="monospace">Cv 222</text>
-  <rect x="460" y="174" width="50" height="15" rx="3" fill="#3b0764" stroke="#a855f7" stroke-width="1"/>
-  <text x="485" y="185" fill="#d8b4fe" font-size="8" text-anchor="middle" font-weight="700" font-family="monospace">Cv 224</text>
-
-  <!-- ─── Légende ─── -->
-  <rect x="16"  y="220" width="12" height="9" rx="2" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1"/>
-  <text x="34"  y="229" fill="#8a99b8" font-size="10" font-family="monospace">Aiguille (PRR)</text>
-  <rect x="160" y="220" width="12" height="9" rx="2" fill="#7c2d12" stroke="#ea580c" stroke-width="1"/>
-  <text x="178" y="229" fill="#8a99b8" font-size="10" font-family="monospace">Carré (ACPP)</text>
-  <rect x="300" y="220" width="12" height="9" rx="2" fill="#4a2c0a" stroke="#f59e0b" stroke-width="1"/>
-  <text x="318" y="229" fill="#8a99b8" font-size="10" font-family="monospace">Sémaphore (ACPP)</text>
-  <rect x="480" y="220" width="12" height="9" rx="2" fill="#3b0764" stroke="#a855f7" stroke-width="1"/>
-  <text x="498" y="229" fill="#8a99b8" font-size="10" font-family="monospace">Carré Violet (voie de service)</text>
-</svg>`;
-}
 
 
 // MOBILE
