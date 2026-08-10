@@ -7,7 +7,7 @@
 // ═══════════════════════════════════════════════
 
 // Source unique de vérité pour la version + date de MAJ (affichée en haut à droite)
-const VERSION_LABEL = 'v8.3 — 10 août 2026';
+const VERSION_LABEL = 'v8.4 — 10 août 2026';
 
 const THEMES = [
   { id:'epi',         code:'AMV801',        title:'EPI & Déplacements',                 short:'EPI' },
@@ -1238,6 +1238,7 @@ let garesQuiz = { active:false, current:null, score:0, total:0, answered:false }
 
 function renderGares(c) {
   c = c || document.getElementById('main-content');
+  try {
 
   if (!document.getElementById('gares-style')) {
     var st = document.createElement('style');
@@ -1256,8 +1257,12 @@ function renderGares(c) {
     document.head.appendChild(st);
   }
 
+  if (typeof GARES === 'undefined') {
+    c.innerHTML = '<div class="section-heading">Gare de Saint-Saturnin</div><div class="def-block important"><div class="def-term" style="color:var(--red)">Erreur chargement</div><div class="def-text">data-signaux.js non charg\u00e9. V\u00e9rifie que le fichier est bien pr\u00e9sent sur GitHub et fais un Ctrl+Maj+R pour vider le cache.</div></div>';
+    return;
+  }
   var g = GARES['stsaturnin'];
-  if (!g) { c.innerHTML = '<p style="color:var(--red)">Données gare non trouvées.</p>'; return; }
+  if (!g) { c.innerHTML = '<div class="section-heading">Gare de Saint-Saturnin</div><div class="def-block important"><div class="def-term" style="color:var(--red)">Donn\u00e9es introuvables</div><div class="def-text">La cl\u00e9 stsaturnin est absente de GARES.</div></div>'; return; }
 
   // --- SVG ---
   var svg = '<svg viewBox="0 0 960 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;min-width:500px;display:block"><defs>'
@@ -1361,6 +1366,12 @@ function renderGares(c) {
     + '<div class="def-block"><div class="def-term">\uD83D\uDCCC Infos gare</div>'
     + '<div class="def-text">Ligne : <strong>' + g.voiePrincipale + '</strong> \u00b7 PK : <strong>139,000</strong><br>'
     + 'Sch\u00e9ma et donn\u00e9es indicatifs \u2014 se r\u00e9f\u00e9rer \u00e0 la <strong>Consigne Rose Annexe 2</strong> de Saint-Saturnin pour les donn\u00e9es exactes.</div></div>';
+
+  } catch(err) {
+    c.innerHTML = '<div class="section-heading">Gare de Saint-Saturnin</div>'
+      + '<div class="def-block important"><div class="def-term" style="color:var(--red)">\u26a0\ufe0f Erreur JavaScript</div>'
+      + '<div class="def-text">' + String(err) + '<br><br>Fais un <strong>Ctrl+Maj+R</strong> (ou Cmd+Maj+R sur Mac) pour vider le cache et r\u00e9essaie.</div></div>';
+  }
 }
 
 
