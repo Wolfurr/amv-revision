@@ -7,7 +7,7 @@
 // ═══════════════════════════════════════════════
 
 // Source unique de vérité pour la version + date de MAJ (affichée en haut à droite)
-const VERSION_LABEL = 'v8.4 — 10 août 2026';
+const VERSION_LABEL = 'v8.5 — 10 août 2026';
 
 const THEMES = [
   { id:'epi',         code:'AMV801',        title:'EPI & Déplacements',                 short:'EPI' },
@@ -1230,6 +1230,34 @@ function showDicteeResult() {
 }
 
 // ═══════════════════════════════════════════════
+// ── Données gare Saint-Saturnin (inlinées dans app.js — pas de dépendance externe) ──
+var STSAT = {
+  nom: "Saint-Saturnin",
+  pk: "139,000",
+  voiePrincipale: "PARIS (−) ↔ LA PRESLE (+)",
+  leviers: [
+    { id:'11',    type:'aiguille', desc:'Aiguille 11' },
+    { id:'12',    type:'aiguille', desc:'Aiguille 12' },
+    { id:'13',    type:'aiguille', desc:'Aiguille 13' },
+    { id:'14',    type:'aiguille', desc:'Aiguille 14' },
+    { id:'15a',   type:'aiguille', desc:'Aiguille 15a' },
+    { id:'15b',   type:'aiguille', desc:'Aiguille 15b' },
+    { id:'C211',  type:'signal',   desc:'Carré C211' },
+    { id:'C213',  type:'signal',   desc:'Carré C213' },
+    { id:'C215',  type:'signal',   desc:'Carré C215' },
+    { id:'S219',  type:'signal',   desc:'Sémaphore S219' },
+    { id:'Cv222', type:'signal',   desc:'Carré violet Cv222' },
+    { id:'Cv224', type:'signal',   desc:'Carré violet Cv224' },
+  ],
+  mouvements: [
+    { id:'M1', dep:'PARIS  · V1',      dest:'LA PRESLE · V1',  leviers:['11','13','15a','S219'],      note:'Direct V1 → V1' },
+    { id:'M2', dep:'PARIS  · V2',      dest:'LA PRESLE · V2',  leviers:['12','14','15b','C211'],      note:'Direct V2 → V2' },
+    { id:'M3', dep:'PARIS  · V1',      dest:'LA PRESLE · V2',  leviers:['11','13','14','15b','S219'], note:'V1 → V2 côté La Presle' },
+    { id:'M4', dep:'Voie A (annexe)',   dest:'V1 vers LA PRESLE',leviers:['11','13','15a','C215'],     note:'Sortie voie annexe' },
+  ],
+};
+
+
 // ═══════════════════════════════════════════════
 // GARE SAINT-SATURNIN — Schéma & Tableau des mouvements
 // ═══════════════════════════════════════════════
@@ -1257,12 +1285,7 @@ function renderGares(c) {
     document.head.appendChild(st);
   }
 
-  if (typeof GARES === 'undefined') {
-    c.innerHTML = '<div class="section-heading">Gare de Saint-Saturnin</div><div class="def-block important"><div class="def-term" style="color:var(--red)">Erreur chargement</div><div class="def-text">data-signaux.js non charg\u00e9. V\u00e9rifie que le fichier est bien pr\u00e9sent sur GitHub et fais un Ctrl+Maj+R pour vider le cache.</div></div>';
-    return;
-  }
-  var g = GARES['stsaturnin'];
-  if (!g) { c.innerHTML = '<div class="section-heading">Gare de Saint-Saturnin</div><div class="def-block important"><div class="def-term" style="color:var(--red)">Donn\u00e9es introuvables</div><div class="def-text">La cl\u00e9 stsaturnin est absente de GARES.</div></div>'; return; }
+  var g = STSAT;
 
   // --- SVG ---
   var svg = '<svg viewBox="0 0 960 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;min-width:500px;display:block"><defs>'
