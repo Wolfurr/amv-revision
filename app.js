@@ -7,7 +7,7 @@
 // ═══════════════════════════════════════════════
 
 // Source unique de vérité pour la version + date de MAJ (affichée en haut à droite)
-const VERSION_LABEL = 'v8.1 — 10 août 2026';
+const VERSION_LABEL = 'v8.2 — 10 août 2026';
 
 const THEMES = [
   { id:'epi',         code:'AMV801',        title:'EPI & Déplacements',                 short:'EPI' },
@@ -250,7 +250,7 @@ function selectTheme(id) {
 }
 
 function setNavActive(v) {
-  ['home','fiches','flash','quiz','dictee','signaux-learn','gares','acdv'].forEach(x => {
+  ['home','fiches','flash','quiz','dictee','gares','acdv'].forEach(x => {
     const el = document.getElementById('nav-'+x);
     if (el) el.classList.toggle('active', x === v);
   });
@@ -274,8 +274,7 @@ function showView(v) {
   else if (v === 'flash') { setTopbar('AMV / <span>Flashcards</span>'); renderFlash(c); }
   else if (v === 'quiz') { setTopbar('AMV / <span>Quiz QCM</span>'); renderQuiz(c); }
   else if (v === 'dictee') { setTopbar('AMV / <span>Dictée de définitions</span>'); renderDictee(c); }
-  else if (v === 'signaux-learn') { setTopbar('AMV / <span>🚦 Signaux & panneaux</span>'); renderSignauxLearn(c); }
-  else if (v === 'gares') { setTopbar('AMV / <span>🏘️ Gares & Tableaux des mouvements</span>'); renderGares(c); }
+  else if (v === 'gares') { setTopbar('AMV / <span>🏘️ Saint-Saturnin — Schéma & Tableau des mouvements</span>'); renderGares(c); }
 }
 
 // Navigation vers une fiche + scroll précis vers une ancre textuelle
@@ -1231,594 +1230,183 @@ function showDicteeResult() {
 }
 
 // ═══════════════════════════════════════════════
-// SIGNAUX & PANNEAUX — Page d'apprentissage
+// ═══════════════════════════════════════════════
+// GARE SAINT-SATURNIN — Schéma & Tableau des mouvements
 // ═══════════════════════════════════════════════
 
-// Helper SVG : panneau oblong avec cible noire
-function svgPanel(content, w=80, h=160) {
-  return `<svg viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block">
-    <rect x="${w*0.12}" y="${h*0.05}" width="${w*0.76}" height="${h*0.90}" rx="${w*0.35}" fill="#1a1a1a" stroke="#666" stroke-width="1.5"/>
-    ${content}
-  </svg>`;
-}
-function svgRound(content, sz=120) {
-  return `<svg viewBox="0 0 ${sz} ${sz}" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block">
-    <circle cx="${sz/2}" cy="${sz/2}" r="${sz*0.42}" fill="#1a1a1a" stroke="#666" stroke-width="1.5"/>
-    ${content}
-  </svg>`;
-}
-
-
-// ── SIGNAUX & PANNEAUX (rendu) ──
-function renderSignauxLearn(c) {
-  c = c || document.getElementById('main-content');
-  c.innerHTML = `
-    <div class="section-heading" style="display:flex;align-items:center;gap:10px"><span style="font-size:26px">🚦</span> Signaux & panneaux ferroviaires</div>
-    <div class="section-sub">Apprends à reconnaître les principaux signaux SNCF — d'après AMV207 (PDF de révision) et letraindemanu.fr</div>
-
-    <!-- Switch de mode -->
-    <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap">
-      <button class="signaux-mode-btn ${signauxMode==='decouverte'?'active':''}" onclick="setSignauxMode('decouverte')">🔍 Découverte</button>
-      <button class="signaux-mode-btn ${signauxMode==='quiz'?'active':''}" onclick="setSignauxMode('quiz')">❓ Quiz d'identification</button>
-      <button class="signaux-mode-btn ${signauxMode==='plaques'?'active':''}" onclick="setSignauxMode('plaques')">📋 Plaques & œilleton</button>
-    </div>
-
-    <div id="signaux-content"></div>
-  `;
-  // Injecter le style des boutons s'il n'existe pas
-  if (!document.getElementById('signaux-style')) {
-    const st = document.createElement('style');
-    st.id = 'signaux-style';
-    st.textContent = `
-      .signaux-mode-btn { padding:8px 14px; background:var(--bg3); border:1px solid var(--border2); color:var(--text2); border-radius:var(--radius); font-family:var(--sans); font-size:13px; cursor:pointer; transition:all 0.15s; }
-      .signaux-mode-btn:hover { color:var(--text); border-color:var(--accent2); }
-      .signaux-mode-btn.active { background:var(--accent); color:#1a1a1a; border-color:var(--accent); font-weight:600; }
-      .fam-tab { padding:6px 12px; background:var(--bg3); border:1px solid var(--border); color:var(--text2); border-radius:var(--radius); font-family:var(--mono); font-size:11px; cursor:pointer; transition:all 0.15s; letter-spacing:0.05em; }
-      .fam-tab:hover { color:var(--text); }
-      .fam-tab.active { background:var(--bg4); border-color:var(--accent); color:var(--accent); }
-      .signal-card { background:var(--bg3); border:1px solid var(--border); border-radius:var(--radius2); padding:14px; transition:all 0.15s; cursor:pointer; display:flex; flex-direction:column; gap:10px; }
-      .signal-card:hover { border-color:var(--accent2); transform:translateY(-2px); box-shadow:0 6px 18px rgba(0,0,0,0.25); }
-      .signal-svg-wrap { background:var(--bg4); border-radius:var(--radius); display:flex; align-items:center; justify-content:center; padding:14px; min-height:120px; max-height:160px; }
-      .signal-svg-wrap svg { max-height:130px; width:auto; }
-      .signal-name { font-size:13px; font-weight:600; color:var(--text); line-height:1.3; }
-      .signal-meta { display:flex; gap:6px; flex-wrap:wrap; }
-      .signal-tag { font-family:var(--mono); font-size:10px; padding:2px 7px; background:var(--bg4); border-radius:3px; color:var(--text3); letter-spacing:0.05em; }
-      .signal-tag.fam-A { color:#f87171; background:#2a0a0a; }
-      .signal-tag.fam-B { color:#fbbf24; background:#2a1f04; }
-      .signal-tag.fam-C { color:#a78bfa; background:#1c0a2e; }
-      .signal-tag.fam-D { color:#4ade80; background:#052016; }
-      .signal-tag.fam-E { color:#7db3f5; background:#071229; }
-      .signal-tag.fam-M { color:#fb923c; background:#2a1106; }
-      .signal-role { font-size:12px; color:var(--text2); line-height:1.5; }
-    `;
-    document.head.appendChild(st);
-  }
-  renderSignauxContent();
-}
-
-function setSignauxMode(m) {
-  signauxMode = m;
-  if (m === 'quiz') signauxQuiz = { current:null, score:0, total:0, answered:false };
-  // Re-render tout pour mettre à jour les boutons mode
-  renderSignauxLearn();
-}
-
-function setSignauxFamily(f) {
-  signauxFamily = f;
-  renderSignauxContent();
-}
-
-function renderSignauxContent() {
-  const wrap = document.getElementById('signaux-content');
-  if (!wrap) return;
-  if (signauxMode === 'decouverte') wrap.innerHTML = renderSignauxDecouverte();
-  else if (signauxMode === 'quiz') wrap.innerHTML = renderSignauxQuiz();
-  else if (signauxMode === 'plaques') wrap.innerHTML = renderSignauxPlaques();
-}
-
-function renderSignauxDecouverte() {
-  const tabsHtml = FAMILLES_SIGNAUX.map(f =>
-    `<button class="fam-tab ${signauxFamily===f.id?'active':''}" onclick="setSignauxFamily('${f.id}')" title="${f.desc}">${f.label}</button>`
-  ).join('');
-
-  const filtered = signauxFamily === '*' ? SIGNAUX : SIGNAUX.filter(s => s.fam === signauxFamily);
-
-  const cards = filtered.map(s => `
-    <div class="signal-card" onclick="showSignalDetail('${s.id}')">
-      <div class="signal-svg-wrap">${s.svg}</div>
-      <div class="signal-name">${s.nom}</div>
-      <div class="signal-meta">
-        <span class="signal-tag fam-${s.fam}">Famille ${s.fam}</span>
-        ${s.plaque !== '—' ? `<span class="signal-tag">Plaque : ${s.plaque}</span>` : ''}
-        <span class="signal-tag">${s.voie}</span>
-      </div>
-      <div class="signal-role">${s.role}</div>
-    </div>
-  `).join('');
-
-  return `
-    <!-- Tabs familles -->
-    <div style="display:flex;gap:6px;margin-bottom:18px;flex-wrap:wrap;align-items:center">
-      <span style="font-family:var(--mono);font-size:10px;color:var(--text3);letter-spacing:0.1em;margin-right:6px">FAMILLES :</span>
-      ${tabsHtml}
-    </div>
-
-    <div style="background:var(--bg3);border:1px solid var(--accent);border-radius:var(--radius2);padding:12px 14px;margin-bottom:18px;font-size:12px;line-height:1.6">
-      💡 <strong style="color:var(--accent)">Astuce mémo</strong> — Les 5 familles : <strong>A</strong>rrêt · <strong>B</strong>annonce d'arrêt · <strong>C</strong> limitation de vitesse · <strong>D</strong> ouverture · <strong>E</strong> divers.<br>
-      Clique sur une carte pour voir le détail complet du signal.
-    </div>
-
-    <div id="signal-detail-modal" style="display:none"></div>
-
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px">
-      ${cards}
-    </div>
-
-    <div style="margin-top:24px;padding:14px;background:var(--bg3);border:1px dashed var(--border2);border-radius:var(--radius2);font-size:12px;color:var(--text2)">
-      📚 <strong style="color:var(--text)">Sources :</strong> PDF de révision AMV (AMV207, p.23-26) · letraindemanu.fr/2023/10/20/signalisation-ferroviaire-les-principaux-signaux
-    </div>
-  `;
-}
-
-function showSignalDetail(id) {
-  const s = SIGNAUX.find(x => x.id === id);
-  if (!s) return;
-  const m = document.getElementById('signal-detail-modal');
-  if (!m) return;
-  m.style.display = 'block';
-  m.innerHTML = `
-    <div style="position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:1000;display:flex;align-items:center;justify-content:center;padding:20px" onclick="hideSignalDetail(event)">
-      <div style="background:var(--bg2);border:1px solid var(--accent);border-radius:var(--radius2);padding:20px;max-width:520px;width:100%;max-height:90vh;overflow-y:auto" onclick="event.stopPropagation()">
-        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:14px">
-          <div>
-            <div style="font-size:18px;font-weight:600;color:var(--text);line-height:1.3">${s.nom}</div>
-            <div style="display:flex;gap:6px;margin-top:6px;flex-wrap:wrap">
-              <span class="signal-tag fam-${s.fam}">Famille ${s.fam}</span>
-              ${s.plaque !== '—' ? `<span class="signal-tag">Plaque : ${s.plaque}</span>` : ''}
-              <span class="signal-tag">${s.voie}</span>
-            </div>
-          </div>
-          <button onclick="hideSignalDetail()" style="background:none;border:none;color:var(--text2);font-size:22px;cursor:pointer;padding:0;line-height:1">✕</button>
-        </div>
-        <div style="background:var(--bg4);border-radius:var(--radius);padding:20px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;min-height:180px">
-          <div style="max-width:200px;max-height:200px">${s.svg}</div>
-        </div>
-        <div style="margin-bottom:10px"><strong style="color:var(--accent);font-size:13px">Rôle :</strong><div style="font-size:13px;color:var(--text);margin-top:3px;line-height:1.5">${s.role}</div></div>
-        <div style="margin-bottom:10px"><strong style="color:var(--accent);font-size:13px">Détail :</strong><div style="font-size:13px;color:var(--text2);margin-top:3px;line-height:1.6">${s.detail}</div></div>
-        ${s.œilleton !== '—' ? `<div><strong style="color:var(--accent);font-size:13px">Œilleton :</strong> <span style="font-size:13px;color:var(--text2)">${s.œilleton}</span></div>` : ''}
-      </div>
-    </div>
-  `;
-}
-function hideSignalDetail(e) {
-  if (e && e.target !== e.currentTarget && !e.target.matches('[onclick*="hideSignalDetail"]')) return;
-  const m = document.getElementById('signal-detail-modal');
-  if (m) { m.style.display='none'; m.innerHTML=''; }
-}
-
-function renderSignauxQuiz() {
-  if (!signauxQuiz.current) {
-    pickSignauxQuiz();
-  }
-  const q = signauxQuiz.current;
-  if (!q) return '<div style="color:var(--text3)">Aucun signal disponible.</div>';
-  const optsHtml = q.options.map((opt, i) => {
-    let cls = 'quiz-opt';
-    let extra = '';
-    if (signauxQuiz.answered) {
-      if (i === q.correct) { cls += ' correct'; extra = '✓'; }
-      else if (i === q.picked) { cls += ' wrong'; extra = '✕'; }
-    }
-    return `<button class="${cls}" onclick="answerSignauxQuiz(${i})" ${signauxQuiz.answered?'disabled':''} style="text-align:left;padding:10px 14px;background:var(--bg3);border:1px solid var(--border2);color:var(--text);border-radius:var(--radius);font-family:var(--sans);font-size:13px;cursor:${signauxQuiz.answered?'default':'pointer'};display:flex;justify-content:space-between;align-items:center;gap:10px;transition:all 0.15s">
-      <span>${opt}</span><span style="color:${i===q.correct?'#4ade80':i===q.picked?'#f87171':'transparent'};font-size:16px;font-weight:700">${extra}</span>
-    </button>`;
-  }).join('');
-
-  return `
-    <div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);padding:18px;margin-bottom:14px">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
-        <div style="font-family:var(--mono);font-size:11px;color:var(--text3);letter-spacing:0.1em">QUIZ D'IDENTIFICATION</div>
-        <div style="font-size:13px;color:var(--text2)">Score : <strong style="color:var(--accent)">${signauxQuiz.score}</strong> / ${signauxQuiz.total}</div>
-      </div>
-
-      <div style="background:var(--bg4);border-radius:var(--radius);padding:24px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;min-height:200px">
-        <div style="max-width:200px;max-height:200px">${q.signal.svg}</div>
-      </div>
-
-      <div style="font-size:14px;color:var(--text);margin-bottom:12px;text-align:center"><strong>Quel est ce signal ?</strong></div>
-
-      <div style="display:flex;flex-direction:column;gap:8px">${optsHtml}</div>
-
-      ${signauxQuiz.answered ? `
-        <div style="margin-top:14px;padding:12px;background:${q.picked===q.correct?'rgba(74,222,128,0.1)':'rgba(248,113,113,0.1)'};border-left:3px solid ${q.picked===q.correct?'#4ade80':'#f87171'};border-radius:var(--radius);font-size:12px;color:var(--text2);line-height:1.6">
-          <strong style="color:${q.picked===q.correct?'#4ade80':'#f87171'}">${q.picked===q.correct?'✓ Correct !':'✕ Faux'}</strong> — ${q.signal.role}<br>
-          <span style="color:var(--text3)">${q.signal.detail.substring(0, 220)}${q.signal.detail.length>220?'…':''}</span>
-        </div>
-        <div style="margin-top:12px;display:flex;gap:8px;justify-content:center">
-          <button class="btn btn-accent" onclick="nextSignauxQuiz()">Signal suivant →</button>
-          <button class="btn" onclick="setSignauxMode('decouverte')">← Découverte</button>
-        </div>
-      ` : `
-        <div style="margin-top:14px;font-size:11px;color:var(--text3);text-align:center">Choisis une réponse pour voir l'explication</div>
-      `}
-    </div>
-  `;
-}
-
-function pickSignauxQuiz() {
-  const pool = SIGNAUX.slice();
-  // Tirer un signal au hasard
-  const idx = Math.floor(Math.random() * pool.length);
-  const signal = pool[idx];
-  // Tirer 3 autres signaux comme leurres (différents)
-  const others = pool.filter(s => s.id !== signal.id).sort(() => Math.random() - 0.5).slice(0, 3);
-  const all = [signal, ...others].sort(() => Math.random() - 0.5);
-  const correct = all.indexOf(signal);
-  signauxQuiz.current = {
-    signal, options: all.map(s => s.nom), correct, picked: null
-  };
-  signauxQuiz.answered = false;
-}
-
-function answerSignauxQuiz(i) {
-  if (signauxQuiz.answered) return;
-  signauxQuiz.answered = true;
-  signauxQuiz.current.picked = i;
-  signauxQuiz.total++;
-  if (i === signauxQuiz.current.correct) signauxQuiz.score++;
-  renderSignauxContent();
-}
-
-function nextSignauxQuiz() {
-  pickSignauxQuiz();
-  renderSignauxContent();
-}
-
-function renderSignauxPlaques() {
-  const rows = PLAQUES.map(p => `
-    <tr>
-      <td style="font-family:var(--mono);font-size:14px;font-weight:700;color:var(--accent);width:60px">${p.code}</td>
-      <td style="font-weight:600;color:var(--text)">${p.label}</td>
-      <td style="color:var(--text2);font-size:13px;line-height:1.6">${p.detail}</td>
-    </tr>
-  `).join('');
-
-  return `
-    <h3 style="font-size:15px;font-weight:500;margin-bottom:12px;color:var(--text2)">Plaques d'identification des signaux</h3>
-    <div style="background:var(--bg3);border:1px solid var(--accent);border-radius:var(--radius2);padding:14px;margin-bottom:18px;font-size:12px;line-height:1.6">
-      💡 <strong style="color:var(--accent)">À retenir</strong> — La plaque indique l'<strong>état le plus restrictif</strong> que le signal peut présenter. C'est elle qui te dit comment réagir en cas d'avarie (panneau éteint).
-    </div>
-
-    <div class="table-wrap"><table>
-      <thead><tr><th>Code</th><th>Signification</th><th>Détail</th></tr></thead>
-      <tbody>${rows}</tbody>
-    </table></div>
-
-    <h3 style="font-size:15px;font-weight:500;margin:24px 0 12px;color:var(--text2)">👁️ L'œilleton — clé de lecture</h3>
-    <div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);padding:18px;line-height:1.7;font-size:13px">
-      <p style="margin-bottom:14px">L'<strong style="color:var(--accent)">œilleton</strong> est une petite lampe blanche située latéralement à la cible principale (généralement côté extérieur). C'est un <strong>signal de permissivité</strong> en cantonnement.</p>
-
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px">
-        <div style="background:var(--bg4);border:1px solid var(--border);border-radius:var(--radius);padding:14px">
-          <div style="font-weight:600;color:var(--accent);margin-bottom:8px;font-size:13px">Œilleton ALLUMÉ ●</div>
-          <div style="font-size:12px;color:var(--text2);line-height:1.6">Cible présente uniquement un signal de cantonnement BAL :
-            <ul style="margin:6px 0 0 18px;padding:0">
-              <li>Sémaphore (de BAL)</li>
-              <li>Avertissement</li>
-              <li>Voie libre</li>
-            </ul>
-            → <strong style="color:var(--text)">Sémaphore franchissable sous conditions</strong>
-          </div>
-        </div>
-        <div style="background:var(--bg4);border:1px solid var(--border);border-radius:var(--radius);padding:14px">
-          <div style="font-weight:600;color:var(--text3);margin-bottom:8px;font-size:13px">Œilleton ÉTEINT ○ ou absent</div>
-          <div style="font-size:12px;color:var(--text2);line-height:1.6">Cible présente :
-            <ul style="margin:6px 0 0 18px;padding:0">
-              <li>Carré</li>
-              <li>Carré violet</li>
-              <li>Feu blanc de manœuvre</li>
-            </ul>
-            → <strong style="color:var(--text)">Arrêt absolu — non franchissable</strong>
-          </div>
-        </div>
-      </div>
-
-      <div style="margin-top:14px;padding:10px;background:var(--bg4);border-left:3px solid var(--accent);border-radius:var(--radius);font-size:12px;color:var(--text2)">
-        <strong style="color:var(--accent)">Cas particulier :</strong> Sur les cibles ne pouvant présenter que le sémaphore de BAL, l'œilleton est généralement absent (puisqu'il serait en permanence allumé). Sur les sémaphores de BAPR et BM, pas d'œilleton non plus.
-      </div>
-    </div>
-
-    <h3 style="font-size:15px;font-weight:500;margin:24px 0 12px;color:var(--text2)">📏 Distances de visibilité des signaux</h3>
-    <div class="table-wrap"><table>
-      <thead><tr><th>Vitesse</th><th>Distance minimale</th></tr></thead>
-      <tbody>
-        <tr><td>V ≤ 60 km/h</td><td><strong style="color:var(--accent)">100 m</strong></td></tr>
-        <tr><td>60 &lt; V ≤ 120 km/h</td><td><strong style="color:var(--accent)">200 m</strong></td></tr>
-        <tr><td>V &gt; 120 km/h</td><td><strong style="color:var(--accent)">300 m</strong></td></tr>
-      </tbody>
-    </table></div>
-    <div style="font-size:12px;color:var(--text3);margin-top:8px;font-style:italic">
-      Pour les signaux à visibilité réduite : on installe des <strong>mirlitons</strong> à 300 m (3 traits), 200 m (2 traits) puis 100 m (1 trait) avant le signal annoncé.
-    </div>
-  `;
-}
-
-// ═══════════════════════════════════════════════
-// GARES — Schémas + Tableaux des mouvements
-// ═══════════════════════════════════════════════
-
-
-// ── GARES (état + rendu) ──
-let garesCurrent = 'amvville';
 let garesQuiz = { active:false, current:null, score:0, total:0, answered:false };
 
 function renderGares(c) {
   c = c || document.getElementById('main-content');
 
-  // Style local pour Gares
   if (!document.getElementById('gares-style')) {
     const st = document.createElement('style');
     st.id = 'gares-style';
     st.textContent = `
-      .gare-tab { padding:10px 20px; background:var(--bg3); border:1px solid var(--border2); color:var(--text2); border-radius:var(--radius); font-family:var(--sans); font-size:14px; font-weight:600; cursor:pointer; transition:all 0.15s; }
-      .gare-tab:hover { color:var(--text); border-color:var(--accent2); }
-      .gare-tab.active { background:var(--accent); color:#1a1a1a; border-color:var(--accent); }
-      .gare-schema { background:var(--bg4); border:1px solid var(--border); border-radius:var(--radius2); padding:18px; overflow-x:auto; margin-bottom:16px; }
-      .gare-schema-rail { font-family:var(--mono); font-size:13px; color:var(--text2); white-space:pre; line-height:1.7; }
-      .mvt-row { display:grid; grid-template-columns:60px 1fr 1fr 2fr; gap:10px; padding:10px 12px; background:var(--bg3); border:1px solid var(--border); border-radius:var(--radius); align-items:center; transition:all 0.15s; }
-      .mvt-row:hover { border-color:var(--accent2); }
-      .mvt-id { font-family:var(--mono); font-size:14px; font-weight:700; color:var(--accent); }
-      .mvt-dep-dest { font-size:12px; color:var(--text); }
+      .mvt-row { display:grid; grid-template-columns:64px 1fr 1fr 2fr; gap:10px; padding:10px 12px; background:var(--bg3); border:1px solid var(--border); border-radius:var(--radius); align-items:center; }
+      .mvt-row:hover { border-color:var(--border2); }
+      .mvt-id  { font-family:var(--mono); font-size:14px; font-weight:700; color:var(--accent); }
+      .mvt-dep { font-size:12px; color:var(--text); }
       .mvt-leviers { display:flex; gap:4px; flex-wrap:wrap; }
-      .lev-chip { font-family:var(--mono); font-size:11px; padding:3px 7px; border-radius:3px; font-weight:600; cursor:help; transition:all 0.15s; }
+      .lev-chip { font-family:var(--mono); font-size:11px; padding:3px 8px; border-radius:3px; font-weight:600; }
       .lev-chip.aiguille { background:#1e3a8a; color:#bfdbfe; border:1px solid #3b82f6; }
-      .lev-chip.signal { background:#7c2d12; color:#fed7aa; border:1px solid #ea580c; }
-      .lev-chip.last { box-shadow:0 0 0 2px var(--accent); }
+      .lev-chip.signal   { background:#7c2d12; color:#fed7aa; border:1px solid #ea580c; }
+      .lev-chip.last     { box-shadow:0 0 0 2px var(--accent); }
     `;
     document.head.appendChild(st);
   }
 
-  const g = GARES[garesCurrent];
+  const g = GARES['stsaturnin'];
 
   c.innerHTML = `
-    <div class="section-heading" style="display:flex;align-items:center;gap:10px"><span style="font-size:26px">🏘️</span> Gares & Tableaux des mouvements</div>
-    <div class="section-sub">Schémas et tableaux des mouvements de St-Saturnin et AMVVille — d'après le PDF de révision (p.44)</div>
+<div class="section-heading">🏘️ Saint-Saturnin — PK 139,000</div>
+<div class="section-sub">Schéma de voie · Tableau des mouvements · Consigne Rose Annexe 2</div>
 
-    <div style="background:rgba(248,113,113,0.05);border:1px solid var(--red);border-radius:var(--radius2);padding:12px 14px;margin-bottom:16px;font-size:13px;line-height:1.6">
-      🔥 <strong style="color:var(--red)">SPÉCIAL EXAM JUILLET</strong> — Bien connaître les <strong>2 gares</strong>, leur <strong>PK (point kilométrique)</strong> et savoir lire/exécuter le <strong>tableau des mouvements</strong> de chacune.<br>
-      💡 <strong>Rappel PRR/ACPP :</strong> pour chaque levier du tableau → si <strong>aiguille</strong>, on fait un <strong style="color:#3b82f6">PRR</strong> · si <strong>signal</strong>, on fait un <strong style="color:#ea580c">ACPP</strong>. Les <strong>derniers chiffres en gras</strong> sont forcément des signaux !
-    </div>
+<div class="rule-box" style="margin-bottom:16px">
+  💡 <strong>Rappel PRR / ACPP :</strong> pour chaque levier du tableau — si <strong>aiguille</strong> → <strong style="color:#60a5fa">PRR</strong> · si <strong>signal</strong> → <strong style="color:#ea580c">ACPP</strong>. Les <strong>derniers chiffres</strong> (en surbrillance dorée) sont toujours des signaux.
+</div>
 
-    <!-- Onglets gares -->
-    <div style="display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap">
-      <button class="gare-tab ${garesCurrent==='amvville'?'active':''}" onclick="garesCurrent='amvville'; renderGares()">AMVVille — PK 100,600</button>
-      <button class="gare-tab ${garesCurrent==='stsaturnin'?'active':''}" onclick="garesCurrent='stsaturnin'; renderGares()">Saint-Saturnin — PK 139,000</button>
-    </div>
+<!-- SCHÉMA SVG -->
+<div class="card" style="padding:16px;margin-bottom:20px;overflow-x:auto">
+  <div class="card-title" style="margin-bottom:12px">Schéma de voie simplifié</div>
+  ${stsatSVG()}
+  <div style="margin-top:12px;font-size:11px;color:var(--text3)">
+    📍 <strong style="color:var(--text2)">PARIS</strong> côté (−) à gauche · <strong style="color:var(--text2)">LA PRESLE</strong> côté (+) à droite · V1 = sens normal vers La Presle · V2 = sens normal vers Paris
+  </div>
+</div>
 
-    <!-- En-tête gare -->
-    <div style="background:var(--bg3);border:1px solid var(--accent);border-radius:var(--radius2);padding:14px 16px;margin-bottom:14px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
+<!-- TABLEAU DES MOUVEMENTS -->
+<h3 class="fc-h3-accent">Tableau des mouvements</h3>
+<div style="display:flex;flex-direction:column;gap:6px;margin-bottom:20px">
+  <div style="display:grid;grid-template-columns:64px 1fr 1fr 2fr;gap:10px;padding:8px 12px;font-family:var(--mono);font-size:10px;letter-spacing:0.08em;color:var(--text3);text-transform:uppercase">
+    <div>Mvt.</div><div>Départ</div><div>Destination</div><div>Leviers dans l'ordre</div>
+  </div>
+  ${g.mouvements.map((m, i) => {
+    const lastIdx = m.leviers.length - 1;
+    const chips = m.leviers.map((id, j) => {
+      const lever = g.leviers.find(l => l.id === id || l.id === id.replace(/[ab]$/, ''));
+      const type  = lever ? lever.type : (id.match(/^[A-Z]/) ? 'signal' : 'aiguille');
+      const last  = j === lastIdx;
+      return `<span class="lev-chip ${type}${last?' last':''}" title="${lever ? lever.desc : id}">${id}</span>`;
+    }).join('');
+    return `
+    <div class="mvt-row">
+      <div class="mvt-id">${m.id}</div>
+      <div class="mvt-dep">📤 ${m.dep}</div>
+      <div class="mvt-dep" style="color:var(--text2)">📥 ${m.dest}</div>
       <div>
-        <div style="font-size:18px;font-weight:700;color:var(--accent)">${g.nom}</div>
-        <div style="font-size:13px;color:var(--text2)">Ligne : <strong style="color:var(--text)">${g.voiePrincipale}</strong></div>
+        <div class="mvt-leviers" style="margin-bottom:4px">${chips}</div>
+        <div style="font-size:11px;color:var(--text3)">${m.note}</div>
       </div>
-      <div style="text-align:right">
-        <div style="font-size:11px;color:var(--text3);font-family:var(--mono);letter-spacing:0.05em">POINT KILOMÉTRIQUE</div>
-        <div style="font-size:22px;font-weight:700;color:var(--accent);font-family:var(--mono)">PK ${g.pk}</div>
-      </div>
-    </div>
+    </div>`;
+  }).join('')}
+</div>
 
-    <!-- Schéma simplifié -->
-    <h3 style="font-size:15px;font-weight:500;margin:18px 0 10px;color:var(--text2)">Schéma de voie simplifié</h3>
-    <div class="gare-schema">
-      <div class="gare-schema-rail">${garesSchemaSVG(garesCurrent)}</div>
-      <div style="margin-top:10px;padding:10px;background:var(--bg3);border-radius:var(--radius);font-size:12px;color:var(--text3)">
-        ${garesCurrent === 'amvville'
-          ? '📍 <strong>AVILLE</strong> côté (–) à gauche, <strong>ZEDVILLE</strong> côté (+) à droite. V1 = sens normal vers Zedville · V2 = sens normal vers Aville.'
-          : '📍 <strong>PARIS</strong> côté (–) à gauche, <strong>LA PRESLE</strong> côté (+) à droite. V1 = sens normal vers La Presle · V2 = sens normal vers Paris.'}
-      </div>
-    </div>
-
-    <!-- Tableau des mouvements -->
-    <h3 style="font-size:15px;font-weight:500;margin:20px 0 10px;color:var(--text2)">Tableau des mouvements ${g.nom}</h3>
-    <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:16px">
-      ${g.mouvements.map((m, i) => {
-        const lastIdx = m.leviers.length - 1;
-        const chips = m.leviers.map((id, j) => {
-          // Trouver le levier dans la liste (gérer les variantes type 4a/4b)
-          const baseId = id.replace(/[ab]$/, '');
-          const lever = g.leviers.find(l => l.id === id || l.id === baseId);
-          const type = lever ? lever.type : (id.match(/^[A-Z]/) ? 'signal' : 'aiguille');
-          const isLast = (j === lastIdx);
-          return `<span class="lev-chip ${type} ${isLast?'last':''}" title="${lever ? lever.desc : id}">${id}</span>`;
-        }).join('');
-        return `
-          <div class="mvt-row">
-            <div class="mvt-id">${m.id}</div>
-            <div class="mvt-dep-dest">📤 <strong>${m.dep}</strong></div>
-            <div class="mvt-dep-dest">📥 ${m.dest}</div>
-            <div>
-              <div class="mvt-leviers" style="margin-bottom:4px">${chips}</div>
-              <div style="font-size:11px;color:var(--text3)">${m.note}</div>
-            </div>
-          </div>
-        `;
-      }).join('')}
-    </div>
-
-    <div style="padding:12px;background:rgba(240,192,64,0.05);border:1px solid var(--accent);border-radius:var(--radius2);font-size:12px;color:var(--text2);line-height:1.6">
-      💡 <strong style="color:var(--accent)">Méthode d'entraînement :</strong> Prends un mouvement, lis les leviers de gauche à droite. À chaque levier :<br>
-      • <strong style="color:#3b82f6">Aiguille</strong> → applique le <strong>PRR</strong> (Protection AdV, Rien entre le signal et l'AdV, Rien sur l'AdV)<br>
-      • <strong style="color:#ea580c">Signal</strong> (toujours en dernier, en gras) → applique l'<strong>ACPP</strong> (Aiguilles, Croisements, Protection, Partie de voie)
-    </div>
-
-    <div style="margin-top:14px;padding:12px;background:var(--bg3);border:1px dashed var(--border2);border-radius:var(--radius2);font-size:11px;color:var(--text3);font-style:italic">
-      ℹ️ Les mouvements indiqués ici sont des <strong>exemples types</strong> reconstitués d'après le schéma général du PDF de révision (p.44). Pour les mouvements exacts de l'examen, se référer à la Consigne Rose Annexe 2 de la gare concernée.
-    </div>
-  `;
+<div class="def-block">
+  <div class="def-term">📌 Infos gare</div>
+  <div class="def-text">Ligne : <strong>${g.voiePrincipale}</strong> · PK : <strong>139,000</strong><br>
+  Schéma et données indicatifs — se référer à la <strong>Consigne Rose Annexe 2</strong> de Saint-Saturnin pour les données exactes.</div>
+</div>
+`;
 }
 
-function garesSchemaSVG(id) {
-  if (id === 'amvville') {
-    return `<svg viewBox="0 0 900 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;background:var(--bg4);border-radius:8px;font-family:monospace">
-      <!-- Labels extérieurs -->
-      <text x="30" y="20" fill="#999" font-size="11" font-weight="700">AVILLE (−)</text>
-      <text x="400" y="20" fill="#fbbf24" font-size="13" font-weight="700" text-anchor="middle">AMVVILLE — PK 100,600</text>
-      <text x="830" y="20" fill="#999" font-size="11" font-weight="700" text-anchor="end">ZEDVILLE (+)</text>
+function stsatSVG() {
+  return `<svg viewBox="0 0 960 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;min-width:600px;background:transparent;display:block">
+  <defs>
+    <marker id="arrowR" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#4ade80"/>
+    </marker>
+    <marker id="arrowL" markerWidth="8" markerHeight="8" refX="2" refY="3" orient="auto">
+      <path d="M8,0 L8,6 L0,3 z" fill="#60a5fa"/>
+    </marker>
+  </defs>
 
-      <!-- V1 (haut, sens →) -->
-      <line x1="20" y1="70" x2="350" y2="70" stroke="#4ade80" stroke-width="3"/>
-      <line x1="400" y1="70" x2="880" y2="70" stroke="#4ade80" stroke-width="3"/>
-      <text x="450" y="60" fill="#4ade80" font-size="11" font-weight="700">V1 →</text>
-      <polygon points="875,66 885,70 875,74" fill="#4ade80"/>
+  <!-- ─── Titres extérieurs ─── -->
+  <text x="16"  y="18" fill="#8a99b8" font-size="11" font-family="monospace" font-weight="700">PARIS (−)</text>
+  <text x="480" y="18" fill="#f0c040" font-size="13" font-family="monospace" font-weight="700" text-anchor="middle">SAINT-SATURNIN · PK 139,000</text>
+  <text x="944" y="18" fill="#8a99b8" font-size="11" font-family="monospace" font-weight="700" text-anchor="end">LA PRESLE (+)</text>
 
-      <!-- V2 (bas, sens ←) -->
-      <line x1="20" y1="140" x2="350" y2="140" stroke="#60a5fa" stroke-width="3"/>
-      <line x1="400" y1="140" x2="880" y2="140" stroke="#60a5fa" stroke-width="3"/>
-      <text x="450" y="162" fill="#60a5fa" font-size="11" font-weight="700">← V2</text>
-      <polygon points="25,136 15,140 25,144" fill="#60a5fa"/>
+  <!-- ─── V1 (haut, → La Presle) ─── -->
+  <line x1="16" y1="70" x2="240" y2="70" stroke="#4ade80" stroke-width="3"/>
+  <line x1="296" y1="70" x2="520" y2="70" stroke="#4ade80" stroke-width="3"/>
+  <line x1="560" y1="70" x2="720" y2="70" stroke="#4ade80" stroke-width="3"/>
+  <line x1="760" y1="70" x2="944" y2="70" stroke="#4ade80" stroke-width="3" marker-end="url(#arrowR)"/>
+  <text x="860" y="60" fill="#4ade80" font-size="11" font-family="monospace">V1 →</text>
 
-      <!-- Communication V1↔V2 côté Aville (aiguilles 3a, 3b, 5) -->
-      <line x1="250" y1="70" x2="300" y2="140" stroke="#888" stroke-width="2" stroke-dasharray="6,3"/>
-      <line x1="350" y1="70" x2="400" y2="140" stroke="#888" stroke-width="2" stroke-dasharray="6,3"/>
-      <circle cx="275" cy="105" r="10" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1.5"/>
-      <text x="275" y="109" fill="#bfdbfe" font-size="8" text-anchor="middle" font-weight="700">5</text>
-      <circle cx="300" cy="80" r="10" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1.5"/>
-      <text x="300" y="84" fill="#bfdbfe" font-size="8" text-anchor="middle" font-weight="700">3a</text>
-      <circle cx="375" cy="105" r="10" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1.5"/>
-      <text x="375" y="109" fill="#bfdbfe" font-size="8" text-anchor="middle" font-weight="700">3b</text>
+  <!-- ─── V2 (bas, ← Paris) ─── -->
+  <line x1="16" y1="140" x2="240" y2="140" stroke="#60a5fa" stroke-width="3" marker-start="url(#arrowL)"/>
+  <line x1="296" y1="140" x2="520" y2="140" stroke="#60a5fa" stroke-width="3"/>
+  <line x1="560" y1="140" x2="720" y2="140" stroke="#60a5fa" stroke-width="3"/>
+  <line x1="760" y1="140" x2="944" y2="140" stroke="#60a5fa" stroke-width="3"/>
+  <text x="70" y="163" fill="#60a5fa" font-size="11" font-family="monospace">← V2</text>
 
-      <!-- Communication côté Zedville (aiguilles 2a, 2b, 1, 4) -->
-      <line x1="600" y1="70" x2="650" y2="140" stroke="#888" stroke-width="2" stroke-dasharray="6,3"/>
-      <circle cx="600" cy="80" r="10" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1.5"/>
-      <text x="600" y="84" fill="#bfdbfe" font-size="8" text-anchor="middle" font-weight="700">2a</text>
-      <circle cx="650" cy="130" r="10" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1.5"/>
-      <text x="650" y="134" fill="#bfdbfe" font-size="8" text-anchor="middle" font-weight="700">2b</text>
-      <circle cx="550" cy="60" r="10" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1.5"/>
-      <text x="550" y="64" fill="#bfdbfe" font-size="8" text-anchor="middle" font-weight="700">1</text>
-      <circle cx="550" cy="150" r="10" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1.5"/>
-      <text x="550" y="154" fill="#bfdbfe" font-size="8" text-anchor="middle" font-weight="700">4</text>
+  <!-- ─── Aiguilles côté Paris (11, 12) ─── -->
+  <line x1="240" y1="70"  x2="296" y2="140" stroke="#3b82f6" stroke-width="2.5"/>
+  <circle cx="248" cy="78"  r="13" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2"/>
+  <text x="248" y="82"  fill="#bfdbfe" font-size="9" text-anchor="middle" font-weight="700" font-family="monospace">11</text>
+  <circle cx="288" cy="132" r="13" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2"/>
+  <text x="288" y="136" fill="#bfdbfe" font-size="9" text-anchor="middle" font-weight="700" font-family="monospace">12</text>
 
-      <!-- Voies de service (bas) -->
-      <line x1="300" y1="140" x2="250" y2="200" stroke="#666" stroke-width="1.5" stroke-dasharray="4,3"/>
-      <line x1="250" y1="200" x2="500" y2="200" stroke="#666" stroke-width="1.5"/>
-      <line x1="250" y1="200" x2="250" y2="240" stroke="#666" stroke-width="1.5" stroke-dasharray="4,3"/>
-      <line x1="250" y1="240" x2="500" y2="240" stroke="#666" stroke-width="1.5"/>
-      <text x="370" y="196" fill="#666" font-size="9">VS — voies de service</text>
-      <circle cx="300" cy="155" r="7" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1"/>
-      <text x="300" y="159" fill="#bfdbfe" font-size="7" text-anchor="middle">4b</text>
+  <!-- ─── Aiguilles centrales (13, 14) ─── -->
+  <line x1="520" y1="70"  x2="560" y2="140" stroke="#3b82f6" stroke-width="2.5"/>
+  <circle cx="528" cy="78"  r="13" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2"/>
+  <text x="528" y="82"  fill="#bfdbfe" font-size="9" text-anchor="middle" font-weight="700" font-family="monospace">13</text>
+  <circle cx="552" cy="132" r="13" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2"/>
+  <text x="552" y="136" fill="#bfdbfe" font-size="9" text-anchor="middle" font-weight="700" font-family="monospace">14</text>
 
-      <!-- Signaux (carrés rouges, carrés violets) -->
-      <rect x="90" y="58" width="36" height="16" rx="3" fill="#7c2d12" stroke="#ea580c" stroke-width="1"/>
-      <text x="108" y="70" fill="#fed7aa" font-size="9" text-anchor="middle" font-weight="700">C1</text>
-      <rect x="90" y="145" width="36" height="16" rx="3" fill="#7c2d12" stroke="#ea580c" stroke-width="1"/>
-      <text x="108" y="157" fill="#fed7aa" font-size="9" text-anchor="middle" font-weight="700">Cv101</text>
+  <!-- ─── Aiguilles côté La Presle (15a, 15b) ─── -->
+  <line x1="720" y1="70"  x2="760" y2="140" stroke="#3b82f6" stroke-width="2.5"/>
+  <circle cx="728" cy="78"  r="13" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2"/>
+  <text x="728" y="82"  fill="#bfdbfe" font-size="9" text-anchor="middle" font-weight="700" font-family="monospace">15a</text>
+  <circle cx="752" cy="132" r="13" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2"/>
+  <text x="752" y="136" fill="#bfdbfe" font-size="9" text-anchor="middle" font-weight="700" font-family="monospace">15b</text>
 
-      <rect x="700" y="58" width="36" height="16" rx="3" fill="#7c2d12" stroke="#ea580c" stroke-width="1"/>
-      <text x="718" y="70" fill="#fed7aa" font-size="9" text-anchor="middle" font-weight="700">C5</text>
-      <rect x="700" y="145" width="36" height="16" rx="3" fill="#7c2d12" stroke="#ea580c" stroke-width="1"/>
-      <text x="718" y="157" fill="#fed7aa" font-size="9" text-anchor="middle" font-weight="700">C3</text>
+  <!-- ─── Voie A (annexe, sous V2) ─── -->
+  <line x1="296" y1="140" x2="260" y2="185" stroke="#505e7a" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="260" y1="185" x2="560" y2="185" stroke="#505e7a" stroke-width="2"/>
+  <line x1="560" y1="140" x2="560" y2="185" stroke="#505e7a" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="410" y="200" fill="#505e7a" font-size="10" font-family="monospace" text-anchor="middle">Voie A (annexe)</text>
 
-      <rect x="180" y="205" width="36" height="13" rx="3" fill="#3b0764" stroke="#a855f7" stroke-width="1"/>
-      <text x="198" y="215" fill="#d8b4fe" font-size="8" text-anchor="middle" font-weight="700">Cv6</text>
-      <rect x="180" y="245" width="36" height="13" rx="3" fill="#3b0764" stroke="#a855f7" stroke-width="1"/>
-      <text x="198" y="255" fill="#d8b4fe" font-size="8" text-anchor="middle" font-weight="700">Cv8</text>
+  <!-- ─── Voie L (croisement haut) ─── -->
+  <line x1="520" y1="70"  x2="520" y2="42"  stroke="#505e7a" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="520" y1="42"  x2="720" y2="42"  stroke="#505e7a" stroke-width="2"/>
+  <line x1="720" y1="42"  x2="720" y2="70"  stroke="#505e7a" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="620" y="38" fill="#505e7a" font-size="10" font-family="monospace" text-anchor="middle">Voie L</text>
 
-      <rect x="780" y="58" width="40" height="16" rx="3" fill="#7c2d12" stroke="#ea580c" stroke-width="1"/>
-      <text x="800" y="70" fill="#fed7aa" font-size="8" text-anchor="middle" font-weight="700">Cv11</text>
-      <rect x="780" y="145" width="40" height="16" rx="3" fill="#7c2d12" stroke="#ea580c" stroke-width="1"/>
-      <text x="800" y="157" fill="#fed7aa" font-size="8" text-anchor="middle" font-weight="700">Cv10</text>
+  <!-- ─── Signaux V1 ─── -->
+  <!-- C213 côté Paris, V1 -->
+  <rect x="110" y="56" width="50" height="18" rx="3" fill="#7c2d12" stroke="#ea580c" stroke-width="1.5"/>
+  <text x="135" y="69" fill="#fed7aa" font-size="9" text-anchor="middle" font-weight="700" font-family="monospace">C 213</text>
+  <!-- C215 entre jonctions V1 -->
+  <rect x="390" y="56" width="50" height="18" rx="3" fill="#7c2d12" stroke="#ea580c" stroke-width="1.5"/>
+  <text x="415" y="69" fill="#fed7aa" font-size="9" text-anchor="middle" font-weight="700" font-family="monospace">C 215</text>
+  <!-- S219 côté La Presle, V1 -->
+  <rect x="820" y="56" width="50" height="18" rx="3" fill="#4a2c0a" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="845" y="69" fill="#fcd34d" font-size="9" text-anchor="middle" font-weight="700" font-family="monospace">S 219</text>
 
-      <!-- Légende -->
-      <rect x="20" y="265" width="12" height="8" rx="2" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1"/>
-      <text x="38" y="273" fill="#999" font-size="9">= Aiguille (PRR)</text>
-      <rect x="150" y="265" width="12" height="8" rx="2" fill="#7c2d12" stroke="#ea580c" stroke-width="1"/>
-      <text x="168" y="273" fill="#999" font-size="9">= Signal/Carré (ACPP)</text>
-      <rect x="310" y="265" width="12" height="8" rx="2" fill="#3b0764" stroke="#a855f7" stroke-width="1"/>
-      <text x="328" y="273" fill="#999" font-size="9">= Carré violet (VS)</text>
-    </svg>`;
-  } else {
-    return `<svg viewBox="0 0 900 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;background:var(--bg4);border-radius:8px;font-family:monospace">
-      <!-- Labels extérieurs -->
-      <text x="30" y="20" fill="#999" font-size="11" font-weight="700">PARIS (−)</text>
-      <text x="420" y="20" fill="#fbbf24" font-size="13" font-weight="700" text-anchor="middle">SAINT-SATURNIN — PK 139,000</text>
-      <text x="860" y="20" fill="#999" font-size="11" font-weight="700" text-anchor="end">LA PRESLE (+)</text>
+  <!-- ─── Signaux V2 ─── -->
+  <!-- C211 côté Paris, V2 -->
+  <rect x="110" y="128" width="50" height="18" rx="3" fill="#7c2d12" stroke="#ea580c" stroke-width="1.5"/>
+  <text x="135" y="141" fill="#fed7aa" font-size="9" text-anchor="middle" font-weight="700" font-family="monospace">C 211</text>
+  <!-- Carré VS protection voie A -->
+  <rect x="195" y="174" width="50" height="15" rx="3" fill="#3b0764" stroke="#a855f7" stroke-width="1"/>
+  <text x="220" y="185" fill="#d8b4fe" font-size="8" text-anchor="middle" font-weight="700" font-family="monospace">Cv 222</text>
+  <rect x="460" y="174" width="50" height="15" rx="3" fill="#3b0764" stroke="#a855f7" stroke-width="1"/>
+  <text x="485" y="185" fill="#d8b4fe" font-size="8" text-anchor="middle" font-weight="700" font-family="monospace">Cv 224</text>
 
-      <!-- V1 (haut, sens →) -->
-      <line x1="20" y1="70" x2="880" y2="70" stroke="#4ade80" stroke-width="3"/>
-      <text x="450" y="60" fill="#4ade80" font-size="11" font-weight="700">V1 →</text>
-      <polygon points="875,66 885,70 875,74" fill="#4ade80"/>
-
-      <!-- V2 (bas, sens ←) -->
-      <line x1="20" y1="140" x2="880" y2="140" stroke="#60a5fa" stroke-width="3"/>
-      <text x="450" y="162" fill="#60a5fa" font-size="11" font-weight="700">← V2</text>
-      <polygon points="25,136 15,140 25,144" fill="#60a5fa"/>
-
-      <!-- Aiguilles côté Paris -->
-      <line x1="250" y1="70" x2="300" y2="140" stroke="#888" stroke-width="2" stroke-dasharray="6,3"/>
-      <circle cx="270" cy="80" r="10" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1.5"/>
-      <text x="270" y="84" fill="#bfdbfe" font-size="8" text-anchor="middle" font-weight="700">11</text>
-      <circle cx="280" cy="130" r="10" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1.5"/>
-      <text x="280" y="134" fill="#bfdbfe" font-size="8" text-anchor="middle" font-weight="700">12</text>
-
-      <!-- Communication centrale (aiguilles 13, 14) -->
-      <line x1="450" y1="70" x2="500" y2="140" stroke="#888" stroke-width="2" stroke-dasharray="6,3"/>
-      <circle cx="460" cy="80" r="10" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1.5"/>
-      <text x="460" y="84" fill="#bfdbfe" font-size="8" text-anchor="middle" font-weight="700">13</text>
-      <circle cx="490" cy="130" r="10" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1.5"/>
-      <text x="490" y="134" fill="#bfdbfe" font-size="8" text-anchor="middle" font-weight="700">14</text>
-
-      <!-- Aiguilles côté La Presle (15a, 15b) -->
-      <line x1="650" y1="70" x2="700" y2="140" stroke="#888" stroke-width="2" stroke-dasharray="6,3"/>
-      <circle cx="660" cy="80" r="10" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1.5"/>
-      <text x="660" y="84" fill="#bfdbfe" font-size="8" text-anchor="middle" font-weight="700">15a</text>
-      <circle cx="690" cy="130" r="10" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1.5"/>
-      <text x="690" y="134" fill="#bfdbfe" font-size="8" text-anchor="middle" font-weight="700">15b</text>
-
-      <!-- Voie A (annexe, bas) -->
-      <line x1="280" y1="140" x2="240" y2="200" stroke="#666" stroke-width="1.5" stroke-dasharray="4,3"/>
-      <line x1="240" y1="200" x2="550" y2="200" stroke="#666" stroke-width="1.5"/>
-      <text x="380" y="196" fill="#666" font-size="9">Voie A — annexe</text>
-
-      <!-- Voie L -->
-      <line x1="460" y1="70" x2="440" y2="45" stroke="#666" stroke-width="1.5" stroke-dasharray="4,3"/>
-      <line x1="440" y1="45" x2="560" y2="45" stroke="#666" stroke-width="1.5"/>
-      <text x="500" y="42" fill="#666" font-size="9">Voie L</text>
-
-      <!-- Signaux -->
-      <rect x="100" y="58" width="40" height="16" rx="3" fill="#7c2d12" stroke="#ea580c" stroke-width="1"/>
-      <text x="120" y="70" fill="#fed7aa" font-size="8" text-anchor="middle" font-weight="700">C213</text>
-      <rect x="100" y="145" width="40" height="16" rx="3" fill="#7c2d12" stroke="#ea580c" stroke-width="1"/>
-      <text x="120" y="157" fill="#fed7aa" font-size="8" text-anchor="middle" font-weight="700">C211</text>
-
-      <rect x="350" y="58" width="40" height="16" rx="3" fill="#7c2d12" stroke="#ea580c" stroke-width="1"/>
-      <text x="370" y="70" fill="#fed7aa" font-size="8" text-anchor="middle" font-weight="700">C215</text>
-
-      <rect x="770" y="58" width="40" height="16" rx="3" fill="#7c2d12" stroke="#ea580c" stroke-width="1"/>
-      <text x="790" y="70" fill="#fed7aa" font-size="8" text-anchor="middle" font-weight="700">S219</text>
-
-      <!-- Carrés violets VS -->
-      <rect x="170" y="205" width="40" height="13" rx="3" fill="#3b0764" stroke="#a855f7" stroke-width="1"/>
-      <text x="190" y="215" fill="#d8b4fe" font-size="7" text-anchor="middle" font-weight="700">Cv222</text>
-      <rect x="220" y="205" width="40" height="13" rx="3" fill="#3b0764" stroke="#a855f7" stroke-width="1"/>
-      <text x="240" y="215" fill="#d8b4fe" font-size="7" text-anchor="middle" font-weight="700">Cv224</text>
-
-      <rect x="140" y="105" width="40" height="13" rx="3" fill="#3b0764" stroke="#a855f7" stroke-width="1"/>
-      <text x="160" y="115" fill="#d8b4fe" font-size="7" text-anchor="middle" font-weight="700">Cv212</text>
-      <rect x="190" y="105" width="40" height="13" rx="3" fill="#3b0764" stroke="#a855f7" stroke-width="1"/>
-      <text x="210" y="115" fill="#d8b4fe" font-size="7" text-anchor="middle" font-weight="700">Cv214</text>
-
-      <!-- Légende -->
-      <rect x="20" y="265" width="12" height="8" rx="2" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1"/>
-      <text x="38" y="273" fill="#999" font-size="9">= Aiguille (PRR)</text>
-      <rect x="150" y="265" width="12" height="8" rx="2" fill="#7c2d12" stroke="#ea580c" stroke-width="1"/>
-      <text x="168" y="273" fill="#999" font-size="9">= Signal/Carré (ACPP)</text>
-      <rect x="310" y="265" width="12" height="8" rx="2" fill="#3b0764" stroke="#a855f7" stroke-width="1"/>
-      <text x="328" y="273" fill="#999" font-size="9">= Carré violet (VS)</text>
-    </svg>`;
-  }
+  <!-- ─── Légende ─── -->
+  <rect x="16"  y="220" width="12" height="9" rx="2" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1"/>
+  <text x="34"  y="229" fill="#8a99b8" font-size="10" font-family="monospace">Aiguille (PRR)</text>
+  <rect x="160" y="220" width="12" height="9" rx="2" fill="#7c2d12" stroke="#ea580c" stroke-width="1"/>
+  <text x="178" y="229" fill="#8a99b8" font-size="10" font-family="monospace">Carré (ACPP)</text>
+  <rect x="300" y="220" width="12" height="9" rx="2" fill="#4a2c0a" stroke="#f59e0b" stroke-width="1"/>
+  <text x="318" y="229" fill="#8a99b8" font-size="10" font-family="monospace">Sémaphore (ACPP)</text>
+  <rect x="480" y="220" width="12" height="9" rx="2" fill="#3b0764" stroke="#a855f7" stroke-width="1"/>
+  <text x="498" y="229" fill="#8a99b8" font-size="10" font-family="monospace">Carré Violet (voie de service)</text>
+</svg>`;
 }
 
-// ═══════════════════════════════════════════════
+
 // MOBILE
 // ═══════════════════════════════════════════════
 function toggleSidebar() {
