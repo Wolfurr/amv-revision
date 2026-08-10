@@ -7,7 +7,7 @@
 // ═══════════════════════════════════════════════
 
 // Source unique de vérité pour la version + date de MAJ (affichée en haut à droite)
-const VERSION_LABEL = 'v7.3 — 25 juin 2026';
+const VERSION_LABEL = 'v8.1 — 10 août 2026';
 
 const THEMES = [
   { id:'epi',         code:'AMV801',        title:'EPI & Déplacements',                 short:'EPI' },
@@ -250,7 +250,7 @@ function selectTheme(id) {
 }
 
 function setNavActive(v) {
-  ['home','fiches','flash','quiz','dictee','signaux-learn','gares'].forEach(x => {
+  ['home','fiches','flash','quiz','dictee','signaux-learn','gares','acdv'].forEach(x => {
     const el = document.getElementById('nav-'+x);
     if (el) el.classList.toggle('active', x === v);
   });
@@ -269,6 +269,7 @@ function showView(v) {
   window.scrollTo(0,0);
   document.getElementById('topbar-right').innerHTML = '<span style="font-family:var(--mono);font-size:11px;color:var(--text3)">' + VERSION_LABEL + '</span>';
   if (v === 'home') { setTopbar('AMV / <span>Accueil</span>'); renderHome(c); }
+  else if (v === 'acdv') { setTopbar('<span style="color:#34d399">ACDV</span> / <span>Accueil Formation</span>'); renderACDV(c); }
   else if (v === 'fiches') { setTopbar('AMV / <span>Fiches de cours</span>'); renderFiches(c); }
   else if (v === 'flash') { setTopbar('AMV / <span>Flashcards</span>'); renderFlash(c); }
   else if (v === 'quiz') { setTopbar('AMV / <span>Quiz QCM</span>'); renderQuiz(c); }
@@ -315,10 +316,19 @@ function gotoFiche(theme, anchorText) {
 function renderHome(c) {
   c = c || document.getElementById('main-content');
   c.innerHTML = `
-<div class="section-heading">Bienvenue 👋</div>
-<div class="section-sub">Application de révision AMV — SECUFER · ${VERSION_LABEL}</div>
+<!-- BOUTON ACDV BIEN EN ÉVIDENCE -->
+<div style="background:linear-gradient(135deg,rgba(52,211,153,0.12),rgba(52,211,153,0.04));border:2px solid #34d399;border-radius:var(--radius2);padding:14px 18px;margin-bottom:18px;display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+  <div style="flex:1">
+    <div style="font-weight:700;color:#34d399;font-size:15px;margin-bottom:3px">🎓 Formation ACDV en cours</div>
+    <div style="font-size:12px;color:var(--text2)">Agent Circulation Double Voie — procédures, logigrammes, lecture de DC. AMV réussi ✓</div>
+  </div>
+  <button class="btn" style="background:#34d399;color:#000;font-weight:700;padding:8px 18px;font-size:13px;border:none" onclick="showView('acdv')">Accueil ACDV →</button>
+</div>
 
-<div style="display:flex;gap:16px;justify-content:center;align-items:center;padding:10px 16px;background:var(--bg3);border:1px solid var(--accent);border-radius:var(--radius);margin-bottom:16px;font-family:var(--mono);font-size:13px">
+<div class="section-heading">AMV — Révision</div>
+<div class="section-sub">${VERSION_LABEL} · Base complète maintenue pour l'ACDV</div>
+
+<div style="display:flex;gap:16px;justify-content:center;align-items:center;padding:10px 16px;background:var(--bg3);border:1px solid var(--accent);border-radius:var(--radius);margin-bottom:12px;font-family:var(--mono);font-size:13px">
   <span style="color:var(--text3)">📍</span>
   <span><strong style="color:var(--accent)">AMVVille</strong> <span style="color:var(--text2)">PK</span> <strong style="color:var(--text)">100,600</strong></span>
   <span style="color:var(--border2)">│</span>
@@ -350,65 +360,51 @@ function renderHome(c) {
   <div id="search-results" style="display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg2);border:1px solid var(--border2);border-radius:0 0 var(--radius) var(--radius);z-index:200;max-height:320px;overflow-y:auto;box-shadow:0 8px 24px rgba(0,0,0,0.4)"></div>
 </div>
 
-<!-- SCHEMA EXAMEN AMV -->
-<div class="card" style="border-color:rgba(96,165,250,0.3);background:rgba(96,165,250,0.04);margin-bottom:16px">
-  <div class="card-title" style="color:var(--blue);margin-bottom:12px">🎓 STRUCTURE DE L'EXAMEN AMV</div>
-  <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap">
-
-    <div style="display:flex;flex-direction:column;gap:6px;min-width:180px">
-      <div style="padding:6px 14px;background:var(--blue-bg);border:2px solid var(--blue);border-radius:6px;font-weight:700;color:var(--blue);font-size:13px;text-align:center">✍️ Écrite — 1h<br><span style="font-size:11px;font-weight:400">(ExpertQuizz)</span></div>
-      <div style="padding:5px 10px;background:var(--bg4);border-radius:5px;font-size:11px;color:var(--text3);text-align:center">PS9 · Formation trains<br>IS · Cantonnement (BM/BAPR)<br>Plaques de signalisation</div>
+<!-- AMV RÉUSSI + STRUCTURE EXAMEN (historique) -->
+<div class="card" style="border-color:rgba(52,211,153,0.3);background:rgba(52,211,153,0.03);margin-bottom:16px">
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap">
+    <div class="card-title" style="color:#34d399;margin:0">✅ AMV — RÉUSSI</div>
+    <div style="font-size:12px;color:var(--text3)">Structure de l'examen (pour mémoire)</div>
+  </div>
+  <div style="display:flex;gap:10px;flex-wrap:wrap">
+    <div style="flex:1;min-width:160px;padding:8px 12px;background:var(--bg4);border-radius:5px;font-size:12px;color:var(--text2)">
+      <strong style="color:var(--text)">✍️ Écrite — 1h</strong> (ExpertQuizz)<br>
+      <span style="font-size:11px;color:var(--text3)">PS9 · Formation · IS · Cantonnement · Plaques</span>
     </div>
-
-    <div style="display:flex;flex-direction:column;gap:6px;min-width:260px">
-      <div style="padding:6px 14px;background:var(--bg3);border:2px solid var(--border2);border-radius:6px;font-weight:700;color:var(--text);font-size:13px;text-align:center">🗣️ Oral — 2h30</div>
-      <div style="display:flex;flex-direction:column;gap:4px">
-
-        <div style="padding:7px 12px;background:var(--bg4);border-radius:5px;font-size:12px;color:var(--text2)">
-          <strong style="color:var(--text)">Aiguillage</strong> — séance 1 : théorie<br>
-          <span style="color:var(--text3);font-size:11px">Séance 2 : PRR · ACPP · dérangement (cas pratique)<br>
-          Séance 3 : théorie (élec + PS9 + travaux) + pratique (protection C ou DFV)</span>
-        </div>
-
-        <div style="padding:7px 12px;background:var(--bg4);border-radius:5px;font-size:12px;color:var(--text2)">
-          <strong style="color:var(--text)">Circulation</strong> — 1h, théorie + pratique
-        </div>
-
-        <div style="padding:7px 12px;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.3);border-radius:5px;font-size:12px;color:var(--text2)">
-          <strong style="color:var(--red)">⚠ FAMAS</strong> — incident de circulation<br>
-          <span style="color:var(--text3);font-size:11px">100% sûr : Danger / Obstacle / Bestiaux · Penser autocontrôle + DR</span>
-        </div>
-
-      </div>
+    <div style="flex:1;min-width:160px;padding:8px 12px;background:var(--bg4);border-radius:5px;font-size:12px;color:var(--text2)">
+      <strong style="color:var(--text)">🗣️ Oral — 2h30</strong><br>
+      <span style="font-size:11px;color:var(--text3)">Aiguillage (PRR/ACPP/dérang.) · Circulation (FAMAS) · Travaux (DFV)</span>
     </div>
-
   </div>
 </div>
 
-<!-- A TOMBER A L'EXAM -->
-<div class="card" style="border-color:rgba(240,192,64,0.3);background:rgba(240,192,64,0.03);margin-bottom:16px">
 <!-- MÉMO DC/DOCUMENTS PAR THÈME -->
 <div class="card" style="border-color:rgba(167,139,250,0.3);background:rgba(167,139,250,0.03);margin-bottom:16px">
   <div class="card-title" style="color:#a78bfa;margin-bottom:10px">📂 DC / DOCUMENTS À SORTIR PAR THÈME</div>
-  <div class="table-wrap"><table style="font-size:12px">
-    <thead><tr><th>Thème</th><th>Document principal</th><th>Fiche/article clé</th></tr></thead>
+  <div class="table-wrap"><table style="font-size:11px">
+    <thead><tr><th>DC / Réf.</th><th>Sujet</th><th>Usage</th></tr></thead>
     <tbody>
-      <tr><td><strong>Dérangement IS</strong></td><td>DC 3858 (chap. 4) + CDIS</td><td>Art. 417 → sommaire → bonne fiche</td></tr>
-      <tr><td><strong>Franchissement carré fermé</strong></td><td>OP 599 / OP 665 + Annexe 1 CR</td><td>Formulaire CBA (BAL) ou C</td></tr>
-      <tr><td><strong>Protection C</strong></td><td>DC 8043 + Consigne Bleue</td><td>Fiche 30 · Chap. 3 CB (ITE)</td></tr>
-      <tr><td><strong>Travaux / DFV</strong></td><td>DC 3978 + Consigne de Protection</td><td>Art. 4 · Art. 2.2 · Anx 2-3-4</td></tr>
-      <tr><td><strong>Incident PN</strong></td><td>DC 1503 fiche 8 (8.1) + CE S10B</td><td>IN83 → RATO pour reprise</td></tr>
-      <tr><td><strong>Bestiaux / Danger</strong></td><td>DC 1503 fiche 6</td><td>Fiche 4 (danger)</td></tr>
-      <tr><td><strong>Obstacle</strong></td><td>DC 1503</td><td>Fiche 3 (obstacle)</td></tr>
-      <tr><td><strong>Réception voie occupée</strong></td><td>DC 1505 fiche 9</td><td>⚠️ À vérifier avec fiches autres promos</td></tr>
-      <tr><td><strong>Enclenchements</strong></td><td>Consigne Rose + DC 3858</td><td>Anx4 (ZI) · Anx2 (CIP/ZP) · Anx5 (EAP)</td></tr>
+      <tr><td><strong>DC 1503 ✓</strong></td><td>Incidents de Circulation</td><td>FAMAS, bestiaux, PN (fiches 3/4/6/8.1)</td></tr>
+      <tr><td><strong>DC 1505 ✓</strong></td><td>Contre-sens, contre-voie, VUT</td><td>Réception voie occupée (fiche 9)</td></tr>
+      <tr><td><strong>DC 1556 ✓</strong></td><td>Catégories A, B, C</td><td>Circulations spéciales, déshuntage</td></tr>
+      <tr><td><strong>DC 7202</strong></td><td>Guide des communications</td><td>Codes radio, communications</td></tr>
+      <tr><td><strong>IN 1582</strong></td><td>Travaux sur IS</td><td>4 catégories, procédure 1ère cat.</td></tr>
+      <tr><td><strong>DC 3858</strong></td><td>Poste d'aiguillage à leviers individuels</td><td>RIAT, dérangements IS, CBA · Tome 2 = Modes opératoires Travaux</td></tr>
+      <tr><td><strong>DC 3978 ✓</strong></td><td>Modes opératoires des Travaux — Tome 1</td><td>DFV, entente préalable (art. 4, 2.2…)</td></tr>
+      <tr><td><strong>DC 3969 ✓</strong></td><td>Franchissement des signaux et arrêt des trains</td><td>CBA, ordre C, arrêt d'urgence</td></tr>
+      <tr><td><strong>DC 11490</strong></td><td>Traction Électrique</td><td>Zones TE, consignes élec.</td></tr>
+      <tr><td><strong>DC 8043</strong></td><td>Mesures pour circulations spéciales</td><td>Protection C (fiche 30)</td></tr>
+      <tr><td><strong>DC 1792</strong></td><td>Transports MD</td><td>Marchandises Dangereuses</td></tr>
+      <tr><td><strong>DC 1732</strong></td><td>Fermeture/ouverture d'une ligne</td><td>—</td></tr>
+      <tr><td><strong>DC 1509</strong></td><td>Gares temporaires</td><td>ACDV — à compléter</td></tr>
     </tbody>
   </table></div>
+  <div style="margin-top:8px;font-size:11px;color:var(--text3)">✓ = utilisé en cours AMV · Tableau complet du formateur (juin 2026)</div>
 </div>
 
 <!-- PRIORITÉS DE RÉVISION -->
 <div class="card" style="border-color:rgba(239,68,68,0.3);background:rgba(239,68,68,0.03);margin-bottom:16px">
-  <div class="card-title" style="color:var(--red);margin-bottom:10px">🎯 PRIORITÉS DE RÉVISION — Grosses lacunes</div>
+  <div class="card-title" style="color:var(--red);margin-bottom:10px">🎯 PRIORITÉS AMV — à garder en tête pour l'ACDV</div>
   <div style="display:flex;flex-direction:column;gap:6px">
     ${[
       ['encl','Tableau récap visuel ZI/CIP/ZP/EAP par cœur (mémo Walid)','Enclenchements électriques','EE ZI'],
@@ -425,11 +421,11 @@ function renderHome(c) {
   </div>
 </div>
 
-<!-- A TOMBER A L'EXAM -->
+<!-- A TOMBER A L'EXAM AMV -->
 <div class="card" style="border-color:rgba(240,192,64,0.3);background:rgba(240,192,64,0.03);margin-bottom:16px">
   <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px">
     <span style="font-size:18px">⚠️</span>
-    <div class="card-title" style="color:var(--accent)">SÛRS DE TOMBER À L'EXAMEN — selon les formateurs</div>
+    <div class="card-title" style="color:var(--accent)">SÛRS DE TOMBER À L'EXAMEN AMV — selon les formateurs</div>
   </div>
   <div style="display:flex;flex-direction:column;gap:6px">
     ${EXAM_PRIORITY.map(([n,titre,theme,tag,anchor]) => `
@@ -443,7 +439,88 @@ function renderHome(c) {
 </div>`;
 }
 
-// ── SEARCH ENGINE ──
+function renderACDV(c) {
+  c = c || document.getElementById('main-content');
+  c.innerHTML = `
+<div class="section-heading">Formation ACDV <span class="tag green ml6" style="font-size:13px;vertical-align:middle">✓ AMV réussi 🎉</span></div>
+<div class="section-sub">Agent Circulation Double Voie — procédures, logigrammes et lecture de DC</div>
+
+<h3 class="fc-h3-accent" style="color:#34d399;border-color:#34d399">🚨 Test imminent — thèmes 100% sûrs</h3>
+
+<div class="def-block important" style="border-left-color:var(--red)">
+  <div class="def-term">DVF avec TTX <span class="tag red ml6">📋 À venir</span></div>
+  <div class="def-text">Nouveau par rapport à l'AMV — à l'AMV on faisait des DFV sans TTx. Contenu à compléter en cours.</div>
+</div>
+<div class="def-block important" style="border-left-color:#34d399">
+  <div class="def-term">Réception sur voies de service <span class="tag green ml6">✓ Fiche disponible</span></div>
+  <div class="def-text">Procédure AVANT/APRÈS — aiguille vers VS libre, croisements dégagés. Groupes D (Direct) / R (Refoulé), TOV/GOV. <button class="btn btn-sm" style="margin-left:8px" onclick="gotoFiche('circulation','Réceptions sur voies')">Voir fiche →</button></div>
+</div>
+<div class="def-block important" style="border-left-color:var(--red)">
+  <div class="def-term">Modification d'itinéraire (EPA / EAP) <span class="tag red ml6">📋 À venir</span></div>
+  <div class="def-text">EPA et EAP sont deux enclenchements différents. Contenu à compléter en cours.</div>
+</div>
+<div class="def-block important" style="border-left-color:var(--red)">
+  <div class="def-term">Zone de transit <span class="tag red ml6">📋 À venir</span></div>
+  <div class="def-text">Enclenchement de transit — contenu à compléter en cours.</div>
+</div>
+<div class="def-block important" style="border-left-color:#34d399">
+  <div class="def-term">Travaux sur IS — 1ère catégorie <span class="tag green ml6">✓ Fiche disponible</span></div>
+  <div class="def-text">5 étapes verbales avec l'AMI. 4 infos obligatoires lors de l'entente préalable. <button class="btn btn-sm" style="margin-left:8px" onclick="gotoFiche('aiguillage','1ère catégorie')">Voir fiche →</button></div>
+</div>
+
+<h3 class="fc-h3-accent" style="color:#34d399;border-color:#34d399">📚 Tous les thèmes ACDV</h3>
+
+<div class="def-block important">
+  <div class="def-term">Réception sur voie occupée <span class="tag green ml6">✓ Fiche disponible</span></div>
+  <div class="def-text">DC 1505 fiche 9 — logigramme complet (Cas 1 : arrêt normal / Cas 2 : sans arrêt normal, branches OUI/NON). <button class="btn btn-sm" style="margin-left:8px" onclick="gotoFiche('circulation','Réception sur voie occupée')">Voir fiche →</button></div>
+</div>
+<div class="def-block important">
+  <div class="def-term">Enclenchements électriques <span class="tag yellow ml6">AMV + nouveaux</span></div>
+  <div class="def-text">ZI / CIP / ZP / EAP déjà documentés (fiche AMV). Nouveaux pour l'ACDV : <strong>Transit</strong>, <strong>EPA</strong> — à compléter en cours. <button class="btn btn-sm" style="margin-left:8px" onclick="gotoFiche('encl','Tableau récap visuel')">Voir fiche →</button></div>
+</div>
+<div class="def-block">
+  <div class="def-term">Cantonnement téléphonique <span class="tag red ml6">📋 À venir</span></div>
+  <div class="def-text">Contenu à compléter en cours.</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">TE et MD <span class="tag yellow ml6">Partiel — examen spécial</span></div>
+  <div class="def-text">TE (Transport Exceptionnel) et MD (Marchandises Dangereuses) partiellement documentés dans la fiche Formation. Examen spécial à venir. <button class="btn btn-sm" style="margin-left:8px" onclick="gotoFiche('formation','Transport Exceptionnel')">Voir fiche →</button></div>
+</div>
+<div class="def-block">
+  <div class="def-term">Gare temporaire <span class="tag red ml6">📋 À venir</span></div>
+  <div class="def-text">DC 1509 — contenu à compléter en cours.</div>
+</div>
+
+<h3 class="fc-h3">Enclenchements nouveaux ACDV — Transit, EPA, EAP</h3>
+
+<div class="rule-box">
+  La fiche <strong>Enclenchements (AMV)</strong> couvre déjà ZI / CIP / ZP / EAP avec le tableau récap visuel. Pour l'ACDV, <strong>Transit</strong> et <strong>EPA</strong> s'ajoutent — contenu à intégrer dès que tu as le support de cours.
+  <br><br>
+  EAP rappel rapide : ZAP rouge ET signal commandé à l'ouverture (levier −) → immobilise le levier du signal → <strong>Annexe 5 CR</strong>.
+</div>
+
+<h3 class="fc-h3">Fiches AMV — toujours valides pour l'ACDV</h3>
+
+<div class="def-block">
+  <div class="def-text" style="display:flex;flex-wrap:wrap;gap:6px">
+    ${[
+      ['Aiguillage','aiguillage','RIAT · 3E · CBA · dérangements'],
+      ['Enclenchements','encl','ZI/CIP/ZP/EAP · tableau Walid'],
+      ['Circulation','circulation','ACPP · PRR · réceptions VS'],
+      ['Incidents','incidents','FAMAS · bestiaux · PN · personnes'],
+      ['Travaux','travaux','DFV · entente préalable · DC 3978'],
+      ['Traction élec.','elect','Protection C · DC 8043'],
+      ['Formation','formation','TE · MD · PS9 · essais de frein'],
+      ['Signaux','signaux','TIV · familles A/B/C/D/E'],
+      ['Graissage','graissage','ASP · DPGR · DAL · OP9023'],
+    ].map(([label, theme, desc]) =>
+      `<button class="btn btn-sm" onclick="gotoFiche('${theme}','')" title="${desc}">${label}</button>`
+    ).join('')}
+  </div>
+</div>`;
+}
+
+
 const SEARCH_INDEX = [];
 
 // ── Recherche : normalisation, tokenisation, alias ──

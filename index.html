@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AMV — Révision SECUFER</title>
+<title>AMV / ACDV — Révision ferroviaire</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,15 +12,23 @@
 <!-- SIDEBAR -->
 <nav class="sidebar" id="sidebar">
   <div class="sidebar-logo">
-    <div class="logo-tag">AMV — Formation</div>
+    <div class="logo-tag">AMV · ACDV — Formation</div>
     <h1>Révision</h1>
     <p>SECUFER · Sécurité ferroviaire</p>
   </div>
 
+  <!-- ACDV — en priorité, bien visible -->
+  <div class="nav-section" style="background:rgba(52,211,153,0.07);border-radius:8px;padding:8px 0;margin-bottom:4px">
+    <div class="nav-label" style="color:#34d399">ACDV — Double Voie</div>
+    <div class="nav-item" id="nav-acdv" onclick="showView('acdv')" style="border-left-color:#34d399;font-weight:600">
+      <span class="icon">🆕</span> Accueil ACDV
+    </div>
+  </div>
+
   <div class="nav-section">
-    <div class="nav-label">Navigation</div>
+    <div class="nav-label">AMV — Navigation</div>
     <div class="nav-item active" id="nav-home" onclick="showView('home')">
-      <span class="icon">⌂</span> Accueil
+      <span class="icon">⌂</span> Accueil AMV
     </div>
     <div class="nav-item" id="nav-fiches" onclick="showView('fiches')">
       <span class="icon">◧</span> Fiches de cours
@@ -55,7 +63,7 @@
   <div class="topbar">
     <button class="burger" onclick="toggleSidebar()">☰</button>
     <div class="topbar-title" id="topbar-txt">AMV / <span>Accueil</span></div>
-    <div id="topbar-right" style="font-family:var(--mono);font-size:11px;color:var(--text3)" title="v7.3 — Retrait de Transit et Zone d'espacement automatique (non confirmés) de la table des enclenchements">v7.3 — 25 juin 2026</div>
+    <div id="topbar-right" style="font-family:var(--mono);font-size:11px;color:var(--text3)" title="v7.4 — Section ACDV ajoutée, mémo DC mis à jour, logigramme DC01505 fiche 9 intégré">v7.4 — 29 juin 2026</div>
   </div>
 
   <div class="content" id="main-content"></div>
