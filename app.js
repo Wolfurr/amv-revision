@@ -7,7 +7,7 @@
 // ═══════════════════════════════════════════════
 
 // Source unique de vérité pour la version + date de MAJ (affichée en haut à droite)
-const VERSION_LABEL = 'v8.5 — 10 août 2026';
+const VERSION_LABEL = 'v8.6 — 10 août 2026';
 
 const THEMES = [
   { id:'epi',         code:'AMV801',        title:'EPI & Déplacements',                 short:'EPI' },
@@ -25,6 +25,7 @@ const THEMES = [
   { id:'elect',       code:'AMV600–803',     title:'Traction & Risques électriques',     short:'Traction & Risques élec.' },
   { id:'travaux',     code:'AMV300–310',     title:'Travaux sur les voies & IS',         short:'Travaux' },
   { id:'graissage',   code:'AMV804',         title:'Graissage des aiguilles',            short:'Graissage' },
+  { id:'temd',        code:'DC1792',         title:'TE & MD — Examen dédié ACDV',        short:'TE & MD' },
 ];
 
 // Liste « sûrs de tomber à l'examen » — affichée sur la page d'accueil, liens vers les fiches
@@ -444,81 +445,70 @@ function renderACDV(c) {
 <div class="section-heading">Formation ACDV <span class="tag green ml6" style="font-size:13px;vertical-align:middle">✓ AMV réussi 🎉</span></div>
 <div class="section-sub">Agent Circulation Double Voie — procédures, logigrammes et lecture de DC</div>
 
-<h3 class="fc-h3-accent" style="color:#34d399;border-color:#34d399">🚨 Test imminent — thèmes 100% sûrs</h3>
+<h3 class="fc-h3-accent" style="color:#34d399;border-color:#34d399">🚨 Sujets 100% sûrs à l'ACDV</h3>
 
-<div class="def-block important" style="border-left-color:var(--red)">
-  <div class="def-term">DVF avec TTX <span class="tag red ml6">📋 À venir</span></div>
-  <div class="def-text">Nouveau par rapport à l'AMV — à l'AMV on faisait des DFV sans TTx. Contenu à compléter en cours.</div>
+<div class="def-block important" style="border-left-color:#34d399">
+  <div class="def-term">Réception sur voies de service <span class="tag green ml6">✓ Fiche dispo</span></div>
+  <div class="def-text">AVANT/APRÈS — aiguille VS libre, croisements dégagés, groupes D/R, TOV/GOV. <button class="btn btn-sm" style="margin-left:8px" onclick="gotoFiche('circulation','Réceptions sur voies')">Fiche →</button></div>
 </div>
 <div class="def-block important" style="border-left-color:#34d399">
-  <div class="def-term">Réception sur voies de service <span class="tag green ml6">✓ Fiche disponible</span></div>
-  <div class="def-text">Procédure AVANT/APRÈS — aiguille vers VS libre, croisements dégagés. Groupes D (Direct) / R (Refoulé), TOV/GOV. <button class="btn btn-sm" style="margin-left:8px" onclick="gotoFiche('circulation','Réceptions sur voies')">Voir fiche →</button></div>
+  <div class="def-term">Réception sur voie occupée <span class="tag green ml6">✓ Fiche dispo</span></div>
+  <div class="def-text">DC 1505 fiche 9 — Cas 1 (arrêt normal) / Cas 2 (sans arrêt). <button class="btn btn-sm" style="margin-left:8px" onclick="gotoFiche('circulation','Réception sur voie occupée')">Fiche →</button></div>
+</div>
+<div class="def-block important" style="border-left-color:#34d399">
+  <div class="def-term">DFV avec TTX <span class="tag yellow ml6">Partiel</span></div>
+  <div class="def-text">Art. 8.1 · 3 types d'aiguilles (obligée/indifférente/continuité) · 3 types de trains (ouvrant/déclencheur/stationné). CEPIITTAAS à venir. <button class="btn btn-sm" style="margin-left:8px" onclick="gotoFiche('travaux','Art. 8.1')">Fiche →</button></div>
+</div>
+<div class="def-block important" style="border-left-color:var(--red)">
+  <div class="def-term">DFV sans vérification de libération <span class="tag red ml6">📋 À venir</span></div>
 </div>
 <div class="def-block important" style="border-left-color:var(--red)">
   <div class="def-term">Modification d'itinéraire (EPA / EAP) <span class="tag red ml6">📋 À venir</span></div>
-  <div class="def-text">EPA et EAP sont deux enclenchements différents. Contenu à compléter en cours.</div>
 </div>
 <div class="def-block important" style="border-left-color:var(--red)">
-  <div class="def-term">Zone de transit <span class="tag red ml6">📋 À venir</span></div>
-  <div class="def-text">Enclenchement de transit — contenu à compléter en cours.</div>
+  <div class="def-term">Zone de transit en dérangement <span class="tag red ml6">📋 À venir</span></div>
+</div>
+<div class="def-block important" style="border-left-color:var(--red)">
+  <div class="def-term">Dérangement de l'aiguille elle-même <span class="tag red ml6">📋 À venir</span></div>
+</div>
+<div class="def-block important" style="border-left-color:var(--red)">
+  <div class="def-term">Enrayage <span class="tag red ml6">📋 À venir</span></div>
 </div>
 <div class="def-block important" style="border-left-color:#34d399">
-  <div class="def-term">Travaux sur IS — 1ère catégorie <span class="tag green ml6">✓ Fiche disponible</span></div>
-  <div class="def-text">5 étapes verbales avec l'AMI. 4 infos obligatoires lors de l'entente préalable. <button class="btn btn-sm" style="margin-left:8px" onclick="gotoFiche('aiguillage','1ère catégorie')">Voir fiche →</button></div>
+  <div class="def-term">Travaux sur IS — 1ère catégorie <span class="tag green ml6">✓ Fiche dispo</span></div>
+  <div class="def-text">5 étapes verbales · 4 infos obligatoires · rien à annoter. <button class="btn btn-sm" style="margin-left:8px" onclick="gotoFiche('aiguillage','1ère catégorie')">Fiche →</button></div>
 </div>
-
-<h3 class="fc-h3-accent" style="color:#34d399;border-color:#34d399">📚 Tous les thèmes ACDV</h3>
-
-<div class="def-block important">
-  <div class="def-term">Réception sur voie occupée <span class="tag green ml6">✓ Fiche disponible</span></div>
-  <div class="def-text">DC 1505 fiche 9 — logigramme complet (Cas 1 : arrêt normal / Cas 2 : sans arrêt normal, branches OUI/NON). <button class="btn btn-sm" style="margin-left:8px" onclick="gotoFiche('circulation','Réception sur voie occupée')">Voir fiche →</button></div>
+<div class="def-block important" style="border-left-color:#34d399">
+  <div class="def-term">Enclenchements électriques <span class="tag yellow ml6">AMV + Transit/EPA</span></div>
+  <div class="def-text">ZI/CIP/ZP/EAP + Transit et EPA nouveaux. <button class="btn btn-sm" style="margin-left:8px" onclick="gotoFiche('encl','Tableau récap visuel')">Fiche →</button></div>
 </div>
-<div class="def-block important">
-  <div class="def-term">Enclenchements électriques <span class="tag yellow ml6">AMV + nouveaux</span></div>
-  <div class="def-text">ZI / CIP / ZP / EAP déjà documentés (fiche AMV). Nouveaux pour l'ACDV : <strong>Transit</strong>, <strong>EPA</strong> — à compléter en cours. <button class="btn btn-sm" style="margin-left:8px" onclick="gotoFiche('encl','Tableau récap visuel')">Voir fiche →</button></div>
+<div class="def-block important" style="border-left-color:#34d399">
+  <div class="def-term">TE & MD <span class="tag yellow ml6">Examen dédié</span></div>
+  <div class="def-text">ATE types 4/5/7 · Repérage 5 points · Panneau orange · Encadré jaune. Procédures ACDV à compléter. <button class="btn btn-sm" style="margin-left:8px" onclick="gotoFiche('temd','')">Fiche TE&MD →</button></div>
 </div>
 <div class="def-block">
   <div class="def-term">Cantonnement téléphonique <span class="tag red ml6">📋 À venir</span></div>
-  <div class="def-text">Contenu à compléter en cours.</div>
-</div>
-<div class="def-block important">
-  <div class="def-term">TE et MD <span class="tag yellow ml6">Partiel — examen spécial</span></div>
-  <div class="def-text">TE (Transport Exceptionnel) et MD (Marchandises Dangereuses) partiellement documentés dans la fiche Formation. Examen spécial à venir. <button class="btn btn-sm" style="margin-left:8px" onclick="gotoFiche('formation','Transport Exceptionnel')">Voir fiche →</button></div>
 </div>
 <div class="def-block">
   <div class="def-term">Gare temporaire <span class="tag red ml6">📋 À venir</span></div>
-  <div class="def-text">DC 1509 — contenu à compléter en cours.</div>
-</div>
-
-<h3 class="fc-h3">Enclenchements nouveaux ACDV — Transit, EPA, EAP</h3>
-
-<div class="rule-box">
-  La fiche <strong>Enclenchements (AMV)</strong> couvre déjà ZI / CIP / ZP / EAP avec le tableau récap visuel. Pour l'ACDV, <strong>Transit</strong> et <strong>EPA</strong> s'ajoutent — contenu à intégrer dès que tu as le support de cours.
-  <br><br>
-  EAP rappel rapide : ZAP rouge ET signal commandé à l'ouverture (levier −) → immobilise le levier du signal → <strong>Annexe 5 CR</strong>.
 </div>
 
 <h3 class="fc-h3">Fiches AMV — toujours valides pour l'ACDV</h3>
 
 <div class="def-block">
   <div class="def-text" style="display:flex;flex-wrap:wrap;gap:6px">
-    ${[
-      ['Aiguillage','aiguillage','RIAT · 3E · CBA · dérangements'],
-      ['Enclenchements','encl','ZI/CIP/ZP/EAP · tableau Walid'],
-      ['Circulation','circulation','ACPP · PRR · réceptions VS'],
-      ['Incidents','incidents','FAMAS · bestiaux · PN · personnes'],
-      ['Travaux','travaux','DFV · entente préalable · DC 3978'],
-      ['Traction élec.','elect','Protection C · DC 8043'],
-      ['Formation','formation','TE · MD · PS9 · essais de frein'],
-      ['Signaux','signaux','TIV · familles A/B/C/D/E'],
-      ['Graissage','graissage','ASP · DPGR · DAL · OP9023'],
-    ].map(([label, theme, desc]) =>
-      `<button class="btn btn-sm" onclick="gotoFiche('${theme}','')" title="${desc}">${label}</button>`
-    ).join('')}
+    <button class="btn btn-sm" onclick="gotoFiche('aiguillage','')" title="RIAT · 3E · CBA">Aiguillage</button>
+    <button class="btn btn-sm" onclick="gotoFiche('encl','')" title="ZI/CIP/ZP/EAP">Enclenchements</button>
+    <button class="btn btn-sm" onclick="gotoFiche('circulation','')" title="ACPP · PRR · VS">Circulation</button>
+    <button class="btn btn-sm" onclick="gotoFiche('incidents','')" title="FAMAS · bestiaux · PN">Incidents</button>
+    <button class="btn btn-sm" onclick="gotoFiche('travaux','')" title="DFV · DC 3978">Travaux</button>
+    <button class="btn btn-sm" onclick="gotoFiche('elect','')" title="Protection C">Traction élec.</button>
+    <button class="btn btn-sm" onclick="gotoFiche('temd','')" title="TE · MD · ATE · Panneau orange">TE &amp; MD</button>
+    <button class="btn btn-sm" onclick="gotoFiche('formation','')" title="PS9 · essais de frein">Formation</button>
+    <button class="btn btn-sm" onclick="gotoFiche('graissage','')" title="ASP · DPGR · DAL">Graissage</button>
   </div>
 </div>`;
 }
-
 
 const SEARCH_INDEX = [];
 

@@ -1518,24 +1518,73 @@ circulation: `
 <div class="def-block important">
   <div class="def-term">Réception sur voie occupée — 2 conditions <span class="tag red ml6">🔥 Par cœur</span></div>
   <div class="def-text">Autorisée <strong>uniquement si</strong> :<br>
-1. <strong>Nécessité de service</strong><br>
+1. <strong>Nécessité de service</strong> (mise en tête d'un engin moteur, soudure d'autorails, d'éléments automoteurs…)<br>
 2. Le <strong>train doit avoir un arrêt normal</strong> sur cette voie<br><br>
-Procédure : <strong>DC 1505 — fiche 9</strong> ⚠️ (à vérifier avec les fiches d'autres promos)</div>
+Risque principal : <strong>absence d'avis au conducteur</strong> pouvant entraîner un <strong>accostage brutal</strong>.</div>
 </div>
 
 <div class="def-block important">
-  <div class="def-term">Comment aviser le conducteur (voie occupée) — 3 moyens <span class="tag red ml6">Par cœur</span></div>
-  <div class="def-text">1. Par la <strong>signalisation convenable</strong> — après l'arrêt au signal<br>
-2. Par <strong>RT</strong> (radio-téléphone)<br>
-3. Par sa <strong>commande</strong></div>
+  <div class="def-term fc-accent">Logigramme DC 1505 — Fiche 9 · Version 12 du 06-03-2026 <span class="tag red ml6">🔥 ACDV</span></div>
 </div>
 
-<div class="def-block">
-  <div class="def-term">Signaux utilisables pour aviser (voie occupée)</div>
-  <div class="def-text">• <strong>Feu rouge clignotant</strong><br>
-• <strong>Sémaphore de BAL</strong><br>
-• <strong>Bande jaune horizontale lumineuse</strong></div>
+<div style="border:1px solid var(--border2);border-radius:var(--radius2);overflow:hidden;margin-bottom:14px;font-size:12px">
+
+  <!-- CAS 1 : arrêt normal -->
+  <div style="background:var(--bg4);padding:8px 14px;font-weight:700;color:var(--text);border-bottom:1px solid var(--border)">
+    CAS 1 — Le train a un arrêt normal dans votre établissement
+  </div>
+  <div style="padding:10px 14px;background:var(--bg3);border-bottom:1px solid var(--border)">
+    <div style="color:var(--text2);margin-bottom:8px">→ Le conducteur est avisé qu'il sera reçu sur voie occupée via <strong>l'un de ces 3 moyens</strong> :</div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px">
+      <div style="flex:1;min-width:130px;padding:7px 10px;background:var(--bg2);border-radius:var(--radius);border-left:3px solid var(--accent)">
+        <div style="font-weight:600;color:var(--text);margin-bottom:3px">Sa commande</div>
+        <div style="color:var(--text3);font-size:11px">Mouvement de manœuvre non guidé d'un engin moteur pour mise en tête, soudure de rame…</div>
+      </div>
+      <div style="flex:1;min-width:130px;padding:7px 10px;background:var(--bg2);border-radius:var(--radius);border-left:3px solid var(--accent)">
+        <div style="font-weight:600;color:var(--text);margin-bottom:3px">Avis verbal</div>
+        <div style="color:var(--text3);font-size:11px">Après arrêt au signal commandant l'accès à la voie intéressée</div>
+      </div>
+      <div style="flex:1;min-width:130px;padding:7px 10px;background:var(--bg2);border-radius:var(--radius);border-left:3px solid var(--accent)">
+        <div style="font-weight:600;color:var(--text);margin-bottom:3px">Signalisation convenable</div>
+        <div style="color:var(--text3);font-size:11px">Feu rouge clignotant · Sémaphore de BAL · Bande jaune lumineuse horizontale</div>
+      </div>
+    </div>
+    <div style="padding:7px 12px;background:rgba(239,68,68,0.08);border-radius:var(--radius);color:var(--text2)">
+      ✅ <strong>S'assurer</strong> de ne pas avoir autorisé une mise en mouvement sur la voie concernée <strong>en direction du signal de protection</strong><br>
+      → Appliquer, le cas échéant, la consigne locale
+    </div>
+  </div>
+
+  <!-- CAS 2 : pas d'arrêt normal -->
+  <div style="background:var(--bg4);padding:8px 14px;font-weight:700;color:var(--text);border-bottom:1px solid var(--border)">
+    CAS 2 — Le train n'a <em>pas</em> d'arrêt normal dans l'établissement
+  </div>
+  <div style="padding:10px 14px;background:var(--bg3)">
+    <div style="color:var(--text2);margin-bottom:8px"><strong>Exceptionnellement</strong>, ce train peut être reçu sur voie occupée. Question préalable :</div>
+    <div style="font-weight:600;color:var(--text);margin-bottom:8px;padding:6px 10px;background:var(--bg4);border-radius:var(--radius)">
+      ❓ Une signalisation convenable est-elle présentée ? (feu rouge clignotant, bande lumineuse jaune horizontale…)
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px">
+      <div style="flex:1;min-width:130px;padding:8px 12px;background:var(--bg2);border-radius:var(--radius);border-left:3px solid #34d399">
+        <div style="font-weight:700;color:#34d399;margin-bottom:4px">OUI</div>
+        <div style="color:var(--text2);font-size:11px">Le conducteur est avisé par cette signalisation → suffit</div>
+      </div>
+      <div style="flex:1;min-width:130px;padding:8px 12px;background:var(--bg2);border-radius:var(--radius);border-left:3px solid var(--red)">
+        <div style="font-weight:700;color:var(--red);margin-bottom:4px">NON</div>
+        <div style="color:var(--text2);font-size:11px">Le conducteur est :<br>1. Avisé verbalement après arrêt au signal commandant l'accès, <strong>puis</strong><br>2. Guidé par ordres de manœuvre donnés par un agent de l'ExF</div>
+      </div>
+    </div>
+    <div style="padding:7px 12px;background:rgba(239,68,68,0.08);border-radius:var(--radius);color:var(--text2)">
+      ✅ <strong>S'assurer</strong> de ne pas avoir autorisé une mise en mouvement sur la voie concernée <strong>en direction du signal de protection</strong><br>
+      → Appliquer, le cas échéant, la consigne locale
+    </div>
+  </div>
 </div>
+
+<div class="rule-box">
+  <strong>Référence :</strong> DC01505 — Version 12 du 06-03-2026 (INTERNE SNCF RÉSEAU SA)
+</div>
+
 `,
 
 cantonnement: `
@@ -2929,6 +2978,49 @@ travaux: `
   • <strong class="fc-accent">Risque de déraillement</strong> → une aiguille peut être manœuvrée sous le train<br>
   • <strong class="fc-accent">Risque de rattrapage</strong> → on croit la zone libre, on expédie un autre train</div>
 </div>
+
+<h3 class="fc-h3-accent">⭐ Art. 8.1 — Dispositions particulières pour les aiguilles sur une ZEP (DFV) <span class="tag red ml6">🔥 Par cœur</span></h3>
+
+<div class="def-block important">
+  <div class="def-term">3 impératifs — la position des aiguilles d'une ZEP sous DFV doit :</div>
+  <div class="def-text">
+    1. <strong>Éviter le dégagement intempestif</strong> des TTx et engins-chantier<br>
+    2. <strong>Assurer la continuité des parcours successifs</strong> des TTx et engins-chantier afin d'éviter le talonnage des appareils de voie et le risque de dégagement intempestif du domaine fermé<br>
+    3. <strong>Permettre la circulation à l'extérieur</strong> de la ZEP sur les itinéraires normalement compatibles
+  </div>
+</div>
+
+<div class="rule-box">Pour respecter ces 3 impératifs, il est nécessaire de distinguer plusieurs types d'aiguilles présentes sur une ZEP accordée par DFV. (Modes opératoires des agents-circulation Tome 1 Généralités — p.21, 04/06/2025)</div>
+
+<h3 class="fc-h3">8.1.1 — Les 3 types d'aiguilles sur une ZEP <span class="tag red ml6">🔥 Par cœur</span></h3>
+
+<div class="def-block important">
+  <div class="def-term">Aiguille <span class="fc-accent">obligée</span></div>
+  <div class="def-text">Doit être mise dans une position précise pour la DFV — sa position est imposée pour assurer la protection du domaine fermé et éviter tout dégagement intempestif des TTx.</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">Aiguille <span class="fc-accent">indifférente</span></div>
+  <div class="def-text">Sa position n'a pas d'incidence sur la DFV — elle peut rester dans n'importe quelle position sans compromettre la sécurité du domaine fermé.</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">Aiguille de <span class="fc-accent">continuité</span></div>
+  <div class="def-text">Sa position doit assurer la continuité du parcours pour les TTx et engins-chantier à l'intérieur du domaine fermé — elle garantit que les circulations restent bien dans la ZEP.</div>
+</div>
+
+<h3 class="fc-h3">Les 3 types de trains dans une DFV <span class="tag red ml6">🔥 Par cœur</span></h3>
+
+<div class="def-block important">
+  <div class="def-term">Train <span class="fc-accent">ouvrant</span></div>
+  <div class="def-text">Train qui <strong>passe par la DFV et en sort</strong>. Il traverse le domaine fermé et le quitte — il "ouvre" le domaine au sens où il en franchit la limite.</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">Train <span class="fc-accent">déclencheur</span></div>
+  <div class="def-text">Train qui <strong>reste dans le domaine fermé</strong> au moment de la pose de la DFV — il devient automatiquement <strong>TTx</strong> lors de l'établissement de la DFV.</div>
+</div>
+<div class="def-block important">
+  <div class="def-term">TTx <span class="fc-accent">stationné</span></div>
+  <div class="def-text">TTx présent dans le domaine fermé pendant la DFV — il <strong>redevient un train classique</strong> dès qu'il sort du domaine fermé (à la restitution de la DFV ou lors de son départ).</div>
+</div>
 `,
 
 epi: `
@@ -3413,5 +3505,79 @@ graissage: `
   <div class="def-term">Avant le graissage — concertation aiguilleur / ASP</div>
   <div class="def-text">Sujets abordés : aiguilles à graisser · secteur à protéger · durée · période · mode de protection (humain ou DPGR).<br>
   → Aviser ensuite le <strong>COGC</strong> et l'<strong>AC</strong>.</div>
+</div>
+`,
+
+temd: `
+<h2 class="theme-heading">TE & MD — Examen dédié ACDV</h2>
+<div class="theme-ref">DC 1792 (MD) · BTE/ATE (TE) · DC 3978</div>
+
+<div style="background:rgba(239,68,68,0.07);border:1px solid rgba(239,68,68,0.35);border-radius:var(--radius2);padding:11px 16px;margin-bottom:16px;font-size:13px;line-height:1.6">
+  🎯 Fiche dédiée à l'examen TE & MD de l'ACDV. Contenu enrichi au fur et à mesure des cours.
+</div>
+
+<h3 class="fc-h3-accent">⭐ TE — Transport Exceptionnel</h3>
+
+<div class="def-block important">
+  <div class="def-term">Définition — par cœur <span class="tag red ml6">🔥</span></div>
+  <div class="def-text">Chargement ou véhicule ferroviaire dont les dimensions, la masse ou le conditionnement <strong>ne répondent pas à toutes les exigences de compatibilité</strong> avec les caractéristiques de l'infrastructure ferroviaire. Pour circuler, il nécessite une <strong>ATE</strong>.<br><br>
+  Difficultés spéciales de chargement ou d'acheminement en raison de : dimensions · masse · caractéristiques des itinéraires empruntés (gabarit, limite de charge) · caractéristiques du matériel utilisé.</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">BTE & ATE</div>
+  <div class="def-text"><strong>BTE</strong> = Bureau des Transports Exceptionnels. Définit les conditions de circulation des TE et élabore l'ATE.<br>
+  <strong>ATE</strong> = Avis de Transport Exceptionnel, créé par le BTE. Le type est indiqué en tête de chaque ATE (1er chiffre).</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">ATE — 3 types <span class="tag red ml6">🔥 Par cœur : 4 / 5 / 7</span></div>
+  <div class="def-text">• <strong>Type 4</strong> : restrictions importantes → étiquette spéciale + n° ATE<br>
+  • <strong>Type 5</strong> : restrictions peu nombreuses → étiquette spéciale + n° ATE<br>
+  • <strong>Type 7</strong> : <strong>aucune restriction</strong> de circulation<br><br>
+  Types 4 et 5 = étiquettes spéciales. Type 7 = pas de restriction.</div>
+</div>
+
+<h3 class="fc-h3-accent">⭐ MD — Marchandises Dangereuses</h3>
+
+<div class="def-block important">
+  <div class="def-term">Définition — par cœur <span class="tag red ml6">🔥</span></div>
+  <div class="def-text">Matières ou objets qui, par leur nature, sont susceptibles de mettre en danger :<br>
+  • la sécurité des <strong>personnes</strong><br>
+  • la sécurité des <strong>biens</strong><br>
+  • et/ou de nuire à l'<strong>environnement</strong></div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">Repérage — 5 points d'identification <span class="tag red ml6">🔥 Par cœur</span></div>
+  <div class="def-text">1. Étiquetage d'acheminement au départ du chantier expéditeur<br>
+  2. Placardage de danger des <strong>2 côtés</strong> du wagon<br>
+  3. Mention sur le <strong>bulletin de freinage</strong><br>
+  4. Signalisation orange : n° d'identification du danger + n° ONU<br>
+  5. Bande orange peinte à mi-hauteur de la citerne (= gaz liquéfié, réfrigéré ou dissous en wagons-citernes)</div>
+</div>
+
+<div class="def-block">
+  <div class="def-term">Panneau orange — lecture des numéros</div>
+  <div class="def-text"><strong>En haut</strong> : n° d'identification du danger · <strong>En bas</strong> : n° ONU<br>
+  1er chiffre = danger principal · 2e/3e = dangers subsidiaires · Chiffre doublé = intensification · X devant = interdiction d'eau<br><br>
+  2 Gaz · 3 Inflammable liq/gaz · 4 Inflammable solide · 5 Comburant · 6 Toxique · 7 Radioactif · 8 Corrosif · 9 Réaction violente spontanée</div>
+</div>
+
+<div class="rule-box" style="border-color:var(--accent);background:rgba(240,192,64,0.06)">
+  <div class="def-term" style="color:var(--accent);margin-bottom:8px">🟡 ENCADRÉ JAUNE — Constater une anomalie sur un convoi de MD <span style="color:var(--red)">(100% à l'éval)</span></div>
+  <strong>Respecter les précautions :</strong><br>
+  • S'éloigner · Ne pas fumer · Pas de flamme/étincelle<br>
+  • Conducteurs : arrêter le train · Éloigner les curieux<br>
+  • Se tenir <strong>du côté d'où vient le vent</strong> par rapport à l'envoi<br>
+  • Ne pas marcher dans les flaques · Ne pas toucher le produit<br>
+  • <strong>Ne pas utiliser</strong> téléphone mobile, radio manœuvre ou sol/train à proximité<br><br>
+  <strong>À distance, déterminer :</strong> position dans le train · présence bande orange + n° identification + n° ONU · nature de l'anomalie<br><br>
+  <strong>Aviser immédiatement</strong> par le moyen le plus rapide : responsable local ou SGTC (AC, Régulateur)
+</div>
+
+<div class="def-block important" style="border-color:var(--red)">
+  <div class="def-term" style="color:var(--red)">📋 À compléter — contenu cours ACDV à venir</div>
+  <div class="def-text">Procédures spécifiques ACDV sur TE et MD · Logigrammes DC 1792 · Examen dédié TE&MD</div>
 </div>
 `};
