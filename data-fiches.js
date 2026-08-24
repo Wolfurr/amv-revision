@@ -2896,20 +2896,50 @@ travaux: `
 </div>
 
 <div class="def-block">
-  <div class="def-term">Quand le RPTx appelle — informations à noter au brouillon</div>
-  <div class="def-text">• ZEP concernée<br>• Heure prévue<br>• TTx ? (non à l'AMV)<br>• Objet de l'opération<br>• Vérification de libération — options applicables</div>
+  <div class="def-term">Quand le RPTx appelle — noter au brouillon</div>
+  <div class="def-text">• ZEP concernée · Heure prévue · TTx ? (+ engagement/dégagement si oui) · Objet de l'opération · Vérification de libération — options applicables</div>
 </div>
 
 <div class="def-block important">
-  <div class="def-term">Déroulement de l'entente préalable — 7 étapes (DC 3978)</div>
-  <div class="def-text">Juste avant d'appeler le RPTx pour confirmer la prise en charge, ouvrir la <strong>DC 3978</strong> et suivre la procédure étape par étape.<br><br>
-  <strong>1.</strong> Suis-je concerné ? → vérifier l'<strong>article 4</strong> de la DC 3978<br>
-  <strong>2.</strong> ZEP existante ? → <strong>Annexes 2, 3, 4 de la Consigne de Protection</strong><br>
-  <strong>3.</strong> Horaires prévues ? → contacter le COGC, regarder l'ONJ / TST<br>
-  <strong>4.</strong> Procédure d'assurance chantier → <strong>DFV ou GEq</strong> ?<br>
-  <strong>5.</strong> Les travaux sont-ils prévus ? → vérifier l'<strong>AHT</strong> (article 2.2 de la DC 3978)<br>
-  <strong>6.</strong> Incompatibilité travaux ? → vérifier le carnet de DFV (pas de DFV en cours sur la même ZEP) + vérifier les DA déjà mis en place (DC 3978, imprimés de sécurité)<br>
-  <strong>7.</strong> Y a-t-il un TTx ? → <strong>Non, pas à l'AMV</strong></div>
+  <div class="def-term fc-accent">CEPIITTAAS — Déroulement de l'entente préalable DFV <span class="tag red ml6">🔥 Par cœur ACDV</span></div>
+  <div class="def-text">Entente avec le <strong>RPTx</strong>, au minimum <strong>30 min avant</strong> le début de la PTx. On vérifie la faisabilité de la DFV.<br><br>
+
+  <strong class="fc-accent">C</strong> — Suis-je <strong>concerné</strong> par la ZEP ?<br>
+  <span style="color:var(--text3);font-size:12px;margin-left:16px">→ Article 4 de la <strong>Consigne de Protection</strong></span><br><br>
+
+  <strong class="fc-accent">E</strong> — La ZEP <strong>existe-t-elle</strong> ?<br>
+  <span style="color:var(--text3);font-size:12px;margin-left:16px">→ Consigne de Protection <strong>Annexe 2</strong></span><br><br>
+
+  <strong class="fc-accent">P</strong> — <strong>Procédés</strong> et options applicables<br>
+  <span style="color:var(--text3);font-size:12px;margin-left:16px">→ DFV ou GEQ ? Avec ou sans vérification de libération ?</span><br><br>
+
+  <strong class="fc-accent">I</strong> — Incompatibilité <strong>sécurité et mouvement</strong><br>
+  <span style="color:var(--text3);font-size:12px;margin-left:16px">→ Regarder l'ONJ / appeler le COGC</span><br><br>
+
+  <strong class="fc-accent">I</strong> — Incompatibilité <strong>travaux</strong><br>
+  <span style="color:var(--text3);font-size:12px;margin-left:16px">→ DFV, GEQ, DPGR, PERS en cours sur la même ZEP ?</span><br><br>
+
+  <strong class="fc-accent">T</strong> — <strong>TTx</strong> ou pas ?<br>
+  <span style="color:var(--text3);font-size:12px;margin-left:16px">→ Si oui : quel engagement / dégagement ? Correctement repris dans la Consigne de Protection ?</span><br><br>
+
+  <strong class="fc-accent">T</strong> — <strong>Travaux</strong> prévus ?<br>
+  <span style="color:var(--text3);font-size:12px;margin-left:16px">→ Vérifier l'AHT ou renseigné dans la demande du RPTx</span><br><br>
+
+  <strong class="fc-accent">A</strong> — <strong>Aiguilles</strong> ?<br>
+  <span style="color:var(--text3);font-size:12px;margin-left:16px">→ Positions des aiguilles : obligée / indifférente / continuité (cf. Art. 8.1)</span><br><br>
+
+  <strong class="fc-accent">A</strong> — <strong>Autre(s) agent(s)</strong> à aviser ?<br>
+  <span style="color:var(--text3);font-size:12px;margin-left:16px">→ COGC, régulateur, autres postes concernés</span><br><br>
+
+  <strong class="fc-accent">S</strong> — <strong>Signaux intermédiaires</strong><br>
+  <span style="color:var(--text3);font-size:12px;margin-left:16px">→ Y a-t-il des signaux intermédiaires dans la ZEP ? Comment les gérer ?</span><br><br>
+
+  <strong>Après :</strong> sortir la fiche procédure adéquate dans la <strong>DC 3978</strong> et suivre la fiche.</div>
+</div>
+
+<div class="def-block">
+  <div class="def-term">DFV sans vérification de libération <span class="tag yellow ml6">À compléter en cours</span></div>
+  <div class="def-text">Option applicable au <strong>P</strong> du CEPIITTAAS. Surtout de l'application pratique — procédure à voir en cours. Se base sur la DC 3978, fiche procédure correspondante.</div>
 </div>
 
 <div class="def-block">
@@ -3510,32 +3540,36 @@ graissage: `
 
 temd: `
 <h2 class="theme-heading">TE & MD — Examen dédié ACDV</h2>
-<div class="theme-ref">DC 1792 (MD) · BTE/ATE (TE) · DC 3978</div>
+<div class="theme-ref">DC 1792 · BTE/ATE (TE) · GRH00808 (aide-mémoire MD)</div>
 
-<div style="background:rgba(239,68,68,0.07);border:1px solid rgba(239,68,68,0.35);border-radius:var(--radius2);padding:11px 16px;margin-bottom:16px;font-size:13px;line-height:1.6">
-  🎯 Fiche dédiée à l'examen TE & MD de l'ACDV. Contenu enrichi au fur et à mesure des cours.
+<div style="background:rgba(239,68,68,0.07);border:1px solid rgba(239,68,68,0.35);border-radius:var(--radius2);padding:11px 16px;margin-bottom:16px;font-size:13px">
+  🎯 Examen dédié TE &amp; MD. Ce qui est <strong style="color:var(--accent)">surligné</strong> dans les photos = <strong>à savoir par cœur</strong>. Pour les TE, des fiches papiers seront fournies à l'examen — focus sur les MD.
 </div>
 
 <h3 class="fc-h3-accent">⭐ TE — Transport Exceptionnel</h3>
 
 <div class="def-block important">
-  <div class="def-term">Définition — par cœur <span class="tag red ml6">🔥</span></div>
-  <div class="def-text">Chargement ou véhicule ferroviaire dont les dimensions, la masse ou le conditionnement <strong>ne répondent pas à toutes les exigences de compatibilité</strong> avec les caractéristiques de l'infrastructure ferroviaire. Pour circuler, il nécessite une <strong>ATE</strong>.<br><br>
-  Difficultés spéciales de chargement ou d'acheminement en raison de : dimensions · masse · caractéristiques des itinéraires empruntés (gabarit, limite de charge) · caractéristiques du matériel utilisé.</div>
+  <div class="def-term">Définition — 3 raisons qui font qu'un transport est exceptionnel <span class="tag red ml6">🔥 Par cœur</span></div>
+  <div class="def-text">Un transport est qualifié d'exceptionnel en raison de son chargement, notamment à cause de :<br>
+  1. Sa <strong>construction / conception</strong><br>
+  2. Ses <strong>dimensions</strong><br>
+  3. Son <strong>poids</strong><br><br>
+  Le TE est un chargement ou véhicule ferroviaire dont les caractéristiques ne répondent pas à toutes les exigences de compatibilité avec l'infrastructure ferroviaire. Il nécessite une <strong>ATE</strong> pour circuler.</div>
 </div>
 
 <div class="def-block important">
   <div class="def-term">BTE & ATE</div>
-  <div class="def-text"><strong>BTE</strong> = Bureau des Transports Exceptionnels. Définit les conditions de circulation des TE et élabore l'ATE.<br>
-  <strong>ATE</strong> = Avis de Transport Exceptionnel, créé par le BTE. Le type est indiqué en tête de chaque ATE (1er chiffre).</div>
+  <div class="def-text">• <strong>BTE</strong> = Bureau des Transports Exceptionnels → définit les conditions de circulation et élabore l'ATE<br>
+  • <strong>ATE</strong> = Avis de Transport Exceptionnel → créé par le BTE, type indiqué en tête (1er chiffre)<br>
+  • Procédure habituelle : commencer par la <strong>fiche 2 de la DC 1792</strong>, puis aller à la <strong>fiche 4 ou 5</strong> selon le type</div>
 </div>
 
 <div class="def-block important">
-  <div class="def-term">ATE — 3 types <span class="tag red ml6">🔥 Par cœur : 4 / 5 / 7</span></div>
-  <div class="def-text">• <strong>Type 4</strong> : restrictions importantes → étiquette spéciale + n° ATE<br>
+  <div class="def-term">ATE — 3 types <span class="tag red ml6">🔥 Par cœur : 4 le plus restrictif</span></div>
+  <div class="def-text">• <strong class="fc-accent">Type 4</strong> : le plus restrictif — restrictions de circulation importantes → étiquette spéciale + n° ATE <strong>→ À CONNAÎTRE LE MIEUX</strong><br>
   • <strong>Type 5</strong> : restrictions peu nombreuses → étiquette spéciale + n° ATE<br>
-  • <strong>Type 7</strong> : <strong>aucune restriction</strong> de circulation<br><br>
-  Types 4 et 5 = étiquettes spéciales. Type 7 = pas de restriction.</div>
+  • <strong>Type 7</strong> : aucune restriction de circulation<br><br>
+  Types 4 et 5 = étiquettes spéciales obligatoires · Type 7 = pas de restriction.</div>
 </div>
 
 <h3 class="fc-h3-accent">⭐ MD — Marchandises Dangereuses</h3>
@@ -3551,17 +3585,151 @@ temd: `
 <div class="def-block important">
   <div class="def-term">Repérage — 5 points d'identification <span class="tag red ml6">🔥 Par cœur</span></div>
   <div class="def-text">1. Étiquetage d'acheminement au départ du chantier expéditeur<br>
-  2. Placardage de danger des <strong>2 côtés</strong> du wagon<br>
+  2. <strong>Placardage de danger des 2 côtés</strong> du wagon<br>
   3. Mention sur le <strong>bulletin de freinage</strong><br>
-  4. Signalisation orange : n° d'identification du danger + n° ONU<br>
-  5. Bande orange peinte à mi-hauteur de la citerne (= gaz liquéfié, réfrigéré ou dissous en wagons-citernes)</div>
+  4. <strong>Signalisation orange</strong> : n° d'identification du danger + n° ONU<br>
+  5. Bande orange peinte <strong>à mi-hauteur de la citerne</strong> (= gaz liquéfié, réfrigéré ou dissous en wagons-citernes)</div>
 </div>
 
 <div class="def-block">
   <div class="def-term">Panneau orange — lecture des numéros</div>
-  <div class="def-text"><strong>En haut</strong> : n° d'identification du danger · <strong>En bas</strong> : n° ONU<br>
-  1er chiffre = danger principal · 2e/3e = dangers subsidiaires · Chiffre doublé = intensification · X devant = interdiction d'eau<br><br>
-  2 Gaz · 3 Inflammable liq/gaz · 4 Inflammable solide · 5 Comburant · 6 Toxique · 7 Radioactif · 8 Corrosif · 9 Réaction violente spontanée</div>
+  <div class="def-text"><strong>En haut</strong> : n° d'identification du danger (ex : 33) · <strong>En bas</strong> : n° ONU (ex : 1203)<br>
+  1er chiffre = danger principal · 2e/3e chiffre = dangers subsidiaires · Chiffre doublé = intensification du danger · <strong>X devant les chiffres</strong> = interdiction d'utiliser l'eau<br><br>
+  <strong>Signification des premiers chiffres :</strong><br>
+  2 = Gaz · 3 = Inflammable liq./gaz · 4 = Inflammable solide · 5 = Comburant/favorise l'incendie · 6 = Toxique · 7 = Radioactif · 8 = Corrosif · 9 = Réaction violente spontanée</div>
+</div>
+
+<div class="def-block">
+  <div class="def-term">Classes de danger à connaître (grandes familles)</div>
+  <div class="def-text">Classe 1 : Matières et objets explosibles<br>
+  Classe 2 : Gaz (inflammable / non inflammable non toxique / toxique)<br>
+  Classe 3 : Liquides inflammables<br>
+  Classe 4 : Solides inflammables (4.1 · 4.2 auto-inflammable · 4.3 réaction eau)<br>
+  Classe 5 : Comburants et peroxydes organiques<br>
+  Classe 6 : Matières toxiques et infectieuses<br>
+  Classe 7 : Matières radioactives<br>
+  Classe 8 : Matières corrosives<br>
+  Classe 9 : Autres dangers / Quantités limitées</div>
+</div>
+
+<div class="def-block">
+  <div class="def-term">Wagons-citernes — 3 types</div>
+  <div class="def-text">• Transport de <strong>produits pétroliers</strong><br>
+  • Transport de <strong>gaz liquéfié</strong> (bande orange à mi-hauteur du réservoir)<br>
+  • Transport de <strong>matières chimiques diverses</strong></div>
+</div>
+
+<h3 class="fc-h3-accent">⭐ Anomalie sur un transport de MD — Procédure complète</h3>
+
+<div class="def-block important">
+  <div class="def-term">Qu'entend-on par anomalie MD ?</div>
+  <div class="def-text">• Une perte de marchandise quel que soit son état (liquide, solide, gazeux)<br>
+  • Une perte de confinement<br>
+  • Une odeur suspecte à proximité de wagons MD<br>
+  • Un choc important (accostage brutal ou choc latéral)<br>
+  • Un déraillement<br>
+  • Un incendie, une explosion, une implosion</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">Document à porter sur soi — <strong>GRH00808</strong></div>
+  <div class="def-text">L'aide-mémoire « Transport de Marchandises Dangereuses » (GRH00808) est à porter sur soi en service. Il rappelle tous les modes de repérages et les précautions à prendre pour le transport de MD. Tous les avis lancés et reçus doivent être pris en attachement et collationnés.</div>
+</div>
+
+<h3 class="fc-h3">5.1 — Renseignements à recueillir</h3>
+
+<div class="def-block important">
+  <div class="def-term">Tout agent du SGC qui constate ou est avisé d'une anomalie doit aviser le COGC ou l'AC. Infos à recueillir :</div>
+  <div class="def-text">• Le lieu de l'anomalie et l'importance de l'anomalie ou indications permettant de le déterminer<br>
+  • La <strong>nature du contenant</strong> (wagon pour vrac, wagon-citerne, conteneur-citerne, wagon trémie…)<br>
+  • Le <strong>numéro ONU</strong> et le numéro d'identification du danger inscrits sur le panneau orange<br>
+  • Le type des plaques-étiquettes de danger, apposées sur l'unité de chargement<br>
+  • S'il y a lieu, la présence d'une bande orange à mi-hauteur de la citerne affectée<br>
+  • L'importance des dommages<br>
+  • Toute précision permettant d'estimer le risque (autre wagon MD à proximité, cours d'eau, difficultés d'accès pour services de secours…)</div>
+</div>
+
+<h3 class="fc-h3">5.3 — Premières mesures <span class="tag red ml6">🔥 Par cœur</span></h3>
+
+<div class="def-block important">
+  <div class="def-term">Précautions à respecter — par cœur</div>
+  <div class="def-text">• Ne pas marcher dans les flaques de produit<br>
+  • Ne pas toucher le produit<br>
+  • Ne pas s'y exposer, ne pas exposer autrui<br>
+  • Ne pas aggraver la situation</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">Pour un train en circulation — lieu d'arrêt</div>
+  <div class="def-text">Le conducteur est avisé de l'anomalie, le lieu d'arrêt est choisi par le SGC en concertation avec le conducteur. Critères :<br>
+  • Hors d'une zone confinée (tunnel, voie couverte…)<br>
+  • Permettre la circulation ferroviaire sur voies principales<br>
+  • Éloigné de zones urbanisées (hôpitaux, écoles…)<br>
+  • Éloigné d'autres wagons MD<br>
+  • Être accessible notamment par les services d'incendie et de secours<br><br>
+  Il convient d'<strong>interdire toute circulation sur la voie parcourue par ce train</strong> depuis la détection de l'anomalie et sur la ou les voie(s) voisine(s).</div>
+</div>
+
+<h3 class="fc-h3-accent">⭐ 5.4 — Type 1 et Type 2 <span class="tag red ml6">🔥 Par cœur</span></h3>
+
+<div class="def-block important">
+  <div class="def-term">Type 1</div>
+  <div class="def-text">Événement de sécurité correspondant à une <strong>situation de gravité faible</strong>, géré par les exploitants ferroviaires avec leurs propres moyens. Ne nécessite <strong>pas systématiquement</strong> le concours des services de secours publics.</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">Type 2</div>
+  <div class="def-text">Événement de sécurité correspondant à une <strong>situation de gravité et urgence élevée</strong>, nécessitant le concours des <strong>services de secours publics</strong> et l'information du <strong>préfet</strong>.</div>
+</div>
+
+<div class="def-block important" style="border-left-color:var(--red)">
+  <div class="def-term">Le SGC peut qualifier d'office en Type 2 — <span class="tag red ml6">🔥 Par cœur</span></div>
+  <div class="def-text">• Une <strong>explosion, implosion, incendie</strong>, nuage de vapeur ou de gaz<br>
+  • Une <strong>perte continue</strong> de matière (fuite, épandage, écoulement)<br>
+  • Le <strong>renversement</strong> d'un wagon MD (citerne, transport MD en vrac)<br>
+  • La <strong>déformation du contenant</strong> de la marchandise dangereuse consécutive à un déraillement ou un choc important<br><br>
+  ⚠️ En cas d'absence de qualification par l'EF dans un délai compatible avec l'urgence, une anomalie est considérée comme de <strong>Type 2 par le SGC</strong>.</div>
+</div>
+
+<h3 class="fc-h3-accent">⭐ 6.4 — Périmètre d'isolement (Type 2) <span class="tag red ml6">🔥 Par cœur</span></h3>
+
+<div class="def-block important">
+  <div class="def-term">Périmètre d'isolement minimum : <span class="fc-accent">30 mètres</span> depuis le lieu de l'événement</div>
+  <div class="def-text">Défini par le CRC (ou l'agent PUI le cas échéant). Peut être supérieur selon les informations initiales ou complémentaires — utilisation possible de l'outil <strong>GMU</strong> (Guide des Mesures d'Urgence, annexe 2).<br><br>
+  <strong class="fc-accent">Le périmètre de sécurité</strong> (défini par les services d'incendie et de secours) <strong>se substitue au périmètre d'isolement</strong> préalablement défini.</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">Actions vis-à-vis du périmètre — par cœur <span class="tag red ml6">🔥</span></div>
+  <div class="def-text">• Le <strong>communiquer aux services d'incendie et de secours</strong><br>
+  • Le communiquer aux entités présentes sur le lieu (CIL, conducteur…)<br>
+  • <strong>Assurer la protection</strong> de ce périmètre en :<br>
+  &nbsp;&nbsp;→ Arrêtant et retenant les circulations se dirigeant vers ce périmètre<br>
+  &nbsp;&nbsp;→ Faisant en sorte d'éloigner de l'événement les circulations se trouvant dans le périmètre<br>
+  &nbsp;&nbsp;→ Adaptant, le cas échéant, les mesures éventuellement déjà prises<br><br>
+  • En cas de perte avérée ou imminente de produits <strong>inflammables</strong> : procéder à la <strong>suppression de la tension d'alimentation</strong> (coupure d'urgence)<br><br>
+  <strong>Aucune personne non autorisée ne doit pénétrer dans le périmètre.</strong></div>
+</div>
+
+<h3 class="fc-h3">7. Levée des mesures</h3>
+
+<div class="def-block important">
+  <div class="def-term">7.1 — Événement de Type 1</div>
+  <div class="def-text">L'EF informe le SGC de la fin de l'événement, attestant de la conformité du chargement ou de la mise à l'écart du wagon. Information prise en attachement. Les mesures du point 6 peuvent être levées. L'agent du SGC communique l'information au COGC.</div>
+</div>
+
+<div class="def-block important">
+  <div class="def-term">7.2 — Événement de Type 2</div>
+  <div class="def-text">Les mesures ne peuvent être levées qu'après <strong>autorisation préalable des services d'incendie et de secours</strong>, donnée au Chef d'Incident Local (ou en son absence au COGC), attestant que :<br>
+  • tout danger immédiat est écarté<br>
+  • l'intervention des services de secours est terminée<br><br>
+  La mise ou remise en circulation des wagons est soumise à l'<strong>autorisation écrite de l'EF</strong>, seule habilitée à attester de la conformité du chargement. L'agent du SGC qui reçoit cette autorisation informe le COGC.<br><br>
+  Exception : si à l'issue des investigations, la source d'une odeur suspecte n'a pas pu être identifiée → <strong>l'autorisation écrite de l'EF n'est pas nécessaire</strong>.</div>
+</div>
+
+<div class="def-block">
+  <div class="def-term">Chap. 10 — Dossier local MD (DC01732)</div>
+  <div class="def-text">Sur chaque site où séjournent des wagons MD, un document local doit être élaboré. Ce document peut être un <strong>PUI</strong> (Plan d'Urgence Interne) ou, à défaut, un document précisant les mesures à prendre (coordonnées des services internes et externes, plans, cartes…). Ce document local + la DC01732 constituent le dossier « Traitement d'un événement lors du transport de marchandises dangereuses ».</div>
 </div>
 
 <div class="rule-box" style="border-color:var(--accent);background:rgba(240,192,64,0.06)">
@@ -3572,12 +3740,10 @@ temd: `
   • Se tenir <strong>du côté d'où vient le vent</strong> par rapport à l'envoi<br>
   • Ne pas marcher dans les flaques · Ne pas toucher le produit<br>
   • <strong>Ne pas utiliser</strong> téléphone mobile, radio manœuvre ou sol/train à proximité<br><br>
-  <strong>À distance, déterminer :</strong> position dans le train · présence bande orange + n° identification + n° ONU · nature de l'anomalie<br><br>
-  <strong>Aviser immédiatement</strong> par le moyen le plus rapide : responsable local ou SGTC (AC, Régulateur)
-</div>
-
-<div class="def-block important" style="border-color:var(--red)">
-  <div class="def-term" style="color:var(--red)">📋 À compléter — contenu cours ACDV à venir</div>
-  <div class="def-text">Procédures spécifiques ACDV sur TE et MD · Logigrammes DC 1792 · Examen dédié TE&MD</div>
+  <strong>À distance, déterminer :</strong><br>
+  • La localisation de l'envoi (position dans le train, lieu de stationnement)<br>
+  • La présence d'une bande orange, les n° d'identification du danger et n° ONU du panneau orange — à défaut, la nature du danger selon les étiquettes, le n° du wagon<br>
+  • La nature de l'anomalie<br><br>
+  <strong>Aviser immédiatement</strong> par le moyen le plus rapide : responsable local du site ou les services du SGTC (Agent Circulation, Régulateur) en indiquant les informations collectées.
 </div>
 `};
